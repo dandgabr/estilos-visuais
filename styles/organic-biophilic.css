@@ -12,8 +12,10 @@
   position: relative;
 }
 #stage[data-style="organic-biophilic"] .fx-bio-canvas {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
   z-index: 0;
   opacity: .85;
@@ -24,8 +26,8 @@
 #stage[data-style="organic-biophilic"] .nav a { border-radius: 99px; font-weight: 600; transition: background .3s, transform .4s cubic-bezier(.34,1.4,.64,1); }
 #stage[data-style="organic-biophilic"] .nav a:hover { background: var(--surface-2); transform: translateY(-2px) rotate(-1deg); }
 #stage[data-style="organic-biophilic"] .nav a.is-active { background: var(--accent); color: var(--accent-fg); border-radius: 60% 40% 55% 45% / 80% 60% 80% 60%; }
-#stage[data-style="organic-biophilic"] .hero { position: relative; padding: 70px 0 90px; overflow: clip; }
-#stage[data-style="organic-biophilic"] .hero::before { content: ""; position: absolute; right: 0; top: 10px; width: min(46%, 380px); aspect-ratio: 1; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%23566b3c' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M30 180 C60 120 80 70 150 20'/%3E%3Cpath d='M55 140 C30 130 20 110 25 90 C50 95 62 115 55 140Z'/%3E%3Cpath d='M75 105 C60 80 70 55 90 45 C105 70 98 92 75 105Z'/%3E%3Cpath d='M100 80 C125 80 145 95 150 120 C125 125 105 108 100 80Z'/%3E%3Cpath d='M120 52 C140 40 165 45 178 62 C158 74 134 70 120 52Z'/%3E%3C/svg%3E") center/contain no-repeat, radial-gradient(circle at 45% 45%, rgba(121,152,87,.35), rgba(121,152,87,0) 68%); border-radius: 62% 38% 55% 45% / 45% 58% 42% 55%; opacity: .9; pointer-events: none; transform-origin: 20% 100%; animation: bio-sway 9s ease-in-out infinite; }
+#stage[data-style="organic-biophilic"] .hero { position: relative; padding: 48px 0 64px; overflow: clip; }
+#stage[data-style="organic-biophilic"] .hero::before { content: ""; position: absolute; right: 0; top: 10px; width: min(40%, 320px); aspect-ratio: 1; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none' stroke='%23566b3c' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M30 180 C60 120 80 70 150 20'/%3E%3Cpath d='M55 140 C30 130 20 110 25 90 C50 95 62 115 55 140Z'/%3E%3Cpath d='M75 105 C60 80 70 55 90 45 C105 70 98 92 75 105Z'/%3E%3Cpath d='M100 80 C125 80 145 95 150 120 C125 125 105 108 100 80Z'/%3E%3Cpath d='M120 52 C140 40 165 45 178 62 C158 74 134 70 120 52Z'/%3E%3C/svg%3E") center/contain no-repeat, radial-gradient(circle at 45% 45%, rgba(121,152,87,.25), rgba(121,152,87,0) 68%); border-radius: 62% 38% 55% 45% / 45% 58% 42% 55%; opacity: .45; pointer-events: none; transform-origin: 20% 100%; animation: bio-sway 9s ease-in-out infinite; }
 @keyframes bio-sway { 50% { transform: rotate(4deg) scale(1.03); } }
 #stage[data-style="organic-biophilic"] .hero > * { position: relative; }
 #stage[data-style="organic-biophilic"] .eyebrow { font-weight: 700; color: #8a3f1a; text-transform: none; letter-spacing: .04em; font-size: .95rem; }

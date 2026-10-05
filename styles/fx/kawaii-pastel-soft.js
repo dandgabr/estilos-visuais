@@ -13,25 +13,25 @@ export default function mount(stage) {
 
   function resize() {
     width = canvas.width = stage.clientWidth;
-    height = canvas.height = Math.max(stage.clientHeight, stage.scrollHeight);
+    height = canvas.height = stage.clientHeight;
   }
   resize();
 
   const confetti = [];
-  const pastelColors = ['#ffccd5', '#ffb3c6', '#d8bbff', '#caffbf', '#ffd6a5', '#fdffb6'];
+  const pastelColors = ['#ff8fab', '#ffb3c6', '#d8bbff', '#a0c4ff', '#ffd166', '#ffccd5'];
 
-  // Gera partículas contínuas de estrelinhas ou coraçõezinhos suaves flutuando
-  for (let i = 0; i < 22; i++) {
+  // Gera partículas contínuas de estrelinhas, corações e bolhas flutuando
+  for (let i = 0; i < 36; i++) {
     confetti.push({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.6,
-      vy: -0.4 - Math.random() * 0.6, // sobe suavemente como balão
-      size: 6 + Math.random() * 8,
+      vx: (Math.random() - 0.5) * 0.8,
+      vy: -0.5 - Math.random() * 0.8, // sobe suavemente como balão
+      size: 10 + Math.random() * 12,
       rotation: Math.random() * Math.PI * 2,
       color: pastelColors[i % pastelColors.length],
-      type: i % 2 === 0 ? 'star' : 'bubble',
-      opacity: 0.35 + Math.random() * 0.35,
+      type: i % 3 === 0 ? 'star' : (i % 3 === 1 ? 'heart' : 'bubble'),
+      opacity: 0.6 + Math.random() * 0.35,
       bob: Math.random() * Math.PI * 2
     });
   }
@@ -41,29 +41,29 @@ export default function mount(stage) {
     if (reduce.matches) return;
     const r = stage.getBoundingClientRect();
     const cx = e.clientX - r.left;
-    const cy = e.clientY - r.top + stage.scrollTop;
+    const cy = e.clientY - r.top;
 
-    for (let i = 0; i < 14; i++) {
+    for (let i = 0; i < 20; i++) {
       const angle = Math.random() * Math.PI * 2;
-      const speed = 2 + Math.random() * 4.5;
+      const speed = 2.5 + Math.random() * 5.5;
       confetti.push({
         x: cx,
         y: cy,
         vx: Math.cos(angle) * speed,
-        vy: Math.sin(angle) * speed - 1.5,
-        size: 5 + Math.random() * 9,
+        vy: Math.sin(angle) * speed - 2,
+        size: 8 + Math.random() * 12,
         rotation: Math.random() * Math.PI * 2,
         color: pastelColors[Math.floor(Math.random() * pastelColors.length)],
-        type: Math.random() > 0.5 ? 'star' : 'heart',
-        opacity: 0.9,
-        gravity: 0.15,
-        decay: 0.02,
+        type: Math.random() > 0.4 ? 'heart' : (Math.random() > 0.5 ? 'star' : 'bubble'),
+        opacity: 0.95,
+        gravity: 0.16,
+        decay: 0.018,
         isTemp: true
       });
     }
   };
 
-  stage.addEventListener('pointerdown', onClick);
+  stage.addEventListener('pointerdown', onClick, { capture: true });
 
   function drawStar(cx, cy, spikes, outerRadius, innerRadius, color, alpha) {
     let rot = Math.PI / 2 * 3;
@@ -160,7 +160,7 @@ export default function mount(stage) {
 
   return () => {
     if (rafId) cancelAnimationFrame(rafId);
-    stage.removeEventListener('pointerdown', onClick);
+    stage.removeEventListener('pointerdown', onClick, { capture: true });
     ro.disconnect();
     canvas.remove();
   };

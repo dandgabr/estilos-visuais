@@ -13,7 +13,7 @@ export default function mount(stage) {
 
   function resize() {
     width = canvas.width = stage.clientWidth;
-    height = canvas.height = Math.max(stage.clientHeight, stage.scrollHeight);
+    height = canvas.height = stage.clientHeight;
   }
   resize();
 
@@ -25,7 +25,7 @@ export default function mount(stage) {
   function toIso(x, y, z) {
     return {
       x: (x - y) * cosA + width / 2,
-      y: (x + y) * sinA - z + 260
+      y: (x + y) * sinA - z + height * 0.4
     };
   }
 
@@ -38,15 +38,15 @@ export default function mount(stage) {
     { top: '#ff9fb2', right: '#a8344e', left: '#e0526f' }
   ];
 
-  for (let i = 0; i < 16; i++) {
+  for (let i = 0; i < 22; i++) {
     blocks.push({
-      gx: (Math.random() - 0.5) * 600,
-      gy: (Math.random() - 0.5) * 500,
-      baseZ: Math.random() * 200 - 50,
-      size: 18 + Math.random() * 16,
-      h: 22 + Math.random() * 30,
+      gx: (Math.random() - 0.5) * 900,
+      gy: (Math.random() - 0.5) * 800,
+      baseZ: Math.random() * 260 - 80,
+      size: 20 + Math.random() * 22,
+      h: 24 + Math.random() * 36,
       phase: Math.random() * Math.PI * 2,
-      speed: 0.02 + Math.random() * 0.025,
+      speed: 0.015 + Math.random() * 0.02,
       colors: blockColors[i % blockColors.length]
     });
   }

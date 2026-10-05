@@ -13,7 +13,7 @@ export default function mount(stage) {
 
   function resize() {
     width = canvas.width = stage.clientWidth;
-    height = canvas.height = Math.max(stage.clientHeight, stage.scrollHeight);
+    height = canvas.height = stage.clientHeight;
   }
   resize();
 
