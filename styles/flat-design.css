@@ -41,3 +41,8 @@
 #stage[data-style="flat-design"] dialog{border:0;box-shadow:0 0 0 100vmax rgba(44,62,80,.0);border-radius:4px}
 #stage[data-style="flat-design"] .footer{border-top:0;background:#dfe6e9;padding:16px;border-radius:4px}
 #stage[data-style="flat-design"] .kpis .card .badge,#stage[data-style="flat-design"] .kpis .card .badge.ok,#stage[data-style="flat-design"] .kpis .card .badge.warn,#stage[data-style="flat-design"] .kpis .card .badge.danger{background:rgba(0,0,0,.28);color:#fff}
+
+#stage[data-style="flat-design"] .switch{background:#bdc3c7;border:0;border-radius:3px}
+#stage[data-style="flat-design"] .switch::after{border-radius:2px;background:#fff;top:2px;left:2px}
+#stage[data-style="flat-design"] .switch:checked{background:#27ae60}
+#stage[data-style="flat-design"] .switch:checked::after{background:#fff}

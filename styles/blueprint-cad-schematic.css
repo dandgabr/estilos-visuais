@@ -1,29 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 #stage[data-style="blueprint-cad-schematic"] {
-  --bg: #0b1d3a; --surface: rgba(11, 29, 58, 0.88); --surface-2: #142e56; --fg: #00f0ff; --muted: #4a7ab5;
+  --bg: #0b1d3a; --surface: rgba(11, 29, 58, 0.92); --surface-2: #142e56; --fg: #00f0ff; --muted: #4a7ab5;
   --accent: #00f0ff; --accent-fg: #0b1d3a; --border: #00f0ff;
   --ok: #00f0ff; --warn: #ffd600; --danger: #ff3344;
   --radius: 0; --radius-sm: 0; --shadow: 0 0 15px rgba(0, 240, 255, 0.2);
   --font-body: 'Share Tech Mono', monospace; --font-display: 'Share Tech Mono', monospace;
   font-size: 15px;
   background-color: var(--bg);
-  background-image: linear-gradient(rgba(0, 240, 255, 0.15) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(0, 240, 255, 0.15) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image:
+    linear-gradient(rgba(0, 240, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(rgba(0, 240, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.06) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
   color: var(--fg);
 }
 #stage[data-style="blueprint-cad-schematic"] .topbar { border-bottom: 2px solid #00f0ff; background: rgba(11, 29, 58, 0.95); padding: 12px 0; }
-#stage[data-style="blueprint-cad-schematic"] .brand { font-size: 1.3rem; letter-spacing: 0.15em; text-transform: uppercase; color: #00f0ff; }
-#stage[data-style="blueprint-cad-schematic"] .brand-mark { background: none; border: 2px solid #00f0ff; border-radius: 0; }
+#stage[data-style="blueprint-cad-schematic"] .brand { font-size: 1.3rem; letter-spacing: 0.15em; text-transform: uppercase; color: #00f0ff; text-shadow: 0 0 8px rgba(0,240,255,.6); }
+#stage[data-style="blueprint-cad-schematic"] .brand-mark { background: none; border: 2px solid #00f0ff; border-radius: 0; position: relative; }
+#stage[data-style="blueprint-cad-schematic"] .brand-mark::after { content: "+"; position: absolute; inset: 0; display: grid; place-items: center; font-size: 14px; color: #00f0ff; }
 #stage[data-style="blueprint-cad-schematic"] .nav a { text-transform: uppercase; letter-spacing: 0.1em; border: 1px solid transparent; }
-#stage[data-style="blueprint-cad-schematic"] .nav a:hover { border-color: #00f0ff; }
-#stage[data-style="blueprint-cad-schematic"] .nav a.is-active { background: #00f0ff; color: #0b1d3a; font-weight: bold; }
+#stage[data-style="blueprint-cad-schematic"] .nav a:hover { border-color: #00f0ff; background: rgba(0,240,255,.1); }
+#stage[data-style="blueprint-cad-schematic"] .nav a.is-active { background: #00f0ff; color: #0b1d3a; font-weight: bold; box-shadow: 0 0 12px rgba(0,240,255,.5); }
 #stage[data-style="blueprint-cad-schematic"] .display { font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-left: 4px solid #00f0ff; padding-left: 14px; }
-#stage[data-style="blueprint-cad-schematic"] .btn { border-radius: 0; text-transform: uppercase; letter-spacing: 0.1em; border: 1px solid #00f0ff; }
+#stage[data-style="blueprint-cad-schematic"] .btn { border-radius: 0; text-transform: uppercase; letter-spacing: 0.1em; border: 1px solid #00f0ff; font-family: inherit; }
 #stage[data-style="blueprint-cad-schematic"] .btn-primary { background: rgba(0, 240, 255, 0.15); color: #00f0ff; box-shadow: 0 0 10px rgba(0, 240, 255, 0.3); }
-#stage[data-style="blueprint-cad-schematic"] .btn-primary:hover { background: #00f0ff; color: #0b1d3a; }
-#stage[data-style="blueprint-cad-schematic"] .card, #stage[data-style="blueprint-cad-schematic"] .panel { background: rgba(11, 29, 58, 0.88); border: 1px solid #00f0ff; border-radius: 0; box-shadow: 0 0 12px rgba(0, 240, 255, 0.15); }
+#stage[data-style="blueprint-cad-schematic"] .btn-primary:hover { background: #00f0ff; color: #0b1d3a; box-shadow: 0 0 18px rgba(0,240,255,.7); }
+#stage[data-style="blueprint-cad-schematic"] .btn-secondary { background: transparent; color: #00f0ff; }
+#stage[data-style="blueprint-cad-schematic"] .btn-secondary:hover { background: rgba(0,240,255,.15); }
+#stage[data-style="blueprint-cad-schematic"] .card, #stage[data-style="blueprint-cad-schematic"] .panel { background: rgba(11, 29, 58, 0.92); border: 1px solid #00f0ff; border-radius: 0; box-shadow: 0 0 12px rgba(0, 240, 255, 0.15); position: relative; }
+#stage[data-style="blueprint-cad-schematic"] .card::before { content: "DWG#802"; position: absolute; top: 4px; right: 8px; font-size: .65rem; color: var(--muted); }
 #stage[data-style="blueprint-cad-schematic"] .kpi-value { font-size: 2.8rem; font-weight: 700; color: #00f0ff; text-shadow: 0 0 8px rgba(0, 240, 255, 0.5); }
-#stage[data-style="blueprint-cad-schematic"] .badge { border: 1px solid #00f0ff; border-radius: 0; background: transparent; color: #00f0ff; }
+#stage[data-style="blueprint-cad-schematic"] .badge { border: 1px solid #00f0ff; border-radius: 0; background: transparent; color: #00f0ff; font-family: inherit; text-transform: uppercase; }
+#stage[data-style="blueprint-cad-schematic"] .badge.warn { border-color: #ffd600; color: #ffd600; }
+#stage[data-style="blueprint-cad-schematic"] .badge.danger { border-color: #ff3344; color: #ff3344; }
 #stage[data-style="blueprint-cad-schematic"] .bars { border-bottom: 2px solid #00f0ff; }
-#stage[data-style="blueprint-cad-schematic"] .bars i { border-radius: 0; background: #00f0ff; }
+#stage[data-style="blueprint-cad-schematic"] .bars i { border-radius: 0; background: #00f0ff; box-shadow: 0 0 8px rgba(0,240,255,.4); }
+#stage[data-style="blueprint-cad-schematic"] input[type=text], #stage[data-style="blueprint-cad-schematic"] input[type=email], #stage[data-style="blueprint-cad-schematic"] select, #stage[data-style="blueprint-cad-schematic"] textarea { background: #071326; border: 1px solid #00f0ff; border-radius: 0; color: #00f0ff; font-family: inherit; }
+#stage[data-style="blueprint-cad-schematic"] input:focus, #stage[data-style="blueprint-cad-schematic"] textarea:focus, #stage[data-style="blueprint-cad-schematic"] select:focus { outline: 2px dashed #00f0ff; box-shadow: 0 0 10px rgba(0,240,255,.4); }
+#stage[data-style="blueprint-cad-schematic"] .switch { border-radius: 0; background: #071326; border: 1px solid #00f0ff; }
+#stage[data-style="blueprint-cad-schematic"] .switch::after { border-radius: 0; background: #00f0ff; }
+#stage[data-style="blueprint-cad-schematic"] .switch:checked { background: rgba(0,240,255,.3); }
+#stage[data-style="blueprint-cad-schematic"] th { border-bottom: 2px solid #00f0ff; text-transform: uppercase; letter-spacing: .08em; }
+#stage[data-style="blueprint-cad-schematic"] td { border-bottom: 1px dashed rgba(0,240,255,.3); }
+#stage[data-style="blueprint-cad-schematic"] tbody tr:hover { background: rgba(0,240,255,.08); }
+#stage[data-style="blueprint-cad-schematic"] .toast { background: #071326; border: 1px solid #00f0ff; color: #00f0ff; border-radius: 0; box-shadow: 0 0 14px rgba(0,240,255,.3); }
+#stage[data-style="blueprint-cad-schematic"] dialog { background: #0b1d3a; border: 2px solid #00f0ff; border-radius: 0; color: #00f0ff; box-shadow: 0 0 25px rgba(0,240,255,.4); }

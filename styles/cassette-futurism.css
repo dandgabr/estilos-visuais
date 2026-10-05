@@ -7,6 +7,9 @@
   --font-body: 'VT323', monospace; --font-display: 'VT323', monospace; --font-mono: 'VT323', monospace;
   font-size: 19px;
   background-color: var(--bg);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(0,0,0,.35) 0 1px, transparent 1px 3px),
+    radial-gradient(circle at 50% 50%, rgba(51,255,51,.04), transparent 80%);
   color: var(--fg);
   text-shadow: 0 0 4px rgba(51, 255, 51, 0.6);
 }
@@ -21,9 +24,22 @@
 #stage[data-style="cassette-futurism"] .btn { font-size: 1.4rem; border-radius: 4px; border: 2px solid #33ff33; text-transform: uppercase; letter-spacing: 0.1em; }
 #stage[data-style="cassette-futurism"] .btn-primary { background: #1a2e22; color: #33ff33; box-shadow: inset 0 0 6px rgba(51, 255, 51, 0.5); }
 #stage[data-style="cassette-futurism"] .btn-primary:hover { background: #33ff33; color: #000000; text-shadow: none; }
+#stage[data-style="cassette-futurism"] .btn-secondary { background: #0c140e; color: #ffb000; border-color: #ffb000; }
+#stage[data-style="cassette-futurism"] .btn-ghost { background: transparent; color: #33ff33; }
 #stage[data-style="cassette-futurism"] .card, #stage[data-style="cassette-futurism"] .panel { background: #080c09; border: 4px solid #d8ceb9; border-radius: 12px; box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 0 12px rgba(51, 255, 51, 0.15); }
 #stage[data-style="cassette-futurism"] .kpi-value { font-size: 3.2rem; color: #ffb000; text-shadow: 0 0 8px #ffb000; }
 #stage[data-style="cassette-futurism"] .badge { border: 1px solid #33ff33; border-radius: 2px; font-size: 1.1rem; }
+#stage[data-style="cassette-futurism"] .badge.warn { border-color: #ffb000; color: #ffb000; text-shadow: 0 0 4px #ffb000; }
+#stage[data-style="cassette-futurism"] .badge.danger { border-color: #ff3333; color: #ff3333; text-shadow: 0 0 4px #ff3333; }
 #stage[data-style="cassette-futurism"] .bars { border-bottom: 2px solid #33ff33; }
 #stage[data-style="cassette-futurism"] .bars i { border-radius: 0; background: #33ff33; box-shadow: 0 0 6px #33ff33; }
-#stage[data-style="cassette-futurism"] input[type=text], #stage[data-style="cassette-futurism"] select { background: #050806; border: 2px solid #33ff33; color: #33ff33; font-size: 1.3rem; }
+#stage[data-style="cassette-futurism"] input[type=text], #stage[data-style="cassette-futurism"] input[type=email], #stage[data-style="cassette-futurism"] select, #stage[data-style="cassette-futurism"] textarea { background: #050806; border: 2px solid #33ff33; color: #33ff33; font-size: 1.3rem; font-family: inherit; }
+#stage[data-style="cassette-futurism"] input:focus, #stage[data-style="cassette-futurism"] textarea:focus, #stage[data-style="cassette-futurism"] select:focus { outline: 2px solid #ffb000; box-shadow: 0 0 10px #ffb000; }
+#stage[data-style="cassette-futurism"] .switch { border-radius: 4px; background: #161c18; border: 2px solid #33ff33; }
+#stage[data-style="cassette-futurism"] .switch::after { border-radius: 2px; background: #33ff33; }
+#stage[data-style="cassette-futurism"] .switch:checked { background: #1e824c; }
+#stage[data-style="cassette-futurism"] th { border-bottom: 2px solid #33ff33; font-size: 1.2rem; }
+#stage[data-style="cassette-futurism"] td { border-bottom: 1px dashed #1e824c; font-size: 1.2rem; }
+#stage[data-style="cassette-futurism"] tbody tr:hover { background: rgba(51,255,51,.1); }
+#stage[data-style="cassette-futurism"] .toast { background: #080c09; border: 2px solid #ffb000; color: #ffb000; font-size: 1.3rem; text-shadow: 0 0 4px #ffb000; }
+#stage[data-style="cassette-futurism"] dialog { background: #0a0d0b; border: 4px solid #d8ceb9; color: #33ff33; box-shadow: inset 0 0 25px #000, 0 0 20px rgba(51,255,51,.3); font-size: 1.3rem; }

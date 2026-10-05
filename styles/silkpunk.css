@@ -6,6 +6,9 @@
   --radius: 8px; --radius-sm: 4px; --shadow: 0 6px 18px rgba(195, 39, 43, 0.08);
   --font-body: 'Noto Serif', serif; --font-display: 'Cinzel', serif;
   background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(201, 160, 80, 0.08) 0, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(195, 39, 43, 0.06) 0, transparent 40%);
   color: var(--fg);
 }
 #stage[data-style="silkpunk"] .topbar { border-bottom: 2px solid #c9a050; background: #fbf7ee; padding: 12px 0; }
@@ -19,7 +22,20 @@
 #stage[data-style="silkpunk"] .btn { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.08em; border-radius: 4px; transition: all 0.2s; }
 #stage[data-style="silkpunk"] .btn-primary { background: linear-gradient(135deg, #c3272b, #8f171a); color: #ffffff; border: 1px solid #c9a050; box-shadow: 0 4px 12px rgba(195, 39, 43, 0.2); }
 #stage[data-style="silkpunk"] .btn-primary:hover { background: #c9a050; color: #1d2a44; border-color: #1d2a44; }
+#stage[data-style="silkpunk"] .btn-secondary { background: #ede3ce; color: #1d2a44; border: 1px solid #c9a050; }
+#stage[data-style="silkpunk"] .btn-ghost { color: #c3272b; }
 #stage[data-style="silkpunk"] .card, #stage[data-style="silkpunk"] .panel { background: #fbf7ee; border: 2px solid #c9a050; border-radius: 6px; box-shadow: 0 6px 18px rgba(195, 39, 43, 0.08); }
 #stage[data-style="silkpunk"] .kpi-value { font-family: var(--font-display); font-size: 2.6rem; color: #c3272b; }
 #stage[data-style="silkpunk"] .badge { border: 1px solid #c9a050; border-radius: 4px; background: #ede3ce; font-family: var(--font-display); }
 #stage[data-style="silkpunk"] .bars i { border-radius: 4px 4px 0 0; background: linear-gradient(to top, #c3272b, #c9a050); }
+#stage[data-style="silkpunk"] input[type=text], #stage[data-style="silkpunk"] input[type=email], #stage[data-style="silkpunk"] select, #stage[data-style="silkpunk"] textarea { background: #ffffff; border: 1px solid #c9a050; border-radius: 4px; color: #1d2a44; font-family: inherit; }
+#stage[data-style="silkpunk"] input:focus, #stage[data-style="silkpunk"] textarea:focus, #stage[data-style="silkpunk"] select:focus { outline: 2px solid #c3272b; border-color: #c3272b; }
+#stage[data-style="silkpunk"] .switch { border-radius: 4px; background: #ede3ce; border: 1px solid #c9a050; }
+#stage[data-style="silkpunk"] .switch::after { border-radius: 2px; background: #c9a050; }
+#stage[data-style="silkpunk"] .switch:checked { background: #c3272b; border-color: #c3272b; }
+#stage[data-style="silkpunk"] .switch:checked::after { background: #ffffff; }
+#stage[data-style="silkpunk"] th { border-bottom: 2px solid #c9a050; font-family: var(--font-display); color: #c3272b; }
+#stage[data-style="silkpunk"] td { border-bottom: 1px solid #e0d5be; }
+#stage[data-style="silkpunk"] tbody tr:hover { background: #f5edd7; }
+#stage[data-style="silkpunk"] .toast { background: #fbf7ee; border: 2px solid #c3272b; color: #1d2a44; border-radius: 4px; box-shadow: 0 6px 18px rgba(195,39,43,.15); }
+#stage[data-style="silkpunk"] dialog { background: #fbf7ee; border: 3px double #c9a050; color: #1d2a44; border-radius: 6px; box-shadow: 0 12px 30px rgba(0,0,0,.15); }

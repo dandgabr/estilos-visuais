@@ -6,20 +6,36 @@
   --radius: 28px; --radius-sm: 16px; --shadow: 0 12px 30px rgba(132, 94, 194, 0.25);
   --font-body: 'Plus Jakarta Sans', sans-serif; --font-display: 'Plus Jakarta Sans', sans-serif;
   background-color: var(--bg);
-  background-image: radial-gradient(circle at 20% 80%, rgba(255, 94, 126, 0.12), transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(132, 94, 194, 0.15), transparent 50%);
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(255, 94, 126, 0.18), transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(132, 94, 194, 0.22), transparent 50%);
   color: var(--fg);
 }
 #stage[data-style="fluid-liquid-morph"] .topbar { background: rgba(25, 15, 45, 0.8); border: 1px solid var(--border); border-radius: 99px; padding: 10px 24px; margin-top: 14px; backdrop-filter: blur(12px); }
 #stage[data-style="fluid-liquid-morph"] .brand { font-weight: 800; color: #ff5e7e; }
 #stage[data-style="fluid-liquid-morph"] .brand-mark { background: linear-gradient(135deg, #ff5e7e, #845ec2); border-radius: 50%; box-shadow: 0 0 12px rgba(255, 94, 126, 0.5); }
-#stage[data-style="fluid-liquid-morph"] .nav a { font-weight: 700; border-radius: 99px; color: #f0e6ff; }
+#stage[data-style="fluid-liquid-morph"] .nav a { font-weight: 700; border-radius: 99px; color: #f0e6ff; transition: background .2s, transform .2s; }
+#stage[data-style="fluid-liquid-morph"] .nav a:hover { transform: scale(1.05); }
 #stage[data-style="fluid-liquid-morph"] .nav a.is-active { background: linear-gradient(90deg, #ff5e7e, #845ec2); color: #ffffff; }
 #stage[data-style="fluid-liquid-morph"] .display { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 800; color: #ffffff; letter-spacing: -0.02em; }
-#stage[data-style="fluid-liquid-morph"] .btn { border-radius: 9999px; font-weight: 700; transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
+#stage[data-style="fluid-liquid-morph"] .btn { border-radius: 9999px; font-weight: 700; transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow .2s; }
 #stage[data-style="fluid-liquid-morph"] .btn-primary { background: linear-gradient(90deg, #ff5e7e, #845ec2); color: #ffffff; border: none; box-shadow: 0 6px 20px rgba(255, 94, 126, 0.4); }
-#stage[data-style="fluid-liquid-morph"] .btn-primary:hover { transform: scale(1.06); }
-#stage[data-style="fluid-liquid-morph"] .card, #stage[data-style="fluid-liquid-morph"] .panel { background: linear-gradient(135deg, rgba(255, 94, 126, 0.12), rgba(132, 94, 194, 0.15)); border: 1px solid var(--border); border-radius: 32px; box-shadow: 0 12px 30px rgba(132, 94, 194, 0.25); backdrop-filter: blur(10px); }
+#stage[data-style="fluid-liquid-morph"] .btn-primary:hover { transform: scale(1.06); box-shadow: 0 8px 25px rgba(255, 94, 126, 0.6); }
+#stage[data-style="fluid-liquid-morph"] .btn-secondary { background: rgba(255,255,255,.08); border: 1px solid var(--border); color: #f0e6ff; }
+#stage[data-style="fluid-liquid-morph"] .btn-secondary:hover { background: rgba(255,255,255,.16); transform: scale(1.04); }
+#stage[data-style="fluid-liquid-morph"] .btn-ghost { color: #ff5e7e; }
+#stage[data-style="fluid-liquid-morph"] .card, #stage[data-style="fluid-liquid-morph"] .panel { background: linear-gradient(135deg, rgba(255, 94, 126, 0.12), rgba(132, 94, 194, 0.15)); border: 1px solid var(--border); border-radius: 32px; box-shadow: 0 12px 30px rgba(132, 94, 194, 0.25); backdrop-filter: blur(10px); transition: border-radius .4s ease, transform .2s ease; }
+#stage[data-style="fluid-liquid-morph"] .card:hover { border-radius: 40px 24px 40px 24px; transform: translateY(-3px); }
 #stage[data-style="fluid-liquid-morph"] .kpi-value { font-size: 2.8rem; font-weight: 800; color: #ff5e7e; }
 #stage[data-style="fluid-liquid-morph"] .badge { border-radius: 99px; background: rgba(255, 94, 126, 0.2); border: 1px solid #ff5e7e; color: #f0e6ff; }
 #stage[data-style="fluid-liquid-morph"] .bars i { border-radius: 99px 99px 0 0; background: linear-gradient(to top, #845ec2, #ff5e7e); box-shadow: 0 0 10px rgba(255, 94, 126, 0.3); }
+#stage[data-style="fluid-liquid-morph"] input[type=text], #stage[data-style="fluid-liquid-morph"] input[type=email], #stage[data-style="fluid-liquid-morph"] select, #stage[data-style="fluid-liquid-morph"] textarea { background: rgba(25, 15, 45, 0.6); border: 1px solid var(--border); border-radius: 20px; color: #f0e6ff; font-family: inherit; }
+#stage[data-style="fluid-liquid-morph"] input:focus, #stage[data-style="fluid-liquid-morph"] textarea:focus, #stage[data-style="fluid-liquid-morph"] select:focus { outline: 2px solid #ff5e7e; box-shadow: 0 0 15px rgba(255,94,126,.5); }
+#stage[data-style="fluid-liquid-morph"] .switch { border-radius: 99px; background: rgba(132, 94, 194, 0.3); border: 1px solid var(--border); }
+#stage[data-style="fluid-liquid-morph"] .switch::after { border-radius: 50%; background: #fff; }
+#stage[data-style="fluid-liquid-morph"] .switch:checked { background: #ff5e7e; }
+#stage[data-style="fluid-liquid-morph"] th { border-bottom: 2px solid var(--border); color: #ff5e7e; }
+#stage[data-style="fluid-liquid-morph"] td { border-bottom: 1px solid rgba(132,94,194,.2); }
+#stage[data-style="fluid-liquid-morph"] tbody tr:hover { background: rgba(255,94,126,.08); }
+#stage[data-style="fluid-liquid-morph"] .toast { background: linear-gradient(90deg, #1b0e35, #2f1345); border: 1px solid #ff5e7e; color: #f0e6ff; border-radius: 99px; box-shadow: 0 8px 24px rgba(255,94,126,.3); }
+#stage[data-style="fluid-liquid-morph"] dialog { background: #150c2a; border: 1px solid var(--border); border-radius: 32px; color: #f0e6ff; box-shadow: 0 16px 40px rgba(0,0,0,.6); }

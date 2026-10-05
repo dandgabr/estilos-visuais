@@ -25,4 +25,13 @@
 #stage[data-style="psychedelic-60s"] .kpi-value { font-family: var(--font-display); color: #ffd166; text-shadow: 0 0 10px #f72585; }
 #stage[data-style="psychedelic-60s"] .badge { border-radius: 999px; font-weight: 700; background: rgba(247, 37, 133, 0.2); border: 1px solid #f72585; color: #ffd166; }
 #stage[data-style="psychedelic-60s"] .bars i { border-radius: 99px 99px 0 0; background: linear-gradient(to top, #7209b7, #f72585, #ffd166); box-shadow: 0 0 10px #f72585; }
-#stage[data-style="psychedelic-60s"] input[type=text], #stage[data-style="psychedelic-60s"] select { background: rgba(30, 5, 50, 0.8); border: 2px solid #f72585; border-radius: 20px; color: #ffd166; }
+#stage[data-style="psychedelic-60s"] input[type=text], #stage[data-style="psychedelic-60s"] input[type=email], #stage[data-style="psychedelic-60s"] select, #stage[data-style="psychedelic-60s"] textarea { background: rgba(30, 5, 50, 0.8); border: 2px solid #f72585; border-radius: 20px; color: #ffd166; font-family: inherit; }
+#stage[data-style="psychedelic-60s"] input:focus, #stage[data-style="psychedelic-60s"] textarea:focus, #stage[data-style="psychedelic-60s"] select:focus { outline: 2px solid #06d6a0; box-shadow: 0 0 18px #06d6a0; }
+#stage[data-style="psychedelic-60s"] .switch { border-radius: 99px; background: rgba(114, 9, 183, 0.5); border: 2px solid #f72585; }
+#stage[data-style="psychedelic-60s"] .switch::after { border-radius: 50%; background: #ffd166; }
+#stage[data-style="psychedelic-60s"] .switch:checked { background: #f72585; }
+#stage[data-style="psychedelic-60s"] th { border-bottom: 2px solid #f72585; color: #ffd166; font-family: var(--font-display); }
+#stage[data-style="psychedelic-60s"] td { border-bottom: 1px solid rgba(247,37,133,.3); }
+#stage[data-style="psychedelic-60s"] tbody tr:hover { background: rgba(247,37,133,.12); }
+#stage[data-style="psychedelic-60s"] .toast { background: linear-gradient(90deg, #7209b7, #f72585); color: #fff; border-radius: 999px; border: 2px solid #ffd166; box-shadow: 0 0 20px #f72585; }
+#stage[data-style="psychedelic-60s"] dialog { background: #19052b; border: 3px solid #f72585; border-radius: 36px; color: #ffd166; box-shadow: 0 0 40px rgba(247,37,133,.6); }

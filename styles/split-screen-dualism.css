@@ -6,6 +6,7 @@
   --radius: 8px; --radius-sm: 4px; --shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   --font-body: 'Space Grotesk', sans-serif; --font-display: 'Space Grotesk', sans-serif;
   background-color: var(--bg);
+  background: linear-gradient(90deg, #121316 0%, #121316 50%, #1a1b20 50%, #1a1b20 100%);
   color: var(--fg);
 }
 #stage[data-style="split-screen-dualism"] .topbar { border-bottom: 2px solid #282c37; padding: 14px 0; }
@@ -14,12 +15,24 @@
 #stage[data-style="split-screen-dualism"] .nav a { font-weight: 700; border-radius: 4px; color: #8c92a4; }
 #stage[data-style="split-screen-dualism"] .nav a.is-active { background: #ffffff; color: #121316; }
 #stage[data-style="split-screen-dualism"] .display { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 700; color: #ffffff; letter-spacing: -0.02em; }
-#stage[data-style="split-screen-dualism"] .btn { border-radius: 4px; font-weight: 700; }
+#stage[data-style="split-screen-dualism"] .btn { border-radius: 4px; font-weight: 700; transition: all .15s; }
 #stage[data-style="split-screen-dualism"] .btn-primary { background: #ffffff; color: #121316; border: 2px solid #ffffff; }
 #stage[data-style="split-screen-dualism"] .btn-primary:hover { background: transparent; color: #ffffff; }
 #stage[data-style="split-screen-dualism"] .btn-secondary { background: transparent; color: #ffffff; border: 1px solid #282c37; }
+#stage[data-style="split-screen-dualism"] .btn-secondary:hover { background: #282c37; }
+#stage[data-style="split-screen-dualism"] .btn-ghost { color: #8c92a4; }
 #stage[data-style="split-screen-dualism"] .card, #stage[data-style="split-screen-dualism"] .panel { background: #ffffff; color: #111111; border: none; border-radius: 8px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); }
 #stage[data-style="split-screen-dualism"] .card .kpi-label { color: #555555; }
 #stage[data-style="split-screen-dualism"] .kpi-value { font-size: 2.8rem; font-weight: 700; color: #111111; }
 #stage[data-style="split-screen-dualism"] .badge { border-radius: 4px; font-weight: 700; background: #e5e7eb; color: #111111; }
 #stage[data-style="split-screen-dualism"] .bars i { border-radius: 4px 4px 0 0; background: #111111; }
+#stage[data-style="split-screen-dualism"] input[type=text], #stage[data-style="split-screen-dualism"] input[type=email], #stage[data-style="split-screen-dualism"] select, #stage[data-style="split-screen-dualism"] textarea { background: #f3f4f6; border: 1px solid #d1d5db; border-radius: 4px; color: #111111; font-family: inherit; }
+#stage[data-style="split-screen-dualism"] input:focus, #stage[data-style="split-screen-dualism"] textarea:focus, #stage[data-style="split-screen-dualism"] select:focus { outline: 2px solid #111111; border-color: #111111; }
+#stage[data-style="split-screen-dualism"] .switch { border-radius: 99px; background: #d1d5db; }
+#stage[data-style="split-screen-dualism"] .switch::after { border-radius: 50%; background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+#stage[data-style="split-screen-dualism"] .switch:checked { background: #111111; }
+#stage[data-style="split-screen-dualism"] th { border-bottom: 2px solid #111111; color: #111111; }
+#stage[data-style="split-screen-dualism"] td { border-bottom: 1px solid #e5e7eb; color: #333333; }
+#stage[data-style="split-screen-dualism"] tbody tr:hover { background: #f9fafb; }
+#stage[data-style="split-screen-dualism"] .toast { background: #ffffff; color: #111111; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+#stage[data-style="split-screen-dualism"] dialog { background: #ffffff; color: #111111; border: none; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,.6); }

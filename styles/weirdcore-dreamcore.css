@@ -6,6 +6,9 @@
   --radius: 0; --radius-sm: 0; --shadow: 0 0 15px rgba(255, 42, 42, 0.15);
   --font-body: 'Times New Roman', serif; --font-display: 'Times New Roman', serif; --font-mono: 'Courier Prime', monospace;
   background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.7) 100%),
+    repeating-linear-gradient(0deg, rgba(255,42,42,.03) 0 1px, transparent 1px 4px);
   color: var(--fg);
 }
 #stage[data-style="weirdcore-dreamcore"] .topbar { border: 1px solid #383a34; background: #11120f; padding: 12px 16px; margin-top: 14px; }
@@ -14,10 +17,23 @@
 #stage[data-style="weirdcore-dreamcore"] .nav a { font-family: var(--font-mono); color: #d9d5c7; font-size: 0.85rem; }
 #stage[data-style="weirdcore-dreamcore"] .nav a.is-active { background: #ff2a2a; color: #ffffff; }
 #stage[data-style="weirdcore-dreamcore"] .display { font-size: clamp(2.4rem, 6vw, 4rem); font-style: italic; color: #d9d5c7; text-shadow: 2px 2px 0 #ff2a2a; }
-#stage[data-style="weirdcore-dreamcore"] .btn { border-radius: 0; font-family: var(--font-mono); border: 1px solid #ff2a2a; }
+#stage[data-style="weirdcore-dreamcore"] .btn { border-radius: 0; font-family: var(--font-mono); border: 1px solid #ff2a2a; transition: all .15s; }
 #stage[data-style="weirdcore-dreamcore"] .btn-primary { background: #22241f; color: #ff2a2a; font-weight: bold; }
-#stage[data-style="weirdcore-dreamcore"] .btn-primary:hover { background: #ff2a2a; color: #ffffff; }
+#stage[data-style="weirdcore-dreamcore"] .btn-primary:hover { background: #ff2a2a; color: #ffffff; box-shadow: 0 0 12px rgba(255,42,42,.6); }
+#stage[data-style="weirdcore-dreamcore"] .btn-secondary { background: #11120f; color: #d9d5c7; border-color: #383a34; }
+#stage[data-style="weirdcore-dreamcore"] .btn-ghost { color: #ff2a2a; }
 #stage[data-style="weirdcore-dreamcore"] .card, #stage[data-style="weirdcore-dreamcore"] .panel { background: #11120f; border: 1px solid #383a34; box-shadow: 0 0 15px rgba(255, 42, 42, 0.15); border-radius: 0; }
-#stage[data-style="weirdcore-dreamcore"] .kpi-value { font-size: 2.8rem; font-family: var(--font-mono); color: #ff2a2a; }
+#stage[data-style="weirdcore-dreamcore"] .kpi-value { font-size: 2.8rem; font-family: var(--font-mono); color: #ff2a2a; text-shadow: 0 0 8px rgba(255,42,42,.4); }
 #stage[data-style="weirdcore-dreamcore"] .badge { border: 1px solid #383a34; border-radius: 0; background: #1e201b; font-family: var(--font-mono); }
-#stage[data-style="weirdcore-dreamcore"] .bars i { border-radius: 0; background: #ff2a2a; }
+#stage[data-style="weirdcore-dreamcore"] .bars i { border-radius: 0; background: #ff2a2a; box-shadow: 0 0 8px rgba(255,42,42,.4); }
+#stage[data-style="weirdcore-dreamcore"] input[type=text], #stage[data-style="weirdcore-dreamcore"] input[type=email], #stage[data-style="weirdcore-dreamcore"] select, #stage[data-style="weirdcore-dreamcore"] textarea { background: #0a0b09; border: 1px solid #383a34; border-radius: 0; color: #d9d5c7; font-family: var(--font-mono); }
+#stage[data-style="weirdcore-dreamcore"] input:focus, #stage[data-style="weirdcore-dreamcore"] textarea:focus, #stage[data-style="weirdcore-dreamcore"] select:focus { outline: 1px solid #ff2a2a; box-shadow: 0 0 10px rgba(255,42,42,.5); }
+#stage[data-style="weirdcore-dreamcore"] .switch { border-radius: 0; background: #1e201b; border: 1px solid #383a34; }
+#stage[data-style="weirdcore-dreamcore"] .switch::after { border-radius: 0; background: #7d8273; }
+#stage[data-style="weirdcore-dreamcore"] .switch:checked { background: #330000; border-color: #ff2a2a; }
+#stage[data-style="weirdcore-dreamcore"] .switch:checked::after { background: #ff2a2a; box-shadow: 0 0 6px #ff2a2a; }
+#stage[data-style="weirdcore-dreamcore"] th { border-bottom: 1px solid #383a34; color: #ff2a2a; font-family: var(--font-mono); }
+#stage[data-style="weirdcore-dreamcore"] td { border-bottom: 1px dashed #252822; font-family: var(--font-mono); }
+#stage[data-style="weirdcore-dreamcore"] tbody tr:hover { background: #181a15; }
+#stage[data-style="weirdcore-dreamcore"] .toast { background: #11120f; border: 1px solid #ff2a2a; color: #d9d5c7; font-family: var(--font-mono); border-radius: 0; box-shadow: 0 0 16px rgba(255,42,42,.3); }
+#stage[data-style="weirdcore-dreamcore"] dialog { background: #11120f; border: 2px solid #ff2a2a; border-radius: 0; color: #d9d5c7; box-shadow: 0 0 30px rgba(0,0,0,.9); }

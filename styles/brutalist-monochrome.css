@@ -18,11 +18,13 @@
 #stage[data-style="brutalist-monochrome"] .eyebrow { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.2em; color: #ffffff; }
 #stage[data-style="brutalist-monochrome"] .display { font-size: clamp(2.5rem, 6.5vw, 4.5rem); font-weight: 900; letter-spacing: -0.04em; text-transform: uppercase; border-bottom: 2px solid #ffffff; padding-bottom: 20px; }
 #stage[data-style="brutalist-monochrome"] .lead { font-family: var(--font-mono); color: #cccccc; border-left: 2px solid #ffffff; padding-left: 14px; }
-#stage[data-style="brutalist-monochrome"] .btn { font-family: var(--font-mono); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 0; border: 2px solid #ffffff; }
+#stage[data-style="brutalist-monochrome"] .btn { font-family: var(--font-mono); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 0; border: 2px solid #ffffff; transition: background .1s, color .1s; }
 #stage[data-style="brutalist-monochrome"] .btn-primary { background: #ffffff; color: #000000; }
 #stage[data-style="brutalist-monochrome"] .btn-primary:hover { background: #000000; color: #ffffff; }
 #stage[data-style="brutalist-monochrome"] .btn-secondary { background: transparent; color: #ffffff; }
 #stage[data-style="brutalist-monochrome"] .btn-secondary:hover { background: #ffffff; color: #000000; }
+#stage[data-style="brutalist-monochrome"] .btn-ghost { background: transparent; color: #ffffff; }
+#stage[data-style="brutalist-monochrome"] .btn-ghost:hover { background: #222; }
 #stage[data-style="brutalist-monochrome"] .card, #stage[data-style="brutalist-monochrome"] .panel { background: #000000; border: 1px solid #ffffff; border-radius: 0; box-shadow: none; position: relative; }
 #stage[data-style="brutalist-monochrome"] .card::before { content: "+"; position: absolute; top: -7px; left: -5px; font-family: var(--font-mono); font-size: 10px; color: #fff; background: #000; line-height: 1; }
 #stage[data-style="brutalist-monochrome"] .kpi-label { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.12em; }
@@ -30,4 +32,13 @@
 #stage[data-style="brutalist-monochrome"] .badge { border: 1px solid #ffffff; border-radius: 0; background: transparent; color: #ffffff; font-family: var(--font-mono); letter-spacing: 0.08em; }
 #stage[data-style="brutalist-monochrome"] .bars { border-bottom: 2px solid #ffffff; }
 #stage[data-style="brutalist-monochrome"] .bars i { border-radius: 0; background: #ffffff; border: 1px solid #000000; }
-#stage[data-style="brutalist-monochrome"] input[type=text], #stage[data-style="brutalist-monochrome"] select { background: #000000; border: 1px solid #ffffff; border-radius: 0; color: #ffffff; font-family: var(--font-mono); }
+#stage[data-style="brutalist-monochrome"] input[type=text], #stage[data-style="brutalist-monochrome"] input[type=email], #stage[data-style="brutalist-monochrome"] select, #stage[data-style="brutalist-monochrome"] textarea { background: #000000; border: 1px solid #ffffff; border-radius: 0; color: #ffffff; font-family: var(--font-mono); }
+#stage[data-style="brutalist-monochrome"] input:focus, #stage[data-style="brutalist-monochrome"] select:focus, #stage[data-style="brutalist-monochrome"] textarea:focus { outline: 2px solid #ffffff; outline-offset: 2px; }
+#stage[data-style="brutalist-monochrome"] .switch { border-radius: 0; background: #000; border: 1px solid #fff; }
+#stage[data-style="brutalist-monochrome"] .switch::after { border-radius: 0; background: #fff; }
+#stage[data-style="brutalist-monochrome"] .switch:checked { background: #333; }
+#stage[data-style="brutalist-monochrome"] th { border-bottom: 2px solid #fff; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .08em; }
+#stage[data-style="brutalist-monochrome"] td { border-bottom: 1px solid #333; font-family: var(--font-mono); font-size: .88rem; }
+#stage[data-style="brutalist-monochrome"] tbody tr:hover { background: #1a1a1a; }
+#stage[data-style="brutalist-monochrome"] .toast { background: #ffffff; color: #000000; border-radius: 0; font-family: var(--font-mono); font-weight: 700; }
+#stage[data-style="brutalist-monochrome"] dialog { background: #000000; border: 2px solid #ffffff; border-radius: 0; color: #ffffff; box-shadow: 8px 8px 0 #333; }

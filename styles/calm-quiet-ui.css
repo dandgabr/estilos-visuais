@@ -34,3 +34,7 @@
 #stage[data-style="calm-quiet-ui"] dialog{border:0;box-shadow:0 20px 60px rgba(60,50,30,.15)}
 #stage[data-style="calm-quiet-ui"] dialog::backdrop{background:rgba(247,244,238,.8)}
 #stage[data-style="calm-quiet-ui"] .footer{border-top-color:var(--border)}
+
+#stage[data-style="calm-quiet-ui"] .switch{background:#cfc8b8;border:0}
+#stage[data-style="calm-quiet-ui"] .switch::after{background:#fdfcf9;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+#stage[data-style="calm-quiet-ui"] .switch:checked{background:#4f6b5c}

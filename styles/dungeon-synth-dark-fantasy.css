@@ -6,20 +6,36 @@
   --radius: 2px; --radius-sm: 0px; --shadow: 0 0 20px rgba(163, 131, 68, 0.15);
   --font-body: 'MedievalSharp', serif; --font-display: 'Cinzel', serif;
   background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(163,131,68,.12), transparent 60%),
+    radial-gradient(circle at 10% 90%, rgba(104,30,30,.15), transparent 50%);
   color: var(--fg);
 }
 #stage[data-style="dungeon-synth-dark-fantasy"] .topbar { border-bottom: 2px solid #a38344; background: #171514; padding: 12px 0; }
-#stage[data-style="dungeon-synth-dark-fantasy"] .brand { font-family: var(--font-display); font-size: 1.3rem; color: #a38344; letter-spacing: 0.15em; }
+#stage[data-style="dungeon-synth-dark-fantasy"] .brand { font-family: var(--font-display); font-size: 1.3rem; color: #a38344; letter-spacing: 0.15em; text-shadow: 0 0 8px rgba(163,131,68,.4); }
 #stage[data-style="dungeon-synth-dark-fantasy"] .brand-mark { background: #681e1e; border: 1px solid #a38344; border-radius: 0; }
 #stage[data-style="dungeon-synth-dark-fantasy"] .nav a { font-family: var(--font-display); letter-spacing: 0.1em; color: #8c8273; }
-#stage[data-style="dungeon-synth-dark-fantasy"] .nav a:hover { color: #a38344; }
+#stage[data-style="dungeon-synth-dark-fantasy"] .nav a:hover { color: #a38344; text-shadow: 0 0 6px #a38344; }
 #stage[data-style="dungeon-synth-dark-fantasy"] .nav a.is-active { background: #a38344; color: #100f0e; font-weight: bold; }
 #stage[data-style="dungeon-synth-dark-fantasy"] .display { font-family: var(--font-display); font-size: clamp(2.2rem, 5.5vw, 3.8rem); font-weight: 900; letter-spacing: 0.05em; color: #d1c7b7; text-shadow: 0 0 10px rgba(163, 131, 68, 0.3); border-bottom: 1px solid #a38344; padding-bottom: 16px; }
 #stage[data-style="dungeon-synth-dark-fantasy"] .lead { font-family: var(--font-body); color: #a89c89; font-size: 1.25rem; }
-#stage[data-style="dungeon-synth-dark-fantasy"] .btn { font-family: var(--font-display); letter-spacing: 0.12em; text-transform: uppercase; border-radius: 0; border: 1px solid #a38344; }
-#stage[data-style="dungeon-synth-dark-fantasy"] .btn-primary { background: #681e1e; color: #e5ded3; }
-#stage[data-style="dungeon-synth-dark-fantasy"] .btn-primary:hover { background: #a38344; color: #100f0e; }
+#stage[data-style="dungeon-synth-dark-fantasy"] .btn { font-family: var(--font-display); letter-spacing: 0.12em; text-transform: uppercase; border-radius: 0; border: 1px solid #a38344; transition: all .2s; }
+#stage[data-style="dungeon-synth-dark-fantasy"] .btn-primary { background: #681e1e; color: #e5ded3; box-shadow: 0 0 10px rgba(104,30,30,.5); }
+#stage[data-style="dungeon-synth-dark-fantasy"] .btn-primary:hover { background: #a38344; color: #100f0e; box-shadow: 0 0 15px rgba(163,131,68,.6); }
+#stage[data-style="dungeon-synth-dark-fantasy"] .btn-secondary { background: #211e1c; color: #d1c7b7; }
+#stage[data-style="dungeon-synth-dark-fantasy"] .btn-secondary:hover { background: #322d2a; }
 #stage[data-style="dungeon-synth-dark-fantasy"] .card, #stage[data-style="dungeon-synth-dark-fantasy"] .panel { background: #171514; border: 2px solid #a38344; border-radius: 2px; box-shadow: 0 0 20px rgba(163, 131, 68, 0.15); }
-#stage[data-style="dungeon-synth-dark-fantasy"] .kpi-value { font-family: var(--font-display); font-size: 2.6rem; color: #a38344; }
-#stage[data-style="dungeon-synth-dark-fantasy"] .badge { border: 1px solid #a38344; border-radius: 0; background: #211e1c; color: #d1c7b7; }
+#stage[data-style="dungeon-synth-dark-fantasy"] .kpi-value { font-family: var(--font-display); font-size: 2.6rem; color: #a38344; text-shadow: 0 0 8px rgba(163,131,68,.3); }
+#stage[data-style="dungeon-synth-dark-fantasy"] .badge { border: 1px solid #a38344; border-radius: 0; background: #211e1c; color: #d1c7b7; font-family: var(--font-display); }
 #stage[data-style="dungeon-synth-dark-fantasy"] .bars i { border-radius: 0; background: #681e1e; border: 1px solid #a38344; }
+#stage[data-style="dungeon-synth-dark-fantasy"] .bars i:nth-child(even) { background: #a38344; }
+#stage[data-style="dungeon-synth-dark-fantasy"] input[type=text], #stage[data-style="dungeon-synth-dark-fantasy"] input[type=email], #stage[data-style="dungeon-synth-dark-fantasy"] select, #stage[data-style="dungeon-synth-dark-fantasy"] textarea { background: #0c0b0a; border: 1px solid #a38344; border-radius: 0; color: #d1c7b7; font-family: inherit; }
+#stage[data-style="dungeon-synth-dark-fantasy"] input:focus, #stage[data-style="dungeon-synth-dark-fantasy"] textarea:focus, #stage[data-style="dungeon-synth-dark-fantasy"] select:focus { outline: 1px solid #a38344; box-shadow: 0 0 10px rgba(163,131,68,.4); }
+#stage[data-style="dungeon-synth-dark-fantasy"] .switch { border-radius: 0; background: #0c0b0a; border: 1px solid #a38344; }
+#stage[data-style="dungeon-synth-dark-fantasy"] .switch::after { border-radius: 0; background: #a38344; }
+#stage[data-style="dungeon-synth-dark-fantasy"] .switch:checked { background: #681e1e; }
+#stage[data-style="dungeon-synth-dark-fantasy"] th { border-bottom: 2px solid #a38344; font-family: var(--font-display); color: #a38344; }
+#stage[data-style="dungeon-synth-dark-fantasy"] td { border-bottom: 1px solid #282420; }
+#stage[data-style="dungeon-synth-dark-fantasy"] tbody tr:hover { background: #211e1c; }
+#stage[data-style="dungeon-synth-dark-fantasy"] .toast { background: #171514; border: 1px solid #a38344; color: #d1c7b7; border-radius: 0; box-shadow: 0 0 14px rgba(163,131,68,.3); }
+#stage[data-style="dungeon-synth-dark-fantasy"] dialog { background: #171514; border: 2px solid #a38344; color: #d1c7b7; border-radius: 0; box-shadow: 0 0 30px rgba(0,0,0,.9); }

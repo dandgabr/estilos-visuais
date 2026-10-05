@@ -22,8 +22,20 @@
 #stage[data-style="pop-art-halftone"] .btn-primary { background: #ec008c; color: #fff; text-shadow: 1px 1px 0 #000; }
 #stage[data-style="pop-art-halftone"] .btn-primary:hover { background: #00aeef; transform: translate(-2px, -2px); box-shadow: 7px 7px 0 #000; }
 #stage[data-style="pop-art-halftone"] .btn-secondary { background: #00aeef; color: #fff; text-shadow: 1px 1px 0 #000; }
+#stage[data-style="pop-art-halftone"] .btn-ghost { background: #ffffff; color: #000; }
 #stage[data-style="pop-art-halftone"] .card, #stage[data-style="pop-art-halftone"] .panel { background: #ffffff; border: 4px solid #000000; border-radius: 18px; box-shadow: 6px 6px 0 #000000; }
 #stage[data-style="pop-art-halftone"] .kpi-value { font-family: var(--font-display); font-size: 3rem; color: #ec008c; text-shadow: 2px 2px 0 #000; }
 #stage[data-style="pop-art-halftone"] .badge { border: 2px solid #000; border-radius: 8px; font-family: var(--font-display); font-size: 1rem; color: #000; box-shadow: 2px 2px 0 #000; }
 #stage[data-style="pop-art-halftone"] .bars i { border-radius: 8px 8px 0 0; background: #ec008c; border: 3px solid #000; border-bottom: 0; }
 #stage[data-style="pop-art-halftone"] .bars i:nth-child(even) { background: #00aeef; }
+#stage[data-style="pop-art-halftone"] input[type=text], #stage[data-style="pop-art-halftone"] input[type=email], #stage[data-style="pop-art-halftone"] select, #stage[data-style="pop-art-halftone"] textarea { border: 3px solid #000; border-radius: 10px; font-family: inherit; font-size: 1.1rem; box-shadow: 4px 4px 0 #000; }
+#stage[data-style="pop-art-halftone"] input:focus, #stage[data-style="pop-art-halftone"] textarea:focus, #stage[data-style="pop-art-halftone"] select:focus { outline: 3px solid #ec008c; box-shadow: 6px 6px 0 #ec008c; }
+#stage[data-style="pop-art-halftone"] .switch { border: 3px solid #000; background: #ffe600; box-shadow: 3px 3px 0 #000; border-radius: 99px; }
+#stage[data-style="pop-art-halftone"] .switch::after { background: #000; border-radius: 50%; }
+#stage[data-style="pop-art-halftone"] .switch:checked { background: #ec008c; }
+#stage[data-style="pop-art-halftone"] .switch:checked::after { background: #fff; }
+#stage[data-style="pop-art-halftone"] th { border-bottom: 3px solid #000; font-family: var(--font-display); font-size: 1.3rem; letter-spacing: .05em; }
+#stage[data-style="pop-art-halftone"] td { border-bottom: 2px solid #000; font-size: 1.1rem; }
+#stage[data-style="pop-art-halftone"] tbody tr:hover { background: #fffde0; }
+#stage[data-style="pop-art-halftone"] .toast { background: #ec008c; color: #fff; border: 3px solid #000; border-radius: 14px; box-shadow: 6px 6px 0 #000; font-family: var(--font-display); font-size: 1.3rem; }
+#stage[data-style="pop-art-halftone"] dialog { background: #fff200; border: 4px solid #000; border-radius: 20px; box-shadow: 8px 8px 0 #000; }

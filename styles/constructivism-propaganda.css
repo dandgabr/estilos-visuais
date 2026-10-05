@@ -6,8 +6,9 @@
   --radius: 0px; --radius-sm: 0px; --shadow: 5px 5px 0 0 #111111;
   --font-body: 'Space Grotesk', sans-serif; --font-display: 'Oswald', sans-serif; --font-mono: monospace;
   background-color: var(--bg);
-  background-image: linear-gradient(135deg, rgba(217, 4, 41, 0.04) 25%, transparent 25%),
-                    linear-gradient(225deg, rgba(217, 4, 41, 0.04) 25%, transparent 25%);
+  background-image:
+    linear-gradient(135deg, rgba(217, 4, 41, 0.08) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(217, 4, 41, 0.08) 25%, transparent 25%);
   background-size: 60px 60px;
   color: var(--fg);
 }
@@ -31,4 +32,14 @@
 #stage[data-style="constructivism-propaganda"] .badge { border: 2px solid #111111; border-radius: 0; font-family: var(--font-display); text-transform: uppercase; font-weight: 700; background: #ffffff; }
 #stage[data-style="constructivism-propaganda"] .bars i { border-radius: 0; background: #d90429; border: 2px solid #111111; border-bottom: 0; }
 #stage[data-style="constructivism-propaganda"] .bars i:nth-child(even) { background: #111111; }
-#stage[data-style="constructivism-propaganda"] input[type=text], #stage[data-style="constructivism-propaganda"] select { border: 3px solid #111111; border-radius: 0; box-shadow: 3px 3px 0 #111111; font-family: inherit; }
+#stage[data-style="constructivism-propaganda"] input[type=text], #stage[data-style="constructivism-propaganda"] input[type=email], #stage[data-style="constructivism-propaganda"] select, #stage[data-style="constructivism-propaganda"] textarea { border: 3px solid #111111; border-radius: 0; box-shadow: 3px 3px 0 #111111; font-family: inherit; }
+#stage[data-style="constructivism-propaganda"] input:focus, #stage[data-style="constructivism-propaganda"] textarea:focus, #stage[data-style="constructivism-propaganda"] select:focus { outline: 2px solid #d90429; box-shadow: 5px 5px 0 #d90429; }
+#stage[data-style="constructivism-propaganda"] .switch { border-radius: 0; background: #efe6d5; border: 3px solid #111111; }
+#stage[data-style="constructivism-propaganda"] .switch::after { border-radius: 0; background: #111111; }
+#stage[data-style="constructivism-propaganda"] .switch:checked { background: #d90429; }
+#stage[data-style="constructivism-propaganda"] .switch:checked::after { background: #fff; }
+#stage[data-style="constructivism-propaganda"] th { border-bottom: 3px solid #111111; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .06em; }
+#stage[data-style="constructivism-propaganda"] td { border-bottom: 2px solid #efe6d5; }
+#stage[data-style="constructivism-propaganda"] tbody tr:hover { background: #fdf2d0; }
+#stage[data-style="constructivism-propaganda"] .toast { background: #111111; color: #ffffff; border: 3px solid #d90429; border-radius: 0; box-shadow: 5px 5px 0 #d90429; font-family: var(--font-display); text-transform: uppercase; }
+#stage[data-style="constructivism-propaganda"] dialog { background: #f4ebd9; border: 4px solid #111111; border-radius: 0; box-shadow: 8px 8px 0 #d90429; }

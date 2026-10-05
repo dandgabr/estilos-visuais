@@ -44,3 +44,7 @@
 #stage[data-style="bento-grid"] .toast{background:#16161a;border-radius:99px;padding-inline:24px}
 #stage[data-style="bento-grid"] dialog{border:0;border-radius:28px}
 #stage[data-style="bento-grid"] .footer{border:0}
+
+#stage[data-style="bento-grid"] .switch{background:#e7e1ff;border:0}
+#stage[data-style="bento-grid"] .switch:checked{background:#5b3df5}
+#stage[data-style="bento-grid"] .switch::after{background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.15)}
