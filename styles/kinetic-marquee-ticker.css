@@ -1,0 +1,32 @@
+/* Style: Kinetic Marquee & High-Density Ticker */
+.theme-kinetic-marquee-ticker {
+  --bg-page: #0a0a0a;
+  --text-main: #ffffff;
+  --ticker-yellow: #ffe600;
+  --ticker-orange: #ff5500;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Space Mono', 'Monument Extended', monospace, sans-serif;
+}
+
+.theme-kinetic-marquee-ticker .card {
+  background: #141414;
+  border: 2px solid var(--ticker-yellow);
+  border-radius: 0;
+  box-shadow: 4px 4px 0 var(--ticker-yellow);
+}
+
+.theme-kinetic-marquee-ticker .btn-primary {
+  background: var(--ticker-yellow);
+  color: #000000;
+  border: 2px solid #000000;
+  border-radius: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.theme-kinetic-marquee-ticker .btn-primary:hover {
+  background: var(--ticker-orange);
+  color: #ffffff;
+}

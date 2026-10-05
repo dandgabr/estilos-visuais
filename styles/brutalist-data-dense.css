@@ -1,0 +1,32 @@
+/* Style: Brutalist Data-Dense & Terminal Console */
+.theme-brutalist-data-dense {
+  --bg-page: #0c0d0e;
+  --text-main: #e1e4e8;
+  --terminal-amber: #ff9e00;
+  --terminal-green: #00e676;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+  font-size: 13px;
+}
+
+.theme-brutalist-data-dense .card {
+  background: #121417;
+  border: 1px solid #282e38;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.theme-brutalist-data-dense .btn-primary {
+  background: var(--terminal-amber);
+  color: #000000;
+  border: none;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.theme-brutalist-data-dense .btn-primary:hover {
+  background: var(--terminal-green);
+}

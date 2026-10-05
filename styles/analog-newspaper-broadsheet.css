@@ -1,0 +1,38 @@
+/* Style: Broadsheet Newspaper & Letterpress */
+.theme-analog-newspaper-broadsheet {
+  --bg-page: #f5f2eb;
+  --text-main: #1c1b1a;
+  --lead-gray: #595652;
+  --red-deck: #a82c2c;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Newsreader', 'Playfair Display', Georgia, serif;
+}
+
+.theme-analog-newspaper-broadsheet .card {
+  background: #ffffff;
+  border-top: 3px solid #1c1b1a;
+  border-bottom: 3px solid #1c1b1a;
+  border-left: 1px solid #d4cebe;
+  border-right: 1px solid #d4cebe;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.theme-analog-newspaper-broadsheet .btn-primary {
+  background: #1c1b1a;
+  color: #f5f2eb;
+  border: 1px solid #1c1b1a;
+  border-radius: 0;
+  font-family: sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.theme-analog-newspaper-broadsheet .btn-primary:hover {
+  background: var(--red-deck);
+  border-color: var(--red-deck);
+}

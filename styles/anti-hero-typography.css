@@ -1,0 +1,42 @@
+/* Style: Type-Driven Minimal & Monumental Anti-Hero */
+.theme-anti-hero-typography {
+  --bg-page: #fbfbf9;
+  --text-main: #141414;
+  --card-bg: #ffffff;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+}
+
+.theme-anti-hero-typography h1,
+.theme-anti-hero-typography h2,
+.theme-anti-hero-typography .hero-title {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
+.theme-anti-hero-typography .card {
+  background: var(--card-bg);
+  border: 1px solid #141414;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.theme-anti-hero-typography .btn-primary {
+  background: #141414;
+  color: #ffffff;
+  border: 1px solid #141414;
+  border-radius: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.theme-anti-hero-typography .btn-primary:hover {
+  background: #ffffff;
+  color: #141414;
+}

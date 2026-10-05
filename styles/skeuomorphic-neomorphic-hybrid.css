@@ -1,0 +1,30 @@
+/* Style: Skeuomorphic-Neomorphic Hybrid */
+.theme-skeuomorphic-neomorphic-hybrid {
+  --bg-page: #e6e9ef;
+  --text-main: #2b313d;
+  --indicator-blue: #38bdf8;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: -apple-system, sans-serif;
+}
+
+.theme-skeuomorphic-neomorphic-hybrid .card {
+  background: linear-gradient(145deg, #f0f3f8, #d8dbe0);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: 8px 8px 16px #c4c7cd, -8px -8px 16px #ffffff;
+}
+
+.theme-skeuomorphic-neomorphic-hybrid .btn-primary {
+  background: linear-gradient(145deg, #e1e4ea, #f5f8fe);
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 4px 4px 8px #caced4, -4px -4px 8px #ffffff;
+}
+
+.theme-skeuomorphic-neomorphic-hybrid .btn-primary:active {
+  box-shadow: inset 3px 3px 6px #caced4, inset -3px -3px 6px #ffffff;
+}

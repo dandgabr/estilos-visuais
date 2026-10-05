@@ -1,0 +1,33 @@
+/* Style: Brutalist Monochrome */
+.theme-brutalist-monochrome {
+  --bg-page: #000000;
+  --text-main: #ffffff;
+  --card-bg: #000000;
+  --border-color: #ffffff;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.theme-brutalist-monochrome .card {
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.theme-brutalist-monochrome .btn-primary {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #ffffff;
+  border-radius: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.theme-brutalist-monochrome .btn-primary:hover {
+  background: #000000;
+  color: #ffffff;
+}

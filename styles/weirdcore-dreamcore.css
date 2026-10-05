@@ -1,0 +1,30 @@
+/* Style: Weirdcore & Liminal Dreamcore */
+.theme-weirdcore-dreamcore {
+  --bg-page: #161814;
+  --text-main: #d9d5c7;
+  --void-red: #ff2a2a;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Times New Roman', serif;
+}
+
+.theme-weirdcore-dreamcore .card {
+  background: #11120f;
+  border: 1px solid #383a34;
+  box-shadow: 0 0 15px rgba(255, 42, 42, 0.15);
+  border-radius: 0;
+}
+
+.theme-weirdcore-dreamcore .btn-primary {
+  background: #22241f;
+  color: var(--void-red);
+  border: 1px solid var(--void-red);
+  border-radius: 0;
+  font-weight: bold;
+}
+
+.theme-weirdcore-dreamcore .btn-primary:hover {
+  background: var(--void-red);
+  color: #ffffff;
+}

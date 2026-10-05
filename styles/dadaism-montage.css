@@ -1,0 +1,36 @@
+/* Style: Dadaism & Anti-Art Montage */
+.theme-dadaism-montage {
+  --bg-page: #e8e6e1;
+  --text-main: #1a1a1a;
+  --dada-red: #b82020;
+  --card-bg: #dfdbd0;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Courier New', 'Times New Roman', monospace, serif;
+}
+
+.theme-dadaism-montage .card {
+  background: var(--card-bg);
+  border: 2px dashed #1a1a1a;
+  box-shadow: 8px 8px 0 rgba(184, 32, 32, 0.6);
+  transform: rotate(-1.5deg);
+  border-radius: 0;
+}
+
+.theme-dadaism-montage .btn-primary {
+  background: #111111;
+  color: #ffffff;
+  border: 2px solid var(--dada-red);
+  padding: 6px 16px;
+  font-family: serif;
+  font-weight: bold;
+  transform: rotate(2deg);
+  border-radius: 0;
+}
+
+.theme-dadaism-montage .btn-primary:hover {
+  background: var(--dada-red);
+  color: #fff;
+  transform: rotate(-1deg);
+}

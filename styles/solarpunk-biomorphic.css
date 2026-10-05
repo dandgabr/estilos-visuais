@@ -1,0 +1,32 @@
+/* Style: Biomorphic & Generative Growth */
+.theme-solarpunk-biomorphic {
+  --bg-page: #0b1d19;
+  --text-main: #e8f5f1;
+  --bio-green: #2ec4b6;
+  --bio-cyan: #00f5d4;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.theme-solarpunk-biomorphic .card {
+  background: radial-gradient(circle at 80% 20%, rgba(0, 245, 212, 0.08), transparent), #102923;
+  border: 1px solid rgba(46, 196, 182, 0.35);
+  border-radius: 36px 14px 32px 18px;
+  box-shadow: 0 10px 30px rgba(0, 245, 212, 0.08);
+}
+
+.theme-solarpunk-biomorphic .btn-primary {
+  background: linear-gradient(135deg, var(--bio-green), var(--bio-cyan));
+  color: #0b1d19;
+  border: none;
+  border-radius: 28px;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(0, 245, 212, 0.25);
+}
+
+.theme-solarpunk-biomorphic .btn-primary:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 20px rgba(0, 245, 212, 0.4);
+}

@@ -1,0 +1,35 @@
+/* Style: Cassette Futurism & Analog Sci-Fi */
+.theme-cassette-futurism {
+  --bg-page: #101412;
+  --text-main: #33ff33;
+  --chassis-beige: #d8ceb9;
+  --crt-amber: #ffb000;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'VT323', 'Courier New', monospace;
+  text-shadow: 0 0 4px rgba(51, 255, 51, 0.6);
+}
+
+.theme-cassette-futurism .card {
+  background: #0a0d0b;
+  border: 4px solid var(--chassis-beige);
+  border-radius: 12px;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(51, 255, 51, 0.2);
+}
+
+.theme-cassette-futurism .btn-primary {
+  background: #1e2621;
+  color: var(--text-main);
+  border: 2px solid var(--text-main);
+  border-radius: 4px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  box-shadow: inset 0 0 6px rgba(51, 255, 51, 0.4);
+}
+
+.theme-cassette-futurism .btn-primary:hover {
+  background: var(--text-main);
+  color: #000000;
+  text-shadow: none;
+}

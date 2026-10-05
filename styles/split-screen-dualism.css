@@ -1,0 +1,30 @@
+/* Style: Split-Screen Dualism */
+.theme-split-screen-dualism {
+  --bg-page: #121316;
+  --text-main: #ffffff;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.theme-split-screen-dualism .card {
+  background: #ffffff;
+  color: #111111;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.theme-split-screen-dualism .btn-primary {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.theme-split-screen-dualism .btn-primary:hover {
+  background: transparent;
+  color: #ffffff;
+}

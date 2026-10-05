@@ -1,0 +1,31 @@
+/* Style: Fluid Liquid & Metaball Morph */
+.theme-fluid-liquid-morph {
+  --bg-page: #0f0a1c;
+  --text-main: #f0e6ff;
+  --liquid-coral: #ff5e7e;
+  --liquid-violet: #845ec2;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+.theme-fluid-liquid-morph .card {
+  background: linear-gradient(135deg, rgba(255, 94, 126, 0.12), rgba(132, 94, 194, 0.12));
+  border: 1px solid rgba(255, 94, 126, 0.3);
+  border-radius: 32px;
+  box-shadow: 0 12px 30px rgba(132, 94, 194, 0.2);
+}
+
+.theme-fluid-liquid-morph .btn-primary {
+  background: linear-gradient(90deg, var(--liquid-coral), var(--liquid-violet));
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(255, 94, 126, 0.4);
+}
+
+.theme-fluid-liquid-morph .btn-primary:hover {
+  transform: scale(1.05);
+}

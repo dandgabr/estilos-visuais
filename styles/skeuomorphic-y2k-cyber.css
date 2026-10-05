@@ -1,0 +1,31 @@
+/* Style: Y2K Cyber Aqua & iMac Gloss */
+.theme-skeuomorphic-y2k-cyber {
+  --bg-page: #d4e8f7;
+  --text-main: #0a2d4d;
+  --aqua-blue: #2998f4;
+
+  background: linear-gradient(to bottom, #dbeffc 0%, #c4e1f7 100%);
+  color: var(--text-main);
+  font-family: 'Lucida Grande', sans-serif;
+}
+
+.theme-skeuomorphic-y2k-cyber .card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #7cb5e2;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(41, 152, 244, 0.2);
+}
+
+.theme-skeuomorphic-y2k-cyber .btn-primary {
+  background: linear-gradient(to bottom, #7fcbfb 0%, #2998f4 50%, #0c7de6 51%, #1ca2f9 100%);
+  color: #ffffff;
+  border: 1px solid #005bb7;
+  border-radius: 20px;
+  font-weight: bold;
+  text-shadow: 0 -1px 1px #004b99;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.theme-skeuomorphic-y2k-cyber .btn-primary:hover {
+  filter: brightness(1.08);
+}

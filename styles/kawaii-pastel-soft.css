@@ -1,0 +1,32 @@
+/* Style: Kawaii Pastel & Soft Aesthetic */
+.theme-kawaii-pastel-soft {
+  --bg-page: #fff5f8;
+  --text-main: #5c3d46;
+  --bubble-pink: #ffb3c6;
+  --soft-lavender: #d8bbff;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Nunito', 'Quicksand', sans-serif;
+}
+
+.theme-kawaii-pastel-soft .card {
+  background: #ffffff;
+  border: 3px solid #ffccd5;
+  border-radius: 28px;
+  box-shadow: 0 10px 20px rgba(255, 179, 198, 0.25);
+}
+
+.theme-kawaii-pastel-soft .btn-primary {
+  background: var(--bubble-pink);
+  color: var(--text-main);
+  border: 3px solid #ffffff;
+  border-radius: 9999px;
+  font-weight: 800;
+  box-shadow: 0 6px 0 #ff8fab, 0 10px 15px rgba(255, 143, 171, 0.3);
+}
+
+.theme-kawaii-pastel-soft .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #ff8fab, 0 12px 18px rgba(255, 143, 171, 0.35);
+}

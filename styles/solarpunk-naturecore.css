@@ -1,0 +1,31 @@
+/* Style: Naturecore & Digital Cottagecore */
+.theme-solarpunk-naturecore {
+  --bg-page: #f7f4ee;
+  --text-main: #2c4235;
+  --sage-accent: #7d9d8b;
+  --terracotta: #c86d51;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Fraunces', 'Lora', Georgia, serif;
+}
+
+.theme-solarpunk-naturecore .card {
+  background: #ffffff;
+  border: 1px solid rgba(125, 157, 139, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(44, 66, 53, 0.06);
+}
+
+.theme-solarpunk-naturecore .btn-primary {
+  background: var(--terracotta);
+  color: #ffffff;
+  border: none;
+  border-radius: 24px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(200, 109, 81, 0.3);
+}
+
+.theme-solarpunk-naturecore .btn-primary:hover {
+  background: var(--sage-accent);
+}

@@ -1,0 +1,32 @@
+/* Style: Horizontal Gallery & Editorial Ribbon */
+.theme-editorial-horizontal-scroll {
+  --bg-page: #f6f5f2;
+  --text-main: #1f1e1d;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Didot', 'Bodoni MT', Georgia, serif;
+}
+
+.theme-editorial-horizontal-scroll .card {
+  background: #ffffff;
+  border: 1px solid #e2dfd7;
+  border-radius: 2px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.theme-editorial-horizontal-scroll .btn-primary {
+  background: #1f1e1d;
+  color: #ffffff;
+  border: 1px solid #1f1e1d;
+  border-radius: 0;
+  font-family: sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.theme-editorial-horizontal-scroll .btn-primary:hover {
+  background: transparent;
+  color: #1f1e1d;
+}

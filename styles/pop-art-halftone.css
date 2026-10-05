@@ -1,0 +1,37 @@
+/* Style: Pop Art & Ben-Day Halftone */
+.theme-pop-art-halftone {
+  --bg-page: #fff200;
+  --text-main: #000000;
+  --pop-cyan: #00aeef;
+  --pop-magenta: #ec008c;
+  --pop-white: #ffffff;
+
+  background-color: var(--bg-page);
+  background-image: radial-gradient(#000000 12%, transparent 13%);
+  background-size: 16px 16px;
+  color: var(--text-main);
+  font-family: 'Impact', 'Arial Black', sans-serif;
+}
+
+.theme-pop-art-halftone .card {
+  background: var(--pop-white);
+  border: 4px solid #000000;
+  border-radius: 18px;
+  box-shadow: 8px 8px 0 #000000;
+}
+
+.theme-pop-art-halftone .btn-primary {
+  background: var(--pop-magenta);
+  color: #ffffff;
+  border: 3px solid #000000;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0 #000000;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.theme-pop-art-halftone .btn-primary:hover {
+  background: var(--pop-cyan);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000000;
+}

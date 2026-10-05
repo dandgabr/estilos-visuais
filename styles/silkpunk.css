@@ -1,0 +1,33 @@
+/* Style: Silkpunk & Organic Engineering */
+.theme-silkpunk {
+  --bg-page: #f5efe0;
+  --text-main: #1d2a44;
+  --vermilion: #c3272b;
+  --brass: #c9a050;
+  --bamboo: #6a8d73;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Noto Serif', serif;
+}
+
+.theme-silkpunk .card {
+  background: #fbf7ee;
+  border: 2px solid var(--brass);
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(195, 39, 43, 0.08);
+}
+
+.theme-silkpunk .btn-primary {
+  background: linear-gradient(to right, var(--vermilion), #a11d20);
+  color: #ffffff;
+  border: 1px solid var(--brass);
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.theme-silkpunk .btn-primary:hover {
+  background: var(--brass);
+  color: #111111;
+}

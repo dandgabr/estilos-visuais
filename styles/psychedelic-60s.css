@@ -1,0 +1,36 @@
+/* Style: 1960s Psychedelic & Liquid Light */
+.theme-psychedelic-60s {
+  --bg-page: #19052b;
+  --text-main: #ffd166;
+  --psy-magenta: #f72585;
+  --psy-purple: #7209b7;
+  --psy-cyan: #06d6a0;
+  --psy-orange: #ff6b35;
+
+  background: radial-gradient(circle at 50% 50%, #2e0854, #120324);
+  color: var(--text-main);
+  font-family: 'Cooper Black', 'Cinzel', cursive, sans-serif;
+}
+
+.theme-psychedelic-60s .card {
+  background: linear-gradient(135deg, rgba(247, 37, 133, 0.15), rgba(114, 9, 183, 0.25));
+  border: 2px solid var(--psy-magenta);
+  border-radius: 36px 12px 36px 12px;
+  box-shadow: 0 0 25px rgba(247, 37, 133, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+.theme-psychedelic-60s .btn-primary {
+  background: linear-gradient(90deg, var(--psy-magenta), var(--psy-orange));
+  color: #ffffff;
+  border-radius: 9999px;
+  border: none;
+  font-weight: 800;
+  box-shadow: 0 0 15px var(--psy-magenta);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.theme-psychedelic-60s .btn-primary:hover {
+  transform: scale(1.06) rotate(2deg);
+  box-shadow: 0 0 25px var(--psy-cyan);
+}

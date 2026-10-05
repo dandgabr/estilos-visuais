@@ -1,0 +1,31 @@
+/* Style: Holographic Foil & Iridescent Chrome */
+.theme-holographic-foil-iridescent {
+  --bg-page: #0f1016;
+  --text-main: #ffffff;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Syne', sans-serif;
+}
+
+.theme-holographic-foil-iridescent .card {
+  background: linear-gradient(135deg, rgba(224, 195, 252, 0.15), rgba(142, 197, 252, 0.15));
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(142, 197, 252, 0.25);
+  backdrop-filter: blur(12px);
+}
+
+.theme-holographic-foil-iridescent .btn-primary {
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc, #fbc2eb);
+  color: #0f1016;
+  border: none;
+  border-radius: 14px;
+  font-weight: 800;
+  box-shadow: 0 4px 15px rgba(224, 195, 252, 0.4);
+}
+
+.theme-holographic-foil-iridescent .btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}

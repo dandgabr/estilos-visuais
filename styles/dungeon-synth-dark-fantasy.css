@@ -1,0 +1,32 @@
+/* Style: Dungeon Synth & Dark Fantasy Medieval */
+.theme-dungeon-synth-dark-fantasy {
+  --bg-page: #100f0e;
+  --text-main: #d1c7b7;
+  --gold-antique: #a38344;
+  --oxblood: #681e1e;
+
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: 'Cinzel', 'MedievalSharp', serif;
+}
+
+.theme-dungeon-synth-dark-fantasy .card {
+  background: #171514;
+  border: 2px solid var(--gold-antique);
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(163, 131, 68, 0.15);
+}
+
+.theme-dungeon-synth-dark-fantasy .btn-primary {
+  background: var(--oxblood);
+  color: #e5ded3;
+  border: 1px solid var(--gold-antique);
+  border-radius: 0;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.theme-dungeon-synth-dark-fantasy .btn-primary:hover {
+  background: var(--gold-antique);
+  color: #100f0e;
+}
