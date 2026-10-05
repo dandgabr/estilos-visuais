@@ -1,36 +1,29 @@
-/* Style: Dadaism & Anti-Art Montage */
-.theme-dadaism-montage {
-  --bg-page: #e8e6e1;
-  --text-main: #1a1a1a;
-  --dada-red: #b82020;
-  --card-bg: #dfdbd0;
-
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  font-family: 'Courier New', 'Times New Roman', monospace, serif;
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap');
+#stage[data-style="dadaism-montage"] {
+  --bg: #e8e6e1; --surface: #dfdbd0; --surface-2: #d4cebe; --fg: #1a1a1a; --muted: #59554d;
+  --accent: #b82020; --accent-fg: #ffffff; --border: #1a1a1a;
+  --ok: #20603d; --warn: #945305; --danger: #b82020;
+  --radius: 0; --radius-sm: 0; --shadow: 6px 6px 0 rgba(184, 32, 32, 0.4);
+  --font-body: 'Courier Prime', monospace; --font-display: 'Playfair Display', serif;
+  background-color: var(--bg);
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+  color: var(--fg);
 }
-
-.theme-dadaism-montage .card {
-  background: var(--card-bg);
-  border: 2px dashed #1a1a1a;
-  box-shadow: 8px 8px 0 rgba(184, 32, 32, 0.6);
-  transform: rotate(-1.5deg);
-  border-radius: 0;
-}
-
-.theme-dadaism-montage .btn-primary {
-  background: #111111;
-  color: #ffffff;
-  border: 2px solid var(--dada-red);
-  padding: 6px 16px;
-  font-family: serif;
-  font-weight: bold;
-  transform: rotate(2deg);
-  border-radius: 0;
-}
-
-.theme-dadaism-montage .btn-primary:hover {
-  background: var(--dada-red);
-  color: #fff;
-  transform: rotate(-1deg);
-}
+#stage[data-style="dadaism-montage"] .topbar { border: 2px dashed #1a1a1a; background: #dfdbd0; padding: 10px 16px; transform: rotate(-0.5deg); }
+#stage[data-style="dadaism-montage"] .brand { font-family: var(--font-display); font-weight: 900; font-style: italic; letter-spacing: -0.02em; }
+#stage[data-style="dadaism-montage"] .brand-mark { background: #b82020; transform: rotate(12deg); border: 2px solid #1a1a1a; }
+#stage[data-style="dadaism-montage"] .nav a { font-family: var(--font-body); font-weight: 700; border: 1px solid #1a1a1a; background: #fff; transform: rotate(calc(var(--rot, -1) * 1deg)); }
+#stage[data-style="dadaism-montage"] .nav a:hover { background: #b82020; color: #fff; }
+#stage[data-style="dadaism-montage"] .nav a.is-active { background: #1a1a1a; color: #fff; }
+#stage[data-style="dadaism-montage"] .display { font-family: var(--font-display); font-size: clamp(2.5rem, 6.5vw, 4.5rem); font-weight: 900; letter-spacing: -0.03em; line-height: 0.95; transform: rotate(0.8deg); }
+#stage[data-style="dadaism-montage"] .lead { font-family: var(--font-body); border-left: 4px solid #b82020; padding-left: 12px; background: rgba(255,255,255,0.7); }
+#stage[data-style="dadaism-montage"] .btn { font-family: var(--font-display); font-weight: 700; border: 2px solid #1a1a1a; border-radius: 0; box-shadow: 4px 4px 0 #1a1a1a; transition: transform 0.1s; }
+#stage[data-style="dadaism-montage"] .btn-primary { background: #b82020; color: #ffffff; transform: rotate(-1.5deg); }
+#stage[data-style="dadaism-montage"] .btn-primary:hover { background: #1a1a1a; transform: rotate(0); }
+#stage[data-style="dadaism-montage"] .btn-secondary { background: #ffffff; transform: rotate(1deg); }
+#stage[data-style="dadaism-montage"] .card, #stage[data-style="dadaism-montage"] .panel { background: #dfdbd0; border: 2px dashed #1a1a1a; border-radius: 0; box-shadow: 6px 6px 0 rgba(184, 32, 32, 0.45); transform: rotate(-0.8deg); }
+#stage[data-style="dadaism-montage"] .card:nth-child(even) { transform: rotate(1.2deg); }
+#stage[data-style="dadaism-montage"] .kpi-value { font-family: var(--font-display); font-size: 2.6rem; font-weight: 900; font-style: italic; }
+#stage[data-style="dadaism-montage"] .badge { border: 1px solid #1a1a1a; border-radius: 0; background: #fff; font-family: var(--font-body); }
+#stage[data-style="dadaism-montage"] .bars i { border-radius: 0; background: #1a1a1a; border: 1px solid #1a1a1a; }
+#stage[data-style="dadaism-montage"] .bars i:nth-child(odd) { background: #b82020; }

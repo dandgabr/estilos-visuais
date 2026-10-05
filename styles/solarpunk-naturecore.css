@@ -1,31 +1,27 @@
-/* Style: Naturecore & Digital Cottagecore */
-.theme-solarpunk-naturecore {
-  --bg-page: #f7f4ee;
-  --text-main: #2c4235;
-  --sage-accent: #7d9d8b;
-  --terracotta: #c86d51;
-
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  font-family: 'Fraunces', 'Lora', Georgia, serif;
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,600&family=Quicksand:wght@500;600;700&display=swap');
+#stage[data-style="solarpunk-naturecore"] {
+  --bg: #f7f4ee; --surface: #ffffff; --surface-2: #ece6d9; --fg: #2c4235; --muted: #5e7264;
+  --accent: #c86d51; --accent-fg: #ffffff; --border: #d8d0c0;
+  --ok: #407b5e; --warn: #c2821e; --danger: #b24130;
+  --radius: 20px; --radius-sm: 12px; --shadow: 0 8px 24px rgba(44, 66, 53, 0.06);
+  --font-body: 'Quicksand', sans-serif; --font-display: 'Fraunces', serif;
+  background-color: var(--bg);
+  color: var(--fg);
 }
-
-.theme-solarpunk-naturecore .card {
-  background: #ffffff;
-  border: 1px solid rgba(125, 157, 139, 0.3);
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(44, 66, 53, 0.06);
-}
-
-.theme-solarpunk-naturecore .btn-primary {
-  background: var(--terracotta);
-  color: #ffffff;
-  border: none;
-  border-radius: 24px;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(200, 109, 81, 0.3);
-}
-
-.theme-solarpunk-naturecore .btn-primary:hover {
-  background: var(--sage-accent);
-}
+#stage[data-style="solarpunk-naturecore"] .topbar { background: rgba(255, 255, 255, 0.85); border: 1px solid #d8d0c0; border-radius: 99px; padding: 10px 20px; margin-top: 14px; box-shadow: 0 4px 16px rgba(44, 66, 53, 0.05); }
+#stage[data-style="solarpunk-naturecore"] .brand { font-family: var(--font-display); font-size: 1.35rem; color: #2c4235; }
+#stage[data-style="solarpunk-naturecore"] .brand-mark { background: #7d9d8b; border-radius: 50%; }
+#stage[data-style="solarpunk-naturecore"] .nav a { font-weight: 600; border-radius: 99px; color: #2c4235; }
+#stage[data-style="solarpunk-naturecore"] .nav a:hover { background: #ece6d9; }
+#stage[data-style="solarpunk-naturecore"] .nav a.is-active { background: #2c4235; color: #f7f4ee; }
+#stage[data-style="solarpunk-naturecore"] .display { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 700; color: #2c4235; line-height: 1.05; }
+#stage[data-style="solarpunk-naturecore"] .lead { font-size: 1.15rem; color: #5e7264; }
+#stage[data-style="solarpunk-naturecore"] .btn { border-radius: 24px; font-weight: 600; transition: all 0.2s ease; }
+#stage[data-style="solarpunk-naturecore"] .btn-primary { background: #c86d51; color: #ffffff; border: none; box-shadow: 0 4px 12px rgba(200, 109, 81, 0.3); }
+#stage[data-style="solarpunk-naturecore"] .btn-primary:hover { background: #7d9d8b; transform: translateY(-2px); }
+#stage[data-style="solarpunk-naturecore"] .btn-secondary { background: #ece6d9; border: 1px solid #d8d0c0; color: #2c4235; }
+#stage[data-style="solarpunk-naturecore"] .card, #stage[data-style="solarpunk-naturecore"] .panel { background: #ffffff; border: 1px solid rgba(125, 157, 139, 0.3); border-radius: 20px; box-shadow: 0 8px 24px rgba(44, 66, 53, 0.06); }
+#stage[data-style="solarpunk-naturecore"] .kpi-value { font-family: var(--font-display); font-size: 2.6rem; color: #2c4235; }
+#stage[data-style="solarpunk-naturecore"] .badge { border-radius: 99px; background: #ece6d9; color: #2c4235; border: 1px solid #d8d0c0; }
+#stage[data-style="solarpunk-naturecore"] .bars i { border-radius: 12px 12px 0 0; background: #7d9d8b; }
+#stage[data-style="solarpunk-naturecore"] .bars i:nth-child(even) { background: #c86d51; }

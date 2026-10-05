@@ -1,32 +1,24 @@
-/* Style: Kawaii Pastel & Soft Aesthetic */
-.theme-kawaii-pastel-soft {
-  --bg-page: #fff5f8;
-  --text-main: #5c3d46;
-  --bubble-pink: #ffb3c6;
-  --soft-lavender: #d8bbff;
-
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  font-family: 'Nunito', 'Quicksand', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap');
+#stage[data-style="kawaii-pastel-soft"] {
+  --bg: #fff5f8; --surface: #ffffff; --surface-2: #ffe5ec; --fg: #5c3d46; --muted: #9c7a84;
+  --accent: #ffb3c6; --accent-fg: #5c3d46; --border: #ffccd5;
+  --ok: #2ec4b6; --warn: #ffb703; --danger: #ff5470;
+  --radius: 28px; --radius-sm: 18px; --shadow: 0 10px 20px rgba(255, 179, 198, 0.25);
+  --font-body: 'Nunito', sans-serif; --font-display: 'Nunito', sans-serif;
+  background-color: var(--bg);
+  color: var(--fg);
 }
-
-.theme-kawaii-pastel-soft .card {
-  background: #ffffff;
-  border: 3px solid #ffccd5;
-  border-radius: 28px;
-  box-shadow: 0 10px 20px rgba(255, 179, 198, 0.25);
-}
-
-.theme-kawaii-pastel-soft .btn-primary {
-  background: var(--bubble-pink);
-  color: var(--text-main);
-  border: 3px solid #ffffff;
-  border-radius: 9999px;
-  font-weight: 800;
-  box-shadow: 0 6px 0 #ff8fab, 0 10px 15px rgba(255, 143, 171, 0.3);
-}
-
-.theme-kawaii-pastel-soft .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 0 #ff8fab, 0 12px 18px rgba(255, 143, 171, 0.35);
-}
+#stage[data-style="kawaii-pastel-soft"] .topbar { background: #ffffff; border: 3px solid #ffccd5; border-radius: 999px; padding: 10px 24px; margin-top: 14px; box-shadow: 0 6px 0 #ff8fab; }
+#stage[data-style="kawaii-pastel-soft"] .brand { font-weight: 900; color: #ff8fab; font-size: 1.4rem; }
+#stage[data-style="kawaii-pastel-soft"] .brand-mark { background: #ff8fab; border-radius: 50%; }
+#stage[data-style="kawaii-pastel-soft"] .nav a { font-weight: 800; border-radius: 99px; color: #5c3d46; }
+#stage[data-style="kawaii-pastel-soft"] .nav a.is-active { background: #ffb3c6; color: #5c3d46; }
+#stage[data-style="kawaii-pastel-soft"] .display { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 900; color: #5c3d46; }
+#stage[data-style="kawaii-pastel-soft"] .btn { border-radius: 9999px; font-weight: 800; border: 3px solid #ffffff; transition: all 0.15s; }
+#stage[data-style="kawaii-pastel-soft"] .btn-primary { background: #ffb3c6; color: #5c3d46; box-shadow: 0 6px 0 #ff8fab, 0 10px 15px rgba(255, 143, 171, 0.3); }
+#stage[data-style="kawaii-pastel-soft"] .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 0 #ff8fab; }
+#stage[data-style="kawaii-pastel-soft"] .card, #stage[data-style="kawaii-pastel-soft"] .panel { background: #ffffff; border: 3px solid #ffccd5; border-radius: 28px; box-shadow: 0 10px 20px rgba(255, 179, 198, 0.25); }
+#stage[data-style="kawaii-pastel-soft"] .kpi-value { font-size: 2.8rem; font-weight: 900; color: #ff8fab; }
+#stage[data-style="kawaii-pastel-soft"] .badge { border-radius: 99px; background: #ffe5ec; border: 2px solid #ffccd5; font-weight: 800; }
+#stage[data-style="kawaii-pastel-soft"] .bars i { border-radius: 99px 99px 0 0; background: #ffb3c6; }
+#stage[data-style="kawaii-pastel-soft"] .bars i:nth-child(even) { background: #d8bbff; }

@@ -1,30 +1,22 @@
-/* Style: Clay Stop-Motion & Plasticine */
-.theme-clay-stop-motion {
-  --bg-page: #f4ece1;
-  --text-main: #3d2b1f;
-  --clay-terracotta: #e76f51;
-
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  font-family: 'Baloo 2', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap');
+#stage[data-style="clay-stop-motion"] {
+  --bg: #f4ece1; --surface: #fdfaf6; --surface-2: #eae0d0; --fg: #3d2b1f; --muted: #7d6b5e;
+  --accent: #e76f51; --accent-fg: #ffffff; --border: #e8dec8;
+  --ok: #2a9d8f; --warn: #e9c46a; --danger: #e76f51;
+  --radius: 28px; --radius-sm: 16px; --shadow: inset -4px -4px 8px rgba(0,0,0,.08), inset 4px 4px 8px rgba(255,255,255,.8), 0 8px 18px rgba(61,43,31,.1);
+  --font-body: 'Baloo 2', sans-serif; --font-display: 'Baloo 2', sans-serif;
+  background-color: var(--bg);
+  color: var(--fg);
 }
-
-.theme-clay-stop-motion .card {
-  background: #fdfaf6;
-  border-radius: 30px 22px 28px 24px;
-  box-shadow: inset -4px -4px 8px rgba(0, 0, 0, 0.08), inset 4px 4px 8px rgba(255, 255, 255, 0.8), 0 8px 18px rgba(61, 43, 31, 0.1);
-  border: 2px solid #e8dec8;
-}
-
-.theme-clay-stop-motion .btn-primary {
-  background: var(--clay-terracotta);
-  color: #ffffff;
-  border: none;
-  border-radius: 24px 20px 26px 18px;
-  font-weight: 700;
-  box-shadow: inset -3px -3px 6px rgba(0, 0, 0, 0.2), inset 3px 3px 6px rgba(255, 255, 255, 0.4), 0 6px 12px rgba(231, 111, 81, 0.3);
-}
-
-.theme-clay-stop-motion .btn-primary:hover {
-  transform: rotate(-1deg);
-}
+#stage[data-style="clay-stop-motion"] .topbar { background: #fdfaf6; border: 2px solid #e8dec8; border-radius: 30px; box-shadow: var(--shadow); padding: 10px 20px; margin-top: 14px; }
+#stage[data-style="clay-stop-motion"] .brand { font-weight: 800; font-size: 1.4rem; color: #e76f51; }
+#stage[data-style="clay-stop-motion"] .brand-mark { background: #e76f51; border-radius: 50%; box-shadow: inset -2px -2px 4px rgba(0,0,0,0.2), inset 2px 2px 4px rgba(255,255,255,0.4); }
+#stage[data-style="clay-stop-motion"] .nav a { font-weight: 700; border-radius: 20px; }
+#stage[data-style="clay-stop-motion"] .nav a.is-active { background: #e76f51; color: #ffffff; }
+#stage[data-style="clay-stop-motion"] .display { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 800; color: #3d2b1f; }
+#stage[data-style="clay-stop-motion"] .btn { border-radius: 24px 20px 26px 18px; font-weight: 700; transition: all 0.15s; }
+#stage[data-style="clay-stop-motion"] .btn-primary { background: #e76f51; color: #ffffff; border: none; box-shadow: inset -3px -3px 6px rgba(0, 0, 0, 0.2), inset 3px 3px 6px rgba(255, 255, 255, 0.4), 0 6px 12px rgba(231, 111, 81, 0.3); }
+#stage[data-style="clay-stop-motion"] .card, #stage[data-style="clay-stop-motion"] .panel { background: #fdfaf6; border-radius: 30px 22px 28px 24px; box-shadow: inset -4px -4px 8px rgba(0, 0, 0, 0.08), inset 4px 4px 8px rgba(255, 255, 255, 0.8), 0 8px 18px rgba(61, 43, 31, 0.1); border: 2px solid #e8dec8; }
+#stage[data-style="clay-stop-motion"] .kpi-value { font-size: 2.8rem; font-weight: 800; color: #e76f51; }
+#stage[data-style="clay-stop-motion"] .badge { border-radius: 20px; background: #eae0d0; font-weight: 700; }
+#stage[data-style="clay-stop-motion"] .bars i { border-radius: 12px 12px 0 0; background: #2a9d8f; }

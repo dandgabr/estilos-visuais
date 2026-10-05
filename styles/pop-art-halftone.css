@@ -1,37 +1,29 @@
-/* Style: Pop Art & Ben-Day Halftone */
-.theme-pop-art-halftone {
-  --bg-page: #fff200;
-  --text-main: #000000;
-  --pop-cyan: #00aeef;
-  --pop-magenta: #ec008c;
-  --pop-white: #ffffff;
-
-  background-color: var(--bg-page);
-  background-image: radial-gradient(#000000 12%, transparent 13%);
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@600;700&display=swap');
+#stage[data-style="pop-art-halftone"] {
+  --bg: #fff200; --surface: #ffffff; --surface-2: #ffe600; --fg: #000000; --muted: #333333;
+  --accent: #ec008c; --accent-fg: #ffffff; --border: #000000;
+  --ok: #00a859; --warn: #f39200; --danger: #e60012;
+  --radius: 16px; --radius-sm: 8px; --shadow: 6px 6px 0 0 #000000;
+  --font-body: 'Oswald', sans-serif; --font-display: 'Bangers', cursive, sans-serif;
+  background-color: var(--bg);
+  background-image: radial-gradient(#000000 13%, transparent 14%);
   background-size: 16px 16px;
-  color: var(--text-main);
-  font-family: 'Impact', 'Arial Black', sans-serif;
+  color: var(--fg);
 }
-
-.theme-pop-art-halftone .card {
-  background: var(--pop-white);
-  border: 4px solid #000000;
-  border-radius: 18px;
-  box-shadow: 8px 8px 0 #000000;
-}
-
-.theme-pop-art-halftone .btn-primary {
-  background: var(--pop-magenta);
-  color: #ffffff;
-  border: 3px solid #000000;
-  border-radius: 12px;
-  box-shadow: 4px 4px 0 #000000;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.theme-pop-art-halftone .btn-primary:hover {
-  background: var(--pop-cyan);
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 #000000;
-}
+#stage[data-style="pop-art-halftone"] .topbar { background: #ffffff; border: 4px solid #000; border-radius: 16px; box-shadow: 6px 6px 0 #000; padding: 10px 18px; }
+#stage[data-style="pop-art-halftone"] .brand { font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 0.05em; color: #ec008c; text-shadow: 2px 2px 0 #000; }
+#stage[data-style="pop-art-halftone"] .brand-mark { background: #00aeef; border: 3px solid #000; box-shadow: 2px 2px 0 #000; transform: rotate(-10deg); }
+#stage[data-style="pop-art-halftone"] .nav a { font-family: var(--font-display); font-size: 1.25rem; letter-spacing: 0.05em; border: 2px solid transparent; }
+#stage[data-style="pop-art-halftone"] .nav a:hover { background: #00aeef; color: #fff; border-color: #000; }
+#stage[data-style="pop-art-halftone"] .nav a.is-active { background: #ec008c; color: #fff; border: 3px solid #000; box-shadow: 3px 3px 0 #000; }
+#stage[data-style="pop-art-halftone"] .display { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 5.2rem); text-transform: uppercase; color: #000; text-shadow: 4px 4px 0 #fff, 7px 7px 0 #ec008c; line-height: 0.95; letter-spacing: 0.04em; }
+#stage[data-style="pop-art-halftone"] .lead { font-size: 1.2rem; font-weight: 600; background: #fff; border: 3px solid #000; border-radius: 12px; padding: 12px 18px; box-shadow: 5px 5px 0 #000; }
+#stage[data-style="pop-art-halftone"] .btn { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.06em; border: 3px solid #000; border-radius: 14px; box-shadow: 5px 5px 0 #000; transition: transform 0.1s, box-shadow 0.1s; }
+#stage[data-style="pop-art-halftone"] .btn-primary { background: #ec008c; color: #fff; text-shadow: 1px 1px 0 #000; }
+#stage[data-style="pop-art-halftone"] .btn-primary:hover { background: #00aeef; transform: translate(-2px, -2px); box-shadow: 7px 7px 0 #000; }
+#stage[data-style="pop-art-halftone"] .btn-secondary { background: #00aeef; color: #fff; text-shadow: 1px 1px 0 #000; }
+#stage[data-style="pop-art-halftone"] .card, #stage[data-style="pop-art-halftone"] .panel { background: #ffffff; border: 4px solid #000000; border-radius: 18px; box-shadow: 6px 6px 0 #000000; }
+#stage[data-style="pop-art-halftone"] .kpi-value { font-family: var(--font-display); font-size: 3rem; color: #ec008c; text-shadow: 2px 2px 0 #000; }
+#stage[data-style="pop-art-halftone"] .badge { border: 2px solid #000; border-radius: 8px; font-family: var(--font-display); font-size: 1rem; color: #000; box-shadow: 2px 2px 0 #000; }
+#stage[data-style="pop-art-halftone"] .bars i { border-radius: 8px 8px 0 0; background: #ec008c; border: 3px solid #000; border-bottom: 0; }
+#stage[data-style="pop-art-halftone"] .bars i:nth-child(even) { background: #00aeef; }

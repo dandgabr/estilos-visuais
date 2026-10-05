@@ -1,36 +1,28 @@
-/* Style: 1960s Psychedelic & Liquid Light */
-.theme-psychedelic-60s {
-  --bg-page: #19052b;
-  --text-main: #ffd166;
-  --psy-magenta: #f72585;
-  --psy-purple: #7209b7;
-  --psy-cyan: #06d6a0;
-  --psy-orange: #ff6b35;
-
-  background: radial-gradient(circle at 50% 50%, #2e0854, #120324);
-  color: var(--text-main);
-  font-family: 'Cooper Black', 'Cinzel', cursive, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Quicksand:wght@600;700&display=swap');
+#stage[data-style="psychedelic-60s"] {
+  --bg: #19052b; --surface: rgba(114, 9, 183, 0.25); --surface-2: rgba(247, 37, 133, 0.2); --fg: #ffd166; --muted: #f72585;
+  --accent: #f72585; --accent-fg: #ffffff; --border: #f72585;
+  --ok: #06d6a0; --warn: #ff6b35; --danger: #f72585;
+  --radius: 32px; --radius-sm: 16px; --shadow: 0 0 25px rgba(247, 37, 133, 0.4);
+  --font-body: 'Quicksand', sans-serif; --font-display: 'Cinzel Decorative', cursive, serif;
+  background: radial-gradient(circle at 50% 30%, #3d0066 0%, #19052b 70%, #0c0117 100%);
+  color: var(--fg);
 }
-
-.theme-psychedelic-60s .card {
-  background: linear-gradient(135deg, rgba(247, 37, 133, 0.15), rgba(114, 9, 183, 0.25));
-  border: 2px solid var(--psy-magenta);
-  border-radius: 36px 12px 36px 12px;
-  box-shadow: 0 0 25px rgba(247, 37, 133, 0.35);
-  backdrop-filter: blur(8px);
-}
-
-.theme-psychedelic-60s .btn-primary {
-  background: linear-gradient(90deg, var(--psy-magenta), var(--psy-orange));
-  color: #ffffff;
-  border-radius: 9999px;
-  border: none;
-  font-weight: 800;
-  box-shadow: 0 0 15px var(--psy-magenta);
-  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
-
-.theme-psychedelic-60s .btn-primary:hover {
-  transform: scale(1.06) rotate(2deg);
-  box-shadow: 0 0 25px var(--psy-cyan);
-}
+#stage[data-style="psychedelic-60s"] .topbar { background: rgba(25, 5, 43, 0.8); border-bottom: 2px solid var(--accent); backdrop-filter: blur(12px); border-radius: 999px; padding: 10px 24px; margin-top: 14px; }
+#stage[data-style="psychedelic-60s"] .brand { font-family: var(--font-display); color: #ffd166; text-shadow: 0 0 10px #f72585; font-size: 1.3rem; }
+#stage[data-style="psychedelic-60s"] .brand-mark { background: linear-gradient(135deg, #f72585, #ffd166); border-radius: 50%; box-shadow: 0 0 12px #f72585; }
+#stage[data-style="psychedelic-60s"] .nav a { font-weight: 700; color: #ffd166; border-radius: 99px; transition: all 0.2s; }
+#stage[data-style="psychedelic-60s"] .nav a:hover { color: #ffffff; text-shadow: 0 0 8px #06d6a0; }
+#stage[data-style="psychedelic-60s"] .nav a.is-active { background: linear-gradient(90deg, #f72585, #7209b7); color: #ffffff; box-shadow: 0 0 12px #f72585; }
+#stage[data-style="psychedelic-60s"] .display { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4.2rem); color: #ffffff; text-shadow: 0 0 15px #f72585, 0 0 30px #7209b7; line-height: 1.1; }
+#stage[data-style="psychedelic-60s"] .lead { color: #ffb703; font-size: 1.15rem; }
+#stage[data-style="psychedelic-60s"] .btn { border-radius: 9999px; font-weight: 700; transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.2s; }
+#stage[data-style="psychedelic-60s"] .btn-primary { background: linear-gradient(90deg, #f72585, #ff6b35); color: #ffffff; border: none; box-shadow: 0 0 18px rgba(247, 37, 133, 0.6); }
+#stage[data-style="psychedelic-60s"] .btn-primary:hover { transform: scale(1.06) rotate(1.5deg); box-shadow: 0 0 25px #06d6a0; }
+#stage[data-style="psychedelic-60s"] .btn-secondary { background: rgba(255, 209, 102, 0.15); border: 2px solid #ffd166; color: #ffd166; }
+#stage[data-style="psychedelic-60s"] .btn-ghost { color: #f72585; border: 1px solid rgba(247, 37, 133, 0.5); }
+#stage[data-style="psychedelic-60s"] .card, #stage[data-style="psychedelic-60s"] .panel { background: linear-gradient(135deg, rgba(247, 37, 133, 0.15), rgba(114, 9, 183, 0.3)); border: 2px solid #f72585; border-radius: 36px 12px 36px 12px; box-shadow: 0 0 25px rgba(247, 37, 133, 0.35); backdrop-filter: blur(10px); }
+#stage[data-style="psychedelic-60s"] .kpi-value { font-family: var(--font-display); color: #ffd166; text-shadow: 0 0 10px #f72585; }
+#stage[data-style="psychedelic-60s"] .badge { border-radius: 999px; font-weight: 700; background: rgba(247, 37, 133, 0.2); border: 1px solid #f72585; color: #ffd166; }
+#stage[data-style="psychedelic-60s"] .bars i { border-radius: 99px 99px 0 0; background: linear-gradient(to top, #7209b7, #f72585, #ffd166); box-shadow: 0 0 10px #f72585; }
+#stage[data-style="psychedelic-60s"] input[type=text], #stage[data-style="psychedelic-60s"] select { background: rgba(30, 5, 50, 0.8); border: 2px solid #f72585; border-radius: 20px; color: #ffd166; }

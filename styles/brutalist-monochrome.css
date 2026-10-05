@@ -1,33 +1,32 @@
-/* Style: Brutalist Monochrome */
-.theme-brutalist-monochrome {
-  --bg-page: #000000;
-  --text-main: #ffffff;
-  --card-bg: #000000;
-  --border-color: #ffffff;
-
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-}
-
-.theme-brutalist-monochrome .card {
-  background: var(--card-bg);
-  border: 2px solid var(--border-color);
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.theme-brutalist-monochrome .btn-primary {
-  background: #ffffff;
-  color: #000000;
-  border: 2px solid #ffffff;
-  border-radius: 0;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.theme-brutalist-monochrome .btn-primary:hover {
-  background: #000000;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap');
+#stage[data-style="brutalist-monochrome"] {
+  --bg: #000000; --surface: #000000; --surface-2: #111111; --fg: #ffffff; --muted: #aaaaaa;
+  --accent: #ffffff; --accent-fg: #000000; --border: #ffffff;
+  --ok: #ffffff; --warn: #ffffff; --danger: #ffffff;
+  --radius: 0px; --radius-sm: 0px; --shadow: none;
+  --font-body: 'Inter', sans-serif; --font-display: 'Inter', sans-serif; --font-mono: 'Space Mono', monospace;
+  background-color: #000000;
   color: #ffffff;
 }
+#stage[data-style="brutalist-monochrome"] .app { border-left: 1px solid #ffffff; border-right: 1px solid #ffffff; }
+#stage[data-style="brutalist-monochrome"] .topbar { border-bottom: 2px solid #ffffff; padding: 14px 0; }
+#stage[data-style="brutalist-monochrome"] .brand { font-family: var(--font-mono); text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; }
+#stage[data-style="brutalist-monochrome"] .brand-mark { background: #ffffff; border-radius: 0; }
+#stage[data-style="brutalist-monochrome"] .nav a { font-family: var(--font-mono); text-transform: uppercase; font-size: 0.85rem; border: 1px solid transparent; }
+#stage[data-style="brutalist-monochrome"] .nav a:hover { border-color: #ffffff; }
+#stage[data-style="brutalist-monochrome"] .nav a.is-active { background: #ffffff; color: #000000; }
+#stage[data-style="brutalist-monochrome"] .eyebrow { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.2em; color: #ffffff; }
+#stage[data-style="brutalist-monochrome"] .display { font-size: clamp(2.5rem, 6.5vw, 4.5rem); font-weight: 900; letter-spacing: -0.04em; text-transform: uppercase; border-bottom: 2px solid #ffffff; padding-bottom: 20px; }
+#stage[data-style="brutalist-monochrome"] .lead { font-family: var(--font-mono); color: #cccccc; border-left: 2px solid #ffffff; padding-left: 14px; }
+#stage[data-style="brutalist-monochrome"] .btn { font-family: var(--font-mono); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 0; border: 2px solid #ffffff; }
+#stage[data-style="brutalist-monochrome"] .btn-primary { background: #ffffff; color: #000000; }
+#stage[data-style="brutalist-monochrome"] .btn-primary:hover { background: #000000; color: #ffffff; }
+#stage[data-style="brutalist-monochrome"] .btn-secondary { background: transparent; color: #ffffff; }
+#stage[data-style="brutalist-monochrome"] .btn-secondary:hover { background: #ffffff; color: #000000; }
+#stage[data-style="brutalist-monochrome"] .card, #stage[data-style="brutalist-monochrome"] .panel { background: #000000; border: 1px solid #ffffff; border-radius: 0; box-shadow: none; }
+#stage[data-style="brutalist-monochrome"] .kpi-label { font-family: var(--font-mono); text-transform: uppercase; }
+#stage[data-style="brutalist-monochrome"] .kpi-value { font-family: var(--font-mono); font-size: 2.8rem; font-weight: 700; }
+#stage[data-style="brutalist-monochrome"] .badge { border: 1px solid #ffffff; border-radius: 0; background: transparent; color: #ffffff; font-family: var(--font-mono); }
+#stage[data-style="brutalist-monochrome"] .bars { border-bottom: 2px solid #ffffff; }
+#stage[data-style="brutalist-monochrome"] .bars i { border-radius: 0; background: #ffffff; border: 1px solid #000000; }
+#stage[data-style="brutalist-monochrome"] input[type=text], #stage[data-style="brutalist-monochrome"] select { background: #000000; border: 1px solid #ffffff; border-radius: 0; color: #ffffff; font-family: var(--font-mono); }

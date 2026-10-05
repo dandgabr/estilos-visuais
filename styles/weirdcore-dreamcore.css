@@ -1,30 +1,23 @@
-/* Style: Weirdcore & Liminal Dreamcore */
-.theme-weirdcore-dreamcore {
-  --bg-page: #161814;
-  --text-main: #d9d5c7;
-  --void-red: #ff2a2a;
-
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  font-family: 'Times New Roman', serif;
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Times+New+Roman&display=swap');
+#stage[data-style="weirdcore-dreamcore"] {
+  --bg: #161814; --surface: #11120f; --surface-2: #1e201b; --fg: #d9d5c7; --muted: #7d8273;
+  --accent: #ff2a2a; --accent-fg: #ffffff; --border: #383a34;
+  --ok: #47a060; --warn: #d49520; --danger: #ff2a2a;
+  --radius: 0; --radius-sm: 0; --shadow: 0 0 15px rgba(255, 42, 42, 0.15);
+  --font-body: 'Times New Roman', serif; --font-display: 'Times New Roman', serif; --font-mono: 'Courier Prime', monospace;
+  background-color: var(--bg);
+  color: var(--fg);
 }
-
-.theme-weirdcore-dreamcore .card {
-  background: #11120f;
-  border: 1px solid #383a34;
-  box-shadow: 0 0 15px rgba(255, 42, 42, 0.15);
-  border-radius: 0;
-}
-
-.theme-weirdcore-dreamcore .btn-primary {
-  background: #22241f;
-  color: var(--void-red);
-  border: 1px solid var(--void-red);
-  border-radius: 0;
-  font-weight: bold;
-}
-
-.theme-weirdcore-dreamcore .btn-primary:hover {
-  background: var(--void-red);
-  color: #ffffff;
-}
+#stage[data-style="weirdcore-dreamcore"] .topbar { border: 1px solid #383a34; background: #11120f; padding: 12px 16px; margin-top: 14px; }
+#stage[data-style="weirdcore-dreamcore"] .brand { font-family: var(--font-mono); color: #ff2a2a; font-size: 1.15rem; text-shadow: 0 0 8px rgba(255, 42, 42, 0.6); }
+#stage[data-style="weirdcore-dreamcore"] .brand-mark { background: #ff2a2a; border-radius: 0; }
+#stage[data-style="weirdcore-dreamcore"] .nav a { font-family: var(--font-mono); color: #d9d5c7; font-size: 0.85rem; }
+#stage[data-style="weirdcore-dreamcore"] .nav a.is-active { background: #ff2a2a; color: #ffffff; }
+#stage[data-style="weirdcore-dreamcore"] .display { font-size: clamp(2.4rem, 6vw, 4rem); font-style: italic; color: #d9d5c7; text-shadow: 2px 2px 0 #ff2a2a; }
+#stage[data-style="weirdcore-dreamcore"] .btn { border-radius: 0; font-family: var(--font-mono); border: 1px solid #ff2a2a; }
+#stage[data-style="weirdcore-dreamcore"] .btn-primary { background: #22241f; color: #ff2a2a; font-weight: bold; }
+#stage[data-style="weirdcore-dreamcore"] .btn-primary:hover { background: #ff2a2a; color: #ffffff; }
+#stage[data-style="weirdcore-dreamcore"] .card, #stage[data-style="weirdcore-dreamcore"] .panel { background: #11120f; border: 1px solid #383a34; box-shadow: 0 0 15px rgba(255, 42, 42, 0.15); border-radius: 0; }
+#stage[data-style="weirdcore-dreamcore"] .kpi-value { font-size: 2.8rem; font-family: var(--font-mono); color: #ff2a2a; }
+#stage[data-style="weirdcore-dreamcore"] .badge { border: 1px solid #383a34; border-radius: 0; background: #1e201b; font-family: var(--font-mono); }
+#stage[data-style="weirdcore-dreamcore"] .bars i { border-radius: 0; background: #ff2a2a; }

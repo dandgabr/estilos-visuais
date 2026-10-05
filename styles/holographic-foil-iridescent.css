@@ -1,31 +1,22 @@
-/* Style: Holographic Foil & Iridescent Chrome */
-.theme-holographic-foil-iridescent {
-  --bg-page: #0f1016;
-  --text-main: #ffffff;
-
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  font-family: 'Syne', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap');
+#stage[data-style="holographic-foil-iridescent"] {
+  --bg: #0f1016; --surface: rgba(255, 255, 255, 0.08); --surface-2: rgba(255, 255, 255, 0.14); --fg: #ffffff; --muted: #a0a5b8;
+  --accent: #8ec5fc; --accent-fg: #0f1016; --border: rgba(255, 255, 255, 0.3);
+  --ok: #6ee7b7; --warn: #fde047; --danger: #fca5a5;
+  --radius: 20px; --radius-sm: 12px; --shadow: 0 8px 32px rgba(142, 197, 252, 0.25);
+  --font-body: 'Plus Jakarta Sans', sans-serif; --font-display: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, rgba(224, 195, 252, 0.15), transparent 70%);
+  color: var(--fg);
 }
-
-.theme-holographic-foil-iridescent .card {
-  background: linear-gradient(135deg, rgba(224, 195, 252, 0.15), rgba(142, 197, 252, 0.15));
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(142, 197, 252, 0.25);
-  backdrop-filter: blur(12px);
-}
-
-.theme-holographic-foil-iridescent .btn-primary {
-  background: linear-gradient(135deg, #e0c3fc, #8ec5fc, #fbc2eb);
-  color: #0f1016;
-  border: none;
-  border-radius: 14px;
-  font-weight: 800;
-  box-shadow: 0 4px 15px rgba(224, 195, 252, 0.4);
-}
-
-.theme-holographic-foil-iridescent .btn-primary:hover {
-  filter: brightness(1.1);
-  transform: translateY(-2px);
-}
+#stage[data-style="holographic-foil-iridescent"] .topbar { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 999px; padding: 10px 24px; margin-top: 14px; }
+#stage[data-style="holographic-foil-iridescent"] .brand { font-weight: 800; background: linear-gradient(135deg, #e0c3fc, #8ec5fc, #fbc2eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+#stage[data-style="holographic-foil-iridescent"] .brand-mark { background: linear-gradient(135deg, #e0c3fc, #8ec5fc, #fbc2eb); border-radius: 50%; box-shadow: 0 0 10px rgba(142, 197, 252, 0.5); }
+#stage[data-style="holographic-foil-iridescent"] .nav a.is-active { background: linear-gradient(135deg, #e0c3fc, #8ec5fc); color: #0f1016; font-weight: 700; border-radius: 99px; }
+#stage[data-style="holographic-foil-iridescent"] .display { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 800; background: linear-gradient(135deg, #ffffff 40%, #8ec5fc 70%, #fbc2eb 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+#stage[data-style="holographic-foil-iridescent"] .btn { border-radius: 14px; font-weight: 700; }
+#stage[data-style="holographic-foil-iridescent"] .btn-primary { background: linear-gradient(135deg, #e0c3fc, #8ec5fc, #fbc2eb); color: #0f1016; border: none; box-shadow: 0 4px 15px rgba(224, 195, 252, 0.4); }
+#stage[data-style="holographic-foil-iridescent"] .card, #stage[data-style="holographic-foil-iridescent"] .panel { background: linear-gradient(135deg, rgba(224, 195, 252, 0.12), rgba(142, 197, 252, 0.12)); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 20px; box-shadow: 0 8px 32px rgba(142, 197, 252, 0.25); backdrop-filter: blur(12px); }
+#stage[data-style="holographic-foil-iridescent"] .kpi-value { font-size: 2.8rem; font-weight: 800; background: linear-gradient(135deg, #8ec5fc, #fbc2eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+#stage[data-style="holographic-foil-iridescent"] .badge { border-radius: 99px; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.3); color: #ffffff; }
+#stage[data-style="holographic-foil-iridescent"] .bars i { border-radius: 10px 10px 0 0; background: linear-gradient(to top, #8ec5fc, #e0c3fc); }

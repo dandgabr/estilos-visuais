@@ -1,32 +1,26 @@
-/* Style: Kinetic Marquee & High-Density Ticker */
-.theme-kinetic-marquee-ticker {
-  --bg-page: #0a0a0a;
-  --text-main: #ffffff;
-  --ticker-yellow: #ffe600;
-  --ticker-orange: #ff5500;
-
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  font-family: 'Space Mono', 'Monument Extended', monospace, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+#stage[data-style="kinetic-marquee-ticker"] {
+  --bg: #0a0a0a; --surface: #141414; --surface-2: #222222; --fg: #ffffff; --muted: #888888;
+  --accent: #ffe600; --accent-fg: #000000; --border: #ffe600;
+  --ok: #00f0ff; --warn: #ff5500; --danger: #ff0055;
+  --radius: 0; --radius-sm: 0; --shadow: 4px 4px 0 0 #ffe600;
+  --font-body: 'Space Mono', monospace; --font-display: 'Space Mono', monospace;
+  background-color: var(--bg);
+  color: var(--fg);
 }
-
-.theme-kinetic-marquee-ticker .card {
-  background: #141414;
-  border: 2px solid var(--ticker-yellow);
-  border-radius: 0;
-  box-shadow: 4px 4px 0 var(--ticker-yellow);
-}
-
-.theme-kinetic-marquee-ticker .btn-primary {
-  background: var(--ticker-yellow);
-  color: #000000;
-  border: 2px solid #000000;
-  border-radius: 0;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.theme-kinetic-marquee-ticker .btn-primary:hover {
-  background: var(--ticker-orange);
-  color: #ffffff;
-}
+#stage[data-style="kinetic-marquee-ticker"] .topbar { border-bottom: 2px solid #ffe600; background: #141414; padding: 12px 0; }
+#stage[data-style="kinetic-marquee-ticker"] .brand { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.15em; color: #ffe600; text-transform: uppercase; }
+#stage[data-style="kinetic-marquee-ticker"] .brand-mark { background: #ffe600; border-radius: 0; }
+#stage[data-style="kinetic-marquee-ticker"] .nav a { text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.1em; border: 1px solid transparent; }
+#stage[data-style="kinetic-marquee-ticker"] .nav a:hover { border-color: #ffe600; color: #ffe600; }
+#stage[data-style="kinetic-marquee-ticker"] .nav a.is-active { background: #ffe600; color: #000000; font-weight: bold; }
+#stage[data-style="kinetic-marquee-ticker"] .display { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #ffffff; border-left: 6px solid #ffe600; padding-left: 16px; }
+#stage[data-style="kinetic-marquee-ticker"] .lead { color: #aaaaaa; border-bottom: 1px solid #333333; padding-bottom: 14px; }
+#stage[data-style="kinetic-marquee-ticker"] .btn { border-radius: 0; text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; border: 2px solid #ffe600; }
+#stage[data-style="kinetic-marquee-ticker"] .btn-primary { background: #ffe600; color: #000000; box-shadow: 4px 4px 0 #ffffff; }
+#stage[data-style="kinetic-marquee-ticker"] .btn-primary:hover { background: #ff5500; border-color: #ff5500; color: #ffffff; }
+#stage[data-style="kinetic-marquee-ticker"] .card, #stage[data-style="kinetic-marquee-ticker"] .panel { background: #141414; border: 2px solid #ffe600; border-radius: 0; box-shadow: 4px 4px 0 #ffe600; }
+#stage[data-style="kinetic-marquee-ticker"] .kpi-value { font-size: 2.8rem; font-weight: 700; color: #ffe600; }
+#stage[data-style="kinetic-marquee-ticker"] .badge { border-radius: 0; border: 1px solid #ffe600; background: transparent; color: #ffe600; font-weight: 700; }
+#stage[data-style="kinetic-marquee-ticker"] .bars { border-bottom: 2px solid #ffe600; }
+#stage[data-style="kinetic-marquee-ticker"] .bars i { border-radius: 0; background: #ffe600; }

@@ -1,31 +1,25 @@
-/* Style: Fluid Liquid & Metaball Morph */
-.theme-fluid-liquid-morph {
-  --bg-page: #0f0a1c;
-  --text-main: #f0e6ff;
-  --liquid-coral: #ff5e7e;
-  --liquid-violet: #845ec2;
-
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  font-family: 'Cabinet Grotesk', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+#stage[data-style="fluid-liquid-morph"] {
+  --bg: #0f0a1c; --surface: rgba(132, 94, 194, 0.15); --surface-2: rgba(255, 94, 126, 0.15); --fg: #f0e6ff; --muted: #a393bf;
+  --accent: #ff5e7e; --accent-fg: #ffffff; --border: rgba(255, 94, 126, 0.35);
+  --ok: #00c9a7; --warn: #ffc75f; --danger: #ff5e7e;
+  --radius: 28px; --radius-sm: 16px; --shadow: 0 12px 30px rgba(132, 94, 194, 0.25);
+  --font-body: 'Plus Jakarta Sans', sans-serif; --font-display: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg);
+  background-image: radial-gradient(circle at 20% 80%, rgba(255, 94, 126, 0.12), transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(132, 94, 194, 0.15), transparent 50%);
+  color: var(--fg);
 }
-
-.theme-fluid-liquid-morph .card {
-  background: linear-gradient(135deg, rgba(255, 94, 126, 0.12), rgba(132, 94, 194, 0.12));
-  border: 1px solid rgba(255, 94, 126, 0.3);
-  border-radius: 32px;
-  box-shadow: 0 12px 30px rgba(132, 94, 194, 0.2);
-}
-
-.theme-fluid-liquid-morph .btn-primary {
-  background: linear-gradient(90deg, var(--liquid-coral), var(--liquid-violet));
-  color: #ffffff;
-  border: none;
-  border-radius: 9999px;
-  font-weight: 700;
-  box-shadow: 0 6px 20px rgba(255, 94, 126, 0.4);
-}
-
-.theme-fluid-liquid-morph .btn-primary:hover {
-  transform: scale(1.05);
-}
+#stage[data-style="fluid-liquid-morph"] .topbar { background: rgba(25, 15, 45, 0.8); border: 1px solid var(--border); border-radius: 99px; padding: 10px 24px; margin-top: 14px; backdrop-filter: blur(12px); }
+#stage[data-style="fluid-liquid-morph"] .brand { font-weight: 800; color: #ff5e7e; }
+#stage[data-style="fluid-liquid-morph"] .brand-mark { background: linear-gradient(135deg, #ff5e7e, #845ec2); border-radius: 50%; box-shadow: 0 0 12px rgba(255, 94, 126, 0.5); }
+#stage[data-style="fluid-liquid-morph"] .nav a { font-weight: 700; border-radius: 99px; color: #f0e6ff; }
+#stage[data-style="fluid-liquid-morph"] .nav a.is-active { background: linear-gradient(90deg, #ff5e7e, #845ec2); color: #ffffff; }
+#stage[data-style="fluid-liquid-morph"] .display { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 800; color: #ffffff; letter-spacing: -0.02em; }
+#stage[data-style="fluid-liquid-morph"] .btn { border-radius: 9999px; font-weight: 700; transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1); }
+#stage[data-style="fluid-liquid-morph"] .btn-primary { background: linear-gradient(90deg, #ff5e7e, #845ec2); color: #ffffff; border: none; box-shadow: 0 6px 20px rgba(255, 94, 126, 0.4); }
+#stage[data-style="fluid-liquid-morph"] .btn-primary:hover { transform: scale(1.06); }
+#stage[data-style="fluid-liquid-morph"] .card, #stage[data-style="fluid-liquid-morph"] .panel { background: linear-gradient(135deg, rgba(255, 94, 126, 0.12), rgba(132, 94, 194, 0.15)); border: 1px solid var(--border); border-radius: 32px; box-shadow: 0 12px 30px rgba(132, 94, 194, 0.25); backdrop-filter: blur(10px); }
+#stage[data-style="fluid-liquid-morph"] .kpi-value { font-size: 2.8rem; font-weight: 800; color: #ff5e7e; }
+#stage[data-style="fluid-liquid-morph"] .badge { border-radius: 99px; background: rgba(255, 94, 126, 0.2); border: 1px solid #ff5e7e; color: #f0e6ff; }
+#stage[data-style="fluid-liquid-morph"] .bars i { border-radius: 99px 99px 0 0; background: linear-gradient(to top, #845ec2, #ff5e7e); box-shadow: 0 0 10px rgba(255, 94, 126, 0.3); }

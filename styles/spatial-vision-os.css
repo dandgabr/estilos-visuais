@@ -1,36 +1,25 @@
-/* Style: Spatial UI & VisionOS Elevation */
-.theme-spatial-vision-os {
-  --bg-page: #14171f;
-  --text-main: #f5f5f7;
-  --glass-bg: rgba(255, 255, 255, 0.12);
-  --glass-border: rgba(255, 255, 255, 0.25);
-
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+#stage[data-style="spatial-vision-os"] {
+  --bg: #0e1017; --surface: rgba(255, 255, 255, 0.10); --surface-2: rgba(255, 255, 255, 0.18); --fg: #f5f5f7; --muted: #a1a1a6;
+  --accent: #2997ff; --accent-fg: #ffffff; --border: rgba(255, 255, 255, 0.22);
+  --ok: #30d158; --warn: #ffd60a; --danger: #ff453a;
+  --radius: 24px; --radius-sm: 14px; --shadow: 0 20px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif; --font-display: 'Plus Jakarta Sans', sans-serif;
   background: radial-gradient(circle at 50% 20%, #202738, #0e1017);
-  color: var(--text-main);
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  color: var(--fg);
 }
-
-.theme-spatial-vision-os .card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(35px) saturate(190%);
-  -webkit-backdrop-filter: blur(35px) saturate(190%);
-  border: 1px solid var(--glass-border);
-  border-top-color: rgba(255, 255, 255, 0.5);
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-}
-
-.theme-spatial-vision-os .btn-primary {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 9999px;
-  font-weight: 600;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.theme-spatial-vision-os .btn-primary:hover {
-  background: rgba(255, 255, 255, 0.35);
-  transform: translateY(-2px);
-}
+#stage[data-style="spatial-vision-os"] .topbar { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(30px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 999px; padding: 10px 24px; margin-top: 14px; }
+#stage[data-style="spatial-vision-os"] .brand { font-weight: 700; color: #ffffff; }
+#stage[data-style="spatial-vision-os"] .brand-mark { background: linear-gradient(135deg, #2997ff, #5ac8fa); border-radius: 50%; box-shadow: 0 0 12px rgba(41, 151, 255, 0.5); }
+#stage[data-style="spatial-vision-os"] .nav a { font-weight: 500; border-radius: 99px; color: #f5f5f7; transition: background 0.2s; }
+#stage[data-style="spatial-vision-os"] .nav a:hover { background: rgba(255, 255, 255, 0.15); }
+#stage[data-style="spatial-vision-os"] .nav a.is-active { background: rgba(255, 255, 255, 0.25); color: #ffffff; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4); }
+#stage[data-style="spatial-vision-os"] .display { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 700; color: #ffffff; letter-spacing: -0.02em; }
+#stage[data-style="spatial-vision-os"] .lead { color: #a1a1a6; font-size: 1.15rem; }
+#stage[data-style="spatial-vision-os"] .btn { border-radius: 9999px; font-weight: 600; transition: transform 0.2s, background 0.2s; }
+#stage[data-style="spatial-vision-os"] .btn-primary { background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(20px); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+#stage[data-style="spatial-vision-os"] .btn-primary:hover { background: rgba(255, 255, 255, 0.35); transform: translateY(-2px); }
+#stage[data-style="spatial-vision-os"] .card, #stage[data-style="spatial-vision-os"] .panel { background: var(--surface); backdrop-filter: blur(35px) saturate(190%); -webkit-backdrop-filter: blur(35px) saturate(190%); border: 1px solid var(--border); border-top-color: rgba(255, 255, 255, 0.45); border-radius: var(--radius); box-shadow: var(--shadow); }
+#stage[data-style="spatial-vision-os"] .kpi-value { font-size: 2.6rem; font-weight: 700; color: #ffffff; }
+#stage[data-style="spatial-vision-os"] .badge { border-radius: 99px; background: rgba(255, 255, 255, 0.12); border: 1px solid rgba(255, 255, 255, 0.2); color: #f5f5f7; }
+#stage[data-style="spatial-vision-os"] .bars i { border-radius: 99px 99px 0 0; background: linear-gradient(to top, rgba(41, 151, 255, 0.3), #2997ff); box-shadow: 0 0 12px rgba(41, 151, 255, 0.4); }

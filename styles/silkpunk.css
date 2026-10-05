@@ -1,33 +1,25 @@
-/* Style: Silkpunk & Organic Engineering */
-.theme-silkpunk {
-  --bg-page: #f5efe0;
-  --text-main: #1d2a44;
-  --vermilion: #c3272b;
-  --brass: #c9a050;
-  --bamboo: #6a8d73;
-
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  font-family: 'Noto Serif', serif;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap');
+#stage[data-style="silkpunk"] {
+  --bg: #f5efe0; --surface: #fbf7ee; --surface-2: #ede3ce; --fg: #1d2a44; --muted: #536485;
+  --accent: #c3272b; --accent-fg: #ffffff; --border: #c9a050;
+  --ok: #2e6b48; --warn: #c9a050; --danger: #c3272b;
+  --radius: 8px; --radius-sm: 4px; --shadow: 0 6px 18px rgba(195, 39, 43, 0.08);
+  --font-body: 'Noto Serif', serif; --font-display: 'Cinzel', serif;
+  background-color: var(--bg);
+  color: var(--fg);
 }
-
-.theme-silkpunk .card {
-  background: #fbf7ee;
-  border: 2px solid var(--brass);
-  border-radius: 6px;
-  box-shadow: 0 6px 18px rgba(195, 39, 43, 0.08);
-}
-
-.theme-silkpunk .btn-primary {
-  background: linear-gradient(to right, var(--vermilion), #a11d20);
-  color: #ffffff;
-  border: 1px solid var(--brass);
-  border-radius: 4px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-}
-
-.theme-silkpunk .btn-primary:hover {
-  background: var(--brass);
-  color: #111111;
-}
+#stage[data-style="silkpunk"] .topbar { border-bottom: 2px solid #c9a050; background: #fbf7ee; padding: 12px 0; }
+#stage[data-style="silkpunk"] .brand { font-family: var(--font-display); font-size: 1.4rem; color: #c3272b; letter-spacing: 0.08em; }
+#stage[data-style="silkpunk"] .brand-mark { background: #c3272b; border: 2px solid #c9a050; transform: rotate(45deg); border-radius: 0; }
+#stage[data-style="silkpunk"] .nav a { font-family: var(--font-display); font-weight: 600; letter-spacing: 0.06em; }
+#stage[data-style="silkpunk"] .nav a:hover { color: #c3272b; }
+#stage[data-style="silkpunk"] .nav a.is-active { background: #c3272b; color: #ffffff; border-radius: 4px; }
+#stage[data-style="silkpunk"] .display { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 800; color: #1d2a44; border-bottom: 2px solid #c9a050; padding-bottom: 16px; }
+#stage[data-style="silkpunk"] .lead { font-style: italic; color: #536485; border-left: 3px solid #c3272b; padding-left: 14px; }
+#stage[data-style="silkpunk"] .btn { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.08em; border-radius: 4px; transition: all 0.2s; }
+#stage[data-style="silkpunk"] .btn-primary { background: linear-gradient(135deg, #c3272b, #8f171a); color: #ffffff; border: 1px solid #c9a050; box-shadow: 0 4px 12px rgba(195, 39, 43, 0.2); }
+#stage[data-style="silkpunk"] .btn-primary:hover { background: #c9a050; color: #1d2a44; border-color: #1d2a44; }
+#stage[data-style="silkpunk"] .card, #stage[data-style="silkpunk"] .panel { background: #fbf7ee; border: 2px solid #c9a050; border-radius: 6px; box-shadow: 0 6px 18px rgba(195, 39, 43, 0.08); }
+#stage[data-style="silkpunk"] .kpi-value { font-family: var(--font-display); font-size: 2.6rem; color: #c3272b; }
+#stage[data-style="silkpunk"] .badge { border: 1px solid #c9a050; border-radius: 4px; background: #ede3ce; font-family: var(--font-display); }
+#stage[data-style="silkpunk"] .bars i { border-radius: 4px 4px 0 0; background: linear-gradient(to top, #c3272b, #c9a050); }

@@ -1,32 +1,24 @@
-/* Style: Brutalist Data-Dense & Terminal Console */
-.theme-brutalist-data-dense {
-  --bg-page: #0c0d0e;
-  --text-main: #e1e4e8;
-  --terminal-amber: #ff9e00;
-  --terminal-green: #00e676;
-
-  background-color: var(--bg-page);
-  color: var(--text-main);
-  font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+#stage[data-style="brutalist-data-dense"] {
+  --bg: #0c0d0e; --surface: #121417; --surface-2: #191c21; --fg: #e1e4e8; --muted: #768390;
+  --accent: #ff9e00; --accent-fg: #000000; --border: #282e38;
+  --ok: #00e676; --warn: #ff9e00; --danger: #ff1744;
+  --radius: 0; --radius-sm: 0; --shadow: none;
+  --gap: 8px; --pad: 12px;
+  --font-body: 'JetBrains Mono', monospace; --font-display: 'JetBrains Mono', monospace;
   font-size: 13px;
+  background-color: var(--bg);
+  color: var(--fg);
 }
-
-.theme-brutalist-data-dense .card {
-  background: #121417;
-  border: 1px solid #282e38;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.theme-brutalist-data-dense .btn-primary {
-  background: var(--terminal-amber);
-  color: #000000;
-  border: none;
-  border-radius: 0;
-  font-weight: 700;
-  font-size: 12px;
-}
-
-.theme-brutalist-data-dense .btn-primary:hover {
-  background: var(--terminal-green);
-}
+#stage[data-style="brutalist-data-dense"] .topbar { border-bottom: 2px solid #282e38; padding: 8px 0; }
+#stage[data-style="brutalist-data-dense"] .brand { font-size: 1.1rem; color: #ff9e00; font-weight: 700; }
+#stage[data-style="brutalist-data-dense"] .brand-mark { background: #ff9e00; border-radius: 0; }
+#stage[data-style="brutalist-data-dense"] .nav a { font-size: 0.8rem; border-radius: 0; }
+#stage[data-style="brutalist-data-dense"] .nav a.is-active { background: #ff9e00; color: #000000; font-weight: 700; }
+#stage[data-style="brutalist-data-dense"] .display { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 700; letter-spacing: -0.02em; }
+#stage[data-style="brutalist-data-dense"] .btn { border-radius: 0; font-size: 0.85rem; font-weight: 700; border: 1px solid #282e38; }
+#stage[data-style="brutalist-data-dense"] .btn-primary { background: #ff9e00; color: #000000; border: none; }
+#stage[data-style="brutalist-data-dense"] .card, #stage[data-style="brutalist-data-dense"] .panel { background: #121417; border: 1px solid #282e38; border-radius: 0; box-shadow: none; }
+#stage[data-style="brutalist-data-dense"] .kpi-value { font-size: 2.2rem; font-weight: 700; color: #00e676; }
+#stage[data-style="brutalist-data-dense"] .badge { border-radius: 0; font-size: 0.75rem; background: #191c21; border: 1px solid #282e38; }
+#stage[data-style="brutalist-data-dense"] .bars i { border-radius: 0; background: #00e676; }
