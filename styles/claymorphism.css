@@ -21,8 +21,15 @@
 #stage[data-style="claymorphism"] .btn-ghost{background:#fff}
 #stage[data-style="claymorphism"] :focus-visible{outline:4px solid #3b2a4a;outline-offset:3px}
 #stage[data-style="claymorphism"] .section-title{font-weight:600}
-#stage[data-style="claymorphism"] .card,#stage[data-style="claymorphism"] .panel{border:0;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
-#stage[data-style="claymorphism"] .card:hover{transform:translateY(-4px) rotate(-.5deg)}
+#stage[data-style="claymorphism"] .card,#stage[data-style="claymorphism"] .panel{
+  border:0;
+  border-radius:32px 24px 30px 26px;
+  transition:transform .25s steps(4), box-shadow .2s ease;
+}
+#stage[data-style="claymorphism"] .card:hover{
+  transform:translateY(-4px) rotate(-.8deg);
+  box-shadow:12px 16px 26px rgba(120,70,40,.22),inset -6px -8px 14px rgba(120,70,40,.15),inset 6px 8px 14px rgba(255,255,255,.95);
+}
 #stage[data-style="claymorphism"] .kpis .card:nth-child(1){background:#d7f3e3}
 #stage[data-style="claymorphism"] .kpis .card:nth-child(2){background:#ffe6a8}
 #stage[data-style="claymorphism"] .kpis .card:nth-child(3){background:#dcd1ff}

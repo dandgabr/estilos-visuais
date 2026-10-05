@@ -24,11 +24,11 @@
 #stage[data-style="skeuomorphism"] .display{font-weight:700;text-shadow:0 1px 0 rgba(255,255,255,.7)}
 #stage[data-style="skeuomorphism"] .eyebrow{color:#7a2318}
 #stage[data-style="skeuomorphism"] .lead{color:#3c2c1a}
-#stage[data-style="skeuomorphism"] .btn{border-radius:8px;font-weight:700;border:1px solid rgba(0,0,0,.5);text-shadow:0 1px 0 rgba(255,255,255,.5);box-shadow:0 2px 3px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.8);background:linear-gradient(#fdfdfd,#cfcfcf);color:#222;transition:filter .1s}
-#stage[data-style="skeuomorphism"] .btn:hover{filter:brightness(1.06)}
-#stage[data-style="skeuomorphism"] .btn:active{box-shadow:inset 0 3px 6px rgba(0,0,0,.5);transform:translateY(1px)}
-#stage[data-style="skeuomorphism"] .btn-primary{background:linear-gradient(#5aa2ea,#2a64a8 55%,#1f528d);color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,.6);border-color:#143a66;box-shadow:0 2px 3px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.6)}
-#stage[data-style="skeuomorphism"] .btn-secondary{background:linear-gradient(#f6f1e4,#cfc4a8)}
+#stage[data-style="skeuomorphism"] .btn{border-radius:999px;font-weight:700;border:1px solid rgba(0,0,0,.5);text-shadow:0 1px 0 rgba(255,255,255,.5);box-shadow:0 3px 6px rgba(0,0,0,.35),inset 0 1px 2px rgba(255,255,255,.9),inset 0 -1px 2px rgba(0,0,0,.25);background:linear-gradient(180deg,#fcfcfc 0%,#e0e0e0 50%,#cccccc 51%,#dcdcdc 100%);color:#222;transition:filter .1s,transform .1s}
+#stage[data-style="skeuomorphism"] .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+#stage[data-style="skeuomorphism"] .btn:active{box-shadow:inset 0 3px 6px rgba(0,0,0,.6);transform:translateY(1px)}
+#stage[data-style="skeuomorphism"] .btn-primary{background:linear-gradient(180deg,#6bb6ff 0%,#2a64a8 50%,#19508d 51%,#235f9e 100%);color:#fff;text-shadow:0 -1px 1px rgba(0,0,0,.7);border-color:#103459;box-shadow:0 3px 8px rgba(0,0,0,.4),inset 0 1px 2px rgba(255,255,255,.8),inset 0 -1px 2px rgba(0,0,0,.4)}
+#stage[data-style="skeuomorphism"] .btn-secondary{background:linear-gradient(180deg,#fcf8f0 0%,#e8dec7 50%,#d8cca8 51%,#e2d7ba 100%);border-color:#826c48}
 #stage[data-style="skeuomorphism"] :focus-visible{outline:3px solid #ffd86b;outline-offset:2px}
 #stage[data-style="skeuomorphism"] .section-title{color:#fff;text-shadow:0 -1px 1px rgba(0,0,0,.8),0 1px 0 rgba(255,255,255,.2);font-weight:700;font-family:'Lora',serif;letter-spacing:.02em}
 #stage[data-style="skeuomorphism"] .card,#stage[data-style="skeuomorphism"] .panel{background:linear-gradient(#fbf5e6,#ebdfc2);border:1px solid #6b5230}

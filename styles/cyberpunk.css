@@ -40,7 +40,8 @@
 #stage[data-style="cyberpunk"] .section-title{font-family:var(--font-display);text-transform:uppercase;font-size:1.2rem;letter-spacing:.14em;color:var(--cy);display:flex;align-items:center;gap:12px}
 #stage[data-style="cyberpunk"] .section-title::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
 #stage[data-style="cyberpunk"] .card,#stage[data-style="cyberpunk"] .panel{border:0;clip-path:var(--ch);background:linear-gradient(160deg,#1c1536,#0f0c1d 70%);box-shadow:none;position:relative;border-left:3px solid var(--accent)}
-#stage[data-style="cyberpunk"] .card::after,#stage[data-style="cyberpunk"] .panel::after{content:"";position:absolute;right:0;bottom:0;width:40px;height:2px;background:var(--cy)}
+#stage[data-style="cyberpunk"] .card::before{content:"[SYS.HUD]";position:absolute;top:4px;right:8px;font-family:var(--font-mono);font-size:.62rem;color:var(--cy);opacity:.6;letter-spacing:.15em}
+#stage[data-style="cyberpunk"] .card::after,#stage[data-style="cyberpunk"] .panel::after{content:"";position:absolute;right:0;bottom:0;width:40px;height:2px;background:var(--cy);box-shadow:0 0 8px var(--cy)}
 #stage[data-style="cyberpunk"] .card h3,#stage[data-style="cyberpunk"] .panel h2{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.06em;font-size:1.05rem}
 #stage[data-style="cyberpunk"] .card a{color:var(--cy)}
 #stage[data-style="cyberpunk"] .kpi-label{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em}

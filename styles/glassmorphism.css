@@ -11,9 +11,15 @@
   background-attachment:local;
 }
 #stage[data-style="glassmorphism"] .card,#stage[data-style="glassmorphism"] .panel,#stage[data-style="glassmorphism"] .toast,#stage[data-style="glassmorphism"] .topbar,#stage[data-style="glassmorphism"] dialog{
-  -webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);
+  -webkit-backdrop-filter:blur(30px) saturate(180%);backdrop-filter:blur(30px) saturate(180%);
   background:linear-gradient(135deg,rgba(255,255,255,.26),rgba(255,255,255,.08));
-  border:1px solid rgba(255,255,255,.4);box-shadow:0 8px 32px rgba(15,5,60,.35),inset 0 1px 0 rgba(255,255,255,.5);
+  border:1px solid rgba(255,255,255,.28);border-top:1px solid rgba(255,255,255,.65);
+  box-shadow:0 16px 40px rgba(15,5,60,.4),inset 0 1px 0 rgba(255,255,255,.65);
+}
+#stage[data-style="glassmorphism"] .card:hover,#stage[data-style="glassmorphism"] .panel:hover{
+  transform:translateY(-3px) scale(1.008);
+  box-shadow:0 22px 50px rgba(15,5,60,.5),inset 0 1px 0 rgba(255,255,255,.8);
+  border-top-color:#ffffff;
 }
 #stage[data-style="glassmorphism"] .topbar{border-radius:99px;padding:8px 12px 8px 20px;margin-top:16px}
 #stage[data-style="glassmorphism"] .brand-mark{background:linear-gradient(135deg,#fff,#a5f3fc);border-radius:50%}

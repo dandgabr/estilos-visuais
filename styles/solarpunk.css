@@ -10,19 +10,20 @@
     radial-gradient(circle at 90% 4%,#fff6c8 0 40px,#F2B632 41px 70px,rgba(242,182,50,.28) 71px 130px,transparent 131px),
     radial-gradient(ellipse 80% 30% at 10% 105%,#8CC084 0 60%,transparent 61%),
     radial-gradient(ellipse 60% 25% at 80% 110%,#2F7D4F 0 60%,transparent 61%),
+    radial-gradient(ellipse 40% 15% at 50% 102%,rgba(200,100,59,.18) 0 50%,transparent 51%),
     linear-gradient(180deg,#e6f3f8 0,#FBF6E9 340px,#f4f1d6 100%);
   background-attachment:local;
 }
-#stage[data-style="solarpunk"] .topbar{background:rgba(255,255,255,.8);border-radius:999px;padding:8px 14px 8px 20px;margin-top:14px;box-shadow:var(--shadow);border:2px solid var(--border)}
+#stage[data-style="solarpunk"] .topbar{background:rgba(255,255,255,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:999px;padding:8px 14px 8px 20px;margin-top:14px;box-shadow:var(--shadow);border:2px solid var(--border)}
 #stage[data-style="solarpunk"] .brand{font-family:var(--font-display);font-weight:800;color:var(--accent)}
-#stage[data-style="solarpunk"] .brand-mark{background:linear-gradient(135deg,var(--leaf),var(--accent));border-radius:100% 0 100% 0;transform:rotate(-8deg)}
+#stage[data-style="solarpunk"] .brand-mark{background:linear-gradient(135deg,var(--leaf),var(--accent));border-radius:100% 0 100% 0;transform:rotate(-8deg);box-shadow:inset 0 0 0 2px rgba(255,255,255,.4), 0 2px 8px rgba(47,125,79,.3)}
 #stage[data-style="solarpunk"] .nav a{font-weight:700;border-radius:999px;color:var(--fg)}
 #stage[data-style="solarpunk"] .nav a:hover{background:var(--surface-2)}
 #stage[data-style="solarpunk"] .nav a.is-active{background:var(--accent);color:#fff}
 #stage[data-style="solarpunk"] .eyebrow{color:#8f5a00;font-weight:800;letter-spacing:.18em}
 #stage[data-style="solarpunk"] .eyebrow::before{content:"☀ "}
 #stage[data-style="solarpunk"] .display{font-family:var(--font-display);font-weight:800;color:var(--fg);max-width:14ch}
-#stage[data-style="solarpunk"] .display::after{content:"";display:block;height:10px;width:140px;margin-top:14px;border-radius:99px;background:linear-gradient(90deg,var(--sun),var(--leaf),var(--sky))}
+#stage[data-style="solarpunk"] .display::after{content:"";display:block;height:10px;width:140px;margin-top:14px;border-radius:99px;background:linear-gradient(90deg,var(--sun),var(--leaf),var(--sky),var(--clay))}
 #stage[data-style="solarpunk"] .lead{color:var(--muted)}
 #stage[data-style="solarpunk"] .btn{border-radius:999px;font-weight:800;transition:transform .2s,box-shadow .2s,background .2s}
 #stage[data-style="solarpunk"] .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 0 #1d5535}

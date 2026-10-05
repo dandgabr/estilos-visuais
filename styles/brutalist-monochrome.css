@@ -23,10 +23,11 @@
 #stage[data-style="brutalist-monochrome"] .btn-primary:hover { background: #000000; color: #ffffff; }
 #stage[data-style="brutalist-monochrome"] .btn-secondary { background: transparent; color: #ffffff; }
 #stage[data-style="brutalist-monochrome"] .btn-secondary:hover { background: #ffffff; color: #000000; }
-#stage[data-style="brutalist-monochrome"] .card, #stage[data-style="brutalist-monochrome"] .panel { background: #000000; border: 1px solid #ffffff; border-radius: 0; box-shadow: none; }
-#stage[data-style="brutalist-monochrome"] .kpi-label { font-family: var(--font-mono); text-transform: uppercase; }
+#stage[data-style="brutalist-monochrome"] .card, #stage[data-style="brutalist-monochrome"] .panel { background: #000000; border: 1px solid #ffffff; border-radius: 0; box-shadow: none; position: relative; }
+#stage[data-style="brutalist-monochrome"] .card::before { content: "+"; position: absolute; top: -7px; left: -5px; font-family: var(--font-mono); font-size: 10px; color: #fff; background: #000; line-height: 1; }
+#stage[data-style="brutalist-monochrome"] .kpi-label { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.12em; }
 #stage[data-style="brutalist-monochrome"] .kpi-value { font-family: var(--font-mono); font-size: 2.8rem; font-weight: 700; }
-#stage[data-style="brutalist-monochrome"] .badge { border: 1px solid #ffffff; border-radius: 0; background: transparent; color: #ffffff; font-family: var(--font-mono); }
+#stage[data-style="brutalist-monochrome"] .badge { border: 1px solid #ffffff; border-radius: 0; background: transparent; color: #ffffff; font-family: var(--font-mono); letter-spacing: 0.08em; }
 #stage[data-style="brutalist-monochrome"] .bars { border-bottom: 2px solid #ffffff; }
 #stage[data-style="brutalist-monochrome"] .bars i { border-radius: 0; background: #ffffff; border: 1px solid #000000; }
 #stage[data-style="brutalist-monochrome"] input[type=text], #stage[data-style="brutalist-monochrome"] select { background: #000000; border: 1px solid #ffffff; border-radius: 0; color: #ffffff; font-family: var(--font-mono); }
