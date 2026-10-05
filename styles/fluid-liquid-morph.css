@@ -1,41 +1,203 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
 #stage[data-style="fluid-liquid-morph"] {
-  --bg: #0f0a1c; --surface: rgba(132, 94, 194, 0.15); --surface-2: rgba(255, 94, 126, 0.15); --fg: #f0e6ff; --muted: #a393bf;
+  --bg: #0c0818; --surface: rgba(255, 255, 255, 0.08); --surface-2: rgba(255, 94, 126, 0.14); --fg: #f0e6ff; --muted: #a393bf;
   --accent: #ff5e7e; --accent-fg: #ffffff; --border: rgba(255, 94, 126, 0.35);
   --ok: #00c9a7; --warn: #ffc75f; --danger: #ff5e7e;
   --radius: 28px; --radius-sm: 16px; --shadow: 0 12px 30px rgba(132, 94, 194, 0.25);
   --font-body: 'Plus Jakarta Sans', sans-serif; --font-display: 'Plus Jakarta Sans', sans-serif;
   background-color: var(--bg);
   background-image:
-    radial-gradient(circle at 20% 80%, rgba(255, 94, 126, 0.18), transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(132, 94, 194, 0.22), transparent 50%);
+    radial-gradient(circle at 15% 20%, rgba(255, 94, 126, 0.2), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(132, 94, 194, 0.25), transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(0, 201, 167, 0.1), transparent 60%);
   color: var(--fg);
+  position: relative;
 }
-#stage[data-style="fluid-liquid-morph"] .topbar { background: rgba(25, 15, 45, 0.8); border: 1px solid var(--border); border-radius: 99px; padding: 10px 24px; margin-top: 14px; backdrop-filter: blur(12px); }
+
+/* Canvas dos metaballs dinâmicos interativos */
+#stage[data-style="fluid-liquid-morph"] .fx-liquid-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.85;
+}
+
+#stage[data-style="fluid-liquid-morph"] .app {
+  position: relative;
+  z-index: 1;
+}
+
+#stage[data-style="fluid-liquid-morph"] .topbar {
+  background: rgba(20, 12, 38, 0.75);
+  border: 1px solid rgba(255, 94, 126, 0.4);
+  border-radius: 99px;
+  padding: 10px 24px;
+  margin-top: 14px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(132, 94, 194, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
 #stage[data-style="fluid-liquid-morph"] .brand { font-weight: 800; color: #ff5e7e; }
-#stage[data-style="fluid-liquid-morph"] .brand-mark { background: linear-gradient(135deg, #ff5e7e, #845ec2); border-radius: 50%; box-shadow: 0 0 12px rgba(255, 94, 126, 0.5); }
-#stage[data-style="fluid-liquid-morph"] .nav a { font-weight: 700; border-radius: 99px; color: #f0e6ff; transition: background .2s, transform .2s; }
-#stage[data-style="fluid-liquid-morph"] .nav a:hover { transform: scale(1.05); }
-#stage[data-style="fluid-liquid-morph"] .nav a.is-active { background: linear-gradient(90deg, #ff5e7e, #845ec2); color: #ffffff; }
-#stage[data-style="fluid-liquid-morph"] .display { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 800; color: #ffffff; letter-spacing: -0.02em; }
-#stage[data-style="fluid-liquid-morph"] .btn { border-radius: 9999px; font-weight: 700; transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow .2s; }
-#stage[data-style="fluid-liquid-morph"] .btn-primary { background: linear-gradient(90deg, #ff5e7e, #845ec2); color: #ffffff; border: none; box-shadow: 0 6px 20px rgba(255, 94, 126, 0.4); }
-#stage[data-style="fluid-liquid-morph"] .btn-primary:hover { transform: scale(1.06); box-shadow: 0 8px 25px rgba(255, 94, 126, 0.6); }
-#stage[data-style="fluid-liquid-morph"] .btn-secondary { background: rgba(255,255,255,.08); border: 1px solid var(--border); color: #f0e6ff; }
-#stage[data-style="fluid-liquid-morph"] .btn-secondary:hover { background: rgba(255,255,255,.16); transform: scale(1.04); }
+#stage[data-style="fluid-liquid-morph"] .brand-mark {
+  background: linear-gradient(135deg, #ff5e7e, #845ec2);
+  border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+  box-shadow: 0 0 16px rgba(255, 94, 126, 0.6);
+  animation: flm-morph 5s ease-in-out infinite alternate;
+}
+#stage[data-style="fluid-liquid-morph"] .nav a { font-weight: 700; border-radius: 99px; color: #f0e6ff; transition: all .25s ease; }
+#stage[data-style="fluid-liquid-morph"] .nav a:hover { transform: scale(1.08); background: rgba(255, 255, 255, 0.1); }
+#stage[data-style="fluid-liquid-morph"] .nav a.is-active {
+  background: linear-gradient(90deg, #ff5e7e, #845ec2);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(255, 94, 126, 0.4);
+}
+#stage[data-style="fluid-liquid-morph"] .display {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 40%, #ff5e7e 75%, #845ec2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 16px rgba(255, 94, 126, 0.3));
+}
+
+#stage[data-style="fluid-liquid-morph"] .btn {
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow .25s ease, border-radius .3s ease;
+}
+#stage[data-style="fluid-liquid-morph"] .btn-primary {
+  background: linear-gradient(90deg, #ff5e7e, #845ec2, #ff5e7e);
+  background-size: 200% auto;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 8px 24px rgba(255, 94, 126, 0.45);
+  animation: flm-gradient-flow 4s ease infinite;
+}
+#stage[data-style="fluid-liquid-morph"] .btn-primary:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255, 94, 126, 0.7);
+  border-radius: 20px 30px 20px 30px;
+}
+#stage[data-style="fluid-liquid-morph"] .btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
+  color: #f0e6ff;
+  backdrop-filter: blur(8px);
+}
+#stage[data-style="fluid-liquid-morph"] .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: scale(1.05);
+}
 #stage[data-style="fluid-liquid-morph"] .btn-ghost { color: #ff5e7e; }
-#stage[data-style="fluid-liquid-morph"] .card, #stage[data-style="fluid-liquid-morph"] .panel { background: linear-gradient(135deg, rgba(255, 94, 126, 0.12), rgba(132, 94, 194, 0.15)); border: 1px solid var(--border); border-radius: 32px; box-shadow: 0 12px 30px rgba(132, 94, 194, 0.25); backdrop-filter: blur(10px); transition: border-radius .4s ease, transform .2s ease; }
-#stage[data-style="fluid-liquid-morph"] .card:hover { border-radius: 40px 24px 40px 24px; transform: translateY(-3px); }
-#stage[data-style="fluid-liquid-morph"] .kpi-value { font-size: 2.8rem; font-weight: 800; color: #ff5e7e; }
-#stage[data-style="fluid-liquid-morph"] .badge { border-radius: 99px; background: rgba(255, 94, 126, 0.2); border: 1px solid #ff5e7e; color: #f0e6ff; }
-#stage[data-style="fluid-liquid-morph"] .bars i { border-radius: 99px 99px 0 0; background: linear-gradient(to top, #845ec2, #ff5e7e); box-shadow: 0 0 10px rgba(255, 94, 126, 0.3); }
-#stage[data-style="fluid-liquid-morph"] input[type=text], #stage[data-style="fluid-liquid-morph"] input[type=email], #stage[data-style="fluid-liquid-morph"] select, #stage[data-style="fluid-liquid-morph"] textarea { background: rgba(25, 15, 45, 0.6); border: 1px solid var(--border); border-radius: 20px; color: #f0e6ff; font-family: inherit; }
-#stage[data-style="fluid-liquid-morph"] input:focus, #stage[data-style="fluid-liquid-morph"] textarea:focus, #stage[data-style="fluid-liquid-morph"] select:focus { outline: 2px solid #ff5e7e; box-shadow: 0 0 15px rgba(255,94,126,.5); }
-#stage[data-style="fluid-liquid-morph"] .switch { border-radius: 99px; background: rgba(132, 94, 194, 0.3); border: 1px solid var(--border); }
-#stage[data-style="fluid-liquid-morph"] .switch::after { border-radius: 50%; background: #fff; }
-#stage[data-style="fluid-liquid-morph"] .switch:checked { background: #ff5e7e; }
+
+/* Cards com morfologia orgânica e respiração líquida */
+#stage[data-style="fluid-liquid-morph"] .card,
+#stage[data-style="fluid-liquid-morph"] .panel {
+  background: linear-gradient(135deg, rgba(255, 94, 126, 0.12), rgba(132, 94, 194, 0.16));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top-color: rgba(255, 255, 255, 0.4);
+  border-radius: 36px 24px 36px 24px;
+  box-shadow: 0 12px 35px rgba(15, 5, 35, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: border-radius 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s ease, box-shadow 0.3s ease;
+}
+#stage[data-style="fluid-liquid-morph"] .card:hover,
+#stage[data-style="fluid-liquid-morph"] .panel:hover {
+  border-radius: 24px 44px 24px 44px;
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: 0 20px 45px rgba(132, 94, 194, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+#stage[data-style="fluid-liquid-morph"] .kpi-value {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ff5e7e;
+  text-shadow: 0 0 20px rgba(255, 94, 126, 0.5);
+}
+#stage[data-style="fluid-liquid-morph"] .badge {
+  border-radius: 99px;
+  background: rgba(255, 94, 126, 0.2);
+  border: 1px solid #ff5e7e;
+  color: #f0e6ff;
+  box-shadow: 0 0 10px rgba(255, 94, 126, 0.2);
+}
+#stage[data-style="fluid-liquid-morph"] .bars i {
+  border-radius: 99px 99px 0 0;
+  background: linear-gradient(to top, #845ec2, #ff5e7e, #00c9a7);
+  box-shadow: 0 0 14px rgba(255, 94, 126, 0.4);
+}
+#stage[data-style="fluid-liquid-morph"] input[type=text],
+#stage[data-style="fluid-liquid-morph"] input[type=email],
+#stage[data-style="fluid-liquid-morph"] select,
+#stage[data-style="fluid-liquid-morph"] textarea {
+  background: rgba(20, 12, 38, 0.65);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  color: #f0e6ff;
+  font-family: inherit;
+  backdrop-filter: blur(8px);
+  transition: all .25s ease;
+}
+#stage[data-style="fluid-liquid-morph"] input:focus,
+#stage[data-style="fluid-liquid-morph"] textarea:focus,
+#stage[data-style="fluid-liquid-morph"] select:focus {
+  outline: 2px solid #ff5e7e;
+  border-radius: 28px 16px 28px 16px;
+  box-shadow: 0 0 20px rgba(255, 94, 126, 0.6);
+}
+#stage[data-style="fluid-liquid-morph"] .switch {
+  border-radius: 99px;
+  background: rgba(132, 94, 194, 0.35);
+  border: 1px solid var(--border);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.3);
+}
+#stage[data-style="fluid-liquid-morph"] .switch::after {
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.4);
+  transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+#stage[data-style="fluid-liquid-morph"] .switch:checked {
+  background: linear-gradient(90deg, #ff5e7e, #845ec2);
+}
 #stage[data-style="fluid-liquid-morph"] th { border-bottom: 2px solid var(--border); color: #ff5e7e; }
 #stage[data-style="fluid-liquid-morph"] td { border-bottom: 1px solid rgba(132,94,194,.2); }
-#stage[data-style="fluid-liquid-morph"] tbody tr:hover { background: rgba(255,94,126,.08); }
-#stage[data-style="fluid-liquid-morph"] .toast { background: linear-gradient(90deg, #1b0e35, #2f1345); border: 1px solid #ff5e7e; color: #f0e6ff; border-radius: 99px; box-shadow: 0 8px 24px rgba(255,94,126,.3); }
-#stage[data-style="fluid-liquid-morph"] dialog { background: #150c2a; border: 1px solid var(--border); border-radius: 32px; color: #f0e6ff; box-shadow: 0 16px 40px rgba(0,0,0,.6); }
+#stage[data-style="fluid-liquid-morph"] tbody tr:hover { background: rgba(255,94,126,.12); }
+#stage[data-style="fluid-liquid-morph"] .toast {
+  background: linear-gradient(90deg, #1b0e35, #2f1345);
+  border: 1px solid #ff5e7e;
+  color: #f0e6ff;
+  border-radius: 99px;
+  box-shadow: 0 8px 24px rgba(255,94,126,.4);
+}
+#stage[data-style="fluid-liquid-morph"] dialog {
+  background: #150c2a;
+  border: 1px solid var(--border);
+  border-radius: 40px 24px 40px 24px;
+  color: #f0e6ff;
+  box-shadow: 0 20px 60px rgba(0,0,0,.7);
+}
+
+@keyframes flm-morph {
+  0% { border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%; }
+  50% { border-radius: 40% 60% 45% 55% / 60% 40% 60% 40%; }
+  100% { border-radius: 55% 45% 65% 35% / 45% 55% 40% 60%; }
+}
+
+@keyframes flm-gradient-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #stage[data-style="fluid-liquid-morph"] .brand-mark,
+  #stage[data-style="fluid-liquid-morph"] .btn-primary { animation: none; }
+  #stage[data-style="fluid-liquid-morph"] .card,
+  #stage[data-style="fluid-liquid-morph"] .btn { transition: none !important; }
+}

@@ -83,7 +83,7 @@ export const STYLES = [
     ['scrollytelling', 'Scrollytelling & Long Scroll', 'Narrativa guiada pela rolagem e página única contínua.', true],
     ['micro-interactions', 'Micro-interactions', 'Pequenas animações de feedback.', true],
     ['isometric', 'Isometric', 'Projeção isométrica.'],
-    ['fluid-liquid-morph', 'Fluid Liquid Morph', 'Efeito metaball, física de fluidos viscosos e transições de gelatina.'],
+    ['fluid-liquid-morph', 'Fluid Liquid Morph', 'Efeito metaball, física de fluidos viscosos e transições de gelatina.', true],
     ['ai-native-generative-ui', 'AI-native / Generative UI', 'Interface que se compõe a partir de intenção.', true],
     ['organic-biophilic', 'Organic / Biophilic', 'Formas e texturas da natureza.'],
     ['kawaii-pastel-soft', 'Kawaii Pastel Soft', 'Formas acolchoadas de marshmallow, cores pastéis e carisma fofo.'],
