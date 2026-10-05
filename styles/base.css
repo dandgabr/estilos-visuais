@@ -1,0 +1,74 @@
+/* Estrutura neutra do mockup. Estilos sobrescrevem tokens e regras em #stage[data-style="<slug>"]. */
+#stage {
+  --bg: #f6f6f4; --surface: #fff; --surface-2: #efefec; --fg: #1a1a1a; --muted: #666;
+  --accent: #2d5bff; --accent-fg: #fff; --border: #d8d8d4; --ok: #1a8f4c; --warn: #c27a00; --danger: #c93030;
+  --radius: 10px; --radius-sm: 6px; --shadow: 0 1px 3px rgba(0,0,0,.12);
+  --font-body: system-ui, sans-serif; --font-display: var(--font-body); --font-mono: ui-monospace, monospace;
+  --gap: 20px; --pad: 20px; --maxw: 1100px;
+  position: relative; min-height: 100%; background: var(--bg); color: var(--fg);
+  font: 16px/1.55 var(--font-body); isolation: isolate; overflow-x: clip;
+}
+#stage *, #stage *::before, #stage *::after { box-sizing: border-box; }
+#stage .app { max-width: var(--maxw); margin: 0 auto; padding: 0 16px 48px; }
+#stage a { color: inherit; }
+#stage h1, #stage h2, #stage h3 { font-family: var(--font-display); line-height: 1.1; margin: 0 0 .4em; }
+#stage p { margin: 0 0 1em; }
+
+#stage .topbar { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 16px 0; }
+#stage .brand { font: 700 1.25rem var(--font-display); text-decoration: none; margin-right: auto; display: flex; gap: 8px; align-items: center; }
+#stage .brand-mark { width: 1.4em; height: 1.4em; display: inline-block; background: var(--accent); border-radius: var(--radius-sm); }
+#stage .nav { display: flex; gap: 6px; flex-wrap: wrap; }
+#stage .nav a { padding: 6px 12px; text-decoration: none; border-radius: var(--radius-sm); }
+#stage .nav a.is-active { background: var(--accent); color: var(--accent-fg); }
+
+#stage .hero { padding: 56px 0 40px; }
+#stage .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; color: var(--muted); }
+#stage .display { font-size: clamp(2.2rem, 6vw, 4.2rem); max-width: 16ch; }
+#stage .lead { font-size: 1.2rem; color: var(--muted); max-width: 52ch; }
+#stage .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+#stage .btn { font: 600 1rem var(--font-body); padding: 10px 18px; border-radius: var(--radius-sm); border: 1px solid transparent; cursor: pointer; color: inherit; background: none; min-height: 44px; }
+#stage .btn-primary { background: var(--accent); color: var(--accent-fg); }
+#stage .btn-secondary { background: var(--surface-2); border-color: var(--border); }
+#stage .btn-ghost { border-color: var(--border); }
+#stage .btn[disabled] { opacity: .5; cursor: not-allowed; }
+#stage :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+#stage .section-title { margin: 40px 0 16px; font-size: 1.5rem; }
+#stage .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: var(--gap); }
+#stage .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--gap); }
+#stage .card, #stage .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: var(--pad); }
+#stage .card h3 { font-size: 1.2rem; }
+#stage .kpi-label { color: var(--muted); font-size: .85rem; display: block; }
+#stage .kpi-value { font: 700 2rem var(--font-display); display: block; }
+#stage .badge { display: inline-block; font-size: .75rem; padding: 2px 10px; border-radius: 99px; background: var(--surface-2); border: 1px solid var(--border); }
+#stage .badge.ok { color: var(--ok); } #stage .badge.warn { color: var(--warn); } #stage .badge.danger { color: var(--danger); }
+
+#stage .chart { grid-column: span 2; }
+#stage .bars { display: flex; align-items: flex-end; gap: 10px; height: 140px; margin-top: 12px; }
+#stage .bars i { flex: 1; background: var(--accent); border-radius: var(--radius-sm) var(--radius-sm) 0 0; height: var(--h); }
+@media (max-width: 640px) { #stage .chart { grid-column: auto; } }
+
+#stage .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap); align-items: start; }
+#stage form { display: grid; gap: 14px; }
+#stage label { display: grid; gap: 4px; font-size: .9rem; font-weight: 600; }
+#stage input[type=text], #stage input[type=email], #stage select, #stage textarea {
+  font: inherit; padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--surface); color: var(--fg); min-height: 44px; width: 100%;
+}
+#stage .inline { display: flex; align-items: center; gap: 10px; font-weight: 400; }
+#stage .switch { appearance: none; width: 44px; height: 24px; border-radius: 99px; background: var(--border); position: relative; cursor: pointer; flex: none; }
+#stage .switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: var(--surface); transition: transform .2s; }
+#stage .switch:checked { background: var(--accent); } #stage .switch:checked::after { transform: translateX(20px); }
+
+#stage .table-wrap { overflow-x: auto; }
+#stage table { width: 100%; border-collapse: collapse; }
+#stage th, #stage td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+#stage th { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+
+#stage .toast { margin-top: 24px; display: flex; gap: 12px; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: var(--radius); background: var(--fg); color: var(--bg); }
+#stage dialog { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--fg); padding: var(--pad); max-width: min(92vw, 420px); }
+#stage dialog::backdrop { background: rgba(0,0,0,.5); }
+#stage dialog .actions { margin-top: 16px; justify-content: flex-end; }
+#stage .footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
+
+@media (prefers-reduced-motion: reduce) { #stage *, #stage *::before, #stage *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; } }

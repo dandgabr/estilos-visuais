@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+#stage[data-style="gothicpunk"] {
+  --bg:#0B0A0C; --surface:#151317; --surface-2:#1e1a20; --fg:#E9E2D0; --muted:#b2aa98;
+  --accent:#C1121F; --accent-fg:#fff; --border:#4a3a2a; --ok:#9ccf9a; --warn:#B08D3C; --danger:#ff6b72;
+  --radius:0; --radius-sm:0; --shadow:0 0 0 1px #000,0 12px 30px rgba(0,0,0,.7);
+  --font-body:'Cormorant Garamond',Georgia,serif; --font-display:'UnifrakturCook','Cormorant Garamond',serif; --font-mono:ui-monospace,monospace;
+  --gap:24px; --pad:26px; --maxw:1080px; --gold:#B08D3C; --blood:#8B0A1A;
+  font-size:20px;
+  background:
+    radial-gradient(ellipse 50% 40% at 50% 0,rgba(139,10,26,.35),transparent 70%),
+    radial-gradient(ellipse at 50% 120%,rgba(74,13,20,.5),transparent 60%),
+    linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px) 0 0/90px 100%,#0B0A0C;
+  background-attachment:local;
+}
+#stage[data-style="gothicpunk"] .topbar{border-bottom:1px solid var(--gold);position:relative;padding-bottom:18px}
+#stage[data-style="gothicpunk"] .topbar::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1px;background:var(--blood)}
+#stage[data-style="gothicpunk"] .brand{font-family:var(--font-display);font-size:1.9rem;color:var(--fg);font-weight:700}
+#stage[data-style="gothicpunk"] .brand-mark{background:linear-gradient(var(--accent),var(--blood));border-radius:50% 50% 0 0;width:1.1em;height:1.5em;clip-path:polygon(50% 0,100% 40%,100% 100%,0 100%,0 40%);box-shadow:inset 0 0 0 2px var(--gold)}
+#stage[data-style="gothicpunk"] .nav a{font-weight:700;font-style:italic;letter-spacing:.06em;font-size:1.1rem;color:var(--fg)}
+#stage[data-style="gothicpunk"] .nav a:hover{color:#ff8a92;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:6px}
+#stage[data-style="gothicpunk"] .nav a.is-active{background:none;color:#ff8a92;border-bottom:2px solid var(--accent);border-radius:0}
+#stage[data-style="gothicpunk"] .hero{text-align:center;padding:72px 0 56px}
+#stage[data-style="gothicpunk"] .eyebrow{color:var(--gold);letter-spacing:.4em;font-weight:600}
+#stage[data-style="gothicpunk"] .display{font-family:var(--font-display);font-weight:700;margin-inline:auto;color:var(--fg);font-size:clamp(2.6rem,7vw,5rem);max-width:12ch;text-shadow:0 0 30px rgba(193,18,31,.55),0 3px 0 #000;line-height:1.05}
+#stage[data-style="gothicpunk"] .display::after{content:"✠";display:block;color:var(--accent);font-size:1.4rem;margin-top:10px;text-shadow:none}
+#stage[data-style="gothicpunk"] .lead{margin-inline:auto;font-style:italic;color:var(--muted)}
+#stage[data-style="gothicpunk"] .hero .actions{justify-content:center}
+#stage[data-style="gothicpunk"] .btn{font-family:var(--font-body);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.95rem;border-radius:0;transition:background .25s,box-shadow .25s,color .25s}
+#stage[data-style="gothicpunk"] .btn-primary{background:linear-gradient(#a30f1b,var(--blood));color:#fff;border:1px solid var(--gold);box-shadow:inset 0 0 0 3px #0B0A0C,inset 0 0 0 4px var(--gold)}
+#stage[data-style="gothicpunk"] .btn-primary:hover{background:var(--accent);box-shadow:inset 0 0 0 3px #0B0A0C,inset 0 0 0 4px var(--gold),0 0 22px rgba(193,18,31,.7)}
+#stage[data-style="gothicpunk"] .btn-secondary{background:transparent;color:var(--gold);border:1px solid var(--gold);color:#d4b062}
+#stage[data-style="gothicpunk"] .btn-secondary:hover{background:rgba(176,141,60,.18)}
+#stage[data-style="gothicpunk"] .btn-ghost{border:1px solid #7a8089;color:#c5cad1}
+#stage[data-style="gothicpunk"] .btn-ghost:hover{border-color:#fff;color:#fff}
+#stage[data-style="gothicpunk"] :focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+#stage[data-style="gothicpunk"] .section-title{font-family:var(--font-display);font-weight:700;font-size:2.1rem;text-align:center;color:var(--fg)}
+#stage[data-style="gothicpunk"] .section-title::after{content:"";display:block;height:14px;margin-top:4px;background:linear-gradient(90deg,transparent,var(--gold) 50%,transparent) 50% 50%/70% 1px no-repeat,radial-gradient(circle,var(--accent) 0 4px,transparent 5px) 50% 50%/14px 14px no-repeat}
+#stage[data-style="gothicpunk"] .card,#stage[data-style="gothicpunk"] .panel{background:linear-gradient(180deg,#1b171d,#121014);border:1px solid var(--border);border-radius:0;box-shadow:var(--shadow);position:relative;border-top:3px solid var(--accent);
+  clip-path:polygon(0 12px,12px 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%)}
+#stage[data-style="gothicpunk"] .card h3,#stage[data-style="gothicpunk"] .panel h2{font-family:var(--font-display);font-weight:700;font-size:1.6rem;color:#f4ecd8}
+#stage[data-style="gothicpunk"] .card a{color:#e0b657;font-weight:700;font-style:italic}
+#stage[data-style="gothicpunk"] .kpi-label{font-style:italic;letter-spacing:.06em}
+#stage[data-style="gothicpunk"] .kpi-value{font-family:var(--font-display);font-size:2.8rem;color:#f4ecd8}
+#stage[data-style="gothicpunk"] .badge{font-style:italic;border-radius:0;background:transparent;border:1px solid currentColor;font-weight:700;font-size:.85rem}
+#stage[data-style="gothicpunk"] .badge:not(.ok):not(.warn):not(.danger){color:var(--muted)}
+#stage[data-style="gothicpunk"] .bars{border-bottom:1px solid var(--gold)}
+#stage[data-style="gothicpunk"] .bars i{border-radius:50% 50% 0 0/22px 22px 0 0;background:linear-gradient(180deg,#d9232f,var(--blood));border:1px solid var(--gold)}
+#stage[data-style="gothicpunk"] input[type=text],#stage[data-style="gothicpunk"] input[type=email],#stage[data-style="gothicpunk"] select,#stage[data-style="gothicpunk"] textarea{background:#0B0A0C;border:1px solid var(--border);border-bottom:2px solid var(--gold);border-radius:0;color:var(--fg);font-size:1.05rem}
+#stage[data-style="gothicpunk"] input[type=text]:focus,#stage[data-style="gothicpunk"] input[type=email]:focus,#stage[data-style="gothicpunk"] textarea:focus,#stage[data-style="gothicpunk"] select:focus{border-color:var(--accent)}
+#stage[data-style="gothicpunk"] input::placeholder,#stage[data-style="gothicpunk"] textarea::placeholder{color:#968d7c;font-style:italic}
+#stage[data-style="gothicpunk"] input[type=checkbox],#stage[data-style="gothicpunk"] input[type=range]{accent-color:var(--accent)}
+#stage[data-style="gothicpunk"] .switch{background:#1e1a20;border:1px solid var(--gold);border-radius:99px}
+#stage[data-style="gothicpunk"] .switch::after{background:var(--gold)}
+#stage[data-style="gothicpunk"] .switch:checked{background:var(--blood)}#stage[data-style="gothicpunk"] .switch:checked::after{background:#f4ecd8}
+#stage[data-style="gothicpunk"] th{font-family:var(--font-body);font-style:italic;text-transform:none;font-size:1rem;color:var(--gold);border-bottom:1px solid var(--gold)}
+#stage[data-style="gothicpunk"] td{border-bottom:1px solid #2a2320}
+#stage[data-style="gothicpunk"] .toast{background:#1e1a20;color:var(--fg);border:1px solid var(--accent);border-radius:0;font-style:italic;box-shadow:inset 0 0 0 3px #0B0A0C,inset 0 0 0 4px var(--blood)}
+#stage[data-style="gothicpunk"] dialog{background:#151317;color:var(--fg);border:1px solid var(--gold);border-radius:0;box-shadow:0 0 0 6px #0B0A0C,0 0 0 7px var(--blood),0 0 60px rgba(139,10,26,.5);clip-path:polygon(0 14px,14px 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%)}
+#stage[data-style="gothicpunk"] dialog::backdrop{background:rgba(0,0,0,.85)}
+#stage[data-style="gothicpunk"] .footer{border-top:1px solid var(--gold);text-align:center;font-style:italic}

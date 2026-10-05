@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+#stage[data-style="expressive-variable-typography"] {
+  --bg:#f5f5f2; --surface:#f5f5f2; --surface-2:#e9e9e4; --fg:#0c0c0c; --muted:#4a4a46; --accent:#0c0c0c; --accent-fg:#f5f5f2; --border:#0c0c0c;
+  --ok:#14663a; --warn:#7a4a00; --danger:#a82020; --radius:0; --radius-sm:0; --shadow:none;
+  --font-body:'Roboto Flex',system-ui,sans-serif; --font-display:'Roboto Flex',system-ui,sans-serif; --font-mono:'Roboto Flex',monospace;
+  --gap:24px; --pad:20px; --maxw:1180px;
+  background:#f5f5f2; font-optical-sizing:auto; font-weight:380; font-stretch:100%; font-synthesis:none;
+}
+#stage[data-style="expressive-variable-typography"] h1,#stage[data-style="expressive-variable-typography"] h2,#stage[data-style="expressive-variable-typography"] h3{ font-optical-sizing:auto; }
+#stage[data-style="expressive-variable-typography"] .topbar{ border-bottom:1px solid #0c0c0c; }
+#stage[data-style="expressive-variable-typography"] .brand{ font-weight:900; font-stretch:130%; letter-spacing:-.02em; text-transform:uppercase; font-size:1rem; transition:font-weight .3s ease-out,font-stretch .3s ease-out; }
+#stage[data-style="expressive-variable-typography"] .brand:hover{ font-weight:200; font-stretch:60%; }
+#stage[data-style="expressive-variable-typography"] .brand-mark{ background:#0c0c0c; border-radius:50%; clip-path:inset(0 0 50% 0); }
+#stage[data-style="expressive-variable-typography"] .nav a{ font-weight:300; font-stretch:90%; border-radius:0; transition:font-weight .3s ease-out,font-stretch .3s ease-out; }
+#stage[data-style="expressive-variable-typography"] .nav a:hover{ font-weight:900; font-stretch:125%; }
+#stage[data-style="expressive-variable-typography"] .nav a.is-active{ background:transparent; color:#0c0c0c; font-weight:900; font-stretch:125%; text-decoration:underline; text-underline-offset:6px; text-decoration-thickness:3px; }
+#stage[data-style="expressive-variable-typography"] .hero{ padding:56px 0 48px; }
+#stage[data-style="expressive-variable-typography"] .eyebrow{ font-weight:600; font-stretch:75%; letter-spacing:.2em; color:#0c0c0c; }
+#stage[data-style="expressive-variable-typography"] .display{ font-size:clamp(2.4rem,8.2vw,7.4rem); line-height:.88; max-width:none; letter-spacing:-.04em; font-weight:1000; font-stretch:140%; text-transform:uppercase; font-variation-settings:"GRAD" 0; transition:font-weight .5s ease-out,font-stretch .5s ease-out,font-variation-settings .5s; margin:.1em 0 .3em; overflow-wrap:break-word; }
+#stage[data-style="expressive-variable-typography"] .display:hover{ font-weight:100; font-stretch:25%; }
+#stage[data-style="expressive-variable-typography"] .lead{ font-size:1.5rem; font-weight:300; font-stretch:80%; color:#0c0c0c; max-width:40ch; line-height:1.25; }
+#stage[data-style="expressive-variable-typography"] .btn{ font-weight:800; font-stretch:115%; text-transform:uppercase; letter-spacing:.02em; border:2px solid #0c0c0c; border-radius:0; transition:font-weight .25s ease-out,font-stretch .25s ease-out,background .25s,color .25s; padding:10px 22px; }
+#stage[data-style="expressive-variable-typography"] .btn:hover{ font-weight:200; font-stretch:150%; }
+#stage[data-style="expressive-variable-typography"] .btn-primary{ background:#0c0c0c; color:#f5f5f2; }
+#stage[data-style="expressive-variable-typography"] .btn-secondary{ background:#f5f5f2; }
+#stage[data-style="expressive-variable-typography"] .btn-ghost{ background:transparent; }
+#stage[data-style="expressive-variable-typography"] .btn[disabled]{ opacity:1; color:#6a6a65; border-color:#6a6a65; font-weight:300; }
+#stage[data-style="expressive-variable-typography"] :focus-visible{ outline:3px solid #0c0c0c; outline-offset:3px; }
+#stage[data-style="expressive-variable-typography"] .section-title{ font-size:clamp(2.2rem,7vw,5rem); font-weight:100; font-stretch:151%; letter-spacing:-.04em; line-height:.9; border-top:6px solid #0c0c0c; padding-top:12px; transition:font-weight .4s,font-stretch .4s; }
+#stage[data-style="expressive-variable-typography"] .section-title:hover{ font-weight:1000; font-stretch:60%; }
+#stage[data-style="expressive-variable-typography"] .card,#stage[data-style="expressive-variable-typography"] .panel{ background:transparent; border:0; border-top:1px solid #0c0c0c; box-shadow:none; padding:14px 0 0; }
+#stage[data-style="expressive-variable-typography"] .kpi-label{ font-weight:500; font-stretch:70%; text-transform:uppercase; letter-spacing:.14em; font-size:.78rem; }
+#stage[data-style="expressive-variable-typography"] .kpi-value{ font-size:4rem; line-height:1; font-weight:200; font-stretch:130%; letter-spacing:-.05em; transition:font-weight .4s,font-stretch .4s; }
+#stage[data-style="expressive-variable-typography"] .card:hover .kpi-value{ font-weight:1000; font-stretch:80%; }
+#stage[data-style="expressive-variable-typography"] .badge{ background:transparent; border:1.5px solid currentColor; border-radius:0; font-weight:700; font-stretch:80%; text-transform:uppercase; letter-spacing:.1em; }
+#stage[data-style="expressive-variable-typography"] .card h3{ font-size:1.8rem; font-weight:800; font-stretch:60%; text-transform:uppercase; letter-spacing:-.01em; transition:font-weight .3s,font-stretch .3s; }
+#stage[data-style="expressive-variable-typography"] .card:hover h3{ font-weight:200; font-stretch:140%; }
+#stage[data-style="expressive-variable-typography"] .feature a{ font-weight:700; font-stretch:100%; }
+#stage[data-style="expressive-variable-typography"] .bars{ gap:4px; }
+#stage[data-style="expressive-variable-typography"] .bars i{ background:#0c0c0c; border-radius:0; }
+#stage[data-style="expressive-variable-typography"] .bars i:nth-child(odd){ background:repeating-linear-gradient(90deg,#0c0c0c 0 2px,transparent 2px 5px); }
+#stage[data-style="expressive-variable-typography"] .panel h2{ font-size:2.6rem; font-weight:900; font-stretch:60%; text-transform:uppercase; }
+#stage[data-style="expressive-variable-typography"] label{ font-weight:600; font-stretch:80%; text-transform:uppercase; letter-spacing:.1em; font-size:.78rem; }
+#stage[data-style="expressive-variable-typography"] input[type=text],#stage[data-style="expressive-variable-typography"] input[type=email],#stage[data-style="expressive-variable-typography"] select,#stage[data-style="expressive-variable-typography"] textarea{ background:transparent; border:0; border-bottom:2px solid #0c0c0c; border-radius:0; font-weight:300; font-size:1.2rem; padding-left:0; text-transform:none; letter-spacing:0; }
+#stage[data-style="expressive-variable-typography"] input:focus,#stage[data-style="expressive-variable-typography"] textarea:focus{ font-weight:800; }
+#stage[data-style="expressive-variable-typography"] input[type=checkbox],#stage[data-style="expressive-variable-typography"] input[type=range]{ accent-color:#0c0c0c; }
+#stage[data-style="expressive-variable-typography"] .inline{ text-transform:none; letter-spacing:0; font-size:1rem; font-stretch:100%; }
+#stage[data-style="expressive-variable-typography"] .switch{ background:#8c8c86; } #stage[data-style="expressive-variable-typography"] .switch:checked{ background:#0c0c0c; } #stage[data-style="expressive-variable-typography"] .switch::after{ background:#f5f5f2; }
+#stage[data-style="expressive-variable-typography"] th{ color:#0c0c0c; font-weight:800; font-stretch:70%; border-bottom:2px solid #0c0c0c; }
+#stage[data-style="expressive-variable-typography"] td{ border-bottom:1px solid #c8c8c2; }
+#stage[data-style="expressive-variable-typography"] tbody tr{ transition:font-weight .25s; } #stage[data-style="expressive-variable-typography"] tbody tr:hover{ font-weight:800; }
+#stage[data-style="expressive-variable-typography"] .toast{ background:#0c0c0c; color:#f5f5f2; border-radius:0; font-weight:300; font-stretch:130%; font-size:1.1rem; }
+#stage[data-style="expressive-variable-typography"] .toast .btn{ color:#f5f5f2; border-color:#f5f5f2; }
+#stage[data-style="expressive-variable-typography"] dialog{ background:#f5f5f2; border:3px solid #0c0c0c; border-radius:0; }
+#stage[data-style="expressive-variable-typography"] dialog h2{ font-size:2.4rem; font-weight:1000; font-stretch:60%; text-transform:uppercase; }
+#stage[data-style="expressive-variable-typography"] .footer{ border-top:1px solid #0c0c0c; font-stretch:80%; text-transform:uppercase; letter-spacing:.1em; }
+@media (prefers-reduced-motion:no-preference){ #stage[data-style="expressive-variable-typography"] .display{ animation:evt-breathe 6s ease-in-out infinite alternate; } @keyframes evt-breathe{ from{ font-weight:1000; font-stretch:140%; } to{ font-weight:600; font-stretch:100%; } } }
+@media (prefers-reduced-motion:reduce){ #stage[data-style="expressive-variable-typography"] *{ transition:none!important; } }
+@media (max-width:640px){ #stage[data-style="expressive-variable-typography"] .display{ font-stretch:110%; font-size:clamp(2.4rem,12vw,4rem); } @keyframes evt-breathe{ from{ font-stretch:110%; } to{ font-stretch:90%; } } }

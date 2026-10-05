@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+#stage[data-style="steampunk"] {
+  --bg:#1B1612; --surface:#2B1D12; --surface-2:#3a2819; --fg:#EFE3C8; --muted:#cdbd9c;
+  --accent:#D2A95A; --accent-fg:#1B1612; --border:#8E6A2B; --ok:#8fd2b6; --warn:#f0b050; --danger:#ff8a70;
+  --radius:6px; --radius-sm:3px; --shadow:0 6px 16px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,225,160,.2);
+  --font-body:'Libre Baskerville',Georgia,serif; --font-display:'Rye','Libre Baskerville',serif; --font-mono:ui-monospace,monospace;
+  --gap:22px; --pad:24px; --maxw:1100px; --brass:#B5893A; --copper:#B4633A; --verd:#4F8A78;
+  --rivet:radial-gradient(circle at 35% 35%,#f6e3b0,#b5893a 55%,#5b4216 100%);
+  font-size:15.5px;
+  background:
+    radial-gradient(ellipse at 50% 0,rgba(181,137,58,.25),transparent 60%),
+    repeating-linear-gradient(45deg,rgba(255,225,160,.025) 0 2px,transparent 2px 8px),
+    repeating-linear-gradient(-45deg,rgba(0,0,0,.12) 0 2px,transparent 2px 8px),
+    linear-gradient(#241a12,#1B1612);
+  background-attachment:local;
+}
+#stage[data-style="steampunk"] .topbar{background:linear-gradient(#4a3420,#2B1D12);border:2px solid var(--brass);border-radius:6px;padding:10px 18px;margin-top:14px;box-shadow:var(--shadow)}
+#stage[data-style="steampunk"] .brand{font-family:var(--font-display);color:var(--accent);font-size:1.4rem;text-shadow:0 2px 0 #000}
+#stage[data-style="steampunk"] .brand-mark{border-radius:50%;background:radial-gradient(circle,#1B1612 0 16%,transparent 17%),repeating-conic-gradient(var(--brass) 0 20deg,#6b4e1b 20deg 40deg);border:3px solid var(--accent);animation:gear 18s linear infinite}
+@keyframes gear{to{transform:rotate(360deg)}}
+#stage[data-style="steampunk"] .nav a{font-style:italic;color:var(--fg);font-weight:700}
+#stage[data-style="steampunk"] .nav a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:5px}
+#stage[data-style="steampunk"] .nav a.is-active{background:linear-gradient(#c9a050,#8E6A2B);color:#1B1612;border-radius:3px;box-shadow:inset 0 0 0 1px #f0d48c;font-style:normal}
+#stage[data-style="steampunk"] .hero{position:relative}
+#stage[data-style="steampunk"] .hero::after{content:"";position:absolute;right:3%;top:34px;width:min(190px,30vw);aspect-ratio:1;border-radius:50%;pointer-events:none;opacity:.9;z-index:-1;
+  background:conic-gradient(from -120deg,transparent 0 3deg,#EFE3C8 3deg 4deg,transparent 4deg 12deg) 0 0/100% 100%,radial-gradient(circle,#2B1D12 0 62%,transparent 63%),radial-gradient(circle,#d2a95a 0 68%,#6b4e1b 70% 75%,transparent 76%);
+  background-blend-mode:normal;mask:none}
+#stage[data-style="steampunk"] .eyebrow{font-style:italic;color:var(--copper);color:#e0966a;letter-spacing:.2em}
+#stage[data-style="steampunk"] .display{font-family:var(--font-display);font-weight:400;color:var(--accent);text-shadow:0 3px 0 #000,0 0 30px rgba(181,137,58,.35);max-width:15ch;line-height:1.1}
+#stage[data-style="steampunk"] .lead{color:var(--muted);font-style:italic}
+#stage[data-style="steampunk"] .btn{font-family:var(--font-body);font-weight:700;letter-spacing:.06em;border-radius:5px;transition:transform .1s,box-shadow .1s,filter .15s}
+#stage[data-style="steampunk"] .btn-primary{background:linear-gradient(#e2bf72,#b5893a 55%,#8a6420);color:#1B1612;border:2px solid #4a3608;box-shadow:0 4px 0 #4a3608,inset 0 1px 0 #fff3cc}
+#stage[data-style="steampunk"] .btn-primary:hover{filter:brightness(1.1)}
+#stage[data-style="steampunk"] .btn-primary:active{transform:translateY(4px);box-shadow:0 0 0 #4a3608}
+#stage[data-style="steampunk"] .btn-secondary{background:linear-gradient(#cf7e4f,#B4633A 55%,#84421f);color:#fff;border:2px solid #4a2410;box-shadow:0 4px 0 #4a2410,inset 0 1px 0 #f0b894}
+#stage[data-style="steampunk"] .btn-secondary:active{transform:translateY(4px);box-shadow:none}
+#stage[data-style="steampunk"] .btn-ghost{border:2px solid var(--brass);color:var(--accent)}
+#stage[data-style="steampunk"] .btn-ghost:hover{background:rgba(181,137,58,.2)}
+#stage[data-style="steampunk"] :focus-visible{outline:3px solid #8fe0c6;outline-offset:3px}
+#stage[data-style="steampunk"] .section-title{font-family:var(--font-display);font-weight:400;color:var(--accent);font-size:1.6rem;text-shadow:0 2px 0 #000;display:flex;align-items:center;gap:14px}
+#stage[data-style="steampunk"] .section-title::after{content:"";flex:1;height:6px;border-top:2px solid var(--brass);border-bottom:2px solid var(--brass);opacity:.7}
+#stage[data-style="steampunk"] .card,#stage[data-style="steampunk"] .panel{background:linear-gradient(160deg,#3a2819,#2B1D12 70%);border:2px solid var(--brass);border-radius:6px;box-shadow:var(--shadow);position:relative;
+  background-image:var(--rivet),var(--rivet),var(--rivet),var(--rivet),linear-gradient(160deg,#3a2819,#2B1D12 70%);
+  background-size:9px 9px,9px 9px,9px 9px,9px 9px,100% 100%;background-repeat:no-repeat;
+  background-position:7px 7px,calc(100% - 7px) 7px,7px calc(100% - 7px),calc(100% - 7px) calc(100% - 7px),0 0;padding:calc(var(--pad) + 6px)}
+#stage[data-style="steampunk"] .card h3,#stage[data-style="steampunk"] .panel h2{font-family:var(--font-display);font-weight:400;color:var(--accent);font-size:1.25rem}
+#stage[data-style="steampunk"] .card a{color:#8fe0c6;font-weight:700;font-style:italic}
+#stage[data-style="steampunk"] .kpi-label{font-style:italic}
+#stage[data-style="steampunk"] .kpi-value{font-family:var(--font-display);font-weight:400;font-size:2.4rem;color:#f6e3b0;text-shadow:0 2px 0 #000}
+#stage[data-style="steampunk"] .badge{border-radius:3px;background:#1B1612;border:1px solid currentColor;font-style:italic;font-weight:700}
+#stage[data-style="steampunk"] .badge:not(.ok):not(.warn):not(.danger){color:var(--muted)}
+#stage[data-style="steampunk"] .bars{border-bottom:3px solid var(--brass);background:repeating-linear-gradient(0deg,rgba(210,169,90,.18) 0 1px,transparent 1px 28px)}
+#stage[data-style="steampunk"] .bars i{border-radius:3px 3px 0 0;background:linear-gradient(90deg,#8a6420,#e2bf72 40%,#b5893a 60%,#6b4e1b);border:1px solid #1B1612}
+#stage[data-style="steampunk"] .bars i:nth-child(odd){background:linear-gradient(90deg,#84421f,#e08a58 40%,#B4633A 60%,#5a2c14)}
+#stage[data-style="steampunk"] input[type=text],#stage[data-style="steampunk"] input[type=email],#stage[data-style="steampunk"] select,#stage[data-style="steampunk"] textarea{background:#17110c;border:2px solid var(--brass);border-radius:3px;color:var(--fg);box-shadow:inset 0 3px 6px rgba(0,0,0,.6)}
+#stage[data-style="steampunk"] input[type=text]:focus,#stage[data-style="steampunk"] input[type=email]:focus,#stage[data-style="steampunk"] textarea:focus,#stage[data-style="steampunk"] select:focus{border-color:var(--accent);box-shadow:inset 0 3px 6px rgba(0,0,0,.6),0 0 0 3px rgba(210,169,90,.35)}
+#stage[data-style="steampunk"] input::placeholder,#stage[data-style="steampunk"] textarea::placeholder{color:#a8977a;font-style:italic}
+#stage[data-style="steampunk"] input[type=checkbox],#stage[data-style="steampunk"] input[type=range]{accent-color:var(--accent)}
+#stage[data-style="steampunk"] .switch{background:#17110c;border:2px solid var(--brass);box-shadow:inset 0 2px 4px #000}
+#stage[data-style="steampunk"] .switch::after{background:var(--rivet);box-shadow:0 1px 2px #000}
+#stage[data-style="steampunk"] .switch:checked{background:#2f5a4c}
+#stage[data-style="steampunk"] th{font-family:var(--font-display);font-weight:400;color:var(--accent);border-bottom:2px solid var(--brass);letter-spacing:.04em;text-transform:none;font-size:.95rem}
+#stage[data-style="steampunk"] td{border-bottom:1px solid rgba(142,106,43,.5)}
+#stage[data-style="steampunk"] .toast{background:linear-gradient(#cf7e4f,#9a4a24);color:#1B1612;color:#fff;border:2px solid #4a2410;border-radius:6px;font-weight:700;box-shadow:0 4px 0 #4a2410}
+#stage[data-style="steampunk"] .toast .btn-ghost{color:#fff;border-color:#fff}
+#stage[data-style="steampunk"] dialog{background:#2B1D12;color:var(--fg);border:3px solid var(--brass);border-radius:8px;box-shadow:0 0 0 5px #1B1612,0 0 0 7px var(--copper),0 24px 60px rgba(0,0,0,.7)}
+#stage[data-style="steampunk"] dialog::backdrop{background:rgba(10,7,4,.8)}
+#stage[data-style="steampunk"] .footer{border-top:3px double var(--brass);font-style:italic}
+@media (prefers-reduced-motion:reduce){#stage[data-style="steampunk"] .brand-mark{animation:none}}

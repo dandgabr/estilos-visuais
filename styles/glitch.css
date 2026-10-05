@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;700&family=Share+Tech+Mono&family=VT323&display=swap');
+#stage[data-style="glitch"] {
+  --bg:#07070c; --surface:#0f0f18; --surface-2:#171724; --fg:#e8f4ff; --muted:#a3a9c4; --accent:#00f0ff; --accent-fg:#000; --border:#2c2c44;
+  --ok:#3dff9a; --warn:#ffe14d; --danger:#ff4d8d; --radius:0; --radius-sm:0; --shadow:2px 0 0 #ff00aa, -2px 0 0 #00f0ff;
+  --font-body:'Chakra Petch',system-ui,sans-serif; --font-display:'Chakra Petch',sans-serif; --font-mono:'Share Tech Mono',monospace;
+  --gap:18px; --pad:18px; --maxw:1100px;
+  background-color:#07070c;
+  background-image:linear-gradient(rgba(0,240,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,0,170,.05) 1px,transparent 1px);
+  background-size:40px 40px;
+}
+/* texto com cópias RGB: data-text é aplicado pelo fx/glitch.js */
+#stage[data-style="glitch"] [data-text]{ position:relative; }
+#stage[data-style="glitch"] [data-text]::before,#stage[data-style="glitch"] [data-text]::after{ content:attr(data-text); position:absolute; left:0; top:0; width:100%; pointer-events:none; opacity:.9; }
+#stage[data-style="glitch"] [data-text]::before{ color:#00f0ff; transform:translate(-3px,0); clip-path:inset(0 0 55% 0); mix-blend-mode:screen; }
+#stage[data-style="glitch"] [data-text]::after{ color:#ff00aa; transform:translate(3px,0); clip-path:inset(55% 0 0 0); mix-blend-mode:screen; }
+#stage[data-style="glitch"] [data-text].is-glitching::before{ animation:glx-a .28s steps(6) 1; }
+#stage[data-style="glitch"] [data-text].is-glitching::after{ animation:glx-b .28s steps(5) 1; }
+#stage[data-style="glitch"] .glx-scan{ position:fixed; inset:0; pointer-events:none; z-index:50; background:repeating-linear-gradient(0deg,rgba(0,0,0,.07) 0 1px,transparent 1px 3px); mix-blend-mode:multiply; }
+#stage[data-style="glitch"] .glx-tear{ position:fixed; left:0; right:0; height:14px; pointer-events:none; z-index:51; background:linear-gradient(90deg,rgba(0,240,255,.35),rgba(255,0,170,.35)); mix-blend-mode:screen; opacity:0; }
+#stage[data-style="glitch"] .glx-tear.on{ animation:glx-tear .3s steps(4) 1; }
+@keyframes glx-a{ 0%{clip-path:inset(10% 0 70% 0);transform:translate(-5px,0)} 33%{clip-path:inset(60% 0 10% 0);transform:translate(4px,1px)} 66%{clip-path:inset(30% 0 40% 0);transform:translate(-3px,-1px)} 100%{clip-path:inset(0 0 55% 0);transform:translate(-3px,0)} }
+@keyframes glx-b{ 0%{clip-path:inset(70% 0 5% 0);transform:translate(5px,0)} 40%{clip-path:inset(5% 0 80% 0);transform:translate(-4px,0)} 70%{clip-path:inset(45% 0 30% 0);transform:translate(3px,1px)} 100%{clip-path:inset(55% 0 0 0);transform:translate(3px,0)} }
+@keyframes glx-tear{ 0%{opacity:1} 50%{opacity:.8;height:6px} 100%{opacity:0} }
+#stage[data-style="glitch"] .topbar{ border-bottom:1px solid #00f0ff; box-shadow:0 1px 0 #ff00aa; }
+#stage[data-style="glitch"] .brand{ font:700 1.2rem var(--font-mono); letter-spacing:.1em; text-transform:uppercase; }
+#stage[data-style="glitch"] .brand-mark{ background:linear-gradient(90deg,#00f0ff 33%,#ff00aa 33% 66%,#fff 66%); border-radius:0; clip-path:polygon(0 0,100% 0,100% 40%,70% 40%,70% 60%,100% 60%,100% 100%,0 100%); }
+#stage[data-style="glitch"] .nav a{ font:400 .9rem var(--font-mono); text-transform:uppercase; border-radius:0; }
+#stage[data-style="glitch"] .nav a:hover{ text-shadow:2px 0 #ff00aa,-2px 0 #00f0ff; }
+#stage[data-style="glitch"] .nav a.is-active{ background:transparent; color:#00f0ff; border:1px solid #00f0ff; box-shadow:2px 0 0 #ff00aa; }
+#stage[data-style="glitch"] .hero{ padding:60px 0 36px; }
+#stage[data-style="glitch"] .eyebrow{ font:400 .9rem var(--font-mono); color:#3dff9a; letter-spacing:.2em; }
+#stage[data-style="glitch"] .eyebrow::before{ content:"> "; }
+#stage[data-style="glitch"] .display{ font:700 clamp(2.4rem,8vw,5.2rem)/.98 var(--font-display); text-transform:uppercase; letter-spacing:-.01em; color:#fff; text-shadow:3px 0 #ff00aa,-3px 0 #00f0ff; max-width:14ch; }
+#stage[data-style="glitch"] .display[data-text]{ text-shadow:none; }
+#stage[data-style="glitch"] .lead{ font-family:var(--font-mono); color:#c9cfe8; border-left:3px solid #ff00aa; padding-left:14px; }
+#stage[data-style="glitch"] .btn{ font:700 .95rem var(--font-display); text-transform:uppercase; letter-spacing:.08em; border:1px solid #00f0ff; border-radius:0; color:#00f0ff; background:transparent; box-shadow:3px 0 0 #ff00aa; }
+#stage[data-style="glitch"] .btn-primary{ background:#00f0ff; color:#000; border-color:#00f0ff; }
+#stage[data-style="glitch"] .btn-secondary{ background:#171724; }
+#stage[data-style="glitch"] .btn:hover{ animation:glx-btn .25s steps(5) 1; text-shadow:2px 0 #ff00aa; }
+#stage[data-style="glitch"] .btn-primary:hover{ text-shadow:none; background:#fff; }
+#stage[data-style="glitch"] .btn:active{ transform:translate(3px,0); box-shadow:none; }
+#stage[data-style="glitch"] .btn[disabled]{ opacity:1; color:#8a90ad; border-color:#4a4a66; box-shadow:none; }
+@keyframes glx-btn{ 0%{clip-path:inset(0 0 60% 0);transform:translateX(-4px)} 30%{clip-path:inset(50% 0 0 0);transform:translateX(5px)} 60%{clip-path:inset(20% 0 30% 0);transform:translateX(-3px)} 100%{clip-path:inset(0);transform:none} }
+#stage[data-style="glitch"] :focus-visible{ outline:2px solid #ffe14d; outline-offset:3px; }
+#stage[data-style="glitch"] .section-title{ font:400 1.5rem var(--font-mono); text-transform:uppercase; letter-spacing:.12em; color:#fff; border-bottom:1px solid #2c2c44; padding:0 0 6px; }
+#stage[data-style="glitch"] .card,#stage[data-style="glitch"] .panel{ background:#0f0f18; border:1px solid #2c2c44; border-radius:0; box-shadow:none; position:relative; }
+#stage[data-style="glitch"] .card::after{ content:""; position:absolute; right:-1px; top:-1px; width:14px; height:14px; border-top:2px solid #00f0ff; border-right:2px solid #ff00aa; }
+#stage[data-style="glitch"] .card:hover{ border-color:#00f0ff; box-shadow:3px 0 0 #ff00aa,-3px 0 0 rgba(0,240,255,.5); }
+#stage[data-style="glitch"] .kpi-label{ font:400 .8rem var(--font-mono); text-transform:uppercase; letter-spacing:.12em; }
+#stage[data-style="glitch"] .kpi-value{ font:400 2.8rem var(--font-mono); color:#fff; text-shadow:2px 0 #ff00aa,-2px 0 #00f0ff; }
+#stage[data-style="glitch"] .badge{ font:400 .75rem var(--font-mono); border-radius:0; background:#000; border:1px solid currentColor; text-transform:uppercase; }
+#stage[data-style="glitch"] .feature a{ color:#00f0ff; font-family:var(--font-mono); }
+#stage[data-style="glitch"] .bars{ background:repeating-linear-gradient(to top,transparent 0 27px,rgba(255,255,255,.07) 27px 28px); }
+#stage[data-style="glitch"] .bars i{ border-radius:0; background:linear-gradient(#00f0ff,#00f0ff) 0 0/100% 100% no-repeat; box-shadow:3px 0 0 #ff00aa; clip-path:polygon(0 0,100% 0,100% 45%,85% 45%,85% 52%,100% 52%,100% 100%,0 100%); }
+#stage[data-style="glitch"] .bars i:nth-child(even){ background:#e8f4ff; clip-path:none; box-shadow:-3px 0 0 #00f0ff; }
+#stage[data-style="glitch"] input[type=text],#stage[data-style="glitch"] input[type=email],#stage[data-style="glitch"] select,#stage[data-style="glitch"] textarea{ background:#000; border:1px solid #4a4a66; border-radius:0; color:#e8f4ff; font-family:var(--font-mono); }
+#stage[data-style="glitch"] input::placeholder,#stage[data-style="glitch"] textarea::placeholder{ color:#8a90ad; }
+#stage[data-style="glitch"] input:focus-visible,#stage[data-style="glitch"] textarea:focus-visible,#stage[data-style="glitch"] select:focus-visible{ border-color:#00f0ff; box-shadow:2px 0 0 #ff00aa; }
+#stage[data-style="glitch"] input[type=checkbox],#stage[data-style="glitch"] input[type=range]{ accent-color:#00f0ff; }
+#stage[data-style="glitch"] .switch{ border-radius:0; background:#2c2c44; border:1px solid #00f0ff; } #stage[data-style="glitch"] .switch::after{ border-radius:0; background:#e8f4ff; } #stage[data-style="glitch"] .switch:checked{ background:#ff00aa; }
+#stage[data-style="glitch"] th{ font:400 .8rem var(--font-mono); color:#00f0ff; border-bottom:1px solid #00f0ff; }
+#stage[data-style="glitch"] td{ border-bottom:1px solid #2c2c44; font-family:var(--font-mono); }
+#stage[data-style="glitch"] tbody tr:hover{ background:rgba(0,240,255,.08); box-shadow:inset 3px 0 0 #ff00aa; }
+#stage[data-style="glitch"] .toast{ background:#0f0f18; color:#3dff9a; border:1px solid #3dff9a; border-radius:0; font-family:var(--font-mono); box-shadow:3px 0 0 #ff00aa; }
+#stage[data-style="glitch"] .toast .btn{ color:#3dff9a; border-color:#3dff9a; box-shadow:none; }
+#stage[data-style="glitch"] dialog{ background:#0f0f18; color:#e8f4ff; border:1px solid #00f0ff; border-radius:0; box-shadow:4px 0 0 #ff00aa,-4px 0 0 #00f0ff; }
+#stage[data-style="glitch"] dialog::backdrop{ background:repeating-linear-gradient(0deg,rgba(0,0,0,.85) 0 2px,rgba(20,0,40,.85) 2px 4px); }
+#stage[data-style="glitch"] .footer{ font-family:var(--font-mono); border-top:1px solid #2c2c44; }
+@media (prefers-reduced-motion:reduce){
+  #stage[data-style="glitch"] [data-text]::before,#stage[data-style="glitch"] [data-text]::after{ display:none; }
+  #stage[data-style="glitch"] .display[data-text]{ text-shadow:3px 0 #ff00aa,-3px 0 #00f0ff; }
+  #stage[data-style="glitch"] .glx-tear{ display:none; }
+  #stage[data-style="glitch"] .btn:hover{ animation:none; }
+}

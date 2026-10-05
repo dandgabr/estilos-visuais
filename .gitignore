@@ -1,0 +1,91 @@
+# ==============================================================================
+# SEGREDOS, CREDENCIAIS E TOKENS
+# ==============================================================================
+.env
+.env.*
+!.env.example
+!.env.template
+*.env
+*.secrets
+*.pem
+*.key
+*.cer
+*.crt
+*.pfx
+*.p12
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.keystore
+secrets/
+.secrets/
+
+# ==============================================================================
+# JAVASCRIPT & TYPESCRIPT (Node / Bun / Deno)
+# ==============================================================================
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+.npm/
+.yarn/
+*.tsbuildinfo
+.pnp/
+.pnp.js
+dist/
+build/
+coverage/
+.nyc_output/
+
+# ==============================================================================
+# PYTHON (Bytecode, Venvs e Ferramentas)
+# ==============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+.installed.cfg
+*.egg
+.tox/
+
+# ==============================================================================
+# TESTES, AUDITORIA E RELATÓRIOS VOLÁTEIS
+# ==============================================================================
+.playwright-mcp/
+test-results/
+playwright-report/
+blob-report/
+
+# ==============================================================================
+# LOGS, SISTEMA OPERACIONAL E IDES
+# ==============================================================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+ehthumbs.db
+.vscode/
+!.vscode/settings.json.example
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~

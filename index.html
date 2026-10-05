@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estilos Visuais Coacus</title>
+<link rel="stylesheet" href="shell.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232d5bff'/%3E%3C/svg%3E">
+</head>
+<body>
+<div class="shell">
+  <aside id="gallery" aria-label="Galeria de estilos">
+    <div class="gallery-head">
+      <h1>Estilos Coacus</h1>
+      <p id="count"></p>
+      <input id="search" type="search" placeholder="Buscar estilo…" aria-label="Buscar estilo">
+    </div>
+    <nav id="list"></nav>
+  </aside>
+
+  <div class="stage-col">
+    <div class="stage-bar">
+      <button id="toggle" type="button" aria-expanded="true" aria-controls="gallery">☰ Estilos</button>
+      <button id="prev" type="button" aria-label="Estilo anterior">←</button>
+      <div class="stage-title"><strong id="cur-name"></strong><span id="cur-desc"></span></div>
+      <button id="next" type="button" aria-label="Próximo estilo">→</button>
+    </div>
+
+    <!-- Mockup único, reutilizado por todos os estilos. #stage é o contêiner de rolagem. -->
+    <div id="stage" data-style="">
+      <div class="app">
+        <header class="topbar">
+          <a class="brand" href="#"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Coacus Studio</span></a>
+          <nav class="nav" aria-label="Principal">
+            <a class="is-active" href="#" aria-current="page">Painel</a>
+            <a href="#">Projetos</a>
+            <a href="#">Equipe</a>
+            <a href="#">Relatórios</a>
+          </nav>
+          <button class="btn btn-ghost" type="button">Entrar</button>
+        </header>
+
+        <main>
+          <section class="hero" id="inicio">
+            <p class="eyebrow">Plataforma de design · v2.6</p>
+            <h1 class="display">Crie interfaces com identidade própria</h1>
+            <p class="lead">Um painel de exemplo para comparar como cada estilo visual trata tipografia, cor, superfície, forma e movimento.</p>
+            <div class="actions">
+              <button class="btn btn-primary" type="button">Começar agora</button>
+              <button class="btn btn-secondary" type="button">Ver documentação</button>
+              <button class="btn btn-ghost" type="button">Desativado</button>
+            </div>
+          </section>
+
+          <section aria-labelledby="t-metricas">
+            <h2 class="section-title" id="t-metricas">Métricas da semana</h2>
+            <div class="kpis">
+              <article class="card kpi"><span class="kpi-label">Projetos ativos</span><strong class="kpi-value">128</strong><span class="badge ok">+12%</span></article>
+              <article class="card kpi"><span class="kpi-label">Tempo médio</span><strong class="kpi-value">4,2 h</strong><span class="badge warn">−3%</span></article>
+              <article class="card kpi"><span class="kpi-label">Satisfação</span><strong class="kpi-value">96%</strong><span class="badge ok">+2 pp</span></article>
+              <article class="card kpi"><span class="kpi-label">Incidentes</span><strong class="kpi-value">3</strong><span class="badge danger">Atenção</span></article>
+            </div>
+          </section>
+
+          <section aria-labelledby="t-recursos">
+            <h2 class="section-title" id="t-recursos">Recursos</h2>
+            <div class="grid">
+              <article class="card feature"><h3>Componentes vivos</h3><p>Botões, campos e tabelas que respondem ao estilo escolhido.</p><a href="#">Saiba mais →</a></article>
+              <article class="card feature"><h3>Tokens consistentes</h3><p>Cores, raios e sombras controlados por variáveis.</p><a href="#">Saiba mais →</a></article>
+              <article class="card chart" role="img" aria-label="Gráfico de barras: crescimento mensal">
+                <h3>Crescimento mensal</h3>
+                <div class="bars" aria-hidden="true"><i style="--h:35%"></i><i style="--h:55%"></i><i style="--h:42%"></i><i style="--h:70%"></i><i style="--h:62%"></i><i style="--h:88%"></i><i style="--h:100%"></i></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="split">
+            <div class="panel">
+              <h2>Novo projeto</h2>
+              <form onsubmit="return false">
+                <label>Nome <input type="text" placeholder="Meu projeto"></label>
+                <label>E-mail <input type="email" placeholder="voce@exemplo.com"></label>
+                <label>Categoria
+                  <select><option>Web</option><option>Mobile</option><option>Marca</option></select>
+                </label>
+                <label>Descrição <textarea rows="3" placeholder="Conte um pouco…"></textarea></label>
+                <label class="inline"><input type="checkbox" checked> Receber novidades</label>
+                <label class="inline"><input class="switch" type="checkbox" role="switch" checked> Modo público</label>
+                <label>Intensidade <input type="range" min="0" max="100" value="60"></label>
+                <button class="btn btn-primary" type="submit">Criar projeto</button>
+              </form>
+            </div>
+
+            <div class="panel">
+              <h2>Atividade recente</h2>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Projeto</th><th>Responsável</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td>Aurora</td><td>Marina</td><td><span class="badge ok">Publicado</span></td></tr>
+                    <tr><td>Horizonte</td><td>Caio</td><td><span class="badge warn">Em revisão</span></td></tr>
+                    <tr><td>Atlas</td><td>Lia</td><td><span class="badge">Rascunho</span></td></tr>
+                    <tr><td>Pulsar</td><td>Davi</td><td><span class="badge danger">Bloqueado</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p style="margin-top:16px"><button class="btn btn-secondary" id="open-modal" type="button">Abrir diálogo</button></p>
+            </div>
+          </section>
+
+          <div class="toast" role="status"><span>Alterações salvas com sucesso.</span><button class="btn btn-ghost" type="button">Desfazer</button></div>
+        </main>
+
+        <footer class="footer">© 2026 Coacus Studio · Mockup de demonstração de estilos visuais.</footer>
+
+        <dialog id="modal">
+          <h2>Confirmar ação</h2>
+          <p>Deseja publicar este projeto para toda a equipe?</p>
+          <div class="actions"><button class="btn btn-ghost" id="close-modal" type="button">Cancelar</button><button class="btn btn-primary" id="ok-modal" type="button">Publicar</button></div>
+        </dialog>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>

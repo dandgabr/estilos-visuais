@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fraunces:wght@600;800&display=swap');
+#stage[data-style="solarpunk"] {
+  --bg:#FBF6E9; --surface:#ffffff; --surface-2:#eaf3dc; --fg:#1B3A2A; --muted:#456050;
+  --accent:#2F7D4F; --accent-fg:#fff; --border:#a9cfa0; --ok:#1f6e3f; --warn:#8f5a00; --danger:#b0391a;
+  --radius:28px; --radius-sm:16px; --shadow:0 8px 24px rgba(47,125,79,.15);
+  --font-body:'Nunito',system-ui,sans-serif; --font-display:'Fraunces',Georgia,serif; --font-mono:ui-monospace,monospace;
+  --gap:22px; --pad:24px; --maxw:1100px; --sun:#F2B632; --sky:#4FA3D1; --leaf:#8CC084; --clay:#C8643B;
+  font-size:17px;
+  background:
+    radial-gradient(circle at 90% 4%,#fff6c8 0 40px,#F2B632 41px 70px,rgba(242,182,50,.28) 71px 130px,transparent 131px),
+    radial-gradient(ellipse 80% 30% at 10% 105%,#8CC084 0 60%,transparent 61%),
+    radial-gradient(ellipse 60% 25% at 80% 110%,#2F7D4F 0 60%,transparent 61%),
+    linear-gradient(180deg,#e6f3f8 0,#FBF6E9 340px,#f4f1d6 100%);
+  background-attachment:local;
+}
+#stage[data-style="solarpunk"] .topbar{background:rgba(255,255,255,.8);border-radius:999px;padding:8px 14px 8px 20px;margin-top:14px;box-shadow:var(--shadow);border:2px solid var(--border)}
+#stage[data-style="solarpunk"] .brand{font-family:var(--font-display);font-weight:800;color:var(--accent)}
+#stage[data-style="solarpunk"] .brand-mark{background:linear-gradient(135deg,var(--leaf),var(--accent));border-radius:100% 0 100% 0;transform:rotate(-8deg)}
+#stage[data-style="solarpunk"] .nav a{font-weight:700;border-radius:999px;color:var(--fg)}
+#stage[data-style="solarpunk"] .nav a:hover{background:var(--surface-2)}
+#stage[data-style="solarpunk"] .nav a.is-active{background:var(--accent);color:#fff}
+#stage[data-style="solarpunk"] .eyebrow{color:#8f5a00;font-weight:800;letter-spacing:.18em}
+#stage[data-style="solarpunk"] .eyebrow::before{content:"☀ "}
+#stage[data-style="solarpunk"] .display{font-family:var(--font-display);font-weight:800;color:var(--fg);max-width:14ch}
+#stage[data-style="solarpunk"] .display::after{content:"";display:block;height:10px;width:140px;margin-top:14px;border-radius:99px;background:linear-gradient(90deg,var(--sun),var(--leaf),var(--sky))}
+#stage[data-style="solarpunk"] .lead{color:var(--muted)}
+#stage[data-style="solarpunk"] .btn{border-radius:999px;font-weight:800;transition:transform .2s,box-shadow .2s,background .2s}
+#stage[data-style="solarpunk"] .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 0 #1d5535}
+#stage[data-style="solarpunk"] .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 0 #1d5535}
+#stage[data-style="solarpunk"] .btn-primary:active{transform:translateY(5px);box-shadow:0 1px 0 #1d5535}
+#stage[data-style="solarpunk"] .btn-secondary{background:var(--sun);color:#3a2800;box-shadow:0 6px 0 #b27d0c}
+#stage[data-style="solarpunk"] .btn-secondary:hover{transform:translateY(-2px)}
+#stage[data-style="solarpunk"] .btn-secondary:active{transform:translateY(5px);box-shadow:0 1px 0 #b27d0c}
+#stage[data-style="solarpunk"] .btn-ghost{border:2px solid var(--accent);color:var(--accent);background:transparent}
+#stage[data-style="solarpunk"] .btn-ghost:hover{background:var(--surface-2)}
+#stage[data-style="solarpunk"] :focus-visible{outline:4px solid var(--sky);outline-offset:3px}
+#stage[data-style="solarpunk"] .section-title{font-family:var(--font-display);font-weight:800;color:var(--fg);display:flex;align-items:center;gap:12px}
+#stage[data-style="solarpunk"] .section-title::before{content:"";width:26px;height:26px;background:var(--leaf);border-radius:100% 0 100% 0;flex:none}
+#stage[data-style="solarpunk"] .card,#stage[data-style="solarpunk"] .panel{background:var(--surface);border:2px solid var(--border);border-radius:36px 36px 36px 8px}
+#stage[data-style="solarpunk"] .card:nth-child(2n){border-radius:36px 8px 36px 36px}
+#stage[data-style="solarpunk"] .kpis .card:nth-child(1){background:#e4f3de}#stage[data-style="solarpunk"] .kpis .card:nth-child(2){background:#fff1c9}#stage[data-style="solarpunk"] .kpis .card:nth-child(3){background:#dff0f8}#stage[data-style="solarpunk"] .kpis .card:nth-child(4){background:#fbe3d8}
+#stage[data-style="solarpunk"] .card h3,#stage[data-style="solarpunk"] .panel h2{font-family:var(--font-display);font-weight:800}
+#stage[data-style="solarpunk"] .card a{color:#1d5535;font-weight:800}
+#stage[data-style="solarpunk"] .kpi-value{font-family:var(--font-display);font-weight:800;font-size:2.4rem}
+#stage[data-style="solarpunk"] .badge{font-weight:800;background:#fff;border:2px solid currentColor}
+#stage[data-style="solarpunk"] .badge:not(.ok):not(.warn):not(.danger){color:var(--muted)}
+#stage[data-style="solarpunk"] .bars i{border-radius:999px 999px 10px 10px;background:linear-gradient(180deg,var(--leaf),var(--accent))}
+#stage[data-style="solarpunk"] .bars i:nth-child(3n){background:linear-gradient(180deg,#ffd978,var(--sun))}
+#stage[data-style="solarpunk"] .bars i:last-child{background:linear-gradient(180deg,#8fcdf0,var(--sky))}
+#stage[data-style="solarpunk"] input[type=text],#stage[data-style="solarpunk"] input[type=email],#stage[data-style="solarpunk"] select,#stage[data-style="solarpunk"] textarea{border:2px solid var(--border);border-radius:18px;background:#fff;color:var(--fg)}
+#stage[data-style="solarpunk"] input[type=text]:focus,#stage[data-style="solarpunk"] input[type=email]:focus,#stage[data-style="solarpunk"] textarea:focus,#stage[data-style="solarpunk"] select:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(140,192,132,.5)}
+#stage[data-style="solarpunk"] input::placeholder,#stage[data-style="solarpunk"] textarea::placeholder{color:#5f7a6a}
+#stage[data-style="solarpunk"] input[type=checkbox],#stage[data-style="solarpunk"] input[type=range]{accent-color:var(--accent)}
+#stage[data-style="solarpunk"] .switch{background:#c8d9bf}
+#stage[data-style="solarpunk"] .switch:checked{background:var(--accent)}
+#stage[data-style="solarpunk"] th{color:var(--accent);border-bottom:3px solid var(--leaf)}
+#stage[data-style="solarpunk"] td{border-bottom:2px dotted var(--border)}
+#stage[data-style="solarpunk"] .toast{background:var(--accent);color:#fff;border-radius:999px;box-shadow:0 6px 0 #1d5535;font-weight:700}
+#stage[data-style="solarpunk"] .toast .btn-ghost{color:#fff;border-color:#fff}
+#stage[data-style="solarpunk"] .toast .btn-ghost:hover{background:rgba(255,255,255,.2)}
+#stage[data-style="solarpunk"] dialog{background:#fff;color:var(--fg);border:3px solid var(--leaf);border-radius:40px 40px 40px 10px;box-shadow:0 20px 60px rgba(27,58,42,.35)}
+#stage[data-style="solarpunk"] dialog::backdrop{background:rgba(27,58,42,.55)}
+#stage[data-style="solarpunk"] .footer{border-top:3px dotted var(--leaf);color:var(--muted)}

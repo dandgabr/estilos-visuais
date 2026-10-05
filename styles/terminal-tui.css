@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+#stage[data-style="terminal-tui"] {
+  --bg:#0c0c0c; --surface:#0c0c0c; --surface-2:#1a1a1a; --fg:#d8d8d0; --muted:#9a9a92; --accent:#5fd75f; --accent-fg:#0c0c0c; --border:#6e6e66;
+  --ok:#5fd75f; --warn:#ffd75f; --danger:#ff5f5f; --radius:0; --radius-sm:0; --shadow:none;
+  --font-body:"JetBrains Mono",ui-monospace,monospace; --font-display:var(--font-body); --font-mono:var(--font-body);
+  --gap:2ch; --pad:1.5ch; --maxw:112ch; --info:#5fd7ff;
+  font:400 15px/1.6 var(--font-body); font-variant-numeric:tabular-nums slashed-zero; font-variant-ligatures:none;
+  background:var(--bg);
+}
+#stage[data-style="terminal-tui"]::after { content:""; position:fixed; inset:0; pointer-events:none; z-index:5; background:repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0 1px, transparent 1px 3px); }
+#stage[data-style="terminal-tui"] h1, #stage[data-style="terminal-tui"] h2, #stage[data-style="terminal-tui"] h3 { font-weight:700; letter-spacing:0; }
+#stage[data-style="terminal-tui"] a { color:var(--info); text-decoration:underline; }
+#stage[data-style="terminal-tui"] .topbar { border:1px solid var(--border); padding:0 1.5ch; margin-top:16px; gap:2ch; position:relative; }
+#stage[data-style="terminal-tui"] .brand { color:var(--accent); text-decoration:none; font-weight:700; }
+#stage[data-style="terminal-tui"] .brand-mark { width:auto; height:auto; background:none; }
+#stage[data-style="terminal-tui"] .brand-mark::before { content:"▌▐"; color:var(--accent); }
+#stage[data-style="terminal-tui"] .brand-name::before { content:"$ "; color:var(--muted); }
+#stage[data-style="terminal-tui"] .nav a { color:var(--fg); text-decoration:none; padding:0 1ch; border-radius:0; }
+#stage[data-style="terminal-tui"] .nav a:hover { background:var(--fg); color:var(--bg); }
+#stage[data-style="terminal-tui"] .nav a.is-active { background:var(--accent); color:var(--bg); font-weight:700; }
+#stage[data-style="terminal-tui"] .hero { padding:36px 0 24px; }
+#stage[data-style="terminal-tui"] .eyebrow { color:var(--warn); text-transform:none; letter-spacing:0; }
+#stage[data-style="terminal-tui"] .eyebrow::before { content:"# "; color:var(--muted); }
+#stage[data-style="terminal-tui"] .display { font-size:clamp(1.6rem,4.4vw,2.7rem); color:var(--accent); max-width:24ch; line-height:1.25; }
+#stage[data-style="terminal-tui"] .display::before { content:"> "; color:var(--muted); }
+#stage[data-style="terminal-tui"] .tui-cursor { display:inline-block; width:.6em; height:1em; margin-left:.15em; vertical-align:-.12em; background:var(--accent); animation:tui-blink 1.06s steps(1) infinite; }
+@keyframes tui-blink { 50% { opacity:0; } }
+#stage[data-style="terminal-tui"] .lead { color:var(--fg); font-size:1rem; }
+#stage[data-style="terminal-tui"] .btn { font:400 1rem var(--font-body); background:transparent; color:var(--fg); border:0; border-radius:0; padding:0 1ch; min-height:44px; transition:none; }
+#stage[data-style="terminal-tui"] .btn::before { content:"[ "; color:var(--muted); } #stage[data-style="terminal-tui"] .btn::after { content:" ]"; color:var(--muted); }
+#stage[data-style="terminal-tui"] .btn-primary { color:var(--accent); font-weight:700; }
+#stage[data-style="terminal-tui"] .btn:hover:not([disabled]), #stage[data-style="terminal-tui"] .btn:active:not([disabled]) { background:var(--fg); color:var(--bg); } 
+#stage[data-style="terminal-tui"] .btn-primary:hover { background:var(--accent); color:var(--bg); }
+#stage[data-style="terminal-tui"] .btn:hover::before, #stage[data-style="terminal-tui"] .btn:hover::after { color:inherit; }
+#stage[data-style="terminal-tui"] .btn[disabled] { color:#7a7a72; text-decoration:line-through; opacity:1; }
+#stage[data-style="terminal-tui"] :focus-visible { outline:2px solid var(--warn); outline-offset:1px; }
+#stage[data-style="terminal-tui"] .section-title { font-size:1rem; color:var(--info); margin:32px 0 12px; }
+#stage[data-style="terminal-tui"] .section-title::before { content:"── "; color:var(--muted); } #stage[data-style="terminal-tui"] .section-title::after { content:" ───────────────────────────────────────────────"; color:var(--muted); white-space:nowrap; overflow:hidden; display:inline-block; vertical-align:bottom; max-width:calc(100% - 12ch); text-overflow:clip; }
+#stage[data-style="terminal-tui"] .card, #stage[data-style="terminal-tui"] .panel { position:relative; background:transparent; border:1px solid var(--border); border-radius:0; padding:calc(var(--pad) + .5em) var(--pad) var(--pad); }
+#stage[data-style="terminal-tui"] .card::before, #stage[data-style="terminal-tui"] .panel::before { content:" card "; position:absolute; top:-.85em; left:2ch; padding:0 .5ch; background:var(--bg); color:var(--muted); font-size:.85rem; }
+#stage[data-style="terminal-tui"] .kpi:nth-child(1)::before { content:" projetos "; } #stage[data-style="terminal-tui"] .kpi:nth-child(2)::before { content:" tempo "; } #stage[data-style="terminal-tui"] .kpi:nth-child(3)::before { content:" nps "; } #stage[data-style="terminal-tui"] .kpi:nth-child(4)::before { content:" erros "; }
+#stage[data-style="terminal-tui"] .chart::before { content:" gráfico "; } #stage[data-style="terminal-tui"] .panel::before { content:" form "; } #stage[data-style="terminal-tui"] .panel + .panel::before { content:" log "; }
+#stage[data-style="terminal-tui"] .kpi-label { color:var(--muted); }
+#stage[data-style="terminal-tui"] .kpi-value { color:var(--fg); font-size:2rem; }
+#stage[data-style="terminal-tui"] .badge { background:transparent; border:0; padding:0; font-size:.9rem; border-radius:0; }
+#stage[data-style="terminal-tui"] .badge::before { content:"["; } #stage[data-style="terminal-tui"] .badge::after { content:"]"; }
+#stage[data-style="terminal-tui"] .badge:not(.ok):not(.warn):not(.danger) { color:var(--muted); }
+#stage[data-style="terminal-tui"] .bars { gap:1ch; }
+#stage[data-style="terminal-tui"] .bars i { border-radius:0; background:repeating-linear-gradient(0deg, var(--accent) 0 12px, transparent 12px 15px); }
+#stage[data-style="terminal-tui"] input[type=text], #stage[data-style="terminal-tui"] input[type=email], #stage[data-style="terminal-tui"] select, #stage[data-style="terminal-tui"] textarea { background:#000; color:var(--fg); border:1px solid var(--border); border-radius:0; font:inherit; caret-color:var(--accent); }
+#stage[data-style="terminal-tui"] input:focus, #stage[data-style="terminal-tui"] textarea:focus, #stage[data-style="terminal-tui"] select:focus { border-color:var(--accent); }
+#stage[data-style="terminal-tui"] ::placeholder { color:#8a8a84; opacity:1; }
+#stage[data-style="terminal-tui"] input[type=checkbox], #stage[data-style="terminal-tui"] input[type=range] { accent-color:var(--accent); }
+#stage[data-style="terminal-tui"] label { font-weight:400; color:var(--fg); }
+#stage[data-style="terminal-tui"] .switch { border-radius:0; background:#000; border:1px solid var(--border); width:6ch; }
+#stage[data-style="terminal-tui"] .switch::after { content:"off"; background:none; border-radius:0; width:auto; height:auto; top:0; left:1ch; font-size:.78rem; line-height:22px; color:var(--muted); transform:none; transition:none; }
+#stage[data-style="terminal-tui"] .switch:checked { background:var(--accent); border-color:var(--accent); }
+#stage[data-style="terminal-tui"] .switch:checked::after { content:"on"; color:var(--bg); font-weight:700; transform:none; left:2.4ch; }
+#stage[data-style="terminal-tui"] th { color:var(--info); border-bottom:1px dashed var(--border); text-transform:none; letter-spacing:0; font-size:.9rem; }
+#stage[data-style="terminal-tui"] td { border-bottom:0; }
+#stage[data-style="terminal-tui"] tbody tr:hover { background:var(--fg); color:var(--bg); } 
+#stage[data-style="terminal-tui"] tbody tr:hover .badge { color:var(--bg) !important; }
+#stage[data-style="terminal-tui"] .toast { background:transparent; color:var(--fg); border:1px solid var(--ok); border-radius:0; }
+#stage[data-style="terminal-tui"] .toast span::before { content:"✔ "; color:var(--ok); }
+#stage[data-style="terminal-tui"] dialog { background:var(--bg); color:var(--fg); border:2px double var(--accent); border-radius:0; }
+#stage[data-style="terminal-tui"] dialog h2::before { content:"╔ "; color:var(--accent); }
+#stage[data-style="terminal-tui"] dialog::backdrop { background:rgba(0,0,0,.8); }
+#stage[data-style="terminal-tui"] .footer { border-top:1px solid var(--border); color:var(--muted); background:none; }
+#stage[data-style="terminal-tui"] .footer::before { content:"-- NORMAL -- "; color:var(--accent); font-weight:700; }
+@media (prefers-reduced-motion: reduce) { #stage[data-style="terminal-tui"] .tui-cursor { animation:none; } }

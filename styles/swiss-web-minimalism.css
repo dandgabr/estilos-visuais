@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500&display=swap');
+#stage[data-style="swiss-web-minimalism"]{
+  --bg:#fff;--surface:#fff;--surface-2:#f1f1f1;--fg:#000;--muted:#505050;--accent:#d4000f;--accent-fg:#fff;--border:#000;
+  --ok:#006b2e;--warn:#8a5200;--danger:#d4000f;--radius:0;--radius-sm:0;--shadow:none;
+  --font-body:'Inter',Helvetica,Arial,sans-serif;--font-display:'Inter',Helvetica,Arial,sans-serif;--font-mono:'IBM Plex Mono',monospace;
+  --gap:24px;--pad:16px 0 20px;--maxw:1120px;
+  font-size:16px;line-height:1.5;
+  background-color:#fff;
+  background-image:repeating-linear-gradient(to bottom,transparent 0 23px,rgba(212,0,15,.06) 23px 24px);
+}
+#stage[data-style="swiss-web-minimalism"] .app{border-left:1px solid #000;border-right:1px solid #000;padding:0 24px 48px}
+#stage[data-style="swiss-web-minimalism"] .topbar{border-bottom:4px solid #000;padding:16px 0 14px}
+#stage[data-style="swiss-web-minimalism"] .brand{font-weight:900;letter-spacing:-.03em;text-transform:uppercase}
+#stage[data-style="swiss-web-minimalism"] .brand-mark{background:var(--accent);border-radius:50%}
+#stage[data-style="swiss-web-minimalism"] .nav a{border-radius:0;text-transform:uppercase;font-size:.78rem;letter-spacing:.1em;font-weight:500;padding:6px 10px;border-bottom:2px solid transparent}
+#stage[data-style="swiss-web-minimalism"] .nav a:hover{border-bottom-color:#000}
+#stage[data-style="swiss-web-minimalism"] .nav a.is-active{background:none;color:var(--accent);border-bottom-color:var(--accent)}
+#stage[data-style="swiss-web-minimalism"] .hero{padding:72px 0 48px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px}
+#stage[data-style="swiss-web-minimalism"] .hero>*{grid-column:1/-1}
+#stage[data-style="swiss-web-minimalism"] .eyebrow{color:var(--accent);font-weight:700;font-size:.75rem;letter-spacing:.16em}
+#stage[data-style="swiss-web-minimalism"] .display{font-weight:900;letter-spacing:-.045em;line-height:.92;font-size:clamp(2.6rem,9vw,6.4rem);max-width:12ch}
+#stage[data-style="swiss-web-minimalism"] .lead{color:#222;max-width:44ch;grid-column:1/8}
+@media(max-width:700px){#stage[data-style="swiss-web-minimalism"] .lead{grid-column:1/-1}#stage[data-style="swiss-web-minimalism"] .app{padding:0 16px 40px}}
+#stage[data-style="swiss-web-minimalism"] .btn{border-radius:0;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;font-weight:700;transition:background .15s,color .15s}
+#stage[data-style="swiss-web-minimalism"] .btn-primary{background:#000;color:#fff;border-color:#000}
+#stage[data-style="swiss-web-minimalism"] .btn-primary:hover{background:var(--accent);border-color:var(--accent)}
+#stage[data-style="swiss-web-minimalism"] .btn-secondary{background:#fff;border:2px solid #000}
+#stage[data-style="swiss-web-minimalism"] .btn-secondary:hover{background:#000;color:#fff}
+#stage[data-style="swiss-web-minimalism"] .btn-ghost{border:0;border-bottom:2px solid #000;padding-inline:2px}
+#stage[data-style="swiss-web-minimalism"] .btn-ghost:hover{color:var(--accent);border-color:var(--accent)}
+#stage[data-style="swiss-web-minimalism"] .btn:active{transform:translateY(1px)}
+#stage[data-style="swiss-web-minimalism"] :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+#stage[data-style="swiss-web-minimalism"] .section-title{font-size:.8rem;text-transform:uppercase;letter-spacing:.16em;font-weight:700;border-top:4px solid #000;padding-top:10px;margin-top:56px}
+#stage[data-style="swiss-web-minimalism"] .card,#stage[data-style="swiss-web-minimalism"] .panel{background:transparent;border:0;border-top:1px solid #000;padding:14px 0 20px}
+#stage[data-style="swiss-web-minimalism"] .panel{background:rgba(255,255,255,.85)}
+#stage[data-style="swiss-web-minimalism"] .panel h2{font-size:1.5rem;font-weight:900;letter-spacing:-.03em}
+#stage[data-style="swiss-web-minimalism"] .kpi-label{text-transform:uppercase;font-size:.7rem;letter-spacing:.12em;font-weight:500}
+#stage[data-style="swiss-web-minimalism"] .kpi-value{font-size:3.2rem;font-weight:900;letter-spacing:-.05em;line-height:1}
+#stage[data-style="swiss-web-minimalism"] .badge{border:0;border-radius:0;background:none;padding:0;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem}
+#stage[data-style="swiss-web-minimalism"] .badge::before{content:"";display:inline-block;width:8px;height:8px;background:currentColor;margin-right:6px}
+#stage[data-style="swiss-web-minimalism"] .feature a{font-weight:700;text-decoration:none;border-bottom:2px solid var(--accent)}
+#stage[data-style="swiss-web-minimalism"] .bars i{background:#000;border-radius:0}
+#stage[data-style="swiss-web-minimalism"] .bars i:last-child{background:var(--accent)}
+#stage[data-style="swiss-web-minimalism"] input[type=text],#stage[data-style="swiss-web-minimalism"] input[type=email],#stage[data-style="swiss-web-minimalism"] select,#stage[data-style="swiss-web-minimalism"] textarea{border:0;border-bottom:2px solid #000;background:transparent;padding-inline:0}
+#stage[data-style="swiss-web-minimalism"] input:focus-visible,#stage[data-style="swiss-web-minimalism"] select:focus-visible,#stage[data-style="swiss-web-minimalism"] textarea:focus-visible{outline:0;border-bottom-color:var(--accent);box-shadow:0 2px 0 var(--accent)}
+#stage[data-style="swiss-web-minimalism"] label{text-transform:uppercase;font-size:.72rem;letter-spacing:.1em}
+#stage[data-style="swiss-web-minimalism"] label.inline{text-transform:none;font-size:.95rem;letter-spacing:0}
+#stage[data-style="swiss-web-minimalism"] input[type=checkbox]{accent-color:#000;width:18px;height:18px}
+#stage[data-style="swiss-web-minimalism"] input[type=range]{accent-color:var(--accent)}
+#stage[data-style="swiss-web-minimalism"] .switch{border-radius:0;background:#fff;border:2px solid #000;height:26px}
+#stage[data-style="swiss-web-minimalism"] .switch::after{border-radius:0;background:#000;top:2px;left:2px}
+#stage[data-style="swiss-web-minimalism"] .switch:checked{background:#fff}
+#stage[data-style="swiss-web-minimalism"] .switch:checked::after{background:var(--accent)}
+#stage[data-style="swiss-web-minimalism"] th{color:#000;border-bottom:2px solid #000;font-weight:700}
+#stage[data-style="swiss-web-minimalism"] td{border-bottom:1px solid #bbb}
+#stage[data-style="swiss-web-minimalism"] .toast{border-radius:0;background:#000;color:#fff;border-left:8px solid var(--accent)}
+#stage[data-style="swiss-web-minimalism"] .toast .btn-ghost{border-bottom-color:#fff}
+#stage[data-style="swiss-web-minimalism"] dialog{border:2px solid #000;border-radius:0;box-shadow:12px 12px 0 var(--accent)}
+#stage[data-style="swiss-web-minimalism"] .footer{border-top:4px solid #000;text-transform:uppercase;letter-spacing:.08em;font-size:.72rem;color:#333}

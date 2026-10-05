@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Quicksand:wght@500;700&display=swap');
+#stage[data-style="frutiger-aero"]{
+  --bg:#bfe8ff;--surface:rgba(255,255,255,.78);--surface-2:rgba(255,255,255,.55);--fg:#06344f;--muted:#1d4f6e;--accent:#0b78c9;--accent-fg:#fff;--border:rgba(255,255,255,.9);
+  --ok:#0b6b34;--warn:#8a5500;--danger:#b22a2a;--radius:18px;--radius-sm:12px;
+  --shadow:0 6px 18px rgba(8,90,150,.25),inset 0 1px 0 #fff;
+  --font-body:'Nunito Sans',sans-serif;--font-display:'Quicksand',sans-serif;--gap:20px;--pad:22px;
+  background:
+    radial-gradient(ellipse 60% 25% at 50% 100%,#6fcf3f 0,#3fa52a 60%,transparent 62%) bottom/100% 220px no-repeat fixed,
+    radial-gradient(circle at 15% 20%,rgba(255,255,255,.9) 0 40px,transparent 42px),
+    radial-gradient(circle at 82% 12%,rgba(255,255,255,.6) 0 70px,transparent 72px),
+    radial-gradient(circle at 70% 55%,rgba(255,255,255,.35) 0 90px,transparent 92px),
+    linear-gradient(180deg,#2aa8f2 0,#7fd3ff 45%,#d8f3ff 80%,#e9ffe0);
+}
+#stage[data-style="frutiger-aero"] .topbar{background:linear-gradient(#ffffffd9,#c9ecffcc);border:1px solid #fff;border-radius:99px;padding:8px 14px 8px 20px;margin-top:14px;box-shadow:var(--shadow)}
+#stage[data-style="frutiger-aero"] .brand{font-family:'Quicksand',sans-serif}
+#stage[data-style="frutiger-aero"] .brand-mark{border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff 0 12%,#7be07b 30%,#1a9c3c);box-shadow:inset 0 -4px 6px rgba(0,80,20,.4),0 2px 4px rgba(0,60,100,.4)}
+#stage[data-style="frutiger-aero"] .nav a{border-radius:99px;font-weight:700;color:#06344f;transition:background .2s}
+#stage[data-style="frutiger-aero"] .nav a:hover{background:rgba(255,255,255,.7)}
+#stage[data-style="frutiger-aero"] .nav a.is-active{background:linear-gradient(#4db4f5,#0b78c9);color:#fff;text-shadow:0 1px 1px rgba(0,40,80,.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.6)}
+#stage[data-style="frutiger-aero"] .hero{text-align:center;padding:60px 0 40px}
+#stage[data-style="frutiger-aero"] .display{margin-inline:auto;font-weight:700;color:#05324d;text-shadow:0 2px 0 #fff,0 4px 16px rgba(255,255,255,.8)}
+#stage[data-style="frutiger-aero"] .lead{margin-inline:auto;color:#06344f}
+#stage[data-style="frutiger-aero"] .eyebrow{color:#06344f;font-weight:700}
+#stage[data-style="frutiger-aero"] .actions{justify-content:center}
+#stage[data-style="frutiger-aero"] .btn{border-radius:99px;font-weight:700;position:relative;overflow:hidden;border:1px solid rgba(0,60,100,.5);transition:filter .2s,transform .15s;box-shadow:0 3px 8px rgba(0,60,100,.3)}
+#stage[data-style="frutiger-aero"] .btn::before{content:"";position:absolute;left:4%;right:4%;top:2px;height:48%;border-radius:99px;background:linear-gradient(rgba(255,255,255,.75),rgba(255,255,255,.1));pointer-events:none}
+#stage[data-style="frutiger-aero"] .btn-primary{background:linear-gradient(#35a6f0,#0b6cb8 55%,#0a5fa5);text-shadow:0 1px 1px rgba(0,30,60,.6)}
+#stage[data-style="frutiger-aero"] .btn-secondary{background:linear-gradient(#5fcf5f,#1e9a36 55%,#168a2e);color:#fff;text-shadow:0 1px 1px rgba(0,40,10,.6)}
+#stage[data-style="frutiger-aero"] .btn-ghost{background:linear-gradient(#fff,#d7eefb);color:#06344f}
+#stage[data-style="frutiger-aero"] .btn:hover{filter:brightness(1.08) saturate(1.1)}
+#stage[data-style="frutiger-aero"] .btn:active{transform:translateY(1px);filter:brightness(.95)}
+#stage[data-style="frutiger-aero"] :focus-visible{outline:3px solid #06344f;outline-offset:3px}
+#stage[data-style="frutiger-aero"] .section-title{font-family:'Quicksand',sans-serif;font-weight:700;color:#05324d;text-shadow:0 1px 0 #fff}
+#stage[data-style="frutiger-aero"] .card,#stage[data-style="frutiger-aero"] .panel{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);background:linear-gradient(180deg,rgba(255,255,255,.92),rgba(220,242,255,.7));border:1px solid #fff;position:relative;overflow:hidden}
+#stage[data-style="frutiger-aero"] .card::before{content:"";position:absolute;top:0;left:0;right:0;height:38%;background:linear-gradient(rgba(255,255,255,.55),transparent);pointer-events:none}
+#stage[data-style="frutiger-aero"] .card>*{position:relative}
+#stage[data-style="frutiger-aero"] .kpi-value{font-family:'Quicksand',sans-serif;color:#0b5a99}
+#stage[data-style="frutiger-aero"] .badge{background:linear-gradient(#fff,#d7eefb);border-color:#7fb9e0;font-weight:700}
+#stage[data-style="frutiger-aero"] .feature a{color:#0a5fa5;font-weight:700}
+#stage[data-style="frutiger-aero"] .bars i{border-radius:99px 99px 4px 4px;background:linear-gradient(90deg,#7be07b,#1e9a36);box-shadow:inset 2px 0 3px rgba(255,255,255,.7),0 2px 4px rgba(0,60,20,.3)}
+#stage[data-style="frutiger-aero"] input[type=text],#stage[data-style="frutiger-aero"] input[type=email],#stage[data-style="frutiger-aero"] select,#stage[data-style="frutiger-aero"] textarea{background:#fff;border:1px solid #7fb9e0;box-shadow:inset 0 2px 4px rgba(0,80,140,.2);border-radius:12px}
+#stage[data-style="frutiger-aero"] input[type=checkbox],#stage[data-style="frutiger-aero"] input[type=range]{accent-color:#0b78c9}
+#stage[data-style="frutiger-aero"] .switch{background:linear-gradient(#aab9c4,#d3dde4);box-shadow:inset 0 2px 4px rgba(0,0,0,.3)}
+#stage[data-style="frutiger-aero"] .switch::after{background:radial-gradient(circle at 35% 30%,#fff,#cfe8f7);box-shadow:0 1px 3px rgba(0,0,0,.4)}
+#stage[data-style="frutiger-aero"] .switch:checked{background:linear-gradient(#1e9a36,#7be07b)}
+#stage[data-style="frutiger-aero"] th{color:#1d4f6e}
+#stage[data-style="frutiger-aero"] td,#stage[data-style="frutiger-aero"] th{border-bottom-color:rgba(11,120,201,.25)}
+#stage[data-style="frutiger-aero"] .toast{background:linear-gradient(#1b5e8f,#0a3f66);color:#fff;border:1px solid #fff;box-shadow:var(--shadow)}
+#stage[data-style="frutiger-aero"] .toast .btn-ghost{color:#06344f}
+#stage[data-style="frutiger-aero"] dialog{background:linear-gradient(#fff,#d7eefb);border:2px solid #fff;box-shadow:0 20px 50px rgba(0,60,100,.5)}
+#stage[data-style="frutiger-aero"] .footer{color:#06344f;border-top-color:rgba(255,255,255,.8)}

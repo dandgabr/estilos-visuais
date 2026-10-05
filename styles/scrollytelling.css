@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,500&family=Inter:wght@400;500;600&display=swap');
+#stage[data-style="scrollytelling"] {
+  --bg: #12161c; --surface: #1b212b; --surface-2: #232b37; --fg: #f3efe6; --muted: #c4bfb3;
+  --accent: #ffb454; --accent-fg: #14100a; --border: #343d4b; --ok: #6fdc9c; --warn: #ffc873; --danger: #ff8b7b;
+  --radius: 2px; --radius-sm: 2px; --shadow: none;
+  --font-body: 'Inter', system-ui, sans-serif; --font-display: 'Playfair Display', Georgia, serif; --font-mono: ui-monospace, monospace;
+  --gap: 24px; --pad: 24px; --maxw: 880px;
+  background: var(--bg);
+}
+#stage[data-style="scrollytelling"] .app { padding-bottom: 20vh; }
+#stage[data-style="scrollytelling"] .fx-st-bar { position: sticky; top: 0; height: 4px; z-index: 20; background: rgba(255,255,255,.08); margin-bottom: -4px; pointer-events: none; }
+#stage[data-style="scrollytelling"] .fx-st-bar b { display: block; height: 100%; width: 100%; transform: scaleX(0); transform-origin: 0 50%; background: var(--accent); }
+#stage[data-style="scrollytelling"] .fx-st-dots { position: sticky; top: 45vh; height: 0; z-index: 10; pointer-events: none; }
+#stage[data-style="scrollytelling"] .fx-st-dots ol { list-style: none; margin: 0; padding: 0; position: absolute; right: 10px; top: -40px; display: grid; gap: 14px; }
+#stage[data-style="scrollytelling"] .fx-st-dots li { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--muted); transition: background .3s, transform .3s; }
+#stage[data-style="scrollytelling"] .fx-st-dots li.on { background: var(--accent); border-color: var(--accent); transform: scale(1.4); }
+#stage[data-style="scrollytelling"] .topbar { border-bottom: 1px solid var(--border); }
+#stage[data-style="scrollytelling"] .brand { font-family: var(--font-display); font-style: italic; }
+#stage[data-style="scrollytelling"] .brand-mark { border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(255,180,84,.2); }
+#stage[data-style="scrollytelling"] .nav a { border-radius: 0; font-size: .9rem; }
+#stage[data-style="scrollytelling"] .nav a.is-active { background: none; color: var(--accent); box-shadow: inset 0 -2px var(--accent); }
+#stage[data-style="scrollytelling"] main > section { min-height: 78vh; display: flex; flex-direction: column; justify-content: center; padding: 8vh 0; position: relative; counter-increment: step; }
+#stage[data-style="scrollytelling"] main { counter-reset: step; }
+#stage[data-style="scrollytelling"] main > section::before { content: "Cena 0" counter(step); font: 600 .75rem var(--font-body); letter-spacing: .3em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+#stage[data-style="scrollytelling"] main > section.hero::before { content: "Capítulo 1 · Abertura"; }
+#stage[data-style="scrollytelling"] .hero { min-height: 92vh; }
+#stage[data-style="scrollytelling"] .eyebrow { display: none; }
+#stage[data-style="scrollytelling"] .display { font-weight: 800; font-size: clamp(2.6rem, 8vw, 5.4rem); letter-spacing: -.02em; line-height: 1.02; max-width: 14ch; }
+#stage[data-style="scrollytelling"] .lead { font-family: var(--font-display); font-style: italic; font-size: 1.4rem; color: #d8d2c4; border-left: 3px solid var(--accent); padding-left: 18px; }
+#stage[data-style="scrollytelling"] .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 800; margin: 0 0 24px; max-width: 18ch; }
+#stage[data-style="scrollytelling"] .btn { border-radius: 0; font-weight: 600; letter-spacing: .04em; transition: background .2s, color .2s, transform .2s; }
+#stage[data-style="scrollytelling"] .btn-primary { background: var(--accent); color: var(--accent-fg); }
+#stage[data-style="scrollytelling"] .btn-primary:hover { background: #ffd08a; }
+#stage[data-style="scrollytelling"] .btn-secondary { background: transparent; border-color: var(--fg); }
+#stage[data-style="scrollytelling"] .btn-secondary:hover, #stage[data-style="scrollytelling"] .btn-ghost:hover { background: rgba(255,255,255,.1); }
+#stage[data-style="scrollytelling"] .card, #stage[data-style="scrollytelling"] .panel { border: 0; border-top: 2px solid var(--fg); background: var(--surface); }
+#stage[data-style="scrollytelling"] .kpi-value { font-family: var(--font-display); font-size: 3rem; color: var(--accent); }
+#stage[data-style="scrollytelling"] .badge { border-radius: 0; background: transparent; }
+#stage[data-style="scrollytelling"] .feature a { color: var(--accent); }
+#stage[data-style="scrollytelling"] .bars i { background: var(--accent); border-radius: 0; transform-origin: bottom; }
+#stage[data-style="scrollytelling"] .bars i:nth-child(odd) { background: #e8c48a; }
+#stage[data-style="scrollytelling"] .chart h3 { font-family: var(--font-display); font-size: 1.5rem; }
+#stage[data-style="scrollytelling"] input[type=text], #stage[data-style="scrollytelling"] input[type=email], #stage[data-style="scrollytelling"] select, #stage[data-style="scrollytelling"] textarea { background: transparent; border: 0; border-bottom: 2px solid var(--muted); border-radius: 0; color: var(--fg); }
+#stage[data-style="scrollytelling"] input:focus-visible, #stage[data-style="scrollytelling"] select:focus-visible, #stage[data-style="scrollytelling"] textarea:focus-visible { border-bottom-color: var(--accent); }
+#stage[data-style="scrollytelling"] .switch { background: #4a5365; } #stage[data-style="scrollytelling"] .switch:checked { background: var(--accent); }
+#stage[data-style="scrollytelling"] .switch::after { background: #fff; }
+#stage[data-style="scrollytelling"] input[type=range], #stage[data-style="scrollytelling"] input[type=checkbox] { accent-color: var(--accent); }
+#stage[data-style="scrollytelling"] .toast { background: var(--accent); color: var(--accent-fg); border-radius: 0; }
+#stage[data-style="scrollytelling"] .toast .btn-ghost { border-color: var(--accent-fg); color: var(--accent-fg); }
+#stage[data-style="scrollytelling"] dialog { background: var(--surface); border: 1px solid var(--accent); }
+/* revelação por etapas: só ativa quando o JS marca o stage */
+#stage[data-style="scrollytelling"][data-fx="on"] main > section { opacity: 0; transform: translateY(28px); transition: opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1); }
+#stage[data-style="scrollytelling"][data-fx="on"] main > section.is-in { opacity: .82; transform: none; }
+#stage[data-style="scrollytelling"][data-fx="on"] main > section.is-active { opacity: 1; }
+#stage[data-style="scrollytelling"][data-fx="on"] main > section.hero { opacity: 1; transform: none; transition: none; }
+#stage[data-style="scrollytelling"][data-fx="on"] main > section .kpi, #stage[data-style="scrollytelling"][data-fx="on"] main > section .feature { opacity: 0; transform: translateY(20px); transition: opacity .4s ease, transform .4s ease; }
+#stage[data-style="scrollytelling"][data-fx="on"] main > section.is-active .kpi, #stage[data-style="scrollytelling"][data-fx="on"] main > section.is-active .feature, #stage[data-style="scrollytelling"][data-fx="on"] main > section.is-in .kpi, #stage[data-style="scrollytelling"][data-fx="on"] main > section.is-in .feature { opacity: 1; transform: none; }
+#stage[data-style="scrollytelling"][data-fx="on"] main > section:nth-of-type(n) .kpi:nth-child(2), #stage[data-style="scrollytelling"][data-fx="on"] .feature:nth-child(2) { transition-delay: .12s; }
+#stage[data-style="scrollytelling"][data-fx="on"] .kpi:nth-child(3) { transition-delay: .24s; } #stage[data-style="scrollytelling"][data-fx="on"] .kpi:nth-child(4) { transition-delay: .36s; }
+#stage[data-style="scrollytelling"][data-fx="on"] .bars i { transform: scaleY(0); transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+#stage[data-style="scrollytelling"][data-fx="on"] .is-in .bars i { transform: none; }
+#stage[data-style="scrollytelling"][data-fx="on"] .bars i:nth-child(2) { transition-delay: .08s; } #stage[data-style="scrollytelling"][data-fx="on"] .bars i:nth-child(3) { transition-delay: .16s; } #stage[data-style="scrollytelling"][data-fx="on"] .bars i:nth-child(4) { transition-delay: .24s; } #stage[data-style="scrollytelling"][data-fx="on"] .bars i:nth-child(5) { transition-delay: .32s; } #stage[data-style="scrollytelling"][data-fx="on"] .bars i:nth-child(6) { transition-delay: .4s; } #stage[data-style="scrollytelling"][data-fx="on"] .bars i:nth-child(7) { transition-delay: .48s; }
+@media (prefers-reduced-motion: reduce) {
+  #stage[data-style="scrollytelling"][data-fx="on"] main > section, #stage[data-style="scrollytelling"][data-fx="on"] .kpi, #stage[data-style="scrollytelling"][data-fx="on"] .feature, #stage[data-style="scrollytelling"][data-fx="on"] .bars i { opacity: 1 !important; transform: none !important; }
+}
+@media (max-width: 640px) { #stage[data-style="scrollytelling"] .fx-st-dots { display: none; } }
+#stage[data-style="scrollytelling"] main > section.split { display: grid; align-content: center; }

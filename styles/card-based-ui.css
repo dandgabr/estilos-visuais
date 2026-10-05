@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap');
+#stage[data-style="card-based-ui"]{
+  --bg:#eceff4;--surface:#fff;--surface-2:#f3f5f9;--fg:#1c2230;--muted:#586075;--accent:#3b5bdb;--accent-fg:#fff;--border:#e1e5ee;
+  --ok:#17803d;--warn:#a35f00;--danger:#c92a2a;--radius:14px;--radius-sm:8px;--shadow:0 1px 2px rgba(20,30,60,.06),0 4px 14px rgba(20,30,60,.06);
+  --font-body:'DM Sans',sans-serif;--font-display:'DM Sans',sans-serif;--gap:20px;--pad:20px;
+}
+#stage[data-style="card-based-ui"] .topbar{background:#fff;border-radius:14px;padding:10px 16px;margin-top:16px;box-shadow:var(--shadow)}
+#stage[data-style="card-based-ui"] .brand-mark{border-radius:8px;background:linear-gradient(135deg,#3b5bdb,#7048e8)}
+#stage[data-style="card-based-ui"] .hero{background:#fff;border-radius:20px;padding:48px 32px;margin-top:20px;box-shadow:var(--shadow)}
+#stage[data-style="card-based-ui"] .display{font-weight:700;letter-spacing:-.03em}
+#stage[data-style="card-based-ui"] .btn{border-radius:10px;transition:transform .15s,box-shadow .15s}
+#stage[data-style="card-based-ui"] .btn-primary:hover{box-shadow:0 6px 16px rgba(59,91,219,.35);transform:translateY(-1px)}
+#stage[data-style="card-based-ui"] .btn-secondary{background:#fff}
+#stage[data-style="card-based-ui"] .btn-ghost{border-color:transparent;background:var(--surface-2)}
+#stage[data-style="card-based-ui"] .card{transition:transform .2s,box-shadow .2s;position:relative}
+#stage[data-style="card-based-ui"] .card:hover{transform:translateY(-4px);box-shadow:0 2px 4px rgba(20,30,60,.06),0 14px 30px rgba(20,30,60,.12)}
+#stage[data-style="card-based-ui"] .kpi{border-top:4px solid var(--accent)}
+#stage[data-style="card-based-ui"] .kpis .card:nth-child(2){border-top-color:#e8890c}
+#stage[data-style="card-based-ui"] .kpis .card:nth-child(3){border-top-color:#17803d}
+#stage[data-style="card-based-ui"] .kpis .card:nth-child(4){border-top-color:#c92a2a}
+#stage[data-style="card-based-ui"] .feature{padding-top:76px;background:linear-gradient(135deg,#dbe4ff,#e5dbff) top/100% 56px no-repeat,#fff}
+#stage[data-style="card-based-ui"] .feature a{color:#3b5bdb;font-weight:700;text-decoration:none}
+#stage[data-style="card-based-ui"] .bars i{border-radius:6px 6px 0 0;background:linear-gradient(#5c7cfa,#3b5bdb)}
+#stage[data-style="card-based-ui"] .panel{border-radius:14px}
+#stage[data-style="card-based-ui"] input[type=text],#stage[data-style="card-based-ui"] input[type=email],#stage[data-style="card-based-ui"] select,#stage[data-style="card-based-ui"] textarea{background:var(--surface-2)}
+#stage[data-style="card-based-ui"] input[type=checkbox],#stage[data-style="card-based-ui"] input[type=range]{accent-color:#3b5bdb}
+#stage[data-style="card-based-ui"] .toast{background:#1c2230;color:#fff;box-shadow:var(--shadow)}
+#stage[data-style="card-based-ui"] dialog{border:0;border-radius:18px;box-shadow:0 20px 50px rgba(20,30,60,.3)}
+#stage[data-style="card-based-ui"] .footer{border:0;text-align:center}

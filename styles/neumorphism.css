@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+#stage[data-style="neumorphism"]{
+  --bg:#e0e5ec;--surface:#e0e5ec;--surface-2:#e0e5ec;--fg:#2d3748;--muted:#4a5568;--accent:#4c51bf;--accent-fg:#fff;--border:transparent;
+  --ok:#2f7a4f;--warn:#8a5a00;--danger:#b53030;--radius:22px;--radius-sm:14px;
+  --nu-out:9px 9px 18px #a3b1c6,-9px -9px 18px #ffffff;--nu-in:inset 6px 6px 12px #a3b1c6,inset -6px -6px 12px #ffffff;
+  --shadow:var(--nu-out);--font-body:'Nunito',sans-serif;--font-display:'Nunito',sans-serif;--gap:28px;--pad:24px;
+}
+#stage[data-style="neumorphism"] .topbar{padding:24px 0}
+#stage[data-style="neumorphism"] .brand-mark{background:var(--bg);box-shadow:5px 5px 10px #a3b1c6,-5px -5px 10px #fff;border-radius:50%;position:relative}
+#stage[data-style="neumorphism"] .brand-mark::after{content:"";position:absolute;inset:30%;border-radius:50%;background:#4c51bf}
+#stage[data-style="neumorphism"] .nav a{border-radius:99px;font-weight:600;transition:box-shadow .2s}
+#stage[data-style="neumorphism"] .nav a:hover{box-shadow:4px 4px 8px #a3b1c6,-4px -4px 8px #fff}
+#stage[data-style="neumorphism"] .nav a.is-active{background:var(--bg);color:#4c51bf;box-shadow:inset 3px 3px 6px #a3b1c6,inset -3px -3px 6px #fff}
+#stage[data-style="neumorphism"] .display{font-weight:800;color:#2d3748;text-shadow:2px 2px 3px #fff,-1px -1px 2px rgba(163,177,198,.6)}
+#stage[data-style="neumorphism"] .btn{border:0;border-radius:99px;background:var(--bg);color:#2d3748;font-weight:800;box-shadow:6px 6px 12px #a3b1c6,-6px -6px 12px #fff;transition:box-shadow .2s,color .2s}
+#stage[data-style="neumorphism"] .btn:hover{box-shadow:3px 3px 6px #a3b1c6,-3px -3px 6px #fff}
+#stage[data-style="neumorphism"] .btn:active{box-shadow:inset 4px 4px 8px #a3b1c6,inset -4px -4px 8px #fff}
+#stage[data-style="neumorphism"] .btn-primary{color:#4c51bf}
+#stage[data-style="neumorphism"] .btn-ghost{box-shadow:none;color:#4a5568}
+#stage[data-style="neumorphism"] .btn-ghost:hover{box-shadow:var(--nu-out)}
+#stage[data-style="neumorphism"] .btn[disabled]{box-shadow:none;opacity:.55}
+#stage[data-style="neumorphism"] :focus-visible{outline:3px solid #4c51bf;outline-offset:4px}
+#stage[data-style="neumorphism"] .card,#stage[data-style="neumorphism"] .panel{border:0;background:var(--bg);box-shadow:var(--nu-out)}
+#stage[data-style="neumorphism"] .kpi{box-shadow:var(--nu-in);text-align:center}
+#stage[data-style="neumorphism"] .kpi-value{color:#4c51bf}
+#stage[data-style="neumorphism"] .badge{border:0;background:var(--bg);box-shadow:inset 2px 2px 4px #a3b1c6,inset -2px -2px 4px #fff;font-weight:700}
+#stage[data-style="neumorphism"] .bars{padding:14px 14px 0;box-shadow:var(--nu-in);border-radius:16px}
+#stage[data-style="neumorphism"] .bars i{border-radius:99px 99px 0 0;background:linear-gradient(180deg,#6670e8,#4c51bf);box-shadow:3px 3px 6px #a3b1c6,-2px -2px 5px #fff}
+#stage[data-style="neumorphism"] input[type=text],#stage[data-style="neumorphism"] input[type=email],#stage[data-style="neumorphism"] select,#stage[data-style="neumorphism"] textarea{border:0;background:var(--bg);box-shadow:var(--nu-in);border-radius:14px}
+#stage[data-style="neumorphism"] input:focus-visible,#stage[data-style="neumorphism"] select:focus-visible,#stage[data-style="neumorphism"] textarea:focus-visible{outline:3px solid #4c51bf;outline-offset:2px}
+#stage[data-style="neumorphism"] input[type=checkbox],#stage[data-style="neumorphism"] input[type=range]{accent-color:#4c51bf}
+#stage[data-style="neumorphism"] .switch{background:var(--bg);box-shadow:inset 3px 3px 6px #a3b1c6,inset -3px -3px 6px #fff}
+#stage[data-style="neumorphism"] .switch::after{background:var(--bg);box-shadow:2px 2px 4px #a3b1c6,-2px -2px 4px #fff}
+#stage[data-style="neumorphism"] .switch:checked{background:var(--bg)}
+#stage[data-style="neumorphism"] .switch:checked::after{background:#4c51bf;box-shadow:2px 2px 4px #a3b1c6}
+#stage[data-style="neumorphism"] th,#stage[data-style="neumorphism"] td{border-bottom:2px solid rgba(163,177,198,.4)}
+#stage[data-style="neumorphism"] .toast{background:var(--bg);color:#2d3748;box-shadow:var(--nu-out);border-radius:99px;padding-inline:24px}
+#stage[data-style="neumorphism"] dialog{border:0;background:var(--bg);box-shadow:12px 12px 30px #8797ae,-8px -8px 24px #fff}
+#stage[data-style="neumorphism"] dialog::backdrop{background:rgba(224,229,236,.7)}
+#stage[data-style="neumorphism"] .footer{border-top:2px solid rgba(163,177,198,.4)}

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Patrick+Hand&family=Gochi+Hand&display=swap');
+#stage[data-style="hand-drawn-sketch"] {
+  --bg:#fbf7ec; --surface:#fffdf6; --surface-2:#fff3a6; --fg:#222; --muted:#4a4a4a; --accent:#ffe066; --accent-fg:#222; --border:#222;
+  --ok:#1b6b34; --warn:#7a4a00; --danger:#b3261e; --radius:255px 15px 225px 15px/15px 225px 15px 255px; --radius-sm:15px 225px 15px 255px/255px 15px 225px 15px; --shadow:3px 4px 0 rgba(34,34,34,.18);
+  --font-body:'Patrick Hand','Comic Sans MS',cursive; --font-display:'Caveat',cursive; --font-mono:'Gochi Hand',cursive;
+  --gap:26px; --pad:22px; --maxw:1080px;
+  background-color:#fbf7ec; font-size:18px;
+  background-image:repeating-linear-gradient(transparent 0 33px,rgba(70,130,200,.22) 33px 34px),linear-gradient(90deg,transparent 58px,rgba(220,70,70,.3) 58px 60px,transparent 60px);
+  background-attachment:local;
+}
+#stage[data-style="hand-drawn-sketch"] .topbar{ border:2.5px solid #222; border-radius:255px 15px 225px 15px/15px 225px 15px 255px; margin-top:18px; padding:8px 22px; background:#fffdf6; box-shadow:3px 4px 0 rgba(34,34,34,.18); }
+#stage[data-style="hand-drawn-sketch"] .brand{ font:700 1.9rem var(--font-display); }
+#stage[data-style="hand-drawn-sketch"] .brand-mark{ background:#ffe066; border:2.5px solid #222; border-radius:50% 45% 55% 50%; transform:rotate(-6deg); }
+#stage[data-style="hand-drawn-sketch"] .nav a{ font:500 1.25rem var(--font-body); border-radius:15px 225px 15px 255px/255px 15px 225px 15px; border:2px solid transparent; }
+#stage[data-style="hand-drawn-sketch"] .nav a:hover{ border-color:#222; transform:rotate(-2deg); }
+#stage[data-style="hand-drawn-sketch"] .nav a.is-active{ background:#ffe066; color:#222; border-color:#222; }
+#stage[data-style="hand-drawn-sketch"] .hero{ padding:44px 0 28px 70px; position:relative; }
+#stage[data-style="hand-drawn-sketch"] .eyebrow{ font:500 1.3rem var(--font-display); text-transform:none; letter-spacing:0; color:#222; }
+#stage[data-style="hand-drawn-sketch"] .eyebrow::after{ content:" ↷"; font-size:1.5em; }
+#stage[data-style="hand-drawn-sketch"] .display{ font:700 clamp(2.8rem,8vw,5.4rem)/.95 var(--font-display); max-width:13ch; transform:rotate(-1.5deg); background:linear-gradient(transparent 62%,#ffe066 62% 92%,transparent 92%); display:inline; box-decoration-break:clone; -webkit-box-decoration-break:clone; padding:0 .1em; }
+#stage[data-style="hand-drawn-sketch"] .display{ display:block; background:none; text-decoration:underline wavy #4a90d9; text-decoration-thickness:3px; text-underline-offset:10px; }
+#stage[data-style="hand-drawn-sketch"] .lead{ font-size:1.35rem; color:#222; max-width:46ch; margin-top:24px; }
+#stage[data-style="hand-drawn-sketch"] .btn{ font:500 1.3rem var(--font-body); border:2.5px solid #222; border-radius:255px 15px 225px 15px/15px 225px 15px 255px; color:#222; box-shadow:3px 4px 0 #222; transition:transform .15s ease-out, box-shadow .15s; padding:8px 22px; }
+#stage[data-style="hand-drawn-sketch"] .btn-primary{ background:#ffe066; }
+#stage[data-style="hand-drawn-sketch"] .btn-secondary{ background:#cfe6ff; border-radius:15px 225px 15px 255px/255px 15px 225px 15px; }
+#stage[data-style="hand-drawn-sketch"] .btn-ghost{ background:#fffdf6; border-style:dashed; }
+#stage[data-style="hand-drawn-sketch"] .btn:hover{ transform:rotate(-2deg) translateY(-2px); box-shadow:4px 6px 0 #222; }
+#stage[data-style="hand-drawn-sketch"] .btn:active{ transform:translate(3px,4px); box-shadow:0 0 0 #222; }
+#stage[data-style="hand-drawn-sketch"] .btn[disabled]{ opacity:1; background:#e8e4d8; color:#4a4a4a; box-shadow:none; }
+#stage[data-style="hand-drawn-sketch"] :focus-visible{ outline:3px dashed #2563c9; outline-offset:4px; }
+#stage[data-style="hand-drawn-sketch"] .section-title{ font:700 2.4rem var(--font-display); display:inline-block; position:relative; padding-bottom:6px; margin-left:70px; }
+#stage[data-style="hand-drawn-sketch"] .section-title::after{ content:""; position:absolute; left:-4px; right:-8px; bottom:0; height:10px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='10' preserveAspectRatio='none' viewBox='0 0 120 10'%3E%3Cpath d='M1 6 C20 1 40 9 60 5 S100 2 119 6' fill='none' stroke='%23222' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat; }
+#stage[data-style="hand-drawn-sketch"] .kpis,#stage[data-style="hand-drawn-sketch"] .grid,#stage[data-style="hand-drawn-sketch"] .split,#stage[data-style="hand-drawn-sketch"] .toast,#stage[data-style="hand-drawn-sketch"] .footer{ margin-left:70px; }
+#stage[data-style="hand-drawn-sketch"] .card,#stage[data-style="hand-drawn-sketch"] .panel{ background:#fffdf6; border:2.5px solid #222; border-radius:255px 15px 225px 15px/15px 225px 15px 255px; box-shadow:3px 4px 0 rgba(34,34,34,.18); transition:transform .15s ease-out; }
+#stage[data-style="hand-drawn-sketch"] .card:nth-child(even){ border-radius:15px 225px 15px 255px/255px 15px 225px 15px; }
+#stage[data-style="hand-drawn-sketch"] .card:hover{ transform:rotate(-1.2deg); }
+#stage[data-style="hand-drawn-sketch"] .kpis .card:nth-child(2){ background:repeating-linear-gradient(135deg,#fffdf6 0 6px,#fff3a6 6px 7px); }
+#stage[data-style="hand-drawn-sketch"] .kpis .card:nth-child(4){ background:repeating-linear-gradient(45deg,#fffdf6 0 6px,#cfe6ff 6px 7px); }
+#stage[data-style="hand-drawn-sketch"] .kpi-label{ font:500 1.15rem var(--font-body); color:#4a4a4a; }
+#stage[data-style="hand-drawn-sketch"] .kpi-value{ font:700 3.2rem/1 var(--font-display); }
+#stage[data-style="hand-drawn-sketch"] .badge{ font:500 1rem var(--font-body); border:2px solid currentColor; border-radius:255px 15px 225px 15px/15px 225px 15px 255px; background:#fff3a6; }
+#stage[data-style="hand-drawn-sketch"] .badge.ok,#stage[data-style="hand-drawn-sketch"] .badge.warn,#stage[data-style="hand-drawn-sketch"] .badge.danger{ background:#fffdf6; }
+#stage[data-style="hand-drawn-sketch"] .card h3{ font:700 1.9rem var(--font-display); }
+#stage[data-style="hand-drawn-sketch"] .feature a{ font-size:1.15rem; color:#1d4fa8; text-decoration:underline wavy; text-underline-offset:4px; }
+#stage[data-style="hand-drawn-sketch"] .bars{ border-left:2.5px solid #222; border-bottom:2.5px solid #222; padding-left:6px; gap:12px; }
+#stage[data-style="hand-drawn-sketch"] .bars i{ border:2.5px solid #222; border-bottom:0; border-radius:6px 10px 0 0; background:repeating-linear-gradient(-45deg,#fffdf6 0 4px,#ffe066 4px 7px); }
+#stage[data-style="hand-drawn-sketch"] .bars i:nth-child(even){ background:repeating-linear-gradient(45deg,#fffdf6 0 4px,#9cc8f5 4px 7px); border-radius:10px 6px 0 0; }
+#stage[data-style="hand-drawn-sketch"] .panel h2{ font:700 2.2rem var(--font-display); }
+#stage[data-style="hand-drawn-sketch"] label{ font:500 1.15rem var(--font-body); }
+#stage[data-style="hand-drawn-sketch"] input[type=text],#stage[data-style="hand-drawn-sketch"] input[type=email],#stage[data-style="hand-drawn-sketch"] select,#stage[data-style="hand-drawn-sketch"] textarea{ border:2.5px solid #222; border-radius:15px 225px 15px 255px/255px 15px 225px 15px; background:#fffdf6; font-family:var(--font-body); font-size:1.1rem; }
+#stage[data-style="hand-drawn-sketch"] input[type=text],#stage[data-style="hand-drawn-sketch"] input[type=email]{ border-radius:10px 14px 10px 16px/14px 10px 16px 10px; }
+#stage[data-style="hand-drawn-sketch"] input[type=checkbox],#stage[data-style="hand-drawn-sketch"] input[type=range]{ accent-color:#222; }
+#stage[data-style="hand-drawn-sketch"] .inline{ font-size:1.15rem; }
+#stage[data-style="hand-drawn-sketch"] .switch{ border:2.5px solid #222; background:#e8e4d8; } #stage[data-style="hand-drawn-sketch"] .switch::after{ background:#222; } #stage[data-style="hand-drawn-sketch"] .switch:checked{ background:#ffe066; }
+#stage[data-style="hand-drawn-sketch"] th{ font:700 1.3rem var(--font-display); text-transform:none; letter-spacing:0; color:#222; border-bottom:2.5px solid #222; }
+#stage[data-style="hand-drawn-sketch"] td{ border-bottom:2px dashed #6a6a6a; font-size:1.1rem; }
+#stage[data-style="hand-drawn-sketch"] .toast{ background:#fff3a6; color:#222; border:2.5px solid #222; border-radius:15px 225px 15px 255px/255px 15px 225px 15px; box-shadow:3px 4px 0 #222; font-size:1.15rem; transform:rotate(-.6deg); }
+#stage[data-style="hand-drawn-sketch"] dialog{ background:#fffdf6; color:#222; border:3px solid #222; border-radius:255px 15px 225px 15px/15px 225px 15px 255px; box-shadow:6px 8px 0 #222; padding:28px; }
+#stage[data-style="hand-drawn-sketch"] dialog h2{ font:700 2.2rem var(--font-display); }
+#stage[data-style="hand-drawn-sketch"] dialog::backdrop{ background:rgba(34,34,34,.45); }
+#stage[data-style="hand-drawn-sketch"] .footer{ border-top:2.5px dashed #222; font-size:1.05rem; color:#4a4a4a; }
+@media (prefers-reduced-motion:reduce){ #stage[data-style="hand-drawn-sketch"] *{ transition:none!important; } }
+@media (max-width:640px){ #stage[data-style="hand-drawn-sketch"] .hero{ padding-left:24px; } #stage[data-style="hand-drawn-sketch"] .kpis,#stage[data-style="hand-drawn-sketch"] .grid,#stage[data-style="hand-drawn-sketch"] .split,#stage[data-style="hand-drawn-sketch"] .toast,#stage[data-style="hand-drawn-sketch"] .footer,#stage[data-style="hand-drawn-sketch"] .section-title{ margin-left:24px; } #stage[data-style="hand-drawn-sketch"]{ background-image:repeating-linear-gradient(transparent 0 33px,rgba(70,130,200,.22) 33px 34px),linear-gradient(90deg,transparent 18px,rgba(220,70,70,.3) 18px 20px,transparent 20px); } }

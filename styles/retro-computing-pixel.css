@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&display=swap');
+#stage[data-style="retro-computing-pixel"] {
+  --bg:#008080; --surface:#c0c0c0; --surface-2:#dfdfdf; --fg:#000; --muted:#303030; --accent:#000080; --accent-fg:#fff; --border:#000;
+  --ok:#006400; --warn:#6b4a00; --danger:#a00000; --radius:0; --radius-sm:0; --shadow:none;
+  --font-body:"VT323",ui-monospace,monospace; --font-display:"Silkscreen","VT323",monospace; --font-mono:"VT323",monospace;
+  --gap:22px; --pad:14px; --maxw:1000px;
+  --bevel-out: inset -2px -2px #808080, inset 2px 2px #fff, inset -3px -3px #404040, inset 3px 3px #dfdfdf;
+  --bevel-in: inset 2px 2px #808080, inset -2px -2px #fff, inset 3px 3px #404040, inset -3px -3px #dfdfdf;
+  --title: linear-gradient(90deg,#000080,#1084d0);
+  background-color:#008080;
+  background-image:linear-gradient(45deg,rgba(0,0,0,.08) 25%,transparent 25%,transparent 75%,rgba(0,0,0,.08) 75%),linear-gradient(45deg,rgba(0,0,0,.08) 25%,transparent 25%,transparent 75%,rgba(0,0,0,.08) 75%);
+  background-size:8px 8px; background-position:0 0,4px 4px;
+  font-size:22px; line-height:1.15; -webkit-font-smoothing:none; font-smooth:never;
+}
+#stage[data-style="retro-computing-pixel"] h1, #stage[data-style="retro-computing-pixel"] h2, #stage[data-style="retro-computing-pixel"] h3 { font-family:var(--font-display); text-transform:uppercase; line-height:1.25; font-weight:700; }
+#stage[data-style="retro-computing-pixel"] .topbar { background:var(--surface); box-shadow:var(--bevel-out); padding:8px 12px; margin-top:12px; }
+#stage[data-style="retro-computing-pixel"] .brand { font-family:var(--font-display); font-size:1rem; }
+#stage[data-style="retro-computing-pixel"] .brand-mark { background:conic-gradient(#f00 0 25%,#0f0 0 50%,#00f 0 75%,#ff0 0); width:1.2em; height:1.2em; image-rendering:pixelated; border:2px solid #000; }
+#stage[data-style="retro-computing-pixel"] .nav a { text-decoration:none; padding:4px 12px; border-radius:0; }
+#stage[data-style="retro-computing-pixel"] .nav a:hover { box-shadow:var(--bevel-out); }
+#stage[data-style="retro-computing-pixel"] .nav a.is-active { background:var(--accent); color:#fff; box-shadow:none; }
+#stage[data-style="retro-computing-pixel"] .hero { margin-top:20px; background:var(--surface); box-shadow:var(--bevel-out); padding:46px 20px 24px; position:relative; }
+#stage[data-style="retro-computing-pixel"] .hero::before { content:"Bem-vindo.exe"; position:absolute; inset:3px 3px auto 3px; height:26px; background:var(--title); color:#fff; font:700 .8rem/26px var(--font-display); padding-left:8px; }
+#stage[data-style="retro-computing-pixel"] .eyebrow { color:#000080; letter-spacing:.1em; font-size:1rem; }
+#stage[data-style="retro-computing-pixel"] .display { font-size:clamp(1.5rem,4.6vw,2.8rem); max-width:18ch; }
+#stage[data-style="retro-computing-pixel"] .lead { color:#111; font-size:1.3rem; }
+#stage[data-style="retro-computing-pixel"] .btn { font-family:var(--font-display); font-size:.75rem; font-weight:700; text-transform:uppercase; background:var(--surface); color:#000; border:0; border-radius:0; box-shadow:var(--bevel-out), 0 0 0 1px #000; padding:10px 16px; }
+#stage[data-style="retro-computing-pixel"] .btn:active { box-shadow:var(--bevel-in), 0 0 0 1px #000; padding:11px 15px 9px 17px; }
+#stage[data-style="retro-computing-pixel"] .btn-primary { background:#c0c0c0; outline:2px solid #000; outline-offset:-6px; }
+#stage[data-style="retro-computing-pixel"] .btn-primary:hover { background:#d4d4d4; }
+#stage[data-style="retro-computing-pixel"] .btn[disabled] { color:#808080; text-shadow:1px 1px #fff; opacity:1; }
+#stage[data-style="retro-computing-pixel"] :focus-visible { outline:2px dotted #000; outline-offset:-6px; box-shadow:var(--bevel-out), 0 0 0 3px #ff0; }
+#stage[data-style="retro-computing-pixel"] .section-title { display:inline-block; background:#c0c0c0; box-shadow:var(--bevel-out); padding:8px 14px; font-size:1rem; margin:30px 0 14px; }
+#stage[data-style="retro-computing-pixel"] .card, #stage[data-style="retro-computing-pixel"] .panel { position:relative; background:var(--surface); box-shadow:var(--bevel-out); border:0; padding:calc(var(--pad) + 30px) var(--pad) var(--pad); }
+#stage[data-style="retro-computing-pixel"] .card::before, #stage[data-style="retro-computing-pixel"] .panel::before { content:"C:\\Coacus\\app.exe"; position:absolute; inset:3px 3px auto 3px; height:24px; background:var(--title); color:#fff; font:700 .62rem/24px var(--font-display); padding-left:8px; overflow:hidden; white-space:nowrap; }
+#stage[data-style="retro-computing-pixel"] .kpi:nth-child(2)::before { content:"C:\\Coacus\\tempo.exe"; } #stage[data-style="retro-computing-pixel"] .kpi:nth-child(3)::before { content:"C:\\Coacus\\nps.exe"; } #stage[data-style="retro-computing-pixel"] .kpi:nth-child(4)::before { content:"C:\\Coacus\\erro.exe"; background:linear-gradient(90deg,#800000,#d01010); }
+#stage[data-style="retro-computing-pixel"] .kpi-label { font-size:1.1rem; color:#222; }
+#stage[data-style="retro-computing-pixel"] .kpi-value { font-family:var(--font-display); font-size:1.6rem; background:#000; color:#33ff33; padding:4px 8px; box-shadow:var(--bevel-in); margin:4px 0 6px; }
+#stage[data-style="retro-computing-pixel"] .badge { border-radius:0; background:#fff; border:2px solid #000; font-family:var(--font-display); font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; }
+#stage[data-style="retro-computing-pixel"] .feature a { color:#0000cc; }
+#stage[data-style="retro-computing-pixel"] .bars { background:#000; padding:8px 8px 0; box-shadow:var(--bevel-in); }
+#stage[data-style="retro-computing-pixel"] .bars i { border-radius:0; background:repeating-linear-gradient(0deg,#33ff33 0 6px,#000 6px 8px); }
+#stage[data-style="retro-computing-pixel"] .bars i:nth-child(even) { background:repeating-linear-gradient(0deg,#ffcc00 0 6px,#000 6px 8px); }
+#stage[data-style="retro-computing-pixel"] input[type=text], #stage[data-style="retro-computing-pixel"] input[type=email], #stage[data-style="retro-computing-pixel"] select, #stage[data-style="retro-computing-pixel"] textarea { font-family:var(--font-body); font-size:1.2rem; background:#fff; border:0; border-radius:0; box-shadow:var(--bevel-in); }
+#stage[data-style="retro-computing-pixel"] input[type=checkbox], #stage[data-style="retro-computing-pixel"] input[type=range] { accent-color:#000080; }
+#stage[data-style="retro-computing-pixel"] label { font-size:1.15rem; }
+#stage[data-style="retro-computing-pixel"] .switch { border-radius:0; background:#808080; box-shadow:var(--bevel-in); }
+#stage[data-style="retro-computing-pixel"] .switch::after { border-radius:0; background:#c0c0c0; box-shadow:var(--bevel-out); top:3px; left:3px; width:18px; height:18px; transition:none; }
+#stage[data-style="retro-computing-pixel"] .switch:checked { background:#000080; }
+#stage[data-style="retro-computing-pixel"] th { font-family:var(--font-display); font-size:.65rem; background:#000080; color:#fff; border-bottom:0; }
+#stage[data-style="retro-computing-pixel"] td { border-bottom:2px solid #808080; background:#fff; }
+#stage[data-style="retro-computing-pixel"] .table-wrap { box-shadow:var(--bevel-in); background:#fff; padding:3px; }
+#stage[data-style="retro-computing-pixel"] .toast { background:#ffffe1; color:#000; border-radius:0; border:2px solid #000; box-shadow:4px 4px 0 #000; }
+#stage[data-style="retro-computing-pixel"] dialog { background:var(--surface); color:#000; border:0; border-radius:0; box-shadow:var(--bevel-out), 6px 6px 0 #000; padding:46px 20px 20px; }
+#stage[data-style="retro-computing-pixel"] dialog::before { content:"Aviso.exe"; position:absolute; inset:3px 3px auto 3px; height:26px; background:var(--title); color:#fff; font:700 .75rem/26px var(--font-display); padding-left:8px; }
+#stage[data-style="retro-computing-pixel"] dialog::backdrop { background:rgba(0,0,0,.45); background-image:repeating-conic-gradient(#0006 0 25%,transparent 0 50%); background-size:4px 4px; }
+#stage[data-style="retro-computing-pixel"] .footer { background:var(--surface); box-shadow:var(--bevel-out); padding:8px 12px; color:#111; border:0; }

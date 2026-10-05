@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@400;500;600;700&family=Rubik+Mono+One&family=DM+Mono:wght@400;500&display=swap');
+#stage[data-style="maximalism"] {
+  --bg:#2a0a6e; --surface:#fff7d6; --surface-2:#ffd6f0; --fg:#1a0538; --muted:#4a2a7a; --accent:#ff2e93; --accent-fg:#fff; --border:#1a0538;
+  --ok:#006b3a; --warn:#7a4200; --danger:#b00020; --radius:22px; --radius-sm:12px; --shadow:6px 6px 0 #1a0538, 12px 12px 0 #00e0c6;
+  --font-body:'Fredoka',system-ui,sans-serif; --font-display:'Bagel Fat One','Fredoka',sans-serif; --font-mono:'DM Mono',monospace;
+  --gap:24px; --pad:22px; --maxw:1140px;
+  background-color:#2a0a6e;
+  background-image:
+    radial-gradient(circle at 10% 10%,#ff2e93 0 120px,transparent 121px),
+    radial-gradient(circle at 92% 22%,#00e0c6 0 90px,transparent 91px),
+    radial-gradient(circle at 80% 70%,#ffd400 0 140px,transparent 141px),
+    radial-gradient(circle at 6% 80%,#ff7a00 0 100px,transparent 101px),
+    repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 14px,transparent 14px 28px),
+    linear-gradient(135deg,#2a0a6e,#6a1bd1 55%,#ff2e93);
+  background-attachment:local;
+}
+#stage[data-style="maximalism"] .topbar{ background:#ffd400; border:4px solid #1a0538; border-radius:999px; padding:8px 20px; margin-top:16px; box-shadow:5px 5px 0 #1a0538; color:#1a0538; }
+#stage[data-style="maximalism"] .brand{ font-family:'Bagel Fat One',sans-serif; font-size:1.4rem; }
+#stage[data-style="maximalism"] .brand-mark{ background:conic-gradient(#ff2e93,#ffd400,#00e0c6,#6a1bd1,#ff2e93); border-radius:50%; border:3px solid #1a0538; animation:max-spin 8s linear infinite; }
+#stage[data-style="maximalism"] .nav a{ font-weight:600; border-radius:999px; transition:transform .25s cubic-bezier(.34,1.56,.64,1), background .2s; }
+#stage[data-style="maximalism"] .nav a:hover{ transform:rotate(-4deg) scale(1.1); background:#00e0c6; }
+#stage[data-style="maximalism"] .nav a.is-active{ background:#d6006f; color:#fff; border:2px solid #1a0538; }
+#stage[data-style="maximalism"] .hero{ margin-top:28px; padding:44px 36px; background:#fff7d6; border:5px solid #1a0538; border-radius:36px; box-shadow:10px 10px 0 #00e0c6,20px 20px 0 #1a0538; position:relative; overflow:hidden; color:#1a0538;
+  background-image:radial-gradient(#ff2e93 2px,transparent 2.5px); background-size:16px 16px; }
+#stage[data-style="maximalism"] .hero > *{ position:relative; z-index:1; }
+#stage[data-style="maximalism"] .hero::before{ content:"★ ✦ ✿ ★ ✦ ✿ ★ ✦ ✿"; position:absolute; top:10px; right:-10px; font-size:2rem; color:#6a1bd1; letter-spacing:.4em; transform:rotate(8deg); opacity:.35; white-space:nowrap; }
+#stage[data-style="maximalism"] .hero::after{ content:""; position:absolute; right:-40px; bottom:-40px; width:200px; height:200px; border-radius:50%; background:repeating-radial-gradient(circle,#ffd400 0 12px,#ff7a00 12px 24px); opacity:.5; pointer-events:none; }
+#stage[data-style="maximalism"] .eyebrow{ font:500 .8rem var(--font-mono); color:#fff; background:#6a1bd1; display:inline-block; padding:4px 14px; border-radius:99px; transform:rotate(-2deg); }
+#stage[data-style="maximalism"] .display{ font-family:'Bagel Fat One',sans-serif; font-weight:400; color:#d6006f; -webkit-text-stroke:2px #1a0538; paint-order:stroke fill; text-shadow:4px 4px 0 #1a0538,8px 8px 0 #ffd400; line-height:1; letter-spacing:.01em; max-width:12ch; }
+#stage[data-style="maximalism"] .lead{ color:#1a0538; font-weight:500; background:rgba(255,255,255,.85); padding:8px 12px; border-radius:12px; }
+#stage[data-style="maximalism"] .btn{ font-family:'Fredoka',sans-serif; font-weight:700; font-size:1.05rem; border:4px solid #1a0538; border-radius:999px; box-shadow:4px 4px 0 #1a0538; transition:transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s; color:#1a0538; }
+#stage[data-style="maximalism"] .btn-primary{ background:#d6006f; color:#fff; text-shadow:1px 1px 0 #1a0538; }
+#stage[data-style="maximalism"] .btn-secondary{ background:#00e0c6; }
+#stage[data-style="maximalism"] .btn-ghost{ background:#fff7d6; }
+#stage[data-style="maximalism"] .btn:hover{ transform:translateY(-4px) rotate(-3deg) scale(1.06); box-shadow:6px 8px 0 #1a0538; }
+#stage[data-style="maximalism"] .btn:active{ transform:translate(3px,3px); box-shadow:1px 1px 0 #1a0538; }
+#stage[data-style="maximalism"] .btn[disabled]{ opacity:1; background:#d9d2ea; color:#4a2a7a; }
+#stage[data-style="maximalism"] :focus-visible{ outline:4px solid #ffd400; outline-offset:3px; box-shadow:0 0 0 8px #1a0538; }
+#stage[data-style="maximalism"] .section-title{ display:inline-block; font-family:'Rubik Mono One',sans-serif; font-weight:400; font-size:1.3rem; background:#ffd400; color:#1a0538; padding:8px 18px; border:4px solid #1a0538; border-radius:12px; transform:rotate(-2deg); box-shadow:5px 5px 0 #ff2e93; }
+#stage[data-style="maximalism"] .card,#stage[data-style="maximalism"] .panel{ border:4px solid #1a0538; box-shadow:var(--shadow); transition:transform .3s cubic-bezier(.34,1.56,.64,1); color:#1a0538; }
+#stage[data-style="maximalism"] .card:hover{ transform:rotate(-1.5deg) scale(1.03); }
+#stage[data-style="maximalism"] .kpis .card:nth-child(1){ background:#ffd400; transform:rotate(-1.5deg); }
+#stage[data-style="maximalism"] .kpis .card:nth-child(2){ background:#00e0c6; transform:rotate(1.2deg); }
+#stage[data-style="maximalism"] .kpis .card:nth-child(3){ background:#ffb3e0; transform:rotate(-1deg); }
+#stage[data-style="maximalism"] .kpis .card:nth-child(4){ background:#ff9a3d; transform:rotate(1.8deg); }
+#stage[data-style="maximalism"] .kpis .card:hover{ transform:rotate(0) scale(1.05); }
+#stage[data-style="maximalism"] .kpi-label{ color:#1a0538; font-weight:600; }
+#stage[data-style="maximalism"] .kpi-value{ font-family:'Bagel Fat One',sans-serif; font-weight:400; font-size:2.6rem; }
+#stage[data-style="maximalism"] .badge{ background:#fff; border:3px solid #1a0538; font-weight:700; border-radius:99px; }
+#stage[data-style="maximalism"] .feature{ background-image:radial-gradient(rgba(106,27,209,.18) 2px,transparent 2.5px); background-size:12px 12px; background-color:#fff7d6; }
+#stage[data-style="maximalism"] .feature:nth-of-type(2){ background-color:#ffd6f0; }
+#stage[data-style="maximalism"] .card h3{ font-family:'Bagel Fat One',sans-serif; font-weight:400; font-size:1.5rem; }
+#stage[data-style="maximalism"] .feature a{ font-weight:700; color:#6a1bd1; }
+#stage[data-style="maximalism"] .chart{ background:repeating-linear-gradient(135deg,#fff7d6 0 18px,#fff0b3 18px 36px); }
+#stage[data-style="maximalism"] .bars i{ border:3px solid #1a0538; border-radius:14px 14px 0 0; background:#ff2e93; }
+#stage[data-style="maximalism"] .bars i:nth-child(4n+2){ background:#00e0c6; } #stage[data-style="maximalism"] .bars i:nth-child(4n+3){ background:#6a1bd1; } #stage[data-style="maximalism"] .bars i:nth-child(4n){ background:#ff9a3d; }
+#stage[data-style="maximalism"] .panel{ background:#fff7d6; }
+#stage[data-style="maximalism"] .panel h2{ font-family:'Bagel Fat One',sans-serif; font-weight:400; font-size:1.8rem; color:#6a1bd1; }
+#stage[data-style="maximalism"] input[type=text],#stage[data-style="maximalism"] input[type=email],#stage[data-style="maximalism"] select,#stage[data-style="maximalism"] textarea{ border:3px solid #1a0538; border-radius:14px; background:#fff; color:#1a0538; box-shadow:3px 3px 0 #ff2e93; }
+#stage[data-style="maximalism"] input[type=checkbox],#stage[data-style="maximalism"] input[type=range]{ accent-color:#ff2e93; }
+#stage[data-style="maximalism"] .switch{ background:#b9aed6; border:3px solid #1a0538; height:28px; width:52px; }
+#stage[data-style="maximalism"] .switch::after{ background:#fff; border:2px solid #1a0538; top:2px; left:2px; transition:transform .3s cubic-bezier(.34,1.56,.64,1); }
+#stage[data-style="maximalism"] .switch:checked{ background:#00e0c6; } #stage[data-style="maximalism"] .switch:checked::after{ transform:translateX(24px); }
+#stage[data-style="maximalism"] th{ color:#1a0538; font-weight:700; border-bottom:3px solid #1a0538; }
+#stage[data-style="maximalism"] td{ border-bottom:2px dashed #6a1bd1; }
+#stage[data-style="maximalism"] tbody tr:nth-child(odd){ background:rgba(255,46,147,.1); }
+#stage[data-style="maximalism"] .toast{ background:#00e0c6; color:#1a0538; border:4px solid #1a0538; font-weight:600; box-shadow:6px 6px 0 #ff2e93; transform:rotate(-.8deg); }
+#stage[data-style="maximalism"] dialog{ background:#fff7d6; color:#1a0538; border:5px solid #1a0538; border-radius:28px; box-shadow:10px 10px 0 #ff2e93; }
+#stage[data-style="maximalism"] dialog::backdrop{ background:repeating-linear-gradient(45deg,rgba(106,27,209,.8) 0 14px,rgba(255,46,147,.8) 14px 28px); }
+#stage[data-style="maximalism"] .footer{ border-top:6px dotted #ffd400; color:#fff; font-weight:500; background:#1a0538; padding-left:18px; padding-right:18px; border-radius:0 0 18px 18px; }
+@keyframes max-spin{ to{ transform:rotate(360deg); } }
+@media (prefers-reduced-motion:reduce){ #stage[data-style="maximalism"] .brand-mark{ animation:none; } }
+@media (max-width:640px){ #stage[data-style="maximalism"] .hero{ padding:28px 18px; } #stage[data-style="maximalism"] .topbar{ border-radius:28px; } }
+@media (max-width:640px){ #stage[data-style="maximalism"] .display{ -webkit-text-stroke:1.5px #1a0538; text-shadow:3px 3px 0 #1a0538; } }

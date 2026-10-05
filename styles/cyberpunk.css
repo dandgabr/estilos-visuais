@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Orbitron:wght@600;800&family=Share+Tech+Mono&display=swap');
+#stage[data-style="cyberpunk"] {
+  --bg:#07060f; --surface:#12101f; --surface-2:#1a1033; --fg:#e9e6ff; --muted:#b4aedb;
+  --accent:#ff2a8a; --accent-fg:#07060f; --border:#3b2a6b; --ok:#3dffb0; --warn:#f5e642; --danger:#ff6b8b;
+  --radius:0; --radius-sm:0; --shadow:0 0 18px rgba(255,42,138,.25);
+  --font-body:'Rajdhani',system-ui,sans-serif; --font-display:'Orbitron','Rajdhani',sans-serif; --font-mono:'Share Tech Mono',monospace;
+  --gap:20px; --pad:22px; --maxw:1120px;
+  --cy:#19e6ff; --ch:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px));
+  font-size:18px; letter-spacing:.01em;
+  background:
+    linear-gradient(180deg,rgba(25,230,255,.07),transparent 18%),
+    repeating-linear-gradient(100deg,rgba(255,42,138,.05) 0 2px,transparent 2px 38px),
+    radial-gradient(900px 500px at 85% -10%,#2a0f4d,transparent 70%),
+    radial-gradient(700px 500px at 0% 40%,#0a2a3d,transparent 70%),#07060f;
+  background-attachment:local;
+}
+#stage[data-style="cyberpunk"]::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px);mix-blend-mode:multiply}
+#stage[data-style="cyberpunk"] .topbar{border-bottom:1px solid var(--cy);box-shadow:0 8px 20px -14px var(--cy)}
+#stage[data-style="cyberpunk"] .brand{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.12em;color:var(--cy);text-shadow:0 0 10px var(--cy)}
+#stage[data-style="cyberpunk"] .brand-mark{background:linear-gradient(135deg,var(--accent),var(--cy));clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);box-shadow:0 0 12px var(--accent)}
+#stage[data-style="cyberpunk"] .nav a{font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.9rem;color:var(--fg);clip-path:var(--ch);border:0}
+#stage[data-style="cyberpunk"] .nav a:hover{color:var(--cy);text-shadow:0 0 8px var(--cy)}
+#stage[data-style="cyberpunk"] .nav a.is-active{background:var(--accent);color:var(--accent-fg);text-shadow:none}
+#stage[data-style="cyberpunk"] .eyebrow{font-family:var(--font-mono);color:var(--cy);letter-spacing:.25em}
+#stage[data-style="cyberpunk"] .eyebrow::before{content:"// "}
+#stage[data-style="cyberpunk"] .display{font-weight:800;text-transform:uppercase;line-height:1.02;color:#fff;max-width:14ch;
+  text-shadow:2px 0 var(--accent),-2px 0 var(--cy),0 0 24px rgba(255,42,138,.55)}
+#stage[data-style="cyberpunk"] .lead{color:var(--muted)}
+#stage[data-style="cyberpunk"] .btn{text-transform:uppercase;letter-spacing:.12em;font-family:var(--font-body);font-weight:700;border:0;clip-path:var(--ch);transition:filter .15s,transform .1s,background .15s}
+#stage[data-style="cyberpunk"] .btn-primary{background:var(--accent);color:var(--accent-fg);box-shadow:0 0 22px rgba(255,42,138,.7)}
+#stage[data-style="cyberpunk"] .btn-primary:hover{filter:brightness(1.15) drop-shadow(0 0 8px var(--accent))}
+#stage[data-style="cyberpunk"] .btn-primary:active{transform:translate(2px,2px)}
+#stage[data-style="cyberpunk"] .btn-secondary{background:transparent;color:var(--cy);box-shadow:inset 0 0 0 2px var(--cy)}
+#stage[data-style="cyberpunk"] .btn-secondary:hover{background:rgba(25,230,255,.14)}
+#stage[data-style="cyberpunk"] .btn-ghost{background:rgba(255,255,255,.05);color:var(--fg);box-shadow:inset 0 0 0 1px var(--border)}
+#stage[data-style="cyberpunk"] .btn-ghost:hover{color:var(--warn);box-shadow:inset 0 0 0 1px var(--warn)}
+#stage[data-style="cyberpunk"] .btn[disabled]{opacity:.55}
+#stage[data-style="cyberpunk"] :focus-visible{outline:2px dashed var(--warn);outline-offset:-5px}
+#stage[data-style="cyberpunk"] input:focus-visible,#stage[data-style="cyberpunk"] select:focus-visible,#stage[data-style="cyberpunk"] textarea:focus-visible{outline-offset:2px}
+#stage[data-style="cyberpunk"] .section-title{font-family:var(--font-display);text-transform:uppercase;font-size:1.2rem;letter-spacing:.14em;color:var(--cy);display:flex;align-items:center;gap:12px}
+#stage[data-style="cyberpunk"] .section-title::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
+#stage[data-style="cyberpunk"] .card,#stage[data-style="cyberpunk"] .panel{border:0;clip-path:var(--ch);background:linear-gradient(160deg,#1c1536,#0f0c1d 70%);box-shadow:none;position:relative;border-left:3px solid var(--accent)}
+#stage[data-style="cyberpunk"] .card::after,#stage[data-style="cyberpunk"] .panel::after{content:"";position:absolute;right:0;bottom:0;width:40px;height:2px;background:var(--cy)}
+#stage[data-style="cyberpunk"] .card h3,#stage[data-style="cyberpunk"] .panel h2{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.06em;font-size:1.05rem}
+#stage[data-style="cyberpunk"] .card a{color:var(--cy)}
+#stage[data-style="cyberpunk"] .kpi-label{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em}
+#stage[data-style="cyberpunk"] .kpi-value{color:#fff;text-shadow:0 0 14px var(--accent)}
+#stage[data-style="cyberpunk"] .badge{font-family:var(--font-mono);text-transform:uppercase;border-radius:0;background:transparent;border:1px solid currentColor;clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px)}
+#stage[data-style="cyberpunk"] .badge:not(.ok):not(.warn):not(.danger){color:var(--cy)}
+#stage[data-style="cyberpunk"] .bars i{border-radius:0;background:linear-gradient(180deg,var(--cy),var(--accent));box-shadow:0 0 12px rgba(255,42,138,.55)}
+#stage[data-style="cyberpunk"] input[type=text],#stage[data-style="cyberpunk"] input[type=email],#stage[data-style="cyberpunk"] select,#stage[data-style="cyberpunk"] textarea{background:#0a0816;border:1px solid var(--border);border-bottom:2px solid var(--cy);border-radius:0;font-family:var(--font-mono);color:var(--fg)}
+#stage[data-style="cyberpunk"] input::placeholder,#stage[data-style="cyberpunk"] textarea::placeholder{color:#9a93c8}
+#stage[data-style="cyberpunk"] input[type=checkbox],#stage[data-style="cyberpunk"] input[type=range]{accent-color:var(--accent)}
+#stage[data-style="cyberpunk"] .switch{border-radius:0;background:#2a2150;border:1px solid var(--cy);clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+#stage[data-style="cyberpunk"] .switch::after{border-radius:0;background:var(--cy)}
+#stage[data-style="cyberpunk"] .switch:checked{background:var(--accent);border-color:var(--accent)}
+#stage[data-style="cyberpunk"] .switch:checked::after{background:#fff}
+#stage[data-style="cyberpunk"] th{font-family:var(--font-display);color:var(--cy);border-bottom:1px solid var(--cy)}
+#stage[data-style="cyberpunk"] td{border-bottom:1px dashed var(--border)}
+#stage[data-style="cyberpunk"] tbody tr:hover{background:rgba(255,42,138,.1)}
+#stage[data-style="cyberpunk"] .toast{border-radius:0;clip-path:var(--ch);background:var(--warn);color:#07060f;font-weight:700}
+#stage[data-style="cyberpunk"] .toast .btn-ghost{color:#07060f;background:transparent;box-shadow:inset 0 0 0 2px #07060f}
+#stage[data-style="cyberpunk"] dialog{border:2px solid var(--accent);border-radius:0;background:#12101f;color:var(--fg);box-shadow:0 0 40px rgba(255,42,138,.6),0 0 0 4px #07060f}
+#stage[data-style="cyberpunk"] dialog::backdrop{background:rgba(7,6,15,.8)}
+#stage[data-style="cyberpunk"] .footer{border-top:1px solid var(--border);font-family:var(--font-mono)}
+@media (prefers-reduced-motion:reduce){#stage[data-style="cyberpunk"] *{transition:none!important}}

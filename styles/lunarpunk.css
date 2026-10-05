@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap');
+#stage[data-style="lunarpunk"] {
+  --bg:#0E1224; --surface:#141A33; --surface-2:#1d2547; --fg:#E4E8F8; --muted:#aab2d6;
+  --accent:#9A82FF; --accent-fg:#0b0e1d; --border:#2e386b; --ok:#2FE0C2; --warn:#F2D36B; --danger:#ff8fb0;
+  --radius:20px; --radius-sm:12px; --shadow:0 0 0 1px rgba(124,92,255,.15),0 10px 40px rgba(124,92,255,.15);
+  --font-body:'Sora',system-ui,sans-serif; --font-display:'Fraunces',Georgia,serif; --font-mono:ui-monospace,monospace;
+  --gap:22px; --pad:24px; --maxw:1100px; --mint:#2FE0C2; --moon:#F2D36B; --vio:#7C5CFF;
+  font-size:16px;
+  background:
+    radial-gradient(circle at 85% 8%,#fff8d8 0 26px,#F2D36B 27px 34px,rgba(242,211,107,.25) 35px 70px,transparent 130px),
+    radial-gradient(1.5px 1.5px at 12% 20%,#fff,transparent),radial-gradient(1px 1px at 30% 60%,#cfd6ff,transparent),radial-gradient(1.5px 1.5px at 55% 15%,#fff,transparent),
+    radial-gradient(1px 1px at 72% 45%,#cfd6ff,transparent),radial-gradient(1.5px 1.5px at 90% 70%,#fff,transparent),radial-gradient(1px 1px at 45% 85%,#cfd6ff,transparent),radial-gradient(1px 1px at 8% 75%,#fff,transparent),
+    radial-gradient(ellipse at 20% 100%,rgba(124,92,255,.35),transparent 55%),
+    linear-gradient(180deg,#0a0e20,#0E1224 50%,#171a3d);
+  background-attachment:local;
+}
+#stage[data-style="lunarpunk"] .topbar{border-bottom:1px solid var(--border)}
+#stage[data-style="lunarpunk"] .brand{font-family:var(--font-display);font-weight:600;font-size:1.4rem;color:#fff}
+#stage[data-style="lunarpunk"] .brand-mark{border-radius:50%;background:#F2D36B;box-shadow:inset -7px -2px 0 0 #0E1224,0 0 14px rgba(242,211,107,.7);width:1.4em;height:1.4em}
+#stage[data-style="lunarpunk"] .nav a{border-radius:999px;color:var(--muted)}
+#stage[data-style="lunarpunk"] .nav a:hover{color:#fff;background:rgba(124,92,255,.2)}
+#stage[data-style="lunarpunk"] .nav a.is-active{background:rgba(154,130,255,.2);color:#fff;box-shadow:inset 0 0 0 1px var(--accent)}
+#stage[data-style="lunarpunk"] .eyebrow{color:var(--mint);letter-spacing:.25em}
+#stage[data-style="lunarpunk"] .eyebrow::before{content:"☾ "}
+#stage[data-style="lunarpunk"] .display{font-family:var(--font-display);font-weight:600;font-style:italic;color:#fff;text-shadow:0 0 40px rgba(154,130,255,.8);max-width:16ch}
+#stage[data-style="lunarpunk"] .lead{color:var(--muted)}
+#stage[data-style="lunarpunk"] .btn{border-radius:999px;font-weight:600;transition:box-shadow .3s,transform .2s,background .3s}
+#stage[data-style="lunarpunk"] .btn-primary{background:linear-gradient(135deg,#a894ff,#7C5CFF);color:#0b0e1d;box-shadow:0 0 24px rgba(124,92,255,.55)}
+#stage[data-style="lunarpunk"] .btn-primary:hover{box-shadow:0 0 38px rgba(154,130,255,.9);transform:translateY(-1px)}
+#stage[data-style="lunarpunk"] .btn-primary:active{transform:scale(.97)}
+#stage[data-style="lunarpunk"] .btn-secondary{background:rgba(47,224,194,.1);border:1px solid var(--mint);color:var(--mint)}
+#stage[data-style="lunarpunk"] .btn-secondary:hover{background:rgba(47,224,194,.22)}
+#stage[data-style="lunarpunk"] .btn-ghost{border-color:var(--border);color:var(--fg)}
+#stage[data-style="lunarpunk"] .btn-ghost:hover{border-color:var(--moon);color:var(--moon)}
+#stage[data-style="lunarpunk"] :focus-visible{outline:3px solid var(--moon);outline-offset:3px}
+#stage[data-style="lunarpunk"] .section-title{font-family:var(--font-display);font-weight:600;color:#fff;display:flex;align-items:center;gap:12px}
+#stage[data-style="lunarpunk"] .section-title::before{content:"";width:18px;height:18px;border-radius:50%;box-shadow:inset -5px -1px 0 0 var(--moon);flex:none}
+#stage[data-style="lunarpunk"] .card,#stage[data-style="lunarpunk"] .panel{background:linear-gradient(160deg,rgba(29,37,71,.85),rgba(20,26,51,.85));border:1px solid var(--border);box-shadow:var(--shadow);backdrop-filter:blur(6px);position:relative}
+#stage[data-style="lunarpunk"] .card:hover{border-color:var(--accent);box-shadow:0 0 30px rgba(124,92,255,.35)}
+#stage[data-style="lunarpunk"] .card h3,#stage[data-style="lunarpunk"] .panel h2{font-family:var(--font-display);font-weight:600;color:#fff}
+#stage[data-style="lunarpunk"] .card a{color:var(--mint);font-weight:600}
+#stage[data-style="lunarpunk"] .kpi-value{font-family:var(--font-display);font-size:2.3rem;color:#fff;text-shadow:0 0 18px rgba(154,130,255,.7)}
+#stage[data-style="lunarpunk"] .badge{background:rgba(124,92,255,.12);border-color:currentColor}
+#stage[data-style="lunarpunk"] .badge:not(.ok):not(.warn):not(.danger){color:#c7b9ff}
+#stage[data-style="lunarpunk"] .bars i{border-radius:999px 999px 6px 6px;background:linear-gradient(180deg,#c3b6ff,var(--vio) 60%,#33257a);box-shadow:0 0 16px rgba(124,92,255,.5)}
+#stage[data-style="lunarpunk"] .bars i:last-child{background:linear-gradient(180deg,#fff3c4,var(--moon));box-shadow:0 0 22px rgba(242,211,107,.6)}
+#stage[data-style="lunarpunk"] input[type=text],#stage[data-style="lunarpunk"] input[type=email],#stage[data-style="lunarpunk"] select,#stage[data-style="lunarpunk"] textarea{background:rgba(10,14,32,.8);border:1px solid var(--border);border-radius:14px;color:var(--fg)}
+#stage[data-style="lunarpunk"] input[type=text]:focus,#stage[data-style="lunarpunk"] input[type=email]:focus,#stage[data-style="lunarpunk"] textarea:focus,#stage[data-style="lunarpunk"] select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(154,130,255,.3)}
+#stage[data-style="lunarpunk"] input::placeholder,#stage[data-style="lunarpunk"] textarea::placeholder{color:#8e97c4}
+#stage[data-style="lunarpunk"] input[type=checkbox],#stage[data-style="lunarpunk"] input[type=range]{accent-color:var(--accent)}
+#stage[data-style="lunarpunk"] .switch{background:#252d57}
+#stage[data-style="lunarpunk"] .switch::after{background:#cfd6ff}
+#stage[data-style="lunarpunk"] .switch:checked{background:var(--mint)}#stage[data-style="lunarpunk"] .switch:checked::after{background:#0E1224}
+#stage[data-style="lunarpunk"] th{color:var(--mint);border-bottom:1px solid var(--accent)}
+#stage[data-style="lunarpunk"] td{border-bottom:1px solid rgba(46,56,107,.8)}
+#stage[data-style="lunarpunk"] .toast{background:#1d2547;color:var(--fg);border:1px solid var(--accent);border-radius:999px;box-shadow:0 0 28px rgba(124,92,255,.4)}
+#stage[data-style="lunarpunk"] dialog{background:#141A33;color:var(--fg);border:1px solid var(--accent);border-radius:28px;box-shadow:0 0 60px rgba(124,92,255,.5)}
+#stage[data-style="lunarpunk"] dialog::backdrop{background:rgba(6,8,20,.82)}
+#stage[data-style="lunarpunk"] .footer{border-top:1px solid var(--border)}

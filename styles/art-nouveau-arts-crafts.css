@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,700&family=Lora:wght@400;600&display=swap');
+#stage[data-style="art-nouveau-arts-crafts"] {
+  --bg:#f3ead7; --surface:#fbf5e6; --surface-2:#e8dcc0; --fg:#1f2a24; --muted:#4f5a4c; --accent:#4a5d3a; --accent-fg:#fbf5e6; --border:#1f2a24;
+  --ok:#2f6b3a; --warn:#8a5a00; --danger:#8c2f2b; --radius:48% 48% 6px 6px / 14% 14% 6px 6px; --radius-sm:999px; --shadow:3px 3px 0 rgba(31,42,36,.18);
+  --font-body:"Lora",Georgia,serif; --font-display:"Cormorant Garamond",Georgia,serif; --font-mono:ui-monospace,monospace;
+  --gap:26px; --pad:30px; --maxw:1080px;
+  --vine:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' fill='none' stroke='%234a5d3a' stroke-opacity='.28' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M10 110C40 90 20 60 55 45S100 30 110 8'/%3E%3Cpath d='M55 45c-4-14 6-22 16-20-2 12-8 19-16 20zM30 80c-12-2-18-12-14-22 11 2 16 10 14 22zM88 28c10-3 18 3 20 12-11 3-18-1-20-12z'/%3E%3C/svg%3E");
+  background-color:var(--bg); background-image:var(--vine); background-size:160px; 
+}
+#stage[data-style="art-nouveau-arts-crafts"] h1, #stage[data-style="art-nouveau-arts-crafts"] h2, #stage[data-style="art-nouveau-arts-crafts"] h3 { font-weight:700; font-style:italic; color:var(--accent); }
+#stage[data-style="art-nouveau-arts-crafts"] .app { background:linear-gradient(var(--bg),var(--bg)); background-clip:padding-box; box-shadow:0 0 0 2px var(--border), 0 0 0 8px var(--bg), 0 0 0 9px var(--border); margin-top:18px; margin-bottom:18px; padding-inline:clamp(14px,4vw,40px); }
+#stage[data-style="art-nouveau-arts-crafts"] .brand { font-size:1.6rem; color:var(--accent); font-style:italic; }
+#stage[data-style="art-nouveau-arts-crafts"] .brand-mark { width:1.3em; height:1.6em; border-radius:50% 50% 50% 0; background:var(--accent); transform:rotate(-30deg); box-shadow:inset -4px 0 0 rgba(251,245,230,.35); }
+#stage[data-style="art-nouveau-arts-crafts"] .nav a { font-style:italic; border-radius:999px; }
+#stage[data-style="art-nouveau-arts-crafts"] .nav a:hover { background:var(--surface-2); }
+#stage[data-style="art-nouveau-arts-crafts"] .nav a.is-active { background:var(--accent); }
+#stage[data-style="art-nouveau-arts-crafts"] .topbar { border-bottom:2px solid var(--border); position:relative; }
+#stage[data-style="art-nouveau-arts-crafts"] .topbar::after { content:"❦"; position:absolute; left:50%; bottom:-.8em; transform:translateX(-50%); background:var(--bg); padding:0 .6em; color:var(--accent); }
+#stage[data-style="art-nouveau-arts-crafts"] .hero { text-align:center; padding-top:64px; }
+#stage[data-style="art-nouveau-arts-crafts"] .eyebrow { color:var(--danger); font-style:italic; text-transform:none; letter-spacing:.06em; font-size:1rem; }
+#stage[data-style="art-nouveau-arts-crafts"] .display { margin-inline:auto; font-size:clamp(2.4rem,7vw,4.6rem); max-width:14ch; }
+#stage[data-style="art-nouveau-arts-crafts"] .display::first-letter { color:var(--danger); font-size:1.25em; }
+#stage[data-style="art-nouveau-arts-crafts"] .lead { margin-inline:auto; color:var(--fg); }
+#stage[data-style="art-nouveau-arts-crafts"] .actions { justify-content:center; }
+#stage[data-style="art-nouveau-arts-crafts"] .btn { font-family:var(--font-display); font-size:1.15rem; font-style:italic; border:2px solid var(--border); border-radius:999px 999px 14px 14px; padding-inline:30px; transition:transform .3s ease, background .3s; }
+#stage[data-style="art-nouveau-arts-crafts"] .btn-primary { background:var(--accent); color:var(--accent-fg); }
+#stage[data-style="art-nouveau-arts-crafts"] .btn-secondary { background:var(--surface-2); }
+#stage[data-style="art-nouveau-arts-crafts"] .btn-ghost { background:transparent; }
+#stage[data-style="art-nouveau-arts-crafts"] .btn[disabled] { opacity:1; color:var(--muted); border-style:dashed; }
+#stage[data-style="art-nouveau-arts-crafts"] .btn:hover { transform:translateY(-2px) rotate(-1deg); background:var(--danger); color:#fbf5e6; }
+#stage[data-style="art-nouveau-arts-crafts"] :focus-visible { outline:3px solid var(--danger); outline-offset:3px; }
+#stage[data-style="art-nouveau-arts-crafts"] .section-title { text-align:center; font-size:1.9rem; }
+#stage[data-style="art-nouveau-arts-crafts"] .section-title::after { content:""; display:block; height:14px; margin:6px auto 0; width:min(260px,70%); background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 14' fill='none' stroke='%234a5d3a' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M2 7C30 -3 50 17 80 7S110 -3 130 7s50 10 80 0 40 4 48 0'/%3E%3C/svg%3E") center/contain no-repeat; }
+#stage[data-style="art-nouveau-arts-crafts"] .card, #stage[data-style="art-nouveau-arts-crafts"] .panel { border:2px solid var(--border); background:var(--surface); }
+#stage[data-style="art-nouveau-arts-crafts"] .panel { border-radius:8px 8px 40px 8px; }
+#stage[data-style="art-nouveau-arts-crafts"] .card { padding-top:calc(var(--pad) + 14px); }
+#stage[data-style="art-nouveau-arts-crafts"] .card:nth-child(even) { border-radius:6px 6px 48% 48% / 6px 6px 12% 12%; }
+#stage[data-style="art-nouveau-arts-crafts"] .kpi { text-align:center; }
+#stage[data-style="art-nouveau-arts-crafts"] .kpi-value { font-family:var(--font-display); font-size:2.8rem; color:var(--danger); }
+#stage[data-style="art-nouveau-arts-crafts"] .badge { font-style:italic; background:var(--surface-2); border-color:var(--border); }
+#stage[data-style="art-nouveau-arts-crafts"] .badge.warn { color:#744a00; }
+#stage[data-style="art-nouveau-arts-crafts"] .bars i { border-radius:999px 999px 2px 2px; background:linear-gradient(90deg,var(--accent),#6f8a52 50%,var(--accent)); border:1.5px solid var(--border); }
+#stage[data-style="art-nouveau-arts-crafts"] input[type=text], #stage[data-style="art-nouveau-arts-crafts"] input[type=email], #stage[data-style="art-nouveau-arts-crafts"] select, #stage[data-style="art-nouveau-arts-crafts"] textarea { border:2px solid var(--border); border-radius:18px 4px 18px 4px; background:#fffaf0; }
+#stage[data-style="art-nouveau-arts-crafts"] input[type=checkbox], #stage[data-style="art-nouveau-arts-crafts"] input[type=range] { accent-color:var(--accent); }
+#stage[data-style="art-nouveau-arts-crafts"] .switch { background:var(--surface-2); border:2px solid var(--border); }
+#stage[data-style="art-nouveau-arts-crafts"] .switch::after { background:var(--border); top:1px; left:2px; }
+#stage[data-style="art-nouveau-arts-crafts"] .switch:checked { background:var(--accent); }
+#stage[data-style="art-nouveau-arts-crafts"] .switch:checked::after { background:var(--surface); transform:translateX(20px); }
+#stage[data-style="art-nouveau-arts-crafts"] th { font-family:var(--font-display); font-style:italic; text-transform:none; font-size:1.05rem; color:var(--accent); border-bottom:2px solid var(--border); }
+#stage[data-style="art-nouveau-arts-crafts"] td { border-bottom:1px dotted var(--border); }
+#stage[data-style="art-nouveau-arts-crafts"] .toast { background:var(--accent); color:var(--accent-fg); border:2px solid var(--border); border-radius:999px; }
+#stage[data-style="art-nouveau-arts-crafts"] .toast .btn { border-color:#fbf5e6; color:#fbf5e6; }
+#stage[data-style="art-nouveau-arts-crafts"] dialog { background:var(--surface); border:2px solid var(--border); border-radius:50% 50% 12px 12px / 8% 8% 12px 12px; padding:44px 36px 28px; box-shadow:0 0 0 6px var(--bg), 0 0 0 8px var(--border); }
+#stage[data-style="art-nouveau-arts-crafts"] dialog::backdrop { background:rgba(31,42,36,.6); }
+#stage[data-style="art-nouveau-arts-crafts"] .footer { text-align:center; font-style:italic; border-top:2px solid var(--border); }

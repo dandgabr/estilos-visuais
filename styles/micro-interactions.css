@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700&display=swap');
+#stage[data-style="micro-interactions"] {
+  --bg: #f4f3fb; --surface: #fff; --surface-2: #ebe9fa; --fg: #1b1840; --muted: #5b5880;
+  --accent: #5b4bdb; --accent-fg: #fff; --border: #d9d6f0; --ok: #0d6b3b; --warn: #864d00; --danger: #b01e27;
+  --radius: 16px; --radius-sm: 10px; --shadow: 0 1px 2px rgba(27,24,64,.08), 0 4px 14px rgba(27,24,64,.06);
+  --font-body: 'DM Sans', system-ui, sans-serif; --font-display: 'DM Sans', system-ui, sans-serif; --font-mono: ui-monospace, monospace;
+  --gap: 18px; --pad: 22px; --maxw: 1060px;
+  --ease: cubic-bezier(.2,0,0,1); --spring: cubic-bezier(.34,1.56,.64,1);
+  background: radial-gradient(900px 400px at 85% -5%, rgba(91,75,219,.12), transparent 60%), var(--bg);
+}
+#stage[data-style="micro-interactions"] .brand-mark { border-radius: 30%; background: conic-gradient(from 0deg,#5b4bdb,#ff6b9d,#ffb84d,#5b4bdb); animation: mi-spin 8s linear infinite; }
+@keyframes mi-spin { to { transform: rotate(360deg); } }
+#stage[data-style="micro-interactions"] .nav a { position: relative; border-radius: 99px; transition: background .2s var(--ease), color .2s; }
+#stage[data-style="micro-interactions"] .nav a:hover { background: var(--surface-2); }
+#stage[data-style="micro-interactions"] .nav a:not(.is-active)::after { content: ""; position: absolute; left: 50%; bottom: 2px; width: 0; height: 2px; border-radius: 2px; background: var(--accent); transition: width .25s var(--ease), left .25s var(--ease); }
+#stage[data-style="micro-interactions"] .nav a:not(.is-active):hover::after { width: 40%; left: 30%; }
+#stage[data-style="micro-interactions"] .nav a.is-active { background: var(--accent); }
+#stage[data-style="micro-interactions"] .display { font-weight: 700; letter-spacing: -.035em; }
+#stage[data-style="micro-interactions"] .eyebrow { color: var(--accent); font-weight: 700; }
+#stage[data-style="micro-interactions"] .btn { position: relative; overflow: hidden; border-radius: 99px; font-weight: 700; transition: transform .2s var(--spring), box-shadow .2s var(--ease), background .2s; will-change: transform; user-select: none; }
+#stage[data-style="micro-interactions"] .btn-primary { box-shadow: 0 1px 0 rgba(255,255,255,.25) inset, 0 4px 12px rgba(91,75,219,.35); }
+#stage[data-style="micro-interactions"] .btn:hover { box-shadow: 0 6px 18px rgba(91,75,219,.3); }
+#stage[data-style="micro-interactions"] .btn:active { transform: scale(.96) !important; box-shadow: 0 1px 3px rgba(91,75,219,.3); transition-duration: .08s; }
+#stage[data-style="micro-interactions"] .btn-secondary { background: #fff; border-color: var(--accent); color: var(--accent); }
+#stage[data-style="micro-interactions"] .btn-secondary:hover { background: var(--surface-2); }
+#stage[data-style="micro-interactions"] .btn-ghost:hover { background: var(--surface-2); }
+#stage[data-style="micro-interactions"] .btn[disabled] { filter: grayscale(1); }
+#stage[data-style="micro-interactions"] .fx-ripple { position: absolute; border-radius: 50%; pointer-events: none; background: currentColor; opacity: .28; transform: scale(0); animation: mi-ripple .55s var(--ease) forwards; }
+#stage[data-style="micro-interactions"] .btn-primary .fx-ripple { background: #fff; }
+@keyframes mi-ripple { to { transform: scale(1); opacity: 0; } }
+#stage[data-style="micro-interactions"] .btn[data-state="loading"]::before { content: ""; width: 1em; height: 1em; margin-right: .5em; display: inline-block; vertical-align: -.15em; border: 2.5px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: mi-spin .7s linear infinite; }
+#stage[data-style="micro-interactions"] .btn[data-state="success"] { background: var(--ok); }
+#stage[data-style="micro-interactions"] .btn[data-state="success"]::before { content: "✓"; margin-right: .4em; display: inline-block; animation: mi-pop .4s var(--spring); }
+@keyframes mi-pop { from { transform: scale(0) rotate(-40deg); } to { transform: none; } }
+#stage[data-style="micro-interactions"] .card { transition: transform .3s var(--spring), box-shadow .3s var(--ease), border-color .2s; }
+#stage[data-style="micro-interactions"] .card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(27,24,64,.14); border-color: var(--accent); }
+#stage[data-style="micro-interactions"] .card:active { transform: translateY(-1px) scale(.99); }
+#stage[data-style="micro-interactions"] .feature a { display: inline-block; color: var(--accent); font-weight: 700; text-decoration: none; transition: transform .25s var(--spring); }
+#stage[data-style="micro-interactions"] .feature a:hover { transform: translateX(6px); }
+#stage[data-style="micro-interactions"] .badge { font-weight: 700; transition: transform .2s var(--spring); }
+#stage[data-style="micro-interactions"] .badge:hover { transform: scale(1.1) rotate(-2deg); }
+#stage[data-style="micro-interactions"] .badge.ok::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: currentColor; margin-right: 6px; animation: mi-pulse 1.8s ease-out infinite; }
+@keyframes mi-pulse { 0% { box-shadow: 0 0 0 0 currentColor; } 70%,100% { box-shadow: 0 0 0 7px transparent; } }
+#stage[data-style="micro-interactions"] .bars i { background: linear-gradient(180deg,#8a7bff,#5b4bdb); border-radius: 8px 8px 3px 3px; transform-origin: bottom; animation: mi-grow .7s var(--spring) backwards; transition: transform .25s var(--spring), filter .2s; }
+#stage[data-style="micro-interactions"] .bars i:nth-child(2) { animation-delay: .05s; } #stage[data-style="micro-interactions"] .bars i:nth-child(3) { animation-delay: .1s; } #stage[data-style="micro-interactions"] .bars i:nth-child(4) { animation-delay: .15s; } #stage[data-style="micro-interactions"] .bars i:nth-child(5) { animation-delay: .2s; } #stage[data-style="micro-interactions"] .bars i:nth-child(6) { animation-delay: .25s; } #stage[data-style="micro-interactions"] .bars i:nth-child(7) { animation-delay: .3s; }
+#stage[data-style="micro-interactions"] .bars i:hover { transform: scaleY(1.06); filter: brightness(1.15); }
+@keyframes mi-grow { from { transform: scaleY(0); } }
+#stage[data-style="micro-interactions"] input[type=text], #stage[data-style="micro-interactions"] input[type=email], #stage[data-style="micro-interactions"] select, #stage[data-style="micro-interactions"] textarea { transition: border-color .2s, box-shadow .25s var(--ease), transform .25s var(--spring); }
+#stage[data-style="micro-interactions"] input[type=text]:hover, #stage[data-style="micro-interactions"] input[type=email]:hover, #stage[data-style="micro-interactions"] select:hover, #stage[data-style="micro-interactions"] textarea:hover { border-color: #a9a2ee; }
+#stage[data-style="micro-interactions"] input[type=text]:focus, #stage[data-style="micro-interactions"] input[type=email]:focus, #stage[data-style="micro-interactions"] select:focus, #stage[data-style="micro-interactions"] textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(91,75,219,.2); outline: none; transform: translateY(-1px); }
+#stage[data-style="micro-interactions"] :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; transition: outline-offset .15s; }
+#stage[data-style="micro-interactions"] input[type=checkbox]:not(.switch) { appearance: none; width: 22px; height: 22px; border: 2px solid #8b86b8; border-radius: 7px; display: grid; place-items: center; cursor: pointer; flex: none; transition: background .2s, border-color .2s, transform .2s var(--spring); }
+#stage[data-style="micro-interactions"] input[type=checkbox]:not(.switch):active { transform: scale(.85); }
+#stage[data-style="micro-interactions"] input[type=checkbox]:not(.switch)::after { content: ""; width: 10px; height: 5px; border: solid #fff; border-width: 0 0 2.5px 2.5px; transform: rotate(-45deg) scale(0) translate(1px,-1px); transition: transform .25s var(--spring); }
+#stage[data-style="micro-interactions"] input[type=checkbox]:not(.switch):checked { background: var(--accent); border-color: var(--accent); }
+#stage[data-style="micro-interactions"] input[type=checkbox]:not(.switch):checked::after { transform: rotate(-45deg) scale(1) translate(1px,-1px); }
+#stage[data-style="micro-interactions"] .switch { width: 52px; height: 30px; background: #9c97c6; transition: background .25s var(--ease); }
+#stage[data-style="micro-interactions"] .switch::after { top: 3px; left: 3px; width: 24px; height: 24px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,.3); transition: transform .35s var(--spring), width .2s var(--ease); }
+#stage[data-style="micro-interactions"] .switch:active::after { width: 30px; }
+#stage[data-style="micro-interactions"] .switch:checked { background: var(--accent); } #stage[data-style="micro-interactions"] .switch:checked::after { transform: translateX(22px); }
+#stage[data-style="micro-interactions"] .switch:checked:active::after { transform: translateX(16px); }
+#stage[data-style="micro-interactions"] input[type=range] { accent-color: var(--accent); height: 28px; cursor: pointer; }
+#stage[data-style="micro-interactions"] input[type=range]::-webkit-slider-thumb { transition: transform .2s var(--spring); } #stage[data-style="micro-interactions"] input[type=range]:active::-webkit-slider-thumb { transform: scale(1.35); }
+#stage[data-style="micro-interactions"] tbody tr { transition: background .2s, transform .2s var(--ease); } #stage[data-style="micro-interactions"] tbody tr:hover { background: var(--surface-2); }
+#stage[data-style="micro-interactions"] .toast { background: #1b1840; color: #fff; border-radius: 99px; padding: 8px 10px 8px 22px; animation: mi-toast .6s var(--spring) both; }
+@keyframes mi-toast { from { opacity: 0; transform: translateY(20px) scale(.9); } }
+#stage[data-style="micro-interactions"] .toast .btn-ghost { color: #c9c2ff; border-color: #c9c2ff; }
+#stage[data-style="micro-interactions"] dialog[open] { animation: mi-dialog .35s var(--spring); }
+@keyframes mi-dialog { from { opacity: 0; transform: scale(.9) translateY(12px); } }
+#stage[data-style="micro-interactions"] dialog { border-radius: 24px; box-shadow: 0 24px 60px rgba(27,24,64,.35); }
+@media (prefers-reduced-motion: reduce) { #stage[data-style="micro-interactions"] *, #stage[data-style="micro-interactions"] *::before, #stage[data-style="micro-interactions"] *::after { animation: none !important; transition-duration: .001ms !important; } #stage[data-style="micro-interactions"] .btn { transform: none !important; } }

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700;800&display=swap');
+#stage[data-style="bauhaus"] {
+  --bg:#f3ede0; --surface:#fff; --surface-2:#f4b400; --fg:#111; --muted:#444; --accent:#d62718; --accent-fg:#fff; --border:#111;
+  --ok:#16703a; --warn:#8a5a00; --danger:#b81d10; --radius:0; --radius-sm:0; --shadow:6px 6px 0 #111;
+  --font-body:"Jost","Futura",system-ui,sans-serif; --font-display:"Jost","Futura",sans-serif; --font-mono:ui-monospace,monospace;
+  --gap:22px; --pad:22px; --maxw:1100px;
+  --blue:#1d4e9e; --yellow:#f4b400; --red:#d62718;
+  background:var(--bg); font-weight:500;
+}
+#stage[data-style="bauhaus"] h1, #stage[data-style="bauhaus"] h2, #stage[data-style="bauhaus"] h3 { font-weight:800; text-transform:lowercase; letter-spacing:-.02em; }
+#stage[data-style="bauhaus"] .topbar { border-bottom:6px solid #111; }
+#stage[data-style="bauhaus"] .brand { text-transform:lowercase; font-weight:800; }
+#stage[data-style="bauhaus"] .brand-mark { border-radius:50%; background:linear-gradient(90deg,var(--red) 50%,var(--blue) 50%); border:2px solid #111; }
+#stage[data-style="bauhaus"] .nav a { font-weight:700; text-transform:lowercase; border-radius:0; }
+#stage[data-style="bauhaus"] .nav a:hover { background:var(--yellow); }
+#stage[data-style="bauhaus"] .nav a.is-active { background:#111; color:#f3ede0; }
+#stage[data-style="bauhaus"] .hero { position:relative; padding:56px 0 48px; min-height:360px; }
+#stage[data-style="bauhaus"] .hero::before { content:""; position:absolute; right:0; top:24px; width:min(300px,45%); aspect-ratio:1; z-index:-1;
+  background:radial-gradient(circle at 35% 40%, var(--red) 0 38%, transparent 38.5%), linear-gradient(var(--blue),var(--blue)) right bottom/45% 45% no-repeat, conic-gradient(from 225deg at 20% 100%, var(--yellow) 0 90deg, transparent 0) ; }
+#stage[data-style="bauhaus"] .eyebrow { color:#111; font-weight:700; display:inline-block; background:var(--yellow); padding:2px 10px; }
+#stage[data-style="bauhaus"] .display { font-size:clamp(2.4rem,7vw,5rem); font-weight:800; line-height:.95; max-width:12ch; }
+#stage[data-style="bauhaus"] .lead { color:#222; max-width:40ch; }
+#stage[data-style="bauhaus"] .btn { border:3px solid #111; border-radius:0; font-weight:700; text-transform:lowercase; transition:transform .12s linear, box-shadow .12s linear; box-shadow:4px 4px 0 #111; }
+#stage[data-style="bauhaus"] .btn:hover { transform:translate(-2px,-2px); box-shadow:6px 6px 0 #111; }
+#stage[data-style="bauhaus"] .btn:active { transform:translate(4px,4px); box-shadow:0 0 0 #111; }
+#stage[data-style="bauhaus"] .btn-primary { background:var(--red); color:#fff; }
+#stage[data-style="bauhaus"] .btn-secondary { background:var(--blue); color:#fff; }
+#stage[data-style="bauhaus"] .btn-ghost { background:#fff; }
+#stage[data-style="bauhaus"] .btn[disabled] { opacity:1; background:#ddd; color:#555; border-style:dashed; box-shadow:none; }
+#stage[data-style="bauhaus"] :focus-visible { outline:4px solid var(--blue); outline-offset:3px; }
+#stage[data-style="bauhaus"] .section-title { display:inline-block; background:#111; color:#f3ede0; padding:4px 14px; }
+#stage[data-style="bauhaus"] .card, #stage[data-style="bauhaus"] .panel { border:3px solid #111; border-radius:0; box-shadow:var(--shadow); }
+#stage[data-style="bauhaus"] .kpi:nth-child(1) { background:var(--yellow); }
+#stage[data-style="bauhaus"] .kpi:nth-child(2) { background:#fff; }
+#stage[data-style="bauhaus"] .kpi:nth-child(3) { background:var(--blue); color:#fff; } #stage[data-style="bauhaus"] .kpi:nth-child(3) .kpi-label { color:#fff; }
+#stage[data-style="bauhaus"] .kpi:nth-child(4) { background:var(--red); color:#fff; } #stage[data-style="bauhaus"] .kpi:nth-child(4) .kpi-label { color:#fff; }
+#stage[data-style="bauhaus"] .kpi-label { color:#222; font-weight:700; }
+#stage[data-style="bauhaus"] .kpi-value { font-size:2.8rem; font-weight:800; }
+#stage[data-style="bauhaus"] .badge { background:#fff; color:#111 !important; border:2px solid #111; border-radius:0; font-weight:700; }
+#stage[data-style="bauhaus"] .badge.ok { background:#cfe9d6; } #stage[data-style="bauhaus"] .badge.warn { background:#ffe39a; } #stage[data-style="bauhaus"] .badge.danger { background:#ffd0cb; }
+#stage[data-style="bauhaus"] .feature:nth-child(1) { border-top:18px solid var(--red); }
+#stage[data-style="bauhaus"] .feature:nth-child(2) { border-top:18px solid var(--blue); border-radius:0; }
+#stage[data-style="bauhaus"] .feature h3::before { content:""; display:inline-block; width:.8em; height:.8em; margin-right:.4em; background:#111; }
+#stage[data-style="bauhaus"] .feature:nth-child(1) h3::before { border-radius:50%; background:var(--red); }
+#stage[data-style="bauhaus"] .feature:nth-child(2) h3::before { clip-path:polygon(50% 0,100% 100%,0 100%); background:var(--blue); }
+#stage[data-style="bauhaus"] .feature a { font-weight:800; }
+#stage[data-style="bauhaus"] .bars i { border-radius:0; background:var(--blue); border:2px solid #111; }
+#stage[data-style="bauhaus"] .bars i:nth-child(3n+1) { background:var(--red); } #stage[data-style="bauhaus"] .bars i:nth-child(3n+2) { background:var(--yellow); }
+#stage[data-style="bauhaus"] input[type=text], #stage[data-style="bauhaus"] input[type=email], #stage[data-style="bauhaus"] select, #stage[data-style="bauhaus"] textarea { border:3px solid #111; border-radius:0; }
+#stage[data-style="bauhaus"] input[type=checkbox], #stage[data-style="bauhaus"] input[type=range] { accent-color:var(--red); }
+#stage[data-style="bauhaus"] .switch { background:#fff; border:3px solid #111; border-radius:0; }
+#stage[data-style="bauhaus"] .switch::after { border-radius:0; background:#111; top:1px; left:1px; }
+#stage[data-style="bauhaus"] .switch:checked { background:var(--yellow); }
+#stage[data-style="bauhaus"] .switch:checked::after { transform:translateX(20px); }
+#stage[data-style="bauhaus"] th { background:#111; color:#f3ede0; }
+#stage[data-style="bauhaus"] td { border-bottom:2px solid #111; }
+#stage[data-style="bauhaus"] .toast { background:var(--yellow); color:#111; border:3px solid #111; border-radius:0; box-shadow:6px 6px 0 #111; }
+#stage[data-style="bauhaus"] dialog { border:4px solid #111; border-radius:0; box-shadow:10px 10px 0 var(--red); }
+#stage[data-style="bauhaus"] dialog::backdrop { background:rgba(17,17,17,.6); }
+#stage[data-style="bauhaus"] .footer { border-top:6px solid #111; color:#222; font-weight:500; }

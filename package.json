@@ -1,0 +1,22 @@
+{
+  "name": "estilos-visuais",
+  "version": "1.0.0",
+  "description": "Galeria interativa de estilos visuais e design tokens",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx serve -l 8000 .",
+    "dev": "npx serve -l 8000 .",
+    "serve": "npx http-server -p 8000 -c-1 .",
+    "audit": "python3 tools/audit.py"
+  },
+  "keywords": [
+    "css",
+    "design-system",
+    "visual-styles",
+    "design-tokens",
+    "ui"
+  ],
+  "author": "",
+  "license": "MIT"
+}

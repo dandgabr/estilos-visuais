@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap');
+#stage[data-style="neo-brutalism"] {
+  --bg:#FFFDF5; --surface:#fff; --surface-2:#FFD23F; --fg:#000; --muted:#333; --accent:#FF6B6B; --accent-fg:#000; --border:#000;
+  --ok:#0a5c2c; --warn:#7a4a00; --danger:#a00000; --radius:0; --radius-sm:0; --shadow:5px 5px 0 0 #000;
+  --font-body:'Space Grotesk',system-ui,sans-serif; --font-display:'Archivo Black','Space Grotesk',sans-serif; --font-mono:'Space Mono',monospace;
+  --gap:24px; --pad:22px; --maxw:1100px;
+  background-color:var(--bg);
+  background-image:radial-gradient(#000 1.2px, transparent 1.4px); background-size:22px 22px;
+}
+#stage[data-style="neo-brutalism"] .app{ background:transparent; }
+#stage[data-style="neo-brutalism"] .topbar{ border:3px solid #000; background:#fff; box-shadow:5px 5px 0 #000; padding:10px 16px; margin-top:16px; }
+#stage[data-style="neo-brutalism"] .brand{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:-.01em; }
+#stage[data-style="neo-brutalism"] .brand-mark{ background:#74B9FF; border:3px solid #000; box-shadow:3px 3px 0 #000; transform:rotate(-8deg); }
+#stage[data-style="neo-brutalism"] .nav a{ border:2px solid transparent; font-weight:700; }
+#stage[data-style="neo-brutalism"] .nav a:hover{ border-color:#000; background:#FFD23F; }
+#stage[data-style="neo-brutalism"] .nav a.is-active{ background:#000; color:#FFD23F; }
+#stage[data-style="neo-brutalism"] .hero{ padding:48px 0 32px; }
+#stage[data-style="neo-brutalism"] .eyebrow{ display:inline-block; background:#74B9FF; color:#000; border:3px solid #000; padding:4px 10px; font:700 .8rem var(--font-mono); transform:rotate(-1.5deg); box-shadow:3px 3px 0 #000; }
+#stage[data-style="neo-brutalism"] .display{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:-.02em; line-height:.95; max-width:14ch; }
+#stage[data-style="neo-brutalism"] .display::after{ content:""; display:block; width:120px; height:14px; background:#FF6B6B; border:3px solid #000; margin-top:14px; }
+#stage[data-style="neo-brutalism"] .lead{ color:#000; font-weight:500; background:#fff; border:3px solid #000; padding:12px 16px; box-shadow:5px 5px 0 #000; }
+#stage[data-style="neo-brutalism"] .btn{ font-weight:700; border:3px solid #000; border-radius:0; box-shadow:5px 5px 0 #000; transition:transform .1s linear, box-shadow .1s linear; text-transform:uppercase; letter-spacing:.03em; color:#000; }
+#stage[data-style="neo-brutalism"] .btn-primary{ background:#FF6B6B; }
+#stage[data-style="neo-brutalism"] .btn-secondary{ background:#FFD23F; }
+#stage[data-style="neo-brutalism"] .btn-ghost{ background:#fff; }
+#stage[data-style="neo-brutalism"] .btn:hover{ transform:translate(-2px,-2px); box-shadow:7px 7px 0 #000; }
+#stage[data-style="neo-brutalism"] .btn:active{ transform:translate(4px,4px); box-shadow:0 0 0 #000; }
+#stage[data-style="neo-brutalism"] .btn[disabled]{ opacity:1; background:#ddd; color:#444; box-shadow:none; border-style:dashed; transform:none; }
+#stage[data-style="neo-brutalism"] :focus-visible{ outline:4px solid #74B9FF; outline-offset:3px; box-shadow:0 0 0 7px #000; }
+#stage[data-style="neo-brutalism"] .section-title{ display:inline-block; font-family:var(--font-display); text-transform:uppercase; background:#000; color:#FFD23F; padding:4px 12px; transform:rotate(-1deg); }
+#stage[data-style="neo-brutalism"] .card,#stage[data-style="neo-brutalism"] .panel{ border:3px solid #000; border-radius:0; box-shadow:5px 5px 0 #000; transition:transform .12s linear, box-shadow .12s linear; }
+#stage[data-style="neo-brutalism"] .card:hover{ transform:translate(-2px,-2px); box-shadow:8px 8px 0 #000; }
+#stage[data-style="neo-brutalism"] .kpis .card:nth-child(1){ background:#FFD23F; }
+#stage[data-style="neo-brutalism"] .kpis .card:nth-child(2){ background:#74B9FF; }
+#stage[data-style="neo-brutalism"] .kpis .card:nth-child(3){ background:#7bd88f; }
+#stage[data-style="neo-brutalism"] .kpis .card:nth-child(4){ background:#FF6B6B; }
+#stage[data-style="neo-brutalism"] .kpi-label{ color:#000; font:700 .8rem var(--font-mono); text-transform:uppercase; }
+#stage[data-style="neo-brutalism"] .kpi-value{ font-family:var(--font-display); font-size:2.6rem; }
+#stage[data-style="neo-brutalism"] .badge{ border:2px solid #000; border-radius:0; background:#fff; font:700 .75rem var(--font-mono); color:#000!important; padding:2px 8px; }
+#stage[data-style="neo-brutalism"] .badge.ok{ background:#fff; } #stage[data-style="neo-brutalism"] .badge.warn{ background:#FFD23F; } #stage[data-style="neo-brutalism"] .badge.danger{ background:#000; color:#fff!important; }
+#stage[data-style="neo-brutalism"] .feature a{ font-weight:700; background:#FFD23F; padding:0 4px; text-decoration:none; border-bottom:3px solid #000; }
+#stage[data-style="neo-brutalism"] .chart{ background:#fff; }
+#stage[data-style="neo-brutalism"] .bars{ border-bottom:3px solid #000; }
+#stage[data-style="neo-brutalism"] .bars i{ border:3px solid #000; border-bottom:0; border-radius:0; background:#FF6B6B; }
+#stage[data-style="neo-brutalism"] .bars i:nth-child(odd){ background:#74B9FF; }
+#stage[data-style="neo-brutalism"] .panel h2{ font-family:var(--font-display); text-transform:uppercase; }
+#stage[data-style="neo-brutalism"] input[type=text],#stage[data-style="neo-brutalism"] input[type=email],#stage[data-style="neo-brutalism"] select,#stage[data-style="neo-brutalism"] textarea{ border:3px solid #000; border-radius:0; box-shadow:3px 3px 0 #000; background:#fff; }
+#stage[data-style="neo-brutalism"] input:focus-visible,#stage[data-style="neo-brutalism"] select:focus-visible,#stage[data-style="neo-brutalism"] textarea:focus-visible{ background:#FFF3BF; }
+#stage[data-style="neo-brutalism"] input[type=checkbox]{ appearance:none; width:24px; height:24px; border:3px solid #000; background:#fff; display:grid; place-content:center; flex:none; margin:0; }
+#stage[data-style="neo-brutalism"] input[type=checkbox]:checked{ background:#FFD23F; }
+#stage[data-style="neo-brutalism"] input[type=checkbox]:checked::after{ content:"✕"; font-weight:900; line-height:1; }
+#stage[data-style="neo-brutalism"] .switch{ border:3px solid #000; border-radius:0; background:#fff; width:56px; height:30px; }
+#stage[data-style="neo-brutalism"] .switch::after{ border-radius:0; background:#000; width:18px; height:18px; top:3px; left:3px; }
+#stage[data-style="neo-brutalism"] .switch:checked{ background:#7bd88f; } #stage[data-style="neo-brutalism"] .switch:checked::after{ transform:translateX(26px); }
+#stage[data-style="neo-brutalism"] input[type=range]{ accent-color:#000; }
+#stage[data-style="neo-brutalism"] table{ border:3px solid #000; }
+#stage[data-style="neo-brutalism"] th{ background:#000; color:#FFD23F; border:0; }
+#stage[data-style="neo-brutalism"] td{ border-bottom:2px solid #000; }
+#stage[data-style="neo-brutalism"] tbody tr:nth-child(even){ background:#FFF3BF; }
+#stage[data-style="neo-brutalism"] .toast{ background:#74B9FF; color:#000; border:3px solid #000; border-radius:0; box-shadow:5px 5px 0 #000; font-weight:700; }
+#stage[data-style="neo-brutalism"] dialog{ border:4px solid #000; border-radius:0; box-shadow:10px 10px 0 #000; background:#FFD23F; color:#000; }
+#stage[data-style="neo-brutalism"] dialog::backdrop{ background:rgba(0,0,0,.6); }
+#stage[data-style="neo-brutalism"] .footer{ border-top:4px solid #000; color:#000; font-family:var(--font-mono); }

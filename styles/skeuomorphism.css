@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;700&family=Lato:wght@400;700&display=swap');
+#stage[data-style="skeuomorphism"]{
+  --bg:#8a6a47;--surface:#f3ead6;--surface-2:#e4d6b8;--fg:#2b1d10;--muted:#51402c;--accent:#2f6fb5;--accent-fg:#fff;--border:#9c8559;
+  --ok:#1e6b34;--warn:#8a5200;--danger:#a52a1f;--radius:10px;--radius-sm:6px;
+  --shadow:0 2px 3px rgba(0,0,0,.4),0 8px 16px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.7);
+  --font-body:'Lato',sans-serif;--font-display:'Lora',Georgia,serif;--gap:20px;--pad:20px;
+  background:
+    repeating-linear-gradient(90deg,rgba(0,0,0,.05) 0 2px,transparent 2px 7px),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.03) 0 1px,transparent 1px 5px),
+    linear-gradient(#9a7852,#7a5a3a);
+}
+#stage[data-style="skeuomorphism"] .topbar{background:linear-gradient(#5a5a5a,#2e2e2e);color:#f4f4f4;padding:10px 18px;margin-top:14px;border-radius:10px;box-shadow:0 3px 6px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 #000}
+#stage[data-style="skeuomorphism"] .brand{color:#fff;text-shadow:0 -1px 0 #000}
+#stage[data-style="skeuomorphism"] .brand-mark{background:radial-gradient(circle at 35% 30%,#8ec6ff,#2f6fb5 60%,#173f6b);border-radius:50%;box-shadow:0 1px 2px #000,inset 0 1px 1px rgba(255,255,255,.7)}
+#stage[data-style="skeuomorphism"] .nav a{color:#e9e9e9;text-shadow:0 -1px 0 #000;font-weight:700}
+#stage[data-style="skeuomorphism"] .nav a:hover{background:rgba(255,255,255,.12)}
+#stage[data-style="skeuomorphism"] .nav a.is-active{background:linear-gradient(#1a1a1a,#3a3a3a);color:#fff;box-shadow:inset 0 2px 4px #000}
+#stage[data-style="skeuomorphism"] .topbar .btn-ghost{background:linear-gradient(#777,#444);color:#fff;border-color:#222;text-shadow:0 -1px 0 #000}
+#stage[data-style="skeuomorphism"] .hero{background:#f3ead6;margin-top:20px;padding:44px 36px;border-radius:6px;position:relative;
+  background-image:repeating-linear-gradient(0deg,transparent 0 31px,rgba(47,111,181,.18) 31px 32px),linear-gradient(90deg,transparent 56px,rgba(180,50,40,.45) 56px 58px,transparent 58px);
+  box-shadow:0 4px 8px rgba(0,0,0,.5),0 0 0 1px #6b5230,inset 0 0 40px rgba(120,90,40,.25);}
+#stage[data-style="skeuomorphism"] .hero>*{position:relative;padding-left:24px}
+@media(max-width:640px){#stage[data-style="skeuomorphism"] .hero{padding:28px 14px}#stage[data-style="skeuomorphism"] .hero>*{padding-left:14px}}
+#stage[data-style="skeuomorphism"] .display{font-weight:700;text-shadow:0 1px 0 rgba(255,255,255,.7)}
+#stage[data-style="skeuomorphism"] .eyebrow{color:#7a2318}
+#stage[data-style="skeuomorphism"] .lead{color:#3c2c1a}
+#stage[data-style="skeuomorphism"] .btn{border-radius:8px;font-weight:700;border:1px solid rgba(0,0,0,.5);text-shadow:0 1px 0 rgba(255,255,255,.5);box-shadow:0 2px 3px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.8);background:linear-gradient(#fdfdfd,#cfcfcf);color:#222;transition:filter .1s}
+#stage[data-style="skeuomorphism"] .btn:hover{filter:brightness(1.06)}
+#stage[data-style="skeuomorphism"] .btn:active{box-shadow:inset 0 3px 6px rgba(0,0,0,.5);transform:translateY(1px)}
+#stage[data-style="skeuomorphism"] .btn-primary{background:linear-gradient(#5aa2ea,#2a64a8 55%,#1f528d);color:#fff;text-shadow:0 -1px 0 rgba(0,0,0,.6);border-color:#143a66;box-shadow:0 2px 3px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.6)}
+#stage[data-style="skeuomorphism"] .btn-secondary{background:linear-gradient(#f6f1e4,#cfc4a8)}
+#stage[data-style="skeuomorphism"] :focus-visible{outline:3px solid #ffd86b;outline-offset:2px}
+#stage[data-style="skeuomorphism"] .section-title{color:#fff;text-shadow:0 -1px 1px rgba(0,0,0,.8),0 1px 0 rgba(255,255,255,.2);font-weight:700;font-family:'Lora',serif;letter-spacing:.02em}
+#stage[data-style="skeuomorphism"] .card,#stage[data-style="skeuomorphism"] .panel{background:linear-gradient(#fbf5e6,#ebdfc2);border:1px solid #6b5230}
+#stage[data-style="skeuomorphism"] .kpi{background:linear-gradient(#e6e6e6,#bdbdbd);border-color:#444;text-align:center}
+#stage[data-style="skeuomorphism"] .kpi-value{background:#1b2a1b;color:#7dff8a;border-radius:4px;padding:2px 8px;font-family:'Courier New',monospace;box-shadow:inset 0 2px 5px #000;text-shadow:0 0 6px rgba(125,255,138,.7);margin:6px auto;width:fit-content}
+#stage[data-style="skeuomorphism"] .badge{background:linear-gradient(#fff,#ddd);border-color:#777;font-weight:700;box-shadow:inset 0 1px 0 #fff,0 1px 1px rgba(0,0,0,.3)}
+#stage[data-style="skeuomorphism"] .feature a{color:#1d5a9a;font-weight:700}
+#stage[data-style="skeuomorphism"] .chart .bars{background:#1b2a1b;padding:10px 10px 0;border-radius:6px;box-shadow:inset 0 3px 8px #000}
+#stage[data-style="skeuomorphism"] .bars i{background:linear-gradient(90deg,#7dff8a,#2ec24a);border-radius:2px 2px 0 0;box-shadow:0 0 8px rgba(125,255,138,.5)}
+#stage[data-style="skeuomorphism"] input[type=text],#stage[data-style="skeuomorphism"] input[type=email],#stage[data-style="skeuomorphism"] select,#stage[data-style="skeuomorphism"] textarea{background:#fffdf6;border:1px solid #6b5230;box-shadow:inset 0 2px 4px rgba(0,0,0,.3)}
+#stage[data-style="skeuomorphism"] input[type=checkbox],#stage[data-style="skeuomorphism"] input[type=range]{accent-color:#2f6fb5}
+#stage[data-style="skeuomorphism"] .switch{background:linear-gradient(#8b8b8b,#c4c4c4);box-shadow:inset 0 2px 5px rgba(0,0,0,.6),0 1px 0 rgba(255,255,255,.4);border:1px solid #444;width:50px;height:26px}
+#stage[data-style="skeuomorphism"] .switch::after{background:linear-gradient(#fff,#bbb);box-shadow:0 2px 3px rgba(0,0,0,.6);top:3px;left:3px;width:18px;height:18px}
+#stage[data-style="skeuomorphism"] .switch:checked{background:linear-gradient(#2a64a8,#5aa2ea)}
+#stage[data-style="skeuomorphism"] .switch:checked::after{transform:translateX(24px)}
+#stage[data-style="skeuomorphism"] th{color:#2b1d10;border-bottom:2px solid #6b5230}
+#stage[data-style="skeuomorphism"] td{border-bottom:1px solid #b9a779}
+#stage[data-style="skeuomorphism"] .toast{background:linear-gradient(#444,#1e1e1e);color:#fff;border:1px solid #000;box-shadow:0 4px 8px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.3)}
+#stage[data-style="skeuomorphism"] .toast .btn-ghost{color:#222}
+#stage[data-style="skeuomorphism"] dialog{background:linear-gradient(#fbf5e6,#e6d9bb);border:1px solid #3b2a14;box-shadow:0 20px 50px rgba(0,0,0,.7),inset 0 1px 0 #fff}
+#stage[data-style="skeuomorphism"] .footer{color:#f1e6cf;border-top:1px solid rgba(0,0,0,.4);box-shadow:0 -1px 0 rgba(255,255,255,.15)}

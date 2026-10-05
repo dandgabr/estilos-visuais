@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poiret+One&display=swap');
+#stage[data-style="art-deco"] {
+  --bg:#0e0e12; --surface:#15151c; --surface-2:#1e1e28; --fg:#f5ecd7; --muted:#c2b79d; --accent:#c9a227; --accent-fg:#0e0e12; --border:#c9a227;
+  --ok:#6fdcae; --warn:#f0cd6e; --danger:#ff8f86; --radius:0; --radius-sm:0; --shadow:none;
+  --font-body:"Josefin Sans",system-ui,sans-serif; --font-display:"Poiret One","Josefin Sans",serif; --font-mono:ui-monospace,monospace;
+  --gap:28px; --pad:28px; --maxw:1100px;
+  --gold-grad: linear-gradient(135deg,#e9d27a,#c9a227 45%,#8a6d12);
+  background-color:var(--bg);
+  background-image:
+    repeating-linear-gradient(45deg, rgba(201,162,39,.07) 0 1px, transparent 1px 36px),
+    repeating-linear-gradient(-45deg, rgba(201,162,39,.07) 0 1px, transparent 1px 36px);
+  font-weight:400; letter-spacing:.02em;
+}
+#stage[data-style="art-deco"] h1, #stage[data-style="art-deco"] h2, #stage[data-style="art-deco"] h3 { text-transform:uppercase; letter-spacing:.16em; font-weight:400; }
+#stage[data-style="art-deco"] h1, #stage[data-style="art-deco"] h2 { color:var(--accent); }
+#stage[data-style="art-deco"] .topbar { border-bottom:1px solid var(--accent); box-shadow:0 5px 0 -4px var(--bg), 0 6px 0 -4px var(--accent); padding-bottom:18px; margin-bottom:4px; }
+#stage[data-style="art-deco"] .brand { font-family:var(--font-display); text-transform:uppercase; letter-spacing:.22em; color:var(--accent); font-weight:400; }
+#stage[data-style="art-deco"] .brand-mark { width:1.7em; height:1.7em; border-radius:0; background:
+  repeating-conic-gradient(from -11deg at 50% 100%, var(--accent) 0 11deg, transparent 11deg 22deg); clip-path:polygon(0 100%,50% 0,100% 100%); }
+#stage[data-style="art-deco"] .nav a { text-transform:uppercase; letter-spacing:.14em; font-size:.85rem; border-bottom:1px solid transparent; border-radius:0; }
+#stage[data-style="art-deco"] .nav a:hover { border-color:var(--accent); color:var(--accent); }
+#stage[data-style="art-deco"] .nav a.is-active { background:none; color:var(--accent); border:1px solid var(--accent); outline:1px solid var(--accent); outline-offset:3px; }
+#stage[data-style="art-deco"] .hero { position:relative; text-align:center; padding:72px 0 56px; }
+#stage[data-style="art-deco"] .hero::before { content:""; position:absolute; left:50%; bottom:0; width:min(760px,100%); aspect-ratio:2/1; transform:translateX(-50%); z-index:-1;
+  background:repeating-conic-gradient(from -90deg at 50% 100%, rgba(201,162,39,.22) 0 5deg, transparent 5deg 10deg);
+  -webkit-mask:radial-gradient(circle at 50% 100%, #000 0 55%, transparent 72%); mask:radial-gradient(circle at 50% 100%, #000 0 55%, transparent 72%);
+  animation:deco-fan .9s ease-out both; }
+@keyframes deco-fan { from { opacity:0; transform:translateX(-50%) scale(.6); } to { opacity:1; transform:translateX(-50%) scale(1); } }
+#stage[data-style="art-deco"] .eyebrow { color:var(--accent); letter-spacing:.34em; }
+#stage[data-style="art-deco"] .eyebrow::before, #stage[data-style="art-deco"] .eyebrow::after { content:"◆"; margin:0 .8em; font-size:.6em; vertical-align:middle; }
+#stage[data-style="art-deco"] .display { margin-inline:auto; max-width:14ch; font-size:clamp(2.2rem,6.5vw,4.6rem); background:var(--gold-grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+#stage[data-style="art-deco"] .lead { margin-inline:auto; color:var(--fg); font-weight:300; }
+#stage[data-style="art-deco"] .actions { justify-content:center; }
+#stage[data-style="art-deco"] .btn { text-transform:uppercase; letter-spacing:.16em; font-size:.85rem; border-radius:0; border:1px solid var(--accent); color:var(--accent); background:var(--bg); outline:1px solid transparent; outline-offset:3px; transition:background .35s ease-out,color .35s ease-out,outline-color .35s ease-out; }
+#stage[data-style="art-deco"] .btn:hover { outline-color:var(--accent); background:rgba(201,162,39,.14); }
+#stage[data-style="art-deco"] .btn-primary { background:var(--gold-grad); color:var(--accent-fg); font-weight:700; }
+#stage[data-style="art-deco"] .btn-primary:hover { background:var(--gold-grad); filter:brightness(1.1); }
+#stage[data-style="art-deco"] .btn[disabled] { opacity:1; color:var(--muted); border-color:var(--muted); background:var(--surface); border-style:dashed; }
+#stage[data-style="art-deco"] .btn:active { transform:translateY(1px); }
+#stage[data-style="art-deco"] :focus-visible { outline:3px solid #fff; outline-offset:3px; }
+#stage[data-style="art-deco"] .section-title { text-align:center; display:flex; align-items:center; gap:18px; }
+#stage[data-style="art-deco"] .section-title::before, #stage[data-style="art-deco"] .section-title::after { content:""; flex:1; height:5px; border-block:1px solid var(--accent); }
+#stage[data-style="art-deco"] .card, #stage[data-style="art-deco"] .panel { position:relative; border:1px solid var(--accent); background:var(--surface); }
+#stage[data-style="art-deco"] .card::before, #stage[data-style="art-deco"] .panel::before { content:""; position:absolute; inset:5px; border:1px solid rgba(201,162,39,.55); pointer-events:none; }
+#stage[data-style="art-deco"] .card::after { content:""; position:absolute; top:-7px; left:50%; width:12px; height:12px; background:var(--accent); transform:translateX(-50%) rotate(45deg); }
+#stage[data-style="art-deco"] .kpi { text-align:center; }
+#stage[data-style="art-deco"] .kpi-label { text-transform:uppercase; letter-spacing:.18em; font-size:.75rem; }
+#stage[data-style="art-deco"] .kpi-value { color:var(--accent); font-size:2.6rem; font-weight:300; letter-spacing:.06em; }
+#stage[data-style="art-deco"] .badge { border-radius:0; background:transparent; border-color:currentColor; text-transform:uppercase; letter-spacing:.14em; font-size:.68rem; }
+#stage[data-style="art-deco"] .feature a { color:var(--accent); letter-spacing:.1em; }
+#stage[data-style="art-deco"] .bars i { border-radius:0; background:repeating-linear-gradient(90deg, var(--accent) 0 3px, #8a6d12 3px 5px); clip-path:polygon(0 100%,0 12px,50% 0,100% 12px,100% 100%); }
+#stage[data-style="art-deco"] input[type=text], #stage[data-style="art-deco"] input[type=email], #stage[data-style="art-deco"] select, #stage[data-style="art-deco"] textarea { background:var(--bg); border:0; border-bottom:1px solid var(--accent); border-radius:0; color:var(--fg); }
+#stage[data-style="art-deco"] input:focus, #stage[data-style="art-deco"] select:focus, #stage[data-style="art-deco"] textarea:focus { outline:2px solid var(--accent); }
+#stage[data-style="art-deco"] input[type=checkbox], #stage[data-style="art-deco"] input[type=range] { accent-color:var(--accent); }
+#stage[data-style="art-deco"] label { text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; }
+#stage[data-style="art-deco"] .inline { text-transform:none; letter-spacing:.02em; font-size:.95rem; }
+#stage[data-style="art-deco"] .switch { background:var(--surface-2); border:1px solid var(--accent); border-radius:0; }
+#stage[data-style="art-deco"] .switch::after { border-radius:0; background:var(--accent); transform:rotate(45deg) scale(.8); top:2px; }
+#stage[data-style="art-deco"] .switch:checked { background:rgba(201,162,39,.3); }
+#stage[data-style="art-deco"] .switch:checked::after { transform:translateX(20px) rotate(45deg) scale(.8); }
+#stage[data-style="art-deco"] th { color:var(--accent); border-bottom:1px solid var(--accent); }
+#stage[data-style="art-deco"] td { border-bottom:1px solid rgba(201,162,39,.3); }
+#stage[data-style="art-deco"] .toast { background:var(--surface-2); color:var(--fg); border:1px solid var(--accent); outline:1px solid var(--accent); outline-offset:4px; border-radius:0; }
+#stage[data-style="art-deco"] dialog { background:var(--surface); color:var(--fg); border:1px solid var(--accent); outline:1px solid var(--accent); outline-offset:5px; border-radius:0; }
+#stage[data-style="art-deco"] dialog::backdrop { background:rgba(8,8,12,.85); }
+#stage[data-style="art-deco"] .footer { text-align:center; border-top:1px solid var(--accent); color:var(--muted); letter-spacing:.12em; text-transform:uppercase; font-size:.75rem; }
+@media (prefers-reduced-motion: reduce) { #stage[data-style="art-deco"] .hero::before { animation:none; } }

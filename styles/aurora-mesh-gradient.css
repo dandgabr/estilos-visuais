@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap');
+#stage[data-style="aurora-mesh-gradient"]{
+  --bg:#070b1c;--surface:rgba(255,255,255,.07);--surface-2:rgba(255,255,255,.1);--fg:#f4f6ff;--muted:#bcc3e6;--accent:#8ff0d0;--accent-fg:#06121a;--border:rgba(255,255,255,.16);
+  --ok:#8ff0b8;--warn:#ffd88a;--danger:#ffa3a3;--radius:20px;--radius-sm:12px;--shadow:0 10px 40px rgba(0,0,0,.35);
+  --font-body:'Sora',sans-serif;--font-display:'Sora',sans-serif;--gap:20px;--pad:22px;
+  background:
+    radial-gradient(60% 50% at 15% 10%,rgba(120,80,255,.55),transparent 70%),
+    radial-gradient(55% 45% at 85% 20%,rgba(0,220,200,.45),transparent 70%),
+    radial-gradient(60% 50% at 60% 80%,rgba(255,90,170,.35),transparent 70%),
+    #070b1c;
+  background-size:140% 140%,140% 140%,140% 140%,auto;
+  animation:aurora-shift 18s ease-in-out infinite alternate;
+}
+@keyframes aurora-shift{
+  0%{background-position:0% 0%,100% 0%,50% 100%,0 0}
+  100%{background-position:60% 40%,40% 60%,0% 20%,0 0}
+}
+#stage[data-style="aurora-mesh-gradient"] .topbar{padding:20px 0}
+#stage[data-style="aurora-mesh-gradient"] .brand-mark{background:conic-gradient(from 0deg,#8ff0d0,#8b7bff,#ff7ac8,#8ff0d0);border-radius:50%;filter:blur(.4px);box-shadow:0 0 18px rgba(143,240,208,.6)}
+#stage[data-style="aurora-mesh-gradient"] .nav a{border-radius:99px;color:var(--muted);transition:background .25s,color .25s}
+#stage[data-style="aurora-mesh-gradient"] .nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+#stage[data-style="aurora-mesh-gradient"] .nav a.is-active{background:rgba(255,255,255,.16);color:#fff}
+#stage[data-style="aurora-mesh-gradient"] .display{font-weight:700;letter-spacing:-.04em;background:linear-gradient(100deg,#fff 10%,#b9fbe6 45%,#c9b8ff 75%,#ffb8e3);-webkit-background-clip:text;background-clip:text;color:transparent}
+#stage[data-style="aurora-mesh-gradient"] .eyebrow{color:#8ff0d0}
+#stage[data-style="aurora-mesh-gradient"] .btn{border-radius:99px;font-weight:600;transition:transform .2s,box-shadow .2s,background .2s}
+#stage[data-style="aurora-mesh-gradient"] .btn-primary{background:linear-gradient(100deg,#8ff0d0,#b9a8ff);box-shadow:0 0 28px rgba(143,240,208,.35)}
+#stage[data-style="aurora-mesh-gradient"] .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(185,168,255,.6)}
+#stage[data-style="aurora-mesh-gradient"] .btn-secondary{background:rgba(255,255,255,.1);color:#fff;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+#stage[data-style="aurora-mesh-gradient"] .btn-ghost{color:#fff;border-color:rgba(255,255,255,.3)}
+#stage[data-style="aurora-mesh-gradient"] .btn-ghost:hover,#stage[data-style="aurora-mesh-gradient"] .btn-secondary:hover{background:rgba(255,255,255,.18)}
+#stage[data-style="aurora-mesh-gradient"] :focus-visible{outline:3px solid #8ff0d0;outline-offset:3px}
+#stage[data-style="aurora-mesh-gradient"] .card,#stage[data-style="aurora-mesh-gradient"] .panel,#stage[data-style="aurora-mesh-gradient"] .toast{-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);background:rgba(10,14,40,.45);border:1px solid rgba(255,255,255,.18)}
+#stage[data-style="aurora-mesh-gradient"] .kpi-value{font-weight:600;background:linear-gradient(100deg,#fff,#b9fbe6);-webkit-background-clip:text;background-clip:text;color:transparent}
+#stage[data-style="aurora-mesh-gradient"] .badge{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.25)}
+#stage[data-style="aurora-mesh-gradient"] .feature a{color:#8ff0d0}
+#stage[data-style="aurora-mesh-gradient"] .bars i{background:linear-gradient(180deg,#8ff0d0,#8b7bff 60%,rgba(255,122,200,.5));border-radius:99px 99px 4px 4px}
+#stage[data-style="aurora-mesh-gradient"] input[type=text],#stage[data-style="aurora-mesh-gradient"] input[type=email],#stage[data-style="aurora-mesh-gradient"] select,#stage[data-style="aurora-mesh-gradient"] textarea{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.25);color:#fff}
+#stage[data-style="aurora-mesh-gradient"] ::placeholder{color:#a9b0d6}
+#stage[data-style="aurora-mesh-gradient"] option{background:#12163a}
+#stage[data-style="aurora-mesh-gradient"] input[type=checkbox],#stage[data-style="aurora-mesh-gradient"] input[type=range]{accent-color:#8ff0d0}
+#stage[data-style="aurora-mesh-gradient"] .switch{background:rgba(255,255,255,.22)}
+#stage[data-style="aurora-mesh-gradient"] .switch:checked{background:linear-gradient(100deg,#8ff0d0,#b9a8ff)}
+#stage[data-style="aurora-mesh-gradient"] .switch::after{background:#fff}
+#stage[data-style="aurora-mesh-gradient"] td,#stage[data-style="aurora-mesh-gradient"] th{border-bottom-color:rgba(255,255,255,.14)}
+#stage[data-style="aurora-mesh-gradient"] dialog{background:rgba(14,18,50,.92);border-color:rgba(255,255,255,.25);box-shadow:0 20px 70px rgba(0,0,0,.6),0 0 60px rgba(139,123,255,.25)}
+#stage[data-style="aurora-mesh-gradient"] .footer{border-top-color:rgba(255,255,255,.14)}
+@media (prefers-reduced-motion:reduce){#stage[data-style="aurora-mesh-gradient"]{animation:none}}

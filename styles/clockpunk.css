@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+#stage[data-style="clockpunk"] {
+  --bg:#F1E6CC; --surface:#f8f0dc; --surface-2:#e8d9b5; --fg:#2A2118; --muted:#5a4a37;
+  --accent:#8a6a1c; --accent-fg:#fff8e6; --border:#8A6B43; --ok:#2f6b3f; --warn:#8a5200; --danger:#A63A2B;
+  --radius:4px; --radius-sm:2px; --shadow:0 2px 0 #b9a276,0 6px 14px rgba(42,33,24,.2);
+  --font-body:'EB Garamond',Georgia,serif; --font-display:'Cormorant SC','EB Garamond',serif; --font-mono:ui-monospace,monospace;
+  --gap:24px; --pad:24px; --maxw:1080px; --blue:#27437A; --gilt:#B8923A;
+  font-size:19px;
+  background:
+    repeating-linear-gradient(0deg,rgba(42,33,24,.07) 0 1px,transparent 1px 32px),
+    repeating-linear-gradient(90deg,rgba(42,33,24,.07) 0 1px,transparent 1px 32px),
+    radial-gradient(circle at 100% 0,transparent 0 120px,rgba(184,146,58,.5) 121px 124px,transparent 125px),
+    radial-gradient(circle at 100% 0,rgba(184,146,58,.2) 0 220px,transparent 222px),
+    radial-gradient(ellipse at 50% 0,#f8efd8,#E9DAB8 100%);
+  background-attachment:local;
+}
+#stage[data-style="clockpunk"] .topbar{border-bottom:4px double var(--border)}
+#stage[data-style="clockpunk"] .brand{font-family:var(--font-display);font-weight:700;font-size:1.6rem;letter-spacing:.06em}
+#stage[data-style="clockpunk"] .brand-mark{border-radius:50%;background:radial-gradient(circle,var(--fg) 0 12%,transparent 13%),conic-gradient(var(--gilt) 0 12.5%,transparent 0 25%,var(--gilt) 0 37.5%,transparent 0 50%,var(--gilt) 0 62.5%,transparent 0 75%,var(--gilt) 0 87.5%,transparent 0);
+  -webkit-mask:radial-gradient(circle,#000 0 44%,transparent 45% 54%,#000 55%);mask:none;box-shadow:inset 0 0 0 4px var(--gilt);animation:gear 14s linear infinite;width:1.8em;height:1.8em}
+@keyframes gear{to{transform:rotate(360deg)}}
+#stage[data-style="clockpunk"] .nav a{font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.08em;color:var(--fg)}
+#stage[data-style="clockpunk"] .nav a:hover{color:var(--blue);text-decoration:underline}
+#stage[data-style="clockpunk"] .nav a.is-active{background:var(--fg);color:var(--surface);border-radius:2px;box-shadow:inset 0 0 0 2px var(--gilt)}
+#stage[data-style="clockpunk"] .eyebrow{font-family:var(--font-display);font-weight:700;color:var(--blue);letter-spacing:.3em;font-size:.95rem}
+#stage[data-style="clockpunk"] .display{font-family:var(--font-display);font-weight:700;letter-spacing:.02em;position:relative}
+#stage[data-style="clockpunk"] .display::after{content:"✦ ❖ ✦";display:block;font-size:1.2rem;color:var(--gilt);letter-spacing:.5em;margin-top:10px}
+#stage[data-style="clockpunk"] .lead{font-style:italic;color:var(--muted)}
+#stage[data-style="clockpunk"] .btn{font-family:var(--font-display);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.95rem;border-radius:2px;transition:transform .15s,box-shadow .15s}
+#stage[data-style="clockpunk"] .btn-primary{background:linear-gradient(180deg,#a47f2a,#7b5d15);color:#fff8e6;border:2px solid #4a3608;box-shadow:inset 0 0 0 2px #d4b25e,0 3px 0 #4a3608}
+#stage[data-style="clockpunk"] .btn-primary:hover{filter:brightness(1.1)}#stage[data-style="clockpunk"] .btn-primary:active{transform:translateY(3px);box-shadow:inset 0 0 0 2px #d4b25e,0 0 0 #4a3608}
+#stage[data-style="clockpunk"] .btn-secondary{background:var(--blue);color:#f1e6cc;border:2px solid #14244a;box-shadow:inset 0 0 0 2px #7f95c4}
+#stage[data-style="clockpunk"] .btn-secondary:hover{filter:brightness(1.2)}
+#stage[data-style="clockpunk"] .btn-ghost{border:2px solid var(--border);color:var(--fg)}
+#stage[data-style="clockpunk"] .btn-ghost:hover{background:rgba(138,107,67,.2)}
+#stage[data-style="clockpunk"] :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+#stage[data-style="clockpunk"] .section-title{font-family:var(--font-display);font-weight:700;font-size:1.8rem;text-align:center;display:flex;align-items:center;gap:16px}
+#stage[data-style="clockpunk"] .section-title::before,#stage[data-style="clockpunk"] .section-title::after{content:"";flex:1;height:7px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+#stage[data-style="clockpunk"] .card,#stage[data-style="clockpunk"] .panel{border:2px solid var(--border);border-radius:4px;background:linear-gradient(var(--surface),var(--surface)) padding-box;outline:1px solid var(--border);outline-offset:-8px;position:relative}
+#stage[data-style="clockpunk"] .card::before,#stage[data-style="clockpunk"] .panel::before{content:"";position:absolute;right:12px;top:12px;width:22px;height:22px;border-radius:50%;opacity:.6;
+  background:conic-gradient(var(--gilt) 0 12.5%,transparent 0 25%,var(--gilt) 0 37.5%,transparent 0 50%,var(--gilt) 0 62.5%,transparent 0 75%,var(--gilt) 0 87.5%,transparent 0);-webkit-mask:radial-gradient(circle,transparent 0 30%,#000 32%);mask:radial-gradient(circle,transparent 0 30%,#000 32%)}
+#stage[data-style="clockpunk"] .card h3,#stage[data-style="clockpunk"] .panel h2{font-family:var(--font-display);font-weight:700;font-size:1.4rem}
+#stage[data-style="clockpunk"] .card a{color:var(--blue);font-weight:600}
+#stage[data-style="clockpunk"] .kpi-label{font-variant:small-caps;letter-spacing:.1em;font-size:1rem}
+#stage[data-style="clockpunk"] .kpi-value{font-family:var(--font-display);font-size:2.6rem;color:var(--fg)}
+#stage[data-style="clockpunk"] .badge{font-variant:small-caps;border-radius:2px;background:var(--surface-2);border:1px solid currentColor;font-weight:600;font-size:.9rem}
+#stage[data-style="clockpunk"] .badge:not(.ok):not(.warn):not(.danger){color:var(--muted)}
+#stage[data-style="clockpunk"] .bars{border-bottom:2px solid var(--fg);background:repeating-linear-gradient(0deg,rgba(42,33,24,.15) 0 1px,transparent 1px 28px)}
+#stage[data-style="clockpunk"] .bars i{border-radius:2px 2px 0 0;background:repeating-linear-gradient(135deg,var(--blue) 0 4px,#3a5a9a 4px 8px);border:1px solid #14244a}
+#stage[data-style="clockpunk"] .bars i:last-child{background:repeating-linear-gradient(135deg,var(--gilt) 0 4px,#d4b25e 4px 8px);border-color:#4a3608}
+#stage[data-style="clockpunk"] input[type=text],#stage[data-style="clockpunk"] input[type=email],#stage[data-style="clockpunk"] select,#stage[data-style="clockpunk"] textarea{background:#fffaf0;border:2px solid var(--border);border-radius:2px;font-family:var(--font-body);font-size:1rem;color:var(--fg)}
+#stage[data-style="clockpunk"] input::placeholder,#stage[data-style="clockpunk"] textarea::placeholder{color:#6f5f4a}
+#stage[data-style="clockpunk"] input[type=checkbox],#stage[data-style="clockpunk"] input[type=range]{accent-color:var(--blue)}
+#stage[data-style="clockpunk"] .switch{background:#cbb88f;border:2px solid var(--border);border-radius:99px}
+#stage[data-style="clockpunk"] .switch::after{background:var(--gilt);box-shadow:0 0 0 1px #4a3608}
+#stage[data-style="clockpunk"] .switch:checked{background:var(--blue)}
+#stage[data-style="clockpunk"] th{font-family:var(--font-display);font-size:.95rem;color:var(--fg);border-bottom:3px double var(--border)}
+#stage[data-style="clockpunk"] td{border-bottom:1px dotted var(--border)}
+#stage[data-style="clockpunk"] .toast{background:var(--fg);color:#f1e6cc;border-radius:2px;border:2px solid var(--gilt);font-style:italic}
+#stage[data-style="clockpunk"] dialog{background:var(--surface);color:var(--fg);border:3px double var(--border);border-radius:4px;box-shadow:0 12px 40px rgba(42,33,24,.5)}
+#stage[data-style="clockpunk"] dialog::backdrop{background:rgba(42,33,24,.6)}
+#stage[data-style="clockpunk"] .footer{border-top:4px double var(--border);text-align:center;font-style:italic}
+@media (prefers-reduced-motion:reduce){#stage[data-style="clockpunk"] .brand-mark{animation:none}}

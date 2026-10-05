@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;700&display=swap');
+#stage[data-style="risograph-zine"] {
+  --bg:#f6f1e7; --surface:#fbf7ee; --surface-2:#ffe8f4; --fg:#1a1a2e; --muted:#454560; --accent:#ff48b0; --accent-fg:#1a1a2e; --border:#1a1a2e;
+  --ok:#00683a; --warn:#7a4800; --danger:#b00045; --radius:0; --radius-sm:0; --shadow:3px -2px 0 #0078bf;
+  --font-body:'Work Sans',system-ui,sans-serif; --font-display:'Bowlby One','Work Sans',sans-serif; --font-mono:'Space Mono',monospace;
+  --gap:22px; --pad:20px; --maxw:1100px;
+  background-color:#f6f1e7;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .25 0 0 0 0 .2 0 0 0 .13 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+#stage[data-style="risograph-zine"] .app{ isolation:isolate; }
+#stage[data-style="risograph-zine"] .topbar{ border-bottom:3px solid #1a1a2e; }
+#stage[data-style="risograph-zine"] .brand{ font:400 1.4rem var(--font-display); color:#005f9e; text-shadow:2px 2px 0 #ff48b0; }
+#stage[data-style="risograph-zine"] .brand-mark{ background:#ff48b0; border-radius:50%; position:relative; mix-blend-mode:multiply; }
+#stage[data-style="risograph-zine"] .brand-mark::after{ content:""; position:absolute; inset:0; background:#0078bf; border-radius:50%; transform:translate(.35em,.2em); mix-blend-mode:multiply; }
+#stage[data-style="risograph-zine"] .nav a{ font:700 .8rem var(--font-mono); text-transform:uppercase; border-radius:0; }
+#stage[data-style="risograph-zine"] .nav a:hover{ background:#ffe800; }
+#stage[data-style="risograph-zine"] .nav a.is-active{ background:#0078bf; color:#fff; box-shadow:3px 3px 0 #ff48b0; }
+#stage[data-style="risograph-zine"] .hero{ overflow:hidden; position:relative; padding:44px 0 36px; }
+#stage[data-style="risograph-zine"] .hero::before{ content:""; position:absolute; right:0; top:20px; width:46%; height:78%; max-width:360px; background:radial-gradient(circle,#ff48b0 38%,transparent 41%) 0 0/9px 9px; mix-blend-mode:multiply; transform:rotate(-8deg); opacity:.85; -webkit-mask-image:linear-gradient(135deg,transparent 5%,#000 75%); mask-image:linear-gradient(135deg,transparent 5%,#000 75%); pointer-events:none; }
+#stage[data-style="risograph-zine"] .hero::after{ content:""; position:absolute; right:40px; top:50px; width:140px; height:140px; background:#0078bf; border-radius:50%; mix-blend-mode:multiply; opacity:.7; pointer-events:none; }
+#stage[data-style="risograph-zine"] .hero > *{ position:relative; z-index:1; }
+#stage[data-style="risograph-zine"] .eyebrow{ font:700 .78rem var(--font-mono); color:#1a1a2e; background:#ffe800; display:inline-block; padding:2px 8px; border:2px solid #1a1a2e; transform:rotate(-1.5deg); }
+#stage[data-style="risograph-zine"] .display{ font-family:'Bowlby One',sans-serif; font-weight:400; color:#0078bf; text-shadow:4px 3px 0 #ff48b0; text-transform:uppercase; line-height:.95; max-width:12ch; letter-spacing:-.01em; }
+#stage[data-style="risograph-zine"] .lead{ color:#1a1a2e; font-weight:500; max-width:44ch; background:rgba(246,241,231,.8); }
+#stage[data-style="risograph-zine"] .btn{ font:700 .85rem var(--font-mono); text-transform:uppercase; border:3px solid #1a1a2e; border-radius:0; color:#1a1a2e; position:relative; transition:transform .15s linear, box-shadow .15s linear; box-shadow:3px -2px 0 #0078bf; }
+#stage[data-style="risograph-zine"] .btn-primary{ background:#ff48b0; }
+#stage[data-style="risograph-zine"] .btn-secondary{ background:#ffe800; box-shadow:3px -2px 0 #ff48b0; }
+#stage[data-style="risograph-zine"] .btn-ghost{ background:#fbf7ee; }
+#stage[data-style="risograph-zine"] .btn:hover{ box-shadow:6px -4px 0 #0078bf; transform:translate(-1px,1px); }
+#stage[data-style="risograph-zine"] .btn:active{ box-shadow:0 0 0 #0078bf; transform:translate(3px,-2px); }
+#stage[data-style="risograph-zine"] .btn[disabled]{ opacity:1; background:#e6e0d2; color:#4d4d66; box-shadow:none; border-style:dashed; }
+#stage[data-style="risograph-zine"] :focus-visible{ outline:3px solid #0078bf; outline-offset:3px; }
+#stage[data-style="risograph-zine"] .section-title{ font:400 1.9rem var(--font-display); text-transform:uppercase; color:#1a1a2e; display:inline-block; background:linear-gradient(transparent 55%,#ff48b0 55% 92%,transparent 92%); padding:0 8px; mix-blend-mode:multiply; }
+#stage[data-style="risograph-zine"] .card,#stage[data-style="risograph-zine"] .panel{ background:#fbf7ee; border:3px solid #1a1a2e; border-radius:0; box-shadow:5px -4px 0 #0078bf; position:relative; }
+#stage[data-style="risograph-zine"] .kpis .card:nth-child(1){ background:#ffd4ec; }
+#stage[data-style="risograph-zine"] .kpis .card:nth-child(2){ background:#cfe8f7; box-shadow:5px -4px 0 #ff48b0; }
+#stage[data-style="risograph-zine"] .kpis .card:nth-child(3){ background:#fff6a8; }
+#stage[data-style="risograph-zine"] .kpis .card:nth-child(4){ background:#fbf7ee; background-image:radial-gradient(circle,#ff48b0 30%,transparent 33%); background-size:8px 8px; box-shadow:5px -4px 0 #0078bf; }
+#stage[data-style="risograph-zine"] .kpis .card:nth-child(4)>*{ background:#fbf7ee; padding:0 4px; }
+#stage[data-style="risograph-zine"] .kpi-label{ font:700 .75rem var(--font-mono); color:#1a1a2e; text-transform:uppercase; }
+#stage[data-style="risograph-zine"] .kpi-value{ font:400 2.4rem var(--font-display); color:#0078bf; text-shadow:2px 2px 0 rgba(255,72,176,.8); }
+#stage[data-style="risograph-zine"] .badge{ font:700 .72rem var(--font-mono); border:2px solid #1a1a2e; border-radius:0; background:#fbf7ee; color:#1a1a2e!important; text-transform:uppercase; }
+#stage[data-style="risograph-zine"] .card h3{ font:400 1.35rem var(--font-display); }
+#stage[data-style="risograph-zine"] .feature a{ font:700 .85rem var(--font-mono); color:#0057a0; text-decoration-color:#ff48b0; text-decoration-thickness:3px; text-underline-offset:3px; }
+#stage[data-style="risograph-zine"] .bars{ border-bottom:3px solid #1a1a2e; }
+#stage[data-style="risograph-zine"] .bars i{ background:#ff48b0; border-radius:0; mix-blend-mode:multiply; position:relative; }
+#stage[data-style="risograph-zine"] .bars i::after{ content:""; position:absolute; inset:0; background:#0078bf; transform:translate(3px,-2px); mix-blend-mode:multiply; opacity:.85; }
+#stage[data-style="risograph-zine"] .panel h2{ font:400 1.6rem var(--font-display); text-transform:uppercase; color:#005f9e; text-shadow:2px 2px 0 #ff48b0; }
+#stage[data-style="risograph-zine"] label{ font:700 .78rem var(--font-mono); text-transform:uppercase; }
+#stage[data-style="risograph-zine"] input[type=text],#stage[data-style="risograph-zine"] input[type=email],#stage[data-style="risograph-zine"] select,#stage[data-style="risograph-zine"] textarea{ border:3px solid #1a1a2e; border-radius:0; background:#fffdf7; box-shadow:3px -2px 0 #ff48b0; font-family:var(--font-body); }
+#stage[data-style="risograph-zine"] input[type=checkbox],#stage[data-style="risograph-zine"] input[type=range]{ accent-color:#0078bf; }
+#stage[data-style="risograph-zine"] .inline{ text-transform:none; font-family:var(--font-body); font-size:.95rem; }
+#stage[data-style="risograph-zine"] .switch{ border:3px solid #1a1a2e; border-radius:0; background:#e6e0d2; } #stage[data-style="risograph-zine"] .switch::after{ border-radius:0; background:#1a1a2e; top:1px; left:1px; } #stage[data-style="risograph-zine"] .switch:checked{ background:#ff48b0; } #stage[data-style="risograph-zine"] .switch:checked::after{ transform:translateX(20px); }
+#stage[data-style="risograph-zine"] th{ font:700 .75rem var(--font-mono); color:#fff; background:#0078bf; border:0; }
+#stage[data-style="risograph-zine"] td{ border-bottom:2px solid #1a1a2e; }
+#stage[data-style="risograph-zine"] tbody tr:nth-child(even){ background:rgba(255,72,176,.12); }
+#stage[data-style="risograph-zine"] .toast{ background:#ffe800; color:#1a1a2e; border:3px solid #1a1a2e; border-radius:0; box-shadow:5px -4px 0 #ff48b0; font-weight:700; }
+#stage[data-style="risograph-zine"] dialog{ background:#fbf7ee; color:#1a1a2e; border:3px solid #1a1a2e; border-radius:0; box-shadow:8px -6px 0 #0078bf; }
+#stage[data-style="risograph-zine"] dialog::backdrop{ background:radial-gradient(circle,rgba(255,72,176,.7) 35%,rgba(246,241,231,.9) 38%) 0 0/10px 10px; }
+#stage[data-style="risograph-zine"] .footer{ border-top:3px solid #1a1a2e; font-family:var(--font-mono); color:#1a1a2e; }
+#stage[data-style="risograph-zine"] .footer::before{ content:"pág. 01 / 01 — "; color:#0057a0; }
+@media (prefers-reduced-motion:reduce){ #stage[data-style="risograph-zine"] .btn{ transition:none; } }
+@media (max-width:640px){ #stage[data-style="risograph-zine"] .hero::after{ width:90px; height:90px; right:10px; } }

@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap');
+#stage[data-style="claymorphism"]{
+  --bg:#fff1e6;--surface:#fff;--surface-2:#ffe3d0;--fg:#3b2a4a;--muted:#5c4a6b;--accent:#7c4dff;--accent-fg:#fff;--border:transparent;
+  --ok:#17803d;--warn:#9a5600;--danger:#c0264a;--radius:28px;--radius-sm:18px;
+  --clay:8px 10px 20px rgba(120,70,40,.18),inset -6px -8px 12px rgba(120,70,40,.12),inset 6px 8px 12px rgba(255,255,255,.9);
+  --shadow:var(--clay);--font-body:'Nunito',sans-serif;--font-display:'Fredoka',sans-serif;--gap:24px;--pad:24px;
+  background:radial-gradient(500px 300px at 10% 0,#ffd6e8,transparent 70%),radial-gradient(500px 300px at 100% 20%,#d4e4ff,transparent 70%),#fff1e6;
+}
+#stage[data-style="claymorphism"] .brand{font-weight:700}
+#stage[data-style="claymorphism"] .brand-mark{background:#7c4dff;border-radius:50%;box-shadow:inset -3px -4px 6px rgba(0,0,0,.25),inset 3px 4px 6px rgba(255,255,255,.5),3px 4px 8px rgba(124,77,255,.4)}
+#stage[data-style="claymorphism"] .nav a{border-radius:99px;font-weight:700;transition:transform .2s}
+#stage[data-style="claymorphism"] .nav a:hover{transform:translateY(-2px);background:#fff}
+#stage[data-style="claymorphism"] .nav a.is-active{box-shadow:var(--clay)}
+#stage[data-style="claymorphism"] .display{font-weight:700;color:#3b2a4a}
+#stage[data-style="claymorphism"] .eyebrow{color:#7c4dff;font-weight:700}
+#stage[data-style="claymorphism"] .btn{border-radius:99px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.05rem;padding:12px 26px;border:0;box-shadow:var(--clay);transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .2s}
+#stage[data-style="claymorphism"] .btn:hover{transform:translateY(-3px) scale(1.04)}
+#stage[data-style="claymorphism"] .btn:active{transform:translateY(1px) scale(.97);box-shadow:inset 4px 5px 10px rgba(0,0,0,.2)}
+#stage[data-style="claymorphism"] .btn-primary{background:#7c4dff;box-shadow:8px 10px 20px rgba(124,77,255,.4),inset -6px -8px 12px rgba(0,0,0,.2),inset 6px 8px 12px rgba(255,255,255,.35)}
+#stage[data-style="claymorphism"] .btn-secondary{background:#ffd166;color:#3b2a4a}
+#stage[data-style="claymorphism"] .btn-ghost{background:#fff}
+#stage[data-style="claymorphism"] :focus-visible{outline:4px solid #3b2a4a;outline-offset:3px}
+#stage[data-style="claymorphism"] .section-title{font-weight:600}
+#stage[data-style="claymorphism"] .card,#stage[data-style="claymorphism"] .panel{border:0;transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+#stage[data-style="claymorphism"] .card:hover{transform:translateY(-4px) rotate(-.5deg)}
+#stage[data-style="claymorphism"] .kpis .card:nth-child(1){background:#d7f3e3}
+#stage[data-style="claymorphism"] .kpis .card:nth-child(2){background:#ffe6a8}
+#stage[data-style="claymorphism"] .kpis .card:nth-child(3){background:#dcd1ff}
+#stage[data-style="claymorphism"] .kpis .card:nth-child(4){background:#ffd0dc}
+#stage[data-style="claymorphism"] .kpi-value{font-family:'Fredoka',sans-serif;font-weight:700}
+#stage[data-style="claymorphism"] .badge{border:0;font-weight:700;background:#fff;box-shadow:2px 3px 6px rgba(120,70,40,.18),inset 1px 1px 3px #fff}
+#stage[data-style="claymorphism"] .feature h3,#stage[data-style="claymorphism"] .chart h3{font-family:'Fredoka',sans-serif}
+#stage[data-style="claymorphism"] .feature a{font-weight:700;color:#5a2fd6}
+#stage[data-style="claymorphism"] .bars i{border-radius:99px;background:#7c4dff;box-shadow:inset -3px -3px 6px rgba(0,0,0,.2),inset 3px 3px 6px rgba(255,255,255,.4)}
+#stage[data-style="claymorphism"] .bars i:nth-child(3n+2){background:#ff8fab}
+#stage[data-style="claymorphism"] .bars i:nth-child(3n){background:#ffc233}
+#stage[data-style="claymorphism"] input[type=text],#stage[data-style="claymorphism"] input[type=email],#stage[data-style="claymorphism"] select,#stage[data-style="claymorphism"] textarea{border:0;background:#fff7f0;border-radius:18px;box-shadow:inset 4px 4px 8px rgba(120,70,40,.15),inset -3px -3px 6px #fff}
+#stage[data-style="claymorphism"] input[type=checkbox],#stage[data-style="claymorphism"] input[type=range]{accent-color:#7c4dff}
+#stage[data-style="claymorphism"] .switch{background:#e5d9d0;box-shadow:inset 3px 3px 6px rgba(0,0,0,.18)}
+#stage[data-style="claymorphism"] .switch:checked{background:#7c4dff}
+#stage[data-style="claymorphism"] .switch::after{box-shadow:2px 2px 4px rgba(0,0,0,.25)}
+#stage[data-style="claymorphism"] th{color:#5c4a6b}
+#stage[data-style="claymorphism"] td,#stage[data-style="claymorphism"] th{border-bottom:2px dashed #f0d5c0}
+#stage[data-style="claymorphism"] .toast{background:#3b2a4a;color:#fff;border-radius:99px;box-shadow:var(--clay)}
+#stage[data-style="claymorphism"] dialog{border:0;border-radius:32px;box-shadow:var(--clay),0 30px 60px rgba(60,30,90,.3)}
+#stage[data-style="claymorphism"] .footer{border-top:3px dotted #f0c9ad}

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+#stage[data-style="biopunk"] {
+  --bg:#0F1A17; --surface:#14261f; --surface-2:#1b3329; --fg:#EEF5F1; --muted:#a9c4b7;
+  --accent:#7CFF6B; --accent-fg:#06200a; --border:#2f5a47; --ok:#7CFF6B; --warn:#C7D63B; --danger:#ff7aa6;
+  --radius:28px 18px 32px 16px; --radius-sm:14px 8px 16px 8px; --shadow:0 0 0 1px rgba(124,255,107,.15),0 0 28px rgba(43,182,115,.2);
+  --font-body:'IBM Plex Mono',ui-monospace,monospace; --font-display:'Space Grotesk',sans-serif; --font-mono:'IBM Plex Mono',monospace;
+  --gap:22px; --pad:22px; --maxw:1120px; --mag:#E0457B;
+  font-size:15px;
+  background:
+    radial-gradient(circle at 12% 18%,rgba(124,255,107,.16) 0 90px,transparent 92px),
+    radial-gradient(circle at 88% 40%,rgba(224,69,123,.14) 0 120px,transparent 122px),
+    radial-gradient(circle at 30% 85%,rgba(43,182,115,.2) 0 140px,transparent 142px),
+    radial-gradient(circle,rgba(124,255,107,.08) 2px,transparent 3px) 0 0/34px 34px,#0F1A17;
+  background-attachment:local;
+}
+#stage[data-style="biopunk"] .topbar{border-bottom:2px solid var(--border);border-radius:0 0 40px 10px}
+#stage[data-style="biopunk"] .brand{font-family:var(--font-display);font-weight:700;color:var(--accent)}
+#stage[data-style="biopunk"] .brand-mark{background:radial-gradient(circle at 30% 30%,#d4ffcb,var(--accent) 40%,#1e8f43);border-radius:62% 38% 55% 45%/48% 60% 40% 52%;box-shadow:0 0 14px var(--accent);animation:morph 6s ease-in-out infinite}
+@keyframes morph{50%{border-radius:40% 60% 38% 62%/60% 42% 58% 40%}}
+#stage[data-style="biopunk"] .nav a{border-radius:999px;color:var(--fg)}
+#stage[data-style="biopunk"] .nav a:hover{background:rgba(124,255,107,.15)}
+#stage[data-style="biopunk"] .nav a.is-active{background:var(--accent);color:var(--accent-fg);font-weight:700}
+#stage[data-style="biopunk"] .eyebrow{color:var(--mag);font-weight:700;letter-spacing:.2em}
+#stage[data-style="biopunk"] .eyebrow::before{content:"◉ "}
+#stage[data-style="biopunk"] .display{font-weight:700;color:var(--accent);text-shadow:0 0 28px rgba(124,255,107,.45);max-width:15ch;position:relative}
+#stage[data-style="biopunk"] .display::after{content:"";display:block;margin-top:14px;height:22px;width:min(320px,100%);
+  background:radial-gradient(circle at 10px 11px,var(--mag) 0 4px,transparent 5px) 0 0/40px 22px repeat-x,radial-gradient(circle at 30px 11px,var(--accent) 0 4px,transparent 5px) 0 0/40px 22px repeat-x,
+  linear-gradient(var(--border),var(--border)) 0 50%/100% 2px no-repeat}
+#stage[data-style="biopunk"] .lead{color:var(--muted)}
+#stage[data-style="biopunk"] .btn{font-family:var(--font-body);font-weight:700;border-radius:999px 24px 999px 24px;transition:transform .2s,box-shadow .2s,border-radius .3s}
+#stage[data-style="biopunk"] .btn-primary{background:var(--accent);color:var(--accent-fg);box-shadow:0 0 22px rgba(124,255,107,.5)}
+#stage[data-style="biopunk"] .btn-primary:hover{border-radius:24px 999px 24px 999px;box-shadow:0 0 34px rgba(124,255,107,.8)}
+#stage[data-style="biopunk"] .btn-secondary{background:transparent;color:var(--mag);border:2px solid var(--mag);color:#ff8fb6;border-color:#ff8fb6}
+#stage[data-style="biopunk"] .btn-secondary:hover{background:rgba(224,69,123,.18)}
+#stage[data-style="biopunk"] .btn-ghost{border-color:var(--border);color:var(--fg)}
+#stage[data-style="biopunk"] .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+#stage[data-style="biopunk"] .btn:active{transform:scale(.95)}
+#stage[data-style="biopunk"] :focus-visible{outline:3px solid var(--warn);outline-offset:3px}
+#stage[data-style="biopunk"] .section-title{font-family:var(--font-display);color:var(--accent);display:flex;align-items:center;gap:12px}
+#stage[data-style="biopunk"] .section-title::before{content:"";width:22px;height:22px;border:3px solid var(--mag);border-radius:50%;background:radial-gradient(circle,var(--accent) 0 3px,transparent 4px)}
+#stage[data-style="biopunk"] .card,#stage[data-style="biopunk"] .panel{background:radial-gradient(circle at 100% 0,rgba(124,255,107,.12),transparent 55%),var(--surface);border:2px solid var(--border);border-radius:var(--radius);position:relative;overflow:hidden}
+#stage[data-style="biopunk"] .card::before{content:"";position:absolute;right:-26px;top:-26px;width:80px;height:80px;border-radius:50%;border:2px dashed rgba(124,255,107,.35)}
+#stage[data-style="biopunk"] .card:nth-child(even){border-radius:18px 32px 16px 28px}
+#stage[data-style="biopunk"] .card h3,#stage[data-style="biopunk"] .panel h2{font-family:var(--font-display);color:var(--fg)}
+#stage[data-style="biopunk"] .card a{color:var(--accent);font-weight:700}
+#stage[data-style="biopunk"] .kpi-value{font-family:var(--font-display);color:var(--accent);font-size:2.2rem}
+#stage[data-style="biopunk"] .kpi-label{text-transform:uppercase;letter-spacing:.1em;font-size:.72rem}
+#stage[data-style="biopunk"] .badge{background:rgba(124,255,107,.08);border-color:currentColor;font-weight:700}
+#stage[data-style="biopunk"] .badge.danger{color:#ff9bbd}
+#stage[data-style="biopunk"] .badge:not(.ok):not(.warn):not(.danger){color:var(--muted)}
+#stage[data-style="biopunk"] .bars i{border-radius:999px 999px 8px 8px;background:linear-gradient(180deg,var(--accent),#2BB673 70%,#0f5a36);box-shadow:0 0 14px rgba(124,255,107,.4)}
+#stage[data-style="biopunk"] .bars i:nth-child(3n){background:linear-gradient(180deg,#ff8fb6,var(--mag) 70%,#7a1f45);box-shadow:0 0 14px rgba(224,69,123,.4)}
+#stage[data-style="biopunk"] input[type=text],#stage[data-style="biopunk"] input[type=email],#stage[data-style="biopunk"] select,#stage[data-style="biopunk"] textarea{background:#0b1411;border:2px solid var(--border);border-radius:18px 8px 18px 8px;color:var(--fg);font-family:var(--font-mono)}
+#stage[data-style="biopunk"] input[type=text]:focus,#stage[data-style="biopunk"] input[type=email]:focus,#stage[data-style="biopunk"] textarea:focus,#stage[data-style="biopunk"] select:focus{border-color:var(--accent);box-shadow:0 0 16px rgba(124,255,107,.4)}
+#stage[data-style="biopunk"] input::placeholder,#stage[data-style="biopunk"] textarea::placeholder{color:#86a597}
+#stage[data-style="biopunk"] input[type=checkbox],#stage[data-style="biopunk"] input[type=range]{accent-color:var(--accent)}
+#stage[data-style="biopunk"] .switch{background:#0b1411;border:2px solid var(--border)}
+#stage[data-style="biopunk"] .switch::after{background:var(--muted)}
+#stage[data-style="biopunk"] .switch:checked{background:#1e6a3a;border-color:var(--accent)}#stage[data-style="biopunk"] .switch:checked::after{background:var(--accent)}
+#stage[data-style="biopunk"] th{color:var(--accent);border-bottom:2px solid var(--accent)}
+#stage[data-style="biopunk"] td{border-bottom:1px dashed var(--border)}
+#stage[data-style="biopunk"] .toast{background:#1b3329;color:var(--fg);border:2px solid var(--accent);border-radius:40px 12px 40px 12px}
+#stage[data-style="biopunk"] dialog{background:#14261f;color:var(--fg);border:2px solid var(--accent);border-radius:36px 14px 36px 14px;box-shadow:0 0 50px rgba(124,255,107,.3)}
+#stage[data-style="biopunk"] dialog::backdrop{background:rgba(5,12,9,.8)}
+#stage[data-style="biopunk"] .footer{border-top:2px dashed var(--border)}
+@media (prefers-reduced-motion:reduce){#stage[data-style="biopunk"] .brand-mark{animation:none}}

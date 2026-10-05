@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap');
+#stage[data-style="mid-century-modern"] {
+  --bg:#f4ede0; --surface:#fffaf0; --surface-2:#ebe0cb; --fg:#2b2118; --muted:#5e4b3a; --accent:#2a7f7f; --accent-fg:#fff; --border:#d6c7ab;
+  --ok:#1f6b4a; --warn:#8a5200; --danger:#a5402b; --radius:28px 4px 28px 4px; --radius-sm:999px; --shadow:0 6px 0 rgba(107,68,35,.12);
+  --font-body:"Source Serif 4",Georgia,serif; --font-display:"Josefin Sans","Futura",sans-serif; --font-mono:ui-monospace,monospace;
+  --gap:26px; --pad:28px; --maxw:1100px;
+  --walnut:#6b4423; --teal:#2a7f7f; --mustard:#d9a441; --orange:#c8553d;
+  background:var(--bg); font-size:1.0625rem; line-height:1.65;
+}
+#stage[data-style="mid-century-modern"] h1, #stage[data-style="mid-century-modern"] h2, #stage[data-style="mid-century-modern"] h3 { color:var(--walnut); font-weight:700; letter-spacing:.02em; }
+#stage[data-style="mid-century-modern"] .topbar { border-bottom:3px solid var(--walnut); }
+#stage[data-style="mid-century-modern"] .brand { color:var(--walnut); text-transform:uppercase; letter-spacing:.08em; }
+#stage[data-style="mid-century-modern"] .brand-mark { border-radius:50%; background:radial-gradient(circle, var(--mustard) 0 28%, transparent 29%), repeating-conic-gradient(var(--orange) 0 12deg, transparent 12deg 30deg); }
+#stage[data-style="mid-century-modern"] .nav a { font-family:var(--font-display); font-weight:600; border-radius:999px; }
+#stage[data-style="mid-century-modern"] .nav a:hover { background:var(--surface-2); }
+#stage[data-style="mid-century-modern"] .nav a.is-active { background:var(--teal); }
+#stage[data-style="mid-century-modern"] .hero { position:relative; padding-right:min(34%,300px); }
+#stage[data-style="mid-century-modern"] .hero::after { content:""; position:absolute; right:0; top:40px; width:min(30%,260px); aspect-ratio:1; z-index:-1;
+  background:radial-gradient(circle at 50% 50%, var(--mustard) 0 30%, transparent 31%), radial-gradient(ellipse 50% 22% at 50% 50%, var(--orange) 0 98%, transparent 100%) , radial-gradient(ellipse 22% 50% at 50% 50%, var(--teal) 0 98%, transparent 100%); border-radius:50%; opacity:.95; }
+@media (max-width:640px) { #stage[data-style="mid-century-modern"] .hero { padding-right:0; } #stage[data-style="mid-century-modern"] .hero::after { opacity:.18; width:60%; } }
+#stage[data-style="mid-century-modern"] .eyebrow { font-family:var(--font-display); color:var(--danger); font-weight:700; }
+#stage[data-style="mid-century-modern"] .display { font-family:var(--font-display); font-weight:700; font-size:clamp(2.3rem,6vw,4.2rem); }
+#stage[data-style="mid-century-modern"] .lead { color:var(--muted); }
+#stage[data-style="mid-century-modern"] .btn { font-family:var(--font-display); font-weight:700; border-radius:999px; letter-spacing:.04em; transition:background 200ms ease-out, transform 200ms ease-out; }
+#stage[data-style="mid-century-modern"] .btn-primary { background:var(--teal); color:#fff; }
+#stage[data-style="mid-century-modern"] .btn-primary:hover { background:#1f6666; }
+#stage[data-style="mid-century-modern"] .btn-secondary { background:var(--mustard); color:#2b2118; border-color:transparent; }
+#stage[data-style="mid-century-modern"] .btn-secondary:hover { background:#c8932f; }
+#stage[data-style="mid-century-modern"] .btn-ghost { border:2px solid var(--walnut); color:var(--walnut); }
+#stage[data-style="mid-century-modern"] .btn:active { transform:scale(.97); }
+#stage[data-style="mid-century-modern"] :focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
+#stage[data-style="mid-century-modern"] .section-title { display:flex; align-items:center; gap:14px; }
+#stage[data-style="mid-century-modern"] .section-title::before { content:""; width:28px; height:14px; border-radius:14px 14px 0 0; background:var(--orange); }
+#stage[data-style="mid-century-modern"] .card, #stage[data-style="mid-century-modern"] .panel { border:0; }
+#stage[data-style="mid-century-modern"] .card:nth-child(even) { border-radius:4px 28px 4px 28px; }
+#stage[data-style="mid-century-modern"] .kpi { border-top:8px solid var(--teal); }
+#stage[data-style="mid-century-modern"] .kpi:nth-child(2) { border-top-color:var(--mustard); } #stage[data-style="mid-century-modern"] .kpi:nth-child(3) { border-top-color:var(--orange); } #stage[data-style="mid-century-modern"] .kpi:nth-child(4) { border-top-color:var(--walnut); }
+#stage[data-style="mid-century-modern"] .kpi-label { font-family:var(--font-display); text-transform:uppercase; letter-spacing:.1em; font-weight:600; }
+#stage[data-style="mid-century-modern"] .kpi-value { color:var(--walnut); font-size:2.4rem; }
+#stage[data-style="mid-century-modern"] .badge { border-radius:999px; background:var(--surface-2); font-family:var(--font-display); font-weight:700; }
+#stage[data-style="mid-century-modern"] .feature a { color:var(--teal); font-weight:600; }
+#stage[data-style="mid-century-modern"] .bars i { border-radius:999px 999px 0 0; background:var(--teal); }
+#stage[data-style="mid-century-modern"] .bars i:nth-child(3n+2) { background:var(--mustard); } #stage[data-style="mid-century-modern"] .bars i:nth-child(3n) { background:var(--orange); }
+#stage[data-style="mid-century-modern"] input[type=text], #stage[data-style="mid-century-modern"] input[type=email], #stage[data-style="mid-century-modern"] select, #stage[data-style="mid-century-modern"] textarea { border:2px solid var(--border); border-radius:14px 4px 14px 4px; background:#fff; }
+#stage[data-style="mid-century-modern"] input[type=checkbox], #stage[data-style="mid-century-modern"] input[type=range] { accent-color:var(--teal); }
+#stage[data-style="mid-century-modern"] .switch { background:#cbbd9f; } #stage[data-style="mid-century-modern"] .switch:checked { background:var(--teal); }
+#stage[data-style="mid-century-modern"] th { font-family:var(--font-display); color:var(--walnut); border-bottom:3px solid var(--walnut); }
+#stage[data-style="mid-century-modern"] td { border-bottom:1px solid var(--border); }
+#stage[data-style="mid-century-modern"] .toast { background:var(--walnut); color:#fff; border-radius:999px; padding-inline:24px; }
+#stage[data-style="mid-century-modern"] .toast .btn { border-color:#fff; color:#fff; }
+#stage[data-style="mid-century-modern"] dialog { border:0; border-radius:28px 4px 28px 4px; background:var(--surface); box-shadow:0 10px 0 var(--mustard); }
+#stage[data-style="mid-century-modern"] dialog::backdrop { background:rgba(43,33,24,.55); }
+#stage[data-style="mid-century-modern"] .footer { border-top:3px solid var(--walnut); }

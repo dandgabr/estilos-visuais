@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+#stage[data-style="cyberpunk-hud"] {
+  --bg:#05060a; --surface:#0a0e1a; --surface-2:#0f1626; --fg:#d6f4ff; --muted:#8fb4c4;
+  --accent:#00e5ff; --accent-fg:#001015; --border:#12475a; --ok:#47ff9a; --warn:#ffb000; --danger:#ff5470;
+  --radius:0; --radius-sm:0; --shadow:none;
+  --font-body:'Chakra Petch',system-ui,sans-serif; --font-display:'Chakra Petch',sans-serif; --font-mono:'Share Tech Mono',monospace;
+  --gap:16px; --pad:20px; --maxw:1160px;
+  --br:linear-gradient(var(--accent),var(--accent));
+  font-size:15px;
+  background:
+    radial-gradient(circle at 50% 0,rgba(0,229,255,.12),transparent 55%),
+    linear-gradient(rgba(0,229,255,.05) 1px,transparent 1px) 0 0/40px 40px,
+    linear-gradient(90deg,rgba(0,229,255,.05) 1px,transparent 1px) 0 0/40px 40px,#05060a;
+}
+#stage[data-style="cyberpunk-hud"]::before{content:"";position:fixed;inset:10px;pointer-events:none;z-index:40;border:1px solid rgba(0,229,255,.35);
+  background:
+   linear-gradient(var(--accent),var(--accent)) 0 0/22px 2px no-repeat,linear-gradient(var(--accent),var(--accent)) 0 0/2px 22px no-repeat,
+   linear-gradient(var(--accent),var(--accent)) 100% 0/22px 2px no-repeat,linear-gradient(var(--accent),var(--accent)) 100% 0/2px 22px no-repeat,
+   linear-gradient(var(--accent),var(--accent)) 0 100%/22px 2px no-repeat,linear-gradient(var(--accent),var(--accent)) 0 100%/2px 22px no-repeat,
+   linear-gradient(var(--accent),var(--accent)) 100% 100%/22px 2px no-repeat,linear-gradient(var(--accent),var(--accent)) 100% 100%/2px 22px no-repeat}
+#stage[data-style="cyberpunk-hud"] .app{padding-top:14px}
+#stage[data-style="cyberpunk-hud"] .topbar{border-bottom:1px solid var(--border);padding:12px 0}
+#stage[data-style="cyberpunk-hud"] .brand{font-family:var(--font-mono);letter-spacing:.2em;text-transform:uppercase;font-size:1rem;color:var(--accent)}
+#stage[data-style="cyberpunk-hud"] .brand-mark{background:none;border:2px solid var(--accent);border-radius:50%;position:relative;animation:hudspin 6s linear infinite;border-top-color:transparent}
+#stage[data-style="cyberpunk-hud"] .brand-mark::after{content:"";position:absolute;inset:25%;background:var(--warn);border-radius:50%}
+@keyframes hudspin{to{transform:rotate(360deg)}}
+#stage[data-style="cyberpunk-hud"] .nav a{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;color:var(--muted)}
+#stage[data-style="cyberpunk-hud"] .nav a::before{content:"[ "}#stage[data-style="cyberpunk-hud"] .nav a::after{content:" ]"}
+#stage[data-style="cyberpunk-hud"] .nav a:hover{color:var(--accent)}
+#stage[data-style="cyberpunk-hud"] .nav a.is-active{background:rgba(0,229,255,.15);color:var(--accent);border:0}
+#stage[data-style="cyberpunk-hud"] .eyebrow{font-family:var(--font-mono);color:var(--warn);letter-spacing:.3em}
+#stage[data-style="cyberpunk-hud"] .eyebrow::before{content:"> SYS.READY :: "}
+#stage[data-style="cyberpunk-hud"] .display{font-weight:700;text-transform:uppercase;font-size:clamp(2rem,5.5vw,3.6rem);letter-spacing:.02em;color:#fff;border-left:4px solid var(--accent);padding-left:16px;max-width:18ch}
+#stage[data-style="cyberpunk-hud"] .lead{color:var(--muted);font-family:var(--font-mono);font-size:1rem}
+#stage[data-style="cyberpunk-hud"] .btn{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.12em;font-size:.9rem;border-radius:0;transition:background .12s,box-shadow .12s}
+#stage[data-style="cyberpunk-hud"] .btn-primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent);font-weight:700}
+#stage[data-style="cyberpunk-hud"] .btn-primary:hover{box-shadow:0 0 0 3px rgba(0,229,255,.3),0 0 20px rgba(0,229,255,.6)}
+#stage[data-style="cyberpunk-hud"] .btn-secondary{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+#stage[data-style="cyberpunk-hud"] .btn-secondary:hover{background:rgba(0,229,255,.15)}
+#stage[data-style="cyberpunk-hud"] .btn-ghost{border:1px dashed var(--border);color:var(--fg)}
+#stage[data-style="cyberpunk-hud"] .btn-ghost:hover{border-color:var(--warn);color:var(--warn)}
+#stage[data-style="cyberpunk-hud"] .btn:active{transform:scale(.97)}
+#stage[data-style="cyberpunk-hud"] :focus-visible{outline:2px solid var(--warn);outline-offset:3px}
+#stage[data-style="cyberpunk-hud"] .section-title{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.2em;font-size:.95rem;color:var(--accent);display:flex;gap:10px;align-items:center}
+#stage[data-style="cyberpunk-hud"] .section-title::before{content:"";width:10px;height:10px;background:var(--warn)}
+#stage[data-style="cyberpunk-hud"] .section-title::after{content:"";flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--accent) 0 6px,transparent 6px 10px)}
+#stage[data-style="cyberpunk-hud"] .card,#stage[data-style="cyberpunk-hud"] .panel{background:linear-gradient(180deg,rgba(0,229,255,.06),rgba(10,14,26,.9));border:1px solid var(--border);border-radius:0;position:relative;
+  background-image:linear-gradient(var(--accent),var(--accent)),linear-gradient(var(--accent),var(--accent)),linear-gradient(var(--warn),var(--warn)),linear-gradient(var(--warn),var(--warn)),linear-gradient(180deg,rgba(0,229,255,.06),rgba(10,14,26,.9));
+  background-size:14px 2px,2px 14px,14px 2px,2px 14px,100% 100%;background-position:0 0,0 0,100% 100%,100% 100%,0 0;background-repeat:no-repeat}
+#stage[data-style="cyberpunk-hud"] .card h3,#stage[data-style="cyberpunk-hud"] .panel h2{font-size:1rem;text-transform:uppercase;letter-spacing:.14em;color:var(--accent)}
+#stage[data-style="cyberpunk-hud"] .card a{color:var(--warn);font-family:var(--font-mono)}
+#stage[data-style="cyberpunk-hud"] .kpi-label{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem}
+#stage[data-style="cyberpunk-hud"] .kpi-value{font-family:var(--font-mono);font-weight:400;font-size:2.4rem;color:var(--accent);text-shadow:0 0 12px rgba(0,229,255,.6)}
+#stage[data-style="cyberpunk-hud"] .badge{font-family:var(--font-mono);text-transform:uppercase;border-radius:0;background:transparent;letter-spacing:.1em}
+#stage[data-style="cyberpunk-hud"] .badge::before{content:"▪ "}
+#stage[data-style="cyberpunk-hud"] .badge:not(.ok):not(.warn):not(.danger){color:var(--muted)}
+#stage[data-style="cyberpunk-hud"] .bars{background:repeating-linear-gradient(0deg,rgba(0,229,255,.12) 0 1px,transparent 1px 28px);border-bottom:1px solid var(--accent)}
+#stage[data-style="cyberpunk-hud"] .bars i{border-radius:0;background:repeating-linear-gradient(0deg,var(--accent) 0 6px,transparent 6px 9px)}
+#stage[data-style="cyberpunk-hud"] .bars i:last-child{background:repeating-linear-gradient(0deg,var(--warn) 0 6px,transparent 6px 9px)}
+#stage[data-style="cyberpunk-hud"] input[type=text],#stage[data-style="cyberpunk-hud"] input[type=email],#stage[data-style="cyberpunk-hud"] select,#stage[data-style="cyberpunk-hud"] textarea{background:rgba(0,229,255,.05);border:1px solid var(--border);border-radius:0;font-family:var(--font-mono);color:var(--accent)}
+#stage[data-style="cyberpunk-hud"] input::placeholder,#stage[data-style="cyberpunk-hud"] textarea::placeholder{color:#6f98a8}
+#stage[data-style="cyberpunk-hud"] input[type=text]:focus,#stage[data-style="cyberpunk-hud"] input[type=email]:focus,#stage[data-style="cyberpunk-hud"] textarea:focus,#stage[data-style="cyberpunk-hud"] select:focus{border-color:var(--accent);box-shadow:0 0 12px rgba(0,229,255,.4)}
+#stage[data-style="cyberpunk-hud"] label{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;color:var(--muted)}
+#stage[data-style="cyberpunk-hud"] .inline{text-transform:none}
+#stage[data-style="cyberpunk-hud"] input[type=checkbox],#stage[data-style="cyberpunk-hud"] input[type=range]{accent-color:var(--accent)}
+#stage[data-style="cyberpunk-hud"] .switch{border-radius:0;background:#0f1626;border:1px solid var(--accent)}
+#stage[data-style="cyberpunk-hud"] .switch::after{border-radius:0;background:var(--muted)}
+#stage[data-style="cyberpunk-hud"] .switch:checked{background:rgba(0,229,255,.25)}
+#stage[data-style="cyberpunk-hud"] .switch:checked::after{background:var(--accent)}
+#stage[data-style="cyberpunk-hud"] th{font-family:var(--font-mono);color:var(--accent);border-bottom:1px solid var(--accent)}
+#stage[data-style="cyberpunk-hud"] td{font-family:var(--font-mono);font-size:.9rem;border-bottom:1px solid rgba(18,71,90,.7)}
+#stage[data-style="cyberpunk-hud"] tbody tr:hover{background:rgba(0,229,255,.08)}
+#stage[data-style="cyberpunk-hud"] .toast{border-radius:0;background:rgba(255,176,0,.12);color:var(--warn);border:1px solid var(--warn);font-family:var(--font-mono);border-left-width:6px}
+#stage[data-style="cyberpunk-hud"] .toast .btn-ghost{color:var(--warn);border-color:var(--warn)}
+#stage[data-style="cyberpunk-hud"] dialog{border:1px solid var(--accent);border-radius:0;background:#05060a;color:var(--fg);box-shadow:0 0 0 6px rgba(0,229,255,.1),0 0 40px rgba(0,229,255,.3)}
+#stage[data-style="cyberpunk-hud"] dialog::backdrop{background:rgba(0,0,0,.8)}
+#stage[data-style="cyberpunk-hud"] .footer{border-top:1px solid var(--border);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.08em;font-size:.75rem}
+@media (prefers-reduced-motion:reduce){#stage[data-style="cyberpunk-hud"] .brand-mark{animation:none}}

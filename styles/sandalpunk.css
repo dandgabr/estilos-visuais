@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+#stage[data-style="sandalpunk"] {
+  --bg:#F4F1EA; --surface:#fbf9f3; --surface-2:#eadfc8; --fg:#16130F; --muted:#51483a;
+  --accent:#8C5A2B; --accent-fg:#fff8ee; --border:#b8a37a; --ok:#2c6e60; --warn:#8a5200; --danger:#8e1f2c;
+  --radius:0; --radius-sm:0; --shadow:0 2px 0 #cdbb92;
+  --font-body:'EB Garamond',Georgia,serif; --font-display:'Cinzel','Trajan Pro',serif; --font-mono:ui-monospace,monospace;
+  --gap:24px; --pad:26px; --maxw:1080px; --teal:#3E8E7E; --wine:#66023C; --lapis:#1F3A93;
+  --key:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='16' viewBox='0 0 32 16'%3E%3Cpath d='M0 15V1h14v10H6V5h4v2' fill='none' stroke='%238C5A2B' stroke-width='2'/%3E%3Cpath d='M16 15V1h14v10h-8V5h4v2' fill='none' stroke='%238C5A2B' stroke-width='2'/%3E%3C/svg%3E");
+  font-size:19px;
+  background:
+    linear-gradient(90deg,transparent 0 calc(50% - 560px),rgba(140,90,43,.05) calc(50% - 560px) calc(50% - 540px),transparent calc(50% - 540px) calc(50% + 540px),rgba(140,90,43,.05) calc(50% + 540px) calc(50% + 560px),transparent 0),
+    radial-gradient(#8c5a2b14 1px,transparent 1.5px) 0 0/14px 14px,
+    radial-gradient(ellipse at 50% 0,#fffaf0,#F4F1EA 60%,#ebe2cf);
+  background-attachment:local;
+}
+#stage[data-style="sandalpunk"] .topbar{border-bottom:3px solid var(--accent);position:relative;padding-bottom:22px}
+#stage[data-style="sandalpunk"] .topbar::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:16px;background:var(--key) 0 0/32px 16px repeat-x;opacity:.9}
+#stage[data-style="sandalpunk"] .brand{font-family:var(--font-display);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:1.15rem}
+#stage[data-style="sandalpunk"] .brand-mark{border-radius:0;background:linear-gradient(90deg,var(--accent) 0 18%,transparent 18% 41%,var(--accent) 41% 59%,transparent 59% 82%,var(--accent) 82%) 0 100%/100% 70% no-repeat,linear-gradient(var(--accent),var(--accent)) 0 0/100% 18% no-repeat;clip-path:none}
+#stage[data-style="sandalpunk"] .nav a{font-family:var(--font-display);font-weight:500;letter-spacing:.12em;text-transform:uppercase;font-size:.82rem;color:var(--fg)}
+#stage[data-style="sandalpunk"] .nav a:hover{color:var(--accent);text-decoration:underline;text-underline-offset:6px}
+#stage[data-style="sandalpunk"] .nav a.is-active{background:var(--fg);color:#f4f1ea;border-radius:0}
+#stage[data-style="sandalpunk"] .hero{padding-top:72px;text-align:center}
+#stage[data-style="sandalpunk"] .eyebrow{font-family:var(--font-display);color:var(--teal);color:#1f6b5d;letter-spacing:.4em}
+#stage[data-style="sandalpunk"] .display{font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-inline:auto;font-size:clamp(2rem,5.4vw,3.8rem);max-width:16ch}
+#stage[data-style="sandalpunk"] .display::after{content:"";display:block;height:16px;margin:18px auto 0;width:min(320px,80%);background:var(--key) 0 0/32px 16px repeat-x}
+#stage[data-style="sandalpunk"] .lead{margin-inline:auto;font-style:italic;color:var(--muted)}
+#stage[data-style="sandalpunk"] .hero .actions{justify-content:center}
+#stage[data-style="sandalpunk"] .btn{font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.85rem;border-radius:0;transition:background .2s,color .2s}
+#stage[data-style="sandalpunk"] .btn-primary{background:var(--accent);color:#fff8ee;border:2px solid #4a2d12;box-shadow:inset 0 0 0 3px var(--accent),inset 0 0 0 4px #e0b987}
+#stage[data-style="sandalpunk"] .btn-primary:hover{background:#6e4420}
+#stage[data-style="sandalpunk"] .btn-secondary{background:transparent;color:#1f6b5d;border:2px solid var(--teal);border-color:#1f6b5d}
+#stage[data-style="sandalpunk"] .btn-secondary:hover{background:#1f6b5d;color:#fff}
+#stage[data-style="sandalpunk"] .btn-ghost{border:2px solid var(--border);color:var(--fg)}
+#stage[data-style="sandalpunk"] .btn-ghost:hover{border-color:var(--wine);color:var(--wine)}
+#stage[data-style="sandalpunk"] :focus-visible{outline:3px solid var(--lapis);outline-offset:3px}
+#stage[data-style="sandalpunk"] .section-title{font-family:var(--font-display);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:1.25rem;text-align:center;padding:12px 0;border-top:2px solid var(--accent);border-bottom:2px solid var(--accent)}
+#stage[data-style="sandalpunk"] .card,#stage[data-style="sandalpunk"] .panel{background:var(--surface);border:2px solid var(--accent);border-radius:0;box-shadow:var(--shadow);position:relative;padding-top:calc(var(--pad) + 18px)}
+#stage[data-style="sandalpunk"] .card::before,#stage[data-style="sandalpunk"] .panel::before{content:"";position:absolute;left:0;right:0;top:0;height:14px;background:var(--surface-2);border-bottom:2px solid var(--accent);
+  background-image:repeating-linear-gradient(90deg,var(--accent) 0 2px,transparent 2px 7px)}
+#stage[data-style="sandalpunk"] .card h3,#stage[data-style="sandalpunk"] .panel h2{font-family:var(--font-display);font-weight:700;letter-spacing:.06em;font-size:1.05rem}
+#stage[data-style="sandalpunk"] .card a{color:#1f6b5d;font-weight:600}
+#stage[data-style="sandalpunk"] .kpi-label{font-style:italic}
+#stage[data-style="sandalpunk"] .kpi-value{font-family:var(--font-display);font-size:2.4rem;color:var(--wine)}
+#stage[data-style="sandalpunk"] .badge{font-family:var(--font-display);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;border-radius:0;background:transparent;border:1.5px solid currentColor;font-weight:700}
+#stage[data-style="sandalpunk"] .badge:not(.ok):not(.warn):not(.danger){color:var(--muted)}
+#stage[data-style="sandalpunk"] .bars{border-bottom:3px solid var(--accent);gap:14px}
+#stage[data-style="sandalpunk"] .bars i{border-radius:0;background:linear-gradient(90deg,#a3693a,#d9a66d 30%,#a3693a 50%,#d9a66d 70%,#8c5a2b);border:1px solid #4a2d12;position:relative}
+#stage[data-style="sandalpunk"] .bars i::before{content:"";position:absolute;left:-3px;right:-3px;top:-6px;height:6px;background:#4a2d12}
+#stage[data-style="sandalpunk"] .bars i:last-child{background:linear-gradient(90deg,#4a0230,#8a1a5c 30%,var(--wine) 50%,#8a1a5c 70%,#4a0230)}
+#stage[data-style="sandalpunk"] input[type=text],#stage[data-style="sandalpunk"] input[type=email],#stage[data-style="sandalpunk"] select,#stage[data-style="sandalpunk"] textarea{background:#fffdf8;border:2px solid var(--border);border-radius:0;font-family:var(--font-body);font-size:1.05rem;color:var(--fg)}
+#stage[data-style="sandalpunk"] input[type=text]:focus,#stage[data-style="sandalpunk"] input[type=email]:focus,#stage[data-style="sandalpunk"] textarea:focus,#stage[data-style="sandalpunk"] select:focus{border-color:var(--accent)}
+#stage[data-style="sandalpunk"] input::placeholder,#stage[data-style="sandalpunk"] textarea::placeholder{color:#6c614f;font-style:italic}
+#stage[data-style="sandalpunk"] input[type=checkbox],#stage[data-style="sandalpunk"] input[type=range]{accent-color:var(--accent)}
+#stage[data-style="sandalpunk"] .switch{border-radius:0;background:#d5c6a3;border:2px solid var(--accent)}
+#stage[data-style="sandalpunk"] .switch::after{border-radius:0;background:var(--accent)}
+#stage[data-style="sandalpunk"] .switch:checked{background:#1f6b5d}#stage[data-style="sandalpunk"] .switch:checked::after{background:#fff}
+#stage[data-style="sandalpunk"] th{font-family:var(--font-display);font-size:.75rem;color:var(--accent);border-bottom:2px solid var(--accent)}
+#stage[data-style="sandalpunk"] td{border-bottom:1px solid var(--border)}
+#stage[data-style="sandalpunk"] .toast{background:var(--wine);color:#fbeedd;border-radius:0;border-top:4px double #e0b987;border-bottom:4px double #e0b987;font-style:italic}
+#stage[data-style="sandalpunk"] .toast .btn-ghost{color:#fbeedd;border-color:#e0b987}
+#stage[data-style="sandalpunk"] dialog{background:var(--surface);color:var(--fg);border:3px solid var(--accent);border-radius:0;box-shadow:0 0 0 6px var(--surface),0 0 0 8px var(--accent),0 24px 60px rgba(22,19,15,.4)}
+#stage[data-style="sandalpunk"] dialog::backdrop{background:rgba(22,19,15,.6)}
+#stage[data-style="sandalpunk"] .footer{border-top:2px solid var(--accent);text-align:center;font-style:italic;position:relative}

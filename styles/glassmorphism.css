@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+#stage[data-style="glassmorphism"]{
+  --bg:#2a1b6e;--surface:rgba(255,255,255,.16);--surface-2:rgba(255,255,255,.1);--fg:#fff;--muted:#e8e4ff;--accent:#ffffff;--accent-fg:#2a1b6e;--border:rgba(255,255,255,.38);
+  --ok:#b5ffd2;--warn:#ffe2a0;--danger:#ffc2c2;--radius:22px;--radius-sm:14px;--shadow:0 8px 32px rgba(15,5,60,.35);
+  --font-body:'Poppins',sans-serif;--font-display:'Poppins',sans-serif;--gap:20px;--pad:22px;
+  background:
+    radial-gradient(420px 420px at 12% 8%,#ff5fa2 0,transparent 70%),
+    radial-gradient(520px 520px at 90% 20%,#33c4ff 0,transparent 70%),
+    radial-gradient(560px 560px at 40% 95%,#8b5cf6 0,transparent 70%),
+    linear-gradient(135deg,#2a1b6e,#1b3b8f);
+  background-attachment:local;
+}
+#stage[data-style="glassmorphism"] .card,#stage[data-style="glassmorphism"] .panel,#stage[data-style="glassmorphism"] .toast,#stage[data-style="glassmorphism"] .topbar,#stage[data-style="glassmorphism"] dialog{
+  -webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);
+  background:linear-gradient(135deg,rgba(255,255,255,.26),rgba(255,255,255,.08));
+  border:1px solid rgba(255,255,255,.4);box-shadow:0 8px 32px rgba(15,5,60,.35),inset 0 1px 0 rgba(255,255,255,.5);
+}
+#stage[data-style="glassmorphism"] .topbar{border-radius:99px;padding:8px 12px 8px 20px;margin-top:16px}
+#stage[data-style="glassmorphism"] .brand-mark{background:linear-gradient(135deg,#fff,#a5f3fc);border-radius:50%}
+#stage[data-style="glassmorphism"] .nav a{border-radius:99px;transition:background .2s}
+#stage[data-style="glassmorphism"] .nav a:hover{background:rgba(255,255,255,.18)}
+#stage[data-style="glassmorphism"] .nav a.is-active{background:rgba(255,255,255,.9);color:#2a1b6e;font-weight:600}
+#stage[data-style="glassmorphism"] .display{font-weight:700;letter-spacing:-.03em;text-shadow:0 4px 30px rgba(20,5,80,.4)}
+#stage[data-style="glassmorphism"] .lead,#stage[data-style="glassmorphism"] .eyebrow{color:#f0edff}
+#stage[data-style="glassmorphism"] .btn{border-radius:99px;font-weight:600;transition:transform .2s,background .2s}
+#stage[data-style="glassmorphism"] .btn:hover{transform:translateY(-2px)}
+#stage[data-style="glassmorphism"] .btn-primary{background:#fff;color:#2a1b6e;box-shadow:0 6px 20px rgba(15,5,60,.35)}
+#stage[data-style="glassmorphism"] .btn-secondary{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5);color:#fff;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+#stage[data-style="glassmorphism"] .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+#stage[data-style="glassmorphism"] .btn-ghost:hover,#stage[data-style="glassmorphism"] .btn-secondary:hover{background:rgba(255,255,255,.3)}
+#stage[data-style="glassmorphism"] :focus-visible{outline:3px solid #fff;outline-offset:3px}
+#stage[data-style="glassmorphism"] .kpi-label{color:#f0edff}
+#stage[data-style="glassmorphism"] .badge{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.5);color:#fff;font-weight:600}
+#stage[data-style="glassmorphism"] .badge.ok{color:#d6ffe5}#stage[data-style="glassmorphism"] .badge.warn{color:#fff0c8}#stage[data-style="glassmorphism"] .badge.danger{color:#ffe0e0}
+#stage[data-style="glassmorphism"] .feature a{font-weight:600}
+#stage[data-style="glassmorphism"] .bars i{background:linear-gradient(180deg,#fff,rgba(255,255,255,.35));border-radius:10px 10px 0 0}
+#stage[data-style="glassmorphism"] input[type=text],#stage[data-style="glassmorphism"] input[type=email],#stage[data-style="glassmorphism"] select,#stage[data-style="glassmorphism"] textarea{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);color:#fff}
+#stage[data-style="glassmorphism"] ::placeholder{color:#e2dcff}
+#stage[data-style="glassmorphism"] option{color:#111}
+#stage[data-style="glassmorphism"] input[type=checkbox],#stage[data-style="glassmorphism"] input[type=range]{accent-color:#fff}
+#stage[data-style="glassmorphism"] .switch{background:rgba(255,255,255,.3);border:1px solid rgba(255,255,255,.5)}
+#stage[data-style="glassmorphism"] .switch:checked{background:#5ee0b0}
+#stage[data-style="glassmorphism"] .switch::after{background:#fff}
+#stage[data-style="glassmorphism"] th{color:#f0edff}
+#stage[data-style="glassmorphism"] td,#stage[data-style="glassmorphism"] th{border-bottom-color:rgba(255,255,255,.28)}
+#stage[data-style="glassmorphism"] .toast{color:#fff}
+#stage[data-style="glassmorphism"] dialog{background:linear-gradient(135deg,rgba(60,40,140,.85),rgba(40,70,160,.8));color:#fff}
+#stage[data-style="glassmorphism"] dialog::backdrop{background:rgba(20,10,60,.4);backdrop-filter:blur(6px)}
+#stage[data-style="glassmorphism"] .footer{border-top-color:rgba(255,255,255,.3);color:#ece8ff}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  #stage[data-style="glassmorphism"] .card,#stage[data-style="glassmorphism"] .panel,#stage[data-style="glassmorphism"] .toast,#stage[data-style="glassmorphism"] .topbar{background:rgba(60,40,150,.8)}
+}

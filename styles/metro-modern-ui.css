@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+#stage[data-style="metro-modern-ui"]{
+  --bg:#1d1d1d;--surface:#2d2d2d;--surface-2:#3a3a3a;--fg:#fff;--muted:#cfcfcf;--accent:#0063b1;--accent-fg:#fff;--border:transparent;
+  --ok:#1b7a3e;--warn:#a85d00;--danger:#c2262e;--radius:0;--radius-sm:0;--shadow:none;
+  --font-body:'Open Sans','Segoe UI',sans-serif;--font-display:'Open Sans','Segoe UI',sans-serif;--gap:8px;--pad:16px;--maxw:1200px;
+}
+#stage[data-style="metro-modern-ui"] .app{padding:0 24px 48px}
+#stage[data-style="metro-modern-ui"] .topbar{padding:20px 0}
+#stage[data-style="metro-modern-ui"] .brand{font-weight:300;font-size:1.6rem}
+#stage[data-style="metro-modern-ui"] .brand-mark{border-radius:0;background:#e3a21a;width:1.2em;height:1.2em}
+#stage[data-style="metro-modern-ui"] .nav a{font-weight:300;font-size:1.25rem;border-radius:0;color:#bdbdbd;padding:4px 10px}
+#stage[data-style="metro-modern-ui"] .nav a:hover{color:#fff}
+#stage[data-style="metro-modern-ui"] .nav a.is-active{background:none;color:#fff}
+#stage[data-style="metro-modern-ui"] .hero{padding:40px 0 32px}
+#stage[data-style="metro-modern-ui"] .eyebrow{color:#9dc9ee;font-weight:600}
+#stage[data-style="metro-modern-ui"] .display{font-weight:300;letter-spacing:-.02em;font-size:clamp(2.6rem,8vw,5.6rem);line-height:1}
+#stage[data-style="metro-modern-ui"] .lead{font-weight:300;color:#e0e0e0;font-size:1.3rem}
+#stage[data-style="metro-modern-ui"] .btn{border-radius:0;border:2px solid transparent;font-weight:600;transition:transform .12s,background .12s}
+#stage[data-style="metro-modern-ui"] .btn-primary{background:#0063b1}
+#stage[data-style="metro-modern-ui"] .btn-primary:hover{background:#1a78c4}
+#stage[data-style="metro-modern-ui"] .btn-secondary{background:#3a3a3a;border-color:#3a3a3a}
+#stage[data-style="metro-modern-ui"] .btn-secondary:hover{border-color:#fff}
+#stage[data-style="metro-modern-ui"] .btn-ghost{background:transparent;border-color:#fff}
+#stage[data-style="metro-modern-ui"] .btn-ghost:hover{background:#fff;color:#000}
+#stage[data-style="metro-modern-ui"] .btn:active{transform:scale(.97)}
+#stage[data-style="metro-modern-ui"] :focus-visible{outline:3px solid #fff;outline-offset:1px}
+#stage[data-style="metro-modern-ui"] .section-title{font-weight:300;font-size:2.2rem;margin:40px 0 12px}
+#stage[data-style="metro-modern-ui"] .card,#stage[data-style="metro-modern-ui"] .panel{border:0;border-radius:0}
+#stage[data-style="metro-modern-ui"] .card{transition:transform .12s}
+#stage[data-style="metro-modern-ui"] .card:hover{transform:perspective(600px) rotateX(1.5deg) scale(.99)}
+#stage[data-style="metro-modern-ui"] .kpis .card{min-height:150px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start}
+#stage[data-style="metro-modern-ui"] .kpis .card:nth-child(1){background:#0063b1}
+#stage[data-style="metro-modern-ui"] .kpis .card:nth-child(2){background:#a85d00}
+#stage[data-style="metro-modern-ui"] .kpis .card:nth-child(3){background:#1b7a3e}
+#stage[data-style="metro-modern-ui"] .kpis .card:nth-child(4){background:#a01f7a}
+#stage[data-style="metro-modern-ui"] .kpi-value{font-weight:300;font-size:3.4rem;line-height:1}
+#stage[data-style="metro-modern-ui"] .badge{background:rgba(0,0,0,.3);border:0;border-radius:0;color:#fff}
+#stage[data-style="metro-modern-ui"] .grid .feature:nth-child(1){background:#2a6f6f}
+#stage[data-style="metro-modern-ui"] .grid .feature:nth-child(2){background:#6b4ea0}
+#stage[data-style="metro-modern-ui"] .feature p{color:#fff}
+#stage[data-style="metro-modern-ui"] .feature a{font-weight:600}
+#stage[data-style="metro-modern-ui"] .chart{background:#2d2d2d}
+#stage[data-style="metro-modern-ui"] .bars i{border-radius:0;background:#e3a21a}
+#stage[data-style="metro-modern-ui"] input[type=text],#stage[data-style="metro-modern-ui"] input[type=email],#stage[data-style="metro-modern-ui"] select,#stage[data-style="metro-modern-ui"] textarea{background:#fff;color:#111;border:2px solid #9a9a9a;border-radius:0}
+#stage[data-style="metro-modern-ui"] input:focus-visible,#stage[data-style="metro-modern-ui"] select:focus-visible,#stage[data-style="metro-modern-ui"] textarea:focus-visible{outline:0;border-color:#0063b1}
+#stage[data-style="metro-modern-ui"] input[type=checkbox],#stage[data-style="metro-modern-ui"] input[type=range]{accent-color:#3b9af0}
+#stage[data-style="metro-modern-ui"] .switch{border-radius:0;background:#fff;height:22px;width:48px;border:2px solid #fff;background:transparent}
+#stage[data-style="metro-modern-ui"] .switch::after{border-radius:0;background:#fff;width:12px;height:12px;top:3px;left:3px}
+#stage[data-style="metro-modern-ui"] .switch:checked{background:#0063b1}
+#stage[data-style="metro-modern-ui"] .switch:checked::after{transform:translateX(26px)}
+#stage[data-style="metro-modern-ui"] th{font-weight:600;color:#cfcfcf;border-bottom:2px solid #fff}
+#stage[data-style="metro-modern-ui"] td{border-bottom:1px solid #444}
+#stage[data-style="metro-modern-ui"] .toast{background:#e3a21a;color:#111;border-radius:0}
+#stage[data-style="metro-modern-ui"] .toast .btn-ghost{border-color:#111;color:#111}
+#stage[data-style="metro-modern-ui"] dialog{border:0;border-radius:0;background:#0063b1;color:#fff}
+#stage[data-style="metro-modern-ui"] .footer{border-top:0;color:#bdbdbd}
