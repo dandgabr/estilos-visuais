@@ -20,7 +20,7 @@ export const STYLES = [
     ['neumorphism', 'Neumorphism', 'Relevo suave extrudado do fundo.'],
     ['claymorphism', 'Claymorphism & Stop-Motion', 'Massinha 3D inflada, sombras internas e charme tátil de plasticina.'],
     ['skeuomorphism', 'Skeuomorphism & Aqua', 'Texturas físicas, dials de metal usinado e brilho aquático Y2K.'],
-    ['frutiger-aero', 'Frutiger Aero', 'Brilho aquático, bolhas e natureza otimista.'],
+    ['frutiger-aero', 'Frutiger Aero & Gloss', 'Brilho especular 50%, vidro translúcido, água límpida, orbes e otimismo tecnológico dos anos 2000.'],
     ['aurora-mesh-gradient', 'Aurora / Mesh Gradient', 'Gradientes de malha em movimento suave.'],
     ['gradient-duotone', 'Gradient & Duotone', 'Duas cores dominantes e gradientes ousados.'],
     ['grain-noise-texture', 'Grain / Noise Texture', 'Granulação e ruído tátil.'],
