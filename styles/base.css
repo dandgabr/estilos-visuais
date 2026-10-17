@@ -21,9 +21,6 @@
 #stage .nav a, #stage .nav button.nav-tab { padding: 6px 12px; text-decoration: none; border-radius: var(--radius-sm); font: inherit; color: inherit; border: 1px solid transparent; background: transparent; cursor: pointer; transition: background-color .15s ease, color .15s ease; }
 #stage .nav a:hover, #stage .nav button.nav-tab:hover { background: var(--surface-2); }
 #stage .nav a.is-active, #stage .nav button.nav-tab.is-active { background: var(--accent); color: var(--accent-fg); font-weight: 600; }
-#stage .style-skill-link { width: 36px; height: 36px; flex: none; display: inline-flex; align-items: center; justify-content: center; color: var(--fg); background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); text-decoration: none; }
-#stage .style-skill-link:hover { border-color: var(--accent); color: var(--accent); }
-#stage .style-skill-link svg { display: block; }
 
 #stage .hero { padding: 56px 0 40px; }
 #stage .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; color: var(--muted); }
