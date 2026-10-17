@@ -427,6 +427,27 @@
   </div>
 </div>
 
+<dialog id="help-dialog" class="shell-dialog">
+  <div class="dialog-head">
+    <h2>💡 Ajuda & Guias Interativos</h2>
+    <button type="button" class="dialog-close" id="close-help-btn" aria-label="Fechar">✕</button>
+  </div>
+  <p class="dialog-desc">Escolha uma ação ou personalize a exibição de dicas:</p>
+  <div class="dialog-actions">
+    <button type="button" id="start-style-tour-btn" class="shell-btn shell-btn-primary">✨ Explicar Estilo Atual</button>
+    <button type="button" id="start-welcome-tour-btn" class="shell-btn">🏛️ Tour Completo da Ferramenta</button>
+  </div>
+  <div class="dialog-opt">
+    <label>
+      <input type="checkbox" id="auto-tour-toggle">
+      Exibir explicação automaticamente ao entrar em um novo estilo
+    </label>
+  </div>
+  <div class="dialog-foot">
+    <button type="button" id="dismiss-help-btn" class="shell-btn shell-btn-ghost">Cancelar</button>
+  </div>
+</dialog>
+
 <script src="vendor/driver.js"></script>
 <script type="module" src="app.js"></script>
 </body>

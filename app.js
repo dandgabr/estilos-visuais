@@ -17,6 +17,8 @@ const store = {
   setSeenWelcomeTour() { try { localStorage.setItem('coacus-welcome-tour', 'true'); } catch { /* ignore */ } },
   hasSeenStyleTour(slug) { try { return localStorage.getItem(`coacus-style-tour-${slug}`) === 'true'; } catch { return false; } },
   setSeenStyleTour(slug) { try { localStorage.setItem(`coacus-style-tour-${slug}`, 'true'); } catch { /* ignore */ } },
+  isAutoTourEnabled() { try { return localStorage.getItem('coacus-auto-tour') !== 'false'; } catch { return true; } },
+  setAutoTourEnabled(enabled) { try { localStorage.setItem('coacus-auto-tour', enabled ? 'true' : 'false'); } catch { /* ignore */ } },
 };
 
 // 1. Renderização da Lista Lateral de Estilos
@@ -140,8 +142,8 @@ async function setStyle(slug, viewParam = null) {
     }
   }
 
-  // Tour guiado contextual do estilo (apenas na 1ª visita ou sob demanda)
-  if (!store.hasSeenStyleTour(s.slug) && store.hasSeenWelcomeTour()) {
+  // Tour guiado contextual do estilo (apenas na 1ª visita ou sob demanda, se ativado)
+  if (store.isAutoTourEnabled() && !store.hasSeenStyleTour(s.slug) && store.hasSeenWelcomeTour()) {
     triggerStyleTour(s);
   }
 }
@@ -167,7 +169,7 @@ function handleHashChange() {
 }
 
 // 7. Integração Driver.js: Tours e Onboarding
-function getDriverInstance() {
+function getDriverInstance(options = {}) {
   if (!window.driver?.js?.driver) return null;
   return window.driver.js.driver({
     showProgress: true,
@@ -176,6 +178,7 @@ function getDriverInstance() {
     doneBtnText: 'Concluir',
     nextBtnText: 'Próximo →',
     prevBtnText: '← Anterior',
+    ...options,
   });
 }
 
@@ -224,7 +227,7 @@ function startWelcomeTour() {
       element: '#tour-btn',
       popover: {
         title: '💡 Ajuda e Recursos',
-        description: 'Clique no botão "?" sempre que desejar rever este tour de introdução ou aprender sobre os destaques visuais do estilo em exibição.',
+        description: 'Clique no botão "?" sempre que desejar rever este tour de introdução, ver a explicação do estilo em exibição ou ajustar a exibição automática de dicas.',
         side: 'bottom',
         align: 'end',
       },
@@ -236,10 +239,13 @@ function startWelcomeTour() {
 }
 
 function triggerStyleTour(styleObj) {
-  const driverObj = getDriverInstance();
+  const driverObj = getDriverInstance({
+    showProgress: false,
+    doneBtnText: 'Entendi',
+  });
   if (!driverObj) return;
 
-  const steps = [
+  driverObj.setSteps([
     {
       element: '.stage-title',
       popover: {
@@ -248,25 +254,8 @@ function triggerStyleTour(styleObj) {
         side: 'bottom',
       },
     },
-    {
-      element: '.topbar',
-      popover: {
-        title: '📐 Superfícies & Contraste',
-        description: 'Observe a conformidade de acessibilidade WCAG 2.2, a textura das bordas e o anel de foco dual-contrast nos controles.',
-        side: 'bottom',
-      },
-    },
-    {
-      element: '.nav',
-      popover: {
-        title: '🚀 Explore as 4 Abas',
-        description: 'Navegue pelas abas "Projetos", "Equipe" e "Relatórios" para ver o comportamento do estilo em layouts utilitários reais.',
-        side: 'bottom',
-      },
-    },
-  ];
+  ]);
 
-  driverObj.setSteps(steps);
   driverObj.drive();
   store.setSeenStyleTour(styleObj.slug);
 }
@@ -285,16 +274,34 @@ $$('.nav-tab').forEach((tab) => {
   });
 });
 
-// Botão de Tour
+// Diálogo de Ajuda & Configuração de Tours
+const helpDialog = $('#help-dialog');
+const autoTourToggle = $('#auto-tour-toggle');
+
 $('#tour-btn').onclick = () => {
-  const current = STYLES.find((x) => x.slug === currentStyle) || STYLES[0];
-  const choice = confirm(`Deseja iniciar o tour do estilo "${current.name}"?\n(Clique em "Cancelar" para ver o tour de introdução da ferramenta)`);
-  if (choice) {
-    triggerStyleTour(current);
-  } else {
-    startWelcomeTour();
-  }
+  if (autoTourToggle) autoTourToggle.checked = store.isAutoTourEnabled();
+  helpDialog?.showModal();
 };
+
+if (autoTourToggle) {
+  autoTourToggle.onchange = (e) => {
+    store.setAutoTourEnabled(e.target.checked);
+  };
+}
+
+$('#close-help-btn')?.addEventListener('click', () => helpDialog?.close());
+$('#dismiss-help-btn')?.addEventListener('click', () => helpDialog?.close());
+
+$('#start-style-tour-btn')?.addEventListener('click', () => {
+  helpDialog?.close();
+  const current = STYLES.find((x) => x.slug === currentStyle) || STYLES[0];
+  triggerStyleTour(current);
+});
+
+$('#start-welcome-tour-btn')?.addEventListener('click', () => {
+  helpDialog?.close();
+  startWelcomeTour();
+});
 
 // Roteador de Hash
 addEventListener('hashchange', handleHashChange);
