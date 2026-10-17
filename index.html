@@ -11,25 +11,25 @@
 </head>
 <body>
 <div class="shell">
-  <aside id="gallery" aria-label="Galeria de estilos">
+  <aside id="gallery" data-i18n-attr="aria-label:gallery.label" aria-label="Galeria de estilos">
     <div class="gallery-head">
       <h1>Estilos Coacus</h1>
       <p id="count"></p>
-      <input id="search" type="search" placeholder="Buscar estilo…" aria-label="Buscar estilo">
+      <input id="search" type="search" data-i18n-attr="placeholder:gallery.search;aria-label:gallery.searchLabel" placeholder="Buscar estilo…" aria-label="Buscar estilo">
     </div>
     <nav id="list"></nav>
   </aside>
 
   <div class="stage-col">
     <div class="stage-bar">
-      <button id="toggle" type="button" aria-expanded="true" aria-controls="gallery">☰ Estilos</button>
-      <button id="prev" type="button" aria-label="Estilo anterior">←</button>
+      <button id="toggle" type="button" data-i18n="nav.styles" aria-expanded="true" aria-controls="gallery">☰ Estilos</button>
+      <button id="prev" type="button" data-i18n-attr="aria-label:nav.previous" aria-label="Estilo anterior">←</button>
       <div class="stage-title"><strong id="cur-name"></strong><span id="cur-desc"></span></div>
       <a id="style-skill-link" class="style-skill-link" target="_blank" rel="noopener noreferrer" aria-label="Abrir skill deste estilo no Coacus" title="Abrir skill deste estilo no Coacus">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 5.5v13A2.5 2.5 0 0 1 6.5 16H20"/><path d="M9 8h6m-6 4h4"/></svg>
       </a>
-      <button id="next" type="button" aria-label="Próximo estilo">→</button>
-      <button id="tour-btn" type="button" aria-label="Ajuda e tour guiado" title="Tour da ferramenta e do estilo">?</button>
+      <button id="next" type="button" data-i18n-attr="aria-label:nav.next" aria-label="Próximo estilo">→</button>
+      <button id="tour-btn" type="button" data-i18n-attr="aria-label:nav.help;title:nav.tourTitle" aria-label="Ajuda e tour guiado" title="Tour da ferramenta e do estilo">?</button>
     </div>
 
     <!-- Mockup único, reutilizado por todos os estilos. #stage é o contêiner de rolagem. -->
@@ -37,11 +37,11 @@
       <div class="app">
         <header class="topbar">
           <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Coacus Studio</span></div>
-          <nav class="nav" role="tablist" aria-label="Visões do mockup">
-            <button class="nav-tab is-active" role="tab" id="tab-painel" aria-selected="true" aria-controls="view-painel" data-view="painel" type="button">Painel</button>
-            <button class="nav-tab" role="tab" id="tab-projetos" aria-selected="false" aria-controls="view-projetos" data-view="projetos" type="button">Projetos</button>
-            <button class="nav-tab" role="tab" id="tab-equipe" aria-selected="false" aria-controls="view-equipe" data-view="equipe" type="button">Equipe</button>
-            <button class="nav-tab" role="tab" id="tab-relatorios" aria-selected="false" aria-controls="view-relatorios" data-view="relatorios" type="button">Relatórios</button>
+          <nav class="nav" role="tablist" data-i18n-attr="aria-label:mockup.views" aria-label="Visões do mockup">
+            <button class="nav-tab is-active" role="tab" id="tab-painel" aria-selected="true" aria-controls="view-painel" data-view="painel" data-i18n="mockup.dashboard" type="button">Painel</button>
+            <button class="nav-tab" role="tab" id="tab-projetos" aria-selected="false" aria-controls="view-projetos" data-view="projetos" data-i18n="mockup.projects" type="button">Projetos</button>
+            <button class="nav-tab" role="tab" id="tab-equipe" aria-selected="false" aria-controls="view-equipe" data-view="equipe" data-i18n="mockup.team" type="button">Equipe</button>
+            <button class="nav-tab" role="tab" id="tab-relatorios" aria-selected="false" aria-controls="view-relatorios" data-view="relatorios" data-i18n="mockup.reports" type="button">Relatórios</button>
           </nav>
           <button class="btn btn-ghost" type="button">Entrar</button>
         </header>

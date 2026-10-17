@@ -1,4 +1,5 @@
 import { STYLES } from './styles/registry.js';
+import { resolveLocale, setLocale, t } from './i18n/index.js';
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => document.querySelectorAll(s);
@@ -25,8 +26,8 @@ function appendSkillAction(popover, styleObj) {
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
   link.className = 'driver-skill-action';
-  link.textContent = 'Abrir skill deste estilo ↗';
-  link.setAttribute('aria-label', `Abrir a skill de ${styleObj.name} no GitHub em nova aba`);
+  link.textContent = t('skill.tourAction');
+  link.setAttribute('aria-label', t('skill.tourActionLabel', { name: styleObj.name }));
   description.append(link);
 }
 
@@ -39,6 +40,8 @@ const store = {
   setSeenStyleTour(slug) { try { localStorage.setItem(`coacus-style-tour-${slug}`, 'true'); } catch { /* ignore */ } },
   isAutoTourEnabled() { try { return localStorage.getItem('coacus-auto-tour') !== 'false'; } catch { return true; } },
   setAutoTourEnabled(enabled) { try { localStorage.setItem('coacus-auto-tour', enabled ? 'true' : 'false'); } catch { /* ignore */ } },
+  getLocale() { try { return localStorage.getItem('coacus-locale') || 'auto'; } catch { return 'auto'; } },
+  setLocale(locale) { try { localStorage.setItem('coacus-locale', locale); } catch { /* session-only */ } },
 };
 
 // 1. Renderização da Lista Lateral de Estilos
@@ -64,7 +67,7 @@ function renderList(filter = '') {
       list.append(a);
     }
   }
-  $('#count').textContent = `${STYLES.length} estilos`;
+  $('#count').textContent = t('gallery.count', { count: STYLES.length });
 }
 
 // 2. Carregador Dinâmico de CSS com Troca Segura
@@ -146,8 +149,8 @@ async function setStyle(slug, viewParam = null) {
   $('#cur-desc').textContent = s.desc;
   const skillLink = $('#style-skill-link');
   skillLink.href = skillUrl(s.slug);
-  skillLink.setAttribute('aria-label', `Abrir skill de ${s.name} no Coacus (nova aba)`);
-  skillLink.title = `Abrir skill de ${s.name} no Coacus`;
+  skillLink.setAttribute('aria-label', t('skill.open', { name: s.name }));
+  skillLink.title = t('skill.title', { name: s.name });
   document.title = `${s.name} · Estilos Coacus`;
 
   // Atualiza seleção na galeria
@@ -221,8 +224,8 @@ function startWelcomeTour() {
     {
       element: '#gallery',
       popover: {
-        title: '🏛️ Galeria de 82 Estilos',
-        description: 'Explore o acervo completo organizado por famílias (Movimentos Históricos, Retrô, Punk, Minimalismos e Dark Themes). Use o campo de busca para encontrar estilos instantaneamente.',
+        title: t('tour.galleryTitle'),
+        description: t('tour.galleryDescription'),
         side: 'right',
         align: 'start',
       },
@@ -230,8 +233,8 @@ function startWelcomeTour() {
     {
       element: '.stage-bar',
       popover: {
-        title: '🎛️ Barra de Navegação',
-        description: 'Alterne rapidamente com as setas do teclado (← / →), consulte a linhagem estética e abra o guia a qualquer momento.',
+        title: t('tour.barTitle'),
+        description: t('tour.barDescription'),
         side: 'bottom',
         align: 'center',
       },
@@ -239,8 +242,8 @@ function startWelcomeTour() {
     {
       element: '.topbar .nav',
       popover: {
-        title: '📑 4 Visões Demonstrativas',
-        description: 'Alterne entre Painel, Projetos, Equipe e Relatórios para avaliar como o estilo ativo trata formulários, quadros Kanban, avatares e tabelas densas com telemetria.',
+        title: t('tour.viewsTitle'),
+        description: t('tour.viewsDescription'),
         side: 'bottom',
         align: 'center',
       },
@@ -248,8 +251,8 @@ function startWelcomeTour() {
     {
       element: '#style-skill-link',
       popover: {
-        title: '📘 Skill do estilo',
-        description: 'Abra a documentação do estilo no GitHub para ler ou baixar o arquivo SKILL.md.',
+        title: t('skill.tourTitle'),
+        description: t('skill.tourDescription'),
         side: 'bottom',
         align: 'center',
       },
@@ -257,8 +260,8 @@ function startWelcomeTour() {
     {
       element: '#stage',
       popover: {
-        title: '🎨 Palco Interativo',
-        description: 'Cada componente adapta tipografia, física de materiais, contrastes WCAG 2.2 e shaders visuais específicos ao estilo selecionado.',
+        title: t('tour.stageTitle'),
+        description: t('tour.stageDescription'),
         side: 'top',
         align: 'center',
       },
@@ -266,8 +269,8 @@ function startWelcomeTour() {
     {
       element: '#tour-btn',
       popover: {
-        title: '💡 Ajuda e Recursos',
-        description: 'Clique no botão "?" sempre que desejar rever este tour de introdução, ver a explicação do estilo em exibição ou ajustar a exibição automática de dicas.',
+        title: t('tour.helpTitle'),
+        description: t('tour.helpDescription'),
         side: 'bottom',
         align: 'end',
       },
@@ -289,8 +292,8 @@ function triggerStyleTour(styleObj) {
     {
       element: '.stage-title',
       popover: {
-        title: `✨ Estilo: ${styleObj.name}`,
-        description: `${styleObj.desc}. Este estilo aplica tokens de cor, tipografia e física de materiais autênticos ao seu período histórico.`,
+        title: t('tour.styleTitle', { name: styleObj.name }),
+        description: t('tour.styleDescription', { description: styleObj.desc }),
         side: 'bottom',
         onPopoverRender: (popover) => appendSkillAction(popover, styleObj),
       },
@@ -358,8 +361,13 @@ $('#open-modal').onclick = () => modal.showModal();
 $('#close-modal').onclick = $('#ok-modal').onclick = () => modal.close();
 
 // Inicialização
+await setLocale(resolveLocale(store.getLocale(), navigator.languages));
 renderList();
 handleHashChange();
+addEventListener('languagechange', async () => {
+  if (store.getLocale() === 'auto') await setLocale(resolveLocale('auto', navigator.languages));
+  renderList($('#search').value);
+});
 
 // Dispara onboarding se for a primeira visita do usuário
 if (!store.hasSeenWelcomeTour()) {
