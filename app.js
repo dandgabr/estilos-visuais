@@ -11,6 +11,25 @@ let cleanup = null;
 let link = null;
 let styleLoadId = 0;
 
+function skillUrl(slug) {
+  if (!STYLES.some((style) => style.slug === slug)) return '';
+  return `https://github.com/dandgabr/Coacus/blob/main/knowledge/skills/domains/design/ui-style-${slug}/SKILL.md`;
+}
+
+function appendSkillAction(popover, styleObj) {
+  const description = popover?.description;
+  if (!description || !skillUrl(styleObj.slug)) return;
+  const link = document.createElement('a');
+  link.id = 'style-skill-tour-link';
+  link.href = skillUrl(styleObj.slug);
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.className = 'driver-skill-action';
+  link.textContent = 'Abrir skill deste estilo ↗';
+  link.setAttribute('aria-label', `Abrir a skill de ${styleObj.name} no GitHub em nova aba`);
+  description.append(link);
+}
+
 const store = {
   getStyle() { try { return localStorage.getItem('estilo'); } catch { return null; } },
   setStyle(v) { try { localStorage.setItem('estilo', v); } catch { /* ignore */ } },
@@ -126,7 +145,7 @@ async function setStyle(slug, viewParam = null) {
   $('#cur-name').textContent = s.name;
   $('#cur-desc').textContent = s.desc;
   const skillLink = $('#style-skill-link');
-  skillLink.href = `https://github.com/dandgabr/Coacus/blob/main/knowledge/skills/domains/design/ui-style-${s.slug}/SKILL.md`;
+  skillLink.href = skillUrl(s.slug);
   skillLink.setAttribute('aria-label', `Abrir skill de ${s.name} no Coacus (nova aba)`);
   skillLink.title = `Abrir skill de ${s.name} no Coacus`;
   document.title = `${s.name} · Estilos Coacus`;
@@ -227,6 +246,15 @@ function startWelcomeTour() {
       },
     },
     {
+      element: '#style-skill-link',
+      popover: {
+        title: '📘 Skill do estilo',
+        description: 'Abra a documentação do estilo no GitHub para ler ou baixar o arquivo SKILL.md.',
+        side: 'bottom',
+        align: 'center',
+      },
+    },
+    {
       element: '#stage',
       popover: {
         title: '🎨 Palco Interativo',
@@ -264,6 +292,7 @@ function triggerStyleTour(styleObj) {
         title: `✨ Estilo: ${styleObj.name}`,
         description: `${styleObj.desc}. Este estilo aplica tokens de cor, tipografia e física de materiais autênticos ao seu período histórico.`,
         side: 'bottom',
+        onPopoverRender: (popover) => appendSkillAction(popover, styleObj),
       },
     },
   ]);
