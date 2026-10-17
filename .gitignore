@@ -67,6 +67,7 @@ htmlcov/
 # TESTES, AUDITORIA E RELATÓRIOS VOLÁTEIS
 # ==============================================================================
 .playwright-mcp/
+.cloudflare/
 test-results/
 playwright-report/
 blob-report/

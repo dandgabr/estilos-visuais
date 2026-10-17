@@ -9,6 +9,7 @@ let currentStyle = null;
 let currentView = 'painel';
 let cleanup = null;
 let link = null;
+let styleLoadId = 0;
 
 const store = {
   getStyle() { try { return localStorage.getItem('estilo'); } catch { return null; } },
@@ -48,12 +49,17 @@ function renderList(filter = '') {
 }
 
 // 2. Carregador Dinâmico de CSS com Troca Segura
-function loadCss(slug) {
+function loadCss(slug, loadId) {
   return new Promise((resolve) => {
     const next = document.createElement('link');
     next.rel = 'stylesheet';
     next.href = `styles/${slug}.css`;
     next.onload = next.onerror = () => {
+      if (loadId !== styleLoadId) {
+        next.remove();
+        resolve();
+        return;
+      }
       link?.remove();
       link = next;
       resolve();
@@ -108,15 +114,21 @@ async function setStyle(slug, viewParam = null) {
   }
   cleanup = null;
   currentStyle = s.slug;
+  const loadId = ++styleLoadId;
 
   // Carrega CSS
-  await loadCss(s.slug);
+  await loadCss(s.slug, loadId);
+  if (loadId !== styleLoadId) return;
   stage.dataset.style = s.slug;
   stage.scrollTop = 0;
 
   // Metadados no cabeçalho
   $('#cur-name').textContent = s.name;
   $('#cur-desc').textContent = s.desc;
+  const skillLink = $('#style-skill-link');
+  skillLink.href = `https://github.com/dandgabr/Coacus/blob/main/knowledge/skills/domains/design/ui-style-${s.slug}/SKILL.md`;
+  skillLink.setAttribute('aria-label', `Abrir skill de ${s.name} no Coacus (nova aba)`);
+  skillLink.title = `Abrir skill de ${s.name} no Coacus`;
   document.title = `${s.name} · Estilos Coacus`;
 
   // Atualiza seleção na galeria

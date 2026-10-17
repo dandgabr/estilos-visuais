@@ -195,7 +195,7 @@ def main():
     reports = []
     try:
         with sync_playwright() as p:
-            b = p.chromium.launch(executable_path="/usr/bin/google-chrome", args=["--no-sandbox", "--use-gl=swiftshader", "--enable-unsafe-swiftshader"])
+            b = p.chromium.launch(executable_path="/usr/bin/chromium-browser", args=["--no-sandbox", "--use-gl=swiftshader", "--enable-unsafe-swiftshader"])
             for s in slugs:
                 ctx = b.new_context()
                 page = ctx.new_page()
