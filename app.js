@@ -53,7 +53,7 @@ function loadCss(slug, loadId) {
   return new Promise((resolve) => {
     const next = document.createElement('link');
     next.rel = 'stylesheet';
-    next.href = `styles/${slug}.css`;
+    next.href = `styles/${slug}.css${new URL(import.meta.url).search}`;
     next.onload = next.onerror = () => {
       if (loadId !== styleLoadId) {
         next.remove();
