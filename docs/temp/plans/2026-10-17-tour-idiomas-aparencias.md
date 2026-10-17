@@ -44,14 +44,14 @@
 4. Uma variante animada com movimento reduzido, aba oculta ou troca de estilo mostra conteúdo completo e encerra timers, observers e canvas.
 5. Um link do tour aberto após mudança de estilo leva à skill do slug corrente, inclusive quando o tour foi iniciado antes da mudança.
 
-## Tarefa 0 — Baseline antes de qualquer mudança de produto
+## Task 0 — Baseline antes de qualquer mudança de produto
 
 **Arquivos:** somente relatórios em `test-results/baseline/` (temporários, não versionados).
 
 - [ ] Registrar commit inicial e capturar `#stage` dos 82 estilos no Padrão com `pt-BR`, quatro abas, 320/375/768/1280 px, fonte pronta, dados fixos, scroll inicial e movimento reduzido/desligado definido por captura. Salvar manifesto com slug, aba, viewport, locale, motion, hash da imagem e commit; separar a shell porque novos controles a alterarão.
 - [ ] Executar os testes existentes antes do primeiro commit de produto, arquivar saída e anotar falhas anteriores. A comparação futura usa o mesmo Chromium e condições; máscara só pode cobrir a shell/tour novo e deve ser declarada no relatório.
 
-## Tarefa 1 — Descoberta e abertura da skill no tour
+## Task 1 — Descoberta e abertura da skill no tour
 
 **Arquivos:** `app.js`, `index.html`, `shell.css`, `tools/test_help_dialog.py`, novo `tools/test_skill_tour.py`.
 
@@ -61,7 +61,7 @@
 - [ ] Executar `python3 tools/test_help_dialog.py` e `python3 tools/test_skill_tour.py` com o servidor local. Conferir os 82 arquivos no clone do Coacus **sincronizado com `origin/main`** e testar os 82 URLs remotos por resposta HTTP/conteúdo bruto, com resultado individual e sem confundir erro de rede com arquivo inexistente.
 - [ ] Commitar o reparo isoladamente (`fix(tour): expose current style skill`).
 
-## Tarefa 2 — Núcleo de idiomas e seleção automática
+## Task 2 — Núcleo de idiomas e seleção automática
 
 **Arquivos:** `i18n/index.js`, `i18n/locales/pt-BR.js`, `i18n/locales/en-US.js`, `app.js`, `index.html`, novo `tools/test_locale.py`.
 
@@ -71,7 +71,7 @@
 - [ ] Na inicialização, aplicar `<html lang>` e `dir` antes de iniciar tours e preencher a galeria. Alterar idioma encerra o tour/FX ativo, atualiza textos, remonta o FX uma vez sob token de transição e preserva slug, aba, variante e hash. Testar também `navigator.languages=[]` e troca no meio de um efeito de typing.
 - [ ] Commitar núcleo com testes (`feat(i18n): resolve and apply locale`).
 
-## Tarefa 3 — Dez traduções e adaptação de scripts
+## Task 3 — Dez traduções e adaptação de scripts
 
 **Arquivos:** `i18n/locales/{es-ES,fr-FR,de-DE,ru-RU,ar-SA,hi-IN,zh-CN,ja-JP,ko-KR}.js`, demais catálogos, `index.html`, `app.js`, `shell.css`, `styles/base.css`, CSS/FX com texto semântico, `tools/test_locale.py`.
 
@@ -81,7 +81,7 @@
 - [ ] Testar igualdade de conjuntos de chaves nos 11 catálogos, HTML sem texto português residual em idiomas alternativos, 82 descrições por idioma, quatro abas e layout em 320/375/768/1280 px. Adicionar oráculos semânticos independentes por catálogo e aba: conferir frases esperadas em título, botão, `placeholder`, `title`, `aria-label`, diálogo/tour, pseudo-elemento semântico e texto produzido por FX; não aceitar apenas presença da chave ou ausência de português. Cobrir texto longo alemão, japonês, chinês, hangul, devanágari, cirílico e árabe.
 - [ ] Commitar por grupos de catálogo e adaptação de layout; cada commit deve manter a suíte verde.
 
-## Tarefa 4 — Interface dos seletores e onboarding
+## Task 4 — Interface dos seletores e onboarding
 
 **Arquivos:** `index.html`, `shell.css`, `app.js`, novo `tools/test_selectors.py`.
 
@@ -92,7 +92,7 @@
 - [ ] Testar Tab/Shift+Tab/Space/Enter/Escape/setas dentro dos rádios, anúncio `aria-live`, zoom 200%, painel dentro da viewport e persistência por slug. Fazer duas rodadas formativas de uso com pessoas, quando disponíveis, nas tarefas localizar skill, comparar duas aparências, voltar ao padrão e trocar idioma; registrar sucesso, tempo e erros. Revisão de especialistas UX/UI/QA é gate separado e não substitui observação de participantes.
 - [ ] Commitar UI e testes (`feat(ui): add language and appearance controls`).
 
-## Tarefa 5 — Motor de variantes e integridade do Padrão
+## Task 5 — Motor de variantes e integridade do Padrão
 
 **Arquivos:** `styles/variants/registry.js`, `app.js`, `styles/base.css` apenas se necessário para infraestrutura não cromática, novo `tools/test_variants.py`.
 
@@ -102,7 +102,7 @@
 - [ ] Usar o baseline do Padrão coletado **antes da Tarefa 1**, sob `pt-BR`, mesmos dados, fonte carregada, scroll, viewport e modo de movimento, para comparar antes/depois no mesmo Chromium. Máscaras de captura são permitidas só para a nova barra/tour, documentadas; todo diff no `#stage` exige análise. `styles/<slug>.css` não pode sofrer alteração cromática.
 - [ ] Commitar motor e testes (`feat(styles): load isolated appearance variants`).
 
-## Tarefa 6 — Implementar as 492 variações por família
+## Task 6 — Implementar as 492 variações por família
 
 **Arquivos:** 82 novos `styles/variants/<slug>.css`; entradas correspondentes em `styles/variants/registry.js`; FX de cada família quando necessário. **Fonte de verdade:** matriz do Apêndice A abaixo.
 
@@ -111,7 +111,7 @@
 - [ ] Rodada C por slug: automatizar capturas de Padrão + 6 opções nas 4 abas e 320/375/768/1280 px; revisão humana compara pelo menos hero, componentes, gráfico e diálogo de cada opção e investiga toda falha automática. Exigir texto ≥4,5:1; texto grande e limites/estados de controle ≥3:1, inclusive pior ponto de gradiente/fundo animado, hover/foco, badges, gráficos e `forced-colors`. Confirmar com imagens em t0/t1 que C3 anima elemento e E3 anima fundo, com composição completa em `prefers-reduced-motion`. Nenhuma animação deve produzir flashes repetidos (menos de 3/s, alvo zero); evitar animação contínua sobre texto e controles. Em FX existente, preferir um loop parametrizado a outro loop concorrente. Keyframes globais recebem prefixo por slug e camadas ficam dentro de `#stage`.
 - [ ] Registrar capturas e resultado por slug em `test-results/variant-review/` durante a execução; não versionar imagens temporárias. Um estilo só é concluído quando sete opções estão distintas, coerentes com sua skill e com seu CSS original, legíveis e sem controles cortados; ativar os seis IDs desse slug no seletor só depois de passar CSS, catálogo e testes. Ao fim da família, exigir registro e CSS sincronizados e commitá-la. Ao fim da sétima família, exigir 82 × 6 = 492 variantes adicionais sem lacuna.
 
-## Tarefa 7 — Auditoria cruzada, acessibilidade e publicação
+## Task 7 — Auditoria cruzada, acessibilidade e publicação
 
 **Arquivos:** `tools/audit.py`, `tools/test_button_bounds.py`, `tools/test_scrollytelling.py`, `tools/test_help_dialog.py`, testes novos e `README.md`.
 
