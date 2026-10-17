@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Special+Elite&display=swap');
+
+#stage[data-style="weirdcore"] {
+  --bg: #1A1A1A;
+  --surface: #262626;
+  --surface-2: #333333;
+  --fg: #E0E0E0;
+  --muted: #888888;
+  --accent: #FF0033;
+  --accent-fg: #FFFFFF;
+  --border: #444444;
+  --ok: #00FF66;
+  --warn: #FFFF00;
+  --danger: #FF0033;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --shadow: 0 4px 0 #000000;
+  --font-body: 'Share Tech Mono', monospace;
+  --font-display: 'Special Elite', cursive, monospace;
+  --font-mono: 'Share Tech Mono', monospace;
+  --gap: 20px;
+  --pad: 22px;
+  --maxw: 1100px;
+
+  /* Liminal Dread & Low-Fi Flash */
+  --weird-red: #FF0033;
+  --weird-yellow: #FFFF00;
+  --weird-void: #0D0D0D;
+
+  font-size: 15px;
+  color: var(--fg);
+  background:
+    radial-gradient(circle at 40% 40%, rgba(255, 0, 51, 0.05) 0%, transparent 60%),
+    linear-gradient(180deg, #141414 0%, #080808 100%);
+  filter: contrast(110%) brightness(95%);
+}
+
+#stage[data-style="weirdcore"] .topbar {
+  background: #000000;
+  border-bottom: 2px dashed var(--weird-red);
+  padding: 10px 18px;
+}
+
+#stage[data-style="weirdcore"] .brand {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--weird-red);
+  letter-spacing: 0.1em;
+}
+
+#stage[data-style="weirdcore"] .brand-mark {
+  background: var(--weird-yellow);
+  border: 1px solid #000;
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+}
+
+#stage[data-style="weirdcore"] .nav a,
+#stage[data-style="weirdcore"] .nav-tab {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: #AAAAAA;
+  border: 1px solid #333333;
+  padding: 4px 10px;
+  background: #111111;
+}
+
+#stage[data-style="weirdcore"] .nav a.is-active,
+#stage[data-style="weirdcore"] .nav-tab.is-active {
+  color: #000000;
+  background: var(--weird-yellow);
+  border-color: var(--weird-yellow);
+}
+
+#stage[data-style="weirdcore"] .hero {
+  background: var(--weird-void);
+  border: 2px solid var(--weird-red);
+  padding: 30px 24px;
+}
+
+#stage[data-style="weirdcore"] .display {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--weird-yellow);
+  text-shadow: 2px 2px 0 var(--weird-red);
+}
+
+#stage[data-style="weirdcore"] .btn {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+#stage[data-style="weirdcore"] .btn-primary {
+  background: var(--weird-red);
+  color: #FFFFFF;
+  border: 1px solid #000;
+}
+
+#stage[data-style="weirdcore"] .card,
+#stage[data-style="weirdcore"] .panel {
+  background: #1C1C1C;
+  border: 1px solid #333333;
+  padding: 18px;
+}
+
+#stage[data-style="weirdcore"] .kpi-value {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--weird-yellow);
+}

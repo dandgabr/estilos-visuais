@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+#stage[data-style="retro-computing"] {
+  --bg: #061106;
+  --surface: #0A1C0A;
+  --surface-2: #102B10;
+  --fg: #33FF33;
+  --muted: #1E991E;
+  --accent: #66FF66;
+  --accent-fg: #061106;
+  --border: #1E991E;
+  --ok: #33FF33;
+  --warn: #FFB000;
+  --danger: #FF3333;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --shadow: 0 0 10px rgba(51, 255, 51, 0.4);
+  --font-body: 'VT323', monospace;
+  --font-display: 'VT323', monospace;
+  --font-mono: 'VT323', monospace;
+  --gap: 20px;
+  --pad: 22px;
+  --maxw: 1100px;
+
+  font-size: 18px;
+  color: var(--fg);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(51, 255, 51, 0.05) 0%, transparent 70%),
+    linear-gradient(rgba(6, 17, 6, 0.98), rgba(6, 17, 6, 0.98)),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0px, rgba(0, 0, 0, 0.3) 2px, transparent 2px, transparent 4px);
+  text-shadow: 0 0 4px rgba(51, 255, 51, 0.5);
+}
+
+#stage[data-style="retro-computing"] .topbar {
+  background: #0D240D;
+  border-bottom: 2px solid var(--border);
+  padding: 10px 18px;
+  box-shadow: 0 0 12px rgba(51, 255, 51, 0.3);
+}
+
+#stage[data-style="retro-computing"] .brand {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+}
+
+#stage[data-style="retro-computing"] .brand-mark {
+  background: var(--fg);
+  border: 1px solid #000;
+  width: 1.4em;
+  height: 1.4em;
+}
+
+#stage[data-style="retro-computing"] .nav a,
+#stage[data-style="retro-computing"] .nav-tab {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  background: #040A04;
+}
+
+#stage[data-style="retro-computing"] .nav a.is-active,
+#stage[data-style="retro-computing"] .nav-tab.is-active {
+  color: #061106;
+  background: var(--fg);
+  border-color: var(--fg);
+  text-shadow: none;
+}
+
+#stage[data-style="retro-computing"] .hero {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  box-shadow: 0 0 16px rgba(51, 255, 51, 0.3);
+  padding: 30px 24px;
+}
+
+#stage[data-style="retro-computing"] .display {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+#stage[data-style="retro-computing"] .btn {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  padding: 8px 18px;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+#stage[data-style="retro-computing"] .btn-primary {
+  background: var(--fg);
+  color: #061106;
+  border: 1px solid var(--accent);
+  font-weight: 700;
+  text-shadow: none;
+}
+
+#stage[data-style="retro-computing"] .card,
+#stage[data-style="retro-computing"] .panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 20px;
+}
+
+#stage[data-style="retro-computing"] .kpi-value {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  color: var(--accent);
+}

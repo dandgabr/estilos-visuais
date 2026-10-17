@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:ital,wght@0,500;0,700;1,400&display=swap');
+
+#stage[data-style="arts-and-crafts"] {
+  --bg: #2B1D14;
+  --surface: #3E291C;
+  --surface-2: #4D3323;
+  --fg: #F3EBDD;
+  --muted: #C4B5A5;
+  --accent: #D4AF37;
+  --accent-fg: #1F150D;
+  --border: #6B4423;
+  --ok: #3E6B48;
+  --warn: #D4AF37;
+  --danger: #9A2C2C;
+  --radius: 3px;
+  --radius-sm: 2px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --font-body: 'Lora', Georgia, serif;
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-mono: 'Lora', monospace;
+  --gap: 22px;
+  --pad: 24px;
+  --maxw: 1120px;
+
+  /* William Morris Woodblock & Joinery */
+  --craft-oak: #4A2E1B;
+  --craft-gold: #D4AF37;
+  --craft-brick: #8B3A2B;
+  --craft-indigo: #203A43;
+
+  font-size: 17px;
+  color: var(--fg);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 70%),
+    linear-gradient(180deg, #2A1C13 0%, #1F140D 100%);
+}
+
+#stage[data-style="arts-and-crafts"] .topbar {
+  background: #3A2518;
+  border-bottom: 3px solid var(--craft-gold);
+  padding: 14px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+#stage[data-style="arts-and-crafts"] .brand {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  color: var(--craft-gold);
+  text-transform: uppercase;
+}
+
+#stage[data-style="arts-and-crafts"] .brand-mark {
+  background: var(--craft-brick);
+  border: 2px solid var(--craft-gold);
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 2px;
+}
+
+#stage[data-style="arts-and-crafts"] .nav a,
+#stage[data-style="arts-and-crafts"] .nav-tab {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  background: #321F14;
+  padding: 6px 16px;
+  border-radius: 2px;
+  transition: all 0.15s ease;
+}
+
+#stage[data-style="arts-and-crafts"] .nav a.is-active,
+#stage[data-style="arts-and-crafts"] .nav-tab.is-active {
+  color: #FFFFFF;
+  background: var(--craft-brick);
+  border-color: var(--craft-gold);
+}
+
+#stage[data-style="arts-and-crafts"] .hero {
+  background: var(--surface);
+  border: 3px double var(--craft-gold);
+  padding: 36px 30px;
+}
+
+#stage[data-style="arts-and-crafts"] .display {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: 0.05em;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+}
+
+#stage[data-style="arts-and-crafts"] .btn {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 10px 22px;
+  border-radius: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#stage[data-style="arts-and-crafts"] .btn-primary {
+  background: var(--craft-gold);
+  color: #1F150D;
+  border: 1px solid #FFE580;
+}
+
+#stage[data-style="arts-and-crafts"] .card,
+#stage[data-style="arts-and-crafts"] .panel {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  padding: 22px;
+}
+
+#stage[data-style="arts-and-crafts"] .kpi-value {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--craft-gold);
+}

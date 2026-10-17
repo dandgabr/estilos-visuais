@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Space+Grotesk:wght@500;700&display=swap');
+
+#stage[data-style="vaporwave"] {
+  --bg: #22143B;
+  --surface: #2E1C4E;
+  --surface-2: #3E246A;
+  --fg: #FAF5FF;
+  --muted: #C084FC;
+  --accent: #FF71CE;
+  --accent-fg: #1A0D2E;
+  --border: #7CE8F4;
+  --ok: #01CDFE;
+  --warn: #FFB7B2;
+  --danger: #FF71CE;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --shadow: 4px 4px 0px #01CDFE;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+  --font-display: 'VT323', monospace;
+  --font-mono: 'VT323', monospace;
+  --gap: 20px;
+  --pad: 22px;
+  --maxw: 1120px;
+
+  /* Vaporwave Palette */
+  --vapor-pink: #FFB7B2;
+  --vapor-lilac: #D8B4F8;
+  --vapor-cyan: #7CE8F4;
+  --vapor-mint: #B2F5EA;
+  --vapor-win-grey: #C3C7CB;
+
+  font-size: 16px;
+  color: var(--fg);
+  background:
+    linear-gradient(180deg, #FFB7B2 0%, #D8B4F8 30%, #7CE8F4 70%, #22143B 100%);
+  background-attachment: fixed;
+}
+
+#stage[data-style="vaporwave"] .topbar {
+  background: var(--vapor-win-grey);
+  color: #000000;
+  border: 2px solid #FFFFFF;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  box-shadow: 2px 2px 0 #000000;
+  padding: 8px 16px;
+  border-radius: 0;
+}
+
+#stage[data-style="vaporwave"] .brand {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 0.15em;
+  color: #000080;
+  text-transform: uppercase;
+}
+
+#stage[data-style="vaporwave"] .brand-mark {
+  background: linear-gradient(135deg, var(--vapor-pink) 0%, var(--vapor-cyan) 100%);
+  border: 1px solid #000;
+  border-radius: 0;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+#stage[data-style="vaporwave"] .nav a,
+#stage[data-style="vaporwave"] .nav-tab {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  background: var(--vapor-win-grey);
+  color: #000000;
+  border: 2px solid #FFFFFF;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+  padding: 4px 12px;
+  border-radius: 0;
+  text-decoration: none;
+}
+
+#stage[data-style="vaporwave"] .nav a.is-active,
+#stage[data-style="vaporwave"] .nav-tab.is-active {
+  background: #000080;
+  color: #FFFFFF;
+  border: 2px solid #808080;
+  border-right-color: #FFFFFF;
+  border-bottom-color: #FFFFFF;
+}
+
+#stage[data-style="vaporwave"] .hero {
+  background: var(--surface);
+  border: 3px solid var(--border);
+  box-shadow: 6px 6px 0 var(--accent);
+  padding: 32px 24px;
+}
+
+#stage[data-style="vaporwave"] .display {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: 0.2em;
+  color: var(--vapor-cyan);
+  text-shadow: 3px 3px 0 var(--vapor-pink);
+  margin-bottom: 12px;
+}
+
+#stage[data-style="vaporwave"] .btn {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  padding: 8px 18px;
+  border-radius: 0;
+  cursor: pointer;
+  border: 2px solid #FFFFFF;
+  border-right-color: #808080;
+  border-bottom-color: #808080;
+}
+
+#stage[data-style="vaporwave"] .btn-primary {
+  background: linear-gradient(90deg, var(--vapor-pink), var(--vapor-cyan));
+  color: #1A0D2E;
+  font-weight: 700;
+  box-shadow: 3px 3px 0 #000000;
+}
+
+#stage[data-style="vaporwave"] .btn-secondary {
+  background: var(--vapor-win-grey);
+  color: #000000;
+  box-shadow: 2px 2px 0 #000000;
+}
+
+#stage[data-style="vaporwave"] .card,
+#stage[data-style="vaporwave"] .panel {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0 var(--accent);
+  padding: 20px;
+}
+
+#stage[data-style="vaporwave"] .kpi-value {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  color: var(--accent);
+  text-shadow: 2px 2px 0 var(--border);
+}

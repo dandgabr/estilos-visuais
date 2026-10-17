@@ -1,60 +1,271 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700;900&family=Oswald:wght@600;700&display=swap');
+
 #stage[data-style="atompunk"] {
-  --bg:#FFF7E6; --surface:#fffdf6; --surface-2:#FFE29A; --fg:#1F2933; --muted:#4a5560;
-  --accent:#E4572E; --accent-fg:#fff; --border:#1F2933; --ok:#0d7a70; --warn:#9a5a00; --danger:#b3261e;
-  --radius:28px; --radius-sm:999px; --shadow:5px 5px 0 #1F2933;
-  --font-body:'Josefin Sans',system-ui,sans-serif; --font-display:'Josefin Sans',sans-serif; --font-mono:ui-monospace,monospace;
-  --gap:22px; --pad:22px; --maxw:1100px; --teal:#2EC4B6; --pink:#FF8FA3; --sun:#FFE29A;
-  font-size:17px;
+  --bg: #14171A;
+  --surface: #1E232A;
+  --surface-2: #28303B;
+  --fg: #E1E7EC;
+  --muted: #8E9BA8;
+  --accent: #FF9900;
+  --accent-fg: #000000;
+  --border: #3A4654;
+  --ok: #27FF48;
+  --warn: #FF9900;
+  --danger: #FF3333;
+  --radius: 4px;
+  --radius-sm: 2px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --font-body: 'Share Tech Mono', ui-monospace, monospace;
+  --font-display: 'Orbitron', 'Oswald', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+  --gap: 20px;
+  --pad: 22px;
+  --maxw: 1140px;
+
+  /* Phosphor & Radiation Palette */
+  --phosphor-green: #27FF48;
+  --phosphor-amber: #FF9900;
+  --steel-dark: #121519;
+  --steel-rivet: #4B5A6B;
+  --brass-dial: #C4823F;
+
+  font-size: 16px;
+  color: var(--fg);
   background:
-    radial-gradient(circle at 92% 6%,var(--sun) 0 70px,transparent 71px),
-    radial-gradient(circle at 8% 30%,rgba(46,196,182,.35) 0 40px,transparent 41px),
-    radial-gradient(circle at 96% 55%,rgba(255,143,163,.4) 0 54px,transparent 55px),
-    radial-gradient(#1f293312 1.5px,transparent 1.5px) 0 0/22px 22px,#FFF7E6;
-  background-attachment:local;
+    radial-gradient(circle at 50% 30%, rgba(39, 255, 72, 0.04) 0%, transparent 70%),
+    linear-gradient(rgba(18, 21, 25, 0.95), rgba(18, 21, 25, 0.95)),
+    repeating-linear-gradient(0deg, #181D23 0px, #181D23 2px, #121519 2px, #121519 4px);
 }
-#stage[data-style="atompunk"] .topbar{border-bottom:3px solid var(--fg)}
-#stage[data-style="atompunk"] .brand{font-weight:700;font-size:1.5rem;letter-spacing:.02em}
-#stage[data-style="atompunk"] .brand-mark{background:radial-gradient(circle,var(--accent) 0 18%,transparent 19%),conic-gradient(from 0deg,var(--teal) 0 25%,var(--pink) 0 50%,var(--sun) 0 75%,var(--teal) 0);border-radius:50%;border:2px solid var(--fg);width:1.7em;height:1.7em}
-#stage[data-style="atompunk"] .nav a{font-weight:600;border-radius:999px;border:2px solid transparent;color:var(--fg)}
-#stage[data-style="atompunk"] .nav a:hover{border-color:var(--fg);background:var(--sun)}
-#stage[data-style="atompunk"] .nav a.is-active{background:var(--teal);color:#06302c;border-color:var(--fg)}
-#stage[data-style="atompunk"] .hero{position:relative}
-#stage[data-style="atompunk"] .hero::after{content:"";position:absolute;right:2%;top:30px;width:min(210px,32vw);aspect-ratio:1;pointer-events:none;opacity:.9;
-  background:conic-gradient(from 0deg,transparent 0 5deg,var(--accent) 5deg 10deg,transparent 10deg 45deg,var(--accent) 45deg 50deg,transparent 50deg 90deg,var(--teal) 90deg 95deg,transparent 95deg 135deg,var(--accent) 135deg 140deg,transparent 140deg 180deg,var(--teal) 180deg 185deg,transparent 185deg 225deg,var(--accent) 225deg 230deg,transparent 230deg 270deg,var(--teal) 270deg 275deg,transparent 275deg 315deg,var(--accent) 315deg 320deg,transparent 320deg);
-  -webkit-mask:radial-gradient(circle,transparent 0 22%,#000 23%);mask:radial-gradient(circle,transparent 0 22%,#000 23%);border-radius:50%;z-index:-1}
-#stage[data-style="atompunk"] .eyebrow{font-weight:700;color:var(--accent);letter-spacing:.3em}
-#stage[data-style="atompunk"] .display{font-weight:700;color:var(--fg);letter-spacing:-.01em;text-shadow:4px 4px 0 var(--pink)}
-#stage[data-style="atompunk"] .lead{color:var(--muted)}
-#stage[data-style="atompunk"] .btn{border:3px solid var(--fg);border-radius:999px;font-weight:700;letter-spacing:.04em;box-shadow:4px 4px 0 var(--fg);transition:transform .12s,box-shadow .12s}
-#stage[data-style="atompunk"] .btn-primary{background:var(--accent);color:#fff}
-#stage[data-style="atompunk"] .btn-secondary{background:var(--teal);color:#06302c}
-#stage[data-style="atompunk"] .btn-ghost{background:var(--surface);color:var(--fg);border-color:var(--fg)}
-#stage[data-style="atompunk"] .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--fg)}
-#stage[data-style="atompunk"] .btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--fg)}
-#stage[data-style="atompunk"] .btn[disabled]{box-shadow:none;transform:none;opacity:.55}
-#stage[data-style="atompunk"] :focus-visible{outline:4px solid var(--teal);outline-offset:3px}
-#stage[data-style="atompunk"] .section-title{font-weight:700;font-size:1.8rem;display:inline-block;background:var(--sun);padding:2px 18px;border:3px solid var(--fg);border-radius:999px;box-shadow:4px 4px 0 var(--pink)}
-#stage[data-style="atompunk"] .card,#stage[data-style="atompunk"] .panel{border:3px solid var(--fg);position:relative}
-#stage[data-style="atompunk"] .card:nth-child(odd){border-radius:36px 12px 36px 12px}
-#stage[data-style="atompunk"] .card:nth-child(even){border-radius:12px 36px 12px 36px}
-#stage[data-style="atompunk"] .kpis .card:nth-child(1){background:#c9f2ee}#stage[data-style="atompunk"] .kpis .card:nth-child(2){background:#ffe0e5}#stage[data-style="atompunk"] .kpis .card:nth-child(3){background:#fff0c4}#stage[data-style="atompunk"] .kpis .card:nth-child(4){background:#ffd9cc}
-#stage[data-style="atompunk"] .card h3,#stage[data-style="atompunk"] .panel h2{font-weight:700}
-#stage[data-style="atompunk"] .card a{font-weight:700;color:#a8330f}
-#stage[data-style="atompunk"] .kpi-label{font-weight:600;color:var(--fg);text-transform:uppercase;letter-spacing:.08em}
-#stage[data-style="atompunk"] .kpi-value{font-size:2.6rem}
-#stage[data-style="atompunk"] .badge{border:2px solid var(--fg);font-weight:700;background:var(--surface)}
-#stage[data-style="atompunk"] .bars{border-bottom:3px solid var(--fg)}
-#stage[data-style="atompunk"] .bars i{border:2px solid var(--fg);border-radius:999px 999px 0 0;background:var(--teal)}
-#stage[data-style="atompunk"] .bars i:nth-child(3n+2){background:var(--pink)}#stage[data-style="atompunk"] .bars i:nth-child(3n){background:var(--sun)}
-#stage[data-style="atompunk"] input[type=text],#stage[data-style="atompunk"] input[type=email],#stage[data-style="atompunk"] select,#stage[data-style="atompunk"] textarea{border:3px solid var(--fg);border-radius:18px;background:#fff}
-#stage[data-style="atompunk"] input[type=checkbox],#stage[data-style="atompunk"] input[type=range]{accent-color:var(--accent)}
-#stage[data-style="atompunk"] .switch{border:3px solid var(--fg);background:#fff;width:52px;height:28px}
-#stage[data-style="atompunk"] .switch::after{background:var(--fg);top:2px;left:2px}
-#stage[data-style="atompunk"] .switch:checked{background:var(--teal)}#stage[data-style="atompunk"] .switch:checked::after{transform:translateX(24px)}
-#stage[data-style="atompunk"] th{color:var(--fg);font-weight:700;border-bottom:3px solid var(--fg)}
-#stage[data-style="atompunk"] td{border-bottom:2px dotted var(--fg)}
-#stage[data-style="atompunk"] .toast{border:3px solid var(--fg);border-radius:999px;background:var(--pink);color:var(--fg);box-shadow:4px 4px 0 var(--fg);font-weight:600}
-#stage[data-style="atompunk"] dialog{border:4px solid var(--fg);border-radius:36px 12px 36px 12px;background:var(--surface);color:var(--fg);box-shadow:8px 8px 0 var(--accent)}
-#stage[data-style="atompunk"] dialog::backdrop{background:rgba(31,41,51,.55)}
-#stage[data-style="atompunk"] .footer{border-top:3px solid var(--fg);color:var(--muted)}
+
+#stage[data-style="atompunk"] .topbar {
+  background: linear-gradient(180deg, #2A333E 0%, #1A2027 100%);
+  border-bottom: 3px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-radius: 0;
+  padding: 12px 20px;
+}
+
+#stage[data-style="atompunk"] .brand {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  color: var(--phosphor-green);
+  text-shadow: 0 0 8px rgba(39, 255, 72, 0.6);
+  text-transform: uppercase;
+}
+
+#stage[data-style="atompunk"] .brand-mark {
+  background: radial-gradient(circle at 40% 40%, #FFD700 0%, #FF9900 45%, #8B4500 100%);
+  border: 2px solid #5A6978;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.4), 0 0 10px rgba(255, 153, 0, 0.5);
+  border-radius: 50%;
+  width: 1.6em;
+  height: 1.6em;
+}
+
+#stage[data-style="atompunk"] .nav {
+  gap: 8px;
+}
+
+#stage[data-style="atompunk"] .nav a,
+#stage[data-style="atompunk"] .nav-tab {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  background: #191F26;
+  padding: 6px 14px;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.12s linear;
+}
+
+#stage[data-style="atompunk"] .nav a:hover,
+#stage[data-style="atompunk"] .nav-tab:hover {
+  color: var(--phosphor-amber);
+  border-color: var(--phosphor-amber);
+  background: #242D38;
+}
+
+#stage[data-style="atompunk"] .nav a.is-active,
+#stage[data-style="atompunk"] .nav-tab.is-active {
+  color: #000000;
+  background: var(--phosphor-green);
+  border-color: var(--phosphor-green);
+  box-shadow: 0 0 10px rgba(39, 255, 72, 0.5);
+}
+
+#stage[data-style="atompunk"] .hero {
+  background: #171C22;
+  border: 2px solid var(--border);
+  border-left: 8px solid var(--phosphor-amber);
+  padding: 32px 28px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+#stage[data-style="atompunk"] .eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--phosphor-amber);
+  text-transform: uppercase;
+}
+
+#stage[data-style="atompunk"] .display {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+  margin: 8px 0 16px 0;
+}
+
+#stage[data-style="atompunk"] .lead {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+#stage[data-style="atompunk"] .btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: transform 0.1s linear, box-shadow 0.1s linear;
+}
+
+#stage[data-style="atompunk"] .btn-primary {
+  background: linear-gradient(180deg, #FFB020 0%, #E68000 100%);
+  color: #000000;
+  border: 1px solid #FFAA00;
+  box-shadow: 0 0 12px rgba(255, 153, 0, 0.4);
+}
+
+#stage[data-style="atompunk"] .btn-primary:hover {
+  background: #FFB833;
+  transform: translateY(-1px);
+  box-shadow: 0 0 18px rgba(255, 153, 0, 0.7);
+}
+
+#stage[data-style="atompunk"] .btn-secondary {
+  background: #242D38;
+  color: var(--phosphor-green);
+  border: 1px solid var(--phosphor-green);
+}
+
+#stage[data-style="atompunk"] .btn-secondary:hover {
+  background: rgba(39, 255, 72, 0.15);
+  box-shadow: 0 0 12px rgba(39, 255, 72, 0.3);
+}
+
+#stage[data-style="atompunk"] .btn-ghost {
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--border);
+}
+
+#stage[data-style="atompunk"] .card,
+#stage[data-style="atompunk"] .panel {
+  background: #1A2027;
+  border: 2px solid var(--border);
+  border-radius: 3px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 4px 12px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+#stage[data-style="atompunk"] .kpi-label {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+#stage[data-style="atompunk"] .kpi-value {
+  font-family: var(--font-body);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--phosphor-green);
+  text-shadow: 0 0 8px rgba(39, 255, 72, 0.4);
+}
+
+#stage[data-style="atompunk"] .badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 2px;
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  background: #12161B;
+  color: var(--phosphor-amber);
+}
+
+#stage[data-style="atompunk"] input[type=text],
+#stage[data-style="atompunk"] input[type=email],
+#stage[data-style="atompunk"] select,
+#stage[data-style="atompunk"] textarea {
+  background: #0E1216;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--phosphor-green);
+  font-family: var(--font-mono);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.7);
+  padding: 8px 12px;
+}
+
+#stage[data-style="atompunk"] input:focus,
+#stage[data-style="atompunk"] textarea:focus,
+#stage[data-style="atompunk"] select:focus {
+  border-color: var(--phosphor-green);
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.7), 0 0 8px rgba(39, 255, 72, 0.3);
+  outline: none;
+}
+
+#stage[data-style="atompunk"] th {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--phosphor-amber);
+  border-bottom: 2px solid var(--border);
+  padding: 10px;
+}
+
+#stage[data-style="atompunk"] td {
+  border-bottom: 1px solid rgba(58, 70, 84, 0.4);
+  padding: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+#stage[data-style="atompunk"] .toast {
+  background: #1E252E;
+  color: var(--phosphor-amber);
+  border: 2px solid var(--phosphor-amber);
+  box-shadow: 0 0 16px rgba(255, 153, 0, 0.4);
+  border-radius: 2px;
+  font-family: var(--font-display);
+}
+
+#stage[data-style="atompunk"] dialog {
+  background: #181E25;
+  border: 3px solid var(--border);
+  border-top: 8px solid var(--phosphor-green);
+  color: var(--fg);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+}

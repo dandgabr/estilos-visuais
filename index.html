@@ -6,6 +6,7 @@
 <title>Estilos Visuais Coacus</title>
 <link rel="stylesheet" href="shell.css">
 <link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="vendor/driver.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232d5bff'/%3E%3C/svg%3E">
 </head>
 <body>
@@ -25,94 +26,396 @@
       <button id="prev" type="button" aria-label="Estilo anterior">←</button>
       <div class="stage-title"><strong id="cur-name"></strong><span id="cur-desc"></span></div>
       <button id="next" type="button" aria-label="Próximo estilo">→</button>
+      <button id="tour-btn" type="button" aria-label="Ajuda e tour guiado" title="Tour da ferramenta e do estilo">?</button>
     </div>
 
     <!-- Mockup único, reutilizado por todos os estilos. #stage é o contêiner de rolagem. -->
     <div id="stage" data-style="">
       <div class="app">
         <header class="topbar">
-          <a class="brand" href="#"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Coacus Studio</span></a>
-          <nav class="nav" aria-label="Principal">
-            <a class="is-active" href="#" aria-current="page">Painel</a>
-            <a href="#">Projetos</a>
-            <a href="#">Equipe</a>
-            <a href="#">Relatórios</a>
+          <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Coacus Studio</span></div>
+          <nav class="nav" role="tablist" aria-label="Visões do mockup">
+            <button class="nav-tab is-active" role="tab" id="tab-painel" aria-selected="true" aria-controls="view-painel" data-view="painel" type="button">Painel</button>
+            <button class="nav-tab" role="tab" id="tab-projetos" aria-selected="false" aria-controls="view-projetos" data-view="projetos" type="button">Projetos</button>
+            <button class="nav-tab" role="tab" id="tab-equipe" aria-selected="false" aria-controls="view-equipe" data-view="equipe" type="button">Equipe</button>
+            <button class="nav-tab" role="tab" id="tab-relatorios" aria-selected="false" aria-controls="view-relatorios" data-view="relatorios" type="button">Relatórios</button>
           </nav>
           <button class="btn btn-ghost" type="button">Entrar</button>
         </header>
 
-        <main>
-          <section class="hero" id="inicio">
-            <p class="eyebrow">Plataforma de design · v2.6</p>
-            <h1 class="display">Crie interfaces com identidade própria</h1>
-            <p class="lead">Um painel de exemplo para comparar como cada estilo visual trata tipografia, cor, superfície, forma e movimento.</p>
-            <div class="actions">
-              <button class="btn btn-primary" type="button">Começar agora</button>
-              <button class="btn btn-secondary" type="button">Ver documentação</button>
-              <button class="btn btn-ghost" type="button">Desativado</button>
-            </div>
-          </section>
+        <main id="main-content">
+          <!-- ABA 1: PAINEL (Overview / Marketing / Form) -->
+          <div class="view-pane is-active" id="view-painel" role="tabpanel" aria-labelledby="tab-painel">
+            <section class="hero" id="inicio">
+              <p class="eyebrow">Plataforma de design · v2.6</p>
+              <h1 class="display">Crie interfaces com identidade própria</h1>
+              <p class="lead">Um painel de exemplo para comparar como cada estilo visual trata tipografia, cor, superfície, forma e movimento.</p>
+              <div class="actions">
+                <button class="btn btn-primary" type="button">Começar agora</button>
+                <button class="btn btn-secondary" type="button">Ver documentação</button>
+                <button class="btn btn-ghost" type="button">Desativado</button>
+              </div>
+            </section>
 
-          <section aria-labelledby="t-metricas">
-            <h2 class="section-title" id="t-metricas">Métricas da semana</h2>
-            <div class="kpis">
-              <article class="card kpi"><span class="kpi-label">Projetos ativos</span><strong class="kpi-value">128</strong><span class="badge ok">+12%</span></article>
-              <article class="card kpi"><span class="kpi-label">Tempo médio</span><strong class="kpi-value">4,2 h</strong><span class="badge warn">−3%</span></article>
-              <article class="card kpi"><span class="kpi-label">Satisfação</span><strong class="kpi-value">96%</strong><span class="badge ok">+2 pp</span></article>
-              <article class="card kpi"><span class="kpi-label">Incidentes</span><strong class="kpi-value">3</strong><span class="badge danger">Atenção</span></article>
-            </div>
-          </section>
+            <section aria-labelledby="t-metricas">
+              <h2 class="section-title" id="t-metricas">Métricas da semana</h2>
+              <div class="kpis">
+                <article class="card kpi"><span class="kpi-label">Projetos ativos</span><strong class="kpi-value">128</strong><span class="badge ok">+12%</span></article>
+                <article class="card kpi"><span class="kpi-label">Tempo médio</span><strong class="kpi-value">4,2 h</strong><span class="badge warn">−3%</span></article>
+                <article class="card kpi"><span class="kpi-label">Satisfação</span><strong class="kpi-value">96%</strong><span class="badge ok">+2 pp</span></article>
+                <article class="card kpi"><span class="kpi-label">Incidentes</span><strong class="kpi-value">3</strong><span class="badge danger">Atenção</span></article>
+              </div>
+            </section>
 
-          <section aria-labelledby="t-recursos">
-            <h2 class="section-title" id="t-recursos">Recursos</h2>
-            <div class="grid">
-              <article class="card feature"><h3>Componentes vivos</h3><p>Botões, campos e tabelas que respondem ao estilo escolhido.</p><a href="#">Saiba mais →</a></article>
-              <article class="card feature"><h3>Tokens consistentes</h3><p>Cores, raios e sombras controlados por variáveis.</p><a href="#">Saiba mais →</a></article>
-              <article class="card chart" role="img" aria-label="Gráfico de barras: crescimento mensal">
-                <h3>Crescimento mensal</h3>
-                <div class="bars" aria-hidden="true"><i style="--h:35%"></i><i style="--h:55%"></i><i style="--h:42%"></i><i style="--h:70%"></i><i style="--h:62%"></i><i style="--h:88%"></i><i style="--h:100%"></i></div>
+            <section aria-labelledby="t-recursos">
+              <h2 class="section-title" id="t-recursos">Recursos</h2>
+              <div class="grid">
+                <article class="card feature"><h3>Componentes vivos</h3><p>Botões, campos e tabelas que respondem ao estilo escolhido.</p><a class="link-more" href="#saiba-mais">Saiba mais →</a></article>
+                <article class="card feature"><h3>Tokens consistentes</h3><p>Cores, raios e sombras controlados por variáveis.</p><a class="link-more" href="#saiba-mais">Saiba mais →</a></article>
+                <article class="card chart" role="img" aria-label="Gráfico de barras: crescimento mensal">
+                  <h3>Crescimento mensal</h3>
+                  <div class="bars" aria-hidden="true"><i style="--h:35%"></i><i style="--h:55%"></i><i style="--h:42%"></i><i style="--h:70%"></i><i style="--h:62%"></i><i style="--h:88%"></i><i style="--h:100%"></i></div>
+                </article>
+              </div>
+            </section>
+
+            <section class="split">
+              <div class="panel">
+                <h2>Novo projeto</h2>
+                <form onsubmit="return false">
+                  <label>Nome <input type="text" placeholder="Meu projeto"></label>
+                  <label>E-mail <input type="email" placeholder="voce@exemplo.com"></label>
+                  <label>Categoria
+                    <select><option>Web</option><option>Mobile</option><option>Marca</option></select>
+                  </label>
+                  <label>Descrição <textarea rows="3" placeholder="Conte um pouco…"></textarea></label>
+                  <label class="inline"><input type="checkbox" checked> Receber novidades</label>
+                  <label class="inline"><input class="switch" type="checkbox" role="switch" checked> Modo público</label>
+                  <label>Intensidade <input type="range" min="0" max="100" value="60"></label>
+                  <button class="btn btn-primary" type="submit">Criar projeto</button>
+                </form>
+              </div>
+
+              <div class="panel">
+                <h2>Atividade recente</h2>
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>Projeto</th><th>Responsável</th><th>Status</th></tr></thead>
+                    <tbody>
+                      <tr><td>Aurora</td><td>Marina</td><td><span class="badge ok">Publicado</span></td></tr>
+                      <tr><td>Horizonte</td><td>Caio</td><td><span class="badge warn">Em revisão</span></td></tr>
+                      <tr><td>Atlas</td><td>Lia</td><td><span class="badge">Rascunho</span></td></tr>
+                      <tr><td>Pulsar</td><td>Davi</td><td><span class="badge danger">Bloqueado</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p style="margin-top:16px"><button class="btn btn-secondary" id="open-modal" type="button">Abrir diálogo</button></p>
+              </div>
+            </section>
+
+            <div class="toast" role="status"><span>Alterações salvas com sucesso.</span><button class="btn btn-ghost" type="button">Desfazer</button></div>
+          </div>
+
+          <!-- ABA 2: PROJETOS (Kanban Board & Workflow) -->
+          <div class="view-pane" id="view-projetos" role="tabpanel" aria-labelledby="tab-projetos" hidden>
+            <div class="view-header">
+              <div>
+                <h2>Quadro de Projetos</h2>
+                <p class="view-subtitle">Acompanhamento visual de fluxos de trabalho, sprints e entregas.</p>
+              </div>
+              <div class="view-actions">
+                <button class="btn btn-primary" type="button">+ Adicionar Tarefa</button>
+                <button class="btn btn-secondary" type="button">Filtrar</button>
+              </div>
+            </div>
+
+            <div class="kanban-board">
+              <!-- Coluna: Backlog -->
+              <div class="kanban-col">
+                <div class="kanban-col-head">
+                  <span class="kanban-dot" style="background: #8892b0"></span>
+                  <h3>Backlog</h3>
+                  <span class="badge">3</span>
+                </div>
+                <div class="kanban-cards">
+                  <article class="card kanban-card">
+                    <span class="badge warn">Média</span>
+                    <h4>Migração de Banco de Dados</h4>
+                    <p>Adequação da camada de persistência para clusters distribuídos.</p>
+                    <div class="kanban-progress">
+                      <div class="progress-bar"><i style="width: 25%"></i></div>
+                      <span class="progress-val">25%</span>
+                    </div>
+                    <div class="kanban-card-foot">
+                      <span class="avatar-sm" aria-label="Caio">C</span>
+                      <time datetime="2026-10-24">24 Out</time>
+                    </div>
+                  </article>
+
+                  <article class="card kanban-card">
+                    <span class="badge">Baixa</span>
+                    <h4>Documentação de APIs</h4>
+                    <p>Revisão de contratos OpenAPI e guias de autenticação OAuth2.</p>
+                    <div class="kanban-progress">
+                      <div class="progress-bar"><i style="width: 10%"></i></div>
+                      <span class="progress-val">10%</span>
+                    </div>
+                    <div class="kanban-card-foot">
+                      <span class="avatar-sm" aria-label="Lia">L</span>
+                      <time datetime="2026-10-30">30 Out</time>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Coluna: Em Andamento -->
+              <div class="kanban-col">
+                <div class="kanban-col-head">
+                  <span class="kanban-dot" style="background: #2d5bff"></span>
+                  <h3>Em Andamento</h3>
+                  <span class="badge ok">2</span>
+                </div>
+                <div class="kanban-cards">
+                  <article class="card kanban-card">
+                    <span class="badge danger">Alta</span>
+                    <h4>Motor de Física e Efeitos (FX)</h4>
+                    <p>Implementação do ciclo de vida com cleanup e 60fps em shaders.</p>
+                    <div class="kanban-progress">
+                      <div class="progress-bar"><i style="width: 75%"></i></div>
+                      <span class="progress-val">75%</span>
+                    </div>
+                    <div class="kanban-card-foot">
+                      <span class="avatar-sm" aria-label="Marina">M</span>
+                      <time datetime="2026-10-18">Amanhã</time>
+                    </div>
+                  </article>
+
+                  <article class="card kanban-card">
+                    <span class="badge ok">Normal</span>
+                    <h4>Auditoria WCAG 2.2 AA</h4>
+                    <p>Calibração dos anéis de foco dual-contrast e proporções de luminância.</p>
+                    <div class="kanban-progress">
+                      <div class="progress-bar"><i style="width: 60%"></i></div>
+                      <span class="progress-val">60%</span>
+                    </div>
+                    <div class="kanban-card-foot">
+                      <span class="avatar-sm" aria-label="Davi">D</span>
+                      <time datetime="2026-10-20">20 Out</time>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Coluna: Concluído -->
+              <div class="kanban-col">
+                <div class="kanban-col-head">
+                  <span class="kanban-dot" style="background: #10b981"></span>
+                  <h3>Concluído</h3>
+                  <span class="badge ok">4</span>
+                </div>
+                <div class="kanban-cards">
+                  <article class="card kanban-card">
+                    <span class="badge ok">Pronto</span>
+                    <h4>Onboarding com Driver.js</h4>
+                    <p>Mapeamento de 5 passos do tour da ferramenta e tours por estilo.</p>
+                    <div class="kanban-progress">
+                      <div class="progress-bar"><i style="width: 100%"></i></div>
+                      <span class="progress-val">100%</span>
+                    </div>
+                    <div class="kanban-card-foot">
+                      <span class="avatar-sm" aria-label="Marina">M</span>
+                      <time datetime="2026-10-17">Hoje</time>
+                    </div>
+                  </article>
+
+                  <article class="card kanban-card">
+                    <span class="badge ok">Pronto</span>
+                    <h4>Correção da Navegação de Abas</h4>
+                    <p>Migração para role="tablist" sem colisão de hash no roteador.</p>
+                    <div class="kanban-progress">
+                      <div class="progress-bar"><i style="width: 100%"></i></div>
+                      <span class="progress-val">100%</span>
+                    </div>
+                    <div class="kanban-card-foot">
+                      <span class="avatar-sm" aria-label="Caio">C</span>
+                      <time datetime="2026-10-17">Hoje</time>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ABA 3: EQUIPE (Team Directory & Collaboration) -->
+          <div class="view-pane" id="view-equipe" role="tabpanel" aria-labelledby="tab-equipe" hidden>
+            <div class="view-header">
+              <div>
+                <h2>Membros da Equipe</h2>
+                <p class="view-subtitle">Especialistas em design, engenharia de sistemas e arquitetura.</p>
+              </div>
+              <div class="view-actions">
+                <button class="btn btn-primary" type="button">+ Convidar Membro</button>
+              </div>
+            </div>
+
+            <div class="team-grid">
+              <article class="card team-card">
+                <div class="team-avatar-wrap">
+                  <span class="avatar-lg">M</span>
+                  <span class="status-indicator online" title="Disponível"></span>
+                </div>
+                <h3>Marina Silva</h3>
+                <p class="team-role">Líder de Design de Interface</p>
+                <div class="team-tags">
+                  <span class="badge">Sistemas de Design</span>
+                  <span class="badge">Acessibilidade</span>
+                </div>
+                <div class="team-card-actions">
+                  <button class="btn btn-secondary btn-sm" type="button">Mensagem</button>
+                  <button class="btn btn-ghost btn-sm" type="button">Perfil</button>
+                </div>
+              </article>
+
+              <article class="card team-card">
+                <div class="team-avatar-wrap">
+                  <span class="avatar-lg">C</span>
+                  <span class="status-indicator busy" title="Em foco"></span>
+                </div>
+                <h3>Caio Mendes</h3>
+                <p class="team-role">Engenheiro de Sistemas & FX</p>
+                <div class="team-tags">
+                  <span class="badge">WebGPU / Canvas</span>
+                  <span class="badge">Performance</span>
+                </div>
+                <div class="team-card-actions">
+                  <button class="btn btn-secondary btn-sm" type="button">Mensagem</button>
+                  <button class="btn btn-ghost btn-sm" type="button">Perfil</button>
+                </div>
+              </article>
+
+              <article class="card team-card">
+                <div class="team-avatar-wrap">
+                  <span class="avatar-lg">L</span>
+                  <span class="status-indicator online" title="Disponível"></span>
+                </div>
+                <h3>Lia Nogueira</h3>
+                <p class="team-role">Engenheira de Documentação</p>
+                <div class="team-tags">
+                  <span class="badge">Diátaxis</span>
+                  <span class="badge">Governança D5</span>
+                </div>
+                <div class="team-card-actions">
+                  <button class="btn btn-secondary btn-sm" type="button">Mensagem</button>
+                  <button class="btn btn-ghost btn-sm" type="button">Perfil</button>
+                </div>
+              </article>
+
+              <article class="card team-card">
+                <div class="team-avatar-wrap">
+                  <span class="avatar-lg">D</span>
+                  <span class="status-indicator offline" title="Ausente"></span>
+                </div>
+                <h3>Davi Albuquerque</h3>
+                <p class="team-role">Auditor de Qualidade de Design</p>
+                <div class="team-tags">
+                  <span class="badge">Anti-AI Slop</span>
+                  <span class="badge">WCAG 2.2 AAA</span>
+                </div>
+                <div class="team-card-actions">
+                  <button class="btn btn-secondary btn-sm" type="button">Mensagem</button>
+                  <button class="btn btn-ghost btn-sm" type="button">Perfil</button>
+                </div>
               </article>
             </div>
-          </section>
+          </div>
 
-          <section class="split">
-            <div class="panel">
-              <h2>Novo projeto</h2>
-              <form onsubmit="return false">
-                <label>Nome <input type="text" placeholder="Meu projeto"></label>
-                <label>E-mail <input type="email" placeholder="voce@exemplo.com"></label>
-                <label>Categoria
-                  <select><option>Web</option><option>Mobile</option><option>Marca</option></select>
-                </label>
-                <label>Descrição <textarea rows="3" placeholder="Conte um pouco…"></textarea></label>
-                <label class="inline"><input type="checkbox" checked> Receber novidades</label>
-                <label class="inline"><input class="switch" type="checkbox" role="switch" checked> Modo público</label>
-                <label>Intensidade <input type="range" min="0" max="100" value="60"></label>
-                <button class="btn btn-primary" type="submit">Criar projeto</button>
-              </form>
+          <!-- ABA 4: RELATÓRIOS (Dense Data Table & Telemetry) -->
+          <div class="view-pane" id="view-relatorios" role="tabpanel" aria-labelledby="tab-relatorios" hidden>
+            <div class="view-header">
+              <div>
+                <h2>Telemetria e Relatórios Analíticos</h2>
+                <p class="view-subtitle">Consumo de recursos, tempo de resposta e conformidade de estilo em tempo real.</p>
+              </div>
+              <div class="view-actions">
+                <button class="btn btn-secondary" type="button">Exportar CSV</button>
+                <button class="btn btn-primary" type="button">Gerar Relatório</button>
+              </div>
             </div>
 
-            <div class="panel">
-              <h2>Atividade recente</h2>
+            <div class="analytics-strip">
+              <article class="card kpi"><span class="kpi-label">Latência Média p99</span><strong class="kpi-value">18,4 ms</strong><span class="badge ok">Ótimo</span></article>
+              <article class="card kpi"><span class="kpi-label">Disponibilidade</span><strong class="kpi-value">99,99%</strong><span class="badge ok">SLA Aprovado</span></article>
+              <article class="card kpi"><span class="kpi-label">Uso de CPU do Palco</span><strong class="kpi-value">1,8%</strong><span class="badge ok">60 FPS</span></article>
+              <article class="card kpi"><span class="kpi-label">Vazamentos de Memória</span><strong class="kpi-value">0</strong><span class="badge ok">Cleanup OK</span></article>
+            </div>
+
+            <div class="panel" style="margin-top: 24px">
+              <div class="table-toolbar">
+                <h3>Serviços de Renderização de Estilos</h3>
+                <input class="search-sm" type="search" placeholder="Filtrar métricas…" aria-label="Filtrar métricas">
+              </div>
+
               <div class="table-wrap">
-                <table>
-                  <thead><tr><th>Projeto</th><th>Responsável</th><th>Status</th></tr></thead>
+                <table class="table-dense">
+                  <thead>
+                    <tr>
+                      <th>Subsistema / Módulo</th>
+                      <th>Taxa de Quadros</th>
+                      <th>Tempo de Render</th>
+                      <th>Consumo de Memória</th>
+                      <th>Tendência (7d)</th>
+                      <th>Status de Operação</th>
+                    </tr>
+                  </thead>
                   <tbody>
-                    <tr><td>Aurora</td><td>Marina</td><td><span class="badge ok">Publicado</span></td></tr>
-                    <tr><td>Horizonte</td><td>Caio</td><td><span class="badge warn">Em revisão</span></td></tr>
-                    <tr><td>Atlas</td><td>Lia</td><td><span class="badge">Rascunho</span></td></tr>
-                    <tr><td>Pulsar</td><td>Davi</td><td><span class="badge danger">Bloqueado</span></td></tr>
+                    <tr>
+                      <td><strong>Motor de Estilos (Pure CSS)</strong></td>
+                      <td>60,0 fps</td>
+                      <td>0,8 ms</td>
+                      <td>4,2 MB</td>
+                      <td><div class="sparkline-bar"><i style="--h:85%"></i><i style="--h:90%"></i><i style="--h:92%"></i><i style="--h:98%"></i><i style="--h:100%"></i></div></td>
+                      <td><span class="badge ok">Operacional</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Pipeline de Efeitos FX (Canvas/WebGL)</strong></td>
+                      <td>59,8 fps</td>
+                      <td>2,1 ms</td>
+                      <td>12,8 MB</td>
+                      <td><div class="sparkline-bar"><i style="--h:65%"></i><i style="--h:70%"></i><i style="--h:80%"></i><i style="--h:88%"></i><i style="--h:95%"></i></div></td>
+                      <td><span class="badge ok">Operacional</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Motor de Onboarding (Driver.js)</strong></td>
+                      <td>60,0 fps</td>
+                      <td>0,3 ms</td>
+                      <td>1,1 MB</td>
+                      <td><div class="sparkline-bar"><i style="--h:100%"></i><i style="--h:100%"></i><i style="--h:100%"></i><i style="--h:100%"></i><i style="--h:100%"></i></div></td>
+                      <td><span class="badge ok">Operacional</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Alternador de Abas (WAI-ARIA)</strong></td>
+                      <td>60,0 fps</td>
+                      <td>0,1 ms</td>
+                      <td>0,4 MB</td>
+                      <td><div class="sparkline-bar"><i style="--h:100%"></i><i style="--h:100%"></i><i style="--h:100%"></i><i style="--h:100%"></i><i style="--h:100%"></i></div></td>
+                      <td><span class="badge ok">Operacional</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Linter de Design (Anti-AI Slop)</strong></td>
+                      <td>N/A</td>
+                      <td>14,2 ms</td>
+                      <td>6,8 MB</td>
+                      <td><div class="sparkline-bar"><i style="--h:50%"></i><i style="--h:60%"></i><i style="--h:75%"></i><i style="--h:85%"></i><i style="--h:90%"></i></div></td>
+                      <td><span class="badge ok">Conforme</span></td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
-              <p style="margin-top:16px"><button class="btn btn-secondary" id="open-modal" type="button">Abrir diálogo</button></p>
             </div>
-          </section>
-
-          <div class="toast" role="status"><span>Alterações salvas com sucesso.</span><button class="btn btn-ghost" type="button">Desfazer</button></div>
+          </div>
         </main>
 
-        <footer class="footer">© 2026 Coacus Studio · Mockup de demonstração de estilos visuais.</footer>
+        <footer class="footer">© 2026 Coacus Studio · Demonstração de estilos visuais, acessibilidade e física de materiais.</footer>
 
         <dialog id="modal">
           <h2>Confirmar ação</h2>
@@ -123,6 +426,8 @@
     </div>
   </div>
 </div>
+
+<script src="vendor/driver.js"></script>
 <script type="module" src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+#stage[data-style="pixel-art"] {
+  --bg: #1D2B53;
+  --surface: #000000;
+  --surface-2: #141B30;
+  --fg: #FFF1E8;
+  --muted: #83769C;
+  --accent: #FFEC27;
+  --accent-fg: #000000;
+  --border: #000000;
+  --ok: #00E436;
+  --warn: #FFA300;
+  --danger: #FF004D;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --shadow: 4px 4px 0 #000000;
+  --font-body: 'Press Start 2P', monospace;
+  --font-display: 'Press Start 2P', monospace;
+  --font-mono: 'Press Start 2P', monospace;
+  --gap: 20px;
+  --pad: 22px;
+  --maxw: 1100px;
+
+  /* 16-Color Palette */
+  --px-red: #FF004D;
+  --px-yellow: #FFEC27;
+  --px-green: #00E436;
+  --px-blue: #29ADFF;
+  --px-silver: #C2C3C7;
+  --px-gray: #5F574F;
+
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--fg);
+  background: var(--bg);
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+#stage[data-style="pixel-art"] .topbar {
+  background: #000000;
+  border-bottom: 4px solid #000000;
+  box-shadow: inset 0 -4px 0 var(--px-gray);
+  padding: 10px 16px;
+}
+
+#stage[data-style="pixel-art"] .brand {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--px-yellow);
+}
+
+#stage[data-style="pixel-art"] .brand-mark {
+  background: var(--px-red);
+  border: 2px solid #000000;
+  width: 1.4em;
+  height: 1.4em;
+}
+
+#stage[data-style="pixel-art"] .nav a,
+#stage[data-style="pixel-art"] .nav-tab {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--px-silver);
+  border: 2px solid #000;
+  background: var(--px-gray);
+  padding: 6px 10px;
+  box-shadow: inset 2px 2px 0 #FFF, inset -2px -2px 0 #222;
+}
+
+#stage[data-style="pixel-art"] .nav a.is-active,
+#stage[data-style="pixel-art"] .nav-tab.is-active {
+  color: #000000;
+  background: var(--px-yellow);
+  box-shadow: inset 2px 2px 0 #FFF, inset -2px -2px 0 #AB5236;
+}
+
+#stage[data-style="pixel-art"] .hero {
+  background: var(--surface);
+  border: 4px solid #000000;
+  box-shadow: inset 4px 4px 0 var(--px-silver), inset -4px -4px 0 var(--px-gray), 6px 6px 0 #000;
+  padding: 24px;
+}
+
+#stage[data-style="pixel-art"] .display {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+  color: var(--px-yellow);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+#stage[data-style="pixel-art"] .btn {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  padding: 8px 14px;
+  border: 3px solid #000;
+  cursor: pointer;
+}
+
+#stage[data-style="pixel-art"] .btn-primary {
+  background: var(--px-yellow);
+  color: #000;
+  box-shadow: inset 2px 2px 0 #FFF, inset -2px -2px 0 #AB5236;
+}
+
+#stage[data-style="pixel-art"] .card,
+#stage[data-style="pixel-art"] .panel {
+  background: var(--surface);
+  border: 4px solid #000;
+  box-shadow: inset 3px 3px 0 var(--px-silver), inset -3px -3px 0 var(--px-gray);
+  padding: 16px;
+}
+
+#stage[data-style="pixel-art"] .kpi-value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--px-green);
+}

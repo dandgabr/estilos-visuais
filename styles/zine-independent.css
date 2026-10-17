@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Impact&display=swap');
+
+#stage[data-style="zine-independent"] {
+  --bg: #EFECE6;
+  --surface: #FFFFFF;
+  --surface-2: #E3DFD5;
+  --fg: #080808;
+  --muted: #444444;
+  --accent: #FF007F;
+  --accent-fg: #FFFFFF;
+  --border: #080808;
+  --ok: #000000;
+  --warn: #FAFF00;
+  --danger: #FF007F;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --shadow: 4px 4px 0px #080808;
+  --font-body: 'Courier Prime', monospace;
+  --font-display: Impact, sans-serif;
+  --font-mono: 'Courier Prime', monospace;
+  --gap: 22px;
+  --pad: 24px;
+  --maxw: 1100px;
+
+  /* Zine Toner & Highlights */
+  --zine-tape: #E5D3B3;
+  --zine-yellow: #FAFF00;
+  --zine-pink: #FF007F;
+
+  font-size: 15px;
+  color: var(--fg);
+  background: var(--bg);
+  filter: contrast(115%);
+}
+
+#stage[data-style="zine-independent"] .topbar {
+  background: var(--fg);
+  color: #FFFFFF;
+  border-bottom: 3px solid #000;
+  padding: 10px 18px;
+}
+
+#stage[data-style="zine-independent"] .brand {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+#stage[data-style="zine-independent"] .brand-mark {
+  background: var(--zine-yellow);
+  width: 1.5em;
+  height: 1.5em;
+  border: 2px solid #000;
+}
+
+#stage[data-style="zine-independent"] .nav a,
+#stage[data-style="zine-independent"] .nav-tab {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #CCCCCC;
+  border: 1px dashed #FFFFFF;
+  padding: 4px 12px;
+}
+
+#stage[data-style="zine-independent"] .nav a.is-active,
+#stage[data-style="zine-independent"] .nav-tab.is-active {
+  color: #000000;
+  background: var(--zine-yellow);
+  border-color: var(--zine-yellow);
+}
+
+#stage[data-style="zine-independent"] .hero {
+  background: #FFFFFF;
+  border: 3px solid var(--fg);
+  box-shadow: 6px 6px 0px var(--fg);
+  padding: 32px 24px;
+  transform: rotate(-0.5deg);
+}
+
+#stage[data-style="zine-independent"] .display {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--fg);
+  background: var(--zine-yellow);
+  display: inline-block;
+  padding: 2px 10px;
+}
+
+#stage[data-style="zine-independent"] .btn {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+  padding: 8px 18px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 2px solid var(--fg);
+}
+
+#stage[data-style="zine-independent"] .btn-primary {
+  background: var(--fg);
+  color: #FFFFFF;
+  box-shadow: 3px 3px 0 var(--zine-pink);
+}
+
+#stage[data-style="zine-independent"] .card,
+#stage[data-style="zine-independent"] .panel {
+  background: #FFFFFF;
+  border: 2px solid var(--fg);
+  box-shadow: 4px 4px 0 var(--fg);
+  padding: 20px;
+}
+
+#stage[data-style="zine-independent"] .kpi-value {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--zine-pink);
+}

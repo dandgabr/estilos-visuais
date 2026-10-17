@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&display=swap');
+
+#stage[data-style="art-nouveau"] {
+  --bg: #F4EEDD;
+  --surface: #FAF6ED;
+  --surface-2: #E8DECA;
+  --fg: #2C261E;
+  --muted: #6B6152;
+  --accent: #C28B38;
+  --accent-fg: #1A150E;
+  --border: #3A4D39;
+  --ok: #4A6B48;
+  --warn: #C28B38;
+  --danger: #9E3A3A;
+  --radius: 28px 6px 28px 6px;
+  --radius-sm: 14px 4px 14px 4px;
+  --shadow: 0 8px 24px rgba(44, 38, 30, 0.12);
+  --font-body: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cinzel Decorative', Georgia, serif;
+  --font-mono: 'Cormorant Garamond', monospace;
+  --gap: 24px;
+  --pad: 26px;
+  --maxw: 1140px;
+
+  /* Art Nouveau Palette */
+  --nouveau-gold: #C28B38;
+  --nouveau-sage: #738671;
+  --nouveau-forest: #3A4D39;
+  --nouveau-terracotta: #B85D43;
+
+  font-size: 18px;
+  color: var(--fg);
+  background:
+    radial-gradient(circle at 80% 20%, rgba(194, 139, 56, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #F9F5EC 0%, #F1E9D7 100%);
+}
+
+#stage[data-style="art-nouveau"] .topbar {
+  background: rgba(250, 246, 237, 0.95);
+  border-bottom: 2px solid var(--nouveau-forest);
+  border-radius: 0 0 32px 32px;
+  padding: 14px 24px;
+  box-shadow: 0 4px 16px rgba(58, 77, 57, 0.08);
+}
+
+#stage[data-style="art-nouveau"] .brand {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  color: var(--nouveau-forest);
+}
+
+#stage[data-style="art-nouveau"] .brand-mark {
+  background: radial-gradient(circle, var(--nouveau-gold) 0%, var(--nouveau-forest) 100%);
+  border-radius: 50% 20% 50% 20%;
+  border: 1px solid var(--nouveau-gold);
+  width: 1.6em;
+  height: 1.6em;
+}
+
+#stage[data-style="art-nouveau"] .nav a,
+#stage[data-style="art-nouveau"] .nav-tab {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--muted);
+  padding: 6px 16px;
+  border-radius: 18px 4px 18px 4px;
+  transition: all 0.2s ease;
+}
+
+#stage[data-style="art-nouveau"] .nav a.is-active,
+#stage[data-style="art-nouveau"] .nav-tab.is-active {
+  color: #FFFFFF;
+  background: var(--nouveau-forest);
+}
+
+#stage[data-style="art-nouveau"] .hero {
+  background: var(--surface);
+  border: 2px solid var(--nouveau-gold);
+  border-radius: 40px 10px 40px 10px;
+  padding: 40px 32px;
+  box-shadow: 0 12px 32px rgba(194, 139, 56, 0.15);
+}
+
+#stage[data-style="art-nouveau"] .display {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  color: var(--nouveau-forest);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+#stage[data-style="art-nouveau"] .btn {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 10px 26px;
+  border-radius: 24px 6px 24px 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#stage[data-style="art-nouveau"] .btn-primary {
+  background: var(--nouveau-forest);
+  color: #FFFFFF;
+  border: 1px solid var(--nouveau-gold);
+}
+
+#stage[data-style="art-nouveau"] .btn-primary:hover {
+  background: var(--nouveau-gold);
+  color: var(--fg);
+}
+
+#stage[data-style="art-nouveau"] .card,
+#stage[data-style="art-nouveau"] .panel {
+  background: var(--surface);
+  border: 1px solid var(--nouveau-gold);
+  border-radius: 28px 8px 28px 8px;
+  padding: 24px;
+  box-shadow: 0 6px 20px rgba(44, 38, 30, 0.06);
+}
+
+#stage[data-style="art-nouveau"] .kpi-value {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  color: var(--nouveau-gold);
+}
