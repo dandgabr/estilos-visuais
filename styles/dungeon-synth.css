@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=MedievalSharp&display=swap');
+
+#stage[data-style="dungeon-synth"] {
+  --bg: #0F1210;
+  --surface: #171D19;
+  --surface-2: #212924;
+  --fg: #D4DDD6;
+  --muted: #7E8C83;
+  --accent: #5C8C67;
+  --accent-fg: #0A0F0C;
+  --border: #334037;
+  --ok: #5C8C67;
+  --warn: #B59E5F;
+  --danger: #8C3B3B;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
+  --font-body: 'MedievalSharp', cursive, serif;
+  --font-display: 'UnifrakturMaguntia', cursive, serif;
+  --font-mono: 'MedievalSharp', monospace;
+  --gap: 20px;
+  --pad: 22px;
+  --maxw: 1100px;
+
+  /* Crypt Stone & Moss */
+  --crypt-stone: #1A211D;
+  --moss-green: #5C8C67;
+  --torch-amber: #B59E5F;
+
+  font-size: 16px;
+  color: var(--fg);
+  background:
+    radial-gradient(circle at 50% 30%, rgba(92, 140, 103, 0.05) 0%, transparent 60%),
+    linear-gradient(180deg, #111613 0%, #090C0A 100%);
+}
+
+#stage[data-style="dungeon-synth"] .topbar {
+  background: #141A16;
+  border-bottom: 2px solid var(--border);
+  padding: 12px 20px;
+}
+
+#stage[data-style="dungeon-synth"] .brand {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--moss-green);
+  text-shadow: 0 0 10px rgba(92, 140, 103, 0.4);
+}
+
+#stage[data-style="dungeon-synth"] .brand-mark {
+  background: #000;
+  border: 1px solid var(--moss-green);
+  width: 1.4em;
+  height: 1.4em;
+}
+
+#stage[data-style="dungeon-synth"] .nav a,
+#stage[data-style="dungeon-synth"] .nav-tab {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+  background: #0E1310;
+}
+
+#stage[data-style="dungeon-synth"] .nav a.is-active,
+#stage[data-style="dungeon-synth"] .nav-tab.is-active {
+  color: #FFFFFF;
+  background: var(--crypt-stone);
+  border-color: var(--moss-green);
+}
+
+#stage[data-style="dungeon-synth"] .hero {
+  background: var(--crypt-stone);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--moss-green);
+  padding: 32px 24px;
+}
+
+#stage[data-style="dungeon-synth"] .display {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  color: #FFFFFF;
+  text-shadow: 0 0 12px rgba(92, 140, 103, 0.4);
+}
+
+#stage[data-style="dungeon-synth"] .btn {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 8px 18px;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+#stage[data-style="dungeon-synth"] .btn-primary {
+  background: var(--moss-green);
+  color: #0A0F0C;
+  border: 1px solid #7BAA86;
+  font-weight: 700;
+}
+
+#stage[data-style="dungeon-synth"] .card,
+#stage[data-style="dungeon-synth"] .panel {
+  background: var(--crypt-stone);
+  border: 1px solid var(--border);
+  padding: 20px;
+}
+
+#stage[data-style="dungeon-synth"] .kpi-value {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  color: var(--torch-amber);
+}

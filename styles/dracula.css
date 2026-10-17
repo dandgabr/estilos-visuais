@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Inter:wght@400;600;700&display=swap');
+
+#stage[data-style="dracula"] {
+  --bg: #282A36;
+  --surface: #343746;
+  --surface-2: #44475A;
+  --fg: #F8F8F2;
+  --muted: #6272A4;
+  --accent: #BD93F9;
+  --accent-fg: #282A36;
+  --border: #44475A;
+  --ok: #50FA7B;
+  --warn: #F1FA8C;
+  --danger: #FF5555;
+  --radius: 8px;
+  --radius-sm: 4px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Fira Code', monospace;
+  --font-mono: 'Fira Code', monospace;
+  --gap: 20px;
+  --pad: 22px;
+  --maxw: 1140px;
+
+  /* Official Dracula Palette (Zeno Rocha) */
+  --dracula-purple: #BD93F9;
+  --dracula-pink: #FF79C6;
+  --dracula-cyan: #8BE9FD;
+  --dracula-green: #50FA7B;
+  --dracula-orange: #FFB86C;
+  --dracula-yellow: #F1FA8C;
+  --dracula-comment: #6272A4;
+
+  font-size: 15px;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+#stage[data-style="dracula"] .topbar {
+  background: #21222C;
+  border-bottom: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+#stage[data-style="dracula"] .brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--dracula-purple);
+}
+
+#stage[data-style="dracula"] .brand-mark {
+  background: radial-gradient(circle, var(--dracula-pink) 0%, var(--dracula-purple) 100%);
+  border-radius: 6px;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+#stage[data-style="dracula"] .nav a,
+#stage[data-style="dracula"] .nav-tab {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted);
+  border-radius: 6px;
+  padding: 6px 14px;
+  background: transparent;
+  transition: all 0.15s ease;
+}
+
+#stage[data-style="dracula"] .nav a:hover,
+#stage[data-style="dracula"] .nav-tab:hover {
+  color: var(--dracula-cyan);
+  background: var(--surface);
+}
+
+#stage[data-style="dracula"] .nav a.is-active,
+#stage[data-style="dracula"] .nav-tab.is-active {
+  color: #282A36;
+  background: var(--dracula-green);
+  font-weight: 700;
+}
+
+#stage[data-style="dracula"] .hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--dracula-purple);
+  border-radius: 10px;
+  padding: 32px 26px;
+  box-shadow: var(--shadow);
+}
+
+#stage[data-style="dracula"] .display {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--dracula-pink);
+  margin-bottom: 12px;
+}
+
+#stage[data-style="dracula"] .btn {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+#stage[data-style="dracula"] .btn-primary {
+  background: var(--dracula-purple);
+  color: #282A36;
+  border: 1px solid var(--dracula-purple);
+  font-weight: 700;
+}
+
+#stage[data-style="dracula"] .btn-primary:hover {
+  background: #CAABF8;
+  box-shadow: 0 0 12px rgba(189, 147, 249, 0.4);
+}
+
+#stage[data-style="dracula"] .btn-secondary {
+  background: var(--surface-2);
+  color: var(--dracula-cyan);
+  border: 1px solid var(--border);
+}
+
+#stage[data-style="dracula"] .card,
+#stage[data-style="dracula"] .panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+#stage[data-style="dracula"] .kpi-value {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--dracula-green);
+}

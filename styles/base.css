@@ -18,8 +18,9 @@
 #stage .brand { font: 700 1.25rem var(--font-display); text-decoration: none; margin-right: auto; display: flex; gap: 8px; align-items: center; }
 #stage .brand-mark { width: 1.4em; height: 1.4em; display: inline-block; background: var(--accent); border-radius: var(--radius-sm); }
 #stage .nav { display: flex; gap: 6px; flex-wrap: wrap; }
-#stage .nav a { padding: 6px 12px; text-decoration: none; border-radius: var(--radius-sm); }
-#stage .nav a.is-active { background: var(--accent); color: var(--accent-fg); }
+#stage .nav a, #stage .nav button.nav-tab { padding: 6px 12px; text-decoration: none; border-radius: var(--radius-sm); font: inherit; color: inherit; border: 1px solid transparent; background: transparent; cursor: pointer; transition: background-color .15s ease, color .15s ease; }
+#stage .nav a:hover, #stage .nav button.nav-tab:hover { background: var(--surface-2); }
+#stage .nav a.is-active, #stage .nav button.nav-tab.is-active { background: var(--accent); color: var(--accent-fg); font-weight: 600; }
 
 #stage .hero { padding: 56px 0 40px; }
 #stage .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; color: var(--muted); }
@@ -70,5 +71,55 @@
 #stage dialog::backdrop { background: rgba(0,0,0,.5); }
 #stage dialog .actions { margin-top: 16px; justify-content: flex-end; }
 #stage .footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
+
+/* 4 Visões Demonstrativas */
+#stage .view-pane[hidden] { display: none !important; }
+#stage .view-pane { animation: fadeIn .2s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+#stage .view-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin: 32px 0 24px; flex-wrap: wrap; }
+#stage .view-subtitle { color: var(--muted); margin: 4px 0 0; }
+#stage .view-actions { display: flex; gap: 10px; }
+
+/* Kanban */
+#stage .kanban-board { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--gap); align-items: start; }
+#stage .kanban-col { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+#stage .kanban-col-head { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+#stage .kanban-col-head h3 { font-size: 1.1rem; margin: 0; flex: 1; }
+#stage .kanban-dot { width: 10px; height: 10px; border-radius: 50%; }
+#stage .kanban-cards { display: grid; gap: 12px; }
+#stage .kanban-card { padding: 14px; }
+#stage .kanban-card h4 { margin: 8px 0 4px; font-size: 1rem; }
+#stage .kanban-card p { font-size: .85rem; color: var(--muted); margin: 0 0 12px; }
+#stage .kanban-progress { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+#stage .progress-bar { flex: 1; height: 6px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 99px; overflow: hidden; }
+#stage .progress-bar i { display: block; height: 100%; background: var(--accent); border-radius: 99px; }
+#stage .progress-val { font-size: .75rem; font-weight: 600; color: var(--muted); }
+#stage .kanban-card-foot { display: flex; justify-content: space-between; align-items: center; font-size: .75rem; color: var(--muted); }
+#stage .avatar-sm { width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: var(--accent-fg); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .7rem; }
+
+/* Equipe */
+#stage .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--gap); }
+#stage .team-card { text-align: center; display: flex; flex-direction: column; align-items: center; }
+#stage .team-avatar-wrap { position: relative; margin-bottom: 12px; }
+#stage .avatar-lg { width: 64px; height: 64px; border-radius: 50%; background: var(--accent); color: var(--accent-fg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; }
+#stage .status-indicator { position: absolute; bottom: 2px; right: 2px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--surface); }
+#stage .status-indicator.online { background: var(--ok); }
+#stage .status-indicator.busy { background: var(--danger); }
+#stage .status-indicator.offline { background: var(--muted); }
+#stage .team-card h3 { margin: 0 0 4px; font-size: 1.15rem; }
+#stage .team-role { color: var(--muted); font-size: .85rem; margin-bottom: 12px; }
+#stage .team-tags { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; margin-bottom: 16px; }
+#stage .team-card-actions { display: flex; gap: 8px; width: 100%; justify-content: center; margin-top: auto; }
+#stage .btn-sm { padding: 6px 12px; min-height: 32px; font-size: .85rem; }
+
+/* Relatórios & Telemetria */
+#stage .analytics-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--gap); }
+#stage .table-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+#stage .table-toolbar h3 { margin: 0; }
+#stage .search-sm { width: 220px; font-size: .85rem; padding: 6px 10px; min-height: 34px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--surface); color: inherit; }
+#stage .table-dense th, #stage .table-dense td { padding: 12px 14px; }
+#stage .sparkline-bar { display: flex; align-items: flex-end; gap: 3px; height: 20px; width: 60px; }
+#stage .sparkline-bar i { flex: 1; background: var(--accent); height: var(--h); border-radius: 1px; }
 
 @media (prefers-reduced-motion: reduce) { #stage *, #stage *::before, #stage *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; } }

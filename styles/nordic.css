@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap');
+
+#stage[data-style="nordic"] {
+  --bg: #ECEFF4;
+  --surface: #FFFFFF;
+  --surface-2: #E5E9F0;
+  --fg: #2E3440;
+  --muted: #4C566A;
+  --accent: #5E81AC;
+  --accent-fg: #FFFFFF;
+  --border: #D8DEE9;
+  --ok: #A3BE8C;
+  --warn: #EBCB8B;
+  --danger: #BF616A;
+  --radius: 8px;
+  --radius-sm: 4px;
+  --shadow: 0 4px 16px rgba(46, 52, 64, 0.08);
+  --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+  --gap: 22px;
+  --pad: 24px;
+  --maxw: 1140px;
+
+  /* Nord Palette (Arctic Ice & Hygge) */
+  --nord-polar-night: #2E3440;
+  --nord-snow-storm: #ECEFF4;
+  --nord-frost-blue: #88C0D0;
+  --nord-frost-deep: #5E81AC;
+  --nord-aurora-green: #A3BE8C;
+  --nord-aurora-red: #BF616A;
+
+  font-size: 15px;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+#stage[data-style="nordic"] .topbar {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 22px;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(46, 52, 64, 0.04);
+}
+
+#stage[data-style="nordic"] .brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  color: var(--nord-polar-night);
+}
+
+#stage[data-style="nordic"] .brand-mark {
+  background: linear-gradient(135deg, var(--nord-frost-blue) 0%, var(--nord-frost-deep) 100%);
+  border-radius: 4px;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+#stage[data-style="nordic"] .nav a,
+#stage[data-style="nordic"] .nav-tab {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted);
+  border-radius: 6px;
+  padding: 6px 14px;
+  background: transparent;
+  transition: all 0.15s ease;
+}
+
+#stage[data-style="nordic"] .nav a:hover,
+#stage[data-style="nordic"] .nav-tab:hover {
+  color: var(--nord-polar-night);
+  background: var(--surface-2);
+}
+
+#stage[data-style="nordic"] .nav a.is-active,
+#stage[data-style="nordic"] .nav-tab.is-active {
+  color: #FFFFFF;
+  background: var(--nord-frost-deep);
+}
+
+#stage[data-style="nordic"] .hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 36px 30px;
+  box-shadow: var(--shadow);
+}
+
+#stage[data-style="nordic"] .display {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--nord-polar-night);
+  margin-bottom: 12px;
+}
+
+#stage[data-style="nordic"] .btn {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+#stage[data-style="nordic"] .btn-primary {
+  background: var(--nord-frost-deep);
+  color: #FFFFFF;
+  border: 1px solid var(--nord-frost-deep);
+}
+
+#stage[data-style="nordic"] .btn-primary:hover {
+  background: #4C6F98;
+}
+
+#stage[data-style="nordic"] .btn-secondary {
+  background: var(--surface-2);
+  color: var(--nord-polar-night);
+  border: 1px solid var(--border);
+}
+
+#stage[data-style="nordic"] .card,
+#stage[data-style="nordic"] .panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px;
+  box-shadow: 0 2px 8px rgba(46, 52, 64, 0.04);
+}
+
+#stage[data-style="nordic"] .kpi-value {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--nord-frost-blue);
+}

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=EB+Garamond:ital,wght@0,500;0,700;1,400&display=swap');
+
+#stage[data-style="dark-fantasy"] {
+  --bg: #0C0A09;
+  --surface: #181513;
+  --surface-2: #24201D;
+  --fg: #E6DFD5;
+  --muted: #8F8477;
+  --accent: #B22222;
+  --accent-fg: #FFFFFF;
+  --border: #3D352E;
+  --ok: #4A6B48;
+  --warn: #C99700;
+  --danger: #B22222;
+  --radius: 2px;
+  --radius-sm: 1px;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.85);
+  --font-body: 'EB Garamond', Georgia, serif;
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-mono: 'Cinzel', monospace;
+  --gap: 22px;
+  --pad: 24px;
+  --maxw: 1140px;
+
+  /* Grimdark Iron & Blood */
+  --blood-crimson: #8B0000;
+  --charred-black: #0A0908;
+  --wrought-iron: #2D2722;
+  --antique-gold: #C99700;
+
+  font-size: 17px;
+  color: var(--fg);
+  background:
+    radial-gradient(circle at 50% 20%, rgba(139, 0, 0, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #120F0D 0%, #080706 100%);
+}
+
+#stage[data-style="dark-fantasy"] .topbar {
+  background: rgba(24, 21, 19, 0.95);
+  border-bottom: 2px solid var(--border);
+  padding: 14px 22px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
+}
+
+#stage[data-style="dark-fantasy"] .brand {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.15em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(178, 34, 34, 0.6);
+}
+
+#stage[data-style="dark-fantasy"] .brand-mark {
+  background: var(--blood-crimson);
+  border: 1px solid var(--antique-gold);
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 2px;
+}
+
+#stage[data-style="dark-fantasy"] .nav a,
+#stage[data-style="dark-fantasy"] .nav-tab {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  background: #14110F;
+  padding: 6px 14px;
+  text-transform: uppercase;
+}
+
+#stage[data-style="dark-fantasy"] .nav a.is-active,
+#stage[data-style="dark-fantasy"] .nav-tab.is-active {
+  color: #FFFFFF;
+  background: var(--blood-crimson);
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(178, 34, 34, 0.5);
+}
+
+#stage[data-style="dark-fantasy"] .hero {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-left: 6px solid var(--blood-crimson);
+  padding: 36px 30px;
+}
+
+#stage[data-style="dark-fantasy"] .display {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 0 var(--blood-crimson);
+}
+
+#stage[data-style="dark-fantasy"] .btn {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 10px 22px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#stage[data-style="dark-fantasy"] .btn-primary {
+  background: var(--blood-crimson);
+  color: #FFFFFF;
+  border: 1px solid #C41E3A;
+  box-shadow: 0 0 12px rgba(178, 34, 34, 0.4);
+}
+
+#stage[data-style="dark-fantasy"] .card,
+#stage[data-style="dark-fantasy"] .panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 22px;
+}
+
+#stage[data-style="dark-fantasy"] .kpi-value {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--antique-gold);
+}

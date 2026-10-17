@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Quicksand:wght@500;700&display=swap');
+
+#stage[data-style="dreamcore"] {
+  --bg: #EAE6FA;
+  --surface: rgba(255, 255, 255, 0.85);
+  --surface-2: #E1DAFA;
+  --fg: #3B3355;
+  --muted: #7A7299;
+  --accent: #B8A9F8;
+  --accent-fg: #1F1938;
+  --border: #D1C7F5;
+  --ok: #8CE8C3;
+  --warn: #FCE2A6;
+  --danger: #F8A5C2;
+  --radius: 24px;
+  --radius-sm: 12px;
+  --shadow: 0 10px 30px rgba(184, 169, 248, 0.35);
+  --font-body: 'Quicksand', system-ui, sans-serif;
+  --font-display: 'Comfortaa', cursive, sans-serif;
+  --font-mono: 'Comfortaa', monospace;
+  --gap: 22px;
+  --pad: 24px;
+  --maxw: 1120px;
+
+  /* Ethereal Pastels & Cloud Bloom */
+  --dream-lavender: #EAE6FA;
+  --dream-cloud: #FFFFFF;
+  --dream-mint: #E2F9F0;
+  --dream-peach: #FFEBE6;
+
+  font-size: 16px;
+  color: var(--fg);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 235, 230, 0.7) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(226, 249, 240, 0.7) 0%, transparent 50%),
+    linear-gradient(180deg, #F5F2FF 0%, #E8E2FA 100%);
+  background-attachment: fixed;
+}
+
+#stage[data-style="dreamcore"] .topbar {
+  background: rgba(255, 255, 255, 0.75);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 22px;
+  box-shadow: 0 4px 20px rgba(184, 169, 248, 0.2);
+}
+
+#stage[data-style="dreamcore"] .brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--fg);
+}
+
+#stage[data-style="dreamcore"] .brand-mark {
+  background: radial-gradient(circle, #FFFFFF 0%, var(--accent) 100%);
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  box-shadow: 0 0 10px rgba(184, 169, 248, 0.6);
+}
+
+#stage[data-style="dreamcore"] .nav a,
+#stage[data-style="dreamcore"] .nav-tab {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 6px 14px;
+  transition: all 0.2s ease;
+}
+
+#stage[data-style="dreamcore"] .nav a.is-active,
+#stage[data-style="dreamcore"] .nav-tab.is-active {
+  color: #1F1938;
+  background: #FFFFFF;
+  box-shadow: 0 2px 10px rgba(184, 169, 248, 0.3);
+}
+
+#stage[data-style="dreamcore"] .hero {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 32px;
+  padding: 36px 30px;
+  box-shadow: 0 12px 36px rgba(184, 169, 248, 0.25);
+}
+
+#stage[data-style="dreamcore"] .display {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: #2F2848;
+}
+
+#stage[data-style="dreamcore"] .btn {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#stage[data-style="dreamcore"] .btn-primary {
+  background: var(--accent);
+  color: #1F1938;
+  border: none;
+  box-shadow: 0 4px 16px rgba(184, 169, 248, 0.5);
+}
+
+#stage[data-style="dreamcore"] .card,
+#stage[data-style="dreamcore"] .panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(184, 169, 248, 0.15);
+}
+
+#stage[data-style="dreamcore"] .kpi-value {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: #6C5CE7;
+}

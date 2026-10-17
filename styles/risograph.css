@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+#stage[data-style="risograph"] {
+  --bg: #F7F2E8;
+  --surface: #FFFFFF;
+  --surface-2: #EADBCA;
+  --fg: #1D1D2C;
+  --muted: #555566;
+  --accent: #FF48B0;
+  --accent-fg: #FFFFFF;
+  --border: #1D1D2C;
+  --ok: #00A95C;
+  --warn: #FFE800;
+  --danger: #FF48B0;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --shadow: 3px 3px 0 #0078BF;
+  --font-body: 'Space Grotesk', system-ui, sans-serif;
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+  --gap: 22px;
+  --pad: 24px;
+  --maxw: 1120px;
+
+  /* Riso Spot Inks */
+  --riso-pink: #FF48B0;
+  --riso-blue: #0078BF;
+  --riso-yellow: #FFE800;
+  --riso-ink-black: #1D1D2C;
+
+  font-size: 16px;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+#stage[data-style="risograph"] .topbar {
+  background: var(--bg);
+  border-bottom: 2px solid var(--border);
+  box-shadow: 0 3px 0 var(--riso-pink);
+  padding: 12px 20px;
+}
+
+#stage[data-style="risograph"] .brand {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--riso-blue);
+  text-transform: uppercase;
+}
+
+#stage[data-style="risograph"] .brand-mark {
+  background: var(--riso-pink);
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  width: 1.5em;
+  height: 1.5em;
+  box-shadow: 2px 2px 0 var(--riso-yellow);
+}
+
+#stage[data-style="risograph"] .nav a,
+#stage[data-style="risograph"] .nav-tab {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--fg);
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  box-shadow: 2px 2px 0 var(--border);
+}
+
+#stage[data-style="risograph"] .nav a.is-active,
+#stage[data-style="risograph"] .nav-tab.is-active {
+  background: var(--riso-pink);
+  color: #FFFFFF;
+  border-color: var(--border);
+  box-shadow: 2px 2px 0 var(--riso-blue);
+}
+
+#stage[data-style="risograph"] .hero {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  box-shadow: 4px 4px 0 var(--riso-blue);
+  padding: 34px 28px;
+}
+
+#stage[data-style="risograph"] .display {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-weight: 800;
+  color: var(--fg);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+#stage[data-style="risograph"] .btn {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 10px 22px;
+  border: 2px solid var(--border);
+  cursor: pointer;
+}
+
+#stage[data-style="risograph"] .btn-primary {
+  background: var(--riso-pink);
+  color: #FFFFFF;
+  box-shadow: 3px 3px 0 var(--riso-blue);
+}
+
+#stage[data-style="risograph"] .card,
+#stage[data-style="risograph"] .panel {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  box-shadow: 3px 3px 0 var(--riso-pink);
+  padding: 22px;
+}
+
+#stage[data-style="risograph"] .kpi-value {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--riso-blue);
+}
