@@ -83,6 +83,7 @@
 }
 
 #stage[data-style="nordic"] .hero {
+  margin-top: var(--gap);
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;

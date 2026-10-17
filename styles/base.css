@@ -50,7 +50,7 @@
 #stage .bars i { flex: 1; background: var(--accent); border-radius: var(--radius-sm) var(--radius-sm) 0 0; height: var(--h); }
 @media (max-width: 640px) { #stage .chart { grid-column: auto; } }
 
-#stage .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap); align-items: start; }
+#stage .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap); margin-top: var(--gap); align-items: start; }
 #stage form { display: grid; gap: 14px; }
 #stage label { display: grid; gap: 4px; font-size: .9rem; font-weight: 600; }
 #stage input[type=text], #stage input[type=email], #stage select, #stage textarea {

@@ -81,6 +81,7 @@
 }
 
 #stage[data-style="dreamcore"] .hero {
+  margin-top: var(--gap);
   background: var(--surface);
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 32px;

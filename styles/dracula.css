@@ -84,6 +84,7 @@
 }
 
 #stage[data-style="dracula"] .hero {
+  margin-top: var(--gap);
   background: var(--surface);
   border: 1px solid var(--border);
   border-left: 4px solid var(--dracula-purple);
