@@ -49,7 +49,7 @@
         <main id="main-content">
           <!-- ABA 1: PAINEL (Overview / Marketing / Form) -->
           <div class="view-pane is-active" id="view-painel" role="tabpanel" aria-labelledby="tab-painel">
-            <section class="hero" id="inicio">
+            <section class="hero" id="inicio" data-label-scene="Cena " data-label-chapter="Capítulo 1 · Abertura">
               <p class="eyebrow">Plataforma de design · v2.6</p>
               <h1 class="display">Crie interfaces com identidade própria</h1>
               <p class="lead">Um painel de exemplo para comparar como cada estilo visual trata tipografia, cor, superfície, forma e movimento.</p>
@@ -60,30 +60,30 @@
               </div>
             </section>
 
-            <section aria-labelledby="t-metricas">
+            <section aria-labelledby="t-metricas" data-label-scene="Cena ">
               <h2 class="section-title" id="t-metricas">Métricas da semana</h2>
               <div class="kpis">
-                <article class="card kpi"><span class="kpi-label">Projetos ativos</span><strong class="kpi-value">128</strong><span class="badge ok">+12%</span></article>
-                <article class="card kpi"><span class="kpi-label">Tempo médio</span><strong class="kpi-value">4,2 h</strong><span class="badge warn">−3%</span></article>
-                <article class="card kpi"><span class="kpi-label">Satisfação</span><strong class="kpi-value">96%</strong><span class="badge ok">+2 pp</span></article>
-                <article class="card kpi"><span class="kpi-label">Incidentes</span><strong class="kpi-value">3</strong><span class="badge danger">Atenção</span></article>
+                <article class="card kpi" data-label-kpi="projetos"><span class="kpi-label">Projetos ativos</span><strong class="kpi-value">128</strong><span class="badge ok">+12%</span></article>
+                <article class="card kpi" data-label-kpi="tempo"><span class="kpi-label">Tempo médio</span><strong class="kpi-value">4,2 h</strong><span class="badge warn">−3%</span></article>
+                <article class="card kpi" data-label-kpi="satisfação"><span class="kpi-label">Satisfação</span><strong class="kpi-value">96%</strong><span class="badge ok">+2 pp</span></article>
+                <article class="card kpi" data-label-kpi="incidentes"><span class="kpi-label">Incidentes</span><strong class="kpi-value">3</strong><span class="badge danger">Atenção</span></article>
               </div>
             </section>
 
-            <section aria-labelledby="t-recursos">
+            <section aria-labelledby="t-recursos" data-label-scene="Cena ">
               <h2 class="section-title" id="t-recursos">Recursos</h2>
               <div class="grid">
                 <article class="card feature"><h3>Componentes vivos</h3><p>Botões, campos e tabelas que respondem ao estilo escolhido.</p><a class="link-more" href="#saiba-mais">Saiba mais →</a></article>
                 <article class="card feature"><h3>Tokens consistentes</h3><p>Cores, raios e sombras controlados por variáveis.</p><a class="link-more" href="#saiba-mais">Saiba mais →</a></article>
-                <article class="card chart" role="img" aria-label="Gráfico de barras: crescimento mensal">
+                <article class="card chart" data-label-chart="gráfico" role="img" aria-label="Gráfico de barras: crescimento mensal">
                   <h3>Crescimento mensal</h3>
                   <div class="bars" aria-hidden="true"><i style="--h:35%"></i><i style="--h:55%"></i><i style="--h:42%"></i><i style="--h:70%"></i><i style="--h:62%"></i><i style="--h:88%"></i><i style="--h:100%"></i></div>
                 </article>
               </div>
             </section>
 
-            <section class="split">
-              <div class="panel">
+            <section class="split" data-label-scene="Cena ">
+              <div class="panel" data-label-panel="formulário">
                 <h2>Novo projeto</h2>
                 <form onsubmit="return false">
                   <label>Nome <input type="text" placeholder="Meu projeto"></label>
@@ -99,7 +99,7 @@
                 </form>
               </div>
 
-              <div class="panel">
+              <div class="panel" data-label-panel="registro">
                 <h2>Atividade recente</h2>
                 <div class="table-wrap">
                   <table>
@@ -116,7 +116,7 @@
               </div>
             </section>
 
-            <div class="toast" role="status"><span>Alterações salvas com sucesso.</span><button class="btn btn-ghost" type="button">Desfazer</button></div>
+            <div class="toast" role="status" data-label-notice="AVISO:"><span>Alterações salvas com sucesso.</span><button class="btn btn-ghost" type="button">Desfazer</button></div>
           </div>
 
           <!-- ABA 2: PROJETOS (Kanban Board & Workflow) -->
@@ -418,9 +418,9 @@
           </div>
         </main>
 
-        <footer class="footer">© 2026 Coacus Studio · Demonstração de estilos visuais, acessibilidade e física de materiais.</footer>
+        <footer class="footer" data-label-mode="-- NORMAL --" data-label-footer="Melhor visualizado em qualquer navegador · 88×31" data-label-last-modified="Última alteração: 2026-10-05 · palavras-chave: brutalismo, html, cru">© 2026 Coacus Studio · Demonstração de estilos visuais, acessibilidade e física de materiais.</footer>
 
-        <dialog id="modal">
+        <dialog id="modal" data-label-window="Confirmar.exe">
           <h2>Confirmar ação</h2>
           <p>Deseja publicar este projeto para toda a equipe?</p>
           <div class="actions"><button class="btn btn-ghost" id="close-modal" type="button">Cancelar</button><button class="btn btn-primary" id="ok-modal" type="button">Publicar</button></div>

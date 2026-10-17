@@ -21,8 +21,8 @@
 #stage[data-style="scrollytelling"] .nav a.is-active { background: none; color: var(--accent); box-shadow: inset 0 -2px var(--accent); }
 #stage[data-style="scrollytelling"] #view-painel > section { min-height: 78vh; display: flex; flex-direction: column; justify-content: center; padding: 8vh 0; position: relative; counter-increment: step; }
 #stage[data-style="scrollytelling"] #view-painel { counter-reset: step; }
-#stage[data-style="scrollytelling"] #view-painel > section::before { content: "Cena 0" counter(step); font: 600 .75rem var(--font-body); letter-spacing: .3em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
-#stage[data-style="scrollytelling"] #view-painel > section.hero::before { content: "Capítulo 1 · Abertura"; }
+#stage[data-style="scrollytelling"] #view-painel > section::before { content: attr(data-label-scene) counter(step); font: 600 .75rem var(--font-body); letter-spacing: .3em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+#stage[data-style="scrollytelling"] #view-painel > section.hero::before { content: attr(data-label-chapter); }
 #stage[data-style="scrollytelling"] .hero { min-height: 92vh; }
 #stage[data-style="scrollytelling"] .eyebrow { display: none; }
 #stage[data-style="scrollytelling"] .display { font-weight: 800; font-size: clamp(2.6rem, 8vw, 5.4rem); letter-spacing: -.02em; line-height: 1.02; max-width: 14ch; }

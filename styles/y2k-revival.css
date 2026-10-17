@@ -54,6 +54,6 @@
 #stage[data-style="y2k-revival"] .toast { background:var(--jelly-b); color:#fff; border-radius:999px; border:2px solid #fff; box-shadow:var(--shadow); text-shadow:0 -1px 0 #1b3fa6; }
 #stage[data-style="y2k-revival"] .toast .btn { background:var(--chrome); color:#10204a; text-shadow:none; }
 #stage[data-style="y2k-revival"] dialog { border:3px solid #fff; border-radius:16px; background:var(--surface); box-shadow:0 12px 40px rgba(42,91,215,.5); padding-top:50px; }
-#stage[data-style="y2k-revival"] dialog::before { content:"Confirmar.exe"; position:absolute; inset:0 0 auto 0; height:32px; padding:0 14px; display:flex; align-items:center; background:linear-gradient(180deg,#ffb4e1,#e0309c 55%,#b5167a); color:#fff; font:22px/1 var(--font-mono); border-radius:13px 13px 0 0; }
+#stage[data-style="y2k-revival"] dialog::before { content:attr(data-label-window); position:absolute; inset:0 0 auto 0; height:32px; padding:0 14px; display:flex; align-items:center; background:linear-gradient(180deg,#ffb4e1,#e0309c 55%,#b5167a); color:#fff; font:22px/1 var(--font-mono); border-radius:13px 13px 0 0; }
 #stage[data-style="y2k-revival"] dialog::backdrop { background:rgba(60,30,120,.5); }
 #stage[data-style="y2k-revival"] .footer { text-align:center; border-top:2px dashed #fff; }

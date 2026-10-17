@@ -15,7 +15,7 @@
 #stage p { margin: 0 0 1em; }
 
 #stage .topbar { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 16px 0; }
-#stage .brand { font: 700 1.25rem var(--font-display); text-decoration: none; margin-right: auto; display: flex; gap: 8px; align-items: center; }
+#stage .brand { font: 700 1.25rem var(--font-display); text-decoration: none; margin-inline-end: auto; display: flex; gap: 8px; align-items: center; }
 #stage .brand-mark { width: 1.4em; height: 1.4em; display: inline-block; background: var(--accent); border-radius: var(--radius-sm); }
 #stage .nav { display: flex; gap: 6px; flex-wrap: wrap; }
 #stage .nav a, #stage .nav button.nav-tab { padding: 6px 12px; text-decoration: none; border-radius: var(--radius-sm); font: inherit; color: inherit; border: 1px solid transparent; background: transparent; cursor: pointer; transition: background-color .15s ease, color .15s ease; }
@@ -29,6 +29,7 @@
 #stage .actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
 #stage .btn { font: 600 1rem var(--font-body); padding: 10px 18px; border-radius: var(--radius-sm); border: 1px solid transparent; cursor: pointer; color: inherit; background: none; min-height: 44px; }
+#stage .hero .btn { max-width: 100%; white-space: normal; }
 #stage .btn-primary { background: var(--accent); color: var(--accent-fg); }
 #stage .btn-secondary { background: var(--surface-2); border-color: var(--border); }
 #stage .btn-ghost { border-color: var(--border); }
@@ -63,7 +64,7 @@
 
 #stage .table-wrap { overflow-x: auto; }
 #stage table { width: 100%; border-collapse: collapse; }
-#stage th, #stage td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+#stage th, #stage td { text-align: start; padding: 10px 12px; border-bottom: 1px solid var(--border); white-space: nowrap; }
 #stage th { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
 
 #stage .toast { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: var(--radius); background: var(--fg); color: var(--bg); }
@@ -103,7 +104,7 @@
 #stage .team-card { text-align: center; display: flex; flex-direction: column; align-items: center; }
 #stage .team-avatar-wrap { position: relative; margin-bottom: 12px; }
 #stage .avatar-lg { width: 64px; height: 64px; border-radius: 50%; background: var(--accent); color: var(--accent-fg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; }
-#stage .status-indicator { position: absolute; bottom: 2px; right: 2px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--surface); }
+#stage .status-indicator { position: absolute; bottom: 2px; inset-inline-end: 2px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--surface); }
 #stage .status-indicator.online { background: var(--ok); }
 #stage .status-indicator.busy { background: var(--danger); }
 #stage .status-indicator.offline { background: var(--muted); }

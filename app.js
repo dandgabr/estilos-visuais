@@ -1,5 +1,5 @@
 import { STYLES } from './styles/registry.js';
-import { resolveLocale, setLocale, t } from './i18n/index.js';
+import { resolveLocale, setLocale, t, localizedStyleDescription, localizedString } from './i18n/index.js';
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => document.querySelectorAll(s);
@@ -56,7 +56,7 @@ function renderList(filter = '') {
   }
   for (const [group, items] of groups) {
     const h = document.createElement('h2');
-    h.textContent = group;
+    h.textContent = localizedString(group);
     list.append(h);
     for (const s of items) {
       const a = document.createElement('a');
@@ -146,7 +146,7 @@ async function setStyle(slug, viewParam = null) {
 
   // Metadados no cabeçalho
   $('#cur-name').textContent = s.name;
-  $('#cur-desc').textContent = s.desc;
+  $('#cur-desc').textContent = localizedStyleDescription(s.slug, s.desc);
   const skillLink = $('#style-skill-link');
   skillLink.href = skillUrl(s.slug);
   skillLink.setAttribute('aria-label', t('skill.open', { name: s.name }));
@@ -293,7 +293,7 @@ function triggerStyleTour(styleObj) {
       element: '.stage-title',
       popover: {
         title: t('tour.styleTitle', { name: styleObj.name }),
-        description: t('tour.styleDescription', { description: styleObj.desc }),
+        description: t('tour.styleDescription', { description: localizedStyleDescription(styleObj.slug, styleObj.desc) }),
         side: 'bottom',
         onPopoverRender: (popover) => appendSkillAction(popover, styleObj),
       },
@@ -361,11 +361,20 @@ $('#open-modal').onclick = () => modal.showModal();
 $('#close-modal').onclick = $('#ok-modal').onclick = () => modal.close();
 
 // Inicialização
+stage.querySelectorAll('.card').forEach((card) => { if (!card.hasAttribute('data-label-card')) card.dataset.labelCard = 'cartão'; });
+stage.querySelectorAll('.panel').forEach((panel) => { if (!panel.hasAttribute('data-label-panel')) panel.dataset.labelPanel = 'painel'; });
 await setLocale(resolveLocale(store.getLocale(), navigator.languages));
 renderList();
 handleHashChange();
 addEventListener('languagechange', async () => {
-  if (store.getLocale() === 'auto') await setLocale(resolveLocale('auto', navigator.languages));
+  if (store.getLocale() === 'auto') {
+    await setLocale(resolveLocale('auto', navigator.languages));
+    const active = STYLES.find((style) => style.slug === currentStyle);
+    if (active) {
+      $('#cur-desc').textContent = localizedStyleDescription(active.slug, active.desc);
+      document.title = `${active.name} · Estilos Coacus`;
+    }
+  }
   renderList($('#search').value);
 });
 

@@ -24,3 +24,4 @@ Task 0: complete (commits 9d88197..8ffebdd, tests: bash -lc 'python3 tools/test_
 Task 1: complete — skillUrl validates style slugs; welcome tour points to the skill; contextual popover adds a DOM link for the current style. `tools/test_help_dialog.py` and `tools/test_skill_tour.py` passed; synchronized Coacus `HEAD=origin/main` at `8ab8e28`, and all 82 raw skill URLs returned HTTP 200 with non-empty SKILL.md content.
 Task 2: complete (commits 3261c51..3261c51, tests: python3 tools/test_locale.py -> )
 Task 2: complete (commits 3261c51..3261c51, tests: python3 tools/test_locale.py -> )
+Task 3: complete (commits c4d61c4..c4d61c4, tests: python3 tools/test_locale.py -> )

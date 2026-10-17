@@ -53,4 +53,4 @@
 #stage[data-style="indie-web-revival"] dialog { border:3px ridge #b9a85a; background:#fffbe6; border-radius:0; }
 #stage[data-style="indie-web-revival"] dialog::backdrop { background:rgba(0,0,0,.45); }
 #stage[data-style="indie-web-revival"] .footer { text-align:center; border-top:3px double #1a1a1a; font-family:var(--font-mono); color:#333; }
-#stage[data-style="indie-web-revival"] .footer::after { content:"Melhor visualizado em qualquer navegador · 88×31"; display:block; margin:10px auto 0; width:max-content; max-width:100%; padding:4px 8px; background:#000; color:#39ff14; border:2px outset #888; font-size:.7rem; }
+#stage[data-style="indie-web-revival"] .footer::after { content:attr(data-label-footer); display:block; margin:10px auto 0; width:max-content; max-width:100%; padding:4px 8px; background:#000; color:#39ff14; border:2px outset #888; font-size:.7rem; }
