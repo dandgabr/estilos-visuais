@@ -11,6 +11,15 @@ let currentView = 'painel';
 let cleanup = null;
 let link = null;
 let styleLoadId = 0;
+let activeDriver = null;
+let currentVariant = 'default';
+let memoryLocale = 'auto';
+const memoryAppearances = new Map();
+const AUTONYMS = {
+  'en-US': 'English', 'pt-BR': 'Português', 'es-ES': 'Español', 'fr-FR': 'Français',
+  'de-DE': 'Deutsch', 'ru-RU': 'Русский', 'ar-SA': 'العربية', 'hi-IN': 'हिन्दी',
+  'zh-CN': '简体中文', 'ja-JP': '日本語', 'ko-KR': '한국어',
+};
 
 function skillUrl(slug) {
   if (!STYLES.some((style) => style.slug === slug)) return '';
@@ -40,9 +49,82 @@ const store = {
   setSeenStyleTour(slug) { try { localStorage.setItem(`coacus-style-tour-${slug}`, 'true'); } catch { /* ignore */ } },
   isAutoTourEnabled() { try { return localStorage.getItem('coacus-auto-tour') !== 'false'; } catch { return true; } },
   setAutoTourEnabled(enabled) { try { localStorage.setItem('coacus-auto-tour', enabled ? 'true' : 'false'); } catch { /* ignore */ } },
-  getLocale() { try { return localStorage.getItem('coacus-locale') || 'auto'; } catch { return 'auto'; } },
-  setLocale(locale) { try { localStorage.setItem('coacus-locale', locale); } catch { /* session-only */ } },
+  getLocale() { try { memoryLocale = localStorage.getItem('coacus-locale') || memoryLocale; } catch { /* session-only */ } return memoryLocale; },
+  setLocale(locale) { memoryLocale = locale; try { localStorage.setItem('coacus-locale', locale); } catch { /* session-only */ } },
+  getAppearance(slug) { try { return localStorage.getItem(`coacus-appearance-${slug}`) || memoryAppearances.get(slug) || 'default'; } catch { return memoryAppearances.get(slug) || 'default'; } },
+  setAppearance(slug, variant) { memoryAppearances.set(slug, variant); try { localStorage.setItem(`coacus-appearance-${slug}`, variant); } catch { /* session-only */ } },
 };
+
+function updateLocaleControl(preference) {
+  const selected = $('#locale-options input[name="locale"]:checked');
+  if (selected) selected.checked = false;
+  const radio = $(`#locale-options input[name="locale"][value="${CSS.escape(preference)}"]`);
+  if (radio) radio.checked = true;
+  const effective = resolveLocale(preference, navigator.languages);
+  $('#locale-trigger-value').textContent = preference === 'auto'
+    ? `${t('locale.automatic')} · ${AUTONYMS[effective]}`
+    : `${AUTONYMS[effective]} · ${effective}`;
+  $('#locale-effective').textContent = preference === 'auto'
+    ? t('locale.effective', { name: `${AUTONYMS[effective]} (${effective})` })
+    : '';
+}
+
+function updateAppearanceControl() {
+  $('#appearance-trigger-value').textContent = currentVariant === 'default'
+    ? t('appearance.group.default')
+    : ($('#appearance-options input[name="appearance"]:checked')?.closest('label')?.querySelector('strong')?.textContent || currentVariant);
+  const colors = ['--bg', '--surface', '--accent'].map((token) => getComputedStyle(stage).getPropertyValue(token).trim());
+  $$('#appearance-options .appearance-swatches i').forEach((swatch, index) => { swatch.style.backgroundColor = colors[index]; });
+}
+
+async function applyLocalePreference(preference, persist = true) {
+  if (activeDriver?.isActive()) activeDriver.destroy();
+  if (persist) store.setLocale(preference);
+  const effective = resolveLocale(preference, navigator.languages);
+  await setLocale(effective);
+  updateLocaleControl(preference);
+  updateAppearanceControl();
+  renderList($('#search').value);
+  const active = STYLES.find((style) => style.slug === currentStyle);
+  if (active) {
+    $('#cur-desc').textContent = localizedStyleDescription(active.slug, active.desc);
+    $('#style-skill-link').setAttribute('aria-label', t('skill.open', { name: active.name }));
+    $('#style-skill-link').title = t('skill.title', { name: active.name });
+    document.title = `${active.name} · Estilos Coacus`;
+  }
+}
+
+function openSelector(panelId, trigger) {
+  for (const id of ['locale-panel', 'appearance-panel']) {
+    const panel = $(`#${id}`);
+    const button = $(`[aria-controls="${id}"]`);
+    const open = id === panelId;
+    panel.hidden = !open;
+    button.setAttribute('aria-expanded', String(open));
+  }
+  const panel = $(`#${panelId}`);
+  panel.querySelector('input:checked')?.focus();
+  if (!panel.querySelector('input:checked')) trigger.focus();
+}
+
+function closeSelector(panelId, returnFocus = false) {
+  const panel = $(`#${panelId}`);
+  if (!panel || panel.hidden) return;
+  panel.hidden = true;
+  const trigger = $(`[aria-controls="${panelId}"]`);
+  trigger.setAttribute('aria-expanded', 'false');
+  if (returnFocus) trigger.focus();
+}
+
+function applyAppearance(variantId) {
+  if (variantId !== 'default') variantId = 'default';
+  currentVariant = variantId;
+  if (currentStyle) store.setAppearance(currentStyle, variantId);
+  const radio = $(`#appearance-options input[name="appearance"][value="${CSS.escape(variantId)}"]`);
+  if (radio) radio.checked = true;
+  updateAppearanceControl();
+  $('#appearance-live').textContent = `${t('appearance.group.default')}: ${t('appearance.original')}`;
+}
 
 // 1. Renderização da Lista Lateral de Estilos
 function renderList(filter = '') {
@@ -143,6 +225,8 @@ async function setStyle(slug, viewParam = null) {
   if (loadId !== styleLoadId) return;
   stage.dataset.style = s.slug;
   stage.scrollTop = 0;
+  currentVariant = store.getAppearance(s.slug);
+  if (currentVariant !== 'default') currentVariant = 'default';
 
   // Metadados no cabeçalho
   $('#cur-name').textContent = s.name;
@@ -152,6 +236,7 @@ async function setStyle(slug, viewParam = null) {
   skillLink.setAttribute('aria-label', t('skill.open', { name: s.name }));
   skillLink.title = t('skill.title', { name: s.name });
   document.title = `${s.name} · Estilos Coacus`;
+  applyAppearance(currentVariant);
 
   // Atualiza seleção na galeria
   list.querySelectorAll('a').forEach((a) => {
@@ -258,6 +343,24 @@ function startWelcomeTour() {
       },
     },
     {
+      element: '#locale-trigger',
+      popover: {
+        title: t('tour.localeTitle'),
+        description: t('tour.localeDescription'),
+        side: 'bottom',
+        align: 'start',
+      },
+    },
+    {
+      element: '#appearance-trigger',
+      popover: {
+        title: t('tour.appearanceTitle'),
+        description: t('tour.appearanceDescription'),
+        side: 'bottom',
+        align: 'start',
+      },
+    },
+    {
       element: '#stage',
       popover: {
         title: t('tour.stageTitle'),
@@ -278,6 +381,7 @@ function startWelcomeTour() {
   ]);
 
   driverObj.drive();
+  activeDriver = driverObj;
   store.setSeenWelcomeTour();
 }
 
@@ -298,9 +402,18 @@ function triggerStyleTour(styleObj) {
         onPopoverRender: (popover) => appendSkillAction(popover, styleObj),
       },
     },
+    {
+      element: '#locale-trigger',
+      popover: { title: t('tour.localeTitle'), description: t('tour.localeDescription'), side: 'bottom' },
+    },
+    {
+      element: '#appearance-trigger',
+      popover: { title: t('tour.appearanceTitle'), description: t('tour.appearanceDescription'), side: 'bottom' },
+    },
   ]);
 
   driverObj.drive();
+  activeDriver = driverObj;
   store.setSeenStyleTour(styleObj.slug);
 }
 
@@ -327,6 +440,33 @@ $('#tour-btn').onclick = () => {
   helpDialog?.showModal();
 };
 
+$('#locale-trigger').addEventListener('click', (event) => {
+  event.stopPropagation();
+  if ($('#locale-panel').hidden) openSelector('locale-panel', event.currentTarget);
+  else closeSelector('locale-panel');
+});
+$('#appearance-trigger').addEventListener('click', (event) => {
+  event.stopPropagation();
+  if ($('#appearance-panel').hidden) openSelector('appearance-panel', event.currentTarget);
+  else closeSelector('appearance-panel');
+});
+$('#locale-options').addEventListener('change', async (event) => {
+  if (event.target.matches('input[name="locale"]')) {
+    closeSelector('locale-panel', true);
+    await applyLocalePreference(event.target.value);
+  }
+});
+$('#appearance-options').addEventListener('change', (event) => {
+  if (event.target.matches('input[name="appearance"]')) applyAppearance(event.target.value);
+});
+$('#appearance-reset').addEventListener('click', () => applyAppearance('default'));
+$$('[data-close-selector]').forEach((button) => button.addEventListener('click', () => closeSelector(button.dataset.closeSelector, true)));
+document.addEventListener('click', (event) => {
+  if (event.target.closest('.selector')) return;
+  closeSelector('locale-panel');
+  closeSelector('appearance-panel');
+});
+
 $('#close-help-btn')?.addEventListener('click', () => helpDialog?.close());
 $('#dismiss-help-btn')?.addEventListener('click', () => helpDialog?.close());
 $('#accept-help-btn')?.addEventListener('click', () => {
@@ -350,7 +490,13 @@ addEventListener('hashchange', handleHashChange);
 
 // Teclado
 addEventListener('keydown', (e) => {
-  if (e.target.matches('input, textarea, select') || e.altKey || e.ctrlKey || e.metaKey) return;
+  if (e.altKey || e.ctrlKey || e.metaKey) return;
+  if (e.key === 'Escape') {
+    if (!$('#locale-panel').hidden) { e.preventDefault(); closeSelector('locale-panel', true); }
+    else if (!$('#appearance-panel').hidden) { e.preventDefault(); closeSelector('appearance-panel', true); }
+    return;
+  }
+  if (e.target.matches('input, textarea, select') || e.target.closest('.stage-preferences, .driver-popover, dialog')) return;
   if (e.key === 'ArrowLeft') go(-1);
   if (e.key === 'ArrowRight') go(1);
 });
@@ -363,19 +509,11 @@ $('#close-modal').onclick = $('#ok-modal').onclick = () => modal.close();
 // Inicialização
 stage.querySelectorAll('.card').forEach((card) => { if (!card.hasAttribute('data-label-card')) card.dataset.labelCard = 'cartão'; });
 stage.querySelectorAll('.panel').forEach((panel) => { if (!panel.hasAttribute('data-label-panel')) panel.dataset.labelPanel = 'painel'; });
-await setLocale(resolveLocale(store.getLocale(), navigator.languages));
+await applyLocalePreference(store.getLocale(), false);
 renderList();
 handleHashChange();
 addEventListener('languagechange', async () => {
-  if (store.getLocale() === 'auto') {
-    await setLocale(resolveLocale('auto', navigator.languages));
-    const active = STYLES.find((style) => style.slug === currentStyle);
-    if (active) {
-      $('#cur-desc').textContent = localizedStyleDescription(active.slug, active.desc);
-      document.title = `${active.name} · Estilos Coacus`;
-    }
-  }
-  renderList($('#search').value);
+  if (store.getLocale() === 'auto') await applyLocalePreference('auto', false);
 });
 
 // Dispara onboarding se for a primeira visita do usuário

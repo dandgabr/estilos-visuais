@@ -25,3 +25,4 @@ Task 1: complete — skillUrl validates style slugs; welcome tour points to the 
 Task 2: complete (commits 3261c51..3261c51, tests: python3 tools/test_locale.py -> )
 Task 2: complete (commits 3261c51..3261c51, tests: python3 tools/test_locale.py -> )
 Task 3: complete (commits c4d61c4..c4d61c4, tests: python3 tools/test_locale.py -> )
+Task 4: complete (commits ea8c79a..ea8c79a, tests: python3 tools/test_selectors.py -> )

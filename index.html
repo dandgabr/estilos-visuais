@@ -22,14 +22,59 @@
 
   <div class="stage-col">
     <div class="stage-bar">
-      <button id="toggle" type="button" data-i18n="nav.styles" aria-expanded="true" aria-controls="gallery">☰ Estilos</button>
-      <button id="prev" type="button" data-i18n-attr="aria-label:nav.previous" aria-label="Estilo anterior">←</button>
-      <div class="stage-title"><strong id="cur-name"></strong><span id="cur-desc"></span></div>
-      <a id="style-skill-link" class="style-skill-link" target="_blank" rel="noopener noreferrer" aria-label="Abrir skill deste estilo no Coacus" title="Abrir skill deste estilo no Coacus">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 5.5v13A2.5 2.5 0 0 1 6.5 16H20"/><path d="M9 8h6m-6 4h4"/></svg>
-      </a>
-      <button id="next" type="button" data-i18n-attr="aria-label:nav.next" aria-label="Próximo estilo">→</button>
-      <button id="tour-btn" type="button" data-i18n-attr="aria-label:nav.help;title:nav.tourTitle" aria-label="Ajuda e tour guiado" title="Tour da ferramenta e do estilo">?</button>
+      <div class="stage-main-controls">
+        <button id="toggle" type="button" data-i18n="nav.styles" aria-expanded="true" aria-controls="gallery">☰ Estilos</button>
+        <button id="prev" type="button" data-i18n-attr="aria-label:nav.previous" aria-label="Estilo anterior">←</button>
+        <div class="stage-title"><strong id="cur-name"></strong><span id="cur-desc"></span></div>
+        <a id="style-skill-link" class="style-skill-link" target="_blank" rel="noopener noreferrer" aria-label="Abrir skill deste estilo no Coacus" title="Abrir skill deste estilo no Coacus">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21z"/><path d="M4 5.5v13A2.5 2.5 0 0 1 6.5 16H20"/><path d="M9 8h6m-6 4h4"/></svg>
+        </a>
+        <button id="next" type="button" data-i18n-attr="aria-label:nav.next" aria-label="Próximo estilo">→</button>
+        <button id="tour-btn" type="button" data-i18n-attr="aria-label:nav.help;title:nav.tourTitle" aria-label="Ajuda e tour guiado" title="Tour da ferramenta e do estilo">?</button>
+      </div>
+      <div class="stage-preferences">
+        <div class="selector">
+          <button id="locale-trigger" type="button" class="selector-trigger" aria-expanded="false" aria-controls="locale-panel">
+            <span data-i18n="locale.label">Idioma</span>: <span id="locale-trigger-value">Automático</span>
+          </button>
+          <div id="locale-panel" class="selector-panel" hidden>
+            <fieldset id="locale-options">
+              <legend data-i18n="locale.select">Selecionar idioma</legend>
+              <label><input type="radio" name="locale" value="auto"><span data-i18n="locale.automatic">Idioma do dispositivo</span></label>
+              <label><input type="radio" name="locale" value="en-US"><span class="locale-autonym" lang="en-US" dir="auto">English</span><bdi dir="ltr">en-US</bdi></label>
+              <label><input type="radio" name="locale" value="pt-BR"><span class="locale-autonym" lang="pt-BR" dir="auto">Português</span><bdi dir="ltr">pt-BR</bdi></label>
+              <label><input type="radio" name="locale" value="es-ES"><span class="locale-autonym" lang="es-ES" dir="auto">Español</span><bdi dir="ltr">es-ES</bdi></label>
+              <label><input type="radio" name="locale" value="fr-FR"><span class="locale-autonym" lang="fr-FR" dir="auto">Français</span><bdi dir="ltr">fr-FR</bdi></label>
+              <label><input type="radio" name="locale" value="de-DE"><span class="locale-autonym" lang="de-DE" dir="auto">Deutsch</span><bdi dir="ltr">de-DE</bdi></label>
+              <label><input type="radio" name="locale" value="ru-RU"><span class="locale-autonym" lang="ru-RU" dir="auto">Русский</span><bdi dir="ltr">ru-RU</bdi></label>
+              <label><input type="radio" name="locale" value="ar-SA"><span class="locale-autonym" lang="ar-SA" dir="auto">العربية</span><bdi dir="ltr">ar-SA</bdi></label>
+              <label><input type="radio" name="locale" value="hi-IN"><span class="locale-autonym" lang="hi-IN" dir="auto">हिन्दी</span><bdi dir="ltr">hi-IN</bdi></label>
+              <label><input type="radio" name="locale" value="zh-CN"><span class="locale-autonym" lang="zh-CN" dir="auto">简体中文</span><bdi dir="ltr">zh-CN</bdi></label>
+              <label><input type="radio" name="locale" value="ja-JP"><span class="locale-autonym" lang="ja-JP" dir="auto">日本語</span><bdi dir="ltr">ja-JP</bdi></label>
+              <label><input type="radio" name="locale" value="ko-KR"><span class="locale-autonym" lang="ko-KR" dir="auto">한국어</span><bdi dir="ltr">ko-KR</bdi></label>
+            </fieldset>
+            <p id="locale-effective" class="selector-status" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="selector">
+          <button id="appearance-trigger" type="button" class="selector-trigger" aria-expanded="false" aria-controls="appearance-panel">
+            <span data-i18n="appearance.label">Aparência</span>: <span id="appearance-trigger-value">Padrão</span>
+          </button>
+          <div id="appearance-panel" class="selector-panel appearance-panel" hidden>
+            <div class="selector-panel-head"><h2 data-i18n="appearance.select">Selecionar aparência</h2><button type="button" class="selector-close" data-close-selector="appearance-panel" data-i18n-attr="aria-label:selector.close" aria-label="Fechar">×</button></div>
+            <fieldset id="appearance-options">
+              <legend data-i18n="appearance.group.default">Padrão</legend>
+              <label class="appearance-option">
+                <input type="radio" name="appearance" value="default" checked>
+                <span class="appearance-option-copy"><strong id="appearance-default-name" data-i18n="appearance.original">Original do estilo</strong><small id="appearance-default-description" data-i18n="appearance.originalDescription">A aparência atual, sem alterações.</small></span>
+                <span class="appearance-swatches" aria-hidden="true"><i></i><i></i><i></i></span>
+              </label>
+            </fieldset>
+            <div id="appearance-live" class="selector-status" aria-live="polite"></div>
+            <button id="appearance-reset" type="button" class="selector-reset" data-i18n="appearance.restore">Voltar ao padrão</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Mockup único, reutilizado por todos os estilos. #stage é o contêiner de rolagem. -->
