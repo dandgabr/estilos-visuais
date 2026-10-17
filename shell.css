@@ -195,5 +195,6 @@ body { background: var(--s-bg); color: var(--s-fg); font: 14px/1.4 system-ui, sa
 .dialog-foot {
   display: flex;
   justify-content: flex-end;
+  gap: 8px;
 }
 

@@ -25,6 +25,7 @@
 #stage[data-style="collage-scrapbook"] .display::after{ content:"★"; color:#d6362b; margin-left:.2em; font-size:.7em; display:inline-block; transform:rotate(15deg); }
 #stage[data-style="collage-scrapbook"] .lead{ color:#241a10; font-size:1.05rem; }
 #stage[data-style="collage-scrapbook"] .btn{ font:400 1rem var(--font-mono); border:0; border-radius:0; color:#241a10; padding:10px 20px; transition:transform .2s ease-out, filter .2s; filter:drop-shadow(2px 3px 0 rgba(0,0,0,.3)); }
+#stage[data-style="collage-scrapbook"] .view-actions{ padding:6px; }
 #stage[data-style="collage-scrapbook"] .btn-primary{ background:#d6362b; color:#fff; transform:rotate(-2deg); }
 #stage[data-style="collage-scrapbook"] .btn-secondary{ background:#fff0a8; transform:rotate(1.5deg); }
 #stage[data-style="collage-scrapbook"] .btn-ghost{ background:#f7f1e3; transform:rotate(-1deg); }

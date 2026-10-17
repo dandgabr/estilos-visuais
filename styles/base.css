@@ -66,7 +66,7 @@
 #stage th, #stage td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); white-space: nowrap; }
 #stage th { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
 
-#stage .toast { margin-top: 24px; display: flex; gap: 12px; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: var(--radius); background: var(--fg); color: var(--bg); }
+#stage .toast { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: var(--radius); background: var(--fg); color: var(--bg); }
 #stage dialog { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); color: var(--fg); padding: var(--pad); max-width: min(92vw, 420px); }
 #stage dialog::backdrop { background: rgba(0,0,0,.5); }
 #stage dialog .actions { margin-top: 16px; justify-content: flex-end; }
@@ -79,7 +79,7 @@
 
 #stage .view-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin: 32px 0 24px; flex-wrap: wrap; }
 #stage .view-subtitle { color: var(--muted); margin: 4px 0 0; }
-#stage .view-actions { display: flex; gap: 10px; }
+#stage .view-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
 /* Kanban */
 #stage .kanban-board { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--gap); align-items: start; }

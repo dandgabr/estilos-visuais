@@ -1,6 +1,6 @@
 // Revela etapas (seções) com IntersectionObserver, barra de progresso e pontos de navegação.
 export default function mount(stage) {
-  const sections = [...stage.querySelectorAll('main > section')];
+  const sections = [...stage.querySelectorAll('#view-painel > section')];
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
   const bar = document.createElement('div'); bar.className = 'fx-st-bar'; bar.setAttribute('aria-hidden', 'true');
   const fill = document.createElement('b'); bar.append(fill);

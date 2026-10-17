@@ -145,7 +145,7 @@ async function setStyle(slug, viewParam = null) {
   // Montagem de efeito FX dedicado
   if (s.fx) {
     try {
-      const mod = await import(`./styles/fx/${s.slug}.js`);
+      const mod = await import(`./styles/fx/${s.slug}.js${new URL(import.meta.url).search}`);
       if (currentStyle === s.slug) {
         cleanup = mod.default(stage) ?? null;
       }
@@ -295,14 +295,12 @@ $('#tour-btn').onclick = () => {
   helpDialog?.showModal();
 };
 
-if (autoTourToggle) {
-  autoTourToggle.onchange = (e) => {
-    store.setAutoTourEnabled(e.target.checked);
-  };
-}
-
 $('#close-help-btn')?.addEventListener('click', () => helpDialog?.close());
 $('#dismiss-help-btn')?.addEventListener('click', () => helpDialog?.close());
+$('#accept-help-btn')?.addEventListener('click', () => {
+  if (autoTourToggle) store.setAutoTourEnabled(autoTourToggle.checked);
+  helpDialog?.close();
+});
 
 $('#start-style-tour-btn')?.addEventListener('click', () => {
   helpDialog?.close();
