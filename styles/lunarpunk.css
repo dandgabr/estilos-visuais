@@ -5,15 +5,17 @@
   --radius:20px; --radius-sm:12px; --shadow:0 0 0 1px rgba(124,92,255,.15),0 10px 40px rgba(124,92,255,.15);
   --font-body:'Sora',system-ui,sans-serif; --font-display:'Fraunces',Georgia,serif; --font-mono:ui-monospace,monospace;
   --gap:22px; --pad:24px; --maxw:1100px; --mint:#2FE0C2; --moon:#F2D36B; --vio:#7C5CFF;
+  --lunar-moon-layer:radial-gradient(circle at 85% 8%,#fff8d8 0 26px,#F2D36B 27px 34px,rgba(242,211,107,.25) 35px 70px,transparent 130px);
   font-size:16px;
   background:
-    radial-gradient(circle at 85% 8%,#fff8d8 0 26px,#F2D36B 27px 34px,rgba(242,211,107,.25) 35px 70px,transparent 130px),
+    var(--lunar-moon-layer),
     radial-gradient(1.5px 1.5px at 12% 20%,#fff,transparent),radial-gradient(1px 1px at 30% 60%,#cfd6ff,transparent),radial-gradient(1.5px 1.5px at 55% 15%,#fff,transparent),
     radial-gradient(1px 1px at 72% 45%,#cfd6ff,transparent),radial-gradient(1.5px 1.5px at 90% 70%,#fff,transparent),radial-gradient(1px 1px at 45% 85%,#cfd6ff,transparent),radial-gradient(1px 1px at 8% 75%,#fff,transparent),
     radial-gradient(ellipse at 20% 100%,rgba(124,92,255,.35),transparent 55%),
     linear-gradient(180deg,#0a0e20,#0E1224 50%,#171a3d);
   background-attachment:local;
 }
+@media(max-width:640px){#stage[data-style="lunarpunk"]{--lunar-moon-layer:none}}
 #stage[data-style="lunarpunk"] .topbar{border-bottom:1px solid var(--border)}
 #stage[data-style="lunarpunk"] .brand{font-family:var(--font-display);font-weight:600;font-size:1.4rem;color:#fff}
 #stage[data-style="lunarpunk"] .brand-mark{border-radius:50%;background:#F2D36B;box-shadow:inset -7px -2px 0 0 #0E1224,0 0 14px rgba(242,211,107,.7);width:1.4em;height:1.4em}

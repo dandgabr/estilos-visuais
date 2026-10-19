@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 #stage[data-style="cassette-futurism"] {
-  --bg: #101412; --surface: #0a0d0b; --surface-2: #141c17; --fg: #33ff33; --muted: #1e824c;
+  --bg: #101412; --surface: #0a0d0b; --surface-2: #141c17; --fg: #33ff33; --muted: #35c879;
   --accent: #33ff33; --accent-fg: #000000; --border: #d8ceb9;
-  --ok: #33ff33; --warn: #ffb000; --danger: #ff3333;
+  --ok: #35c879; --warn: #ffcf55; --danger: #ff7777;
   --radius: 8px; --radius-sm: 4px; --shadow: inset 0 0 15px rgba(0,0,0,0.8), 0 0 10px rgba(51, 255, 51, 0.2);
   --font-body: 'VT323', monospace; --font-display: 'VT323', monospace; --font-mono: 'VT323', monospace;
   font-size: 19px;
@@ -23,6 +23,7 @@
 #stage[data-style="cassette-futurism"] .lead { font-size: 1.4rem; color: #2ecc71; border: 2px solid #1e824c; padding: 8px 12px; }
 #stage[data-style="cassette-futurism"] .btn { font-size: 1.4rem; border-radius: 4px; border: 2px solid #33ff33; text-transform: uppercase; letter-spacing: 0.1em; }
 #stage[data-style="cassette-futurism"] .btn-primary { background: #1a2e22; color: #33ff33; box-shadow: inset 0 0 6px rgba(51, 255, 51, 0.5); }
+#stage[data-style="cassette-futurism"] .btn[disabled] { opacity: 1; color: #A6FFA6; }
 #stage[data-style="cassette-futurism"] .btn-primary:hover { background: #33ff33; color: #000000; text-shadow: none; }
 #stage[data-style="cassette-futurism"] .btn-secondary { background: #0c140e; color: #ffb000; border-color: #ffb000; }
 #stage[data-style="cassette-futurism"] .btn-ghost { background: transparent; color: #33ff33; }

@@ -26,6 +26,14 @@
 #stage[data-style="de-stijl"] .lead { color:#222; }
 #stage[data-style="de-stijl"] .actions { padding-bottom:36px; }
 @media (max-width:640px) { #stage[data-style="de-stijl"] .hero { grid-template-columns:1fr; } #stage[data-style="de-stijl"] .hero::after { grid-column:1; grid-row:auto; min-height:70px; border-left:0; border-top:var(--rule) solid #111; } }
+@media (max-width:1100px) {
+  #stage[data-style="de-stijl"] .hero { grid-template-columns:minmax(0,1fr); }
+  #stage[data-style="de-stijl"] .hero > * { grid-column:1; min-width:0; max-width:100%; }
+  #stage[data-style="de-stijl"] .hero::after { display:none; }
+  #stage[data-style="de-stijl"] .display { font-size:clamp(2rem,5vw,3.5rem); overflow-wrap:anywhere; }
+  #stage[data-style="de-stijl"] .actions { display:flex; flex-wrap:wrap; gap:12px; min-width:0; }
+  #stage[data-style="de-stijl"] .actions > .btn { min-width:0; max-width:100%; white-space:normal; overflow-wrap:anywhere; }
+}
 #stage[data-style="de-stijl"] .btn { border:var(--rule) solid #111; border-radius:0; font-weight:800; text-transform:uppercase; background:#fff; transition:background .1s linear; }
 #stage[data-style="de-stijl"] .btn-primary { background:var(--yellow); color:#111; }
 #stage[data-style="de-stijl"] .btn-secondary { background:var(--blue); color:#fff; }

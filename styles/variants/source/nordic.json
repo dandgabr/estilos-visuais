@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "slug": "nordic",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "light",
+    "alternatePolarity": "dark",
+    "rationale": "O Padrão Nordic permanece claro, com gelo Snow Storm e azul Frost. Esta contraparte experimental inverte a luminosidade para uma noite de fiorde: Polar Night e ardósia fosca formam as superfícies de leitura; Frost moderado preserva o clima frio, enquanto madeira e âmbar aparecem apenas como filetes e ações pontuais. A hierarquia Space Grotesk e as métricas grandes permanecem. A alternativa não altera o CSS canônico.",
+    "evidence": "A classificação do Padrão foi conferida em styles/nordic.css (#ECEFF4 de fundo e #FFFFFF de superfície). A ficha local docs/temp/reports/f2/nordic/ficha.md registra polaridades claro/escuro, Polar Night/Snow Storm/Frost, calor Hygge restrito, acabamento fosco, Space Grotesk e raios contidos. A contraparte foi desenhada a partir desses registros, sem consultar a referência externa durante esta implementação."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#17212A",
+      "--surface": "#202D36",
+      "--surface-2": "#2A3941",
+      "--fg": "#EEF2F2",
+      "--muted": "#BAC6CA",
+      "--accent": "#95B8C2",
+      "--accent-fg": "#17212A",
+      "--border": "#73858C",
+      "--ok": "#8AB99B",
+      "--warn": "#E5BE70",
+      "--danger": "#F09198",
+      "--focus": "#B7D4DC",
+      "--shadow": "0 8px 24px rgba(5, 11, 15, .24)",
+      "--radius": "8px",
+      "--border-width": "1px",
+      "--nordic-frost": "#95B8C2",
+      "--wood": "#756149",
+      "--amber": "#C99346"
+    },
+    "intent": "Polar Night e ardósia fosca estabelecem a leitura escura. Frost azul moderado permanece como acento funcional; o calor de madeira e âmbar fica restrito a um filete decorativo e pequenos detalhes Hygge, sem neon, vidro ou brilho decorativo intenso."
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"nordic\"][data-variant=\"alternate\"] .hero",
+      "signal": "Painel editorial em Polar Night com superfícies foscas, filete superior âmbar e hierarquia Space Grotesk; em telas amplas, o hero divide o primeiro plano com a coluna de métricas.",
+      "skillReference": "knowledge/skills/domains/design/ui-style-nordic/SKILL.md (referência também registrada na ficha local F2 Nordic)",
+      "evidence": "A ficha local descreve Polar Night, superfícies foscas, tipografia Space Grotesk e calor Hygge restrito. O seletor da contraparte aplica esses sinais somente ao hero alternativo; styles/nordic.css permanece sem alterações nesta tarefa."
+    },
+    {
+      "selector": "#stage[data-style=\"nordic\"][data-variant=\"alternate\"] .kpi",
+      "signal": "Valores KPI em Space Grotesk mantêm tamanho e peso como foco funcional; filete Frost frio separa os cartões sem glow, enquanto a grade editorial redistribui métricas ao lado do hero no desktop.",
+      "skillReference": "knowledge/skills/domains/design/ui-style-nordic/SKILL.md (referência também registrada na ficha local F2 Nordic)",
+      "evidence": "A definição canônica local usa Space Grotesk e métricas de hierarquia clara. Os KPIs permanecem como números destacados, com o marcador de cor redundante já fornecido pelos badges e seus rótulos."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#view-painel",
+      "property": "grid-template-columns / grid-row / distribuição editorial",
+      "before": "Fluxo canônico em uma coluna: hero, métricas, recursos e formulários em sequência.",
+      "after": "A partir de 1200px de viewport, hero editorial ocupa a coluna esquerda e métricas ocupam um trilho à direita; recursos e formulário atravessam a largura abaixo. Em telas menores, a ordem DOM original vira uma única coluna.",
+      "breakpoints": {
+        "320": {
+          "before": "fluxo vertical; app útil 288px",
+          "after": "uma coluna; hero, KPIs e recursos preservam ordem e largura útil de 288px"
+        },
+        "375": {
+          "before": "fluxo vertical; app útil 343px",
+          "after": "uma coluna; hero, KPIs e recursos preservam ordem e largura útil de 343px"
+        },
+        "768": {
+          "before": "fluxo vertical; stage útil ~438px",
+          "after": "uma coluna; grade editorial não divide o conteúdo no stage estreito"
+        },
+        "1280": {
+          "before": "hero, métricas e recursos em linhas integrais",
+          "after": "hero à esquerda e métricas à direita em duas colunas desiguais; recursos/formulário seguem em largura integral"
+        }
+      }
+    },
+    {
+      "selector": "#view-painel > .hero",
+      "property": "display / background / border-top / padding",
+      "before": "Hero canônico sobre superfície branca, sem painel Polar Night ou filete Hygge.",
+      "after": "Painel Polar Night fosco, com linha superior estreita de madeira e padding editorial; mantém a ordem eyebrow, título, lead e ações.",
+      "breakpoints": {
+        "320": {
+          "before": "hero branco de 288px, fluxo original",
+          "after": "painel escuro de 288px; padding 24px 18px e ações quebram sem clipping"
+        },
+        "375": {
+          "before": "hero branco de 343px, fluxo original",
+          "after": "painel escuro de 343px; padding 24px 18px e hierarquia em uma coluna"
+        },
+        "768": {
+          "before": "hero branco de largura útil ~438px",
+          "after": "painel escuro de largura integral; composição ainda empilhada"
+        },
+        "1280": {
+          "before": "hero branco em linha independente",
+          "after": "painel escuro na coluna editorial esquerda, alinhado à altura do trilho métrico"
+        }
+      }
+    },
+    {
+      "selector": "#view-painel > section[aria-labelledby=\"t-metricas\"] .kpis",
+      "property": "grid-template-columns / compactação das métricas",
+      "before": "KPIs usam auto-fit; no trilho desktop a largura disponível pode formar uma coluna estreita.",
+      "after": "Duas colunas iguais apenas no trilho métrico desktop; abaixo do breakpoint, a distribuição canônica continua conforme a largura disponível.",
+      "breakpoints": {
+        "320": {
+          "before": "KPIs em uma coluna de 288px",
+          "after": "sem trilho lateral; KPIs preservam a distribuição de largura total"
+        },
+        "375": {
+          "before": "KPIs em uma coluna de 343px",
+          "after": "sem trilho lateral; KPIs preservam a distribuição de largura total"
+        },
+        "768": {
+          "before": "grade de KPIs dentro do fluxo de largura total",
+          "after": "sem trilho lateral; KPIs preservam a distribuição de largura total"
+        },
+        "1280": {
+          "before": "quatro KPIs em uma faixa horizontal",
+          "after": "duas colunas no trilho lateral, em duas linhas, com numerais destacados"
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": ".kpi",
+      "animation": "nordic-kpi-arrive",
+      "trigger": "Quando cada cartão KPI cruza o limiar de visibilidade na viewport (#stage), conforme IntersectionObserver do runtime.",
+      "duration": "500ms ease-out; deslocamento vertical de 8px e opacidade discreta, sem esconder o conteúdo antes ou depois da entrada.",
+      "fallback": "Sem IntersectionObserver, o runtime calcula visibilidade por geometria e dispara a mesma entrada; sem JavaScript, todos os KPIs permanecem estáticos e visíveis.",
+      "reducedMotion": "prefers-reduced-motion: reduce remove a animação, transforma e opacidade transitórias; valores e badges permanecem visíveis.",
+      "pauseResume": "O runtime só define data-motion-visible com o KPI visível, movimento não reduzido e document.visibilityState igual a visible; ao ocultar a página, suspende novas entradas.",
+      "cleanup": "Ao trocar estilo ou aparência, setupVariantMotion remove data-motion-visible, desconecta o observer e deixa os cartões em estado final estático."
+    },
+    "background": {
+      "selector": "#stage::after",
+      "animation": "nordic-fjord-aurora",
+      "trigger": "Progresso ambiental de baixa amplitude durante a rolagem enquanto #stage intersecta a viewport; o runtime governa data-motion-active por visibilidade e estado da página.",
+      "duration": "30s ease-in-out alternate, com movimento de até 1% e variação sutil de opacidade; camada decorativa não cobre o conteúdo.",
+      "fallback": "Sem suporte a pseudo-elemento ou animação CSS, o gradiente Frost/fiorde permanece estático; o conteúdo não depende do efeito.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa a aurora e mantém a composição estática, sem transform residual.",
+      "pauseResume": "A regra data-motion-active só anima com #stage visível, document.visibilityState visible e movimento não reduzido; pausa enquanto a página está oculta e retoma ao voltar.",
+      "cleanup": "Ao remover a folha alternate, a camada ::after e sua animação desaparecem; stopVariantMotion remove os listeners e marcadores do runtime."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Noite do Fiorde",
+      "description": "Uma noite de fiorde em Polar Night e ardósia fosca, com Frost moderado, filete de madeira e métricas claras em um painel editorial."
+    },
+    "en-US": {
+      "name": "Fjord Night",
+      "description": "A fjord night in Polar Night and matte slate, with restrained Frost blue, a warm wood rule, and clear metrics in an editorial dashboard."
+    },
+    "es-ES": {
+      "name": "Noche del fiordo",
+      "description": "Una noche de fiordo en Polar Night y pizarra mate, con azul Frost moderado, un filete de madera cálida y métricas claras en un panel editorial."
+    },
+    "fr-FR": {
+      "name": "Nuit du fjord",
+      "description": "Une nuit de fjord en Polar Night et ardoise mate, avec un bleu Frost mesuré, un filet de bois chaleureux et des métriques claires en composition éditoriale."
+    },
+    "de-DE": {
+      "name": "Fjordnacht",
+      "description": "Eine Fjordnacht in Polar Night und mattem Schiefer, mit zurückhaltendem Frostblau, einer warmen Holzlinie und klaren Kennzahlen im Editorial-Layout."
+    },
+    "ru-RU": {
+      "name": "Фьордная ночь",
+      "description": "Ночная палитра фьорда: Polar Night и матовый сланец, сдержанный ледяной Frost, тёплая деревянная линия и ясные метрики в редакционной композиции."
+    },
+    "ar-SA": {
+      "name": "ليلة المضيق البحري",
+      "description": "لوحة ليلية للمضيق تجمع بين Polar Night والأردواز المطفي وأزرق Frost الهادئ وخط خشبي دافئ ومقاييس واضحة ضمن تخطيط تحريري."
+    },
+    "hi-IN": {
+      "name": "फ़्योर्ड की रात",
+      "description": "Polar Night और मैट स्लेट में फ़्योर्ड की रात, संयत Frost नीले, लकड़ी की गर्म रेखा और संपादकीय लेआउट में स्पष्ट मेट्रिक्स के साथ।"
+    },
+    "zh-CN": {
+      "name": "峡湾之夜",
+      "description": "以 Polar Night 与哑光石板灰构成峡湾夜色，搭配克制的 Frost 蓝、温暖木质细线和清晰的编辑式数据布局。"
+    },
+    "ja-JP": {
+      "name": "フィヨルドの夜",
+      "description": "Polar Night とマットなスレートで描くフィヨルドの夜。控えめな Frost ブルー、木の温もりを添える細線、読みやすい編集的な指標配置。"
+    },
+    "ko-KR": {
+      "name": "피오르의 밤",
+      "description": "Polar Night와 무광 슬레이트로 표현한 피오르의 밤에 절제된 Frost 블루, 따뜻한 나무 선, 읽기 쉬운 편집형 지표 배치를 더했습니다."
+    }
+  },
+  "sources": [
+    {
+      "title": "Canonical Nordic stylesheet",
+      "url": "styles/nordic.css",
+      "kind": "local canonical source",
+      "claim": "Confirms the untouched light default palette, Nord tokens, Plus Jakarta Sans/Space Grotesk hierarchy, matte surfaces, and contained corner radius."
+    },
+    {
+      "title": "Local Nordic F2 review brief",
+      "url": "docs/temp/reports/f2/nordic/ficha.md",
+      "kind": "local design review",
+      "claim": "Documents the Scandinavian palette direction, Frost/Polar Night, restrained Hygge warmth, Space Grotesk metrics, matte finishes, and the need to distinguish Nordic from Swiss through surface and layout."
+    },
+    {
+      "title": "Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility standard",
+      "claim": "Contrast ratios are screening evidence only; rendered text, controls, focus, and state colors still require integrated review."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "0fcac53411fccc7bcbab867879f3da6328f9db687e8fe131deee53895b6df14a",
+  "contentDigest": "f461843355a1f5375975d18417968b72510de4c38f4dedfba5b1ccf398aaf7a1",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "f461843355a1f5375975d18417968b72510de4c38f4dedfba5b1ccf398aaf7a1",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "f461843355a1f5375975d18417968b72510de4c38f4dedfba5b1ccf398aaf7a1",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

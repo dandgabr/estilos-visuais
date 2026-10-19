@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&family=Montserrat:wght@700;800&display=swap');
 #stage[data-style="flat-design"]{
   --bg:#ecf0f1;--surface:#fff;--surface-2:#dfe6e9;--fg:#2c3e50;--muted:#4a5b6b;--accent:#1f78c1;--accent-fg:#fff;--border:transparent;
-  --ok:#157a4a;--warn:#a85d00;--danger:#c0392b;--radius:4px;--radius-sm:3px;--shadow:none;
+  --ok:#12643d;--warn:#8a4c00;--danger:#a93226;--radius:4px;--radius-sm:3px;--shadow:none;
   --font-body:'Nunito Sans',sans-serif;--font-display:'Montserrat',sans-serif;--font-mono:ui-monospace,monospace;--gap:16px;--pad:20px;
 }
 #stage[data-style="flat-design"] .brand-mark{background:#e67e22;border-radius:50%}
@@ -22,7 +22,7 @@
 #stage[data-style="flat-design"] .kpis .card:nth-child(2){background:#a85d00;color:#fff}
 #stage[data-style="flat-design"] .kpis .card:nth-child(3){background:#157a4a;color:#fff}
 #stage[data-style="flat-design"] .kpis .card:nth-child(4){background:#c0392b;color:#fff}
-#stage[data-style="flat-design"] .kpis .card .kpi-label{color:#fff;opacity:.92}
+#stage[data-style="flat-design"] .kpis .card .kpi-label{color:#fff;opacity:1}
 #stage[data-style="flat-design"] .kpis .badge{background:rgba(255,255,255,.22);color:#fff;border:0}
 #stage[data-style="flat-design"] .badge{border:0;border-radius:3px;font-weight:700}
 #stage[data-style="flat-design"] .badge.ok{background:#d5f0e0}
@@ -38,6 +38,7 @@
 #stage[data-style="flat-design"] tbody tr:nth-child(even){background:#f4f7f8}
 #stage[data-style="flat-design"] td{border-bottom:0}
 #stage[data-style="flat-design"] .toast{background:#2c3e50;color:#fff;border-radius:4px}
+#stage[data-style="flat-design"] .toast .btn-ghost{color:#2c3e50;background:#fff}
 #stage[data-style="flat-design"] dialog{border:0;box-shadow:0 0 0 100vmax rgba(44,62,80,.0);border-radius:4px}
 #stage[data-style="flat-design"] .footer{border-top:0;background:#dfe6e9;padding:16px;border-radius:4px}
 #stage[data-style="flat-design"] .kpis .card .badge,#stage[data-style="flat-design"] .kpis .card .badge.ok,#stage[data-style="flat-design"] .kpis .card .badge.warn,#stage[data-style="flat-design"] .kpis .card .badge.danger{background:rgba(0,0,0,.28);color:#fff}

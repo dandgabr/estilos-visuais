@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fraunces:wght@600;800&display=swap');
 #stage[data-style="solarpunk"] {
-  --bg:#FBF6E9; --surface:#ffffff; --surface-2:#eaf3dc; --fg:#1B3A2A; --muted:#456050;
+  --bg:#FBF6E9; --surface:#ffffff; --surface-2:#eaf3dc; --fg:#1B3A2A; --muted:#2F4636;
   --accent:#2F7D4F; --accent-fg:#fff; --border:#a9cfa0; --ok:#1f6e3f; --warn:#8f5a00; --danger:#b0391a;
   --radius:28px; --radius-sm:16px; --shadow:0 8px 24px rgba(47,125,79,.15);
   --font-body:'Nunito',system-ui,sans-serif; --font-display:'Fraunces',Georgia,serif; --font-mono:ui-monospace,monospace;
@@ -61,4 +61,4 @@
 #stage[data-style="solarpunk"] .toast .btn-ghost:hover{background:rgba(255,255,255,.2)}
 #stage[data-style="solarpunk"] dialog{background:#fff;color:var(--fg);border:3px solid var(--leaf);border-radius:40px 40px 40px 10px;box-shadow:0 20px 60px rgba(27,58,42,.35)}
 #stage[data-style="solarpunk"] dialog::backdrop{background:rgba(27,58,42,.55)}
-#stage[data-style="solarpunk"] .footer{border-top:3px dotted var(--leaf);color:var(--muted)}
+#stage[data-style="solarpunk"] .footer{border-top:3px dotted var(--leaf);color:#10251A}

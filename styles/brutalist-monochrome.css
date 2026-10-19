@@ -41,4 +41,5 @@
 #stage[data-style="brutalist-monochrome"] td { border-bottom: 1px solid #333; font-family: var(--font-mono); font-size: .88rem; }
 #stage[data-style="brutalist-monochrome"] tbody tr:hover { background: #1a1a1a; }
 #stage[data-style="brutalist-monochrome"] .toast { background: #ffffff; color: #000000; border-radius: 0; font-family: var(--font-mono); font-weight: 700; }
+#stage[data-style="brutalist-monochrome"] .toast .btn-ghost { color: #000000; background: transparent; border-color: #000000; }
 #stage[data-style="brutalist-monochrome"] dialog { background: #000000; border: 2px solid #ffffff; border-radius: 0; color: #ffffff; box-shadow: 8px 8px 0 #333; }

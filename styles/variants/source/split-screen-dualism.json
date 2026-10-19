@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "slug": "split-screen-dualism",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "dark",
+    "alternatePolarity": "light",
+    "rationale": "O Padrão é misto. Classifico como escuro pela leitura renderizada do canvas contínuo, topbar e hero, que formam o campo dominante antes dos cartões claros. Os cartões brancos permanecem como ilhas de contraste e não são tratados como erro nem serão modificados. A contraparte inverte o campo predominante para duas regiões claras, preservando a divisão visual entre polos.",
+    "evidence": [
+      "styles/split-screen-dualism.css define canvas #121316/#1a1b20 em divisão vertical 50/50, tipografia do hero branca e topbar escura.",
+      "O mesmo Padrão define .card/.panel brancos com texto escuro; a classificação editorial considera o campo contínuo do canvas e hero dominante, sem remover as superfícies claras.",
+      "A ficha de captura existente split-screen-dualism-1280.png mostra duas regiões cromáticas do canvas; overlay do tour cobre parte do conteúdo, logo não serve como medição de contraste nem geometria."
+    ],
+    "skill": {
+      "path": "/home/daniel/Code/Coacus/knowledge/skills/domains/design/ui-style-split-screen-dualism/SKILL.md",
+      "sha256": "bcc8b62b45688f4514788f35a87750e22e4e9626761d1f1b2216387939b7f4a2",
+      "references": [
+        "Visual Characteristics: vertical meridian at 50/50 or 61.8/38.2 with sharp boundary.",
+        "Visual Characteristics: complementary inversion between hemispheres.",
+        "Canonical Component Specifications: dual-hemisphere split hero with independent opposing treatments.",
+        "Accessibility & Environmental Contrast: verify each text token against its local surface; reduced motion must be respected."
+      ]
+    }
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#F4F0E6",
+      "--surface": "#FFFDF7",
+      "--surface-2": "#E5EDF4",
+      "--fg": "#202634",
+      "--muted": "#555C68",
+      "--accent": "#0D5686",
+      "--accent-fg": "#FFFFFF",
+      "--border": "#788797",
+      "--ok": "#17633B",
+      "--warn": "#785000",
+      "--danger": "#A12735",
+      "--focus": "#074C80",
+      "--shadow": "0 8px 22px rgba(32, 38, 52, .14)",
+      "--split-left-bg": "#F4F0E6",
+      "--split-right-bg": "#E7F0F6",
+      "--split-left-surface": "#FFFDF7",
+      "--split-right-surface": "#F5FAFD",
+      "--split-left-accent": "#8E3427",
+      "--split-right-accent": "#0D5686",
+      "--split-meridian": "#788796"
+    },
+    "contrastPairs": [
+      {
+        "foreground": "#202634",
+        "background": "#F4F0E6",
+        "ratio": 13.29,
+        "measurement": "computed-sRGB-WCAG2"
+      },
+      {
+        "foreground": "#555C68",
+        "background": "#F4F0E6",
+        "ratio": 5.92,
+        "measurement": "computed-sRGB-WCAG2"
+      },
+      {
+        "foreground": "#FFFFFF",
+        "background": "#0D5686",
+        "ratio": 7.8,
+        "measurement": "computed-sRGB-WCAG2"
+      },
+      {
+        "foreground": "#8E3427",
+        "background": "#FFFDF7",
+        "ratio": 7.73,
+        "measurement": "computed-sRGB-WCAG2"
+      },
+      {
+        "foreground": "#0D5686",
+        "background": "#F5FAFD",
+        "ratio": 7.42,
+        "measurement": "computed-sRGB-WCAG2"
+      },
+      {
+        "foreground": "#17633B",
+        "background": "#FFFDF7",
+        "ratio": 7.16,
+        "measurement": "computed-sRGB-WCAG2"
+      },
+      {
+        "foreground": "#785000",
+        "background": "#FFFDF7",
+        "ratio": 7.01,
+        "measurement": "computed-sRGB-WCAG2"
+      },
+      {
+        "foreground": "#A12735",
+        "background": "#FFFDF7",
+        "ratio": 7.23,
+        "measurement": "computed-sRGB-WCAG2"
+      }
+    ],
+    "visibleLiterals": {
+      "chartBars": "--split-right-accent",
+      "buttons": "--accent/--accent-fg",
+      "status": "--ok, --warn, --danger",
+      "meridian": "--split-meridian"
+    },
+    "distinction": "Padrão: contínuo carvão/preto com cartões brancos e texto do hero branco. Contraparte: campo dividido marfim e azul-gelo, cartões claros separados por polo, dois acentos locais ferrugem e azul-petróleo. Diferença de paleta definida; captura comparativa em escala de cinza pendente."
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"split-screen-dualism\"]",
+      "signal": "vertical meridian",
+      "skillReference": "ui-style-split-screen-dualism/SKILL.md — Visual Characteristics 1: 50/50 vertical meridian or sharp color collision.",
+      "evidence": "A folha alternate constrói duas metades explícitas com limite central de 1px nos viewports largos. Até 540px, remove a linha central da coluna de leitura e mantém os dois polos por trilhos de acento nas bordas externas dos grupos. Capturas, retângulos medidos e prova dos polos estão em docs/temp/reports/2026-10-18-split-screen-dualism-render-audit.json."
+    },
+    {
+      "selector": "#view-painel > .hero; #view-painel > section[aria-labelledby=\"t-recursos\"]",
+      "signal": "complementary hemispheres",
+      "skillReference": "ui-style-split-screen-dualism/SKILL.md — Visual Characteristics 2 and Canonical Component Specifications: hemispheres with opposing treatments and a shared rhythm.",
+      "evidence": "A contraparte mantém o grupo narrativo em painel do lado esquerdo e conteúdo secundário no campo direito no desktop; nos viewports estreitos conserva os polos nas bordas dos grupos e uma ordem DOM de leitura contínua. As oito capturas e a geometria por viewport estão em docs/temp/reports/2026-10-18-split-screen-dualism-render-audit.json."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#view-painel",
+      "property": "grid-template-columns dos cartões de métricas",
+      "before": "Em 320/375: uma coluna (286/341px). Em 768: duas colunas (207px). Em 1280: quatro colunas (~220px).",
+      "after": "Grade deliberada 2×2 em todos os tamanhos. Capturado em Chromium 155 headless; conferir o valor no objeto breakpoints.",
+      "breakpoints": {
+        "320": {
+          "before": "1 coluna de 288px",
+          "after": "2 colunas de 138px; scrollWidth=clientWidth",
+          "measurement": "captured: Chromium 155 headless; no document horizontal overflow"
+        },
+        "375": {
+          "before": "1 coluna de 343px",
+          "after": "2 colunas de 165.5px; scrollWidth=clientWidth",
+          "measurement": "captured: Chromium 155 headless; no document horizontal overflow"
+        },
+        "768": {
+          "before": "2 colunas de 218px; stage=488px",
+          "after": "2 colunas de 222px; scrollWidth=clientWidth",
+          "measurement": "captured: Chromium 155 headless; KPI grid similarity is recorded, tablet resource reflow below supplies the major distinction"
+        },
+        "1280": {
+          "before": "4 colunas de 227px",
+          "after": "2 colunas de 229px dentro do painel de métricas de 470px",
+          "measurement": "captured: Chromium 155 headless; hero and metrics side-by-side; no document horizontal overflow"
+        }
+      }
+    },
+    {
+      "selector": "#view-painel > .hero; #view-painel > section[aria-labelledby=\"t-metricas\"]",
+      "property": "grid-column / colocação dos grupos",
+      "before": "Hero e métricas seguem em linhas distintas em todos os breakpoints.",
+      "after": "A partir de 861px, hero ocupa a coluna editorial esquerda e métricas a coluna direita; abaixo, mantêm linhas integrais e a ordem DOM.",
+      "breakpoints": {
+        "320": {
+          "before": "hero 288px, metrics below in DOM order",
+          "after": "hero 288px, metrics below in same DOM order",
+          "measurement": "captured: Chromium 155 headless; no grouping change at this viewport"
+        },
+        "375": {
+          "before": "hero 343px, metrics below in DOM order",
+          "after": "hero 343px, metrics below in same DOM order",
+          "measurement": "captured: Chromium 155 headless; no grouping change at this viewport"
+        },
+        "768": {
+          "before": "hero 456px above metrics; resources follow",
+          "after": "hero 456px above metrics; resources follow; this entry records unchanged outer groups",
+          "measurement": "captured: Chromium 155 headless; resource reflow is isolated below"
+        },
+        "1280": {
+          "before": "hero and metrics in separate rows; each 968px wide",
+          "after": "hero x=296/w=470 adjacent to metrics x=794/w=470; equal columns separated by 28px",
+          "measurement": "captured: Chromium 155 headless; group rectangles differ and the meridian stays between the groups"
+        }
+      }
+    },
+    {
+      "selector": "#view-painel > section[aria-labelledby=\"t-recursos\"] .grid",
+      "property": "grid-template-columns em largura de tablet",
+      "before": "Um cartão de recurso por linha, com min-width 260px.",
+      "after": "Dois cartões de recurso lado a lado de 720px a 860px; gráfico ocupa a linha inteira.",
+      "breakpoints": {
+        "320": {
+          "before": "1 coluna, cartões de 288px",
+          "after": "1 coluna, cartões de 288px",
+          "measurement": "captured: unchanged at this width"
+        },
+        "375": {
+          "before": "1 coluna, cartões de 343px",
+          "after": "1 coluna, cartões de 343px",
+          "measurement": "captured: unchanged at this width"
+        },
+        "768": {
+          "before": "auto-fit efetivo de 2 colunas desiguais (260/176px), chart span 2; stage=488px",
+          "after": "1 coluna de 456px, inclusive chart sem span artificial",
+          "measurement": "captured: Chromium 155 headless; human review of tablet card density remains required"
+        },
+        "1280": {
+          "before": "auto-fit de 2 cartões de 474px e chart de 968px",
+          "after": "auto-fit de 2 cartões de 474px e chart de 968px",
+          "measurement": "captured: unchanged at this width"
+        }
+      }
+    }
+  ],
+  "density": {
+    "groupGap": "--gap 20px; KPIs têm 12px de gap entre células; grupos principais mantêm separação visual de 28px no desktop.",
+    "headingContent": "Hero mantém eyebrow, título e texto em agrupamento único; margem inferior de seção 28px.",
+    "labelField": "Mantém gap de 4px do padrão base e gap de formulário de 14px.",
+    "lineLength": "Limitar o texto do hero a 42ch na coluna esquerda; restaurar largura integral no mobile.",
+    "emptySpace": "Não há colunas vazias artificiais: a grade 1fr/1fr usa grupos existentes e gap de 28px; recolhe abaixo de 861px.",
+    "measurements": "Smoke headless Chromium 155 capturou retângulos em 320, 375, 768 e 1280 com reduced-motion; document scrollWidth igualou viewport em todos. KPIs em 320/375 são 138/165.5px e não excedem o próprio clientWidth. A mudança de recursos no tablet é de 2 colunas desiguais (260/176px) para 1 coluna de 456px. Revisão visual humana, largura de linha, conforto de densidade e ajuste dos cards de recursos no tablet continuam pendentes."
+  },
+  "motion": {
+    "element": {
+      "selector": ".brand-mark",
+      "animation": "ssd-meridian-turn 8s ease-in-out infinite",
+      "trigger": "Enquanto #stage[data-variant=\"alternate\"] estiver ativo, data-motion-active=true e .brand-mark estiver visível; o runtime integrado deve marcar elementMotion=true e motionTarget=.brand-mark.",
+      "duration": "8s ease-in-out infinite",
+      "fallback": "Forma estática dividida ao meio via gradiente; sem depender do giro para identificar marca ou estado.",
+      "reducedMotion": "@media (prefers-reduced-motion: reduce) remove a animação e preserva o símbolo dividido estático.",
+      "pauseResume": "App atual tem IntersectionObserver por alvo, document.visibilitychange e matchMedia; pausa/retomada do alternate pendente até registry gerar elementMotion=true e teste integrado Chromium.",
+      "cleanup": "CSS não cria JS, RAF, timer, observer ou nó; app atual desconecta observer e remove listeners em stopVariantMotion. Cleanup deste alternate pendente até integração/regressão no runtime."
+    },
+    "background": {
+      "selector": "#stage::before; #stage::after",
+      "animation": "ssd-polar-fields 34s ease-in-out infinite alternate; ::after uses alternate-reverse.",
+      "trigger": "Enquanto #stage[data-variant=\"alternate\"] e data-motion-active=true; o runtime integrado deve marcar backgroundMotion=true para observar o palco.",
+      "duration": "34s; ease-in-out; infinite alternate; ::after alternate-reverse",
+      "fallback": "Gradiente dividido estático presente sob os halos; opacidade decorativa pode ser zero sem perder o meridiano.",
+      "reducedMotion": "@media (prefers-reduced-motion: reduce) remove ambas as animações e mantém os gradientes estáticos.",
+      "pauseResume": "App atual usa IntersectionObserver, document.visibilitychange e matchMedia; pausa/retomada do alternate pendente até registry gerar backgroundMotion=true e teste integrado Chromium.",
+      "cleanup": "Pseudo-elementos não criam recursos JS; app atual desconecta observer/listeners ao mudar modo ou estilo. Cleanup efetivo deste alternate pendente até integração e teste de troca rápida."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Contraponto Claro",
+      "description": "Dois campos claros em marfim e azul-gelo, divididos por um meridiano nítido."
+    },
+    "en-US": {
+      "name": "Light Counterpoint",
+      "description": "Two light fields in ivory and ice blue, divided by a sharp meridian."
+    },
+    "es-ES": {
+      "name": "Contrapunto claro",
+      "description": "Dos campos claros en marfil y azul hielo, separados por un meridiano nítido."
+    },
+    "fr-FR": {
+      "name": "Contrepoint clair",
+      "description": "Deux champs clairs, ivoire et bleu glacier, séparés par un méridien net."
+    },
+    "de-DE": {
+      "name": "Heller Kontrapunkt",
+      "description": "Zwei helle Flächen in Elfenbein und Eisblau, getrennt durch einen klaren Meridian."
+    },
+    "ru-RU": {
+      "name": "Светлый контрапункт",
+      "description": "Два светлых поля цвета слоновой кости и ледяного синего, разделённые чётким меридианом."
+    },
+    "ar-SA": {
+      "name": "تباين مضيء",
+      "description": "مساحتان مضيئتان بالعاجي والأزرق الجليدي، يفصل بينهما خط وسطي واضح."
+    },
+    "hi-IN": {
+      "name": "हल्का प्रतिपक्ष",
+      "description": "हाथीदांत और बर्फ़ीले नीले रंग के दो हल्के क्षेत्र, जिन्हें एक स्पष्ट मध्यरेखा बाँटती है।"
+    },
+    "zh-CN": {
+      "name": "明亮对照",
+      "description": "象牙白与冰蓝色的两片明亮区域，由清晰的中轴线分隔。"
+    },
+    "ja-JP": {
+      "name": "ライト・コントラスト",
+      "description": "アイボリーとアイスブルーの明るい二つの領域を、明確な中央線で分けます。"
+    },
+    "ko-KR": {
+      "name": "밝은 대위법",
+      "description": "아이보리와 아이스 블루의 두 밝은 영역을 선명한 중앙 경계로 나눕니다."
+    }
+  },
+  "evidence": {
+    "renderAudit": {
+      "path": "docs/temp/reports/2026-10-18-split-screen-dualism-render-audit.json",
+      "status": "captured-headless",
+      "engine": "Chromium 155.0.8059.79",
+      "viewports": {
+        "320": {
+          "default": "docs/temp/reports/2026-10-18-split-screen-dualism-render-audit/320-default.png",
+          "alternate": "docs/temp/reports/2026-10-18-split-screen-dualism-render-audit/320-alternate.png"
+        },
+        "375": {
+          "default": "docs/temp/reports/2026-10-18-split-screen-dualism-render-audit/375-default.png",
+          "alternate": "docs/temp/reports/2026-10-18-split-screen-dualism-render-audit/375-alternate.png"
+        },
+        "768": {
+          "default": "docs/temp/reports/2026-10-18-split-screen-dualism-render-audit/768-default.png",
+          "alternate": "docs/temp/reports/2026-10-18-split-screen-dualism-render-audit/768-alternate.png"
+        },
+        "1280": {
+          "default": "docs/temp/reports/2026-10-18-split-screen-dualism-render-audit/1280-default.png",
+          "alternate": "docs/temp/reports/2026-10-18-split-screen-dualism-render-audit/1280-alternate.png"
+        }
+      },
+      "summary": "Raw report includes per-viewport element rectangles, 25 foreground surfaces, link/status/muted pairs, and focus outlines in both modes. Every capture records and asserts data-style=split-screen-dualism, default/alternate marker, active canonical and alternate stylesheet source markers and exact CSS hashes, computed stage background, and two-pole geometry before the PNG. At 320/375px, the global center meridian is removed to avoid crossing the reading column; paired edge rails preserve two-pole identity on grouped surfaces."
+    },
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "title": "Coacus UI Style: Split-Screen Dualism & Asymmetric Polarity",
+      "url": "https://github.com/dandgabr/Coacus/blob/main/knowledge/skills/domains/design/ui-style-split-screen-dualism/SKILL.md",
+      "kind": "domain-skill",
+      "claim": "50/50 meridian, complementary hemisphere treatments, local contrast and reduced motion; source hash is recorded above."
+    },
+    {
+      "title": "Padrão render e CSS canônico",
+      "url": "styles/split-screen-dualism.css",
+      "kind": "repository-source",
+      "claim": "Dark continuous canvas/hero with white card islands; rendered Padrão and alternate captures, computed style proof, and measured geometry at 320/375/768/1280 are recorded in docs/temp/reports/2026-10-18-split-screen-dualism-render-audit.json."
+    },
+    {
+      "title": "Layout comparison",
+      "url": "index.html#view-painel",
+      "kind": "repository-source",
+      "claim": "Reading order is Hero, Metrics, Resources, Projects/Activity; desktop and mobile geometry and the measured layout differences are recorded in docs/temp/reports/2026-10-18-split-screen-dualism-render-audit.json. Human review of density and tablet resource-card fit remains pending."
+    },
+    {
+      "title": "Verification limits",
+      "url": "docs/temp/reports/2026-10-18-split-screen-dualism-render-audit.json",
+      "kind": "review-limitations",
+      "claim": "Runtime integration and registry/lifecycle verification remain pending; performance trace and human density review at mobile and tablet widths also remain pending."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "generatedDigest": "ed3f1d62eb07e113ed7e7842a0a66aaff7492410ae470fb2083457c8e6bb7dc9",
+  "contentDigest": "4ec967d5e58784bf4155c0543327d9dd09b72f36e065c7f6ba95363d1797e161",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "4ec967d5e58784bf4155c0543327d9dd09b72f36e065c7f6ba95363d1797e161",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "4ec967d5e58784bf4155c0543327d9dd09b72f36e065c7f6ba95363d1797e161",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

@@ -9,9 +9,9 @@
   --accent: #FF48B0;
   --accent-fg: #FFFFFF;
   --border: #1D1D2C;
-  --ok: #00A95C;
-  --warn: #FFE800;
-  --danger: #FF48B0;
+  --ok: #006B43;
+  --warn: #755200;
+  --danger: #A91555;
   --radius: 0px;
   --radius-sm: 0px;
   --shadow: 3px 3px 0 #0078BF;
@@ -70,9 +70,9 @@
 }
 
 #stage[data-style="risograph"] .nav a.is-active,
-#stage[data-style="risograph"] .nav-tab.is-active {
+#stage[data-style="risograph"] .nav .nav-tab.is-active {
   background: var(--riso-pink);
-  color: #FFFFFF;
+  color: #1D1D2C;
   border-color: var(--border);
   box-shadow: 2px 2px 0 var(--riso-blue);
 }
@@ -105,7 +105,7 @@
 
 #stage[data-style="risograph"] .btn-primary {
   background: var(--riso-pink);
-  color: #FFFFFF;
+  color: #1D1D2C;
   box-shadow: 3px 3px 0 var(--riso-blue);
 }
 
@@ -121,4 +121,16 @@
   font-family: var(--font-display);
   font-size: 2.5rem;
   color: var(--riso-blue);
+}
+
+#stage[data-style="risograph"] .bars i {
+  background: #C21868;
+}
+
+@media (max-width: 640px) {
+  #stage[data-style="risograph"] .display {
+    font-size: clamp(1.7rem, 8.5vw, 2.25rem);
+    letter-spacing: -0.02em;
+    overflow-wrap: anywhere;
+  }
 }

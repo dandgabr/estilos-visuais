@@ -1,0 +1,75 @@
+/* Contraparte experimental para revisão. O padrão canônico permanece intocado. */
+#stage[data-style="maximalism"][data-variant="alternate"] {
+  --bg: #fff3d5; --surface: #fff9e9; --surface-2: #f4dfed; --fg: #24172e; --muted: #51405c;
+  --accent: #c01868; --accent-fg: #ffffff; --border: #6b4b72; --focus: #c01868;
+  --ok: #185832; --warn: #684300; --danger: #8f2029;
+  --radius: 12px; --shadow: 0 8px 22px rgba(0,0,0,.18);
+  color-scheme: light; background-color: var(--bg) !important; color: var(--fg) !important;
+  background-image: none !important;
+  font-family: inherit;
+}
+#stage[data-style="maximalism"][data-variant="alternate"] .app { color:var(--fg) !important; background:transparent !important; }
+#stage[data-style="maximalism"][data-variant="alternate"] :is(.topbar,.card,.panel,.table-wrap,.toast,dialog,.view-header) {
+ background-color:var(--surface) !important; color:var(--fg) !important; border-color:var(--border) !important;
+ border-radius:12px;box-shadow:5px 5px 0 #c01868;
+}
+#stage[data-style="maximalism"][data-variant="alternate"] :is(.brand,.display,.lead,.section-title,.feature,.kpi,.panel,.view-header,.view-subtitle,.footer,.nav,.nav-tab,table,label,dialog) { color:var(--fg) !important; -webkit-text-fill-color:var(--fg) !important; }
+#stage[data-style="maximalism"][data-variant="alternate"] :is(.eyebrow,.kpi-label,th,.footer,.feature p) { color:var(--muted) !important; -webkit-text-fill-color:var(--muted) !important; }
+#stage[data-style="maximalism"][data-variant="alternate"] :is(.btn-primary,.nav a.is-active) { background:var(--accent) !important; color:var(--accent-fg) !important; -webkit-text-fill-color:var(--accent-fg) !important; border-color:var(--accent) !important; }
+#stage[data-style="maximalism"][data-variant="alternate"] :is(.btn-secondary,.btn-ghost,.nav-tab) { background:var(--surface-2) !important; color:var(--fg) !important; -webkit-text-fill-color:var(--fg) !important; border-color:var(--border) !important; }
+#stage[data-style="maximalism"][data-variant="alternate"] :is(.feature,.kpi,.panel,.chart) { background:var(--surface) !important; color:var(--fg) !important; border-color:var(--border) !important; }
+#stage[data-style="maximalism"][data-variant="alternate"] .kpis { display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:16px !important; }
+#stage[data-style="maximalism"][data-variant="alternate"] .kpi { min-width:0; padding:16px !important; animation:maximalism-metric-in 500ms ease-out both; }
+#stage[data-style="maximalism"][data-variant="alternate"] .kpi[data-motion-visible="true"] { animation:maximalism-metric-in 500ms ease-out both; }
+#stage[data-style="maximalism"][data-variant="alternate"] .kpi-value { color:#8f174f !important; -webkit-text-fill-color:#8f174f !important; }
+#stage[data-style="maximalism"][data-variant="alternate"] :is(input,select,textarea) { min-width:0; max-width:100%; background:var(--surface-2) !important; color:var(--fg) !important; -webkit-text-fill-color:var(--fg) !important; border:1px solid var(--border) !important; }
+#stage[data-style="maximalism"][data-variant="alternate"] :focus-visible { outline:3px solid var(--focus) !important; outline-offset:3px; }
+#stage[data-style="maximalism"][data-variant="alternate"] #view-painel { display:grid !important; grid-template-columns:minmax(0,1fr); gap:24px !important; align-content:start; }
+#stage[data-style="maximalism"][data-variant="alternate"] #view-painel > * { min-width:0; }
+#stage[data-style="maximalism"][data-variant="alternate"]::after { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.16; background:repeating-linear-gradient(135deg,transparent 0 22px,#c0186812 22px 23px); animation:maximalism-ambient 28s ease-in-out infinite alternate; }
+#stage[data-style="maximalism"][data-variant="alternate"] .app { position:relative; z-index:1; }
+#stage[data-style="maximalism"][data-variant="alternate"][data-motion-active="true"]::after { animation-play-state:running; }
+#stage[data-style="maximalism"][data-variant="alternate"]::after { animation-play-state:paused; }
+@keyframes maximalism-metric-in { from { opacity:.86; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
+@keyframes maximalism-ambient { from { transform:translate3d(-.4%,0,0); opacity:.12; } to { transform:translate3d(.4%,0,0); opacity:.2; } }
+
+/* Theme-specific composition: maximalism */
+#stage[data-style="maximalism"][data-variant="alternate"] .hero{border:3px solid #6b4b72!important;background:#f4dfed!important;box-shadow:8px 8px 0 #c01868!important}
+#stage[data-style="maximalism"][data-variant="alternate"] .kpi:nth-child(1){background:#f7df98!important}
+#stage[data-style="maximalism"][data-variant="alternate"] .kpi:nth-child(2){background:#cfe7e3!important}
+#stage[data-style="maximalism"][data-variant="alternate"] .kpi:nth-child(3){background:#e4d8ef!important}
+#stage[data-style="maximalism"][data-variant="alternate"] .kpi:nth-child(4){background:#f3d2dc!important}
+#stage[data-style="maximalism"][data-variant="alternate"] .display{color:#211735!important;-webkit-text-fill-color:#211735!important}
+@media (min-width:1200px) {
+ #stage[data-style="maximalism"][data-variant="alternate"] #view-painel { grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:28px !important; row-gap:28px !important; }
+ #stage[data-style="maximalism"][data-variant="alternate"] #view-painel > .hero { grid-column:1 / -1; }
+ #stage[data-style="maximalism"][data-variant="alternate"] .grid { display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:16px !important; }
+}
+@media (max-width:480px) {
+ #stage[data-style="maximalism"][data-variant="alternate"] .kpis { grid-template-columns:minmax(0,1fr) !important; }
+ #stage[data-style="maximalism"][data-variant="alternate"] :is(.hero,.panel,.card) { padding:20px 16px !important; }
+}
+@media (prefers-reduced-motion:reduce) {
+ #stage[data-style="maximalism"][data-variant="alternate"] .kpi,#stage[data-style="maximalism"][data-variant="alternate"]::after { animation:none !important; transform:none !important; }
+}
+
+/* Contrast repairs from the rendered maximalism review. */
+#stage[data-style="maximalism"][data-variant="alternate"] .eyebrow{color:#fff!important;-webkit-text-fill-color:#fff!important}#stage[data-style="maximalism"][data-variant="alternate"] .footer{color:#fff3d5!important;-webkit-text-fill-color:#fff3d5!important}
+
+/* Specificity adjustment: preserve contrast corrections over shared palette rules. */
+#stage[data-style="maximalism"][data-variant="alternate"] .app .eyebrow{color:#fff!important;-webkit-text-fill-color:#fff!important}#stage[data-style="maximalism"][data-variant="alternate"] .app .footer{color:#fff3d5!important;-webkit-text-fill-color:#fff3d5!important}
+
+/* Strong local foreground role for opaque panels in the alternate palette. */
+#stage[data-style="maximalism"][data-variant="alternate"] .app .eyebrow.eyebrow{color:#fff!important;-webkit-text-fill-color:#fff!important}#stage[data-style="maximalism"][data-variant="alternate"] .app .footer.footer{color:#fff3d5!important;-webkit-text-fill-color:#fff3d5!important}
+
+/* Bind every desktop column to its authored dashboard area. */
+@media (min-width:1200px) {
+ #stage[data-style="maximalism"][data-variant="alternate"] #view-painel { grid-template-areas:"hero hero" "metrics resources" "form activity" "toast toast"; }
+ #stage[data-style="maximalism"][data-variant="alternate"] #view-painel > .hero { grid-area:hero; }
+ #stage[data-style="maximalism"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-metricas"] { grid-area:metrics; }
+ #stage[data-style="maximalism"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-recursos"] { grid-area:resources; }
+ #stage[data-style="maximalism"][data-variant="alternate"] #view-painel > .split { display:contents!important; }
+ #stage[data-style="maximalism"][data-variant="alternate"] #view-painel > .split > .panel { margin:0!important; min-width:0; align-self:start; }
+ #stage[data-style="maximalism"][data-variant="alternate"] #view-painel > .split > [data-label-panel="formulário"] { grid-area:form; }
+ #stage[data-style="maximalism"][data-variant="alternate"] #view-painel > .split > [data-label-panel="registro"] { grid-area:activity; }
+}

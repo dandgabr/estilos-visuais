@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "slug": "psychedelic-60s",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "dark",
+    "alternatePolarity": "light",
+    "rationale": "Padrão classificado dark pela luminância do token --bg em styles/psychedelic-60s.css. Contraparte light: A pale concert-poster ground with deep plum, turquoise and tangerine inks; liquid lettering and optical waves stay in display zones. A composição e paleta são uma exploração de revisão; a folha padrão não é alterada."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#F1E8D7",
+      "--surface": "#FBF4E7",
+      "--surface-2": "#E4D7C0",
+      "--fg": "#261A30",
+      "--muted": "#57465E",
+      "--accent": "#B74C25",
+      "--accent-fg": "#FFFFFF",
+      "--border": "#83766D",
+      "--focus": "#176D70",
+      "--shadow": "0 8px 24px rgba(20, 18, 22, .16)"
+    },
+    "intent": "A pale concert-poster ground with deep plum, turquoise and tangerine inks; liquid lettering and optical waves stay in display zones."
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"psychedelic-60s\"][data-variant=\"alternate\"] .hero",
+      "signal": "A pale concert-poster ground with deep plum, turquoise and tangerine inks; liquid lettering and optical waves stay in display zones. O hero incorpora wave contours drift slowly; os controles mantêm contraste e foco discernível.",
+      "skillReference": "styles/psychedelic-60s.css — identidade canônica; revisão visual local",
+      "evidence": "Contraparte construída sem editar styles/psychedelic-60s.css."
+    },
+    {
+      "selector": "#stage[data-style=\"psychedelic-60s\"][data-variant=\"alternate\"] .app::before",
+      "signal": "Decoração de fundo: optical waves; opacidade baixa para não competir com texto.",
+      "skillReference": "styles/psychedelic-60s.css — identidade canônica",
+      "evidence": "A camada é pointer-events:none e subordinada ao conteúdo."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#stage[data-style=\"psychedelic-60s\"][data-variant=\"alternate\"] #view-painel",
+      "property": "grid-template-columns / grid-template-areas / gap",
+      "before": "Painel segue fluxo canônico de uma coluna; KPI usa grade fluida definida pelo estilo.",
+      "after": "centered liquid headline over stacked poster bands; content cards follow a loose but clear vertical rhythm. Desktop usa trilho principal+secundário; mobile preserva ordem e fluxo único.",
+      "breakpoints": {
+        "320": {
+          "before": "fluxo canônico em coluna, sem overflow intencional",
+          "after": "1 coluna, gap 16px e padding lateral 18px"
+        },
+        "375": {
+          "before": "fluxo canônico em coluna, grade fluida",
+          "after": "1 coluna; hero e controles cabem na largura útil"
+        },
+        "768": {
+          "before": "fluxo principal em coluna, elementos fluem naturalmente",
+          "after": "1 coluna; composição mantém leitura vertical e não comprime cartões"
+        },
+        "1280": {
+          "before": "fluxo canônico em coluna por regiões",
+          "after": "2 trilhos: hero 1.25fr e métricas .75fr; recursos atravessam as colunas, formulário e atividade dividem a linha inferior"
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": "#stage[data-style=\"psychedelic-60s\"][data-variant=\"alternate\"] .hero::after",
+      "animation": "psychedelic-60s-element",
+      "trigger": "Ao aplicar a contraparte, regra CSS de entrada do filete decorativo do hero.",
+      "duration": "520ms ease-out, scaleX; somente decoração, conteúdo sempre visível.",
+      "fallback": "Sem suporte a animação CSS, filete permanece estático; conteúdo não depende do movimento.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa a animação.",
+      "pauseResume": "Animação de entrada finita; não há loop contínuo nem estado de conteúdo.",
+      "cleanup": "Ao remover a folha da contraparte, pseudo-elemento e animação desaparecem."
+    },
+    "background": {
+      "selector": "#stage[data-style=\"psychedelic-60s\"][data-variant=\"alternate\"]::after",
+      "animation": "psychedelic-60s-background",
+      "trigger": "Loop ambiental sutil enquanto a contraparte está ativa.",
+      "duration": "32s ease-in-out alternate; somente opacidade e posição de background, sem camada sobre interação.",
+      "fallback": "Sem suporte a animação, textura permanece estática e decorativa.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa o loop.",
+      "pauseResume": "CSS anima apenas enquanto a folha alternate permanece aplicada; o navegador suspende a aba oculta.",
+      "cleanup": "Ao remover a folha da contraparte, camada e animação desaparecem."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Pôster de Sol",
+      "description": "A pale concert-poster ground with deep plum, turquoise and tangerine inks; liquid lettering and optical waves stay in display zones. Contraparte alternativa clara para o padrão, proposta para revisão; a aparência canônica permanece intacta."
+    },
+    "en-US": {
+      "name": "Sun Poster",
+      "description": "A pale concert-poster ground with deep plum, turquoise and tangerine inks; liquid lettering and optical waves stay in display zones. This light counterpart is a review proposal; the canonical appearance remains unchanged."
+    },
+    "es-ES": {
+      "name": "Sun Poster — alternativa clara",
+      "description": "A pale concert-poster ground with deep plum, turquoise and tangerine inks; liquid lettering and optical waves stay in display zones. Alternativa clara; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "fr-FR": {
+      "name": "Sun Poster — variante claire",
+      "description": "A pale concert-poster ground with deep plum, turquoise and tangerine inks; liquid lettering and optical waves stay in display zones. Variante claire; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "de-DE": {
+      "name": "Sun Poster — helle Variante",
+      "description": "A pale concert-poster ground with deep plum, turquoise and tangerine inks; liquid lettering and optical waves stay in display zones. Helle variante; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ru-RU": {
+      "name": "Sun Poster — светлая версия",
+      "description": "A pale concert-poster ground with deep plum, turquoise and tangerine inks; liquid lettering and optical waves stay in display zones. Светлая версия; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ar-SA": {
+      "name": "Sun Poster — النسخة الفاتحة",
+      "description": "A pale concert-poster ground with deep plum, turquoise and tangerine inks; liquid lettering and optical waves stay in display zones. النسخة الفاتحة; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "hi-IN": {
+      "name": "Sun Poster — हल्का रूप",
+      "description": "A pale concert-poster ground with deep plum, turquoise and tangerine inks; liquid lettering and optical waves stay in display zones. हल्का रूप; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "zh-CN": {
+      "name": "Sun Poster — 浅色版本",
+      "description": "A pale concert-poster ground with deep plum, turquoise and tangerine inks; liquid lettering and optical waves stay in display zones. 浅色版本; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ja-JP": {
+      "name": "Sun Poster — ライト版",
+      "description": "A pale concert-poster ground with deep plum, turquoise and tangerine inks; liquid lettering and optical waves stay in display zones. ライト版; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ko-KR": {
+      "name": "Sun Poster — 밝은 변형",
+      "description": "A pale concert-poster ground with deep plum, turquoise and tangerine inks; liquid lettering and optical waves stay in display zones. 밝은 변형; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    }
+  },
+  "sources": [
+    {
+      "title": "Canonical psychedelic-60s stylesheet",
+      "url": "styles/psychedelic-60s.css",
+      "kind": "local canonical source",
+      "claim": "Used to identify the untouched default polarity and visual identity of psychedelic-60s."
+    },
+    {
+      "title": "Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility standard",
+      "claim": "Contrast ratios are screening evidence; final visual review must inspect rendered text, controls, focus and status states."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "f0d7268a7b81a6aab8f134dfa0defd6270c0d02cb3a0aad427a6764e31e06d28",
+  "contentDigest": "5a64d3c2b50d0fa551649d0e2220b5d7ef92920016c9207e1a5e6168c8e2baa9",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "5a64d3c2b50d0fa551649d0e2220b5d7ef92920016c9207e1a5e6168c8e2baa9",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "5a64d3c2b50d0fa551649d0e2220b5d7ef92920016c9207e1a5e6168c8e2baa9",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

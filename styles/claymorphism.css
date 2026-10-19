@@ -12,7 +12,7 @@
 #stage[data-style="claymorphism"] .nav a:hover{transform:translateY(-2px);background:#fff}
 #stage[data-style="claymorphism"] .nav a.is-active{box-shadow:var(--clay)}
 #stage[data-style="claymorphism"] .display{font-weight:700;color:#3b2a4a}
-#stage[data-style="claymorphism"] .eyebrow{color:#7c4dff;font-weight:700}
+#stage[data-style="claymorphism"] .eyebrow{color:#5d399f;font-weight:700}
 #stage[data-style="claymorphism"] .btn{border-radius:99px;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.05rem;padding:12px 26px;border:0;box-shadow:var(--clay);transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .2s}
 #stage[data-style="claymorphism"] .btn:hover{transform:translateY(-3px) scale(1.04)}
 #stage[data-style="claymorphism"] .btn:active{transform:translateY(1px) scale(.97);box-shadow:inset 4px 5px 10px rgba(0,0,0,.2)}
@@ -49,5 +49,6 @@
 #stage[data-style="claymorphism"] th{color:#5c4a6b}
 #stage[data-style="claymorphism"] td,#stage[data-style="claymorphism"] th{border-bottom:2px dashed #f0d5c0}
 #stage[data-style="claymorphism"] .toast{background:#3b2a4a;color:#fff;border-radius:99px;box-shadow:var(--clay)}
+#stage[data-style="claymorphism"] .toast .btn-ghost{color:#3b2a4a;background:#fff}
 #stage[data-style="claymorphism"] dialog{border:0;border-radius:32px;box-shadow:var(--clay),0 30px 60px rgba(60,30,90,.3)}
 #stage[data-style="claymorphism"] .footer{border-top:3px dotted #f0c9ad}

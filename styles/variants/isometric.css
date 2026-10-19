@@ -1,0 +1,64 @@
+/* Review proposal for isometric; canonical default remains in styles/isometric.css. */
+#stage[data-style="isometric"][data-variant="alternate"] {
+  --bg: #17283B;
+  --surface: #22374E;
+  --surface-2: #304963;
+  --fg: #F1F6FC;
+  --muted: #C6D3E0;
+  --accent: #52B4C4;
+  --accent-fg: #0D2025;
+  --border: #8199A7;
+  --ok: #77D6A1;
+  --warn: #F2C66D;
+  --danger: #FF929A;
+  --focus: #FFE27A;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --shadow: 0 12px 28px rgba(0,0,0,.26);
+  color-scheme: dark;
+  color: var(--fg) !important;
+  background-color: var(--bg) !important;
+  background-image: linear-gradient(30deg, transparent 48%, #52B4C433 49% 50%, transparent 51%), linear-gradient(150deg, transparent 48%, #718B9C33 49% 50%, transparent 51%) !important;
+  background-size: 48px 48px, auto !important;
+}
+#stage[data-style="isometric"][data-variant="alternate"]::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events:none;
+  background: linear-gradient(30deg, transparent 48%, #52B4C433 49% 50%, transparent 51%) 0 0/48px 28px, linear-gradient(150deg, transparent 48%, #718B9C33 49% 50%, transparent 51%) 0 0/48px 28px;
+  opacity:.72; animation: isometric-field 24s ease-in-out infinite alternate;
+}
+#stage[data-style="isometric"][data-variant="alternate"] .app { position:relative; z-index:1; color:var(--fg)!important; background:transparent!important; }
+#stage[data-style="isometric"][data-variant="alternate"] :is(.topbar,.card,.panel,.table-wrap,.toast,dialog,.view-header,.feature,.kpi,.chart) {
+  color:var(--fg)!important; background-color:var(--surface)!important; border-color:var(--border)!important;
+  border-radius:var(--radius)!important; box-shadow:var(--shadow)!important;
+}
+#stage[data-style="isometric"][data-variant="alternate"] :is(.display,.brand,.section-title,.feature h3,.panel h3,.kpi-value) { color:var(--fg)!important; -webkit-text-fill-color:var(--fg)!important; }
+#stage[data-style="isometric"][data-variant="alternate"] :is(.lead,.feature p,.view-subtitle,.footer,.kpi-label) { color:var(--muted)!important; -webkit-text-fill-color:var(--muted)!important; }
+#stage[data-style="isometric"][data-variant="alternate"] :is(.btn-primary,.nav a.is-active,.nav-tab.is-active) { background:var(--accent)!important; color:var(--accent-fg)!important; -webkit-text-fill-color:var(--accent-fg)!important; border-color:var(--accent)!important; }
+#stage[data-style="isometric"][data-variant="alternate"] :is(.btn-secondary,.btn-ghost,.nav-tab) { background:var(--surface-2)!important; color:var(--fg)!important; -webkit-text-fill-color:var(--fg)!important; border:1px solid var(--border)!important; }
+#stage[data-style="isometric"][data-variant="alternate"] .topbar { border-bottom:2px solid var(--accent)!important; }
+#stage[data-style="isometric"][data-variant="alternate"] .kpi { border-top:3px solid var(--accent)!important; animation:isometric-settle .55s ease-out both; }
+#stage[data-style="isometric"][data-variant="alternate"] .kpis { display:grid!important; grid-template-columns:repeat(2,minmax(0,1fr))!important; gap:clamp(10px,2vw,20px)!important; }
+#stage[data-style="isometric"][data-variant="alternate"] .grid { display:grid!important; grid-template-columns:minmax(0,1fr)!important; gap:clamp(12px,2vw,22px)!important; }
+#stage[data-style="isometric"][data-variant="alternate"] #view-painel { display:grid!important; grid-template-columns:minmax(0,1fr); grid-template-areas:"hero" "metrics" "resources" "split" "toast"; gap:clamp(18px,3vw,30px)!important; align-content:start; }
+#stage[data-style="isometric"][data-variant="alternate"] #view-painel > .hero { grid-area:hero; }
+#stage[data-style="isometric"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-metricas"] { grid-area:metrics; min-width:0; }
+#stage[data-style="isometric"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-recursos"] { grid-area:resources; min-width:0; }
+#stage[data-style="isometric"][data-variant="alternate"] #view-painel > .split { grid-area:split; min-width:0; }
+#stage[data-style="isometric"][data-variant="alternate"] :is(input,select,textarea) { min-width:0; max-width:100%; color:var(--fg)!important; background:var(--surface-2)!important; border:1px solid var(--border)!important; }
+#stage[data-style="isometric"][data-variant="alternate"] :focus-visible { outline:3px solid var(--focus)!important; outline-offset:3px; }
+@media (min-width: 960px) {
+ #stage[data-style="isometric"][data-variant="alternate"] #view-painel { grid-template-columns:minmax(0, 5fr) minmax(0, 7fr); grid-template-areas:"hero resources" "hero metrics" "split split" "toast toast"; column-gap:clamp(20px,2.5vw,34px); row-gap:30px; }
+ #stage[data-style="isometric"][data-variant="alternate"] .grid { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+ #stage[data-style="isometric"][data-variant="alternate"] .grid > .chart { grid-column:1/-1; }
+}
+@keyframes isometric-settle { from { opacity:.55; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes isometric-field { from { background-position:0 0; } to { background-position:34px 18px; } }
+@media (prefers-reduced-motion: reduce) {
+ #stage[data-style="isometric"][data-variant="alternate"] *, #stage[data-style="isometric"][data-variant="alternate"]::before { animation:none!important; scroll-behavior:auto!important; transition:none!important; }
+}
+
+/* Complete paint layers must follow the active variant palette. */
+#stage[data-style="isometric"][data-variant="alternate"] :is(.lead,.section-title) { background:var(--surface)!important; }
+
+/* Contrast over the actual painted background. */
+#stage[data-style="isometric"][data-variant="alternate"] thead th { background:var(--surface-2)!important; }

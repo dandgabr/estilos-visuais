@@ -1,0 +1,58 @@
+/* Review proposal for scrollytelling; canonical default remains in styles/scrollytelling.css. */
+#stage[data-style="scrollytelling"][data-variant="alternate"] {
+  --bg: #F3EBDD;
+  --surface: #FFF9EC;
+  --surface-2: #E7DAC1;
+  --fg: #30271E;
+  --muted: #5A4D40;
+  --accent: #A4512D;
+  --accent-fg: #FFFFFF;
+  --border: #887864;
+  --ok: #24764F;
+  --warn: #805400;
+  --danger: #A12D37;
+  --focus: #A4512D;
+  --radius: 2px;
+  --radius-sm: 6px;
+  --shadow: 0 8px 22px rgba(0,0,0,.16);
+  color-scheme: light;
+  color: var(--fg) !important;
+  background-color: var(--bg) !important;
+  background-image: repeating-linear-gradient(0deg, transparent 0 52px, #A4512D30 52px 54px), linear-gradient(90deg, #8E7C6838 1px, transparent 1px) !important;
+  background-size: 48px 48px, auto !important;
+}
+#stage[data-style="scrollytelling"][data-variant="alternate"]::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events:none;
+  background: repeating-linear-gradient(0deg, transparent 0 52px, #A4512D30 52px 54px), linear-gradient(90deg, #8E7C6838 1px, transparent 1px) 0 0/26px 100%;
+  opacity:.72; animation: scrollytelling-field 24s ease-in-out infinite alternate;
+}
+#stage[data-style="scrollytelling"][data-variant="alternate"] .app { position:relative; z-index:1; color:var(--fg)!important; background:transparent!important; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] :is(.topbar,.card,.panel,.table-wrap,.toast,dialog,.view-header,.feature,.kpi,.chart) {
+  color:var(--fg)!important; background-color:var(--surface)!important; border-color:var(--border)!important;
+  border-radius:var(--radius)!important; box-shadow:var(--shadow)!important;
+}
+#stage[data-style="scrollytelling"][data-variant="alternate"] :is(.display,.brand,.section-title,.feature h3,.panel h3,.kpi-value) { color:var(--fg)!important; -webkit-text-fill-color:var(--fg)!important; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] :is(.lead,.feature p,.view-subtitle,.footer,.kpi-label) { color:var(--muted)!important; -webkit-text-fill-color:var(--muted)!important; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] :is(.btn-primary,.nav a.is-active,.nav-tab.is-active) { background:var(--accent)!important; color:var(--accent-fg)!important; -webkit-text-fill-color:var(--accent-fg)!important; border-color:var(--accent)!important; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] :is(.btn-secondary,.btn-ghost,.nav-tab) { background:var(--surface-2)!important; color:var(--fg)!important; -webkit-text-fill-color:var(--fg)!important; border:1px solid var(--border)!important; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] .topbar { border-bottom:2px solid var(--accent)!important; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] .kpi { border-top:3px solid var(--accent)!important; animation:scrollytelling-settle .55s ease-out both; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] .kpis { display:grid!important; grid-template-columns:repeat(2,minmax(0,1fr))!important; gap:clamp(10px,2vw,20px)!important; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] .grid { display:grid!important; grid-template-columns:minmax(0,1fr)!important; gap:clamp(12px,2vw,22px)!important; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] #view-painel { display:grid!important; grid-template-columns:minmax(0,1fr); grid-template-areas:"hero" "metrics" "resources" "split" "toast"; gap:clamp(18px,3vw,30px)!important; align-content:start; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] #view-painel > .hero { grid-area:hero; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-metricas"] { grid-area:metrics; min-width:0; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-recursos"] { grid-area:resources; min-width:0; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] #view-painel > .split { grid-area:split; min-width:0; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] :is(input,select,textarea) { min-width:0; max-width:100%; color:var(--fg)!important; background:var(--surface-2)!important; border:1px solid var(--border)!important; }
+#stage[data-style="scrollytelling"][data-variant="alternate"] :focus-visible { outline:3px solid var(--focus)!important; outline-offset:3px; }
+@media (min-width: 960px) {
+ #stage[data-style="scrollytelling"][data-variant="alternate"] #view-painel { grid-template-columns:minmax(0, 7fr) minmax(260px, 4fr); grid-template-areas:"hero metrics" "resources metrics" "split split" "toast toast"; column-gap:clamp(20px,2.5vw,34px); row-gap:30px; }
+ #stage[data-style="scrollytelling"][data-variant="alternate"] .grid { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+ #stage[data-style="scrollytelling"][data-variant="alternate"] .grid > .chart { grid-column:1/-1; }
+}
+@keyframes scrollytelling-settle { from { opacity:.55; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes scrollytelling-field { from { background-position:0 0; } to { background-position:34px 18px; } }
+@media (prefers-reduced-motion: reduce) {
+ #stage[data-style="scrollytelling"][data-variant="alternate"] *, #stage[data-style="scrollytelling"][data-variant="alternate"]::before { animation:none!important; scroll-behavior:auto!important; transition:none!important; }
+}

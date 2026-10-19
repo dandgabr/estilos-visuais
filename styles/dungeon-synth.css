@@ -9,9 +9,9 @@
   --accent: #5C8C67;
   --accent-fg: #0A0F0C;
   --border: #334037;
-  --ok: #5C8C67;
-  --warn: #B59E5F;
-  --danger: #8C3B3B;
+  --ok: #92C89D;
+  --warn: #E1C878;
+  --danger: #E98B8B;
   --radius: 0px;
   --radius-sm: 0px;
   --shadow: 0 4px 16px rgba(0, 0, 0, 0.7);
@@ -43,13 +43,13 @@
 #stage[data-style="dungeon-synth"] .brand {
   font-family: var(--font-display);
   font-size: 1.8rem;
-  color: var(--moss-green);
-  text-shadow: 0 0 10px rgba(92, 140, 103, 0.4);
+  color: var(--fg);
+  text-shadow: none;
 }
 
 #stage[data-style="dungeon-synth"] .brand-mark {
-  background: #000;
-  border: 1px solid var(--moss-green);
+  background: var(--moss-green);
+  border: 1px solid var(--fg);
   width: 1.4em;
   height: 1.4em;
 }

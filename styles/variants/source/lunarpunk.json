@@ -1,0 +1,265 @@
+{
+  "schemaVersion": 1,
+  "slug": "lunarpunk",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "dark",
+    "alternatePolarity": "light",
+    "rationale": "O Padrão mantém fundos midnight/indigo (#0E1224, #141A33), texto lunar claro e estrelas visíveis; a contraparte inverte a luminosidade de leitura com papel marfim e superfícies prata, mantendo acentos noturnos. A direção é uma experimentação lunar iluminada, não uma afirmação de subgênero histórico.",
+    "evidence": "Leitura do CSS canônico styles/lunarpunk.css: tokens --bg/--surface escuros, --fg claro; fundo em gradientes noturnos e estrelas. A classificação não modifica esses tokens nem o FX canônico."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#F4F2F7",
+      "--surface": "#FFFEFC",
+      "--surface-2": "#EAE7F0",
+      "--fg": "#282435",
+      "--muted": "#5C5869",
+      "--accent": "#59417F",
+      "--accent-fg": "#FFFFFF",
+      "--border": "#837A94",
+      "--ok": "#17624F",
+      "--warn": "#795000",
+      "--danger": "#A12E45",
+      "--focus": "#075D78",
+      "--mint": "#17695C",
+      "--moon": "#765A22",
+      "--vio": "#59417F",
+      "--shadow": "0 10px 28px rgba(54, 43, 75, .11)",
+      "--radius": "20px",
+      "--border-width": "1px"
+    },
+    "intent": "Paleta experimental de prata e marfim sob luz lunar, com sombras lilases frias e menta bioluminescente escurecida para texto/acento acessível."
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"lunarpunk\"][data-variant=\"alternate\"] .brand-mark",
+      "signal": "Disco lunar crescente em relevo: o círculo claro recebe uma sombra interna deslocada e aro orbital fino.",
+      "skillReference": "/home/daniel/Code/Coacus/knowledge/skills/domains/design/ui-style-lunarpunk/SKILL.md — Iconography; Canonical Component Specifications: Lunar Phase Progress Dial",
+      "evidence": "A skill exige fases lunares e anéis de fase como sinais reconhecíveis; o seletor mantém o elemento canônico e altera apenas sua representação na contraparte."
+    },
+    {
+      "selector": "#stage[data-style=\"lunarpunk\"][data-variant=\"alternate\"] .card",
+      "signal": "Superfícies orgânicas de borda ampla com halo menta discreto e rede de pontos miceliais desenhada apenas na decoração do hero.",
+      "skillReference": "/home/daniel/Code/Coacus/knowledge/skills/domains/design/ui-style-lunarpunk/SKILL.md — Visual DNA & Subgenre Taxonomy; Bioluminescent Flora Glow",
+      "evidence": "A skill associa Lunarpunk a redes miceliais, flora bioluminescente, curvas orgânicas e emissão ciano/menta. O halo e os raios arredondados continuam legíveis em papel claro."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#stage[data-style=\"lunarpunk\"][data-variant=\"alternate\"] .hero",
+      "property": "text-align / grid-template-columns / decorative moon placement",
+      "before": "Fluxo vertical alinhado à esquerda, sem coluna lunar dedicada.",
+      "after": "Até 899px: composição centralizada com crescente de 52px no topo, leitura em coluna. A partir de 900px: texto em coluna esquerda e disco lunar decorativo em coluna direita; o hero vira um díptico assimétrico quando o espaço útil comporta a leitura.",
+      "breakpoints": {
+        "320": {
+          "before": "text-align:left; hero 288×582px",
+          "after": "text-align:center; crescente de 52px; hero 288×624px (+42px)"
+        },
+        "375": {
+          "before": "text-align:left; hero 343×496px",
+          "after": "text-align:center; crescente de 52px; hero 343×538px (+42px)"
+        },
+        "768": {
+          "before": "text-align:left; fluxo vertical; hero 456×456px",
+          "after": "text-align:center; coluna única e crescente de 52px; hero 456×498px (+42px)"
+        },
+        "1280": {
+          "before": "fluxo vertical; hero 968×425px",
+          "after": "grid assimétrico e órbita na coluna direita; hero 968×479px (+54px)"
+        }
+      },
+      "measurementStatus": "Medições em Chromium 155 headless; as regras de breakpoint foram recalibradas à largura real do stage, reduzida pela sidebar. Capturas humanas continuam pendentes."
+    },
+    {
+      "selector": "#stage[data-style=\"lunarpunk\"][data-variant=\"alternate\"] .kpis",
+      "property": "grid-template-columns",
+      "before": "auto-fit com cartões de no mínimo 190px: 1 coluna em 320/375px, 2 em 768px (stage útil 456px), 4 em 1280px (stage útil 968px).",
+      "after": "1 coluna até 899px; em viewports ≥900px, grade 2×2. Cartões da contraparte organizam rótulo/valor/status como linha lunar compacta.",
+      "breakpoints": {
+        "320": {
+          "before": "1 coluna",
+          "after": "1 coluna"
+        },
+        "375": {
+          "before": "1 coluna",
+          "after": "1 coluna"
+        },
+        "768": {
+          "before": "2 colunas",
+          "after": "1 coluna; cada cartão realinha rótulo, valor e status"
+        },
+        "1280": {
+          "before": "4 colunas",
+          "after": "2 colunas × 2 linhas"
+        }
+      },
+      "measurementStatus": "Contagens confirmadas em Chromium 155 headless, usando a shell e stage renderizados em 320/375/768/1280px. Stage mediu 320/375/488/1000px; área útil do app 288/343/456/968px."
+    },
+    {
+      "selector": "#stage[data-style=\"lunarpunk\"][data-variant=\"alternate\"] .kpi",
+      "property": "display / grid-template-columns / badge placement",
+      "before": "Cartão em fluxo de bloco; rótulo, valor e badge empilhados.",
+      "after": "Cartão interno em grade de duas colunas; rótulo/valor à esquerda e badge alinhado na coluna direita.",
+      "breakpoints": {
+        "320": {
+          "before": "display:block; 288px",
+          "after": "display:grid; rótulo/valor à esquerda, badge à direita; 288px"
+        },
+        "375": {
+          "before": "display:block; 343px",
+          "after": "display:grid; rótulo/valor à esquerda, badge à direita; 343px"
+        },
+        "768": {
+          "before": "display:block; 2 colunas KPI",
+          "after": "display:grid; 1 coluna KPI com badge lateral"
+        },
+        "1280": {
+          "before": "display:block; 4 colunas KPI",
+          "after": "display:grid; 2 colunas KPI com badge lateral"
+        }
+      },
+      "measurementStatus": "display:block → grid confirmado por getComputedStyle no Chromium 155 headless."
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": "#stage[data-style=\"lunarpunk\"][data-variant=\"alternate\"] .hero::before",
+      "animation": "Lunar phase sweep: the halo disk changes scale slightly and drifts a few pixels using transform only; phase changes with view progress and stays decorative.",
+      "trigger": "Progresso de visibilidade do hero (CSS view timeline); nenhum conteúdo é revelado/ocultado.",
+      "duration": "Percurso da timeline de entrada a saída do hero (0–100%; sem duração em segundos).",
+      "fallback": "If scroll-driven timelines are unsupported, the crescent disk remains fully visible and static; its painted gradient is the base rule.",
+      "reducedMotion": "prefers-reduced-motion: reduce remove a animação e conserva disco/halo estáticos.",
+      "pauseResume": "app.js setupVariantMotion marca data-motion-visible no alvo .hero; CSS inicia pausado e roda somente com data-motion-visible=\"true\". A troca running → paused → running do pseudo-elemento é verificada em Chromium no teste da fonte; o caminho completo de document.hidden usa tools/test_variant_fixture_runtime.py.",
+      "cleanup": "CSS sem timers/listeners; ao remover a folha alternate, pseudo-elemento e animação deixam de existir.",
+      "performanceEvidence": "Source inspection confirms transform-only keyframes. No frozen performance trace has been collected; compositor promotion and frame budget remain unverified.",
+      "runtimeInstrumentation": "Runtime instrumentado: setupVariantMotion observa a visibilidade da página, prefers-reduced-motion e a interseção do alvo .hero; escreve data-motion-visible no elemento.",
+      "cssPauseResumeVerification": "Verificado no teste Chromium da fonte: animationPlayState do pseudo-elemento segue os marcadores active → hidden → visible (running → paused → running)."
+    },
+    "background": {
+      "selector": "#stage[data-style=\"lunarpunk\"][data-variant=\"alternate\"] .app::before",
+      "animation": "Constellation points and mycelial filaments drift together by a small translate3d transform as page scroll progresses; the pre-painted gradient layer stays behind content and does not capture pointers.",
+      "trigger": "Progresso de rolagem do palco #stage via CSS scroll timeline; independente da fase lunar do hero.",
+      "duration": "Percurso da scroll timeline do contêiner #stage (0–100%; sem duração em segundos).",
+      "fallback": "If scroll-driven timelines are unsupported, retain the pre-painted static constellation and mycelial filaments; no animation is active.",
+      "reducedMotion": "prefers-reduced-motion: reduce remove a animação e mantém o fundo estático.",
+      "pauseResume": "app.js setupVariantMotion marca data-motion-active no #stage somente quando o alternate está visível, a aba está ativa e movimento reduzido não está habilitado; CSS roda a camada quando o marcador é true. A troca running → paused → running do pseudo-elemento é verificada em Chromium no teste da fonte; o caminho completo de document.hidden usa tools/test_variant_fixture_runtime.py.",
+      "cleanup": "CSS sem timers/listeners; remover a folha alternate elimina a camada e timeline associadas.",
+      "performanceEvidence": "Source inspection confirms transform-only keyframes. No frozen performance trace has been collected; compositor promotion and frame budget remain unverified.",
+      "runtimeInstrumentation": "Runtime instrumentado: setupVariantMotion observa a visibilidade de #stage, document.hidden e prefers-reduced-motion; escreve data-motion-active no #stage.",
+      "cssPauseResumeVerification": "Verificado no teste Chromium da fonte: animationPlayState do pseudo-elemento segue os marcadores active → hidden → visible (running → paused → running)."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Luz de Prata Lunar",
+      "description": "Papel marfim sob luar prateado, crescente em órbita e halos miceliais menta; o hero vira um díptico assimétrico sem perder a atmosfera noturna Lunarpunk."
+    },
+    "en-US": {
+      "name": "Moonlit Silver",
+      "description": "Ivory paper under silver moonlight, an orbiting crescent and mint mycelial halos; the hero becomes an asymmetric diptych while keeping Lunarpunk's nocturnal mood."
+    },
+    "es-ES": {
+      "name": "Plata a la Luz Lunar",
+      "description": "Papel marfil bajo luz lunar plateada, creciente en órbita y halos miceliales menta; el hero forma un díptico asimétrico que conserva la atmósfera nocturna Lunarpunk."
+    },
+    "fr-FR": {
+      "name": "Argent au Clair de Lune",
+      "description": "Papier ivoire sous une lumière lunaire argentée, croissant en orbite et halos mycéliens menthe ; le hero devient un diptyque asymétrique à l'atmosphère nocturne Lunarpunk."
+    },
+    "de-DE": {
+      "name": "Silbernes Mondlicht",
+      "description": "Elfenbeinfarbenes Papier im silbernen Mondlicht, eine kreisende Sichel und minzfarbene Myzel-Halos; das Hero wird zum asymmetrischen Diptychon mit nächtlicher Lunarpunk-Stimmung."
+    },
+    "ru-RU": {
+      "name": "Лунное серебро",
+      "description": "Слоновая бумага в серебристом лунном свете, серп на орбите и мятные ореолы мицелия; главный блок становится асимметричным диптихом и сохраняет ночное настроение Lunarpunk."
+    },
+    "ar-SA": {
+      "name": "فضة ضوء القمر",
+      "description": "ورق عاجي تحت ضوء قمري فضي، وهلال في مداره وهالات نعناعية لشبكة الميسيليوم؛ يتحول القسم الرئيسي إلى لوحة مزدوجة غير متناظرة مع الحفاظ على أجواء Lunarpunk الليلية."
+    },
+    "hi-IN": {
+      "name": "चाँदनी की चाँदी",
+      "description": "चाँदी जैसी चाँदनी में हाथीदाँत का काग़ज़, कक्षा में अर्धचंद्र और पुदीने जैसे मायसीलियम प्रभामंडल; मुख्य दृश्य असममित द्विपट बनता है और Lunarpunk की रात्रि भावना बनाए रखता है।"
+    },
+    "zh-CN": {
+      "name": "月下银辉",
+      "description": "象牙白纸面映着银色月光，轨道新月与薄荷色菌丝光晕相伴；主视觉改为不对称双联布局，同时保留 Lunarpunk 的夜色氛围。"
+    },
+    "ja-JP": {
+      "name": "月光の銀",
+      "description": "象牙色の紙面に銀色の月光、軌道を巡る三日月とミント色の菌糸の光輪を添えます。ヒーローを非対称の二面構成にし、Lunarpunk の夜の気配を保ちます。"
+    },
+    "ko-KR": {
+      "name": "달빛의 은빛",
+      "description": "은빛 달빛 아래 아이보리 종이, 궤도를 도는 초승달과 민트색 균사체 후광을 담았습니다. 첫 화면은 비대칭 양면 구성으로 바뀌며 Lunarpunk의 밤 분위기를 유지합니다."
+    }
+  },
+  "sources": [
+    {
+      "title": "UI Style: Lunarpunk & Nocturnal Cryptographic",
+      "url": "https://github.com/dandgabr/Coacus/blob/main/knowledge/skills/domains/design/ui-style-lunarpunk/SKILL.md",
+      "kind": "domain-skill",
+      "claim": "Referência de design para fases lunares, mycelium, halos bioluminescentes e atmosfera noturna; a paleta clara deste alternate é uma exploração editorial, não fato histórico."
+    },
+    {
+      "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "standard",
+      "claim": "Critérios 1.4.3 e 1.4.11 orientam o contraste mínimo de texto e de componentes visuais; as razões desta paleta são calculadas por luminância sRGB."
+    },
+    {
+      "title": "Scroll-driven Animations",
+      "url": "https://drafts.csswg.org/scroll-animations-1/",
+      "kind": "specification-draft",
+      "claim": "Especificação CSS para timelines vinculadas à rolagem e à visibilidade de elementos, usada como aprimoramento progressivo com fallback estático."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "88beea2baaa551ddeeaf435c5f6738f1f3324885416fdac332d2f3812641fa08",
+  "contentDigest": "8cca4ee5da81df7b9379299d2f752dad5c828bcd59ea961a879593b627334268",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "8cca4ee5da81df7b9379299d2f752dad5c828bcd59ea961a879593b627334268",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "8cca4ee5da81df7b9379299d2f752dad5c828bcd59ea961a879593b627334268",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

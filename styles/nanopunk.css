@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
 #stage[data-style="nanopunk"] {
-  --bg:#f4f7f9; --surface:#ffffff; --surface-2:#e6f1f5; --fg:#0a0f14; --muted:#47606d;
-  --accent:#007c99; --accent-fg:#ffffff; --border:#bcd2dc; --ok:#00775a; --warn:#8a5a00; --danger:#b3261e;
+  --bg:#f4f7f9; --surface:#ffffff; --surface-2:#e6f1f5; --fg:#0a0f14; --muted:#334b58;
+  --accent:#00647b; --accent-fg:#ffffff; --border:#bcd2dc; --ok:#00775a; --warn:#8a5a00; --danger:#b3261e;
   --radius:4px; --radius-sm:3px; --shadow:0 1px 0 #fff inset,0 0 0 1px rgba(0,124,153,.12),0 8px 24px rgba(0,60,80,.08);
   --font-body:'Space Grotesk',system-ui,sans-serif; --font-display:'Space Grotesk',sans-serif; --font-mono:'JetBrains Mono',monospace;
   --gap:18px; --pad:22px; --maxw:1140px; --cy:#4de3ff; --mint:#9ff0d0;

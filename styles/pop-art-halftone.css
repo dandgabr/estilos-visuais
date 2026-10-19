@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@600;700&display=swap');
 #stage[data-style="pop-art-halftone"] {
   --bg: #fff200; --surface: #ffffff; --surface-2: #ffe600; --fg: #000000; --muted: #333333;
-  --accent: #ec008c; --accent-fg: #ffffff; --border: #000000;
+  --accent: #ec008c; --accent-fg: #000000; --border: #000000;
   --ok: #00a859; --warn: #f39200; --danger: #e60012;
   --radius: 16px; --radius-sm: 8px; --shadow: 6px 6px 0 0 #000000;
   --font-body: 'Oswald', sans-serif; --font-display: 'Bangers', cursive, sans-serif;
@@ -19,9 +19,9 @@
 #stage[data-style="pop-art-halftone"] .display { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 5.2rem); text-transform: uppercase; color: #000; text-shadow: 4px 4px 0 #fff, 7px 7px 0 #ec008c; line-height: 0.95; letter-spacing: 0.04em; }
 #stage[data-style="pop-art-halftone"] .lead { font-size: 1.2rem; font-weight: 600; background: #fff; border: 3px solid #000; border-radius: 12px; padding: 12px 18px; box-shadow: 5px 5px 0 #000; }
 #stage[data-style="pop-art-halftone"] .btn { font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.06em; border: 3px solid #000; border-radius: 14px; box-shadow: 5px 5px 0 #000; transition: transform 0.1s, box-shadow 0.1s; }
-#stage[data-style="pop-art-halftone"] .btn-primary { background: #ec008c; color: #fff; text-shadow: 1px 1px 0 #000; }
+#stage[data-style="pop-art-halftone"] .btn-primary { background: #ec008c; color: #000; text-shadow: none; }
 #stage[data-style="pop-art-halftone"] .btn-primary:hover { background: #00aeef; transform: translate(-2px, -2px); box-shadow: 7px 7px 0 #000; }
-#stage[data-style="pop-art-halftone"] .btn-secondary { background: #00aeef; color: #fff; text-shadow: 1px 1px 0 #000; }
+#stage[data-style="pop-art-halftone"] .btn-secondary { background: #00aeef; color: #000; text-shadow: none; }
 #stage[data-style="pop-art-halftone"] .btn-ghost { background: #ffffff; color: #000; }
 #stage[data-style="pop-art-halftone"] .card, #stage[data-style="pop-art-halftone"] .panel { background: #ffffff; border: 4px solid #000000; border-radius: 18px; box-shadow: 6px 6px 0 #000000; }
 #stage[data-style="pop-art-halftone"] .kpi-value { font-family: var(--font-display); font-size: 3rem; color: #ec008c; text-shadow: 2px 2px 0 #000; }
@@ -30,6 +30,8 @@
 #stage[data-style="pop-art-halftone"] .bars i:nth-child(even) { background: #00aeef; }
 #stage[data-style="pop-art-halftone"] input[type=text], #stage[data-style="pop-art-halftone"] input[type=email], #stage[data-style="pop-art-halftone"] select, #stage[data-style="pop-art-halftone"] textarea { border: 3px solid #000; border-radius: 10px; font-family: inherit; font-size: 1.1rem; box-shadow: 4px 4px 0 #000; }
 #stage[data-style="pop-art-halftone"] input:focus, #stage[data-style="pop-art-halftone"] textarea:focus, #stage[data-style="pop-art-halftone"] select:focus { outline: 3px solid #ec008c; box-shadow: 6px 6px 0 #ec008c; }
+#stage[data-style="pop-art-halftone"] input[type="checkbox"] { accent-color:#ec008c; }
+#stage[data-style="pop-art-halftone"] input[type="range"] { accent-color:#00aeef; }
 #stage[data-style="pop-art-halftone"] .switch { border: 3px solid #000; background: #ffe600; box-shadow: 3px 3px 0 #000; border-radius: 99px; }
 #stage[data-style="pop-art-halftone"] .switch::after { background: #000; border-radius: 50%; }
 #stage[data-style="pop-art-halftone"] .switch:checked { background: #ec008c; }
@@ -37,5 +39,5 @@
 #stage[data-style="pop-art-halftone"] th { border-bottom: 3px solid #000; font-family: var(--font-display); font-size: 1.3rem; letter-spacing: .05em; }
 #stage[data-style="pop-art-halftone"] td { border-bottom: 2px solid #000; font-size: 1.1rem; }
 #stage[data-style="pop-art-halftone"] tbody tr:hover { background: #fffde0; }
-#stage[data-style="pop-art-halftone"] .toast { background: #ec008c; color: #fff; border: 3px solid #000; border-radius: 14px; box-shadow: 6px 6px 0 #000; font-family: var(--font-display); font-size: 1.3rem; }
+#stage[data-style="pop-art-halftone"] .toast { background: #ec008c; color: #000; border: 3px solid #000; border-radius: 14px; box-shadow: 6px 6px 0 #000; font-family: var(--font-display); font-size: 1.3rem; }
 #stage[data-style="pop-art-halftone"] dialog { background: #fff200; border: 4px solid #000; border-radius: 20px; box-shadow: 8px 8px 0 #000; }

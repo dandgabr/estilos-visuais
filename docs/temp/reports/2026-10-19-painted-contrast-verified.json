@@ -1,0 +1,2978 @@
+{
+  "method": "Consolidation of original runs and later corrective reruns; see evidence per case. Pixel samples assist visual review and are not exhaustive WCAG certification.",
+  "runs": [
+    {
+      "width": 375,
+      "checked": 164,
+      "issues": 0,
+      "cases": [
+        {
+          "slug": "swiss-web-minimalism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "swiss-web-minimalism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "nordic",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "nordic",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "flat-design",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "flat-design",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "calm-quiet-ui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "calm-quiet-ui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "linear-saas",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "linear-saas",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "metro-modern-ui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "metro-modern-ui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "material-you",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "material-you",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "card-based-ui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "card-based-ui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "bento-grid",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "bento-grid",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "dark-mode-first",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "dark-mode-first",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "split-screen-dualism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "split-screen-dualism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "blueprint-cad-schematic",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "blueprint-cad-schematic",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "glassmorphism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "glassmorphism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "neumorphism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "neumorphism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "claymorphism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "claymorphism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "skeuomorphism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "skeuomorphism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "windows-xp",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-mobile-followups.json"
+        },
+        {
+          "slug": "windows-xp",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-mobile-followups.json"
+        },
+        {
+          "slug": "frutiger-aero",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "frutiger-aero",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "aurora-mesh-gradient",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "aurora-mesh-gradient",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "gradient-duotone",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "gradient-duotone",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "grain-noise-texture",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-mobile-followups.json"
+        },
+        {
+          "slug": "grain-noise-texture",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-mobile-followups.json"
+        },
+        {
+          "slug": "holographic-foil-iridescent",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "holographic-foil-iridescent",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "neo-brutalism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "neo-brutalism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "web-brutalism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "web-brutalism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "brutalist-monochrome",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "brutalist-monochrome",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "acid-anti-design",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "acid-anti-design",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "maximalism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "maximalism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "broken-grid",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "broken-grid",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "glitch",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "glitch",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "memphis",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "memphis",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "weirdcore",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "weirdcore",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "dreamcore",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "dreamcore",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "editorial-archive-luxury",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "editorial-archive-luxury",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "analog-newspaper-broadsheet",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "analog-newspaper-broadsheet",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "expressive-variable-typography",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "expressive-variable-typography",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "kinetic-typography",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "kinetic-typography",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "risograph",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "risograph",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "zine-independent",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "zine-independent",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "collage-scrapbook",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "collage-scrapbook",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "hand-drawn-sketch",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "hand-drawn-sketch",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "art-deco",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "art-deco",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "art-nouveau",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "art-nouveau",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "arts-and-crafts",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "arts-and-crafts",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "bauhaus",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "bauhaus",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "de-stijl",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "de-stijl",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "constructivism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "constructivism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "agitprop-poster",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "agitprop-poster",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "pop-art-halftone",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "pop-art-halftone",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "psychedelic-60s",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "psychedelic-60s",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "mid-century-modern",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "mid-century-modern",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "y2k-revival",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "y2k-revival",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "vaporwave",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "vaporwave",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "synthwave",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "synthwave",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "indie-web-revival",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "indie-web-revival",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "retro-computing",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "retro-computing",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "pixel-art",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "pixel-art",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "terminal-tui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "terminal-tui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "cassette-futurism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "cassette-futurism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "cyberpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "cyberpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "atompunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "atompunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "dracula",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "dracula",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "dungeon-synth",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "dungeon-synth",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "dark-fantasy",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "dark-fantasy",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "biopunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "biopunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "clockpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "clockpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "dieselpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "dieselpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "gothicpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "gothicpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "lunarpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "lunarpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "nanopunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "nanopunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "sandalpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "sandalpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "silkpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "silkpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "solarpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "solarpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "steampunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "steampunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "3d-immersive-webgl",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-mobile-followups.json"
+        },
+        {
+          "slug": "3d-immersive-webgl",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-mobile-followups.json"
+        },
+        {
+          "slug": "parallax-scrolling",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "parallax-scrolling",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "scrollytelling",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "scrollytelling",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "micro-interactions",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "micro-interactions",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "isometric",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "isometric",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "fluid-liquid-morph",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "fluid-liquid-morph",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "ai-native-generative-ui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "ai-native-generative-ui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "organic-biophilic",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "organic-biophilic",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "kawaii-pastel-soft",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        },
+        {
+          "slug": "kawaii-pastel-soft",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-mobile.json"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "checked": 164,
+      "issues": 0,
+      "cases": [
+        {
+          "slug": "swiss-web-minimalism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "swiss-web-minimalism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "nordic",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "nordic",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "flat-design",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "flat-design",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "calm-quiet-ui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "calm-quiet-ui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "linear-saas",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "linear-saas",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "metro-modern-ui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "metro-modern-ui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "material-you",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "material-you",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "card-based-ui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "card-based-ui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "bento-grid",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "bento-grid",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "dark-mode-first",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "dark-mode-first",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "split-screen-dualism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "split-screen-dualism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "blueprint-cad-schematic",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "blueprint-cad-schematic",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "glassmorphism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "glassmorphism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "neumorphism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "neumorphism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "claymorphism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "claymorphism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "skeuomorphism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "skeuomorphism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "windows-xp",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "windows-xp",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "frutiger-aero",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "frutiger-aero",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "aurora-mesh-gradient",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "aurora-mesh-gradient",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "gradient-duotone",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "gradient-duotone",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "grain-noise-texture",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "grain-noise-texture",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "holographic-foil-iridescent",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "holographic-foil-iridescent",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "neo-brutalism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "neo-brutalism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "web-brutalism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "web-brutalism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "brutalist-monochrome",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "brutalist-monochrome",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "acid-anti-design",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "acid-anti-design",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "maximalism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "maximalism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "broken-grid",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "broken-grid",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "glitch",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "glitch",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "memphis",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "memphis",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "weirdcore",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "weirdcore",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "dreamcore",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "dreamcore",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "editorial-archive-luxury",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "editorial-archive-luxury",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "analog-newspaper-broadsheet",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "analog-newspaper-broadsheet",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "expressive-variable-typography",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "expressive-variable-typography",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "kinetic-typography",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "kinetic-typography",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "risograph",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "risograph",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "zine-independent",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "zine-independent",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "collage-scrapbook",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "collage-scrapbook",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "hand-drawn-sketch",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "hand-drawn-sketch",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "art-deco",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "art-deco",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "art-nouveau",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "art-nouveau",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "arts-and-crafts",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "arts-and-crafts",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "bauhaus",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "bauhaus",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "de-stijl",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "de-stijl",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "constructivism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "constructivism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "agitprop-poster",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "agitprop-poster",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "pop-art-halftone",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "pop-art-halftone",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "psychedelic-60s",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "psychedelic-60s",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "mid-century-modern",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "mid-century-modern",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "y2k-revival",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "y2k-revival",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "vaporwave",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "vaporwave",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "synthwave",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "synthwave",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "indie-web-revival",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "indie-web-revival",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "retro-computing",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "retro-computing",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "pixel-art",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "pixel-art",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "terminal-tui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "terminal-tui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "cassette-futurism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "cassette-futurism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "cyberpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "cyberpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "atompunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "atompunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "dracula",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "dracula",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "dungeon-synth",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "dungeon-synth",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "dark-fantasy",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "dark-fantasy",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "biopunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "biopunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "clockpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "clockpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "dieselpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "dieselpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "gothicpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "gothicpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "lunarpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "lunarpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "nanopunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "nanopunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "sandalpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "sandalpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "silkpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "silkpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "solarpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "solarpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "steampunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "steampunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "3d-immersive-webgl",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "3d-immersive-webgl",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "parallax-scrolling",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "parallax-scrolling",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "scrollytelling",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "scrollytelling",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "micro-interactions",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "micro-interactions",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "isometric",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "isometric",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "fluid-liquid-morph",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "fluid-liquid-morph",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "ai-native-generative-ui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "ai-native-generative-ui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "organic-biophilic",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "organic-biophilic",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "kawaii-pastel-soft",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        },
+        {
+          "slug": "kawaii-pastel-soft",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-final.json"
+        }
+      ]
+    },
+    {
+      "width": 2550,
+      "checked": 164,
+      "issues": 0,
+      "cases": [
+        {
+          "slug": "swiss-web-minimalism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "swiss-web-minimalism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "nordic",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "nordic",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "flat-design",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "flat-design",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "calm-quiet-ui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "calm-quiet-ui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "linear-saas",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "linear-saas",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "metro-modern-ui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "metro-modern-ui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "material-you",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "material-you",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "card-based-ui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "card-based-ui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "bento-grid",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "bento-grid",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "dark-mode-first",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "dark-mode-first",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "split-screen-dualism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "split-screen-dualism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "blueprint-cad-schematic",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "blueprint-cad-schematic",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "glassmorphism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "glassmorphism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "neumorphism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "neumorphism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "claymorphism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "claymorphism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "skeuomorphism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "skeuomorphism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "windows-xp",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "windows-xp",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "frutiger-aero",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "frutiger-aero",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "aurora-mesh-gradient",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "aurora-mesh-gradient",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "gradient-duotone",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "gradient-duotone",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "grain-noise-texture",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "grain-noise-texture",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "holographic-foil-iridescent",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "holographic-foil-iridescent",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "neo-brutalism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "neo-brutalism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "web-brutalism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "web-brutalism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "brutalist-monochrome",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "brutalist-monochrome",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "acid-anti-design",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "acid-anti-design",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "maximalism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "maximalism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "broken-grid",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "broken-grid",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "glitch",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "glitch",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "memphis",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "memphis",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "weirdcore",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "weirdcore",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "dreamcore",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "dreamcore",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "editorial-archive-luxury",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "editorial-archive-luxury",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "analog-newspaper-broadsheet",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "analog-newspaper-broadsheet",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "expressive-variable-typography",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "expressive-variable-typography",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "kinetic-typography",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "kinetic-typography",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "risograph",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "risograph",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "zine-independent",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "zine-independent",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "collage-scrapbook",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "collage-scrapbook",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "hand-drawn-sketch",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "hand-drawn-sketch",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "art-deco",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "art-deco",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "art-nouveau",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "art-nouveau",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "arts-and-crafts",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "arts-and-crafts",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "bauhaus",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "bauhaus",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "de-stijl",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "de-stijl",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "constructivism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "constructivism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "agitprop-poster",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "agitprop-poster",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "pop-art-halftone",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "pop-art-halftone",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "psychedelic-60s",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "psychedelic-60s",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "mid-century-modern",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "mid-century-modern",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "y2k-revival",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "y2k-revival",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "vaporwave",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "vaporwave",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "synthwave",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "synthwave",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "indie-web-revival",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "indie-web-revival",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "retro-computing",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "retro-computing",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "pixel-art",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "pixel-art",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "terminal-tui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "terminal-tui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "cassette-futurism",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "cassette-futurism",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "cyberpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-wide-followups.json"
+        },
+        {
+          "slug": "cyberpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-wide-followups.json"
+        },
+        {
+          "slug": "atompunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "atompunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "dracula",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "dracula",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "dungeon-synth",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "dungeon-synth",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "dark-fantasy",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "dark-fantasy",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "biopunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "biopunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "clockpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "clockpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "dieselpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "dieselpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "gothicpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "gothicpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "lunarpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "lunarpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "nanopunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "nanopunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "sandalpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "sandalpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "silkpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "silkpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "solarpunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "solarpunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "steampunk",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "steampunk",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "3d-immersive-webgl",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "3d-immersive-webgl",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "parallax-scrolling",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "parallax-scrolling",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "scrollytelling",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "scrollytelling",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "micro-interactions",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "micro-interactions",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "isometric",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "isometric",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "fluid-liquid-morph",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "fluid-liquid-morph",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "ai-native-generative-ui",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "ai-native-generative-ui",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "organic-biophilic",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "organic-biophilic",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "kawaii-pastel-soft",
+          "variant": "default",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        },
+        {
+          "slug": "kawaii-pastel-soft",
+          "variant": "alternate",
+          "issues": [],
+          "evidence": "2026-10-19-painted-contrast-wide.json"
+        }
+      ]
+    }
+  ]
+}

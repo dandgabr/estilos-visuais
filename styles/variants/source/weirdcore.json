@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "slug": "weirdcore",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "dark",
+    "alternatePolarity": "light",
+    "rationale": "Padrão classificado dark pela luminância do token --bg em styles/weirdcore.css. Contraparte light: A fluorescent liminal hallway translated into a pale municipal archive: warm concrete, warning red, sparse status labels. A composição e paleta são uma exploração de revisão; a folha padrão não é alterada."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#E7E1D5",
+      "--surface": "#F7F3EA",
+      "--surface-2": "#D8D0C1",
+      "--fg": "#211F1B",
+      "--muted": "#514C43",
+      "--accent": "#A52D24",
+      "--accent-fg": "#FFFFFF",
+      "--border": "#797267",
+      "--focus": "#075D78",
+      "--shadow": "0 8px 24px rgba(20, 18, 22, .16)"
+    },
+    "intent": "A fluorescent liminal hallway translated into a pale municipal archive: warm concrete, warning red, sparse status labels."
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"weirdcore\"][data-variant=\"alternate\"] .hero",
+      "signal": "A fluorescent liminal hallway translated into a pale municipal archive: warm concrete, warning red, sparse status labels. O hero incorpora small red exit marker; os controles mantêm contraste e foco discernível.",
+      "skillReference": "styles/weirdcore.css — identidade canônica; revisão visual local",
+      "evidence": "Contraparte construída sem editar styles/weirdcore.css."
+    },
+    {
+      "selector": "#stage[data-style=\"weirdcore\"][data-variant=\"alternate\"] .app::before",
+      "signal": "Decoração de fundo: grainless corridor lines; opacidade baixa para não competir com texto.",
+      "skillReference": "styles/weirdcore.css — identidade canônica",
+      "evidence": "A camada é pointer-events:none e subordinada ao conteúdo."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#stage[data-style=\"weirdcore\"][data-variant=\"alternate\"] #view-painel",
+      "property": "grid-template-columns / grid-template-areas / gap",
+      "before": "Painel segue fluxo canônico de uma coluna; KPI usa grade fluida definida pelo estilo.",
+      "after": "narrow corridor masthead with a single warning rail; metrics in a compact strip. Desktop usa trilho principal+secundário; mobile preserva ordem e fluxo único.",
+      "breakpoints": {
+        "320": {
+          "before": "fluxo canônico em coluna, sem overflow intencional",
+          "after": "1 coluna, gap 16px e padding lateral 18px"
+        },
+        "375": {
+          "before": "fluxo canônico em coluna, grade fluida",
+          "after": "1 coluna; hero e controles cabem na largura útil"
+        },
+        "768": {
+          "before": "fluxo principal em coluna, elementos fluem naturalmente",
+          "after": "1 coluna; composição mantém leitura vertical e não comprime cartões"
+        },
+        "1280": {
+          "before": "fluxo canônico em coluna por regiões",
+          "after": "2 trilhos: hero 1.25fr e métricas .75fr; recursos atravessam as colunas, formulário e atividade dividem a linha inferior"
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": "#stage[data-style=\"weirdcore\"][data-variant=\"alternate\"] .hero::after",
+      "animation": "weirdcore-element",
+      "trigger": "Ao aplicar a contraparte, regra CSS de entrada do filete decorativo do hero.",
+      "duration": "520ms ease-out, scaleX; somente decoração, conteúdo sempre visível.",
+      "fallback": "Sem suporte a animação CSS, filete permanece estático; conteúdo não depende do movimento.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa a animação.",
+      "pauseResume": "Animação de entrada finita; não há loop contínuo nem estado de conteúdo.",
+      "cleanup": "Ao remover a folha da contraparte, pseudo-elemento e animação desaparecem."
+    },
+    "background": {
+      "selector": "#stage[data-style=\"weirdcore\"][data-variant=\"alternate\"]::after",
+      "animation": "weirdcore-background",
+      "trigger": "Loop ambiental sutil enquanto a contraparte está ativa.",
+      "duration": "32s ease-in-out alternate; somente opacidade e posição de background, sem camada sobre interação.",
+      "fallback": "Sem suporte a animação, textura permanece estática e decorativa.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa o loop.",
+      "pauseResume": "CSS anima apenas enquanto a folha alternate permanece aplicada; o navegador suspende a aba oculta.",
+      "cleanup": "Ao remover a folha da contraparte, camada e animação desaparecem."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Corredor de Serviço",
+      "description": "A fluorescent liminal hallway translated into a pale municipal archive: warm concrete, warning red, sparse status labels. Contraparte alternativa clara para o padrão, proposta para revisão; a aparência canônica permanece intacta."
+    },
+    "en-US": {
+      "name": "Service Corridor",
+      "description": "A fluorescent liminal hallway translated into a pale municipal archive: warm concrete, warning red, sparse status labels. This light counterpart is a review proposal; the canonical appearance remains unchanged."
+    },
+    "es-ES": {
+      "name": "Service Corridor — alternativa clara",
+      "description": "A fluorescent liminal hallway translated into a pale municipal archive: warm concrete, warning red, sparse status labels. Alternativa clara; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "fr-FR": {
+      "name": "Service Corridor — variante claire",
+      "description": "A fluorescent liminal hallway translated into a pale municipal archive: warm concrete, warning red, sparse status labels. Variante claire; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "de-DE": {
+      "name": "Service Corridor — helle Variante",
+      "description": "A fluorescent liminal hallway translated into a pale municipal archive: warm concrete, warning red, sparse status labels. Helle variante; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ru-RU": {
+      "name": "Service Corridor — светлая версия",
+      "description": "A fluorescent liminal hallway translated into a pale municipal archive: warm concrete, warning red, sparse status labels. Светлая версия; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ar-SA": {
+      "name": "Service Corridor — النسخة الفاتحة",
+      "description": "A fluorescent liminal hallway translated into a pale municipal archive: warm concrete, warning red, sparse status labels. النسخة الفاتحة; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "hi-IN": {
+      "name": "Service Corridor — हल्का रूप",
+      "description": "A fluorescent liminal hallway translated into a pale municipal archive: warm concrete, warning red, sparse status labels. हल्का रूप; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "zh-CN": {
+      "name": "Service Corridor — 浅色版本",
+      "description": "A fluorescent liminal hallway translated into a pale municipal archive: warm concrete, warning red, sparse status labels. 浅色版本; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ja-JP": {
+      "name": "Service Corridor — ライト版",
+      "description": "A fluorescent liminal hallway translated into a pale municipal archive: warm concrete, warning red, sparse status labels. ライト版; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ko-KR": {
+      "name": "Service Corridor — 밝은 변형",
+      "description": "A fluorescent liminal hallway translated into a pale municipal archive: warm concrete, warning red, sparse status labels. 밝은 변형; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    }
+  },
+  "sources": [
+    {
+      "title": "Canonical weirdcore stylesheet",
+      "url": "styles/weirdcore.css",
+      "kind": "local canonical source",
+      "claim": "Used to identify the untouched default polarity and visual identity of weirdcore."
+    },
+    {
+      "title": "Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility standard",
+      "claim": "Contrast ratios are screening evidence; final visual review must inspect rendered text, controls, focus and status states."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "3f1ec3e1b2736438fefed4f19ecf93331bd4392e55cf8d5eefa6df644e6ed4f1",
+  "contentDigest": "c98f405a7d9c6cfa66da0ca904225f79b5771424f02063543cbaa6c2a03945a7",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "c98f405a7d9c6cfa66da0ca904225f79b5771424f02063543cbaa6c2a03945a7",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "c98f405a7d9c6cfa66da0ca904225f79b5771424f02063543cbaa6c2a03945a7",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

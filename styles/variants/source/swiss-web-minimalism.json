@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "slug": "swiss-web-minimalism",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "light",
+    "alternatePolarity": "dark",
+    "rationale": "O Padrão foi medido no palco: #stage usa fundo branco (#FFFFFF visualmente) e texto preto; por isso esta ficha o classifica como claro. A contraparte explora carvão e papel frio sem alterar o arquivo canônico.",
+    "evidence": "Render headless Chromium 155, 320/375/768/1280×900, slug swiss-web-minimalism: computed background-color de #stage = rgb(255, 255, 255) e .display = rgb(0, 0, 0) nas quatro larguras. Medições e capturas com hashes em .superpowers/sdd/2026-10-17-plano-fechar-bloqueios-release/."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#17191C",
+      "--surface": "#202327",
+      "--surface-2": "#292D32",
+      "--fg": "#F0EEE9",
+      "--muted": "#C0C0BC",
+      "--accent": "#F36D62",
+      "--accent-fg": "#211817",
+      "--border": "#8B8D8C",
+      "--ok": "#7BD3A2",
+      "--warn": "#FFD27A",
+      "--danger": "#FF9991",
+      "--focus": "#FFD27A",
+      "--shadow": "none",
+      "--radius": "0",
+      "--border-width": "1px"
+    }
+  },
+  "designSignals": [
+    {
+      "selector": "#stage .hero",
+      "signal": "Grelha modular explícita de 12 colunas no cabeçalho; a contraparte mantém alinhamento matemático e hierarquia assimétrica, agora expandida na composição da página.",
+      "skillReference": "knowledge/skills/domains/design/ui-style-swiss-web-minimalism/SKILL.md#visual-hallmarks-1-the-modular-grid",
+      "evidence": "A fonte canônica declara display:grid e repeat(12,1fr) em .hero; a contraparte usa grid nomeado em #view-painel e mantém colunas no hero. A geometria do navegador é testada em quatro larguras."
+    },
+    {
+      "selector": "#stage .display, #stage .lead",
+      "signal": "Tipografia neo-grotesca sem mistura de famílias e texto alinhado à esquerda com margem direita irregular; a cor muda, o princípio tipográfico permanece.",
+      "skillReference": "knowledge/skills/domains/design/ui-style-swiss-web-minimalism/SKILL.md#typography-lettering-architecture",
+      "evidence": "A folha canônica usa Inter para texto/título e mantém os blocos de conteúdo à esquerda. A contraparte explicita a mesma família herdada, text-align:left e largura editorial do lead."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#view-painel",
+      "property": "display / grid-template-columns / grid-template-areas",
+      "before": "bloco em fluxo vertical; métricas e recursos ocupam a largura inteira em sequência",
+      "after": "grelha editorial: hero em largura inteira; métricas à esquerda e recursos à direita em desktop; sequência de leitura original preservada",
+      "breakpoints": {
+        "320": {
+          "before": "display:block; métricas x17 y1036 286×624; recursos x17 y1716 286×604",
+          "after": "display:grid; 1 coluna de 286px; métricas x17 y996 286×265; recursos x17 y1285 286×578"
+        },
+        "375": {
+          "before": "display:block; métricas x17 y951 341×624; recursos x17 y1631 341×604",
+          "after": "display:grid; 1 coluna de 341px; métricas x17 y901 341×248; recursos x17 y1174 341×578"
+        },
+        "768": {
+          "before": "display:block; métricas x305 y1038 438×322; recursos x305 y1416 438×473",
+          "after": "display:grid; 1 coluna de 438px; métricas x305 y998 438×269; recursos x305 y1291 438×554"
+        },
+        "1280": {
+          "before": "display:block; métricas x305 y841 950×171; recursos x305 y1068 950×404",
+          "after": "display:grid; métricas x305 y838 335×414 à esquerda; recursos x668 y838 587×414 à direita; hero/divisão/aviso em largura inteira"
+        }
+      }
+    },
+    {
+      "selector": ".kpis",
+      "property": "grid-template-columns",
+      "before": "auto-fit com cards de largura mínima 190px",
+      "after": "grade métrica compacta de duas colunas, alinhada à grade editorial",
+      "breakpoints": {
+        "320": {
+          "before": "286px (1 coluna × 4 linhas)",
+          "after": "135px 135px (2 colunas × 2 linhas)"
+        },
+        "375": {
+          "before": "341px (1 coluna × 4 linhas)",
+          "after": "162.5px 162.5px (2 colunas × 2 linhas)"
+        },
+        "768": {
+          "before": "207px 207px",
+          "after": "211px 211px, duas colunas uniformes e gap de 16px"
+        },
+        "1280": {
+          "before": "219.5px × 4 em uma faixa de 950px",
+          "after": "159.6px × 2 na coluna lateral de 335px (2 linhas)"
+        }
+      }
+    },
+    {
+      "selector": ".grid",
+      "property": "grid-template-columns",
+      "before": "grade auto-fit de recursos; no tablet distribui os módulos em duas colunas",
+      "after": "recursos em lista editorial compacta no tablet; em desktop, dois módulos na coluna ampla e gráfico na linha seguinte",
+      "breakpoints": {
+        "320": {
+          "before": "1 coluna de 286px",
+          "after": "1 coluna de 286px, gap 16px; cards mantêm largura total"
+        },
+        "375": {
+          "before": "1 coluna de 341px",
+          "after": "1 coluna de 341px, gap 16px; cards mantêm largura total"
+        },
+        "768": {
+          "before": "260px 154px",
+          "after": "1 coluna de 438px; cards e gráfico mantêm largura total"
+        },
+        "1280": {
+          "before": "463px 463px 0px na área de 950px",
+          "after": "285.4px 285.4px na área de 587px; gráfico ocupa ambas"
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": "#t-recursos::before",
+      "animation": "swiss-rule-reveal",
+      "trigger": "CSS view(block) timeline do título enquanto #t-recursos entra no scrollport #stage; revela a linha de forma linear entre entry 0% e entry 80%. Não dispara ao alternar modo nem por relógio independente.",
+      "duration": "1s linear, progresso governado somente por rolagem",
+      "fallback": "Sem suporte a view timelines, a linha fica visível em largura completa e estática; título, leitura e foco mantêm o fluxo normal.",
+      "reducedMotion": "Desativada por prefers-reduced-motion: reduce; linha final permanece estática.",
+      "pauseResume": "A progressão acompanha apenas a view timeline do scrollport #stage e não o relógio; o tratamento explícito de document.visibilityState (pausa em hidden e retomada em visible) aguarda a integração runtime F3.",
+      "cleanup": "O CSS não cria listeners, observers ou timers; a remoção do estilo ao sair de alternate e a limpeza de referências no ciclo de vida da interface aguardam integração runtime F3."
+    },
+    "background": {
+      "selector": "#stage::before",
+      "animation": "swiss-grid-reveal",
+      "trigger": "CSS scroll(nearest block) timeline do scrollport ancestral #stage; ao rolar do topo ao fim, a malha de 64px do pseudo-elemento revela-se linearmente por transform:scaleX(0→1). Não há deslocamento relativo/parallax nem loop.",
+      "duration": "1s linear, progresso mapeado a 0–100% do scroll de #stage",
+      "fallback": "A malha modular do pseudo-elemento fica completamente visível e estática quando scroll timelines não são suportadas; não há cobertura nem animação de background-size.",
+      "reducedMotion": "Por prefers-reduced-motion: reduce, remove a timeline e define transform:scaleX(1); a malha completa permanece estática.",
+      "pauseResume": "A progressão acompanha apenas a scroll timeline de #stage e não o relógio; o tratamento explícito de document.visibilityState (pausa em hidden e retomada em visible) aguarda a integração runtime F3.",
+      "cleanup": "O CSS não cria canvas, listeners, observers ou timers; a remoção do estilo ao sair de alternate e a limpeza de referências no ciclo de vida da interface aguardam integração runtime F3."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Grelha de Carvão",
+      "description": "Uma composição suíça escura de carvão, papel frio e vermelho sinalizador. Métricas formam uma coluna editorial ao lado dos recursos, sob linhas precisas e tipografia neo-grotesca."
+    },
+    "en-US": {
+      "name": "Charcoal Grid",
+      "description": "A dark Swiss composition of charcoal, cool paper, and signal red. Metrics form an editorial rail beside resources, held together by precise rules and neo-grotesque type."
+    },
+    "es-ES": {
+      "name": "Retícula de Carbón",
+      "description": "Una composición suiza oscura de carbón, papel frío y rojo de señal. Las métricas forman una columna editorial junto a los recursos, con filetes precisos y tipografía neogrotesca."
+    },
+    "fr-FR": {
+      "name": "Grille de Charbon",
+      "description": "Une composition suisse sombre de charbon, de papier froid et de rouge signal. Les indicateurs forment une colonne éditoriale à côté des ressources, avec des filets précis et une typographie néogrotesque."
+    },
+    "de-DE": {
+      "name": "Kohleraster",
+      "description": "Eine dunkle Schweizer Komposition aus Kohle, kühlem Papier und Signalrot. Kennzahlen stehen in einer redaktionellen Spalte neben den Ressourcen, gegliedert durch präzise Linien und Groteskschrift."
+    },
+    "ru-RU": {
+      "name": "Угольная сетка",
+      "description": "Тёмная швейцарская композиция из угольных тонов, холодной бумаги и сигнального красного. Метрики собраны в редакционную колонку рядом с ресурсами; композицию держат точные линии и гротескная типографика."
+    },
+    "ar-SA": {
+      "name": "شبكة الفحم",
+      "description": "تكوين سويسري داكن يجمع الفحم والورق البارد والأحمر الإشاري. تُرتب المقاييس في عمود تحريري بجوار الموارد، ضمن خطوط دقيقة وحروف غروتسك واضحة."
+    },
+    "hi-IN": {
+      "name": "कोयला ग्रिड",
+      "description": "कोयले, ठंडे काग़ज़ और संकेत लाल रंग से बना स्विस शैली का गहरा संयोजन। मापदंड संसाधनों के पास संपादकीय स्तंभ में रखे गए हैं; सटीक रेखाएँ और ग्रोटेस्क टाइप इसे व्यवस्थित रखते हैं।"
+    },
+    "zh-CN": {
+      "name": "炭黑网格",
+      "description": "以炭黑、冷调纸色和信号红构成的瑞士风格深色版。指标排成编辑式侧栏，与资源并列；精确细线和无衬线字体维持清晰秩序。"
+    },
+    "ja-JP": {
+      "name": "チャコール・グリッド",
+      "description": "チャコール、冷たい紙色、シグナルレッドで構成したスイス様式のダーク案。指標を編集的なサイド列にまとめ、精密な罫線とグロテスク体で資源欄と整えます。"
+    },
+    "ko-KR": {
+      "name": "차콜 그리드",
+      "description": "차콜, 차가운 종이색, 시그널 레드로 구성한 스위스 스타일의 어두운 안입니다. 지표를 편집형 사이드 열에 모으고 정밀한 선과 그로테스크 서체로 자료 영역과 정렬합니다."
+    }
+  },
+  "sources": [
+    {
+      "title": "Coacus: Swiss Web Minimalism style definition",
+      "url": "https://github.com/dandgabr/Coacus/blob/main/knowledge/skills/domains/design/ui-style-swiss-web-minimalism/SKILL.md",
+      "kind": "domain skill; local copy SHA-256 222f9b0b9065257ae572d3290ef8b69295e45368371093a4d1a2dc7324a82643",
+      "claim": "The grid, neo-grotesque typography, left ragged-right text, flat surfaces, orthogonal forms and restrained signal red are design references. The new dark layout and palette are an experiment, not a historical reproduction."
+    },
+    {
+      "title": "W3C WCAG 2.2 Understanding SC 1.4.3 Contrast (Minimum)",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "kind": "normative accessibility guidance",
+      "claim": "Text contrast is checked against a 4.5:1 minimum for normal text and 3:1 for large text."
+    },
+    {
+      "title": "W3C WCAG 2.2 Understanding SC 1.4.11 Non-text Contrast",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+      "kind": "normative accessibility guidance",
+      "claim": "Meaningful control boundaries and focus indicators need 3:1 contrast against adjacent colors."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "17a124412274b50e6f1892eca15182a3b005c8280ef9d4b16d0675424081bdcb",
+  "contentDigest": "f4c81eec82523dbdc44a0028c79375d4ec749bab5a1727f8f863cd4075e6c3f8",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "f4c81eec82523dbdc44a0028c79375d4ec749bab5a1727f8f863cd4075e6c3f8",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "f4c81eec82523dbdc44a0028c79375d4ec749bab5a1727f8f863cd4075e6c3f8",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

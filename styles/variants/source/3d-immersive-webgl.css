@@ -1,0 +1,68 @@
+/* Review proposal for 3d-immersive-webgl; canonical default remains in styles/3d-immersive-webgl.css. */
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] {
+  --bg: #E9E8F5;
+  --surface: #FAFAFF;
+  --surface-2: #DBDDF0;
+  --fg: #272A42;
+  --muted: #505574;
+  --accent: #5266B8;
+  --accent-fg: #FFFFFF;
+  --border: #646B91;
+  --ok: #24764F;
+  --warn: #805400;
+  --danger: #A12D37;
+  --focus: #5266B8;
+  --radius: 18px;
+  --radius-sm: 6px;
+  --shadow: 0 8px 22px rgba(0,0,0,.16);
+  color-scheme: light;
+  color: var(--fg) !important;
+  background-color: var(--bg) !important;
+  background-image: linear-gradient(150deg, transparent 48%, #5266B833 49% 50%, transparent 51%), linear-gradient(30deg, transparent 48%, #898FAA2E 49% 50%, transparent 51%) !important;
+  background-size: 48px 48px, auto !important;
+}
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"]::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events:none;
+  background: linear-gradient(150deg, transparent 48%, #5266B833 49% 50%, transparent 51%) 0 0/42px 28px, linear-gradient(30deg, transparent 48%, #898FAA2E 49% 50%, transparent 51%) 0 0/42px 28px;
+  opacity:.72; animation: immersive3d-webgl-field 24s ease-in-out infinite alternate;
+}
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] .app { position:relative; z-index:1; color:var(--fg)!important; background:transparent!important; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] :is(.topbar,.card,.panel,.table-wrap,.toast,dialog,.view-header,.feature,.kpi,.chart) {
+  color:var(--fg)!important; background-color:var(--surface)!important; border-color:var(--border)!important;
+  border-radius:var(--radius)!important; box-shadow:var(--shadow)!important;
+}
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] :is(.display,.brand,.section-title,.feature h3,.panel h3,.kpi-value) { color:var(--fg)!important; -webkit-text-fill-color:var(--fg)!important; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] :is(.lead,.feature p,.view-subtitle,.footer,.kpi-label) { color:var(--muted)!important; -webkit-text-fill-color:var(--muted)!important; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] :is(.btn-primary,.nav a.is-active,.nav-tab.is-active) { background:var(--accent)!important; color:var(--accent-fg)!important; -webkit-text-fill-color:var(--accent-fg)!important; border-color:var(--accent)!important; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] :is(.btn-secondary,.btn-ghost,.nav-tab) { background:var(--surface-2)!important; color:var(--fg)!important; -webkit-text-fill-color:var(--fg)!important; border:1px solid var(--border)!important; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] .topbar { border-bottom:2px solid var(--accent)!important; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] .kpi { border-top:3px solid var(--accent)!important; animation:immersive3d-webgl-settle .55s ease-out both; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] .kpis { display:grid!important; grid-template-columns:repeat(2,minmax(0,1fr))!important; gap:clamp(10px,2vw,20px)!important; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] .grid { display:grid!important; grid-template-columns:minmax(0,1fr)!important; gap:clamp(12px,2vw,22px)!important; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] #view-painel { display:grid!important; grid-template-columns:minmax(0,1fr); grid-template-areas:"hero" "metrics" "resources" "split" "toast"; gap:clamp(18px,3vw,30px)!important; align-content:start; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] #view-painel > .hero { grid-area:hero; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-metricas"] { grid-area:metrics; min-width:0; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-recursos"] { grid-area:resources; min-width:0; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] #view-painel > .split { grid-area:split; min-width:0; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] :is(input,select,textarea) { min-width:0; max-width:100%; color:var(--fg)!important; background:var(--surface-2)!important; border:1px solid var(--border)!important; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] :focus-visible { outline:3px solid var(--focus)!important; outline-offset:3px; }
+@media (min-width: 960px) {
+ #stage[data-style="3d-immersive-webgl"][data-variant="alternate"] #view-painel { grid-template-columns:minmax(0, 7fr) minmax(0, 5fr); grid-template-areas:"hero metrics" "hero resources" "split split" "toast toast"; column-gap:clamp(20px,2.5vw,34px); row-gap:30px; }
+ #stage[data-style="3d-immersive-webgl"][data-variant="alternate"] .grid { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+ #stage[data-style="3d-immersive-webgl"][data-variant="alternate"] .grid > .chart { grid-column:1/-1; }
+}
+@keyframes immersive3d-webgl-settle { from { opacity:.55; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes immersive3d-webgl-field { from { background-position:0 0; } to { background-position:34px 18px; } }
+@media (prefers-reduced-motion: reduce) {
+ #stage[data-style="3d-immersive-webgl"][data-variant="alternate"] *, #stage[data-style="3d-immersive-webgl"][data-variant="alternate"]::before { animation:none!important; scroll-behavior:auto!important; transition:none!important; }
+}
+
+/* Start motion when the runtime confirms visibility, so a hidden-page load cannot consume the entrance animation. */
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] .kpi[data-motion-visible="true"] { animation:immersive3d-webgl-settle .55s ease-out both; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"][data-motion-active="true"]::before { animation:immersive3d-webgl-field 24s ease-in-out infinite alternate; }
+
+/* Complete paint layers must follow the active variant palette. */
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] :is(.topbar,.card,.panel,.chart) { background:var(--surface)!important; }
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] .hero::after { opacity:.15!important; }
+
+#stage[data-style="3d-immersive-webgl"][data-variant="alternate"] .hero { background:var(--surface)!important;border:1px solid var(--border);border-radius:var(--radius); }

@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "slug": "arts-and-crafts",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "dark",
+    "alternatePolarity": "light",
+    "rationale": "Padrão classificado dark pela luminância do token --bg em styles/arts-and-crafts.css. Contraparte light: A light Morris-inspired textile board: linen, forest green and brick red, framed by quiet woodcut foliage. A composição e paleta são uma exploração de revisão; a folha padrão não é alterada."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#EEE7D5",
+      "--surface": "#F8F3E7",
+      "--surface-2": "#DDD2BB",
+      "--fg": "#263629",
+      "--muted": "#555C4B",
+      "--accent": "#A33D31",
+      "--accent-fg": "#FFFFFF",
+      "--border": "#767564",
+      "--focus": "#315C50",
+      "--shadow": "0 8px 24px rgba(20, 18, 22, .16)"
+    },
+    "intent": "A light Morris-inspired textile board: linen, forest green and brick red, framed by quiet woodcut foliage."
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"arts-and-crafts\"][data-variant=\"alternate\"] .hero",
+      "signal": "A light Morris-inspired textile board: linen, forest green and brick red, framed by quiet woodcut foliage. O hero incorpora leaf medallion rotates 2deg; os controles mantêm contraste e foco discernível.",
+      "skillReference": "styles/arts-and-crafts.css — identidade canônica; revisão visual local",
+      "evidence": "Contraparte construída sem editar styles/arts-and-crafts.css."
+    },
+    {
+      "selector": "#stage[data-style=\"arts-and-crafts\"][data-variant=\"alternate\"] .app::before",
+      "signal": "Decoração de fundo: blockprint foliage; opacidade baixa para não competir com texto.",
+      "skillReference": "styles/arts-and-crafts.css — identidade canônica",
+      "evidence": "A camada é pointer-events:none e subordinada ao conteúdo."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#stage[data-style=\"arts-and-crafts\"][data-variant=\"alternate\"] #view-painel",
+      "property": "grid-template-columns / grid-template-areas / gap",
+      "before": "Painel segue fluxo canônico de uma coluna; KPI usa grade fluida definida pelo estilo.",
+      "after": "woven two-column panels with a central craft label; cards use a repeating textile rhythm. Desktop usa trilho principal+secundário; mobile preserva ordem e fluxo único.",
+      "breakpoints": {
+        "320": {
+          "before": "fluxo canônico em coluna, sem overflow intencional",
+          "after": "1 coluna, gap 16px e padding lateral 18px"
+        },
+        "375": {
+          "before": "fluxo canônico em coluna, grade fluida",
+          "after": "1 coluna; hero e controles cabem na largura útil"
+        },
+        "768": {
+          "before": "fluxo principal em coluna, elementos fluem naturalmente",
+          "after": "1 coluna; composição mantém leitura vertical e não comprime cartões"
+        },
+        "1280": {
+          "before": "fluxo canônico em coluna por regiões",
+          "after": "2 trilhos: hero 1.25fr e métricas .75fr; recursos atravessam as colunas, formulário e atividade dividem a linha inferior"
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": "#stage[data-style=\"arts-and-crafts\"][data-variant=\"alternate\"] .hero::after",
+      "animation": "arts-and-crafts-element",
+      "trigger": "Ao aplicar a contraparte, regra CSS de entrada do filete decorativo do hero.",
+      "duration": "520ms ease-out, scaleX; somente decoração, conteúdo sempre visível.",
+      "fallback": "Sem suporte a animação CSS, filete permanece estático; conteúdo não depende do movimento.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa a animação.",
+      "pauseResume": "Animação de entrada finita; não há loop contínuo nem estado de conteúdo.",
+      "cleanup": "Ao remover a folha da contraparte, pseudo-elemento e animação desaparecem."
+    },
+    "background": {
+      "selector": "#stage[data-style=\"arts-and-crafts\"][data-variant=\"alternate\"]::after",
+      "animation": "arts-and-crafts-background",
+      "trigger": "Loop ambiental sutil enquanto a contraparte está ativa.",
+      "duration": "32s ease-in-out alternate; somente opacidade e posição de background, sem camada sobre interação.",
+      "fallback": "Sem suporte a animação, textura permanece estática e decorativa.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa o loop.",
+      "pauseResume": "CSS anima apenas enquanto a folha alternate permanece aplicada; o navegador suspende a aba oculta.",
+      "cleanup": "Ao remover a folha da contraparte, camada e animação desaparecem."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Oficina de Linho",
+      "description": "A light Morris-inspired textile board: linen, forest green and brick red, framed by quiet woodcut foliage. Contraparte alternativa clara para o padrão, proposta para revisão; a aparência canônica permanece intacta."
+    },
+    "en-US": {
+      "name": "Linen Workshop",
+      "description": "A light Morris-inspired textile board: linen, forest green and brick red, framed by quiet woodcut foliage. This light counterpart is a review proposal; the canonical appearance remains unchanged."
+    },
+    "es-ES": {
+      "name": "Linen Workshop — alternativa clara",
+      "description": "A light Morris-inspired textile board: linen, forest green and brick red, framed by quiet woodcut foliage. Alternativa clara; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "fr-FR": {
+      "name": "Linen Workshop — variante claire",
+      "description": "A light Morris-inspired textile board: linen, forest green and brick red, framed by quiet woodcut foliage. Variante claire; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "de-DE": {
+      "name": "Linen Workshop — helle Variante",
+      "description": "A light Morris-inspired textile board: linen, forest green and brick red, framed by quiet woodcut foliage. Helle variante; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ru-RU": {
+      "name": "Linen Workshop — светлая версия",
+      "description": "A light Morris-inspired textile board: linen, forest green and brick red, framed by quiet woodcut foliage. Светлая версия; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ar-SA": {
+      "name": "Linen Workshop — النسخة الفاتحة",
+      "description": "A light Morris-inspired textile board: linen, forest green and brick red, framed by quiet woodcut foliage. النسخة الفاتحة; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "hi-IN": {
+      "name": "Linen Workshop — हल्का रूप",
+      "description": "A light Morris-inspired textile board: linen, forest green and brick red, framed by quiet woodcut foliage. हल्का रूप; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "zh-CN": {
+      "name": "Linen Workshop — 浅色版本",
+      "description": "A light Morris-inspired textile board: linen, forest green and brick red, framed by quiet woodcut foliage. 浅色版本; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ja-JP": {
+      "name": "Linen Workshop — ライト版",
+      "description": "A light Morris-inspired textile board: linen, forest green and brick red, framed by quiet woodcut foliage. ライト版; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ko-KR": {
+      "name": "Linen Workshop — 밝은 변형",
+      "description": "A light Morris-inspired textile board: linen, forest green and brick red, framed by quiet woodcut foliage. 밝은 변형; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    }
+  },
+  "sources": [
+    {
+      "title": "Canonical arts-and-crafts stylesheet",
+      "url": "styles/arts-and-crafts.css",
+      "kind": "local canonical source",
+      "claim": "Used to identify the untouched default polarity and visual identity of arts-and-crafts."
+    },
+    {
+      "title": "Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility standard",
+      "claim": "Contrast ratios are screening evidence; final visual review must inspect rendered text, controls, focus and status states."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "9080dfbf8ccaa8ae8b52cb4294d7d7e5d518bef34e9fb3f7ed413238da2c48dc",
+  "contentDigest": "1ed8a27d0335f1c26a0b4f9d384f2fab91d16b70c80a1966d1809bfbf8028117",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "1ed8a27d0335f1c26a0b4f9d384f2fab91d16b70c80a1966d1809bfbf8028117",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "1ed8a27d0335f1c26a0b4f9d384f2fab91d16b70c80a1966d1809bfbf8028117",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

@@ -15,7 +15,7 @@
 #stage p { margin: 0 0 1em; }
 
 #stage .topbar { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 16px 0; }
-#stage .brand { font: 700 1.25rem var(--font-display); text-decoration: none; margin-right: auto; display: flex; gap: 8px; align-items: center; }
+#stage .brand { font: 700 1.25rem var(--font-display); text-decoration: none; margin-inline-end: auto; display: flex; gap: 8px; align-items: center; }
 #stage .brand-mark { width: 1.4em; height: 1.4em; display: inline-block; background: var(--accent); border-radius: var(--radius-sm); }
 #stage .nav { display: flex; gap: 6px; flex-wrap: wrap; }
 #stage .nav a, #stage .nav button.nav-tab { padding: 6px 12px; text-decoration: none; border-radius: var(--radius-sm); font: inherit; color: inherit; border: 1px solid transparent; background: transparent; cursor: pointer; transition: background-color .15s ease, color .15s ease; }
@@ -29,6 +29,7 @@
 #stage .actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
 #stage .btn { font: 600 1rem var(--font-body); padding: 10px 18px; border-radius: var(--radius-sm); border: 1px solid transparent; cursor: pointer; color: inherit; background: none; min-height: 44px; }
+#stage .hero .btn { max-width: 100%; white-space: normal; }
 #stage .btn-primary { background: var(--accent); color: var(--accent-fg); }
 #stage .btn-secondary { background: var(--surface-2); border-color: var(--border); }
 #stage .btn-ghost { border-color: var(--border); }
@@ -50,20 +51,27 @@
 #stage .bars i { flex: 1; background: var(--accent); border-radius: var(--radius-sm) var(--radius-sm) 0 0; height: var(--h); }
 @media (max-width: 640px) { #stage .chart { grid-column: auto; } }
 
-#stage .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap); margin-top: var(--gap); align-items: start; }
+#stage .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: var(--gap); margin-top: var(--gap); align-items: start; }
+@media (max-width: 640px) {
+  #stage .split { grid-template-columns: minmax(0, 1fr); }
+  #stage .split > *, #stage .grid > *, #stage .kpis > * { min-width: 0; }
+}
 #stage form { display: grid; gap: 14px; }
 #stage label { display: grid; gap: 4px; font-size: .9rem; font-weight: 600; }
 #stage input[type=text], #stage input[type=email], #stage select, #stage textarea {
   font: inherit; padding: 10px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); background: var(--surface); color: var(--fg); min-height: 44px; width: 100%;
 }
+/* Native controls inherit the active theme accent instead of Chromium's blue default. */
+#stage input[type="checkbox"], #stage input[type="range"] { accent-color: var(--accent); }
 #stage .inline { display: flex; align-items: center; gap: 10px; font-weight: 400; }
 #stage .switch { appearance: none; width: 44px; height: 24px; border-radius: 99px; background: var(--border); position: relative; cursor: pointer; flex: none; }
 #stage .switch::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: var(--surface); transition: transform .2s; }
 #stage .switch:checked { background: var(--accent); } #stage .switch:checked::after { transform: translateX(20px); }
 
-#stage .table-wrap { overflow-x: auto; }
+#stage .table-wrap { min-width: 0; max-width: 100%; overflow-x: auto; }
 #stage table { width: 100%; border-collapse: collapse; }
 #stage th, #stage td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+html[dir="rtl"] #stage th, html[dir="rtl"] #stage td { text-align: right; }
 #stage th { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
 
 #stage .toast { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: var(--radius); background: var(--fg); color: var(--bg); }
@@ -77,7 +85,7 @@
 #stage .view-pane { animation: fadeIn .2s ease-out; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 
-#stage .view-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin: 32px 0 24px; flex-wrap: wrap; }
+#stage .view-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin: 32px 0 24px; padding-inline: max(12px, var(--pad, 16px)); flex-wrap: wrap; }
 #stage .view-subtitle { color: var(--muted); margin: 4px 0 0; }
 #stage .view-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
@@ -103,7 +111,7 @@
 #stage .team-card { text-align: center; display: flex; flex-direction: column; align-items: center; }
 #stage .team-avatar-wrap { position: relative; margin-bottom: 12px; }
 #stage .avatar-lg { width: 64px; height: 64px; border-radius: 50%; background: var(--accent); color: var(--accent-fg); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; }
-#stage .status-indicator { position: absolute; bottom: 2px; right: 2px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--surface); }
+#stage .status-indicator { position: absolute; bottom: 2px; inset-inline-end: 2px; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--surface); }
 #stage .status-indicator.online { background: var(--ok); }
 #stage .status-indicator.busy { background: var(--danger); }
 #stage .status-indicator.offline { background: var(--muted); }

@@ -1,0 +1,69 @@
+/* Contraparte experimental para revisão. O padrão canônico permanece intocado. */
+#stage[data-style="frutiger-aero"][data-variant="alternate"] {
+  --bg:#15384a; --surface:#1b4658; --surface-2:#24566a; --fg:#f0fbff; --muted:#c1e2ed;
+  --accent:#78d7c6; --accent-fg:#103638; --border:#82A7B3; --focus:#78d7c6;
+  --ok:#8ed7a6; --warn:#ffd06f; --danger:#ff9993;
+  --shadow:0 8px 22px rgba(0,0,0,.18);
+  color-scheme:dark; background-color:var(--bg) !important; color:var(--fg) !important;
+  background-image:radial-gradient(ellipse at 15% 0%, #78d7c620, transparent 54%) !important;
+  font-family:inherit;
+}
+#stage[data-style="frutiger-aero"][data-variant="alternate"] .app { color:var(--fg) !important; background:transparent !important; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] :is(.topbar,.card,.panel,.table-wrap,.toast,dialog,.view-header) {
+ background-color:var(--surface) !important; color:var(--fg) !important; border-color:var(--border) !important;
+ border-radius:18px;box-shadow:0 9px 22px rgba(4,22,32,.23);
+}
+#stage[data-style="frutiger-aero"][data-variant="alternate"] :is(.brand,.display,.lead,.section-title,.feature,.kpi,.panel,.view-header,.view-subtitle,.footer,.nav,.nav-tab,table,label,dialog) { color:var(--fg) !important; -webkit-text-fill-color:var(--fg) !important; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] :is(.eyebrow,.kpi-label,th,.footer,.feature p) { color:var(--muted) !important; -webkit-text-fill-color:var(--muted) !important; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] :is(.btn-primary,.nav a.is-active) { background:var(--accent) !important; color:var(--accent-fg) !important; -webkit-text-fill-color:var(--accent-fg) !important; border-color:var(--accent) !important; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] :is(.btn-secondary,.btn-ghost,.nav-tab) { background:var(--surface-2) !important; color:var(--fg) !important; -webkit-text-fill-color:var(--fg) !important; border-color:var(--border) !important; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] :is(.feature,.kpi,.panel,.chart) { background:var(--surface) !important; color:var(--fg) !important; border-color:var(--border) !important; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] .kpis { display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:16px !important; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] .kpi { min-width:0; padding:16px !important; animation:frutiger-aero-metric-in 500ms ease-out both; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] .kpi[data-motion-visible="true"] { animation:frutiger-aero-metric-in 500ms ease-out both; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] .kpi-value { color:var(--accent) !important; -webkit-text-fill-color:var(--accent) !important; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] :is(input,select,textarea) { min-width:0; max-width:100%; background:var(--surface-2) !important; color:var(--fg) !important; -webkit-text-fill-color:var(--fg) !important; border:1px solid var(--border) !important; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] :focus-visible { outline:3px solid var(--focus) !important; outline-offset:3px; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] #view-painel { display:grid !important; grid-template-columns:minmax(0,1fr); gap:24px !important; align-content:start; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] #view-painel > * { min-width:0; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"]::after { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.16; background:repeating-linear-gradient(135deg,transparent 0 22px,#78d7c614 22px 23px); animation:frutiger-aero-ambient 28s ease-in-out infinite alternate; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] .app { position:relative; z-index:1; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"][data-motion-active="true"]::after { animation-play-state:running; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"]::after { animation-play-state:paused; }
+@keyframes frutiger-aero-metric-in { from { opacity:.86; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
+@keyframes frutiger-aero-ambient { from { transform:translate3d(-.4%,0,0); opacity:.12; } to { transform:translate3d(.4%,0,0); opacity:.2; } }
+
+/* Theme-specific composition: frutiger-aero */
+#stage[data-style="frutiger-aero"][data-variant="alternate"] .hero{background:linear-gradient(145deg,#245d70,#15384a)!important;border:1px solid #76c8ce!important;color:#f0fbff!important}
+#stage[data-style="frutiger-aero"][data-variant="alternate"] .hero :is(.display,.lead,.eyebrow){color:#f0fbff!important;-webkit-text-fill-color:#f0fbff!important}
+#stage[data-style="frutiger-aero"][data-variant="alternate"] .kpi{border:1px solid #5c8998!important}
+/* Keep the original glossy light cards out of the dark counterpart. */
+#stage[data-style="frutiger-aero"][data-variant="alternate"] :is(.card,.panel) { background:linear-gradient(180deg,#285b6d 0%,#1b4658 100%)!important; color:#f0fbff!important; }
+#stage[data-style="frutiger-aero"][data-variant="alternate"] .card::before { display:none!important; }
+@media (min-width:1200px) {
+ #stage[data-style="frutiger-aero"][data-variant="alternate"] #view-painel { grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:28px !important; row-gap:28px !important; }
+ #stage[data-style="frutiger-aero"][data-variant="alternate"] #view-painel > .hero { grid-column:1 / -1; }
+ #stage[data-style="frutiger-aero"][data-variant="alternate"] .grid { display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:16px !important; }
+}
+@media (max-width:480px) {
+ #stage[data-style="frutiger-aero"][data-variant="alternate"] .kpis { grid-template-columns:minmax(0,1fr) !important; }
+ #stage[data-style="frutiger-aero"][data-variant="alternate"] :is(.hero,.panel,.card) { padding:20px 16px !important; }
+}
+@media (prefers-reduced-motion:reduce) {
+ #stage[data-style="frutiger-aero"][data-variant="alternate"] .kpi,#stage[data-style="frutiger-aero"][data-variant="alternate"]::after { animation:none !important; transform:none !important; }
+}
+
+/* Bind every desktop column to its authored dashboard area. */
+@media (min-width:1200px) {
+ #stage[data-style="frutiger-aero"][data-variant="alternate"] #view-painel { grid-template-areas:"hero hero" "metrics resources" "form activity" "toast toast"; }
+ #stage[data-style="frutiger-aero"][data-variant="alternate"] #view-painel > .hero { grid-area:hero; }
+ #stage[data-style="frutiger-aero"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-metricas"] { grid-area:metrics; }
+ #stage[data-style="frutiger-aero"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-recursos"] { grid-area:resources; }
+ #stage[data-style="frutiger-aero"][data-variant="alternate"] #view-painel > .split { display:contents!important; }
+ #stage[data-style="frutiger-aero"][data-variant="alternate"] #view-painel > .split > .panel { margin:0!important; min-width:0; align-self:start; }
+ #stage[data-style="frutiger-aero"][data-variant="alternate"] #view-painel > .split > [data-label-panel="formulário"] { grid-area:form; }
+ #stage[data-style="frutiger-aero"][data-variant="alternate"] #view-painel > .split > [data-label-panel="registro"] { grid-area:activity; }
+}
+
+/* Complete paint layers must follow the active variant palette. */
+#stage[data-style="frutiger-aero"][data-variant="alternate"] .topbar { background:linear-gradient(180deg,var(--surface-2),var(--surface))!important; }

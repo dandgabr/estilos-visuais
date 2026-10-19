@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "slug": "linear-saas",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "dark",
+    "alternatePolarity": "light",
+    "rationale": "O padrão canônico é escuro: styles/linear-saas.css define fundo #08090a e superfícies escuras. Esta contraparte clara mantém a linguagem de console de produto, com superfícies limpas, hierarquia compacta e violeta pervinca para estados ativos; nenhuma regra do padrão foi alterada.",
+    "evidence": "Leitura dos tokens canônicos locais e comparação das luminâncias de fundo/superfícies com a contraparte proposta; classificação pronta para validação humana."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#F7F8FA",
+      "--surface": "#FFFFFF",
+      "--surface-2": "#EEF0F4",
+      "--fg": "#1F2329",
+      "--muted": "#5B6472",
+      "--accent": "#6554C0",
+      "--accent-fg": "#FFFFFF",
+      "--border": "#7B89A1",
+      "--focus": "#6554C0",
+      "--ok": "#216E4E",
+      "--warn": "#7A4F01",
+      "--danger": "#AE2E24",
+      "--radius": "12px",
+      "--shadow": "0 8px 22px rgba(26,32,44,.10)"
+    },
+    "intent": "Console de produto em papel claro: superfícies limpas e compactas, violeta pervinca para estados ativos, trilha lateral de métricas e hierarquia de SaaS."
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"linear-saas\"][data-variant=\"alternate\"] #view-painel",
+      "signal": "Console claro de produto: superfícies limpas e hierarquia compacta, violeta pervinca para estados ativos e trilha lateral de métricas; hero and KPI rail form a 5/7 dashboard split; resources use aligned two-column rows.",
+      "skillReference": "CSS canônico local styles/linear-saas.css; validar referências de domínio durante a revisão humana.",
+      "evidence": "A contraparte concentra a direção clara no layout e nos tokens alternate, com CSS limitado ao stage de linear-saas."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#view-painel",
+      "property": "grid-template-columns / areas / gap",
+      "before": "Fluxo e distribuição do padrão canônico, preservados integralmente no arquivo styles/linear-saas.css.",
+      "after": "hero and KPI rail form a 5/7 dashboard split; resources use aligned two-column rows.",
+      "breakpoints": {
+        "320": {
+          "before": "layout canônico; viewport 320px",
+          "after": "uma coluna, largura minmax(0,1fr), sem overflow horizontal; gap 16px"
+        },
+        "375": {
+          "before": "layout canônico; viewport 375px",
+          "after": "uma coluna, componentes com min-width:0 e alvos de toque preservados"
+        },
+        "768": {
+          "before": "layout canônico; viewport 768px",
+          "after": "composição ainda empilhada para manter leitura e largura de texto confortável"
+        },
+        "1280": {
+          "before": "layout canônico; viewport 1280px",
+          "after": "hero and KPI rail form a 5/7 dashboard split; resources use aligned two-column rows. largura máxima controlada e trilhos alinhados"
+        }
+      }
+    },
+    {
+      "selector": "#view-painel > .hero",
+      "property": "grid / padding / tratamento de superfície",
+      "before": "Hero e espaçamentos do padrão canônico sem modificação.",
+      "after": "Console noturno de produto: superfícies em camadas discretas, roxo pervinca para estado ativo e trilha lateral de métricas. O espaçamento entre blocos é limitado a 24–28px; rótulo, título, texto e ações mantêm intervalos próprios.",
+      "breakpoints": {
+        "320": {
+          "before": "hero canônico",
+          "after": "padding 20px 16px; título quebra sem clipping e ações podem ocupar nova linha"
+        },
+        "375": {
+          "before": "hero canônico",
+          "after": "padding 22px 18px; largura útil preservada"
+        },
+        "768": {
+          "before": "hero canônico",
+          "after": "padding 28px 24px; sem colunas estreitas"
+        },
+        "1280": {
+          "before": "hero canônico",
+          "after": "padding 32px; alinhado ao trilho da composição desktop"
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": ".kpi",
+      "animation": "linear-saas-metric-in",
+      "trigger": "Quando o KPI entra na viewport pelo controle IntersectionObserver do runtime.",
+      "duration": "500ms ease-out, deslocamento vertical de 5px e opacidade suave.",
+      "fallback": "Sem IntersectionObserver, o runtime calcula interseção por geometria; com JavaScript indisponível, KPIs permanecem visíveis.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa animação e transformações; o conteúdo permanece visível.",
+      "pauseResume": "Runtime define data-motion-visible somente com elemento visível, documento ativo e movimento não reduzido.",
+      "cleanup": "Ao trocar aparência, runtime remove marcadores e observadores; estado final é estático e visível."
+    },
+    "background": {
+      "selector": "#stage::after",
+      "animation": "linear-saas-ambient",
+      "trigger": "Camada de fundo sutil enquanto o stage está visível, governada por data-motion-active do runtime.",
+      "duration": "28s ease-in-out alternado, movimento horizontal máximo de 0,4% e opacidade baixa.",
+      "fallback": "Sem suporte a animações CSS, a textura decorativa permanece estática e o conteúdo não depende dela.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa a animação ambiental e transformações.",
+      "pauseResume": "Runtime pausa a camada quando stage/documento não está visível e retoma quando volta a ficar ativo.",
+      "cleanup": "A folha alternate remove a camada ao sair; runtime remove listeners e atributos ao trocar o estilo."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Console claro",
+      "description": "Contraparte clara experimental, com identidade própria, contraste de leitura e composição de console de produto; proposta pronta para revisão humana."
+    },
+    "en-US": {
+      "name": "Light console",
+      "description": "An experimental light counterpart with readable contrast and a product-console composition; ready for human review."
+    },
+    "es-ES": {
+      "name": "Consola nocturna",
+      "description": "Una contraparte oscura experimental con identidad propia, contraste legible y una composición adaptada al tema; lista para revisión humana."
+    },
+    "fr-FR": {
+      "name": "Console nocturne",
+      "description": "Une variante sombre expérimentale avec sa propre identité, un contraste lisible et une composition adaptée au thème, prête pour une revue humaine."
+    },
+    "de-DE": {
+      "name": "Nachtkonsole",
+      "description": "Eine experimentelle dunkle Variante mit eigener Identität, gut lesbarem Kontrast und themengerechter Komposition, bereit zur menschlichen Prüfung."
+    },
+    "ru-RU": {
+      "name": "Ночная консоль",
+      "description": "Экспериментальная тёмная версия с собственной выразительностью, читаемым контрастом и композицией в духе темы; готова к проверке человеком."
+    },
+    "ar-SA": {
+      "name": "وحدة تحكم ليلية",
+      "description": "نسخة داكنة تجريبية بهوية مستقلة وتباين واضح وتكوين يناسب الطابع، وهي جاهزة للمراجعة البشرية."
+    },
+    "hi-IN": {
+      "name": "रात्रि कंसोल",
+      "description": "अपनी अलग पहचान, पढ़ने योग्य कंट्रास्ट और विषय के अनुकूल संयोजन वाला प्रयोगात्मक गहरा रूप; मानवीय समीक्षा के लिए तैयार।"
+    },
+    "zh-CN": {
+      "name": "夜间控制台",
+      "description": "这是一款实验性深色方案，具有鲜明个性、清晰对比和贴合主题的布局，现可供人工审阅。"
+    },
+    "ja-JP": {
+      "name": "ナイトコンソール",
+      "description": "独自の個性、読みやすいコントラスト、テーマに沿った構成を備えた実験的なダーク版です。人による確認に向けた提案です。"
+    },
+    "ko-KR": {
+      "name": "야간 콘솔",
+      "description": "고유한 개성, 읽기 쉬운 대비, 주제에 맞춘 구성을 갖춘 실험적 다크 변형이며 사람의 검토를 위한 제안입니다."
+    }
+  },
+  "sources": [
+    {
+      "title": "Canonical linear-saas stylesheet",
+      "url": "styles/linear-saas.css",
+      "kind": "local canonical source",
+      "claim": "Identifies the visual language, default palette and composition retained by this experimental alternate."
+    },
+    {
+      "title": "Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility standard",
+      "claim": "Contrast ratios are screening evidence; rendered text, controls, focus, and state colors still require integrated review."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "b744b7954988e15b6e4f92391b7ed5758fc556b1ff279119db9bd32b9c032cf5",
+  "contentDigest": "0332dd04b2fe362d0a9cfaf5ac7bdd1b5b898532fef5ff93c45b31f24996f887",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "0332dd04b2fe362d0a9cfaf5ac7bdd1b5b898532fef5ff93c45b31f24996f887",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "0332dd04b2fe362d0a9cfaf5ac7bdd1b5b898532fef5ff93c45b31f24996f887",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

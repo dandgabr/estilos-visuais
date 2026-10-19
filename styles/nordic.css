@@ -6,12 +6,12 @@
   --surface-2: #E5E9F0;
   --fg: #2E3440;
   --muted: #4C566A;
-  --accent: #5E81AC;
+  --accent: #4C6F98;
   --accent-fg: #FFFFFF;
   --border: #D8DEE9;
-  --ok: #A3BE8C;
-  --warn: #EBCB8B;
-  --danger: #BF616A;
+  --ok: #4F6B3B;
+  --warn: #76540D;
+  --danger: #A33E48;
   --radius: 8px;
   --radius-sm: 4px;
   --shadow: 0 4px 16px rgba(46, 52, 64, 0.08);
@@ -25,10 +25,10 @@
   /* Nord Palette (Arctic Ice & Hygge) */
   --nord-polar-night: #2E3440;
   --nord-snow-storm: #ECEFF4;
-  --nord-frost-blue: #88C0D0;
-  --nord-frost-deep: #5E81AC;
-  --nord-aurora-green: #A3BE8C;
-  --nord-aurora-red: #BF616A;
+  --nord-frost-blue: #4E7888;
+  --nord-frost-deep: #4C6F98;
+  --nord-aurora-green: #4F6B3B;
+  --nord-aurora-red: #A33E48;
 
   font-size: 15px;
   color: var(--fg);

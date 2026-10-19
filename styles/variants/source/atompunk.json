@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "slug": "atompunk",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "dark",
+    "alternatePolarity": "light",
+    "rationale": "O arquivo canônico styles/atompunk.css estabelece a aparência dark; esta proposta explora uma contraparte light coerente com o mesmo vocabulário visual. O padrão canônico não foi alterado.",
+    "evidence": "Classificação inferida dos tokens de fundo/superfície/texto e do background-color no arquivo local styles/atompunk.css; verificar no browser durante aprovação."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#E7EDF0",
+      "--surface": "#F8FBFC",
+      "--surface-2": "#D9E2E6",
+      "--fg": "#1D2A31",
+      "--muted": "#40535D",
+      "--accent": "#A64B24",
+      "--accent-fg": "#FFFFFF",
+      "--border": "#667B83",
+      "--ok": "#24764F",
+      "--warn": "#805400",
+      "--danger": "#A12D37",
+      "--focus": "#A64B24",
+      "--radius": "4px",
+      "--radius-sm": "6px",
+      "--shadow": "0 8px 22px rgba(0,0,0,.16)"
+    }
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"atompunk\"]",
+      "signal": "Cold-war instrumentation, radar geometry and calibrated dials; a proposta traduz esses sinais para light usando radar rings and instrument tick marks, mantendo instrument console como organização de leitura. O campo ornamental tem padrão exclusivo descrito no CSS desta proposta.",
+      "skillReference": "styles/atompunk.css",
+      "evidence": "Identidade visual derivada da descrição canônica em styles/registry.js e dos tokens/regras de styles/atompunk.css; CSS separado em alternate."
+    },
+    {
+      "selector": "#view-painel",
+      "signal": "Composição responsiva instrument console: painel principal e áreas de métricas/recursos mudam de posição no desktop, sem espaçamento excessivo em 320–768 px.",
+      "skillReference": "styles/atompunk.css",
+      "evidence": "A contraparte empilha áreas no mobile com gaps limitados por clamp; em 960 px reordena as áreas em grade específica."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#view-painel",
+      "property": "grid-template-areas / grid-template-columns / gap",
+      "before": "Composição padrão do tema atompunk, definida em styles/atompunk.css.",
+      "after": "No mobile: uma coluna compacta; no desktop: instrument console, com ordem hero/metrics/resources deliberadamente alterada.",
+      "breakpoints": {
+        "320": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna; largura minmax(0,1fr), 18px gap; KPIs em 2 colunas."
+        },
+        "375": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna; largura minmax(0,1fr), 18–30px gap; sem largura mínima rígida."
+        },
+        "768": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna até 959px; cards compactos em 2 colunas e recursos em 1 coluna."
+        },
+        "1280": {
+          "before": "Fluxo padrão canônico.",
+          "after": "Grade de duas colunas com áreas instrument console; gap 20–34px e gráfico ocupando a faixa de recursos."
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": ".kpi",
+      "animation": "atompunk-settle",
+      "trigger": "Ao aplicar a contraparte, cada cartão KPI entra uma vez com deslocamento vertical curto de 8px; sem loop.",
+      "duration": "550ms ease-out, uma execução",
+      "fallback": "Sem animação CSS, cartão visível no estado final; conteúdo e foco não dependem de movimento.",
+      "reducedMotion": "Desativada por prefers-reduced-motion: reduce; todos os componentes permanecem em seu estado final estático.",
+      "pauseResume": "CSS sem relógio JavaScript; o navegador suspende animações da página oculta e retoma ao tornar-se visível.",
+      "cleanup": "Não cria listeners, timers, observers, canvas ou recursos persistentes; as regras são removidas ao descarregar a folha da contraparte."
+    },
+    "background": {
+      "selector": "#stage[data-style=\"atompunk\"][data-variant=\"alternate\"]::before",
+      "animation": "atompunk-field",
+      "trigger": "Ao aplicar a contraparte, trama decorativa move-se lentamente 34×18px em vaivém; animação decorativa sem parallax de scroll.",
+      "duration": "24s ease-in-out alternate, loop decorativo",
+      "fallback": "A trama permanece estática no ponto inicial, sem retirar informação do conteúdo.",
+      "reducedMotion": "Desativada por prefers-reduced-motion: reduce; todos os componentes permanecem em seu estado final estático.",
+      "pauseResume": "CSS sem relógio JavaScript; o navegador suspende animações da página oculta e retoma ao tornar-se visível.",
+      "cleanup": "Não cria listeners, timers, observers, canvas ou recursos persistentes; as regras são removidas ao descarregar a folha da contraparte."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Contraparte de revisão: Atompunk",
+      "description": "A proposta preserva os sinais de Cold-war instrumentation, radar geometry and calibrated dials, com paleta clara e composição instrument console; examine contraste, leitura e encaixe em telas pequenas."
+    },
+    "en-US": {
+      "name": "Review counterpart: Atompunk",
+      "description": "This proposal keeps the visual cues of Cold-war instrumentation, radar geometry and calibrated dials, with a light palette and a instrument console composition; review contrast, reading flow and small-screen fit."
+    },
+    "es-ES": {
+      "name": "Variante para revisión: Atompunk",
+      "description": "La propuesta conserva los rasgos de Cold-war instrumentation, radar geometry and calibrated dials, con paleta clara y composición instrument console; revise el contraste, la lectura y el ajuste en pantallas pequeñas."
+    },
+    "fr-FR": {
+      "name": "Variante à examiner: Atompunk",
+      "description": "La proposition conserve les codes de Cold-war instrumentation, radar geometry and calibrated dials, avec une palette claire et une composition instrument console ; vérifiez le contraste, la lecture et l’affichage sur petit écran."
+    },
+    "de-DE": {
+      "name": "Prüfvariante: Atompunk",
+      "description": "Der Entwurf bewahrt die Merkmale von Cold-war instrumentation, radar geometry and calibrated dials, mit einer helle Palette und einer Komposition als instrument console; prüfen Sie Kontrast, Lesefluss und kleine Bildschirme."
+    },
+    "ru-RU": {
+      "name": "Вариант для проверки: Atompunk",
+      "description": "Предложение сохраняет черты стиля Cold-war instrumentation, radar geometry and calibrated dials, используя светлую палитру и композицию «instrument console»; проверьте контраст, чтение и узкие экраны."
+    },
+    "ar-SA": {
+      "name": "نسخة للمراجعة: Atompunk",
+      "description": "يحافظ الاقتراح على سمات Cold-war instrumentation, radar geometry and calibrated dials، مع لوحة فاتحة وتكوين «instrument console»؛ راجع التباين وسهولة القراءة والملاءمة للشاشات الصغيرة."
+    },
+    "hi-IN": {
+      "name": "समीक्षा विकल्प: Atompunk",
+      "description": "यह प्रस्ताव Cold-war instrumentation, radar geometry and calibrated dials की दृश्य पहचान बनाए रखता है, हल्की रंग-पैलेट और instrument console संरचना के साथ; कंट्रास्ट, पढ़ने की सहजता और छोटी स्क्रीन पर जाँचें।"
+    },
+    "zh-CN": {
+      "name": "待审阅的配色方案: Atompunk",
+      "description": "此提案保留 Cold-war instrumentation, radar geometry and calibrated dials 的视觉特征，采用浅色色板与instrument console构图；请检查对比度、阅读流畅度和小屏适配。"
+    },
+    "ja-JP": {
+      "name": "レビュー用の対案: Atompunk",
+      "description": "この案はCold-war instrumentation, radar geometry and calibrated dialsの視覚的特徴を保ち、ライト配色と「instrument console」構成を採用します。コントラスト、読みやすさ、小画面での表示を確認してください。"
+    },
+    "ko-KR": {
+      "name": "검토용 대안: Atompunk",
+      "description": "이 제안은 Cold-war instrumentation, radar geometry and calibrated dials의 시각적 특징을 유지하면서 밝은 팔레트와 instrument console 구성을 사용합니다. 대비, 읽기 흐름, 작은 화면을 확인하세요."
+    }
+  },
+  "sources": [
+    {
+      "title": "Arquivo canônico de estilo: styles/atompunk.css e registro styles/registry.js",
+      "url": "styles/atompunk.css",
+      "kind": "fonte primária local do padrão visual; não alterada",
+      "claim": "Sinais visuais e polaridade padrão inferidos do CSS canônico local para propor uma contraparte revisável."
+    },
+    {
+      "title": "W3C WCAG 2.2 Understanding SC 1.4.3 Contrast (Minimum)",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "kind": "orientação normativa de acessibilidade",
+      "claim": "Texto comum deve atingir contraste mínimo de 4.5:1 e texto grande 3:1; pares de contraste precisam ser medidos na renderização real."
+    },
+    {
+      "title": "W3C WCAG 2.2 Understanding SC 1.4.11 Non-text Contrast",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+      "kind": "orientação normativa de acessibilidade",
+      "claim": "Limites de controles e indicadores necessários devem manter contraste de pelo menos 3:1 com cores adjacentes."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "0fd477ead972bd077d654ceab8c4bf61fa6512f290148d1342d587bc02821962",
+  "contentDigest": "33cb3065aa370c365c49f9e52d53a2475c0f4064e1812fdd5aef1408a46d0bbc",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "33cb3065aa370c365c49f9e52d53a2475c0f4064e1812fdd5aef1408a46d0bbc",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "33cb3065aa370c365c49f9e52d53a2475c0f4064e1812fdd5aef1408a46d0bbc",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

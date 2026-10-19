@@ -2,7 +2,7 @@
 #stage[data-style="analog-newspaper-broadsheet"] {
   --bg: #f5f2eb; --surface: #ffffff; --surface-2: #eae4d5; --fg: #1c1b1a; --muted: #595652;
   --accent: #a82c2c; --accent-fg: #f5f2eb; --border: #1c1b1a;
-  --ok: #2d5a3f; --warn: #8f6010; --danger: #a82c2c;
+  --ok: #2d5a3f; --warn: #755000; --danger: #a82c2c;
   --radius: 0; --radius-sm: 0; --shadow: none;
   --font-body: 'Newsreader', Georgia, serif; --font-display: 'Newsreader', serif;
   background-color: var(--bg);
@@ -38,4 +38,5 @@
 #stage[data-style="analog-newspaper-broadsheet"] td { border-bottom: 1px solid #d4cebe; }
 #stage[data-style="analog-newspaper-broadsheet"] tbody tr:hover { background: #f0ebe0; }
 #stage[data-style="analog-newspaper-broadsheet"] .toast { background: #1c1b1a; color: #f5f2eb; border-radius: 0; border: 1px solid #1c1b1a; font-family: sans-serif; }
+#stage[data-style="analog-newspaper-broadsheet"] .toast .btn-ghost { color: #f5f2eb; background: transparent; border-color: #f5f2eb; }
 #stage[data-style="analog-newspaper-broadsheet"] dialog { background: #f5f2eb; border: 2px solid #1c1b1a; border-radius: 0; box-shadow: 6px 6px 0 rgba(0,0,0,.2); }

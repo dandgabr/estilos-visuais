@@ -29,6 +29,8 @@
 #stage[data-style="expressive-variable-typography"] .section-title{ font-size:clamp(2.2rem,7vw,5rem); font-weight:100; font-stretch:151%; letter-spacing:-.04em; line-height:.9; border-top:6px solid #0c0c0c; padding-top:12px; transition:font-weight .4s,font-stretch .4s; }
 #stage[data-style="expressive-variable-typography"] .section-title:hover{ font-weight:1000; font-stretch:60%; }
 #stage[data-style="expressive-variable-typography"] .card,#stage[data-style="expressive-variable-typography"] .panel{ background:transparent; border:0; border-top:1px solid #0c0c0c; box-shadow:none; padding:14px 0 0; }
+#stage[data-style="expressive-variable-typography"] :is(.card,.panel,.feature):hover,
+#stage[data-style="expressive-variable-typography"] :is(.card,.panel,.feature):focus-within{ position:relative; z-index:5; }
 #stage[data-style="expressive-variable-typography"] .kpi-label{ font-weight:500; font-stretch:70%; text-transform:uppercase; letter-spacing:.14em; font-size:.78rem; }
 #stage[data-style="expressive-variable-typography"] .kpi-value{ font-size:4rem; line-height:1; font-weight:200; font-stretch:130%; letter-spacing:-.05em; transition:font-weight .4s,font-stretch .4s; }
 #stage[data-style="expressive-variable-typography"] .card:hover .kpi-value{ font-weight:1000; font-stretch:80%; }
@@ -39,6 +41,7 @@
 #stage[data-style="expressive-variable-typography"] .bars{ gap:4px; }
 #stage[data-style="expressive-variable-typography"] .bars i{ background:#0c0c0c; border-radius:0; }
 #stage[data-style="expressive-variable-typography"] .bars i:nth-child(odd){ background:repeating-linear-gradient(90deg,#0c0c0c 0 2px,transparent 2px 5px); }
+#stage[data-style="expressive-variable-typography"] .chart{ background:#f5f5f2; }
 #stage[data-style="expressive-variable-typography"] .panel h2{ font-size:2.6rem; font-weight:900; font-stretch:60%; text-transform:uppercase; }
 #stage[data-style="expressive-variable-typography"] label{ font-weight:600; font-stretch:80%; text-transform:uppercase; letter-spacing:.1em; font-size:.78rem; }
 #stage[data-style="expressive-variable-typography"] input[type=text],#stage[data-style="expressive-variable-typography"] input[type=email],#stage[data-style="expressive-variable-typography"] select,#stage[data-style="expressive-variable-typography"] textarea{ background:transparent; border:0; border-bottom:2px solid #0c0c0c; border-radius:0; font-weight:300; font-size:1.2rem; padding-left:0; text-transform:none; letter-spacing:0; }
@@ -57,3 +60,4 @@
 @media (prefers-reduced-motion:no-preference){ #stage[data-style="expressive-variable-typography"] .display{ animation:evt-breathe 6s ease-in-out infinite alternate; } @keyframes evt-breathe{ from{ font-weight:1000; font-stretch:140%; } to{ font-weight:600; font-stretch:100%; } } }
 @media (prefers-reduced-motion:reduce){ #stage[data-style="expressive-variable-typography"] *{ transition:none!important; } }
 @media (max-width:640px){ #stage[data-style="expressive-variable-typography"] .display{ font-stretch:110%; font-size:clamp(2.4rem,12vw,4rem); } @keyframes evt-breathe{ from{ font-stretch:110%; } to{ font-stretch:90%; } } }
+@media (max-width:1200px){ #stage[data-style="expressive-variable-typography"] .display{ max-width:100%; font-size:clamp(2rem,5.5vw,4rem); line-height:.98; font-stretch:100%; overflow-wrap:anywhere; } }

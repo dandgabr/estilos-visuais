@@ -18,6 +18,13 @@
 #stage[data-style="psychedelic-60s"] .lead { color: #ffb703; font-size: 1.15rem; }
 #stage[data-style="psychedelic-60s"] .btn { border-radius: 9999px; font-weight: 700; transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.2s; }
 #stage[data-style="psychedelic-60s"] .btn-primary { background: linear-gradient(90deg, #f72585, #ff6b35); color: #ffffff; border: none; box-shadow: 0 0 18px rgba(247, 37, 133, 0.6); }
+#stage[data-style="psychedelic-60s"] .btn-primary { background: linear-gradient(90deg, #a90052, #a83a00); }
+#stage[data-style="psychedelic-60s"] .kpi-label { color: #19052b; }
+#stage[data-style="psychedelic-60s"] .btn:disabled { color: #19052b; }
+#stage[data-style="psychedelic-60s"] .eyebrow { color: #19052b; }
+#stage[data-style="psychedelic-60s"] .toast .btn-ghost { color: #fff; border-color: #fff; }
+#stage[data-style="psychedelic-60s"] .toast .btn-ghost { background:#7209b7; }
+#stage[data-style="psychedelic-60s"] .nav .nav-tab.is-active { color: #19052b; }
 #stage[data-style="psychedelic-60s"] .btn-primary:hover { transform: scale(1.06) rotate(1.5deg); box-shadow: 0 0 25px #06d6a0; }
 #stage[data-style="psychedelic-60s"] .btn-secondary { background: rgba(255, 209, 102, 0.15); border: 2px solid #ffd166; color: #ffd166; }
 #stage[data-style="psychedelic-60s"] .btn-ghost { color: #f72585; border: 1px solid rgba(247, 37, 133, 0.5); }
@@ -35,3 +42,10 @@
 #stage[data-style="psychedelic-60s"] tbody tr:hover { background: rgba(247,37,133,.12); }
 #stage[data-style="psychedelic-60s"] .toast { background: linear-gradient(90deg, #7209b7, #f72585); color: #fff; border-radius: 999px; border: 2px solid #ffd166; box-shadow: 0 0 20px #f72585; }
 #stage[data-style="psychedelic-60s"] dialog { background: #19052b; border: 3px solid #f72585; border-radius: 36px; color: #ffd166; box-shadow: 0 0 40px rgba(247,37,133,.6); }
+#stage[data-style="psychedelic-60s"] .kpis .card { background:#19052b; }
+#stage[data-style="psychedelic-60s"] .kpi-label { color:#ffffff; }
+#stage[data-style="psychedelic-60s"] .eyebrow { background:#19052b;color:#ffffff;padding:4px 8px;border-radius:12px; }
+#stage[data-style="psychedelic-60s"] .btn:disabled { color:#ffffff;background:#7209b7;opacity:1; }
+#stage[data-style="psychedelic-60s"] .toast .btn-ghost { background:#19052b;color:#ffffff; }
+#stage[data-style="psychedelic-60s"] .btn:disabled { color:#ffffff !important;background:#7209b7;opacity:1 !important; }
+#stage[data-style="psychedelic-60s"] .btn-ghost { color:#19052b;background:#ffd166;border-color:#19052b; }

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poiret+One&display=swap');
 #stage[data-style="art-deco"] {
-  --bg:#0e0e12; --surface:#15151c; --surface-2:#1e1e28; --fg:#f5ecd7; --muted:#c2b79d; --accent:#c9a227; --accent-fg:#0e0e12; --border:#c9a227;
+  --bg:#0e0e12; --surface:#15151c; --surface-2:#1e1e28; --fg:#f5ecd7; --muted:#c2b79d; --accent:#d7b23d; --accent-fg:#0e0e12; --border:#d7b23d;
   --ok:#6fdcae; --warn:#f0cd6e; --danger:#ff8f86; --radius:0; --radius-sm:0; --shadow:none;
   --font-body:"Josefin Sans",system-ui,sans-serif; --font-display:"Poiret One","Josefin Sans",serif; --font-mono:ui-monospace,monospace;
   --gap:28px; --pad:28px; --maxw:1100px;

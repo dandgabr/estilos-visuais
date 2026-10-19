@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "slug": "synthwave",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "dark",
+    "alternatePolarity": "light",
+    "rationale": "Padrão classificado dark pela luminância do token --bg em styles/synthwave.css. Contraparte light: A pale peach sunrise with deep aubergine, red-orange horizon and restrained blue grid; outrun cues remain unmistakable. A composição e paleta são uma exploração de revisão; a folha padrão não é alterada."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#F7E8DE",
+      "--surface": "#FFF4E9",
+      "--surface-2": "#EAD2D1",
+      "--fg": "#2C2038",
+      "--muted": "#5F506A",
+      "--accent": "#C34243",
+      "--accent-fg": "#FFFFFF",
+      "--border": "#85727B",
+      "--focus": "#315C9A",
+      "--shadow": "0 8px 24px rgba(20, 18, 22, .16)"
+    },
+    "intent": "A pale peach sunrise with deep aubergine, red-orange horizon and restrained blue grid; outrun cues remain unmistakable."
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"synthwave\"][data-variant=\"alternate\"] .hero",
+      "signal": "A pale peach sunrise with deep aubergine, red-orange horizon and restrained blue grid; outrun cues remain unmistakable. O hero incorpora sun halo breathes; os controles mantêm contraste e foco discernível.",
+      "skillReference": "styles/synthwave.css — identidade canônica; revisão visual local",
+      "evidence": "Contraparte construída sem editar styles/synthwave.css."
+    },
+    {
+      "selector": "#stage[data-style=\"synthwave\"][data-variant=\"alternate\"] .app::before",
+      "signal": "Decoração de fundo: perspective grid; opacidade baixa para não competir com texto.",
+      "skillReference": "styles/synthwave.css — identidade canônica",
+      "evidence": "A camada é pointer-events:none e subordinada ao conteúdo."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#stage[data-style=\"synthwave\"][data-variant=\"alternate\"] #view-painel",
+      "property": "grid-template-columns / grid-template-areas / gap",
+      "before": "Painel segue fluxo canônico de uma coluna; KPI usa grade fluida definida pelo estilo.",
+      "after": "sun disc over an asymmetric horizon; metrics sit in a low dashboard band and actions in a compact rail. Desktop usa trilho principal+secundário; mobile preserva ordem e fluxo único.",
+      "breakpoints": {
+        "320": {
+          "before": "fluxo canônico em coluna, sem overflow intencional",
+          "after": "1 coluna, gap 16px e padding lateral 18px"
+        },
+        "375": {
+          "before": "fluxo canônico em coluna, grade fluida",
+          "after": "1 coluna; hero e controles cabem na largura útil"
+        },
+        "768": {
+          "before": "fluxo principal em coluna, elementos fluem naturalmente",
+          "after": "1 coluna; composição mantém leitura vertical e não comprime cartões"
+        },
+        "1280": {
+          "before": "fluxo canônico em coluna por regiões",
+          "after": "2 trilhos: hero 1.25fr e métricas .75fr; recursos atravessam as colunas, formulário e atividade dividem a linha inferior"
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": "#stage[data-style=\"synthwave\"][data-variant=\"alternate\"] .hero::after",
+      "animation": "synthwave-element",
+      "trigger": "Ao aplicar a contraparte, regra CSS de entrada do filete decorativo do hero.",
+      "duration": "520ms ease-out, scaleX; somente decoração, conteúdo sempre visível.",
+      "fallback": "Sem suporte a animação CSS, filete permanece estático; conteúdo não depende do movimento.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa a animação.",
+      "pauseResume": "Animação de entrada finita; não há loop contínuo nem estado de conteúdo.",
+      "cleanup": "Ao remover a folha da contraparte, pseudo-elemento e animação desaparecem."
+    },
+    "background": {
+      "selector": "#stage[data-style=\"synthwave\"][data-variant=\"alternate\"]::after",
+      "animation": "synthwave-background",
+      "trigger": "Loop ambiental sutil enquanto a contraparte está ativa.",
+      "duration": "32s ease-in-out alternate; somente opacidade e posição de background, sem camada sobre interação.",
+      "fallback": "Sem suporte a animação, textura permanece estática e decorativa.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa o loop.",
+      "pauseResume": "CSS anima apenas enquanto a folha alternate permanece aplicada; o navegador suspende a aba oculta.",
+      "cleanup": "Ao remover a folha da contraparte, camada e animação desaparecem."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Outrun ao Amanhecer",
+      "description": "A pale peach sunrise with deep aubergine, red-orange horizon and restrained blue grid; outrun cues remain unmistakable. Contraparte alternativa clara para o padrão, proposta para revisão; a aparência canônica permanece intacta."
+    },
+    "en-US": {
+      "name": "Outrun at Dawn",
+      "description": "A pale peach sunrise with deep aubergine, red-orange horizon and restrained blue grid; outrun cues remain unmistakable. This light counterpart is a review proposal; the canonical appearance remains unchanged."
+    },
+    "es-ES": {
+      "name": "Outrun at Dawn — alternativa clara",
+      "description": "A pale peach sunrise with deep aubergine, red-orange horizon and restrained blue grid; outrun cues remain unmistakable. Alternativa clara; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "fr-FR": {
+      "name": "Outrun at Dawn — variante claire",
+      "description": "A pale peach sunrise with deep aubergine, red-orange horizon and restrained blue grid; outrun cues remain unmistakable. Variante claire; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "de-DE": {
+      "name": "Outrun at Dawn — helle Variante",
+      "description": "A pale peach sunrise with deep aubergine, red-orange horizon and restrained blue grid; outrun cues remain unmistakable. Helle variante; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ru-RU": {
+      "name": "Outrun at Dawn — светлая версия",
+      "description": "A pale peach sunrise with deep aubergine, red-orange horizon and restrained blue grid; outrun cues remain unmistakable. Светлая версия; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ar-SA": {
+      "name": "Outrun at Dawn — النسخة الفاتحة",
+      "description": "A pale peach sunrise with deep aubergine, red-orange horizon and restrained blue grid; outrun cues remain unmistakable. النسخة الفاتحة; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "hi-IN": {
+      "name": "Outrun at Dawn — हल्का रूप",
+      "description": "A pale peach sunrise with deep aubergine, red-orange horizon and restrained blue grid; outrun cues remain unmistakable. हल्का रूप; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "zh-CN": {
+      "name": "Outrun at Dawn — 浅色版本",
+      "description": "A pale peach sunrise with deep aubergine, red-orange horizon and restrained blue grid; outrun cues remain unmistakable. 浅色版本; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ja-JP": {
+      "name": "Outrun at Dawn — ライト版",
+      "description": "A pale peach sunrise with deep aubergine, red-orange horizon and restrained blue grid; outrun cues remain unmistakable. ライト版; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ko-KR": {
+      "name": "Outrun at Dawn — 밝은 변형",
+      "description": "A pale peach sunrise with deep aubergine, red-orange horizon and restrained blue grid; outrun cues remain unmistakable. 밝은 변형; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    }
+  },
+  "sources": [
+    {
+      "title": "Canonical synthwave stylesheet",
+      "url": "styles/synthwave.css",
+      "kind": "local canonical source",
+      "claim": "Used to identify the untouched default polarity and visual identity of synthwave."
+    },
+    {
+      "title": "Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility standard",
+      "claim": "Contrast ratios are screening evidence; final visual review must inspect rendered text, controls, focus and status states."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "45997d858b50274e125218ba6f3367deeef248ca5e22d4140324e74aafaaaa17",
+  "contentDigest": "a3e595557bed749f9fec8de95621dc04ab7bfaa19659931cce1c702b99af2261",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "a3e595557bed749f9fec8de95621dc04ab7bfaa19659931cce1c702b99af2261",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "a3e595557bed749f9fec8de95621dc04ab7bfaa19659931cce1c702b99af2261",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

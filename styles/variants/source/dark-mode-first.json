@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "slug": "dark-mode-first",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "dark",
+    "alternatePolarity": "light",
+    "rationale": "O Padrão canônico foi classificado como escuro pela cor de fundo e superfícies em styles/dark-mode-first.css. A contraparte experimental clara inverte a luminosidade e preserva os sinais reconhecíveis do tema: Modo claro de referência: papel frio, contraste de tinta marinho, controles com contorno explícito e azul de foco preservado. Nenhuma regra do padrão foi alterada.",
+    "evidence": "Leitura local do CSS canônico styles/dark-mode-first.css e comparação visual proposta; classificação permanece para validação humana."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#f3f5fa",
+      "--surface": "#ffffff",
+      "--surface-2": "#e7ecf5",
+      "--fg": "#151b27",
+      "--muted": "#485367",
+      "--accent": "#375bd2",
+      "--accent-fg": "#ffffff",
+      "--border": "#7386A7",
+      "--focus": "#375bd2",
+      "--ok": "#185832",
+      "--warn": "#684300",
+      "--danger": "#8f2029",
+      "--radius": "12px",
+      "--shadow": "0 8px 22px rgba(0,0,0,.18)"
+    },
+    "intent": "Modo claro de referência: papel frio, contraste de tinta marinho, controles com contorno explícito e azul de foco preservado."
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"dark-mode-first\"][data-variant=\"alternate\"] #view-painel",
+      "signal": "Modo claro de referência: papel frio, contraste de tinta marinho, controles com contorno explícito e azul de foco preservado. compact app shell with full-width hero and four equal KPIs; avoid decorative surfaces.",
+      "skillReference": "CSS canônico local styles/dark-mode-first.css; validar referências de domínio durante a revisão humana.",
+      "evidence": "A contraparte concentra essa direção no layout e nos tokens alternate, com CSS limitado ao stage de dark-mode-first."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#view-painel",
+      "property": "grid-template-columns / areas / gap",
+      "before": "Fluxo e distribuição do padrão canônico, preservados integralmente no arquivo styles/dark-mode-first.css.",
+      "after": "compact app shell with full-width hero and four equal KPIs; avoid decorative surfaces.",
+      "breakpoints": {
+        "320": {
+          "before": "layout canônico; viewport 320px",
+          "after": "uma coluna, largura minmax(0,1fr), sem overflow horizontal; gap 16px"
+        },
+        "375": {
+          "before": "layout canônico; viewport 375px",
+          "after": "uma coluna, componentes com min-width:0 e alvos de toque preservados"
+        },
+        "768": {
+          "before": "layout canônico; viewport 768px",
+          "after": "composição ainda empilhada para manter leitura e largura de texto confortável"
+        },
+        "1280": {
+          "before": "layout canônico; viewport 1280px",
+          "after": "compact app shell with full-width hero and four equal KPIs; avoid decorative surfaces. largura máxima controlada e trilhos alinhados"
+        }
+      }
+    },
+    {
+      "selector": "#view-painel > .hero",
+      "property": "grid / padding / tratamento de superfície",
+      "before": "Hero e espaçamentos do padrão canônico sem modificação.",
+      "after": "Modo claro de referência: papel frio, contraste de tinta marinho, controles com contorno explícito e azul de foco preservado. O espaçamento entre blocos é limitado a 24–28px; rótulo, título, texto e ações mantêm intervalos próprios.",
+      "breakpoints": {
+        "320": {
+          "before": "hero canônico",
+          "after": "padding 20px 16px; título quebra sem clipping e ações podem ocupar nova linha"
+        },
+        "375": {
+          "before": "hero canônico",
+          "after": "padding 22px 18px; largura útil preservada"
+        },
+        "768": {
+          "before": "hero canônico",
+          "after": "padding 28px 24px; sem colunas estreitas"
+        },
+        "1280": {
+          "before": "hero canônico",
+          "after": "padding 32px; alinhado ao trilho da composição desktop"
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": ".kpi",
+      "animation": "dark-mode-first-metric-in",
+      "trigger": "Quando o KPI entra na viewport pelo controle IntersectionObserver do runtime.",
+      "duration": "500ms ease-out, deslocamento vertical de 5px e opacidade suave.",
+      "fallback": "Sem IntersectionObserver, o runtime calcula interseção por geometria; com JavaScript indisponível, KPIs permanecem visíveis.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa animação e transformações; o conteúdo permanece visível.",
+      "pauseResume": "Runtime define data-motion-visible somente com elemento visível, documento ativo e movimento não reduzido.",
+      "cleanup": "Ao trocar aparência, runtime remove marcadores e observadores; estado final é estático e visível."
+    },
+    "background": {
+      "selector": "#stage::after",
+      "animation": "dark-mode-first-ambient",
+      "trigger": "Camada de fundo sutil enquanto o stage está visível, governada por data-motion-active do runtime.",
+      "duration": "28s ease-in-out alternado, movimento horizontal máximo de 0,4% e opacidade baixa.",
+      "fallback": "Sem suporte a animações CSS, a textura decorativa permanece estática e o conteúdo não depende dela.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa a animação ambiental e transformações.",
+      "pauseResume": "Runtime pausa a camada quando stage/documento não está visível e retoma quando volta a ficar ativo.",
+      "cleanup": "A folha alternate remove a camada ao sair; runtime remove listeners e atributos ao trocar o estilo."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Papel frio",
+      "description": "Contraparte clara experimental com identidade própria, contraste de leitura e composição adaptada ao tema; proposta pronta para revisão humana."
+    },
+    "en-US": {
+      "name": "Cool paper",
+      "description": "An experimental light counterpart with its own identity, readable contrast, and a composition adapted to the theme; ready for human review."
+    },
+    "es-ES": {
+      "name": "Papel frío",
+      "description": "Una contraparte clara experimental con identidad propia, contraste legible y una composición adaptada al tema; lista para revisión humana."
+    },
+    "fr-FR": {
+      "name": "Papier froid",
+      "description": "Une variante claire expérimentale avec sa propre identité, un contraste lisible et une composition adaptée au thème, prête pour une revue humaine."
+    },
+    "de-DE": {
+      "name": "Kühles Papier",
+      "description": "Eine experimentelle helle Variante mit eigener Identität, gut lesbarem Kontrast und themengerechter Komposition, bereit zur menschlichen Prüfung."
+    },
+    "ru-RU": {
+      "name": "Холодная бумага",
+      "description": "Экспериментальная светлая версия с собственной выразительностью, читаемым контрастом и композицией в духе темы; готова к проверке человеком."
+    },
+    "ar-SA": {
+      "name": "ورق بارد",
+      "description": "نسخة فاتحة تجريبية بهوية مستقلة وتباين واضح وتكوين يناسب الطابع، وهي جاهزة للمراجعة البشرية."
+    },
+    "hi-IN": {
+      "name": "ठंडा कागज़",
+      "description": "अपनी अलग पहचान, पढ़ने योग्य कंट्रास्ट और विषय के अनुकूल संयोजन वाला प्रयोगात्मक हल्का रूप; मानवीय समीक्षा के लिए तैयार।"
+    },
+    "zh-CN": {
+      "name": "冷调纸面",
+      "description": "这是一款实验性浅色方案，具有鲜明个性、清晰对比和贴合主题的布局，现可供人工审阅。"
+    },
+    "ja-JP": {
+      "name": "クールペーパー",
+      "description": "独自の個性、読みやすいコントラスト、テーマに沿った構成を備えた実験的なライト版です。人による確認に向けた提案です。"
+    },
+    "ko-KR": {
+      "name": "쿨 페이퍼",
+      "description": "고유한 개성, 읽기 쉬운 대비, 주제에 맞춘 구성을 갖춘 실험적 라이트 변형이며 사람의 검토를 위한 제안입니다."
+    }
+  },
+  "sources": [
+    {
+      "title": "Canonical dark-mode-first stylesheet",
+      "url": "styles/dark-mode-first.css",
+      "kind": "local canonical source",
+      "claim": "Identifies the visual language, default palette and composition retained by this experimental alternate."
+    },
+    {
+      "title": "Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility standard",
+      "claim": "Contrast ratios are screening evidence; rendered text, controls, focus, and state colors still require integrated review."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "aadd22e5f9ec9f2ccdcf458e2bfcbcc2ed0162c0778b794287348a1319a5c11b",
+  "contentDigest": "bd3a5c8cec7ebde0c741039c7c64888d27135c7e88c7b0375aa6f38f6a9c99b3",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "bd3a5c8cec7ebde0c741039c7c64888d27135c7e88c7b0375aa6f38f6a9c99b3",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "bd3a5c8cec7ebde0c741039c7c64888d27135c7e88c7b0375aa6f38f6a9c99b3",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

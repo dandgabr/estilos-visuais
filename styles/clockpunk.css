@@ -28,6 +28,7 @@
 #stage[data-style="clockpunk"] .lead{font-style:italic;color:var(--muted)}
 #stage[data-style="clockpunk"] .btn{font-family:var(--font-display);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.95rem;border-radius:2px;transition:transform .15s,box-shadow .15s}
 #stage[data-style="clockpunk"] .btn-primary{background:linear-gradient(180deg,#a47f2a,#7b5d15);color:#fff8e6;border:2px solid #4a3608;box-shadow:inset 0 0 0 2px #d4b25e,0 3px 0 #4a3608}
+#stage[data-style="clockpunk"] .btn-primary { color: #ffffff; background: linear-gradient(180deg,#8b681f,#654b10); }
 #stage[data-style="clockpunk"] .btn-primary:hover{filter:brightness(1.1)}#stage[data-style="clockpunk"] .btn-primary:active{transform:translateY(3px);box-shadow:inset 0 0 0 2px #d4b25e,0 0 0 #4a3608}
 #stage[data-style="clockpunk"] .btn-secondary{background:var(--blue);color:#f1e6cc;border:2px solid #14244a;box-shadow:inset 0 0 0 2px #7f95c4}
 #stage[data-style="clockpunk"] .btn-secondary:hover{filter:brightness(1.2)}
@@ -57,7 +58,8 @@
 #stage[data-style="clockpunk"] th{font-family:var(--font-display);font-size:.95rem;color:var(--fg);border-bottom:3px double var(--border)}
 #stage[data-style="clockpunk"] td{border-bottom:1px dotted var(--border)}
 #stage[data-style="clockpunk"] .toast{background:var(--fg);color:#f1e6cc;border-radius:2px;border:2px solid var(--gilt);font-style:italic}
+#stage[data-style="clockpunk"] .toast .btn-ghost{color:#f1e6cc;background:transparent;border-color:#f1e6cc}
 #stage[data-style="clockpunk"] dialog{background:var(--surface);color:var(--fg);border:3px double var(--border);border-radius:4px;box-shadow:0 12px 40px rgba(42,33,24,.5)}
 #stage[data-style="clockpunk"] dialog::backdrop{background:rgba(42,33,24,.6)}
-#stage[data-style="clockpunk"] .footer{border-top:4px double var(--border);text-align:center;font-style:italic}
+#stage[data-style="clockpunk"] .footer{border-top:4px double var(--border);text-align:center;font-style:italic;color:#40321f}
 @media (prefers-reduced-motion:reduce){#stage[data-style="clockpunk"] .brand-mark{animation:none}}

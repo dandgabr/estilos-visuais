@@ -1,0 +1,418 @@
+/* Authorial alternate only. The canonical Lunarpunk stylesheet remains untouched. */
+#stage[data-style="lunarpunk"][data-variant="alternate"] {
+  --bg: #F4F2F7;
+  --surface: #FFFEFC;
+  --surface-2: #EAE7F0;
+  --fg: #282435;
+  --muted: #5C5869;
+  --accent: #59417F;
+  --accent-fg: #FFFFFF;
+  --border: #837A94;
+  --ok: #17624F;
+  --warn: #795000;
+  --danger: #A12E45;
+  --focus: #075D78;
+  --mint: #17695C;
+  --moon: #765A22;
+  --vio: #59417F;
+  --shadow: 0 10px 28px rgba(54, 43, 75, .11);
+  color: var(--fg);
+  background:
+    radial-gradient(ellipse at 72% 8%, rgba(199, 190, 218, .56), transparent 34rem),
+    linear-gradient(155deg, #F4F2F7, #EFEDF4 52%, #F8F5EF);
+  position: relative;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .app {
+  position: relative;
+  isolation: isolate;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .app::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: .21;
+  background-image:
+    radial-gradient(circle at 8% 14%, #6B5A8C 0 1px, transparent 1.8px),
+    radial-gradient(circle at 76% 23%, #548A7D 0 1px, transparent 2px),
+    radial-gradient(circle at 54% 66%, #78639B 0 1px, transparent 2px),
+    radial-gradient(ellipse at 70% 24%, transparent 0 92px, rgba(89, 65, 127, .32) 93px 94px, transparent 95px),
+    radial-gradient(ellipse at 70% 24%, transparent 0 126px, rgba(23, 105, 92, .2) 127px 128px, transparent 129px);
+  background-size: 173px 149px, 227px 181px, 263px 211px, 100% 100%, 100% 100%;
+  background-position: 0 0, 0 0, 0 0, center, center;
+  animation: none;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .app > * {
+  position: relative;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .topbar {
+  border-bottom: 1px solid var(--border);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .brand,
+#stage[data-style="lunarpunk"][data-variant="alternate"] .display,
+#stage[data-style="lunarpunk"][data-variant="alternate"] .section-title,
+#stage[data-style="lunarpunk"][data-variant="alternate"] .card h3,
+#stage[data-style="lunarpunk"][data-variant="alternate"] .panel h2 {
+  color: var(--fg);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .brand-mark {
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 32%, #FFFDF7 0 24%, #DAD4E4 25% 61%, #A79BB8 62% 100%);
+  box-shadow: inset -9px -2px 0 -2px #80748E, 0 0 0 1px rgba(89, 65, 127, .42), 0 0 16px rgba(89, 65, 127, .22);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .nav a,
+#stage[data-style="lunarpunk"][data-variant="alternate"] .nav button.nav-tab {
+  color: var(--muted);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .nav a:hover,
+#stage[data-style="lunarpunk"][data-variant="alternate"] .nav button.nav-tab:hover {
+  color: var(--fg);
+  background: #EAE7F0;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .nav a.is-active,
+#stage[data-style="lunarpunk"][data-variant="alternate"] .nav button.nav-tab.is-active {
+  color: #FFFFFF;
+  background: #59417F;
+  box-shadow: inset 0 0 0 1px #59417F;
+  transition: none;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .eyebrow {
+  color: #17695C;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .display {
+  text-shadow: 0 2px 18px rgba(89, 65, 127, .14);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .lead,
+#stage[data-style="lunarpunk"][data-variant="alternate"] .view-subtitle {
+  color: var(--muted);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .hero {
+  text-align: center;
+  padding-top: 36px;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .hero::before {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 52px;
+  margin: 10px auto 0;
+  border-radius: 50%;
+  border: 1px solid rgba(89, 65, 127, .55);
+  background:
+    radial-gradient(circle at 36% 34%, rgba(255,255,255,.96) 0 8%, transparent 9%),
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,.8) 0 23%, transparent 24%),
+    radial-gradient(circle at 50% 50%, transparent 0 34%, rgba(89,65,127,.72) 35% 37%, transparent 38%),
+    radial-gradient(circle at 50% 50%, transparent 0 47%, rgba(23,105,92,.42) 48% 49%, transparent 50%),
+    linear-gradient(145deg, #FDFBF7, #DAD5E3);
+  box-shadow: 0 0 22px rgba(89, 65, 127, .2), inset -8px -5px 15px rgba(89, 65, 127, .13);
+  transform-origin: center;
+  animation: none;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .hero .actions {
+  justify-content: center;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .btn {
+  border-radius: 999px;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .btn-primary {
+  background: linear-gradient(135deg, #684D91, #59417F);
+  color: #FFFFFF;
+  box-shadow: 0 3px 12px rgba(89, 65, 127, .2);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .btn-primary:hover {
+  background: #493569;
+  box-shadow: 0 5px 16px rgba(89, 65, 127, .25);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .btn-secondary {
+  color: #145E53;
+  border: 1px solid var(--border);
+  background: #E5F0EC;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .btn-secondary:hover {
+  background: #D8EAE4;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .btn-ghost {
+  color: var(--fg);
+  border-color: var(--border);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] :focus-visible {
+  outline: 3px solid #075D78;
+  outline-offset: 3px;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .section-title {
+  gap: 12px;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .section-title::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  flex: none;
+  border-radius: 50%;
+  background: linear-gradient(140deg, #FFFEFC, #D7D0E2);
+  box-shadow: inset -5px -1px 0 -1px #796B88, 0 0 0 1px var(--border);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .card,
+#stage[data-style="lunarpunk"][data-variant="alternate"] .panel {
+  color: var(--fg);
+  background: rgba(255, 254, 252, .94);
+  border: 1px solid var(--border);
+  border-radius: 20px 20px 16px 16px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(4px);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .card:hover {
+  border-color: #8874A7;
+  box-shadow: 0 10px 28px rgba(54, 43, 75, .15), 0 0 18px rgba(23, 105, 92, .12);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .kpis {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .kpi {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: 12px;
+  row-gap: 3px;
+  padding: 18px 20px;
+  border-inline-start: 3px solid #59417F;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .kpi-label {
+  color: #5C5869;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .kpi-value {
+  color: #3F3158;
+  text-shadow: none;
+  grid-column: 1;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .kpi .badge {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  color: #3F3158;
+  background: #F0EDF4;
+  border-color: var(--border);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .badge.ok { color: #145E48; }
+#stage[data-style="lunarpunk"][data-variant="alternate"] .badge.warn { color: #704900; }
+#stage[data-style="lunarpunk"][data-variant="alternate"] .badge.danger { color: #91263E; }
+#stage[data-style="lunarpunk"][data-variant="alternate"] .badge {
+  background: #F0EDF4;
+  border-color: var(--border);
+}
+#stage[data-style="lunarpunk"][data-variant="alternate"] .badge:not(.ok):not(.warn):not(.danger) {
+  color: #59417F;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .card a,
+#stage[data-style="lunarpunk"][data-variant="alternate"] th {
+  color: #145E53;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .chart {
+  background: linear-gradient(155deg, #FFFEFC, #F1EEF5);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .bars i {
+  border-radius: 999px 999px 5px 5px;
+  background: linear-gradient(180deg, #9079B2, #59417F 72%, #C2B8D0);
+  box-shadow: 0 0 10px rgba(89, 65, 127, .16);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .bars i:last-child {
+  background: linear-gradient(180deg, #A6C9BD, #17695C);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] input[type="text"],
+#stage[data-style="lunarpunk"][data-variant="alternate"] input[type="email"],
+#stage[data-style="lunarpunk"][data-variant="alternate"] select,
+#stage[data-style="lunarpunk"][data-variant="alternate"] textarea {
+  color: #282435;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] input::placeholder,
+#stage[data-style="lunarpunk"][data-variant="alternate"] textarea::placeholder {
+  color: #625E6B;
+  opacity: 1;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] input[type="checkbox"],
+#stage[data-style="lunarpunk"][data-variant="alternate"] input[type="range"] {
+  accent-color: #59417F;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .switch {
+  background: #B8B2C2;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .switch::after {
+  background: #FFFFFF;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .switch:checked {
+  background: #17695C;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .switch:checked::after {
+  background: #FFFFFF;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] th {
+  border-bottom: 1px solid var(--border);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] td {
+  border-bottom: 1px solid var(--border);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .toast {
+  color: #282435;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] dialog {
+  color: #282435;
+  background: #FFFEFC;
+  border-color: var(--border);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] dialog::backdrop {
+  background: rgba(40, 36, 53, .42);
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .footer {
+  border-color: var(--border);
+  color: #5C5869;
+}
+
+@media (min-width:1200px) {
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(190px, .58fr);
+    align-items: center;
+    column-gap: clamp(24px, 5vw, 68px);
+    text-align: left;
+  }
+
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .hero::before {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    width: clamp(150px, 22vw, 260px);
+    height: clamp(150px, 22vw, 260px);
+    margin: 0 auto;
+  }
+
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .hero .actions {
+    justify-content: flex-start;
+  }
+
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@keyframes lunar-phase-sweep {
+  from { transform: translate3d(0, 5px, 0) scale(.94); }
+  to { transform: translate3d(0, -5px, 0) scale(1.04); }
+}
+
+@keyframes lunar-constellation-drift {
+  from { transform: translate3d(-12px, 0, 0); }
+  to { transform: translate3d(12px, -16px, 0); }
+}
+
+@supports (animation-timeline: view()) {
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .hero::before {
+    animation: lunar-phase-sweep auto linear both;
+    animation-timeline: view();
+    animation-range: entry 0% exit 100%;
+  }
+}
+
+@supports (animation-timeline: scroll()) {
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .app::before {
+    animation: lunar-constellation-drift auto linear both;
+    animation-timeline: scroll(nearest block);
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .hero::before {
+    animation: none;
+  }
+}
+
+@supports not (animation-timeline: scroll()) {
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .app::before {
+    animation: none;
+  }
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .hero::before,
+#stage[data-style="lunarpunk"][data-variant="alternate"] .app::before {
+  animation-play-state: paused;
+}
+
+#stage[data-style="lunarpunk"][data-variant="alternate"] .hero[data-motion-visible="true"]::before,
+#stage[data-style="lunarpunk"][data-variant="alternate"][data-motion-active="true"] .app::before {
+  animation-play-state: running;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .hero::before,
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .app::before {
+    animation: none !important;
+    transform: none;
+    filter: none;
+  }
+}
+
+@media (forced-colors: active) {
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .hero::before,
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .app::before {
+    display: none;
+  }
+
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .card,
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .panel,
+  #stage[data-style="lunarpunk"][data-variant="alternate"] .btn {
+    border: 1px solid CanvasText;
+  }
+}

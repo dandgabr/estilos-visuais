@@ -9,8 +9,8 @@
   --accent: #0055EA;
   --accent-fg: #FFFFFF;
   --border: #002D96;
-  --ok: #388E3C;
-  --warn: #F57C00;
+  --ok: #2D6F2F;
+  --warn: #845200;
   --danger: #D32F2F;
   --radius: 4px;
   --radius-sm: 2px;
@@ -108,13 +108,18 @@
   border: 1px solid #003C74;
   box-shadow: inset 0 1px 0 #FFF, 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
+#stage[data-style="windows-xp"] .btn:not(.btn-primary) { color: #111827; }
+#stage[data-style="windows-xp"] .topbar .btn { color: #FFFFFF; background: linear-gradient(180deg, #0055EA 0%, #002D96 100%); }
+#stage[data-style="windows-xp"] .toast .btn { color: #FFFFFF; background: #0055EA; border-color: #FFFFFF; }
 
 #stage[data-style="windows-xp"] .btn-primary {
   background: linear-gradient(180deg, #5CD65C 0%, #388E3C 50%, #246B28 100%);
-  color: #FFFFFF;
+  color: #002D96;
   border: 1px solid #144716;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
+#stage[data-style="windows-xp"] .hero .btn,
+#stage[data-style="windows-xp"] .panel .btn { color: #000000; }
 
 #stage[data-style="windows-xp"] .card,
 #stage[data-style="windows-xp"] .panel {
@@ -131,3 +136,12 @@
   font-weight: 700;
   color: var(--xp-blue-mid);
 }
+
+#stage[data-style="windows-xp"] .toast {
+  background: #002D96;
+  color: #FFFFFF;
+  border: 1px solid #001A60;
+}
+#stage[data-style="windows-xp"] .toast .btn-ghost { color: #FFFFFF; }
+#stage[data-style="windows-xp"] .footer { color: #000000; opacity: 1; }
+#stage[data-style="windows-xp"] .footer { background:#002D96;color:#FFFFFF;padding:12px; }

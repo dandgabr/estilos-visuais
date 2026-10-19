@@ -48,8 +48,8 @@
 #stage[data-style="web-brutalism"] th,#stage[data-style="web-brutalism"] td{ border:1px solid #000; }
 #stage[data-style="web-brutalism"] th{ background:#eee; color:#000; text-transform:none; letter-spacing:0; font-size:1rem; }
 #stage[data-style="web-brutalism"] .toast{ background:#ffff00; color:#000; border:1px solid #000; border-radius:0; font-family:var(--font-mono); }
-#stage[data-style="web-brutalism"] .toast::before{ content:"NOTICE:"; font-weight:700; }
+#stage[data-style="web-brutalism"] .toast::before{ content:attr(data-label-notice); font-weight:700; }
 #stage[data-style="web-brutalism"] dialog{ border:3px double #000; border-radius:0; font-family:var(--font-mono); }
 #stage[data-style="web-brutalism"] dialog::backdrop{ background:rgba(255,255,255,.85); }
 #stage[data-style="web-brutalism"] .footer{ border-top:1px solid #000; color:#000; font-family:var(--font-mono); }
-#stage[data-style="web-brutalism"] .footer::before{ content:"Last modified: 2026-10-05 · keywords: brutalism, html, raw"; display:block; }
+#stage[data-style="web-brutalism"] .footer::before{ content:attr(data-label-last-modified); display:block; }

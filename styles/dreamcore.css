@@ -5,13 +5,13 @@
   --surface: rgba(255, 255, 255, 0.85);
   --surface-2: #E1DAFA;
   --fg: #3B3355;
-  --muted: #7A7299;
+  --muted: #655D82;
   --accent: #B8A9F8;
   --accent-fg: #1F1938;
   --border: #D1C7F5;
-  --ok: #8CE8C3;
-  --warn: #FCE2A6;
-  --danger: #F8A5C2;
+  --ok: #27664D;
+  --warn: #805800;
+  --danger: #901044;
   --radius: 24px;
   --radius-sm: 12px;
   --shadow: 0 10px 30px rgba(184, 169, 248, 0.35);
@@ -94,6 +94,10 @@
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 700;
   color: #2F2848;
+}
+
+#stage[data-style="dreamcore"] .bars i {
+  background: #51408F;
 }
 
 #stage[data-style="dreamcore"] .btn {

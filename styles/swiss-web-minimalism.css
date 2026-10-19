@@ -21,6 +21,7 @@
 #stage[data-style="swiss-web-minimalism"] .display{font-weight:900;letter-spacing:-.045em;line-height:.92;font-size:clamp(2.6rem,9vw,6.4rem);max-width:12ch}
 #stage[data-style="swiss-web-minimalism"] .lead{color:#222;max-width:44ch;grid-column:1/8}
 @media(max-width:700px){#stage[data-style="swiss-web-minimalism"] .lead{grid-column:1/-1}#stage[data-style="swiss-web-minimalism"] .app{padding:0 16px 40px}}
+@media(max-width:900px){#stage[data-style="swiss-web-minimalism"] .grid{grid-template-columns:minmax(0,1fr)}#stage[data-style="swiss-web-minimalism"] .chart{grid-column:1}}
 #stage[data-style="swiss-web-minimalism"] .btn{border-radius:0;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;font-weight:700;transition:background .15s,color .15s}
 #stage[data-style="swiss-web-minimalism"] .btn-primary{background:#000;color:#fff;border-color:#000}
 #stage[data-style="swiss-web-minimalism"] .btn-primary:hover{background:var(--accent);border-color:var(--accent)}
