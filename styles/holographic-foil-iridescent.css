@@ -21,6 +21,9 @@
 #stage[data-style="holographic-foil-iridescent"] .btn-primary { background: linear-gradient(135deg, #e0c3fc, #8ec5fc 50%, #fbc2eb); color: #0f1016; border: none; box-shadow: 0 4px 18px rgba(224, 195, 252, 0.45); }
 #stage[data-style="holographic-foil-iridescent"] .btn-primary:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(142, 197, 252, 0.6); }
 #stage[data-style="holographic-foil-iridescent"] .btn-secondary { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.3); color: #fff; }
+#stage[data-style="holographic-foil-iridescent"] .btn-secondary { background: #252b3a; color: #fff; border-color: #8ec5fc; }
+#stage[data-style="holographic-foil-iridescent"] .topbar .btn { color: #fff; }
+#stage[data-style="holographic-foil-iridescent"] .toast .btn-ghost { color: #fff; border-color: #fff; }
 #stage[data-style="holographic-foil-iridescent"] .btn-ghost { color: #8ec5fc; }
 #stage[data-style="holographic-foil-iridescent"] .card, #stage[data-style="holographic-foil-iridescent"] .panel { background: linear-gradient(135deg, rgba(224, 195, 252, 0.12), rgba(142, 197, 252, 0.12)); border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 20px; box-shadow: 0 8px 32px rgba(142, 197, 252, 0.25); backdrop-filter: blur(12px); position: relative; overflow: hidden; }
 #stage[data-style="holographic-foil-iridescent"] .card::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,.18) 50%, transparent 60%); transform: translateX(-100%); transition: transform .6s ease; }

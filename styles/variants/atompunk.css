@@ -1,0 +1,65 @@
+/* Review proposal for atompunk; canonical default remains in styles/atompunk.css. */
+#stage[data-style="atompunk"][data-variant="alternate"] {
+  --bg: #E7EDF0;
+  --surface: #F8FBFC;
+  --surface-2: #D9E2E6;
+  --fg: #1D2A31;
+  --muted: #40535D;
+  --accent: #A64B24;
+  --accent-fg: #FFFFFF;
+  --border: #667B83;
+  --ok: #24764F;
+  --warn: #805400;
+  --danger: #A12D37;
+  --focus: #A64B24;
+  --radius: 4px;
+  --radius-sm: 6px;
+  --shadow: 0 8px 22px rgba(0,0,0,.16);
+  color-scheme: light;
+  color: var(--fg) !important;
+  background-color: var(--bg) !important;
+  background-image: radial-gradient(circle at 92% 10%, transparent 0 44px, #A64B2440 45px 47px, transparent 48px 72px, #80939A28 73px 75px, transparent 76px) !important;
+  background-size: 48px 48px, auto !important;
+}
+#stage[data-style="atompunk"][data-variant="alternate"]::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events:none;
+  background: radial-gradient(circle at 92% 10%, transparent 0 44px, #A64B2440 45px 47px, transparent 48px 72px, #80939A28 73px 75px, transparent 76px);
+  opacity:.72; animation: atompunk-field 24s ease-in-out infinite alternate;
+}
+#stage[data-style="atompunk"][data-variant="alternate"] .hero { color:var(--fg)!important; background:var(--surface)!important; border:1px solid var(--border)!important; box-shadow:var(--shadow)!important; }
+#stage[data-style="atompunk"][data-variant="alternate"] .hero .display { color:var(--fg)!important; -webkit-text-fill-color:var(--fg)!important; text-shadow:none!important; filter:none!important; }
+#stage[data-style="atompunk"][data-variant="alternate"] .app { position:relative; z-index:1; color:var(--fg)!important; background:transparent!important; }
+#stage[data-style="atompunk"][data-variant="alternate"] :is(.topbar,.card,.panel,.table-wrap,.toast,dialog,.view-header,.feature,.kpi,.chart) {
+  color:var(--fg)!important; background-color:var(--surface)!important; border-color:var(--border)!important;
+  border-radius:var(--radius)!important; box-shadow:var(--shadow)!important;
+}
+#stage[data-style="atompunk"][data-variant="alternate"] :is(.display,.brand,.section-title,.feature h3,.panel h3,.kpi-value) { color:var(--fg)!important; -webkit-text-fill-color:var(--fg)!important; }
+#stage[data-style="atompunk"][data-variant="alternate"] :is(.lead,.feature p,.view-subtitle,.footer,.kpi-label) { color:var(--muted)!important; -webkit-text-fill-color:var(--muted)!important; }
+#stage[data-style="atompunk"][data-variant="alternate"] :is(.btn-primary,.nav a.is-active,.nav-tab.is-active) { background:var(--accent)!important; color:var(--accent-fg)!important; -webkit-text-fill-color:var(--accent-fg)!important; border-color:var(--accent)!important; }
+#stage[data-style="atompunk"][data-variant="alternate"] :is(.btn-secondary,.btn-ghost,.nav-tab) { background:var(--surface-2)!important; color:var(--fg)!important; -webkit-text-fill-color:var(--fg)!important; border:1px solid var(--border)!important; }
+#stage[data-style="atompunk"][data-variant="alternate"] .topbar { border-bottom:2px solid var(--accent)!important; }
+#stage[data-style="atompunk"][data-variant="alternate"] .kpi { border-top:3px solid var(--accent)!important; animation:atompunk-settle .55s ease-out both; }
+#stage[data-style="atompunk"][data-variant="alternate"] .kpis { display:grid!important; grid-template-columns:repeat(2,minmax(0,1fr))!important; gap:clamp(10px,2vw,20px)!important; }
+#stage[data-style="atompunk"][data-variant="alternate"] .grid { display:grid!important; grid-template-columns:minmax(0,1fr)!important; gap:clamp(12px,2vw,22px)!important; }
+#stage[data-style="atompunk"][data-variant="alternate"] #view-painel { display:grid!important; grid-template-columns:minmax(0,1fr); grid-template-areas:"hero" "metrics" "resources" "split" "toast"; gap:clamp(18px,3vw,30px)!important; align-content:start; }
+#stage[data-style="atompunk"][data-variant="alternate"] #view-painel > .hero { grid-area:hero; }
+#stage[data-style="atompunk"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-metricas"] { grid-area:metrics; min-width:0; }
+#stage[data-style="atompunk"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-recursos"] { grid-area:resources; min-width:0; }
+#stage[data-style="atompunk"][data-variant="alternate"] #view-painel > .split { grid-area:split; min-width:0; }
+#stage[data-style="atompunk"][data-variant="alternate"] :is(input,select,textarea) { min-width:0; max-width:100%; color:var(--fg)!important; background:var(--surface-2)!important; border:1px solid var(--border)!important; }
+#stage[data-style="atompunk"][data-variant="alternate"] :focus-visible { outline:3px solid var(--focus)!important; outline-offset:3px; }
+@media (min-width: 960px) {
+ #stage[data-style="atompunk"][data-variant="alternate"] #view-painel { grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); grid-template-areas:"hero hero" "split split" "metrics resources" "toast toast"; column-gap:clamp(20px,2.5vw,34px); row-gap:30px; }
+ #stage[data-style="atompunk"][data-variant="alternate"] .grid { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+ #stage[data-style="atompunk"][data-variant="alternate"] .grid > .chart { grid-column:1/-1; }
+}
+@keyframes atompunk-settle { from { opacity:.55; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes atompunk-field { from { background-position:0 0; } to { background-position:34px 18px; } }
+@media (prefers-reduced-motion: reduce) {
+ #stage[data-style="atompunk"][data-variant="alternate"] *, #stage[data-style="atompunk"][data-variant="alternate"]::before { animation:none!important; scroll-behavior:auto!important; transition:none!important; }
+}
+
+/* Contrast over the actual painted background. */
+#stage[data-style="atompunk"][data-variant="alternate"] .topbar { background:var(--surface)!important; }
+#stage[data-style="atompunk"][data-variant="alternate"] .fx-atompunk-crt { opacity:.16!important; }
+#stage[data-style="atompunk"][data-variant="alternate"] .fx-atompunk-geiger { background:var(--surface-2)!important;border-color:var(--accent)!important;color:var(--fg)!important;box-shadow:none!important; }

@@ -8,7 +8,7 @@
   background: var(--bg);
 }
 #stage[data-style="scrollytelling"] .app { padding-bottom: 20vh; }
-#stage[data-style="scrollytelling"] .fx-st-bar { position: sticky; top: 0; height: 4px; z-index: 20; background: rgba(255,255,255,.08); margin-bottom: -4px; pointer-events: none; }
+#stage[data-style="scrollytelling"] .fx-st-bar { position: sticky; top: 0; height: 4px; z-index: 40; background: rgba(255,255,255,.08); margin-bottom: -4px; pointer-events: none; }
 #stage[data-style="scrollytelling"] .fx-st-bar b { display: block; height: 100%; width: 100%; transform: scaleX(0); transform-origin: 0 50%; background: var(--accent); }
 #stage[data-style="scrollytelling"] .fx-st-dots { position: sticky; top: 45vh; height: 0; z-index: 10; pointer-events: none; }
 #stage[data-style="scrollytelling"] .fx-st-dots ol { list-style: none; margin: 0; padding: 0; position: absolute; right: 10px; top: -40px; display: grid; gap: 14px; }
@@ -66,3 +66,26 @@
 @media (max-width: 640px) { #stage[data-style="scrollytelling"] .fx-st-dots { display: none; } }
 #stage[data-style="scrollytelling"] #view-painel > section.split { display: grid; align-content: center; }
 #stage[data-style="scrollytelling"] #view-painel > section.split::before { grid-column: 1 / -1; }
+
+/* One vertical scene per screen; oversized scenes retain native scrolling. */
+#stage[data-style="scrollytelling"]:has(#view-painel:not([hidden])) {
+  scroll-snap-type:y mandatory;
+  scroll-padding-top:var(--story-header-offset,120px);
+  scroll-behavior:smooth;
+  overscroll-behavior-y:contain;
+}
+#stage[data-style="scrollytelling"]:has(#view-painel:not([hidden])) .topbar {
+  position:sticky!important;top:0;z-index:30;background:var(--surface)!important;
+}
+#stage[data-style="scrollytelling"] #view-painel[id="view-painel"]:not([hidden]) {
+  display:flex!important;flex-direction:column!important;gap:0!important;
+}
+#stage[data-style="scrollytelling"] #view-painel[id="view-painel"] > section {
+  box-sizing:border-box;min-height:var(--story-scene-height,80svh)!important;
+  scroll-snap-align:start;scroll-snap-stop:always;
+  padding-block:clamp(24px,5vh,48px);margin-block:0;
+}
+#stage[data-style="scrollytelling"] .footer { scroll-snap-align:end; }
+@media (prefers-reduced-motion:reduce) {
+ #stage[data-style="scrollytelling"] { scroll-behavior:auto!important; }
+}

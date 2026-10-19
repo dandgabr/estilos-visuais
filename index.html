@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Estilos Visuais Coacus</title>
-<link rel="stylesheet" href="shell.css?v=scrollytelling-20261017">
-<link rel="stylesheet" href="styles/base.css?v=scrollytelling-20261017">
+<link rel="stylesheet" href="shell.css?v=theme-scenes-progress-20261019">
+<link rel="stylesheet" href="styles/base.css?v=theme-scenes-progress-20261019">
 <link rel="stylesheet" href="vendor/driver.css">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232d5bff'/%3E%3C/svg%3E">
 </head>
@@ -57,22 +57,11 @@
           </div>
         </div>
         <div class="selector">
-          <button id="appearance-trigger" type="button" class="selector-trigger" aria-expanded="false" aria-controls="appearance-panel">
-            <span data-i18n="appearance.label">Aparência</span>: <span id="appearance-trigger-value">Padrão</span>
+          <button id="appearance-trigger" type="button" class="selector-trigger appearance-toggle" aria-pressed="false" aria-describedby="appearance-state" aria-disabled="true">
+            <span data-i18n="appearance.toggle">Modo claro/escuro</span>
           </button>
-          <div id="appearance-panel" class="selector-panel appearance-panel" hidden>
-            <div class="selector-panel-head"><h2 data-i18n="appearance.select">Selecionar aparência</h2><button type="button" class="selector-close" data-close-selector="appearance-panel" data-i18n-attr="aria-label:selector.close" aria-label="Fechar">×</button></div>
-            <fieldset id="appearance-options">
-              <legend data-i18n="appearance.group.default">Padrão</legend>
-              <label class="appearance-option">
-                <input type="radio" name="appearance" value="default" checked>
-                <span class="appearance-option-copy"><strong id="appearance-default-name" data-i18n="appearance.original">Original do estilo</strong><small id="appearance-default-description" data-i18n="appearance.originalDescription">A aparência atual, sem alterações.</small></span>
-                <span class="appearance-swatches" aria-hidden="true"><i></i><i></i><i></i></span>
-              </label>
-            </fieldset>
-            <div id="appearance-live" class="selector-status" aria-live="polite"></div>
-            <button id="appearance-reset" type="button" class="selector-reset" data-i18n="appearance.restore">Voltar ao padrão</button>
-          </div>
+          <span id="appearance-state" class="appearance-state" data-i18n="appearance.state.unavailable">Padrão · alternância indisponível</span>
+          <span id="appearance-live" class="sr-only" aria-live="polite" aria-atomic="true"></span>
         </div>
       </div>
     </div>
@@ -137,8 +126,8 @@
                     <select><option>Web</option><option>Mobile</option><option>Marca</option></select>
                   </label>
                   <label>Descrição <textarea rows="3" placeholder="Conte um pouco…"></textarea></label>
-                  <label class="inline"><input type="checkbox" checked> Receber novidades</label>
-                  <label class="inline"><input class="switch" type="checkbox" role="switch" checked> Modo público</label>
+                  <label class="inline"><input type="checkbox" checked><span>Receber novidades</span></label>
+                  <label class="inline"><input class="switch" type="checkbox" role="switch" checked><span>Modo público</span></label>
                   <label>Intensidade <input type="range" min="0" max="100" value="60"></label>
                   <button class="btn btn-primary" type="submit">Criar projeto</button>
                 </form>
@@ -498,6 +487,6 @@
 </dialog>
 
 <script src="vendor/driver.js"></script>
-<script type="module" src="app.js?v=scrollytelling-20261017"></script>
+<script type="module" src="app.js?v=theme-scenes-progress-20261019"></script>
 </body>
 </html>

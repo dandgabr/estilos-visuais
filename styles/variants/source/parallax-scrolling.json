@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "slug": "parallax-scrolling",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "dark",
+    "alternatePolarity": "light",
+    "rationale": "O arquivo canônico styles/parallax-scrolling.css estabelece a aparência dark; esta proposta explora uma contraparte light coerente com o mesmo vocabulário visual. O padrão canônico não foi alterado.",
+    "evidence": "Classificação inferida dos tokens de fundo/superfície/texto e do background-color no arquivo local styles/parallax-scrolling.css; verificar no browser durante aprovação."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#F1E6D7",
+      "--surface": "#FFF7E8",
+      "--surface-2": "#E7D0BB",
+      "--fg": "#342338",
+      "--muted": "#614958",
+      "--accent": "#A24A58",
+      "--accent-fg": "#FFFFFF",
+      "--border": "#8E6D6E",
+      "--ok": "#24764F",
+      "--warn": "#805400",
+      "--danger": "#A12D37",
+      "--focus": "#A24A58",
+      "--radius": "4px",
+      "--radius-sm": "6px",
+      "--shadow": "0 8px 22px rgba(0,0,0,.16)"
+    }
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"parallax-scrolling\"]",
+      "signal": "A layered dusk panorama with distinct horizon bands; a proposta traduz esses sinais para light usando layered dusk horizon bands, mantendo story panorama como organização de leitura.",
+      "skillReference": "styles/parallax-scrolling.css",
+      "evidence": "Identidade visual derivada da descrição canônica em styles/registry.js e dos tokens/regras de styles/parallax-scrolling.css; CSS separado em alternate."
+    },
+    {
+      "selector": "#view-painel",
+      "signal": "Composição responsiva story panorama: painel principal e áreas de métricas/recursos mudam de posição no desktop, sem espaçamento excessivo em 320–768 px.",
+      "skillReference": "styles/parallax-scrolling.css",
+      "evidence": "A contraparte empilha áreas no mobile com gaps limitados por clamp; em 960 px reordena as áreas em grade específica."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#view-painel",
+      "property": "grid-template-areas / grid-template-columns / gap",
+      "before": "Composição padrão do tema parallax-scrolling, definida em styles/parallax-scrolling.css.",
+      "after": "No mobile: uma coluna compacta; no desktop: story panorama, com ordem hero/metrics/resources deliberadamente alterada.",
+      "breakpoints": {
+        "320": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna; largura minmax(0,1fr), 18px gap; KPIs em 2 colunas."
+        },
+        "375": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna; largura minmax(0,1fr), 18–30px gap; sem largura mínima rígida."
+        },
+        "768": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna até 959px; cards compactos em 2 colunas e recursos em 1 coluna."
+        },
+        "1280": {
+          "before": "Fluxo padrão canônico.",
+          "after": "Grade de duas colunas com áreas story panorama; gap 20–34px e gráfico ocupando a faixa de recursos."
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": ".kpi",
+      "animation": "parallax-scrolling-settle",
+      "trigger": "Ao aplicar a contraparte, cada cartão KPI entra uma vez com deslocamento vertical curto de 8px; sem loop.",
+      "duration": "550ms ease-out, uma execução",
+      "fallback": "Sem animação CSS, cartão visível no estado final; conteúdo e foco não dependem de movimento.",
+      "reducedMotion": "Desativada por prefers-reduced-motion: reduce; todos os componentes permanecem em seu estado final estático.",
+      "pauseResume": "CSS sem relógio JavaScript; o navegador suspende animações da página oculta e retoma ao tornar-se visível.",
+      "cleanup": "Não cria listeners, timers, observers, canvas ou recursos persistentes; as regras são removidas ao descarregar a folha da contraparte."
+    },
+    "background": {
+      "selector": "#stage[data-style=\"parallax-scrolling\"][data-variant=\"alternate\"]::before",
+      "animation": "parallax-scrolling-field",
+      "trigger": "Ao aplicar a contraparte, trama decorativa move-se lentamente 34×18px em vaivém; animação decorativa sem parallax de scroll.",
+      "duration": "24s ease-in-out alternate, loop decorativo",
+      "fallback": "A trama permanece estática no ponto inicial, sem retirar informação do conteúdo.",
+      "reducedMotion": "Desativada por prefers-reduced-motion: reduce; todos os componentes permanecem em seu estado final estático.",
+      "pauseResume": "CSS sem relógio JavaScript; o navegador suspende animações da página oculta e retoma ao tornar-se visível.",
+      "cleanup": "Não cria listeners, timers, observers, canvas ou recursos persistentes; as regras são removidas ao descarregar a folha da contraparte."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Contraparte de revisão: Parallax Scrolling",
+      "description": "A proposta preserva os sinais de A layered dusk panorama with distinct horizon bands, com paleta clara e composição story panorama; examine contraste, leitura e encaixe em telas pequenas."
+    },
+    "en-US": {
+      "name": "Review counterpart: Parallax Scrolling",
+      "description": "This proposal keeps the visual cues of A layered dusk panorama with distinct horizon bands, with a light palette and a story panorama composition; review contrast, reading flow and small-screen fit."
+    },
+    "es-ES": {
+      "name": "Variante para revisión: Parallax Scrolling",
+      "description": "La propuesta conserva los rasgos de A layered dusk panorama with distinct horizon bands, con paleta clara y composición story panorama; revise el contraste, la lectura y el ajuste en pantallas pequeñas."
+    },
+    "fr-FR": {
+      "name": "Variante à examiner: Parallax Scrolling",
+      "description": "La proposition conserve les codes de A layered dusk panorama with distinct horizon bands, avec une palette claire et une composition story panorama ; vérifiez le contraste, la lecture et l’affichage sur petit écran."
+    },
+    "de-DE": {
+      "name": "Prüfvariante: Parallax Scrolling",
+      "description": "Der Entwurf bewahrt die Merkmale von A layered dusk panorama with distinct horizon bands, mit einer helle Palette und einer Komposition als story panorama; prüfen Sie Kontrast, Lesefluss und kleine Bildschirme."
+    },
+    "ru-RU": {
+      "name": "Вариант для проверки: Parallax Scrolling",
+      "description": "Предложение сохраняет черты стиля A layered dusk panorama with distinct horizon bands, используя светлую палитру и композицию «story panorama»; проверьте контраст, чтение и узкие экраны."
+    },
+    "ar-SA": {
+      "name": "نسخة للمراجعة: Parallax Scrolling",
+      "description": "يحافظ الاقتراح على سمات A layered dusk panorama with distinct horizon bands، مع لوحة فاتحة وتكوين «story panorama»؛ راجع التباين وسهولة القراءة والملاءمة للشاشات الصغيرة."
+    },
+    "hi-IN": {
+      "name": "समीक्षा विकल्प: Parallax Scrolling",
+      "description": "यह प्रस्ताव A layered dusk panorama with distinct horizon bands की दृश्य पहचान बनाए रखता है, हल्की रंग-पैलेट और story panorama संरचना के साथ; कंट्रास्ट, पढ़ने की सहजता और छोटी स्क्रीन पर जाँचें।"
+    },
+    "zh-CN": {
+      "name": "待审阅的配色方案: Parallax Scrolling",
+      "description": "此提案保留 A layered dusk panorama with distinct horizon bands 的视觉特征，采用浅色色板与story panorama构图；请检查对比度、阅读流畅度和小屏适配。"
+    },
+    "ja-JP": {
+      "name": "レビュー用の対案: Parallax Scrolling",
+      "description": "この案はA layered dusk panorama with distinct horizon bandsの視覚的特徴を保ち、ライト配色と「story panorama」構成を採用します。コントラスト、読みやすさ、小画面での表示を確認してください。"
+    },
+    "ko-KR": {
+      "name": "검토용 대안: Parallax Scrolling",
+      "description": "이 제안은 A layered dusk panorama with distinct horizon bands의 시각적 특징을 유지하면서 밝은 팔레트와 story panorama 구성을 사용합니다. 대비, 읽기 흐름, 작은 화면을 확인하세요."
+    }
+  },
+  "sources": [
+    {
+      "title": "Arquivo canônico de estilo: styles/parallax-scrolling.css e registro styles/registry.js",
+      "url": "styles/parallax-scrolling.css",
+      "kind": "fonte primária local do padrão visual; não alterada",
+      "claim": "Sinais visuais e polaridade padrão inferidos do CSS canônico local para propor uma contraparte revisável."
+    },
+    {
+      "title": "W3C WCAG 2.2 Understanding SC 1.4.3 Contrast (Minimum)",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "kind": "orientação normativa de acessibilidade",
+      "claim": "Texto comum deve atingir contraste mínimo de 4.5:1 e texto grande 3:1; pares de contraste precisam ser medidos na renderização real."
+    },
+    {
+      "title": "W3C WCAG 2.2 Understanding SC 1.4.11 Non-text Contrast",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+      "kind": "orientação normativa de acessibilidade",
+      "claim": "Limites de controles e indicadores necessários devem manter contraste de pelo menos 3:1 com cores adjacentes."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "d3ebbdb85d9321ad5c3c40f985233cef00b53e6811239230c8287757cc7b68f5",
+  "contentDigest": "90b848b26e41ccc6c8271812c030329eecf6bf3277b7df4bdc5626d78249aefc",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "90b848b26e41ccc6c8271812c030329eecf6bf3277b7df4bdc5626d78249aefc",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "90b848b26e41ccc6c8271812c030329eecf6bf3277b7df4bdc5626d78249aefc",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

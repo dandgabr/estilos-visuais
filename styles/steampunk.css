@@ -61,7 +61,8 @@
 #stage[data-style="steampunk"] .switch:checked{background:#2f5a4c}
 #stage[data-style="steampunk"] th{font-family:var(--font-display);font-weight:400;color:var(--accent);border-bottom:2px solid var(--brass);letter-spacing:.04em;text-transform:none;font-size:.95rem}
 #stage[data-style="steampunk"] td{border-bottom:1px solid rgba(142,106,43,.5)}
-#stage[data-style="steampunk"] .toast{background:linear-gradient(#cf7e4f,#9a4a24);color:#1B1612;color:#fff;border:2px solid #4a2410;border-radius:6px;font-weight:700;box-shadow:0 4px 0 #4a2410}
+#stage[data-style="steampunk"] .toast{background:linear-gradient(#9a4a24,#713015);color:#fff;border:2px solid #4a2410;border-radius:6px;font-weight:700;box-shadow:0 4px 0 #4a2410}
+#stage[data-style="steampunk"] .btn-secondary { background:linear-gradient(#9a4a24,#713015); }
 #stage[data-style="steampunk"] .toast .btn-ghost{color:#fff;border-color:#fff}
 #stage[data-style="steampunk"] dialog{background:#2B1D12;color:var(--fg);border:3px solid var(--brass);border-radius:8px;box-shadow:0 0 0 5px #1B1612,0 0 0 7px var(--copper),0 24px 60px rgba(0,0,0,.7)}
 #stage[data-style="steampunk"] dialog::backdrop{background:rgba(10,7,4,.8)}

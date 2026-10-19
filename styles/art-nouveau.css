@@ -5,12 +5,12 @@
   --surface: #FAF6ED;
   --surface-2: #E8DECA;
   --fg: #2C261E;
-  --muted: #6B6152;
-  --accent: #C28B38;
+  --muted: #5B5347;
+  --accent: #765000;
   --accent-fg: #1A150E;
   --border: #3A4D39;
   --ok: #4A6B48;
-  --warn: #C28B38;
+  --warn: #765000;
   --danger: #9E3A3A;
   --radius: 28px 6px 28px 6px;
   --radius-sm: 14px 4px 14px 4px;
@@ -23,7 +23,7 @@
   --maxw: 1140px;
 
   /* Art Nouveau Palette */
-  --nouveau-gold: #C28B38;
+  --nouveau-gold: #765000;
   --nouveau-sage: #738671;
   --nouveau-forest: #3A4D39;
   --nouveau-terracotta: #B85D43;
@@ -33,6 +33,11 @@
   background:
     radial-gradient(circle at 80% 20%, rgba(194, 139, 56, 0.08) 0%, transparent 60%),
     linear-gradient(180deg, #F9F5EC 0%, #F1E9D7 100%);
+}
+
+#stage[data-style="art-nouveau"] input[type="checkbox"],
+#stage[data-style="art-nouveau"] input[type="range"] {
+  accent-color: var(--accent);
 }
 
 #stage[data-style="art-nouveau"] .topbar {
@@ -74,6 +79,7 @@
   color: #FFFFFF;
   background: var(--nouveau-forest);
 }
+#stage[data-style="art-nouveau"] .nav .nav-tab.is-active { color: #fff; }
 
 #stage[data-style="art-nouveau"] .hero {
   background: var(--surface);

@@ -3,6 +3,7 @@
 import subprocess
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+from chromium_runtime import chromium_executable
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,8 +37,32 @@ def main():
         return [tag, data];
       }));
       const canonicalKeys = Object.keys(catalogs[0][1].keys).sort();
+      const appearanceKeys = [
+        'appearance.toggle',
+        'appearance.state.default',
+        'appearance.state.alternate',
+        'appearance.state.unavailable',
+        'appearance.state.unclassified',
+        'appearance.polarity.light',
+        'appearance.polarity.dark',
+        'appearance.live.default',
+        'appearance.live.fallback',
+        'appearance.live.alternate',
+        'tour.appearanceDescription',
+      ];
+      const veryShortAppearanceKeys = new Set([
+        'appearance.polarity.light',
+        'appearance.polarity.dark',
+        'appearance.toggle',
+      ]);
       for (const [tag, data] of catalogs) {
         assert.deepEqual(Object.keys(data.keys).sort(), canonicalKeys, `${tag} key set`);
+        for (const key of appearanceKeys) {
+          assert.equal(typeof data.keys[key], 'string', `${tag} ${key} exists`);
+          assert.ok(data.keys[key].trim().length >= (veryShortAppearanceKeys.has(key) ? 2 : 4), `${tag} ${key} has useful copy`);
+        }
+        assert.match(data.keys['appearance.state.default'], /\{alternatePolarity\}/, `${tag} default state names alternate polarity`);
+        assert.match(data.keys['appearance.state.alternate'], /\{defaultPolarity\}/, `${tag} alternate state names default polarity`);
         if (data.styleDescriptions) assert.equal(Object.keys(data.styleDescriptions).length, 82, `${tag} style descriptions`);
       }
       assert.equal(resolveLocale('auto', ['zh-Hans']), 'zh-CN');
@@ -50,7 +75,7 @@ def main():
     assert result.returncode == 0, result.stderr
 
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(executable_path='/usr/bin/chromium-browser', headless=True)
+        browser = playwright.chromium.launch(executable_path=chromium_executable(), headless=True)
         page = browser.new_page(viewport={'width': 375, 'height': 740})
         page.add_init_script("Object.defineProperty(navigator, 'languages', {get: () => ['ru-RU']}); if (!localStorage.getItem('coacus-locale')) localStorage.setItem('coacus-locale','auto'); localStorage.setItem('coacus-auto-tour','false'); localStorage.setItem('coacus-welcome-tour','true')")
         page.goto('http://127.0.0.1:8000/#nordic')

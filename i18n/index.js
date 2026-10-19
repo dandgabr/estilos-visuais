@@ -1,15 +1,15 @@
 const catalogLoaders = {
-  'pt-BR': () => import('./locales/pt-BR.js'),
-  'en-US': () => import('./locales/en-US.js'),
-  'es-ES': () => import('./locales/es-ES.js'),
-  'fr-FR': () => import('./locales/fr-FR.js'),
-  'de-DE': () => import('./locales/de-DE.js'),
-  'ru-RU': () => import('./locales/ru-RU.js'),
-  'ar-SA': () => import('./locales/ar-SA.js'),
-  'hi-IN': () => import('./locales/hi-IN.js'),
-  'zh-CN': () => import('./locales/zh-CN.js'),
-  'ja-JP': () => import('./locales/ja-JP.js'),
-  'ko-KR': () => import('./locales/ko-KR.js'),
+  'pt-BR': () => import('./locales/pt-BR.js?v=theme-scenes-progress-20261019'),
+  'en-US': () => import('./locales/en-US.js?v=theme-scenes-progress-20261019'),
+  'es-ES': () => import('./locales/es-ES.js?v=theme-scenes-progress-20261019'),
+  'fr-FR': () => import('./locales/fr-FR.js?v=theme-scenes-progress-20261019'),
+  'de-DE': () => import('./locales/de-DE.js?v=theme-scenes-progress-20261019'),
+  'ru-RU': () => import('./locales/ru-RU.js?v=theme-scenes-progress-20261019'),
+  'ar-SA': () => import('./locales/ar-SA.js?v=theme-scenes-progress-20261019'),
+  'hi-IN': () => import('./locales/hi-IN.js?v=theme-scenes-progress-20261019'),
+  'zh-CN': () => import('./locales/zh-CN.js?v=theme-scenes-progress-20261019'),
+  'ja-JP': () => import('./locales/ja-JP.js?v=theme-scenes-progress-20261019'),
+  'ko-KR': () => import('./locales/ko-KR.js?v=theme-scenes-progress-20261019'),
 };
 
 const aliases = new Map([
@@ -87,10 +87,15 @@ function applyStaticTranslations() {
     if (!textSources.has(node)) textSources.set(node, node.nodeValue);
     const source = textSources.get(node);
     const trimmed = source.trim();
-    if (!trimmed || staticStrings[trimmed] == null) continue;
+    if (!trimmed) continue;
+    const translated = staticStrings[trimmed];
+    if (translated == null) {
+      node.nodeValue = source;
+      continue;
+    }
     const start = source.match(/^\s*/)?.[0] ?? '';
     const end = source.match(/\s*$/)?.[0] ?? '';
-    node.nodeValue = `${start}${staticStrings[trimmed]}${end}`;
+    node.nodeValue = `${start}${translated}${end}`;
   }
   document.querySelectorAll('*').forEach((element) => {
     const explicit = new Set((element.dataset.i18nAttr ?? '').split(';').map((entry) => entry.split(':')[0]));
@@ -101,7 +106,7 @@ function applyStaticTranslations() {
       if (!sources) { sources = new Map(); attrSources.set(element, sources); }
       if (!sources.has(name)) sources.set(name, element.getAttribute(name));
       const source = sources.get(name);
-      if (staticStrings[source] != null) element.setAttribute(name, staticStrings[source]);
+      element.setAttribute(name, staticStrings[source] ?? source);
     }
   });
 }

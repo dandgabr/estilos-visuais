@@ -1,0 +1,280 @@
+/* Authoring source for the light alternate. The canonical stylesheet is untouched. */
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] {
+  --bg: #F4F0E6;
+  --surface: #FFFDF7;
+  --surface-2: #E5EDF4;
+  --fg: #202634;
+  --muted: #555C68;
+  --accent: #0D5686;
+  --accent-fg: #FFFFFF;
+  --border: #788797;
+  --ok: #17633B;
+  --warn: #785000;
+  --danger: #A12735;
+  --focus: #074C80;
+  --shadow: 0 8px 22px rgba(32, 38, 52, .14);
+  --split-left-bg: #F4F0E6;
+  --split-right-bg: #E7F0F6;
+  --split-left-surface: #FFFDF7;
+  --split-right-surface: #F5FAFD;
+  --split-left-accent: #8E3427;
+  --split-right-accent: #0D5686;
+  --split-meridian: #788796;
+  position: relative;
+  background: linear-gradient(90deg,
+    var(--split-left-bg) 0%, var(--split-left-bg) calc(50% - .5px),
+    var(--split-meridian) calc(50% - .5px), var(--split-meridian) calc(50% + .5px),
+    var(--split-right-bg) calc(50% + .5px), var(--split-right-bg) 100%);
+  color: var(--fg);
+}
+
+/* Independent low-contrast light fields echo the two hemispheres without overlaying text. */
+#stage[data-style="split-screen-dualism"][data-variant="alternate"]::before,
+#stage[data-style="split-screen-dualism"][data-variant="alternate"]::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  width: 49.7%;
+  pointer-events: none;
+  opacity: .18;
+  background-repeat: no-repeat;
+  animation: none;
+  animation-play-state: paused;
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"]::before {
+  inset-inline-start: 0;
+  background-image: radial-gradient(ellipse at 30% 18%, rgba(142, 52, 39, .23), transparent 58%);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"]::after {
+  inset-inline-end: 0;
+  background-image: radial-gradient(ellipse at 72% 62%, rgba(13, 86, 134, .2), transparent 60%);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"][data-motion-active="true"]::before,
+#stage[data-style="split-screen-dualism"][data-variant="alternate"][data-motion-active="true"]::after {
+  animation: ssd-polar-fields 34s ease-in-out infinite alternate;
+  animation-play-state: running;
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"][data-motion-active="true"]::after {
+  animation-direction: alternate-reverse;
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] > .app {
+  position: relative;
+  z-index: 1;
+}
+
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .brand-mark {
+  background: linear-gradient(90deg, var(--split-left-accent) 0 50%, var(--split-right-accent) 50% 100%);
+  border-radius: 2px;
+  transform-style: preserve-3d;
+  animation: none;
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"][data-motion-active="true"] .brand-mark[data-motion-visible="true"] {
+  animation: ssd-meridian-turn 8s ease-in-out infinite;
+  animation-play-state: running;
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .topbar {
+  border-bottom: 1px solid var(--split-meridian);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .brand,
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .display,
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .section-title,
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .view-header h2 {
+  color: var(--fg);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .nav a,
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .nav button.nav-tab {
+  color: var(--fg);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .nav a.is-active,
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .nav button.nav-tab.is-active {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .hero {
+  border-inline-start: 3px solid var(--split-left-accent);
+  padding-inline-start: clamp(16px, 2.2vw, 28px);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .hero .eyebrow {
+  color: var(--split-left-accent);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .lead {
+  color: var(--muted);
+  max-width: 42ch;
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .section-title {
+  margin-top: 28px;
+}
+
+/* Keep editorial order on narrow viewports while pairing hero and metrics on desktop. */
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] #view-painel.is-active {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "hero"
+    "metrics"
+    "resources"
+    "projects";
+  column-gap: 28px;
+  row-gap: 12px;
+  align-items: start;
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] #view-painel > .hero {
+  grid-area: hero;
+  min-width: 0;
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-metricas"] {
+  grid-area: metrics;
+  min-width: 0;
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-recursos"] {
+  grid-area: resources;
+  min-width: 0;
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] #view-painel > .split {
+  grid-area: projects;
+  min-width: 0;
+  margin-top: 8px;
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .kpis {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .card,
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .panel {
+  color: var(--fg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .card:nth-child(odd),
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .panel:first-child {
+  background: var(--split-left-surface);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .card:nth-child(even),
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .panel:nth-child(2) {
+  background: var(--split-right-surface);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .kpi-label,
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .card .kpi-label {
+  color: var(--muted);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .kpi-value {
+  color: var(--fg);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .feature:nth-child(odd) h3,
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .feature:nth-child(odd) .link-more {
+  color: var(--split-left-accent);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .feature:nth-child(even) h3,
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .feature:nth-child(even) .link-more {
+  color: var(--split-right-accent);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .btn-primary {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border: 2px solid var(--accent);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .btn-secondary {
+  color: var(--fg);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .btn-ghost {
+  color: var(--fg);
+  border-color: var(--border);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] input[type=text],
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] input[type=email],
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] select,
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] textarea {
+  background: #FFFFFF;
+  border-color: var(--border);
+  color: var(--fg);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] :focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] th {
+  color: var(--fg);
+  border-bottom: 2px solid var(--split-meridian);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] td {
+  color: var(--fg);
+  border-bottom: 1px solid var(--border);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] tbody tr:hover {
+  background: var(--surface-2);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .toast,
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] dialog {
+  color: var(--fg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .toast .btn.btn-ghost {
+  color: var(--fg);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .badge {
+  background: var(--surface-2);
+  color: var(--fg);
+  border: 1px solid var(--border);
+}
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .badge.ok { color: var(--ok); }
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .badge.warn { color: var(--warn); }
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .badge.danger { color: var(--danger); }
+#stage[data-style="split-screen-dualism"][data-variant="alternate"] .bars i {
+  background: var(--split-right-accent);
+}
+
+/* On narrow screens a page-wide vertical meridian would bisect the reading column.
+   Keep the dual-pole cue on the outer edges of each grouped content surface instead. */
+@media (max-width: 540px) {
+  #stage[data-style="split-screen-dualism"][data-variant="alternate"] {
+    background: var(--split-left-bg);
+  }
+  #stage[data-style="split-screen-dualism"][data-variant="alternate"] .hero,
+  #stage[data-style="split-screen-dualism"][data-variant="alternate"] #view-painel > section,
+  #stage[data-style="split-screen-dualism"][data-variant="alternate"] #view-painel > .split {
+    box-shadow: inset 4px 0 0 var(--split-left-accent), inset -4px 0 0 var(--split-right-accent);
+  }
+}
+
+@media (min-width: 861px) {
+  #stage[data-style="split-screen-dualism"][data-variant="alternate"] #view-painel.is-active {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "hero metrics"
+      "resources resources"
+      "projects projects";
+  }
+  #stage[data-style="split-screen-dualism"][data-variant="alternate"] .kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 720px) and (max-width: 860px) {
+  #stage[data-style="split-screen-dualism"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-recursos"] .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #stage[data-style="split-screen-dualism"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-recursos"] .chart {
+    grid-column: auto;
+  }
+}
+
+@keyframes ssd-meridian-turn {
+  0%, 32%, 100% { transform: perspective(240px) rotateY(0deg); }
+  48%, 80% { transform: perspective(240px) rotateY(180deg); }
+}
+@keyframes ssd-polar-fields {
+  from { transform: translate3d(-1.5%, 0, 0); }
+  to { transform: translate3d(1.5%, 1%, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #stage[data-style="split-screen-dualism"][data-variant="alternate"] .brand-mark,
+  #stage[data-style="split-screen-dualism"][data-variant="alternate"]::before,
+  #stage[data-style="split-screen-dualism"][data-variant="alternate"]::after {
+    animation: none !important;
+    animation-play-state: paused !important;
+  }
+}

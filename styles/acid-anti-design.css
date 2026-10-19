@@ -70,3 +70,6 @@
   @keyframes acid-wob{ 0%,92%,100%{ transform:scaleX(1.05) skewX(-5deg); } 94%{ transform:scaleX(1.05) skewX(-5deg) translateX(8px); } 96%{ transform:scaleX(1.05) skewX(-10deg) translateX(-6px); } }
 }
 @media (max-width:640px){ #stage[data-style="acid-anti-design"] .topbar{ transform:none; } #stage[data-style="acid-anti-design"] .display{ transform:none; filter:drop-shadow(3px 0 0 rgba(255,95,162,.8)); } #stage[data-style="acid-anti-design"] .lead{ transform:none; } }
+@media (max-width:1199px){ #stage[data-style="acid-anti-design"] .kpis > .card{ transform:none!important; } }
+@media (min-width:641px) and (max-width:899px){ #stage[data-style="acid-anti-design"] .lead{ transform:none; } #stage[data-style="acid-anti-design"] .display{ max-width:100%; overflow-wrap:anywhere; } }
+@media (min-width:641px) and (max-width:899px){ #stage[data-style="acid-anti-design"] .display{ transform:none!important; animation:none!important; } }

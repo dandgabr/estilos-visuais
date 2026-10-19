@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "slug": "analog-newspaper-broadsheet",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "light",
+    "alternatePolarity": "dark",
+    "rationale": "Padrão classificado light pela luminância do token --bg em styles/analog-newspaper-broadsheet.css. Contraparte dark: A dark letterpress broadsheet: charcoal newsprint, bone paper panels, signal vermilion and strict column rules. A composição e paleta são uma exploração de revisão; a folha padrão não é alterada."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#171918",
+      "--surface": "#232624",
+      "--surface-2": "#303633",
+      "--fg": "#F3EFE5",
+      "--muted": "#C6C2B7",
+      "--accent": "#E05A43",
+      "--accent-fg": "#171918",
+      "--border": "#7C817B",
+      "--focus": "#6FABC2",
+      "--shadow": "0 8px 24px rgba(20, 18, 22, .16)"
+    },
+    "intent": "A dark letterpress broadsheet: charcoal newsprint, bone paper panels, signal vermilion and strict column rules."
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"analog-newspaper-broadsheet\"][data-variant=\"alternate\"] .hero",
+      "signal": "A dark letterpress broadsheet: charcoal newsprint, bone paper panels, signal vermilion and strict column rules. O hero incorpora ticker underline slides; os controles mantêm contraste e foco discernível.",
+      "skillReference": "styles/analog-newspaper-broadsheet.css — identidade canônica; revisão visual local",
+      "evidence": "Contraparte construída sem editar styles/analog-newspaper-broadsheet.css."
+    },
+    {
+      "selector": "#stage[data-style=\"analog-newspaper-broadsheet\"][data-variant=\"alternate\"] .app::before",
+      "signal": "Decoração de fundo: press registration marks; opacidade baixa para não competir com texto.",
+      "skillReference": "styles/analog-newspaper-broadsheet.css — identidade canônica",
+      "evidence": "A camada é pointer-events:none e subordinada ao conteúdo."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#stage[data-style=\"analog-newspaper-broadsheet\"][data-variant=\"alternate\"] #view-painel",
+      "property": "grid-template-columns / grid-template-areas / gap",
+      "before": "Painel segue fluxo canônico de uma coluna; KPI usa grade fluida definida pelo estilo.",
+      "after": "masthead and article columns; metrics reorganized as a narrow ticker beneath the headline. Desktop usa trilho principal+secundário; mobile preserva ordem e fluxo único.",
+      "breakpoints": {
+        "320": {
+          "before": "fluxo canônico em coluna, sem overflow intencional",
+          "after": "1 coluna, gap 16px e padding lateral 18px"
+        },
+        "375": {
+          "before": "fluxo canônico em coluna, grade fluida",
+          "after": "1 coluna; hero e controles cabem na largura útil"
+        },
+        "768": {
+          "before": "fluxo principal em coluna, elementos fluem naturalmente",
+          "after": "1 coluna; composição mantém leitura vertical e não comprime cartões"
+        },
+        "1280": {
+          "before": "fluxo canônico em coluna por regiões",
+          "after": "2 trilhos: hero 1.25fr e métricas .75fr; recursos atravessam as colunas, formulário e atividade dividem a linha inferior"
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": "#stage[data-style=\"analog-newspaper-broadsheet\"][data-variant=\"alternate\"] .hero::after",
+      "animation": "analog-newspaper-broadsheet-element",
+      "trigger": "Ao aplicar a contraparte, regra CSS de entrada do filete decorativo do hero.",
+      "duration": "520ms ease-out, scaleX; somente decoração, conteúdo sempre visível.",
+      "fallback": "Sem suporte a animação CSS, filete permanece estático; conteúdo não depende do movimento.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa a animação.",
+      "pauseResume": "Animação de entrada finita; não há loop contínuo nem estado de conteúdo.",
+      "cleanup": "Ao remover a folha da contraparte, pseudo-elemento e animação desaparecem."
+    },
+    "background": {
+      "selector": "#stage[data-style=\"analog-newspaper-broadsheet\"][data-variant=\"alternate\"]::after",
+      "animation": "analog-newspaper-broadsheet-background",
+      "trigger": "Loop ambiental sutil enquanto a contraparte está ativa.",
+      "duration": "32s ease-in-out alternate; somente opacidade e posição de background, sem camada sobre interação.",
+      "fallback": "Sem suporte a animação, textura permanece estática e decorativa.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa o loop.",
+      "pauseResume": "CSS anima apenas enquanto a folha alternate permanece aplicada; o navegador suspende a aba oculta.",
+      "cleanup": "Ao remover a folha da contraparte, camada e animação desaparecem."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Gazeta da Meia-Noite",
+      "description": "A dark letterpress broadsheet: charcoal newsprint, bone paper panels, signal vermilion and strict column rules. Contraparte alternativa escura para o padrão, proposta para revisão; a aparência canônica permanece intacta."
+    },
+    "en-US": {
+      "name": "Midnight Gazette",
+      "description": "A dark letterpress broadsheet: charcoal newsprint, bone paper panels, signal vermilion and strict column rules. This dark counterpart is a review proposal; the canonical appearance remains unchanged."
+    },
+    "es-ES": {
+      "name": "Midnight Gazette — alternativa oscura",
+      "description": "A dark letterpress broadsheet: charcoal newsprint, bone paper panels, signal vermilion and strict column rules. Alternativa oscura; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "fr-FR": {
+      "name": "Midnight Gazette — variante sombre",
+      "description": "A dark letterpress broadsheet: charcoal newsprint, bone paper panels, signal vermilion and strict column rules. Variante sombre; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "de-DE": {
+      "name": "Midnight Gazette — dunkle Variante",
+      "description": "A dark letterpress broadsheet: charcoal newsprint, bone paper panels, signal vermilion and strict column rules. Dunkle variante; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ru-RU": {
+      "name": "Midnight Gazette — тёмная версия",
+      "description": "A dark letterpress broadsheet: charcoal newsprint, bone paper panels, signal vermilion and strict column rules. Тёмная версия; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ar-SA": {
+      "name": "Midnight Gazette — النسخة الداكنة",
+      "description": "A dark letterpress broadsheet: charcoal newsprint, bone paper panels, signal vermilion and strict column rules. النسخة الداكنة; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "hi-IN": {
+      "name": "Midnight Gazette — गहरा रूप",
+      "description": "A dark letterpress broadsheet: charcoal newsprint, bone paper panels, signal vermilion and strict column rules. गहरा रूप; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "zh-CN": {
+      "name": "Midnight Gazette — 深色版本",
+      "description": "A dark letterpress broadsheet: charcoal newsprint, bone paper panels, signal vermilion and strict column rules. 深色版本; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ja-JP": {
+      "name": "Midnight Gazette — ダーク版",
+      "description": "A dark letterpress broadsheet: charcoal newsprint, bone paper panels, signal vermilion and strict column rules. ダーク版; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ko-KR": {
+      "name": "Midnight Gazette — 어두운 변형",
+      "description": "A dark letterpress broadsheet: charcoal newsprint, bone paper panels, signal vermilion and strict column rules. 어두운 변형; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    }
+  },
+  "sources": [
+    {
+      "title": "Canonical analog-newspaper-broadsheet stylesheet",
+      "url": "styles/analog-newspaper-broadsheet.css",
+      "kind": "local canonical source",
+      "claim": "Used to identify the untouched default polarity and visual identity of analog-newspaper-broadsheet."
+    },
+    {
+      "title": "Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility standard",
+      "claim": "Contrast ratios are screening evidence; final visual review must inspect rendered text, controls, focus and status states."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "26b0d791adf0e4bc87daa6e4ece72d59e33eb9914252a15a49556769d510afe6",
+  "contentDigest": "e4282b6e2ef0f53c933cd22e712c0ffa8d106d7ff0a4e238b1cadc5d8fd964ef",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "e4282b6e2ef0f53c933cd22e712c0ffa8d106d7ff0a4e238b1cadc5d8fd964ef",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "e4282b6e2ef0f53c933cd22e712c0ffa8d106d7ff0a4e238b1cadc5d8fd964ef",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

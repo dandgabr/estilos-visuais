@@ -35,6 +35,9 @@
     linear-gradient(180deg, #FFB7B2 0%, #D8B4F8 30%, #7CE8F4 70%, #22143B 100%);
   background-attachment: fixed;
 }
+#stage[data-style="vaporwave"] .section-title { color: #3f1768; }
+#stage[data-style="vaporwave"] .footer { color: #1a0d2e; }
+#stage[data-style="vaporwave"] .footer { background:#22143b;color:#ffffff;padding:12px; }
 
 #stage[data-style="vaporwave"] .topbar {
   background: var(--vapor-win-grey);

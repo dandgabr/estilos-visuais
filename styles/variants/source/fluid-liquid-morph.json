@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "slug": "fluid-liquid-morph",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "dark",
+    "alternatePolarity": "light",
+    "rationale": "O arquivo canônico styles/fluid-liquid-morph.css estabelece a aparência dark; esta proposta explora uma contraparte light coerente com o mesmo vocabulário visual. O padrão canônico não foi alterado.",
+    "evidence": "Classificação inferida dos tokens de fundo/superfície/texto e do background-color no arquivo local styles/fluid-liquid-morph.css; verificar no browser durante aprovação."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#F1E9F1",
+      "--surface": "#FFF8FA",
+      "--surface-2": "#E8D9E8",
+      "--fg": "#302332",
+      "--muted": "#5A455B",
+      "--accent": "#B74369",
+      "--accent-fg": "#FFFFFF",
+      "--border": "#90738C",
+      "--ok": "#24764F",
+      "--warn": "#805400",
+      "--danger": "#A12D37",
+      "--focus": "#B74369",
+      "--radius": "28px",
+      "--radius-sm": "6px",
+      "--shadow": "0 8px 22px rgba(0,0,0,.16)"
+    }
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"fluid-liquid-morph\"]",
+      "signal": "A pale fluid field with capillary contours and pooled surfaces; a proposta traduz esses sinais para light usando capillary wave contours and soft fluid pools, mantendo fluid field como organização de leitura.",
+      "skillReference": "styles/fluid-liquid-morph.css",
+      "evidence": "Identidade visual derivada da descrição canônica em styles/registry.js e dos tokens/regras de styles/fluid-liquid-morph.css; CSS separado em alternate."
+    },
+    {
+      "selector": "#view-painel",
+      "signal": "Composição responsiva fluid field: painel principal e áreas de métricas/recursos mudam de posição no desktop, sem espaçamento excessivo em 320–768 px.",
+      "skillReference": "styles/fluid-liquid-morph.css",
+      "evidence": "A contraparte empilha áreas no mobile com gaps limitados por clamp; em 960 px reordena as áreas em grade específica."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#view-painel",
+      "property": "grid-template-areas / grid-template-columns / gap",
+      "before": "Composição padrão do tema fluid-liquid-morph, definida em styles/fluid-liquid-morph.css.",
+      "after": "No mobile: uma coluna compacta; no desktop: fluid field, com ordem hero/metrics/resources deliberadamente alterada.",
+      "breakpoints": {
+        "320": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna; largura minmax(0,1fr), 18px gap; KPIs em 2 colunas."
+        },
+        "375": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna; largura minmax(0,1fr), 18–30px gap; sem largura mínima rígida."
+        },
+        "768": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna até 959px; cards compactos em 2 colunas e recursos em 1 coluna."
+        },
+        "1280": {
+          "before": "Fluxo padrão canônico.",
+          "after": "Grade de duas colunas com áreas fluid field; gap 20–34px e gráfico ocupando a faixa de recursos."
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": ".kpi",
+      "animation": "fluid-liquid-morph-settle",
+      "trigger": "Ao aplicar a contraparte, cada cartão KPI entra uma vez com deslocamento vertical curto de 8px; sem loop.",
+      "duration": "550ms ease-out, uma execução",
+      "fallback": "Sem animação CSS, cartão visível no estado final; conteúdo e foco não dependem de movimento.",
+      "reducedMotion": "Desativada por prefers-reduced-motion: reduce; todos os componentes permanecem em seu estado final estático.",
+      "pauseResume": "CSS sem relógio JavaScript; o navegador suspende animações da página oculta e retoma ao tornar-se visível.",
+      "cleanup": "Não cria listeners, timers, observers, canvas ou recursos persistentes; as regras são removidas ao descarregar a folha da contraparte."
+    },
+    "background": {
+      "selector": "#stage[data-style=\"fluid-liquid-morph\"][data-variant=\"alternate\"]::before",
+      "animation": "fluid-liquid-morph-field",
+      "trigger": "Ao aplicar a contraparte, trama decorativa move-se lentamente 34×18px em vaivém; animação decorativa sem parallax de scroll.",
+      "duration": "24s ease-in-out alternate, loop decorativo",
+      "fallback": "A trama permanece estática no ponto inicial, sem retirar informação do conteúdo.",
+      "reducedMotion": "Desativada por prefers-reduced-motion: reduce; todos os componentes permanecem em seu estado final estático.",
+      "pauseResume": "CSS sem relógio JavaScript; o navegador suspende animações da página oculta e retoma ao tornar-se visível.",
+      "cleanup": "Não cria listeners, timers, observers, canvas ou recursos persistentes; as regras são removidas ao descarregar a folha da contraparte."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Contraparte de revisão: Fluid Liquid Morph",
+      "description": "A proposta preserva os sinais de A pale fluid field with capillary contours and pooled surfaces, com paleta clara e composição fluid field; examine contraste, leitura e encaixe em telas pequenas."
+    },
+    "en-US": {
+      "name": "Review counterpart: Fluid Liquid Morph",
+      "description": "This proposal keeps the visual cues of A pale fluid field with capillary contours and pooled surfaces, with a light palette and a fluid field composition; review contrast, reading flow and small-screen fit."
+    },
+    "es-ES": {
+      "name": "Variante para revisión: Fluid Liquid Morph",
+      "description": "La propuesta conserva los rasgos de A pale fluid field with capillary contours and pooled surfaces, con paleta clara y composición fluid field; revise el contraste, la lectura y el ajuste en pantallas pequeñas."
+    },
+    "fr-FR": {
+      "name": "Variante à examiner: Fluid Liquid Morph",
+      "description": "La proposition conserve les codes de A pale fluid field with capillary contours and pooled surfaces, avec une palette claire et une composition fluid field ; vérifiez le contraste, la lecture et l’affichage sur petit écran."
+    },
+    "de-DE": {
+      "name": "Prüfvariante: Fluid Liquid Morph",
+      "description": "Der Entwurf bewahrt die Merkmale von A pale fluid field with capillary contours and pooled surfaces, mit einer helle Palette und einer Komposition als fluid field; prüfen Sie Kontrast, Lesefluss und kleine Bildschirme."
+    },
+    "ru-RU": {
+      "name": "Вариант для проверки: Fluid Liquid Morph",
+      "description": "Предложение сохраняет черты стиля A pale fluid field with capillary contours and pooled surfaces, используя светлую палитру и композицию «fluid field»; проверьте контраст, чтение и узкие экраны."
+    },
+    "ar-SA": {
+      "name": "نسخة للمراجعة: Fluid Liquid Morph",
+      "description": "يحافظ الاقتراح على سمات A pale fluid field with capillary contours and pooled surfaces، مع لوحة فاتحة وتكوين «fluid field»؛ راجع التباين وسهولة القراءة والملاءمة للشاشات الصغيرة."
+    },
+    "hi-IN": {
+      "name": "समीक्षा विकल्प: Fluid Liquid Morph",
+      "description": "यह प्रस्ताव A pale fluid field with capillary contours and pooled surfaces की दृश्य पहचान बनाए रखता है, हल्की रंग-पैलेट और fluid field संरचना के साथ; कंट्रास्ट, पढ़ने की सहजता और छोटी स्क्रीन पर जाँचें।"
+    },
+    "zh-CN": {
+      "name": "待审阅的配色方案: Fluid Liquid Morph",
+      "description": "此提案保留 A pale fluid field with capillary contours and pooled surfaces 的视觉特征，采用浅色色板与fluid field构图；请检查对比度、阅读流畅度和小屏适配。"
+    },
+    "ja-JP": {
+      "name": "レビュー用の対案: Fluid Liquid Morph",
+      "description": "この案はA pale fluid field with capillary contours and pooled surfacesの視覚的特徴を保ち、ライト配色と「fluid field」構成を採用します。コントラスト、読みやすさ、小画面での表示を確認してください。"
+    },
+    "ko-KR": {
+      "name": "검토용 대안: Fluid Liquid Morph",
+      "description": "이 제안은 A pale fluid field with capillary contours and pooled surfaces의 시각적 특징을 유지하면서 밝은 팔레트와 fluid field 구성을 사용합니다. 대비, 읽기 흐름, 작은 화면을 확인하세요."
+    }
+  },
+  "sources": [
+    {
+      "title": "Arquivo canônico de estilo: styles/fluid-liquid-morph.css e registro styles/registry.js",
+      "url": "styles/fluid-liquid-morph.css",
+      "kind": "fonte primária local do padrão visual; não alterada",
+      "claim": "Sinais visuais e polaridade padrão inferidos do CSS canônico local para propor uma contraparte revisável."
+    },
+    {
+      "title": "W3C WCAG 2.2 Understanding SC 1.4.3 Contrast (Minimum)",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "kind": "orientação normativa de acessibilidade",
+      "claim": "Texto comum deve atingir contraste mínimo de 4.5:1 e texto grande 3:1; pares de contraste precisam ser medidos na renderização real."
+    },
+    {
+      "title": "W3C WCAG 2.2 Understanding SC 1.4.11 Non-text Contrast",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+      "kind": "orientação normativa de acessibilidade",
+      "claim": "Limites de controles e indicadores necessários devem manter contraste de pelo menos 3:1 com cores adjacentes."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "21b99a8aa5b7e4a63b7601df960488df076415be0ea187f53924135f2045328f",
+  "contentDigest": "98112ce7189c770c571a3d6694efad959e594dba8125a3e838fec717accbab95",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "98112ce7189c770c571a3d6694efad959e594dba8125a3e838fec717accbab95",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "98112ce7189c770c571a3d6694efad959e594dba8125a3e838fec717accbab95",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
 #stage[data-style="neumorphism"]{
   --bg:#e0e5ec;--surface:#e0e5ec;--surface-2:#e0e5ec;--fg:#2d3748;--muted:#4a5568;--accent:#4c51bf;--accent-fg:#fff;--border:transparent;
-  --ok:#2f7a4f;--warn:#8a5a00;--danger:#b53030;--radius:22px;--radius-sm:14px;
+  --ok:#276943;--warn:#8a5a00;--danger:#b53030;--radius:22px;--radius-sm:14px;
   --nu-out:9px 9px 18px #a3b1c6,-9px -9px 18px #ffffff;--nu-in:inset 6px 6px 12px #a3b1c6,inset -6px -6px 12px #ffffff;
   --shadow:var(--nu-out);--font-body:'Nunito',sans-serif;--font-display:'Nunito',sans-serif;--gap:28px;--pad:24px;
 }

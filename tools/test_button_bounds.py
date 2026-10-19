@@ -4,6 +4,7 @@ import re
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
+from chromium_runtime import chromium_executable
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -14,7 +15,7 @@ ZONES = ".hero,.panel,.card,.topbar,.toast,.view-header,.kanban-card,.team-card,
 def main():
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(
-            executable_path="/usr/bin/chromium-browser", headless=True
+            executable_path=chromium_executable(), headless=True
         )
         page = browser.new_page(viewport={"width": 1280, "height": 800})
         page.add_init_script(

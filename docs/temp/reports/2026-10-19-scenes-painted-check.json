@@ -1,0 +1,27 @@
+{
+  "checked": 4,
+  "width": 1280,
+  "method": "median of nine painted background samples per visible text line",
+  "cases": [
+    {
+      "slug": "scrollytelling",
+      "variant": "default",
+      "issues": []
+    },
+    {
+      "slug": "scrollytelling",
+      "variant": "alternate",
+      "issues": []
+    },
+    {
+      "slug": "atompunk",
+      "variant": "default",
+      "issues": []
+    },
+    {
+      "slug": "atompunk",
+      "variant": "alternate",
+      "issues": []
+    }
+  ]
+}

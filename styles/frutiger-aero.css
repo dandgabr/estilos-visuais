@@ -97,11 +97,12 @@
 }
 
 #stage[data-style="frutiger-aero"] .eyebrow {
-  color: #004d80;
+  color: #00334f;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+#stage[data-style="frutiger-aero"] .btn { color: #003047; }
 
 #stage[data-style="frutiger-aero"] .actions {
   justify-content: center;
@@ -341,3 +342,6 @@
     color: WindowText !important;
   }
 }
+#stage[data-style="frutiger-aero"] button.btn { color: #001018; text-shadow:none; }
+#stage[data-style="frutiger-aero"] button.btn::before { opacity: .35; }
+#stage[data-style="frutiger-aero"] .nav button.nav-tab.is-active { background:#0065ad;color:#fff; }

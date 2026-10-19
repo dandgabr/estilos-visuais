@@ -33,6 +33,7 @@
 #stage[data-style="metro-modern-ui"] .kpis .card:nth-child(2){background:#a85d00}
 #stage[data-style="metro-modern-ui"] .kpis .card:nth-child(3){background:#1b7a3e}
 #stage[data-style="metro-modern-ui"] .kpis .card:nth-child(4){background:#a01f7a}
+#stage[data-style="metro-modern-ui"] .kpi-label{color:#fff}
 #stage[data-style="metro-modern-ui"] .kpi-value{font-weight:300;font-size:3.4rem;line-height:1}
 #stage[data-style="metro-modern-ui"] .badge{background:rgba(0,0,0,.3);border:0;border-radius:0;color:#fff}
 #stage[data-style="metro-modern-ui"] .grid .feature:nth-child(1){background:#2a6f6f}

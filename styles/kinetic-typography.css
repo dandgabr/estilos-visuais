@@ -23,7 +23,7 @@
 #stage[data-style="kinetic-typography"] .display .kt-ch:hover{ font-weight:100; font-stretch:150%; color:#c6ff00; transition-delay:0s; }
 #stage[data-style="kinetic-typography"] .display:not(.kt-split){ -webkit-text-stroke:0; }
 #stage[data-style="kinetic-typography"] .lead{ color:#d8d8d0; font-size:1.15rem; }
-#stage[data-style="kinetic-typography"] .kt-marquee{ margin:8px -16px 0; overflow:hidden; border-block:1px solid #3a3a38; background:#c6ff00; color:#0a0a0a; pointer-events:none; white-space:nowrap; }
+#stage[data-style="kinetic-typography"] .kt-marquee{ margin:8px 0 0; min-width:0; max-width:100%; overflow:hidden; border-block:1px solid #3a3a38; background:#c6ff00; color:#0a0a0a; pointer-events:none; white-space:nowrap; }
 #stage[data-style="kinetic-typography"] .kt-track{ display:inline-flex; gap:1.2rem; padding:.35rem 0; font:800 1.6rem var(--font-display); font-stretch:125%; text-transform:uppercase; letter-spacing:-.01em; animation:kt-marq 22s linear infinite; will-change:transform; }
 #stage[data-style="kinetic-typography"] .kt-track span{ flex:none; }
 @keyframes kt-marq{ to{ transform:translateX(-50%); } }

@@ -11,7 +11,7 @@
   --border: #444444;
   --ok: #00FF66;
   --warn: #FFFF00;
-  --danger: #FF0033;
+  --danger: #FF6B85;
   --radius: 0px;
   --radius-sm: 0px;
   --shadow: 0 4px 0 #000000;
@@ -67,7 +67,7 @@
 }
 
 #stage[data-style="weirdcore"] .nav a.is-active,
-#stage[data-style="weirdcore"] .nav-tab.is-active {
+#stage[data-style="weirdcore"] .nav .nav-tab.is-active {
   color: #000000;
   background: var(--weird-yellow);
   border-color: var(--weird-yellow);
@@ -97,7 +97,7 @@
 
 #stage[data-style="weirdcore"] .btn-primary {
   background: var(--weird-red);
-  color: #FFFFFF;
+  color: #000000;
   border: 1px solid #000;
 }
 

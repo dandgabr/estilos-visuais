@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "slug": "metro-modern-ui",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "dark",
+    "alternatePolarity": "light",
+    "rationale": "O padrão canônico é escuro: styles/metro-modern-ui.css define fundo #1d1d1d e superfícies #2d2d2d/#3a3a3a. A contraparte clara mantém a linguagem Metro por meio de planos geométricos, tipografia Open Sans e azul de ação, usando superfícies claras; nenhuma regra do padrão foi alterada.",
+    "evidence": "Leitura dos tokens canônicos locais e comparação das luminâncias de fundo/superfícies com a contraparte proposta; classificação pronta para validação humana."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#F3F5F7",
+      "--surface": "#FFFFFF",
+      "--surface-2": "#E3EAF1",
+      "--fg": "#252C34",
+      "--muted": "#4B5864",
+      "--accent": "#0063B1",
+      "--accent-fg": "#FFFFFF",
+      "--border": "#6587A5",
+      "--focus": "#005A9E",
+      "--ok": "#216E4E",
+      "--warn": "#7A4F01",
+      "--danger": "#AE2E24",
+      "--radius": "12px",
+      "--shadow": "none"
+    },
+    "intent": "Metro claro: planos geométricos, blocos de cor funcionais, tipografia Open Sans leve e azul de ação em superfícies claras."
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"metro-modern-ui\"][data-variant=\"alternate\"] #view-painel",
+      "signal": "Metro claro: planos geométricos, blocos de cor funcionais, tipografia Open Sans leve e azul de ação; o painel usa hero amplo e uma grade de módulos com alinhamento rígido.",
+      "skillReference": "CSS canônico local styles/metro-modern-ui.css; validar referências de domínio durante a revisão humana.",
+      "evidence": "A contraparte concentra a direção clara no layout e nos tokens alternate, com CSS limitado ao stage de metro-modern-ui."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#view-painel",
+      "property": "grid-template-columns / areas / gap",
+      "before": "Fluxo e distribuição do padrão canônico, preservados integralmente no arquivo styles/metro-modern-ui.css.",
+      "after": "dashboard uses numbered color blocks in a 2x2 metric mosaic and a strong left-aligned title rail.",
+      "breakpoints": {
+        "320": {
+          "before": "layout canônico; viewport 320px",
+          "after": "uma coluna, largura minmax(0,1fr), sem overflow horizontal; gap 16px"
+        },
+        "375": {
+          "before": "layout canônico; viewport 375px",
+          "after": "uma coluna, componentes com min-width:0 e alvos de toque preservados"
+        },
+        "768": {
+          "before": "layout canônico; viewport 768px",
+          "after": "composição ainda empilhada para manter leitura e largura de texto confortável"
+        },
+        "1280": {
+          "before": "layout canônico; viewport 1280px",
+          "after": "dashboard uses numbered color blocks in a 2x2 metric mosaic and a strong left-aligned title rail. largura máxima controlada e trilhos alinhados"
+        }
+      }
+    },
+    {
+      "selector": "#view-painel > .hero",
+      "property": "grid / padding / tratamento de superfície",
+      "before": "Hero e espaçamentos do padrão canônico sem modificação.",
+      "after": "Estação metropolitana noturna: blocos retangulares de sinalização, amarelo de linha e ciano de mapa como códigos funcionais separados. O espaçamento entre blocos é limitado a 24–28px; rótulo, título, texto e ações mantêm intervalos próprios.",
+      "breakpoints": {
+        "320": {
+          "before": "hero canônico",
+          "after": "padding 20px 16px; título quebra sem clipping e ações podem ocupar nova linha"
+        },
+        "375": {
+          "before": "hero canônico",
+          "after": "padding 22px 18px; largura útil preservada"
+        },
+        "768": {
+          "before": "hero canônico",
+          "after": "padding 28px 24px; sem colunas estreitas"
+        },
+        "1280": {
+          "before": "hero canônico",
+          "after": "padding 32px; alinhado ao trilho da composição desktop"
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": ".kpi",
+      "animation": "metro-modern-ui-metric-in",
+      "trigger": "Quando o KPI entra na viewport pelo controle IntersectionObserver do runtime.",
+      "duration": "500ms ease-out, deslocamento vertical de 5px e opacidade suave.",
+      "fallback": "Sem IntersectionObserver, o runtime calcula interseção por geometria; com JavaScript indisponível, KPIs permanecem visíveis.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa animação e transformações; o conteúdo permanece visível.",
+      "pauseResume": "Runtime define data-motion-visible somente com elemento visível, documento ativo e movimento não reduzido.",
+      "cleanup": "Ao trocar aparência, runtime remove marcadores e observadores; estado final é estático e visível."
+    },
+    "background": {
+      "selector": "#stage::after",
+      "animation": "metro-modern-ui-ambient",
+      "trigger": "Camada de fundo sutil enquanto o stage está visível, governada por data-motion-active do runtime.",
+      "duration": "28s ease-in-out alternado, movimento horizontal máximo de 0,4% e opacidade baixa.",
+      "fallback": "Sem suporte a animações CSS, a textura decorativa permanece estática e o conteúdo não depende dela.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa a animação ambiental e transformações.",
+      "pauseResume": "Runtime pausa a camada quando stage/documento não está visível e retoma quando volta a ficar ativo.",
+      "cleanup": "A folha alternate remove a camada ao sair; runtime remove listeners e atributos ao trocar o estilo."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Metro claro",
+      "description": "Contraparte clara experimental com planos geométricos, hierarquia de leitura e azul de ação; proposta pronta para revisão humana."
+    },
+    "en-US": {
+      "name": "Light Metro",
+      "description": "An experimental light counterpart with geometric planes, readable hierarchy, and blue actions; ready for human review."
+    },
+    "es-ES": {
+      "name": "Estación nocturna",
+      "description": "Una contraparte oscura experimental con identidad propia, contraste legible y una composición adaptada al tema; lista para revisión humana."
+    },
+    "fr-FR": {
+      "name": "Station nocturne",
+      "description": "Une variante sombre expérimentale avec sa propre identité, un contraste lisible et une composition adaptée au thème, prête pour une revue humaine."
+    },
+    "de-DE": {
+      "name": "Nachtstation",
+      "description": "Eine experimentelle dunkle Variante mit eigener Identität, gut lesbarem Kontrast und themengerechter Komposition, bereit zur menschlichen Prüfung."
+    },
+    "ru-RU": {
+      "name": "Ночная станция",
+      "description": "Экспериментальная тёмная версия с собственной выразительностью, читаемым контрастом и композицией в духе темы; готова к проверке человеком."
+    },
+    "ar-SA": {
+      "name": "محطة ليلية",
+      "description": "نسخة داكنة تجريبية بهوية مستقلة وتباين واضح وتكوين يناسب الطابع، وهي جاهزة للمراجعة البشرية."
+    },
+    "hi-IN": {
+      "name": "रात्रि स्टेशन",
+      "description": "अपनी अलग पहचान, पढ़ने योग्य कंट्रास्ट और विषय के अनुकूल संयोजन वाला प्रयोगात्मक गहरा रूप; मानवीय समीक्षा के लिए तैयार।"
+    },
+    "zh-CN": {
+      "name": "夜间车站",
+      "description": "这是一款实验性深色方案，具有鲜明个性、清晰对比和贴合主题的布局，现可供人工审阅。"
+    },
+    "ja-JP": {
+      "name": "夜の駅",
+      "description": "独自の個性、読みやすいコントラスト、テーマに沿った構成を備えた実験的なダーク版です。人による確認に向けた提案です。"
+    },
+    "ko-KR": {
+      "name": "야간 역",
+      "description": "고유한 개성, 읽기 쉬운 대비, 주제에 맞춘 구성을 갖춘 실험적 다크 변형이며 사람의 검토를 위한 제안입니다."
+    }
+  },
+  "sources": [
+    {
+      "title": "Canonical metro-modern-ui stylesheet",
+      "url": "styles/metro-modern-ui.css",
+      "kind": "local canonical source",
+      "claim": "Identifies the visual language, default palette and composition retained by this experimental alternate."
+    },
+    {
+      "title": "Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility standard",
+      "claim": "Contrast ratios are screening evidence; rendered text, controls, focus, and state colors still require integrated review."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "4a611e92e2c166028e500424d6d017a4ff96e8fc7ee5f5134f5413333d78d575",
+  "contentDigest": "b0e766aebaef31ce19a4d0cfb0d8bcb246416bfa6e9d4e7e6ef16b3fae57a98e",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "b0e766aebaef31ce19a4d0cfb0d8bcb246416bfa6e9d4e7e6ef16b3fae57a98e",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "b0e766aebaef31ce19a4d0cfb0d8bcb246416bfa6e9d4e7e6ef16b3fae57a98e",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

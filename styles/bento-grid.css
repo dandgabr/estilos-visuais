@@ -20,7 +20,7 @@
 #stage[data-style="bento-grid"] .kpis .card:nth-child(1){grid-column:span 2;grid-row:span 2;background:#5b3df5;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;min-height:220px}
 #stage[data-style="bento-grid"] .kpis .card:nth-child(1) .kpi-label{color:#e6e0ff}
 #stage[data-style="bento-grid"] .kpis .card:nth-child(1) .kpi-value{font-size:5rem;letter-spacing:-.05em;line-height:1}
-#stage[data-style="bento-grid"] .kpis .card:nth-child(1) .badge{align-self:flex-start;background:rgba(255,255,255,.2);color:#fff;border:0}
+#stage[data-style="bento-grid"] .kpis .card:nth-child(1) .badge{align-self:flex-start;background:rgba(255,255,255,.2);color:#000;border:0}
 #stage[data-style="bento-grid"] .kpis .card:nth-child(2){grid-column:span 2;background:#ffd9c7}
 #stage[data-style="bento-grid"] .kpis .card:nth-child(3){background:#c8f0e0}
 #stage[data-style="bento-grid"] .kpis .card:nth-child(4){background:#fff}

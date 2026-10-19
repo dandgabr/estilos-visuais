@@ -55,12 +55,18 @@ export default function mount(stage) {
     }, 450);
   }
 
-  stage.style.position = 'relative';
-  stage.appendChild(crtOverlay);
+  // Anchor the paint to the complete application, not the scroll viewport.
+  // An inset overlay on #stage ends after one screen and scrolls away.
+  const screen = stage.querySelector('.app') || stage;
+  const previousPosition = screen.style.position;
+  const needsPosition = getComputedStyle(screen).position === 'static';
+  if (needsPosition) screen.style.position = 'relative';
+  screen.appendChild(crtOverlay);
 
   return () => {
     if (timer) clearInterval(timer);
     if (crtOverlay.parentNode) crtOverlay.parentNode.removeChild(crtOverlay);
     if (geigerBox && geigerBox.parentNode) geigerBox.parentNode.removeChild(geigerBox);
+    if (needsPosition) screen.style.position = previousPosition;
   };
 }

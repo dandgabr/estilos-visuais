@@ -1,5 +1,6 @@
-import { STYLES } from './styles/registry.js';
-import { resolveLocale, setLocale, t, localizedStyleDescription, localizedString } from './i18n/index.js';
+import { STYLES } from './styles/registry.js?v=theme-scenes-progress-20261019';
+import { resolveLocale, setLocale, t, localizedStyleDescription, localizedString } from './i18n/index.js?v=theme-scenes-progress-20261019';
+import { VARIANTS, DEFAULT_VARIANT, BUILD_KIND } from './styles/variants/registry.js?v=theme-scenes-progress-20261019';
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => document.querySelectorAll(s);
@@ -11,6 +12,12 @@ let currentView = 'painel';
 let cleanup = null;
 let link = null;
 let styleLoadId = 0;
+let variantLoadId = 0;
+let variantLink = null;
+let motionObserver = null;
+let motionTargets = [];
+let motionMedia = null;
+let motionFallbackHandler = null;
 let activeDriver = null;
 let currentVariant = 'default';
 let memoryLocale = 'auto';
@@ -51,8 +58,26 @@ const store = {
   setAutoTourEnabled(enabled) { try { localStorage.setItem('coacus-auto-tour', enabled ? 'true' : 'false'); } catch { /* ignore */ } },
   getLocale() { try { memoryLocale = localStorage.getItem('coacus-locale') || memoryLocale; } catch { /* session-only */ } return memoryLocale; },
   setLocale(locale) { memoryLocale = locale; try { localStorage.setItem('coacus-locale', locale); } catch { /* session-only */ } },
-  getAppearance(slug) { try { return localStorage.getItem(`coacus-appearance-${slug}`) || memoryAppearances.get(slug) || 'default'; } catch { return memoryAppearances.get(slug) || 'default'; } },
-  setAppearance(slug, variant) { memoryAppearances.set(slug, variant); try { localStorage.setItem(`coacus-appearance-${slug}`, variant); } catch { /* session-only */ } },
+  normalizeAppearance(slug, value) {
+    if (value === 'default') return 'default';
+    const status = VARIANTS[slug]?.alternate?.status;
+    const available = status === 'approved' || (BUILD_KIND === 'review' && status === 'ready_for_review');
+    return value === 'alternate' && available ? 'alternate' : 'default';
+  },
+  getAppearance(slug) {
+    const key = `coacus-appearance-${slug}`;
+    let value = memoryAppearances.get(slug) ?? null;
+    try { value = localStorage.getItem(key) ?? value; } catch { /* session-only */ }
+    const normalized = this.normalizeAppearance(slug, value);
+    if (value !== normalized) { try { localStorage.setItem(key, normalized); } catch { /* session-only */ } }
+    memoryAppearances.set(slug, normalized);
+    return normalized;
+  },
+  setAppearance(slug, variant) {
+    const normalized = this.normalizeAppearance(slug, variant);
+    memoryAppearances.set(slug, normalized);
+    try { localStorage.setItem(`coacus-appearance-${slug}`, normalized); } catch { /* session-only */ }
+  },
 };
 
 function updateLocaleControl(preference) {
@@ -70,11 +95,24 @@ function updateLocaleControl(preference) {
 }
 
 function updateAppearanceControl() {
-  $('#appearance-trigger-value').textContent = currentVariant === 'default'
-    ? t('appearance.group.default')
-    : ($('#appearance-options input[name="appearance"]:checked')?.closest('label')?.querySelector('strong')?.textContent || currentVariant);
-  const colors = ['--bg', '--surface', '--accent'].map((token) => getComputedStyle(stage).getPropertyValue(token).trim());
-  $$('#appearance-options .appearance-swatches i').forEach((swatch, index) => { swatch.style.backgroundColor = colors[index]; });
+  const entry = VARIANTS[currentStyle];
+  const alternate = entry?.alternate;
+  const defaultPolarity = entry?.default?.polarity || entry?.defaultPolarity || null;
+  const alternatePolarity = alternate?.polarity
+    || (defaultPolarity ? (defaultPolarity === 'light' ? 'dark' : 'light') : null);
+  const available = alternate?.status === 'approved'
+    || (BUILD_KIND === 'review' && alternate?.status === 'ready_for_review');
+  const trigger = $('#appearance-trigger');
+  const isAlternate = currentVariant === 'alternate';
+  trigger.setAttribute('aria-pressed', String(isAlternate));
+  trigger.setAttribute('aria-describedby', 'appearance-state');
+  trigger.setAttribute('aria-disabled', String(!available));
+  const state = !defaultPolarity
+    ? t('appearance.state.unclassified')
+    : isAlternate
+      ? t('appearance.state.alternate', { polarity: t(`appearance.polarity.${alternatePolarity}`), defaultPolarity: t(`appearance.polarity.${defaultPolarity}`) })
+      : t('appearance.state.default', { polarity: t(`appearance.polarity.${defaultPolarity}`), alternatePolarity: t(`appearance.polarity.${alternatePolarity}`) });
+  $('#appearance-state').textContent = available ? state : `${state} · ${t('appearance.state.unavailable')}`;
 }
 
 async function applyLocalePreference(preference, persist = true) {
@@ -95,14 +133,10 @@ async function applyLocalePreference(preference, persist = true) {
 }
 
 function openSelector(panelId, trigger) {
-  for (const id of ['locale-panel', 'appearance-panel']) {
-    const panel = $(`#${id}`);
-    const button = $(`[aria-controls="${id}"]`);
-    const open = id === panelId;
-    panel.hidden = !open;
-    button.setAttribute('aria-expanded', String(open));
-  }
   const panel = $(`#${panelId}`);
+  const button = $(`[aria-controls="${panelId}"]`);
+  panel.hidden = false;
+  button.setAttribute('aria-expanded', 'true');
   panel.querySelector('input:checked')?.focus();
   if (!panel.querySelector('input:checked')) trigger.focus();
 }
@@ -116,14 +150,196 @@ function closeSelector(panelId, returnFocus = false) {
   if (returnFocus) trigger.focus();
 }
 
+function stopVariantMotion() {
+  motionObserver?.disconnect();
+  motionObserver = null;
+  if (motionFallbackHandler) {
+    window.removeEventListener('scroll', motionFallbackHandler);
+    window.removeEventListener('resize', motionFallbackHandler);
+    stage.removeEventListener('scroll', motionFallbackHandler);
+  }
+  motionFallbackHandler = null;
+  if (motionTargets.length) motionTargets.forEach((target) => {
+    if (target !== stage) target.removeAttribute('data-motion-visible');
+  });
+  motionTargets = [];
+  if (motionVisibilityHandler) document.removeEventListener('visibilitychange', motionVisibilityHandler);
+  if (motionMedia && motionMediaHandler) motionMedia.removeEventListener('change', motionMediaHandler);
+  motionVisibilityHandler = null;
+  motionMedia = null;
+  stage.removeAttribute('data-motion-active');
+}
+
+let motionVisibilityHandler = null;
+let motionMediaHandler = null;
+
+function setupVariantMotion(meta) {
+  stopVariantMotion();
+  if (!meta?.elementMotion && !meta?.backgroundMotion) return;
+  motionMedia = matchMedia('(prefers-reduced-motion: reduce)');
+  const visible = new Set();
+  const refresh = () => {
+    const stageVisible = visible.has(stage);
+    const elementVisible = motionTargets.some((target) => target !== stage && visible.has(target));
+    const active = !motionMedia.matches && !document.hidden
+      && ((meta.backgroundMotion && stageVisible) || (meta.elementMotion && elementVisible));
+    stage.dataset.motionActive = String(active);
+  };
+  const refreshElementTargets = () => {
+    if (meta.elementMotion) {
+      motionTargets.forEach((target) => {
+        if (target !== stage) target.dataset.motionVisible = String(!motionMedia.matches && !document.hidden && visible.has(target));
+      });
+    }
+  };
+  motionVisibilityHandler = () => {
+    refreshElementTargets();
+    refresh();
+  };
+  motionMediaHandler = () => {
+    refreshElementTargets();
+    refresh();
+  };
+  document.addEventListener('visibilitychange', motionVisibilityHandler);
+  motionMedia.addEventListener('change', motionMediaHandler);
+  const selector = (meta.motionTarget || '.app').replace(/::(?:before|after)\b/g, '');
+  const elementTargets = meta.elementMotion
+    ? [...(stage.matches(selector) ? [stage] : []), ...stage.querySelectorAll(selector)]
+    : [];
+  motionTargets = [...new Set([...(meta.backgroundMotion ? [stage] : []), ...elementTargets])];
+  if (!motionTargets.length) return;
+  if (typeof window.IntersectionObserver !== 'function') {
+    const refreshFallbackVisibility = () => {
+      const viewportWidth = document.documentElement.clientWidth;
+      const viewportHeight = document.documentElement.clientHeight;
+      for (const target of motionTargets) {
+        const rect = target.getBoundingClientRect();
+        const intersectionWidth = Math.max(0, Math.min(rect.right, viewportWidth) - Math.max(rect.left, 0));
+        const intersectionHeight = Math.max(0, Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0));
+        const area = Math.max(0, rect.width) * Math.max(0, rect.height);
+        const ratio = area ? (intersectionWidth * intersectionHeight) / area : 0;
+        if (ratio >= 0.12) visible.add(target);
+        else visible.delete(target);
+      }
+      refreshElementTargets();
+      refresh();
+    };
+    motionFallbackHandler = refreshFallbackVisibility;
+    window.addEventListener('scroll', motionFallbackHandler, { passive: true });
+    window.addEventListener('resize', motionFallbackHandler, { passive: true });
+    stage.addEventListener('scroll', motionFallbackHandler, { passive: true });
+    refreshFallbackVisibility();
+    return;
+  }
+  motionObserver = new IntersectionObserver((changes) => {
+    for (const change of changes) {
+      if (change.isIntersecting) visible.add(change.target);
+      else visible.delete(change.target);
+      if (meta.elementMotion && change.target !== stage) {
+        change.target.dataset.motionVisible = String(change.isIntersecting && !motionMedia.matches && !document.hidden);
+      }
+    }
+    refresh();
+  }, { root: null, threshold: 0.12 });
+  motionTargets.forEach((target) => motionObserver.observe(target));
+  refresh();
+}
+
+function loadVariantCss(meta, loadId, slug) {
+  return new Promise((resolve, reject) => {
+    const next = document.createElement('link');
+    next.rel = 'stylesheet';
+    const appQuery = new URL(import.meta.url).searchParams.toString();
+    next.href = `${meta.css}?variant=${encodeURIComponent(meta.id)}${appQuery ? `&${appQuery}` : ''}`;
+    next.dataset.variantStylesheet = meta.id;
+    next.onload = () => {
+      if (loadId !== variantLoadId || slug !== currentStyle) {
+        next.remove();
+        resolve(false);
+        return;
+      }
+      variantLink?.remove();
+      variantLink = next;
+      resolve(true);
+    };
+    next.onerror = () => { next.remove(); reject(new Error(`Failed to load ${meta.css}`)); };
+    document.head.append(next);
+  });
+}
+
+async function mountCurrentFx(styleObj, expectedStyleLoadId, expectedVariantLoadId) {
+  try { cleanup?.(); } catch (error) { console.error('Erro no cleanup de FX:', error); }
+  cleanup = null;
+  if (!styleObj?.fx) return;
+  try {
+    const mod = await import(`./styles/fx/${styleObj.slug}.js${new URL(import.meta.url).search}`);
+    if (currentStyle !== styleObj.slug || expectedStyleLoadId !== styleLoadId || expectedVariantLoadId !== variantLoadId) return;
+    const tokens = ['--bg','--surface','--accent','--warn','--cy','--mint','--vio','--moon'];
+    const colors = Object.fromEntries(tokens.map((token) => [token, getComputedStyle(stage).getPropertyValue(token).trim()]));
+    const dispose = await mod.default(stage, { variantId: currentVariant, colors });
+    if (currentStyle !== styleObj.slug || expectedStyleLoadId !== styleLoadId || expectedVariantLoadId !== variantLoadId) {
+      dispose?.();
+      return;
+    }
+    cleanup = dispose ?? null;
+  } catch (error) {
+    if (currentStyle === styleObj.slug && expectedStyleLoadId === styleLoadId && expectedVariantLoadId === variantLoadId) {
+      console.warn(`Módulo FX decorativo de ${styleObj.slug} indisponível`, error);
+    }
+  }
+}
+
+async function setVariant(slug, variantId, persist = true, remountFx = true) {
+  if (slug !== currentStyle) return false;
+  const styleObj = STYLES.find((style) => style.slug === slug);
+  const styleToken = styleLoadId;
+  const meta = VARIANTS[slug]?.[variantId];
+  const requestId = ++variantLoadId;
+  if (variantId === DEFAULT_VARIANT || !meta) {
+    variantLink?.remove();
+    variantLink = null;
+    stage.removeAttribute('data-variant');
+    currentVariant = DEFAULT_VARIANT;
+    stopVariantMotion();
+    if (persist && styleObj) store.setAppearance(slug, DEFAULT_VARIANT);
+    updateAppearanceControl();
+    $('#appearance-live').textContent = variantId === DEFAULT_VARIANT
+      ? t('appearance.live.default', { polarity: t(`appearance.polarity.${VARIANTS[slug]?.default?.polarity || VARIANTS[slug]?.defaultPolarity || 'dark'}`) })
+      : t('appearance.live.fallback');
+    if (variantId !== DEFAULT_VARIANT && !meta) store.setAppearance(slug, DEFAULT_VARIANT);
+    if (remountFx) await mountCurrentFx(styleObj, styleToken, requestId);
+    return true;
+  }
+
+  try {
+    const loaded = await loadVariantCss(meta, requestId, slug);
+    if (!loaded || requestId !== variantLoadId || styleToken !== styleLoadId) return false;
+    stage.dataset.variant = variantId;
+    currentVariant = variantId;
+    setupVariantMotion(meta);
+    if (persist) store.setAppearance(slug, variantId);
+    updateAppearanceControl();
+    $('#appearance-live').textContent = t('appearance.live.alternate', { polarity: t(`appearance.polarity.${meta.polarity}`) });
+    if (remountFx) await mountCurrentFx(styleObj, styleToken, requestId);
+    return true;
+  } catch (error) {
+    if (requestId !== variantLoadId || styleToken !== styleLoadId) return false;
+    variantLink?.remove();
+    variantLink = null;
+    stage.removeAttribute('data-variant');
+    currentVariant = DEFAULT_VARIANT;
+    stopVariantMotion();
+    store.setAppearance(slug, DEFAULT_VARIANT);
+    updateAppearanceControl();
+    $('#appearance-live').textContent = t('appearance.loadError');
+    if (remountFx) await mountCurrentFx(styleObj, styleToken, requestId);
+    console.error('Falha ao carregar aparência; restaurada a aparência padrão.', error);
+    return false;
+  }
+}
+
 function applyAppearance(variantId) {
-  if (variantId !== 'default') variantId = 'default';
-  currentVariant = variantId;
-  if (currentStyle) store.setAppearance(currentStyle, variantId);
-  const radio = $(`#appearance-options input[name="appearance"][value="${CSS.escape(variantId)}"]`);
-  if (radio) radio.checked = true;
-  updateAppearanceControl();
-  $('#appearance-live').textContent = `${t('appearance.group.default')}: ${t('appearance.original')}`;
+  if (currentStyle) return setVariant(currentStyle, variantId);
 }
 
 // 1. Renderização da Lista Lateral de Estilos
@@ -217,6 +433,10 @@ async function setStyle(slug, viewParam = null) {
     console.error('Erro no cleanup de FX anterior:', e);
   }
   cleanup = null;
+  ++variantLoadId;
+  variantLink?.remove();
+  variantLink = null;
+  stopVariantMotion();
   currentStyle = s.slug;
   const loadId = ++styleLoadId;
 
@@ -224,9 +444,9 @@ async function setStyle(slug, viewParam = null) {
   await loadCss(s.slug, loadId);
   if (loadId !== styleLoadId) return;
   stage.dataset.style = s.slug;
+  stage.removeAttribute('data-variant');
   stage.scrollTop = 0;
-  currentVariant = store.getAppearance(s.slug);
-  if (currentVariant !== 'default') currentVariant = 'default';
+  currentVariant = DEFAULT_VARIANT;
 
   // Metadados no cabeçalho
   $('#cur-name').textContent = s.name;
@@ -236,7 +456,7 @@ async function setStyle(slug, viewParam = null) {
   skillLink.setAttribute('aria-label', t('skill.open', { name: s.name }));
   skillLink.title = t('skill.title', { name: s.name });
   document.title = `${s.name} · Estilos Coacus`;
-  applyAppearance(currentVariant);
+  updateAppearanceControl();
 
   // Atualiza seleção na galeria
   list.querySelectorAll('a').forEach((a) => {
@@ -249,17 +469,10 @@ async function setStyle(slug, viewParam = null) {
   // Aplica a visualização da aba
   setView(targetView, false);
 
-  // Montagem de efeito FX dedicado
-  if (s.fx) {
-    try {
-      const mod = await import(`./styles/fx/${s.slug}.js${new URL(import.meta.url).search}`);
-      if (currentStyle === s.slug) {
-        cleanup = mod.default(stage) ?? null;
-      }
-    } catch (e) {
-      console.warn(`Módulo FX de ${s.slug} indisponível`, e);
-    }
-  }
+  await setVariant(s.slug, store.getAppearance(s.slug), false, false);
+  if (loadId !== styleLoadId) return;
+  await mountCurrentFx(s, loadId, variantLoadId);
+  if (loadId !== styleLoadId) return;
 
   // Tour guiado contextual do estilo (apenas na 1ª visita ou sob demanda, se ativado)
   if (store.isAutoTourEnabled() && !store.hasSeenStyleTour(s.slug) && store.hasSeenWelcomeTour()) {
@@ -402,14 +615,6 @@ function triggerStyleTour(styleObj) {
         onPopoverRender: (popover) => appendSkillAction(popover, styleObj),
       },
     },
-    {
-      element: '#locale-trigger',
-      popover: { title: t('tour.localeTitle'), description: t('tour.localeDescription'), side: 'bottom' },
-    },
-    {
-      element: '#appearance-trigger',
-      popover: { title: t('tour.appearanceTitle'), description: t('tour.appearanceDescription'), side: 'bottom' },
-    },
   ]);
 
   driverObj.drive();
@@ -445,10 +650,11 @@ $('#locale-trigger').addEventListener('click', (event) => {
   if ($('#locale-panel').hidden) openSelector('locale-panel', event.currentTarget);
   else closeSelector('locale-panel');
 });
-$('#appearance-trigger').addEventListener('click', (event) => {
-  event.stopPropagation();
-  if ($('#appearance-panel').hidden) openSelector('appearance-panel', event.currentTarget);
-  else closeSelector('appearance-panel');
+$('#appearance-trigger').addEventListener('click', () => {
+  const trigger = $('#appearance-trigger');
+  if (trigger.getAttribute('aria-disabled') === 'true' || !currentStyle) return;
+  const next = currentVariant === 'alternate' ? 'default' : 'alternate';
+  void applyAppearance(next);
 });
 $('#locale-options').addEventListener('change', async (event) => {
   if (event.target.matches('input[name="locale"]')) {
@@ -456,15 +662,10 @@ $('#locale-options').addEventListener('change', async (event) => {
     await applyLocalePreference(event.target.value);
   }
 });
-$('#appearance-options').addEventListener('change', (event) => {
-  if (event.target.matches('input[name="appearance"]')) applyAppearance(event.target.value);
-});
-$('#appearance-reset').addEventListener('click', () => applyAppearance('default'));
 $$('[data-close-selector]').forEach((button) => button.addEventListener('click', () => closeSelector(button.dataset.closeSelector, true)));
 document.addEventListener('click', (event) => {
   if (event.target.closest('.selector')) return;
   closeSelector('locale-panel');
-  closeSelector('appearance-panel');
 });
 
 $('#close-help-btn')?.addEventListener('click', () => helpDialog?.close());
@@ -493,7 +694,6 @@ addEventListener('keydown', (e) => {
   if (e.altKey || e.ctrlKey || e.metaKey) return;
   if (e.key === 'Escape') {
     if (!$('#locale-panel').hidden) { e.preventDefault(); closeSelector('locale-panel', true); }
-    else if (!$('#appearance-panel').hidden) { e.preventDefault(); closeSelector('appearance-panel', true); }
     return;
   }
   if (e.target.matches('input, textarea, select') || e.target.closest('.stage-preferences, .driver-popover, dialog')) return;

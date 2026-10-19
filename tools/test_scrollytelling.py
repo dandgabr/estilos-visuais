@@ -1,12 +1,13 @@
 """Regression check for the scrollytelling preview in Chromium."""
 
 from playwright.sync_api import sync_playwright
+from chromium_runtime import chromium_executable
 
 
 def main():
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(
-            executable_path="/usr/bin/chromium-browser", headless=True
+            executable_path=chromium_executable(), headless=True
         )
         page = browser.new_page(viewport={"width": 1440, "height": 900})
         page.add_init_script(

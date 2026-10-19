@@ -20,7 +20,7 @@
 #stage[data-style="biopunk"] .nav a{border-radius:999px;color:var(--fg)}
 #stage[data-style="biopunk"] .nav a:hover{background:rgba(124,255,107,.15)}
 #stage[data-style="biopunk"] .nav a.is-active{background:var(--accent);color:var(--accent-fg);font-weight:700}
-#stage[data-style="biopunk"] .eyebrow{color:var(--mag);font-weight:700;letter-spacing:.2em}
+#stage[data-style="biopunk"] .eyebrow{color:#f2799e;font-weight:700;letter-spacing:.2em}
 #stage[data-style="biopunk"] .eyebrow::before{content:"◉ "}
 #stage[data-style="biopunk"] .display{font-weight:700;color:var(--accent);text-shadow:0 0 28px rgba(124,255,107,.45);max-width:15ch;position:relative}
 #stage[data-style="biopunk"] .display::after{content:"";display:block;margin-top:14px;height:22px;width:min(320px,100%);

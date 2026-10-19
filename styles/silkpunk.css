@@ -2,7 +2,7 @@
 #stage[data-style="silkpunk"] {
   --bg: #f5efe0; --surface: #fbf7ee; --surface-2: #ede3ce; --fg: #1d2a44; --muted: #536485;
   --accent: #c3272b; --accent-fg: #ffffff; --border: #c9a050;
-  --ok: #2e6b48; --warn: #c9a050; --danger: #c3272b;
+  --ok: #2e6b48; --warn: #806000; --danger: #c3272b;
   --radius: 8px; --radius-sm: 4px; --shadow: 0 6px 18px rgba(195, 39, 43, 0.08);
   --font-body: 'Noto Serif', serif; --font-display: 'Cinzel', serif;
   background-color: var(--bg);
@@ -23,7 +23,7 @@
 #stage[data-style="silkpunk"] .btn-primary { background: linear-gradient(135deg, #c3272b, #8f171a); color: #ffffff; border: 1px solid #c9a050; box-shadow: 0 4px 12px rgba(195, 39, 43, 0.2); }
 #stage[data-style="silkpunk"] .btn-primary:hover { background: #c9a050; color: #1d2a44; border-color: #1d2a44; }
 #stage[data-style="silkpunk"] .btn-secondary { background: #ede3ce; color: #1d2a44; border: 1px solid #c9a050; }
-#stage[data-style="silkpunk"] .btn-ghost { color: #c3272b; }
+#stage[data-style="silkpunk"] .btn-ghost { color: #8b1c1f; }
 #stage[data-style="silkpunk"] .card, #stage[data-style="silkpunk"] .panel { background: #fbf7ee; border: 2px solid #c9a050; border-radius: 6px; box-shadow: 0 6px 18px rgba(195, 39, 43, 0.08); }
 #stage[data-style="silkpunk"] .kpi-value { font-family: var(--font-display); font-size: 2.6rem; color: #c3272b; }
 #stage[data-style="silkpunk"] .badge { border: 1px solid #c9a050; border-radius: 4px; background: #ede3ce; font-family: var(--font-display); }

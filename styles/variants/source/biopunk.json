@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "slug": "biopunk",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "dark",
+    "alternatePolarity": "light",
+    "rationale": "O arquivo canônico styles/biopunk.css estabelece a aparência dark; esta proposta explora uma contraparte light coerente com o mesmo vocabulário visual. O padrão canônico não foi alterado.",
+    "evidence": "Classificação inferida dos tokens de fundo/superfície/texto e do background-color no arquivo local styles/biopunk.css; verificar no browser durante aprovação."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#E7F0E7",
+      "--surface": "#F7FFF5",
+      "--surface-2": "#D8EAD9",
+      "--fg": "#1D3028",
+      "--muted": "#405A49",
+      "--accent": "#286F52",
+      "--accent-fg": "#FFFFFF",
+      "--border": "#638170",
+      "--ok": "#24764F",
+      "--warn": "#805400",
+      "--danger": "#A12D37",
+      "--focus": "#286F52",
+      "--radius": "22px 12px 24px 10px",
+      "--radius-sm": "6px",
+      "--shadow": "0 8px 22px rgba(0,0,0,.16)"
+    }
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"biopunk\"]",
+      "signal": "A synthetic specimen lab with living-cell geometry; a proposta traduz esses sinais para light usando specimen-cell lattice and chlorophyll veins, mantendo lab specimen map como organização de leitura. O campo ornamental tem padrão exclusivo descrito no CSS desta proposta.",
+      "skillReference": "styles/biopunk.css",
+      "evidence": "Identidade visual derivada da descrição canônica em styles/registry.js e dos tokens/regras de styles/biopunk.css; CSS separado em alternate."
+    },
+    {
+      "selector": "#view-painel",
+      "signal": "Composição responsiva lab specimen map: painel principal e áreas de métricas/recursos mudam de posição no desktop, sem espaçamento excessivo em 320–768 px.",
+      "skillReference": "styles/biopunk.css",
+      "evidence": "A contraparte empilha áreas no mobile com gaps limitados por clamp; em 960 px reordena as áreas em grade específica."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#view-painel",
+      "property": "grid-template-areas / grid-template-columns / gap",
+      "before": "Composição padrão do tema biopunk, definida em styles/biopunk.css.",
+      "after": "No mobile: uma coluna compacta; no desktop: lab specimen map, com ordem hero/metrics/resources deliberadamente alterada.",
+      "breakpoints": {
+        "320": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna; largura minmax(0,1fr), 18px gap; KPIs em 2 colunas."
+        },
+        "375": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna; largura minmax(0,1fr), 18–30px gap; sem largura mínima rígida."
+        },
+        "768": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna até 959px; cards compactos em 2 colunas e recursos em 1 coluna."
+        },
+        "1280": {
+          "before": "Fluxo padrão canônico.",
+          "after": "Grade de duas colunas com áreas lab specimen map; gap 20–34px e gráfico ocupando a faixa de recursos."
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": ".kpi",
+      "animation": "biopunk-settle",
+      "trigger": "Ao aplicar a contraparte, cada cartão KPI entra uma vez com deslocamento vertical curto de 8px; sem loop.",
+      "duration": "550ms ease-out, uma execução",
+      "fallback": "Sem animação CSS, cartão visível no estado final; conteúdo e foco não dependem de movimento.",
+      "reducedMotion": "Desativada por prefers-reduced-motion: reduce; todos os componentes permanecem em seu estado final estático.",
+      "pauseResume": "CSS sem relógio JavaScript; o navegador suspende animações da página oculta e retoma ao tornar-se visível.",
+      "cleanup": "Não cria listeners, timers, observers, canvas ou recursos persistentes; as regras são removidas ao descarregar a folha da contraparte."
+    },
+    "background": {
+      "selector": "#stage[data-style=\"biopunk\"][data-variant=\"alternate\"]::before",
+      "animation": "biopunk-field",
+      "trigger": "Ao aplicar a contraparte, trama decorativa move-se lentamente 34×18px em vaivém; animação decorativa sem parallax de scroll.",
+      "duration": "24s ease-in-out alternate, loop decorativo",
+      "fallback": "A trama permanece estática no ponto inicial, sem retirar informação do conteúdo.",
+      "reducedMotion": "Desativada por prefers-reduced-motion: reduce; todos os componentes permanecem em seu estado final estático.",
+      "pauseResume": "CSS sem relógio JavaScript; o navegador suspende animações da página oculta e retoma ao tornar-se visível.",
+      "cleanup": "Não cria listeners, timers, observers, canvas ou recursos persistentes; as regras são removidas ao descarregar a folha da contraparte."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Contraparte de revisão: Biopunk",
+      "description": "A proposta preserva os sinais de A synthetic specimen lab with living-cell geometry, com paleta clara e composição lab specimen map; examine contraste, leitura e encaixe em telas pequenas."
+    },
+    "en-US": {
+      "name": "Review counterpart: Biopunk",
+      "description": "This proposal keeps the visual cues of A synthetic specimen lab with living-cell geometry, with a light palette and a lab specimen map composition; review contrast, reading flow and small-screen fit."
+    },
+    "es-ES": {
+      "name": "Variante para revisión: Biopunk",
+      "description": "La propuesta conserva los rasgos de A synthetic specimen lab with living-cell geometry, con paleta clara y composición lab specimen map; revise el contraste, la lectura y el ajuste en pantallas pequeñas."
+    },
+    "fr-FR": {
+      "name": "Variante à examiner: Biopunk",
+      "description": "La proposition conserve les codes de A synthetic specimen lab with living-cell geometry, avec une palette claire et une composition lab specimen map ; vérifiez le contraste, la lecture et l’affichage sur petit écran."
+    },
+    "de-DE": {
+      "name": "Prüfvariante: Biopunk",
+      "description": "Der Entwurf bewahrt die Merkmale von A synthetic specimen lab with living-cell geometry, mit einer helle Palette und einer Komposition als lab specimen map; prüfen Sie Kontrast, Lesefluss und kleine Bildschirme."
+    },
+    "ru-RU": {
+      "name": "Вариант для проверки: Biopunk",
+      "description": "Предложение сохраняет черты стиля A synthetic specimen lab with living-cell geometry, используя светлую палитру и композицию «lab specimen map»; проверьте контраст, чтение и узкие экраны."
+    },
+    "ar-SA": {
+      "name": "نسخة للمراجعة: Biopunk",
+      "description": "يحافظ الاقتراح على سمات A synthetic specimen lab with living-cell geometry، مع لوحة فاتحة وتكوين «lab specimen map»؛ راجع التباين وسهولة القراءة والملاءمة للشاشات الصغيرة."
+    },
+    "hi-IN": {
+      "name": "समीक्षा विकल्प: Biopunk",
+      "description": "यह प्रस्ताव A synthetic specimen lab with living-cell geometry की दृश्य पहचान बनाए रखता है, हल्की रंग-पैलेट और lab specimen map संरचना के साथ; कंट्रास्ट, पढ़ने की सहजता और छोटी स्क्रीन पर जाँचें।"
+    },
+    "zh-CN": {
+      "name": "待审阅的配色方案: Biopunk",
+      "description": "此提案保留 A synthetic specimen lab with living-cell geometry 的视觉特征，采用浅色色板与lab specimen map构图；请检查对比度、阅读流畅度和小屏适配。"
+    },
+    "ja-JP": {
+      "name": "レビュー用の対案: Biopunk",
+      "description": "この案はA synthetic specimen lab with living-cell geometryの視覚的特徴を保ち、ライト配色と「lab specimen map」構成を採用します。コントラスト、読みやすさ、小画面での表示を確認してください。"
+    },
+    "ko-KR": {
+      "name": "검토용 대안: Biopunk",
+      "description": "이 제안은 A synthetic specimen lab with living-cell geometry의 시각적 특징을 유지하면서 밝은 팔레트와 lab specimen map 구성을 사용합니다. 대비, 읽기 흐름, 작은 화면을 확인하세요."
+    }
+  },
+  "sources": [
+    {
+      "title": "Arquivo canônico de estilo: styles/biopunk.css e registro styles/registry.js",
+      "url": "styles/biopunk.css",
+      "kind": "fonte primária local do padrão visual; não alterada",
+      "claim": "Sinais visuais e polaridade padrão inferidos do CSS canônico local para propor uma contraparte revisável."
+    },
+    {
+      "title": "W3C WCAG 2.2 Understanding SC 1.4.3 Contrast (Minimum)",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "kind": "orientação normativa de acessibilidade",
+      "claim": "Texto comum deve atingir contraste mínimo de 4.5:1 e texto grande 3:1; pares de contraste precisam ser medidos na renderização real."
+    },
+    {
+      "title": "W3C WCAG 2.2 Understanding SC 1.4.11 Non-text Contrast",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+      "kind": "orientação normativa de acessibilidade",
+      "claim": "Limites de controles e indicadores necessários devem manter contraste de pelo menos 3:1 com cores adjacentes."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "5c0cc070e5357fbda511949451469cb9cccb3f7acff21f614c6d8a8be60445f2",
+  "contentDigest": "a25053132882ed5a4faefb75c597edbac92593a4a57bd94c7017f16d98deed59",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "a25053132882ed5a4faefb75c597edbac92593a4a57bd94c7017f16d98deed59",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "a25053132882ed5a4faefb75c597edbac92593a4a57bd94c7017f16d98deed59",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

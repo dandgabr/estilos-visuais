@@ -1,0 +1,24 @@
+{
+  "unitTests": {
+    "tests": 124,
+    "failures": 0,
+    "errors": 0
+  },
+  "variantContract": {
+    "tests": 3,
+    "failures": 0
+  },
+  "sceneNavigationAndProgress": "passed both modes and three viewport sizes plus mobile form",
+  "controlsKeyboardAndResponsive": "passed via tools/test_selectors.py on reviewed preview",
+  "runtimeMatrix": {
+    "cases": 820,
+    "errors": 0,
+    "report": "docs/temp/reports/2026-10-19-final-runtime-matrix.json"
+  },
+  "releaseGeneration": {
+    "canonicalThemes": 82,
+    "approvedAlternates": 82,
+    "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1"
+  },
+  "deploymentApproval": "user-approval.json"
+}

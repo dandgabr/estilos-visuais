@@ -1,0 +1,64 @@
+/* Review proposal for cyberpunk; canonical default remains in styles/cyberpunk.css. */
+#stage[data-style="cyberpunk"][data-variant="alternate"] {
+  --bg: #E8E3F4;
+  --surface: #F8F5FF;
+  --surface-2: #DDD4F0;
+  --fg: #241A36;
+  --muted: #4E3A68;
+  --accent: #A51E67;
+  --accent-fg: #FFFFFF;
+  --border: #846F9D;
+  --ok: #24764F;
+  --warn: #805400;
+  --danger: #A12D37;
+  --focus: #A51E67;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --shadow: 0 8px 22px rgba(0,0,0,.16);
+  color-scheme: light;
+  color: var(--fg) !important;
+  background-color: var(--bg) !important;
+  background-image: repeating-linear-gradient(112deg, transparent 0 34px, #A51E6726 35px 37px, transparent 38px 70px), linear-gradient(90deg, #5266B822 1px, transparent 1px) !important;
+  background-size: 48px 48px, auto !important;
+}
+#stage[data-style="cyberpunk"][data-variant="alternate"] { animation:cyberpunk-field 24s ease-in-out infinite alternate; }
+#stage[data-style="cyberpunk"][data-variant="alternate"]::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events:none;
+  background: repeating-linear-gradient(112deg, transparent 0 34px, #A51E6726 35px 37px, transparent 38px 70px), linear-gradient(90deg, #5266B822 1px, transparent 1px);
+  opacity:.72; animation: cyberpunk-field 24s ease-in-out infinite alternate;
+}
+#stage[data-style="cyberpunk"][data-variant="alternate"]::before { display:none!important; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] * { text-shadow:none!important; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] .app { position:relative; z-index:1; color:var(--fg)!important; background:transparent!important; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] :is(.topbar,.card,.panel,.table-wrap,.toast,dialog,.view-header,.feature,.kpi,.chart) {
+  color:var(--fg)!important; background:var(--surface)!important; border-color:var(--border)!important;
+  border-radius:var(--radius)!important; box-shadow:var(--shadow)!important;
+}
+#stage[data-style="cyberpunk"][data-variant="alternate"] :is(.display,.brand,.section-title,.feature h3,.panel h3,.kpi-value) { color:var(--fg)!important; -webkit-text-fill-color:var(--fg)!important; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] .hero { min-width:0; color:var(--fg)!important; background:var(--surface)!important; border:2px solid var(--accent)!important; box-shadow:var(--shadow)!important; clip-path:none!important; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] .display { max-width:100%; font-size:clamp(1.65rem,4vw,3rem); letter-spacing:.02em; line-height:1.12; overflow-wrap:anywhere; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] :is(.lead,.feature p,.view-subtitle,.footer,.kpi-label) { color:var(--muted)!important; -webkit-text-fill-color:var(--muted)!important; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] :is(.btn-primary,.nav a.is-active,.nav-tab.is-active) { background:var(--accent)!important; color:var(--accent-fg)!important; -webkit-text-fill-color:var(--accent-fg)!important; border-color:var(--accent)!important; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] :is(.btn-secondary,.btn-ghost,.nav-tab) { background:var(--surface-2)!important; color:var(--fg)!important; -webkit-text-fill-color:var(--fg)!important; border:1px solid var(--border)!important; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] .topbar { border-bottom:2px solid var(--accent)!important; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] .kpi { border-top:3px solid var(--accent)!important; animation:cyberpunk-settle .55s ease-out both; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] .kpis { display:grid!important; grid-template-columns:repeat(2,minmax(0,1fr))!important; gap:clamp(10px,2vw,20px)!important; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] .grid { display:grid!important; grid-template-columns:minmax(0,1fr)!important; gap:clamp(12px,2vw,22px)!important; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] #view-painel { display:grid!important; grid-template-columns:minmax(0,1fr); grid-template-areas:"hero" "metrics" "resources" "split" "toast"; gap:clamp(18px,3vw,30px)!important; align-content:start; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] #view-painel > .hero { grid-area:hero; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-metricas"] { grid-area:metrics; min-width:0; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] #view-painel > section[aria-labelledby="t-recursos"] { grid-area:resources; min-width:0; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] #view-painel > .split { grid-area:split; min-width:0; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] :is(input,select,textarea) { min-width:0; max-width:100%; color:var(--fg)!important; background:var(--surface-2)!important; border:1px solid var(--border)!important; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] .bars i { background:var(--accent)!important; box-shadow:none!important; }
+#stage[data-style="cyberpunk"][data-variant="alternate"] :focus-visible { outline:3px solid var(--focus)!important; outline-offset:3px; }
+@media (min-width: 960px) {
+ #stage[data-style="cyberpunk"][data-variant="alternate"] #view-painel { grid-template-columns:minmax(0, 5fr) minmax(0, 7fr); grid-template-areas:"hero resources" "hero metrics" "split split" "toast toast"; column-gap:clamp(20px,2.5vw,34px); row-gap:30px; }
+ #stage[data-style="cyberpunk"][data-variant="alternate"] .grid { grid-template-columns:repeat(2,minmax(0,1fr))!important; }
+ #stage[data-style="cyberpunk"][data-variant="alternate"] .grid > .chart { grid-column:1/-1; }
+}
+@keyframes cyberpunk-settle { from { opacity:.55; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes cyberpunk-field { from { background-position:0 0,0 0; } to { background-position:34px 18px,34px 18px; } }
+@media (prefers-reduced-motion: reduce) {
+ #stage[data-style="cyberpunk"][data-variant="alternate"], #stage[data-style="cyberpunk"][data-variant="alternate"] *, #stage[data-style="cyberpunk"][data-variant="alternate"]::before { animation:none!important; scroll-behavior:auto!important; transition:none!important; }
+}

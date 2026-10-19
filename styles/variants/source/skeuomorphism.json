@@ -1,0 +1,216 @@
+{
+  "schemaVersion": 1,
+  "slug": "skeuomorphism",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "light",
+    "alternatePolarity": "dark",
+    "rationale": "O Padrão canônico foi classificado como claro pela cor de fundo e superfícies em styles/skeuomorphism.css. A contraparte experimental escura inverte a luminosidade e preserva os sinais reconhecíveis do tema: Painel de rádio de madeira escura: couro e latão ficam em detalhes, botões azuis parecem controles físicos e texto usa marfim de alto contraste. Nenhuma regra do padrão foi alterada.",
+    "evidence": "Leitura local do CSS canônico styles/skeuomorphism.css e comparação visual proposta; classificação permanece para validação humana."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#25201b",
+      "--surface": "#332b23",
+      "--surface-2": "#44392e",
+      "--fg": "#f7edda",
+      "--muted": "#d6c4a8",
+      "--accent": "#79b5d2",
+      "--accent-fg": "#102633",
+      "--border": "#A8967D",
+      "--focus": "#79b5d2",
+      "--ok": "#8ed7a6",
+      "--warn": "#ffd06f",
+      "--danger": "#ff9993",
+      "--radius": "12px",
+      "--shadow": "0 8px 22px rgba(0,0,0,.18)"
+    },
+    "intent": "Painel de rádio de madeira escura: couro e latão ficam em detalhes, botões azuis parecem controles físicos e texto usa marfim de alto contraste."
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"skeuomorphism\"][data-variant=\"alternate\"] #view-painel",
+      "signal": "Painel de rádio de madeira escura: couro e latão ficam em detalhes, botões azuis parecem controles físicos e texto usa marfim de alto contraste. toolbar sits above a framed control panel; metrics grouped as instrument readouts with aligned labels.",
+      "skillReference": "CSS canônico local styles/skeuomorphism.css; validar referências de domínio durante a revisão humana.",
+      "evidence": "A contraparte concentra essa direção no layout e nos tokens alternate, com CSS limitado ao stage de skeuomorphism."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#view-painel",
+      "property": "grid-template-columns / areas / gap",
+      "before": "Fluxo e distribuição do padrão canônico, preservados integralmente no arquivo styles/skeuomorphism.css.",
+      "after": "toolbar sits above a framed control panel; metrics grouped as instrument readouts with aligned labels.",
+      "breakpoints": {
+        "320": {
+          "before": "layout canônico; viewport 320px",
+          "after": "uma coluna, largura minmax(0,1fr), sem overflow horizontal; gap 16px"
+        },
+        "375": {
+          "before": "layout canônico; viewport 375px",
+          "after": "uma coluna, componentes com min-width:0 e alvos de toque preservados"
+        },
+        "768": {
+          "before": "layout canônico; viewport 768px",
+          "after": "composição ainda empilhada para manter leitura e largura de texto confortável"
+        },
+        "1280": {
+          "before": "layout canônico; viewport 1280px",
+          "after": "toolbar sits above a framed control panel; metrics grouped as instrument readouts with aligned labels. largura máxima controlada e trilhos alinhados"
+        }
+      }
+    },
+    {
+      "selector": "#view-painel > .hero",
+      "property": "grid / padding / tratamento de superfície",
+      "before": "Hero e espaçamentos do padrão canônico sem modificação.",
+      "after": "Painel de rádio de madeira escura: couro e latão ficam em detalhes, botões azuis parecem controles físicos e texto usa marfim de alto contraste. O espaçamento entre blocos é limitado a 24–28px; rótulo, título, texto e ações mantêm intervalos próprios.",
+      "breakpoints": {
+        "320": {
+          "before": "hero canônico",
+          "after": "padding 20px 16px; título quebra sem clipping e ações podem ocupar nova linha"
+        },
+        "375": {
+          "before": "hero canônico",
+          "after": "padding 22px 18px; largura útil preservada"
+        },
+        "768": {
+          "before": "hero canônico",
+          "after": "padding 28px 24px; sem colunas estreitas"
+        },
+        "1280": {
+          "before": "hero canônico",
+          "after": "padding 32px; alinhado ao trilho da composição desktop"
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": ".kpi",
+      "animation": "skeuomorphism-metric-in",
+      "trigger": "Quando o KPI entra na viewport pelo controle IntersectionObserver do runtime.",
+      "duration": "500ms ease-out, deslocamento vertical de 5px e opacidade suave.",
+      "fallback": "Sem IntersectionObserver, o runtime calcula interseção por geometria; com JavaScript indisponível, KPIs permanecem visíveis.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa animação e transformações; o conteúdo permanece visível.",
+      "pauseResume": "Runtime define data-motion-visible somente com elemento visível, documento ativo e movimento não reduzido.",
+      "cleanup": "Ao trocar aparência, runtime remove marcadores e observadores; estado final é estático e visível."
+    },
+    "background": {
+      "selector": "#stage::after",
+      "animation": "skeuomorphism-ambient",
+      "trigger": "Camada de fundo sutil enquanto o stage está visível, governada por data-motion-active do runtime.",
+      "duration": "28s ease-in-out alternado, movimento horizontal máximo de 0,4% e opacidade baixa.",
+      "fallback": "Sem suporte a animações CSS, a textura decorativa permanece estática e o conteúdo não depende dela.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa a animação ambiental e transformações.",
+      "pauseResume": "Runtime pausa a camada quando stage/documento não está visível e retoma quando volta a ficar ativo.",
+      "cleanup": "A folha alternate remove a camada ao sair; runtime remove listeners e atributos ao trocar o estilo."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Rádio de madeira",
+      "description": "Contraparte escura experimental com identidade própria, contraste de leitura e composição adaptada ao tema; proposta pronta para revisão humana."
+    },
+    "en-US": {
+      "name": "Wood radio",
+      "description": "An experimental dark counterpart with its own identity, readable contrast, and a composition adapted to the theme; ready for human review."
+    },
+    "es-ES": {
+      "name": "Radio de madera",
+      "description": "Una contraparte oscura experimental con identidad propia, contraste legible y una composición adaptada al tema; lista para revisión humana."
+    },
+    "fr-FR": {
+      "name": "Radio en bois",
+      "description": "Une variante sombre expérimentale avec sa propre identité, un contraste lisible et une composition adaptée au thème, prête pour une revue humaine."
+    },
+    "de-DE": {
+      "name": "Holzradio",
+      "description": "Eine experimentelle dunkle Variante mit eigener Identität, gut lesbarem Kontrast und themengerechter Komposition, bereit zur menschlichen Prüfung."
+    },
+    "ru-RU": {
+      "name": "Деревянное радио",
+      "description": "Экспериментальная тёмная версия с собственной выразительностью, читаемым контрастом и композицией в духе темы; готова к проверке человеком."
+    },
+    "ar-SA": {
+      "name": "راديو خشبي",
+      "description": "نسخة داكنة تجريبية بهوية مستقلة وتباين واضح وتكوين يناسب الطابع، وهي جاهزة للمراجعة البشرية."
+    },
+    "hi-IN": {
+      "name": "लकड़ी का रेडियो",
+      "description": "अपनी अलग पहचान, पढ़ने योग्य कंट्रास्ट और विषय के अनुकूल संयोजन वाला प्रयोगात्मक गहरा रूप; मानवीय समीक्षा के लिए तैयार।"
+    },
+    "zh-CN": {
+      "name": "木质收音机",
+      "description": "这是一款实验性深色方案，具有鲜明个性、清晰对比和贴合主题的布局，现可供人工审阅。"
+    },
+    "ja-JP": {
+      "name": "木製ラジオ",
+      "description": "独自の個性、読みやすいコントラスト、テーマに沿った構成を備えた実験的なダーク版です。人による確認に向けた提案です。"
+    },
+    "ko-KR": {
+      "name": "우드 라디오",
+      "description": "고유한 개성, 읽기 쉬운 대비, 주제에 맞춘 구성을 갖춘 실험적 다크 변형이며 사람의 검토를 위한 제안입니다."
+    }
+  },
+  "sources": [
+    {
+      "title": "Canonical skeuomorphism stylesheet",
+      "url": "styles/skeuomorphism.css",
+      "kind": "local canonical source",
+      "claim": "Identifies the visual language, default palette and composition retained by this experimental alternate."
+    },
+    {
+      "title": "Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility standard",
+      "claim": "Contrast ratios are screening evidence; rendered text, controls, focus, and state colors still require integrated review."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "42f071b3128a766412347e07002c6582b392dd01ef328ebf87c21899ab167016",
+  "contentDigest": "9b33dde912f05c6c81604238fba228e5bcf7f644e54ad26b74e2d9926280b30f",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "9b33dde912f05c6c81604238fba228e5bcf7f644e54ad26b74e2d9926280b30f",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "9b33dde912f05c6c81604238fba228e5bcf7f644e54ad26b74e2d9926280b30f",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

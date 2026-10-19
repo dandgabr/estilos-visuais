@@ -19,7 +19,10 @@
 #stage[data-style="split-screen-dualism"] .btn-primary { background: #ffffff; color: #121316; border: 2px solid #ffffff; }
 #stage[data-style="split-screen-dualism"] .btn-primary:hover { background: transparent; color: #ffffff; }
 #stage[data-style="split-screen-dualism"] .btn-secondary { background: transparent; color: #ffffff; border: 1px solid #282c37; }
+#stage[data-style="split-screen-dualism"] .panel .btn-secondary { background: #ffffff; color: #121316; }
 #stage[data-style="split-screen-dualism"] .btn-secondary:hover { background: #282c37; }
+#stage[data-style="split-screen-dualism"] .panel .btn-secondary:hover { color: #ffffff; }
+#stage[data-style="split-screen-dualism"] .panel .btn-secondary:focus-visible { outline-color: #121316; }
 #stage[data-style="split-screen-dualism"] .btn-ghost { color: #8c92a4; }
 #stage[data-style="split-screen-dualism"] .card, #stage[data-style="split-screen-dualism"] .panel { background: #ffffff; color: #111111; border: none; border-radius: 8px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); }
 #stage[data-style="split-screen-dualism"] .card .kpi-label { color: #555555; }
@@ -35,4 +38,75 @@
 #stage[data-style="split-screen-dualism"] td { border-bottom: 1px solid #e5e7eb; color: #333333; }
 #stage[data-style="split-screen-dualism"] tbody tr:hover { background: #f9fafb; }
 #stage[data-style="split-screen-dualism"] .toast { background: #ffffff; color: #111111; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,.4); }
+#stage[data-style="split-screen-dualism"] .toast .btn.btn-ghost { color: #121316; }
 #stage[data-style="split-screen-dualism"] dialog { background: #ffffff; color: #111111; border: none; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,.6); }
+
+/* Keep the split semantic in content, not only in the backdrop. */
+#stage[data-style="split-screen-dualism"] #view-painel.is-active {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "hero" "metrics" "resources" "projects";
+  gap: 20px 28px;
+  align-items: start;
+}
+#stage[data-style="split-screen-dualism"] #view-painel > .hero { grid-area: hero; min-width: 0; }
+#stage[data-style="split-screen-dualism"] #view-painel > section[aria-labelledby="t-metricas"] { grid-area: metrics; min-width: 0; }
+#stage[data-style="split-screen-dualism"] #view-painel > section[aria-labelledby="t-recursos"] { grid-area: resources; min-width: 0; }
+#stage[data-style="split-screen-dualism"] #view-painel > .split { grid-area: projects; min-width: 0; }
+#stage[data-style="split-screen-dualism"] .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+#stage[data-style="split-screen-dualism"] .view-pane:not(#view-painel):not([hidden]) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px 28px;
+  align-items: start;
+}
+#stage[data-style="split-screen-dualism"] .view-pane:not(#view-painel):not([hidden]) > .view-header,
+#stage[data-style="split-screen-dualism"] .view-pane:not(#view-painel):not([hidden]) > .kanban-board,
+#stage[data-style="split-screen-dualism"] .view-pane:not(#view-painel):not([hidden]) > .team-grid,
+#stage[data-style="split-screen-dualism"] .view-pane:not(#view-painel):not([hidden]) > .analytics-strip,
+#stage[data-style="split-screen-dualism"] .view-pane:not(#view-painel):not([hidden]) > .panel { min-width: 0; }
+#stage[data-style="split-screen-dualism"] .view-pane:not(#view-painel):not([hidden]) > .view-header,
+#stage[data-style="split-screen-dualism"] .view-pane:not(#view-painel):not([hidden]) > .kanban-board,
+#stage[data-style="split-screen-dualism"] .view-pane:not(#view-painel):not([hidden]) > .team-grid,
+#stage[data-style="split-screen-dualism"] .view-pane:not(#view-painel):not([hidden]) > .analytics-strip,
+#stage[data-style="split-screen-dualism"] .view-pane:not(#view-painel):not([hidden]) > .panel { grid-column: 1 / -1; }
+#stage[data-style="split-screen-dualism"] .view-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+#stage[data-style="split-screen-dualism"] .view-header > :first-child,
+#stage[data-style="split-screen-dualism"] .view-actions { min-width: 0; }
+#stage[data-style="split-screen-dualism"] .view-subtitle { max-width: 100%; }
+#stage[data-style="split-screen-dualism"] .kanban-board {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+#stage[data-style="split-screen-dualism"] .kanban-col:first-child { grid-column: 1; grid-row: 1 / span 2; min-width: 0; }
+#stage[data-style="split-screen-dualism"] .kanban-col:nth-child(2) { grid-column: 2; grid-row: 1; min-width: 0; }
+#stage[data-style="split-screen-dualism"] .kanban-col:nth-child(3) { grid-column: 2; grid-row: 2; min-width: 0; }
+#stage[data-style="split-screen-dualism"] .team-grid,
+#stage[data-style="split-screen-dualism"] .analytics-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+@media (min-width: 861px) {
+  #stage[data-style="split-screen-dualism"] #view-painel.is-active {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "hero metrics" "resources resources" "projects projects";
+  }
+  #stage[data-style="split-screen-dualism"] .view-pane:not(#view-painel):not([hidden]) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+@media (max-width: 860px) {
+  #stage[data-style="split-screen-dualism"] .view-header { grid-template-columns: minmax(0, 1fr); }
+  #stage[data-style="split-screen-dualism"] .kanban-board,
+  #stage[data-style="split-screen-dualism"] .team-grid,
+  #stage[data-style="split-screen-dualism"] .analytics-strip { grid-template-columns: minmax(0, 1fr); }
+  #stage[data-style="split-screen-dualism"] .kanban-col:first-child,
+  #stage[data-style="split-screen-dualism"] .kanban-col:nth-child(2),
+  #stage[data-style="split-screen-dualism"] .kanban-col:nth-child(3) { grid-column: 1; grid-row: auto; }
+}

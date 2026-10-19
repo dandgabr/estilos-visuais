@@ -52,9 +52,10 @@
 #stage[data-style="fluid-liquid-morph"] .nav a:hover { transform: scale(1.08); background: rgba(255, 255, 255, 0.1); }
 #stage[data-style="fluid-liquid-morph"] .nav a.is-active {
   background: linear-gradient(90deg, #ff5e7e, #845ec2);
-  color: #ffffff;
+  color: #190c20;
   box-shadow: 0 4px 15px rgba(255, 94, 126, 0.4);
 }
+#stage[data-style="fluid-liquid-morph"] .nav .nav-tab.is-active { color: #190c20; }
 #stage[data-style="fluid-liquid-morph"] .display {
   font-size: clamp(2.4rem, 6vw, 4.2rem);
   font-weight: 800;
@@ -78,6 +79,10 @@
   box-shadow: 0 8px 24px rgba(255, 94, 126, 0.45);
   animation: flm-gradient-flow 4s ease infinite;
 }
+#stage[data-style="fluid-liquid-morph"] .btn-primary { background:linear-gradient(90deg,#a83756,#5d468d,#a83756); }
+#stage[data-style="fluid-liquid-morph"] .kpi-label { color:#d8c9f0; }
+#stage[data-style="fluid-liquid-morph"] .kpi-value { color:#ff86a0; }
+#stage[data-style="fluid-liquid-morph"] .btn:disabled { color:#ff9caf; }
 #stage[data-style="fluid-liquid-morph"] .btn-primary:hover {
   transform: scale(1.08) translateY(-2px);
   box-shadow: 0 12px 30px rgba(255, 94, 126, 0.7);

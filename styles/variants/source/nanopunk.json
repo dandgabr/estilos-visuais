@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "slug": "nanopunk",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "light",
+    "alternatePolarity": "dark",
+    "rationale": "O arquivo canônico styles/nanopunk.css estabelece a aparência light; esta proposta explora uma contraparte dark coerente com o mesmo vocabulário visual. O padrão canônico não foi alterado.",
+    "evidence": "Classificação inferida dos tokens de fundo/superfície/texto e do background-color no arquivo local styles/nanopunk.css; verificar no browser durante aprovação."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#101A22",
+      "--surface": "#192833",
+      "--surface-2": "#243744",
+      "--fg": "#EAF7F8",
+      "--muted": "#B7D4D8",
+      "--accent": "#18A3B8",
+      "--accent-fg": "#07181C",
+      "--border": "#5B8790",
+      "--ok": "#77D6A1",
+      "--warn": "#F2C66D",
+      "--danger": "#FF929A",
+      "--focus": "#FFE27A",
+      "--radius": "3px",
+      "--radius-sm": "6px",
+      "--shadow": "0 12px 28px rgba(0,0,0,.26)"
+    }
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"nanopunk\"]",
+      "signal": "A molecular lattice in deep graphite and ion cyan; a proposta traduz esses sinais para dark usando molecular node lattice and cyan bonds, mantendo molecular matrix como organização de leitura.",
+      "skillReference": "styles/nanopunk.css",
+      "evidence": "Identidade visual derivada da descrição canônica em styles/registry.js e dos tokens/regras de styles/nanopunk.css; CSS separado em alternate."
+    },
+    {
+      "selector": "#view-painel",
+      "signal": "Composição responsiva molecular matrix: painel principal e áreas de métricas/recursos mudam de posição no desktop, sem espaçamento excessivo em 320–768 px.",
+      "skillReference": "styles/nanopunk.css",
+      "evidence": "A contraparte empilha áreas no mobile com gaps limitados por clamp; em 960 px reordena as áreas em grade específica."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#view-painel",
+      "property": "grid-template-areas / grid-template-columns / gap",
+      "before": "Composição padrão do tema nanopunk, definida em styles/nanopunk.css.",
+      "after": "No mobile: uma coluna compacta; no desktop: molecular matrix, com ordem hero/metrics/resources deliberadamente alterada.",
+      "breakpoints": {
+        "320": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna; largura minmax(0,1fr), 18px gap; KPIs em 2 colunas."
+        },
+        "375": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna; largura minmax(0,1fr), 18–30px gap; sem largura mínima rígida."
+        },
+        "768": {
+          "before": "Fluxo padrão canônico.",
+          "after": "1 coluna até 959px; cards compactos em 2 colunas e recursos em 1 coluna."
+        },
+        "1280": {
+          "before": "Fluxo padrão canônico.",
+          "after": "Grade de duas colunas com áreas molecular matrix; gap 20–34px e gráfico ocupando a faixa de recursos."
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": ".kpi",
+      "animation": "nanopunk-settle",
+      "trigger": "Ao aplicar a contraparte, cada cartão KPI entra uma vez com deslocamento vertical curto de 8px; sem loop.",
+      "duration": "550ms ease-out, uma execução",
+      "fallback": "Sem animação CSS, cartão visível no estado final; conteúdo e foco não dependem de movimento.",
+      "reducedMotion": "Desativada por prefers-reduced-motion: reduce; todos os componentes permanecem em seu estado final estático.",
+      "pauseResume": "CSS sem relógio JavaScript; o navegador suspende animações da página oculta e retoma ao tornar-se visível.",
+      "cleanup": "Não cria listeners, timers, observers, canvas ou recursos persistentes; as regras são removidas ao descarregar a folha da contraparte."
+    },
+    "background": {
+      "selector": "#stage[data-style=\"nanopunk\"][data-variant=\"alternate\"]::before",
+      "animation": "nanopunk-field",
+      "trigger": "Ao aplicar a contraparte, trama decorativa move-se lentamente 34×18px em vaivém; animação decorativa sem parallax de scroll.",
+      "duration": "24s ease-in-out alternate, loop decorativo",
+      "fallback": "A trama permanece estática no ponto inicial, sem retirar informação do conteúdo.",
+      "reducedMotion": "Desativada por prefers-reduced-motion: reduce; todos os componentes permanecem em seu estado final estático.",
+      "pauseResume": "CSS sem relógio JavaScript; o navegador suspende animações da página oculta e retoma ao tornar-se visível.",
+      "cleanup": "Não cria listeners, timers, observers, canvas ou recursos persistentes; as regras são removidas ao descarregar a folha da contraparte."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Contraparte de revisão: Nanopunk",
+      "description": "A proposta preserva os sinais de A molecular lattice in deep graphite and ion cyan, com paleta escura e composição molecular matrix; examine contraste, leitura e encaixe em telas pequenas."
+    },
+    "en-US": {
+      "name": "Review counterpart: Nanopunk",
+      "description": "This proposal keeps the visual cues of A molecular lattice in deep graphite and ion cyan, with a dark palette and a molecular matrix composition; review contrast, reading flow and small-screen fit."
+    },
+    "es-ES": {
+      "name": "Variante para revisión: Nanopunk",
+      "description": "La propuesta conserva los rasgos de A molecular lattice in deep graphite and ion cyan, con paleta oscura y composición molecular matrix; revise el contraste, la lectura y el ajuste en pantallas pequeñas."
+    },
+    "fr-FR": {
+      "name": "Variante à examiner: Nanopunk",
+      "description": "La proposition conserve les codes de A molecular lattice in deep graphite and ion cyan, avec une palette sombre et une composition molecular matrix ; vérifiez le contraste, la lecture et l’affichage sur petit écran."
+    },
+    "de-DE": {
+      "name": "Prüfvariante: Nanopunk",
+      "description": "Der Entwurf bewahrt die Merkmale von A molecular lattice in deep graphite and ion cyan, mit einer dunkle Palette und einer Komposition als molecular matrix; prüfen Sie Kontrast, Lesefluss und kleine Bildschirme."
+    },
+    "ru-RU": {
+      "name": "Вариант для проверки: Nanopunk",
+      "description": "Предложение сохраняет черты стиля A molecular lattice in deep graphite and ion cyan, используя тёмную палитру и композицию «molecular matrix»; проверьте контраст, чтение и узкие экраны."
+    },
+    "ar-SA": {
+      "name": "نسخة للمراجعة: Nanopunk",
+      "description": "يحافظ الاقتراح على سمات A molecular lattice in deep graphite and ion cyan، مع لوحة داكنة وتكوين «molecular matrix»؛ راجع التباين وسهولة القراءة والملاءمة للشاشات الصغيرة."
+    },
+    "hi-IN": {
+      "name": "समीक्षा विकल्प: Nanopunk",
+      "description": "यह प्रस्ताव A molecular lattice in deep graphite and ion cyan की दृश्य पहचान बनाए रखता है, गहरी रंग-पैलेट और molecular matrix संरचना के साथ; कंट्रास्ट, पढ़ने की सहजता और छोटी स्क्रीन पर जाँचें।"
+    },
+    "zh-CN": {
+      "name": "待审阅的配色方案: Nanopunk",
+      "description": "此提案保留 A molecular lattice in deep graphite and ion cyan 的视觉特征，采用深色色板与molecular matrix构图；请检查对比度、阅读流畅度和小屏适配。"
+    },
+    "ja-JP": {
+      "name": "レビュー用の対案: Nanopunk",
+      "description": "この案はA molecular lattice in deep graphite and ion cyanの視覚的特徴を保ち、ダーク配色と「molecular matrix」構成を採用します。コントラスト、読みやすさ、小画面での表示を確認してください。"
+    },
+    "ko-KR": {
+      "name": "검토용 대안: Nanopunk",
+      "description": "이 제안은 A molecular lattice in deep graphite and ion cyan의 시각적 특징을 유지하면서 어두운 팔레트와 molecular matrix 구성을 사용합니다. 대비, 읽기 흐름, 작은 화면을 확인하세요."
+    }
+  },
+  "sources": [
+    {
+      "title": "Arquivo canônico de estilo: styles/nanopunk.css e registro styles/registry.js",
+      "url": "styles/nanopunk.css",
+      "kind": "fonte primária local do padrão visual; não alterada",
+      "claim": "Sinais visuais e polaridade padrão inferidos do CSS canônico local para propor uma contraparte revisável."
+    },
+    {
+      "title": "W3C WCAG 2.2 Understanding SC 1.4.3 Contrast (Minimum)",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "kind": "orientação normativa de acessibilidade",
+      "claim": "Texto comum deve atingir contraste mínimo de 4.5:1 e texto grande 3:1; pares de contraste precisam ser medidos na renderização real."
+    },
+    {
+      "title": "W3C WCAG 2.2 Understanding SC 1.4.11 Non-text Contrast",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+      "kind": "orientação normativa de acessibilidade",
+      "claim": "Limites de controles e indicadores necessários devem manter contraste de pelo menos 3:1 com cores adjacentes."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "1dd3edd7a1c33f59cbcc2bef8434086a424ef762a6f16af697d061e4b20c45a2",
+  "contentDigest": "8d0e7908a8bb97c92904c0c02e017d287c294d0f019cba898d1ab160c44b94f8",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "8d0e7908a8bb97c92904c0c02e017d287c294d0f019cba898d1ab160c44b94f8",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "8d0e7908a8bb97c92904c0c02e017d287c294d0f019cba898d1ab160c44b94f8",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

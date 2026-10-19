@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "slug": "kinetic-typography",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "dark",
+    "alternatePolarity": "light",
+    "rationale": "Padrão classificado dark pela luminância do token --bg em styles/kinetic-typography.css. Contraparte light: The black ticker becomes a sunlit print studio: cream stock, carbon ink, vermilion signal and a fixed editorial ribbon. A composição e paleta são uma exploração de revisão; a folha padrão não é alterada."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#F1EBDD",
+      "--surface": "#FFF9EA",
+      "--surface-2": "#E5D9C4",
+      "--fg": "#201A18",
+      "--muted": "#595047",
+      "--accent": "#C3412E",
+      "--accent-fg": "#FFFFFF",
+      "--border": "#82776B",
+      "--focus": "#126C78",
+      "--shadow": "0 8px 24px rgba(20, 18, 22, .16)"
+    },
+    "intent": "The black ticker becomes a sunlit print studio: cream stock, carbon ink, vermilion signal and a fixed editorial ribbon."
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"kinetic-typography\"][data-variant=\"alternate\"] .hero",
+      "signal": "The black ticker becomes a sunlit print studio: cream stock, carbon ink, vermilion signal and a fixed editorial ribbon. O hero incorpora headline underline glides; os controles mantêm contraste e foco discernível.",
+      "skillReference": "styles/kinetic-typography.css — identidade canônica; revisão visual local",
+      "evidence": "Contraparte construída sem editar styles/kinetic-typography.css."
+    },
+    {
+      "selector": "#stage[data-style=\"kinetic-typography\"][data-variant=\"alternate\"] .app::before",
+      "signal": "Decoração de fundo: static marquee stripes; opacidade baixa para não competir com texto.",
+      "skillReference": "styles/kinetic-typography.css — identidade canônica",
+      "evidence": "A camada é pointer-events:none e subordinada ao conteúdo."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#stage[data-style=\"kinetic-typography\"][data-variant=\"alternate\"] #view-painel",
+      "property": "grid-template-columns / grid-template-areas / gap",
+      "before": "Painel segue fluxo canônico de uma coluna; KPI usa grade fluida definida pelo estilo.",
+      "after": "headline ribbon spans the canvas; supporting content in tightly grouped horizontal bands. Desktop usa trilho principal+secundário; mobile preserva ordem e fluxo único.",
+      "breakpoints": {
+        "320": {
+          "before": "fluxo canônico em coluna, sem overflow intencional",
+          "after": "1 coluna, gap 16px e padding lateral 18px"
+        },
+        "375": {
+          "before": "fluxo canônico em coluna, grade fluida",
+          "after": "1 coluna; hero e controles cabem na largura útil"
+        },
+        "768": {
+          "before": "fluxo principal em coluna, elementos fluem naturalmente",
+          "after": "1 coluna; composição mantém leitura vertical e não comprime cartões"
+        },
+        "1280": {
+          "before": "fluxo canônico em coluna por regiões",
+          "after": "2 trilhos: hero 1.25fr e métricas .75fr; recursos atravessam as colunas, formulário e atividade dividem a linha inferior"
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": "#stage[data-style=\"kinetic-typography\"][data-variant=\"alternate\"] .hero::after",
+      "animation": "kinetic-typography-element",
+      "trigger": "Ao aplicar a contraparte, regra CSS de entrada do filete decorativo do hero.",
+      "duration": "520ms ease-out, scaleX; somente decoração, conteúdo sempre visível.",
+      "fallback": "Sem suporte a animação CSS, filete permanece estático; conteúdo não depende do movimento.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa a animação.",
+      "pauseResume": "Animação de entrada finita; não há loop contínuo nem estado de conteúdo.",
+      "cleanup": "Ao remover a folha da contraparte, pseudo-elemento e animação desaparecem."
+    },
+    "background": {
+      "selector": "#stage[data-style=\"kinetic-typography\"][data-variant=\"alternate\"]::after",
+      "animation": "kinetic-typography-background",
+      "trigger": "Loop ambiental sutil enquanto a contraparte está ativa.",
+      "duration": "32s ease-in-out alternate; somente opacidade e posição de background, sem camada sobre interação.",
+      "fallback": "Sem suporte a animação, textura permanece estática e decorativa.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa o loop.",
+      "pauseResume": "CSS anima apenas enquanto a folha alternate permanece aplicada; o navegador suspende a aba oculta.",
+      "cleanup": "Ao remover a folha da contraparte, camada e animação desaparecem."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Letreiro de Papel",
+      "description": "The black ticker becomes a sunlit print studio: cream stock, carbon ink, vermilion signal and a fixed editorial ribbon. Contraparte alternativa clara para o padrão, proposta para revisão; a aparência canônica permanece intacta."
+    },
+    "en-US": {
+      "name": "Paper Marquee",
+      "description": "The black ticker becomes a sunlit print studio: cream stock, carbon ink, vermilion signal and a fixed editorial ribbon. This light counterpart is a review proposal; the canonical appearance remains unchanged."
+    },
+    "es-ES": {
+      "name": "Paper Marquee — alternativa clara",
+      "description": "The black ticker becomes a sunlit print studio: cream stock, carbon ink, vermilion signal and a fixed editorial ribbon. Alternativa clara; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "fr-FR": {
+      "name": "Paper Marquee — variante claire",
+      "description": "The black ticker becomes a sunlit print studio: cream stock, carbon ink, vermilion signal and a fixed editorial ribbon. Variante claire; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "de-DE": {
+      "name": "Paper Marquee — helle Variante",
+      "description": "The black ticker becomes a sunlit print studio: cream stock, carbon ink, vermilion signal and a fixed editorial ribbon. Helle variante; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ru-RU": {
+      "name": "Paper Marquee — светлая версия",
+      "description": "The black ticker becomes a sunlit print studio: cream stock, carbon ink, vermilion signal and a fixed editorial ribbon. Светлая версия; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ar-SA": {
+      "name": "Paper Marquee — النسخة الفاتحة",
+      "description": "The black ticker becomes a sunlit print studio: cream stock, carbon ink, vermilion signal and a fixed editorial ribbon. النسخة الفاتحة; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "hi-IN": {
+      "name": "Paper Marquee — हल्का रूप",
+      "description": "The black ticker becomes a sunlit print studio: cream stock, carbon ink, vermilion signal and a fixed editorial ribbon. हल्का रूप; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "zh-CN": {
+      "name": "Paper Marquee — 浅色版本",
+      "description": "The black ticker becomes a sunlit print studio: cream stock, carbon ink, vermilion signal and a fixed editorial ribbon. 浅色版本; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ja-JP": {
+      "name": "Paper Marquee — ライト版",
+      "description": "The black ticker becomes a sunlit print studio: cream stock, carbon ink, vermilion signal and a fixed editorial ribbon. ライト版; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ko-KR": {
+      "name": "Paper Marquee — 밝은 변형",
+      "description": "The black ticker becomes a sunlit print studio: cream stock, carbon ink, vermilion signal and a fixed editorial ribbon. 밝은 변형; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    }
+  },
+  "sources": [
+    {
+      "title": "Canonical kinetic-typography stylesheet",
+      "url": "styles/kinetic-typography.css",
+      "kind": "local canonical source",
+      "claim": "Used to identify the untouched default polarity and visual identity of kinetic-typography."
+    },
+    {
+      "title": "Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility standard",
+      "claim": "Contrast ratios are screening evidence; final visual review must inspect rendered text, controls, focus and status states."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "7c1ea81fdbabc7e91dbe4854f9097b4eb07b767be4ab8886626b5fe46aaf9ccb",
+  "contentDigest": "fb4cbd195c4b0594d8d687382c8ae2ba27664d0aedc022e20710429458695f48",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "fb4cbd195c4b0594d8d687382c8ae2ba27664d0aedc022e20710429458695f48",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "fb4cbd195c4b0594d8d687382c8ae2ba27664d0aedc022e20710429458695f48",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

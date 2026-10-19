@@ -1,5 +1,5 @@
 // Lunarpunk FX — Nocturnal bioluminescent starlight & firefly drift
-export default function mount(stage) {
+export default function mount(stage, { variantId = 'default', colors = {} } = {}) {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce) return () => {};
 
@@ -21,6 +21,22 @@ export default function mount(stage) {
   parent.insertBefore(canvas, parent.firstChild);
 
   const ctx = canvas.getContext('2d');
+  const colorHue = (value, fallback) => {
+    if (!value) return fallback;
+    const probe = document.createElement('canvas').getContext('2d');
+    probe.fillStyle = value;
+    const match = probe.fillStyle.match(/^#([0-9a-f]{6})$/i);
+    if (!match) return fallback;
+    const hex = match[1];
+    const rgb = [0, 2, 4].map((offset) => parseInt(hex.slice(offset, offset + 2), 16) / 255);
+    const max = Math.max(...rgb), min = Math.min(...rgb), delta = max - min;
+    if (!delta) return 0;
+    let hue = max === rgb[0] ? ((rgb[1] - rgb[2]) / delta) % 6 : max === rgb[1] ? (rgb[2] - rgb[0]) / delta + 2 : (rgb[0] - rgb[1]) / delta + 4;
+    return Math.round((hue * 60 + 360) % 360);
+  };
+  const computed = getComputedStyle(stage);
+  const mintHue = variantId === 'default' ? 160 : colorHue(colors['--mint'] || computed.getPropertyValue('--mint').trim(), 160);
+  const violetHue = variantId === 'default' ? 205 : colorHue(colors['--vio'] || colors['--accent'] || computed.getPropertyValue('--vio').trim() || computed.getPropertyValue('--accent').trim(), 205);
   let animationId = null;
   let width = 0;
   let height = 0;
@@ -41,7 +57,7 @@ export default function mount(stage) {
     phase: Math.random() * Math.PI * 2,
     speedX: (Math.random() - 0.5) * 0.4,
     speedY: -Math.random() * 0.3 - 0.1, // gently floating upwards
-    hue: Math.random() > 0.4 ? 160 : 205, // bioluminescent cyan / emerald green
+    hue: Math.random() > 0.4 ? mintHue : violetHue,
   }));
 
   let time = 0;

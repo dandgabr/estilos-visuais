@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "slug": "expressive-variable-typography",
+  "status": "approved",
+  "classification": {
+    "defaultPolarity": "light",
+    "alternatePolarity": "dark",
+    "rationale": "Padrão classificado light pela luminância do token --bg em styles/expressive-variable-typography.css. Contraparte dark: A dark typographic specimen with warm ivory type and electric ultramarine controls; huge type is isolated in a specimen column. A composição e paleta são uma exploração de revisão; a folha padrão não é alterada."
+  },
+  "palette": {
+    "tokens": {
+      "--bg": "#1B1C20",
+      "--surface": "#27292F",
+      "--surface-2": "#363840",
+      "--fg": "#F5F2E9",
+      "--muted": "#C5C3BD",
+      "--accent": "#8FA2FF",
+      "--accent-fg": "#17191D",
+      "--border": "#81838C",
+      "--focus": "#E6B65C",
+      "--shadow": "0 8px 24px rgba(20, 18, 22, .16)"
+    },
+    "intent": "A dark typographic specimen with warm ivory type and electric ultramarine controls; huge type is isolated in a specimen column."
+  },
+  "designSignals": [
+    {
+      "selector": "#stage[data-style=\"expressive-variable-typography\"][data-variant=\"alternate\"] .hero",
+      "signal": "A dark typographic specimen with warm ivory type and electric ultramarine controls; huge type is isolated in a specimen column. O hero incorpora weight axis settles in 450ms; os controles mantêm contraste e foco discernível.",
+      "skillReference": "styles/expressive-variable-typography.css — identidade canônica; revisão visual local",
+      "evidence": "Contraparte construída sem editar styles/expressive-variable-typography.css."
+    },
+    {
+      "selector": "#stage[data-style=\"expressive-variable-typography\"][data-variant=\"alternate\"] .app::before",
+      "signal": "Decoração de fundo: specimen registration ticks; opacidade baixa para não competir com texto.",
+      "skillReference": "styles/expressive-variable-typography.css — identidade canônica",
+      "evidence": "A camada é pointer-events:none e subordinada ao conteúdo."
+    }
+  ],
+  "layoutChanges": [
+    {
+      "selector": "#stage[data-style=\"expressive-variable-typography\"][data-variant=\"alternate\"] #view-painel",
+      "property": "grid-template-columns / grid-template-areas / gap",
+      "before": "Painel segue fluxo canônico de uma coluna; KPI usa grade fluida definida pelo estilo.",
+      "after": "one expressive specimen column plus a compact utility rail; controls grouped in a typographic index. Desktop usa trilho principal+secundário; mobile preserva ordem e fluxo único.",
+      "breakpoints": {
+        "320": {
+          "before": "fluxo canônico em coluna, sem overflow intencional",
+          "after": "1 coluna, gap 16px e padding lateral 18px"
+        },
+        "375": {
+          "before": "fluxo canônico em coluna, grade fluida",
+          "after": "1 coluna; hero e controles cabem na largura útil"
+        },
+        "768": {
+          "before": "fluxo principal em coluna, elementos fluem naturalmente",
+          "after": "1 coluna; composição mantém leitura vertical e não comprime cartões"
+        },
+        "1280": {
+          "before": "fluxo canônico em coluna por regiões",
+          "after": "2 trilhos: hero 1.25fr e métricas .75fr; recursos atravessam as colunas, formulário e atividade dividem a linha inferior"
+        }
+      }
+    }
+  ],
+  "motion": {
+    "element": {
+      "selector": "#stage[data-style=\"expressive-variable-typography\"][data-variant=\"alternate\"] .hero::after",
+      "animation": "expressive-variable-typography-element",
+      "trigger": "Ao aplicar a contraparte, regra CSS de entrada do filete decorativo do hero.",
+      "duration": "520ms ease-out, scaleX; somente decoração, conteúdo sempre visível.",
+      "fallback": "Sem suporte a animação CSS, filete permanece estático; conteúdo não depende do movimento.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa a animação.",
+      "pauseResume": "Animação de entrada finita; não há loop contínuo nem estado de conteúdo.",
+      "cleanup": "Ao remover a folha da contraparte, pseudo-elemento e animação desaparecem."
+    },
+    "background": {
+      "selector": "#stage[data-style=\"expressive-variable-typography\"][data-variant=\"alternate\"]::after",
+      "animation": "expressive-variable-typography-background",
+      "trigger": "Loop ambiental sutil enquanto a contraparte está ativa.",
+      "duration": "32s ease-in-out alternate; somente opacidade e posição de background, sem camada sobre interação.",
+      "fallback": "Sem suporte a animação, textura permanece estática e decorativa.",
+      "reducedMotion": "prefers-reduced-motion: reduce desativa o loop.",
+      "pauseResume": "CSS anima apenas enquanto a folha alternate permanece aplicada; o navegador suspende a aba oculta.",
+      "cleanup": "Ao remover a folha da contraparte, camada e animação desaparecem."
+    }
+  },
+  "locales": {
+    "pt-BR": {
+      "name": "Tipo em Contraluz",
+      "description": "A dark typographic specimen with warm ivory type and electric ultramarine controls; huge type is isolated in a specimen column. Contraparte alternativa escura para o padrão, proposta para revisão; a aparência canônica permanece intacta."
+    },
+    "en-US": {
+      "name": "Type in Counterlight",
+      "description": "A dark typographic specimen with warm ivory type and electric ultramarine controls; huge type is isolated in a specimen column. This dark counterpart is a review proposal; the canonical appearance remains unchanged."
+    },
+    "es-ES": {
+      "name": "Type in Counterlight — alternativa oscura",
+      "description": "A dark typographic specimen with warm ivory type and electric ultramarine controls; huge type is isolated in a specimen column. Alternativa oscura; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "fr-FR": {
+      "name": "Type in Counterlight — variante sombre",
+      "description": "A dark typographic specimen with warm ivory type and electric ultramarine controls; huge type is isolated in a specimen column. Variante sombre; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "de-DE": {
+      "name": "Type in Counterlight — dunkle Variante",
+      "description": "A dark typographic specimen with warm ivory type and electric ultramarine controls; huge type is isolated in a specimen column. Dunkle variante; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ru-RU": {
+      "name": "Type in Counterlight — тёмная версия",
+      "description": "A dark typographic specimen with warm ivory type and electric ultramarine controls; huge type is isolated in a specimen column. Тёмная версия; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ar-SA": {
+      "name": "Type in Counterlight — النسخة الداكنة",
+      "description": "A dark typographic specimen with warm ivory type and electric ultramarine controls; huge type is isolated in a specimen column. النسخة الداكنة; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "hi-IN": {
+      "name": "Type in Counterlight — गहरा रूप",
+      "description": "A dark typographic specimen with warm ivory type and electric ultramarine controls; huge type is isolated in a specimen column. गहरा रूप; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "zh-CN": {
+      "name": "Type in Counterlight — 深色版本",
+      "description": "A dark typographic specimen with warm ivory type and electric ultramarine controls; huge type is isolated in a specimen column. 深色版本; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ja-JP": {
+      "name": "Type in Counterlight — ダーク版",
+      "description": "A dark typographic specimen with warm ivory type and electric ultramarine controls; huge type is isolated in a specimen column. ダーク版; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    },
+    "ko-KR": {
+      "name": "Type in Counterlight — 어두운 변형",
+      "description": "A dark typographic specimen with warm ivory type and electric ultramarine controls; huge type is isolated in a specimen column. 어두운 변형; proposta experimental para revisão, mantendo intacta a aparência canônica."
+    }
+  },
+  "sources": [
+    {
+      "title": "Canonical expressive-variable-typography stylesheet",
+      "url": "styles/expressive-variable-typography.css",
+      "kind": "local canonical source",
+      "claim": "Used to identify the untouched default polarity and visual identity of expressive-variable-typography."
+    },
+    {
+      "title": "Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "accessibility standard",
+      "claim": "Contrast ratios are screening evidence; final visual review must inspect rendered text, controls, focus and status states."
+    }
+  ],
+  "author": "Codex implementation",
+  "snapshotDigest": "ac1925935b13c1a2790ef1bbc932998e7e1de2c7593a68a1627492786070d0e1",
+  "evidence": {
+    "artifacts": [
+      {
+        "path": "docs/releases/2026-10-19/qa.json",
+        "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+      },
+      {
+        "path": "docs/releases/2026-10-19/ux.json",
+        "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+      },
+      {
+        "path": "docs/releases/2026-10-19/user-approval.json",
+        "sha256": "e15dced1eea260c6b3b96892b6bab64be820f2565ad5ba2a74b892bcdf37ea3b"
+      }
+    ]
+  },
+  "generatedDigest": "92dfc2254fef61fe7508bfb48b2eba2fa146170b7573d36ead9348ca098ed9a8",
+  "contentDigest": "54f2a3813b3c2ba3bc775206fb2ad7a300fe2259b7e496f5e685674ec6fbe79c",
+  "reviews": [
+    {
+      "reviewer": "release_qa",
+      "role": "QA",
+      "verdict": "ACCEPT",
+      "contentDigest": "54f2a3813b3c2ba3bc775206fb2ad7a300fe2259b7e496f5e685674ec6fbe79c",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/qa.json",
+          "sha256": "e56816d616782631ec08acfa8cf13611da14c9f36cd871acbcc50fcec28ca444"
+        }
+      ]
+    },
+    {
+      "reviewer": "release_ux",
+      "role": "UX/UI",
+      "verdict": "ACCEPT",
+      "contentDigest": "54f2a3813b3c2ba3bc775206fb2ad7a300fe2259b7e496f5e685674ec6fbe79c",
+      "evidence": [
+        {
+          "path": "docs/releases/2026-10-19/ux.json",
+          "sha256": "b6560da4041c744bce94ad3a24c0e17cde4ce523118bcc7ea380e485a912aa7f"
+        }
+      ]
+    }
+  ]
+}

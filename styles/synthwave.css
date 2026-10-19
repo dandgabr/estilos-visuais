@@ -11,7 +11,7 @@
   --border: #00F0FF;
   --ok: #00F0FF;
   --warn: #FFB703;
-  --danger: #FF0055;
+  --danger: #FF6B92;
   --radius: 0px;
   --radius-sm: 0px;
   --shadow: 0 0 16px rgba(255, 0, 127, 0.4), 0 0 30px rgba(0, 240, 255, 0.2);
@@ -34,6 +34,8 @@
     linear-gradient(180deg, #0D0221 0%, #260759 55%, #7B0D5D 85%, #FF5900 100%);
   background-attachment: fixed;
 }
+#stage[data-style="synthwave"] .footer { color: #0d0221; }
+#stage[data-style="synthwave"] .footer { background:#0d0221;color:#ffffff;padding:12px; }
 
 #stage[data-style="synthwave"] .topbar {
   background: rgba(13, 2, 33, 0.85);
@@ -87,6 +89,7 @@
   border-color: var(--neon-pink);
   box-shadow: 0 0 15px rgba(255, 0, 127, 0.7);
 }
+#stage[data-style="synthwave"] .nav .nav-tab.is-active { color: #1A0538; }
 
 #stage[data-style="synthwave"] .hero {
   background: linear-gradient(180deg, rgba(25, 5, 59, 0.9) 0%, rgba(13, 2, 33, 0.95) 100%);
@@ -120,7 +123,7 @@
 
 #stage[data-style="synthwave"] .btn-primary {
   background: var(--neon-pink);
-  color: #FFFFFF;
+  color: #1A0538;
   border: 1px solid #FF80BF;
   box-shadow: 0 0 16px rgba(255, 0, 127, 0.6);
 }

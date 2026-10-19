@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 #stage[data-style="blueprint-cad-schematic"] {
-  --bg: #0b1d3a; --surface: rgba(11, 29, 58, 0.92); --surface-2: #142e56; --fg: #00f0ff; --muted: #4a7ab5;
+  --bg: #0b1d3a; --surface: rgba(11, 29, 58, 0.92); --surface-2: #142e56; --fg: #00f0ff; --muted: #86b6e8;
   --accent: #00f0ff; --accent-fg: #0b1d3a; --border: #00f0ff;
   --ok: #00f0ff; --warn: #ffd600; --danger: #ff3344;
   --radius: 0; --radius-sm: 0; --shadow: 0 0 15px rgba(0, 240, 255, 0.2);

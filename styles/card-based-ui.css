@@ -25,6 +25,7 @@
 #stage[data-style="card-based-ui"] input[type=text],#stage[data-style="card-based-ui"] input[type=email],#stage[data-style="card-based-ui"] select,#stage[data-style="card-based-ui"] textarea{background:var(--surface-2)}
 #stage[data-style="card-based-ui"] input[type=checkbox],#stage[data-style="card-based-ui"] input[type=range]{accent-color:#3b5bdb}
 #stage[data-style="card-based-ui"] .toast{background:#1c2230;color:#fff;box-shadow:var(--shadow)}
+#stage[data-style="card-based-ui"] .toast .btn-ghost{color:#1c2230;background:#f3f5f9}
 #stage[data-style="card-based-ui"] dialog{border:0;border-radius:18px;box-shadow:0 20px 50px rgba(20,30,60,.3)}
 #stage[data-style="card-based-ui"] .footer{border:0;text-align:center}
 

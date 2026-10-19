@@ -10,8 +10,8 @@
   --accent-fg: #FFFFFF;
   --border: #080808;
   --ok: #000000;
-  --warn: #FAFF00;
-  --danger: #FF007F;
+  --warn: #756000;
+  --danger: #9C0050;
   --radius: 0px;
   --radius-sm: 0px;
   --shadow: 4px 4px 0px #080808;
@@ -66,7 +66,7 @@
 }
 
 #stage[data-style="zine-independent"] .nav a.is-active,
-#stage[data-style="zine-independent"] .nav-tab.is-active {
+#stage[data-style="zine-independent"] .nav .nav-tab.is-active {
   color: #000000;
   background: var(--zine-yellow);
   border-color: var(--zine-yellow);
@@ -119,4 +119,14 @@
   font-family: var(--font-display);
   font-size: 2.5rem;
   color: var(--zine-pink);
+}
+
+@media (max-width: 640px) {
+  #stage[data-style="zine-independent"] .hero { padding-inline: 16px; transform: rotate(-.25deg); }
+  #stage[data-style="zine-independent"] .display {
+    max-width: 100%;
+    font-size: clamp(1.8rem, 9vw, 2.4rem);
+    letter-spacing: .02em;
+    overflow-wrap: anywhere;
+  }
 }
